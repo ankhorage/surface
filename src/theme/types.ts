@@ -1,0 +1,154 @@
+import type { ThemeConfig as ContractsThemeConfig } from '@ankh/contracts';
+
+export type { ColorHarmony, SystemTone, ThemeConfig, ThemeModeConfig } from '@ankh/contracts';
+
+export type ColorTone = 'jewel' | 'earth' | 'fluorescent' | 'grayscale' | 'pastel';
+
+export interface ColorScale {
+  [key: number]: string;
+  50: string;
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+  800: string;
+  900: string;
+  950: string;
+}
+
+export interface NeutralSemantics {
+  bg: string;
+  bgSubtle: string;
+  surface: string;
+  surfaceHover: string;
+  surfaceActive: string;
+  border: string;
+  borderStrong: string;
+  divider: string;
+  text: string;
+  textMuted: string;
+  textSubtle: string;
+}
+
+export interface RoleSemantics {
+  base: string;
+  hover: string;
+  strong: string;
+  softBg: string;
+  softHover: string;
+  softActive: string;
+  outline: string;
+  onSolidText: string;
+}
+
+export type FontWeight =
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900'
+  | 'bold'
+  | 'normal';
+
+export interface ThemeTokens {
+  colors: {
+    primary: string;
+    secondary: string;
+    accent: string;
+    highlight: string;
+    background: string;
+    surface: string;
+    text: string;
+    textSecondary: string;
+    border: string;
+    error: string;
+    success: string;
+    warning: string;
+    [key: string]: string;
+  };
+  scales: Record<string, ColorScale>;
+  semantics: {
+    neutral: NeutralSemantics;
+    brand: RoleSemantics;
+    secondary: RoleSemantics;
+    accent: RoleSemantics;
+    highlight: RoleSemantics;
+  };
+  spacing: {
+    none: 0;
+    xs: number;
+    s: number;
+    m: number;
+    l: number;
+    xl: number;
+    xxl: number;
+    [key: string]: number;
+  };
+  radii: {
+    none: 0;
+    s: number;
+    m: number;
+    l: number;
+    full: number;
+  };
+  typography: {
+    headings: Record<
+      1 | 2 | 3 | 4 | 5 | 6,
+      {
+        size: number;
+        lineHeight: number;
+        weight: 'regular' | 'medium' | 'semiBold' | 'bold';
+      }
+    >;
+    sizes: {
+      xs: number;
+      s: number;
+      m: number;
+      l: number;
+      xl: number;
+      xxl: number;
+      '3xl': number;
+      h1: number;
+      h2: number;
+      h3: number;
+      h4: number;
+      h5: number;
+      h6: number;
+      [key: string]: number;
+    };
+    weights: {
+      thin: FontWeight;
+      extraLight: FontWeight;
+      light: FontWeight;
+      regular: FontWeight;
+      medium: FontWeight;
+      semiBold: FontWeight;
+      bold: FontWeight;
+      extraBold: FontWeight;
+      black: FontWeight;
+    };
+    fonts: {
+      /** Map of weight -> fontFamily name for normal style */
+      normal: Record<FontWeight, string | undefined>;
+      /** Map of weight -> fontFamily name for italic style */
+      italic: Record<FontWeight, string | undefined>;
+    };
+  };
+  shadows: {
+    soft: number;
+    medium: number;
+    hard: number;
+    [key: string]: number;
+  };
+}
+
+export interface AnkhTheme extends ThemeTokens {
+  config: ContractsThemeConfig;
+}
