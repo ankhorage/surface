@@ -12,8 +12,14 @@ or CLI generation. Those concerns stay in the Ankhorage monorepo.
 Install Surface with its required shared contract package and React Native peers:
 
 ```bash
-bun add @ankhorage/surface @ankhorage/contracts @expo/vector-icons culori
+bun add @ankhorage/surface @ankhorage/contracts
 bun add react react-native
+```
+
+If you use the built-in `Icon` primitive, install the Expo icon peers in the host app too:
+
+```bash
+bun add @expo/vector-icons expo-font
 ```
 
 ## Basic Usage
