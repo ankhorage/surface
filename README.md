@@ -12,13 +12,9 @@ or CLI generation. Those concerns stay in the Ankhorage monorepo.
 Install Surface with its required shared contract package and React Native peers:
 
 ```bash
-bun add @ankhorage/surface @ankh/contracts @expo/vector-icons culori
+bun add @ankhorage/surface @ankhorage/contracts @expo/vector-icons culori
 bun add react react-native
 ```
-
-Bootstrap note:
-until `@ankh/contracts` is published independently, this repo uses a local link dependency for
-development. Replace that link with the published package version before release.
 
 ## Basic Usage
 
@@ -50,7 +46,7 @@ export function Example() {
 
 ## Theming
 
-Serialized theme configuration types are imported from `@ankh/contracts`.
+Serialized theme configuration types are imported from `@ankhorage/contracts`.
 Surface owns theme creation, resolved runtime theme objects, token lookup, and component
 consumption of those tokens.
 

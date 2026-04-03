@@ -1,6 +1,6 @@
-import type { ThemeConfig as ContractsThemeConfig } from '@ankh/contracts';
+import type { ThemeConfig as ContractsThemeConfig } from '@ankhorage/contracts';
 
-export type { ColorHarmony, SystemTone, ThemeConfig, ThemeModeConfig } from '@ankh/contracts';
+export type { ColorHarmony, SystemTone, ThemeConfig, ThemeModeConfig } from '@ankhorage/contracts';
 
 export type ColorTone = 'jewel' | 'earth' | 'fluorescent' | 'grayscale' | 'pastel';
 
