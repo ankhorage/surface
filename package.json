@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "description": "Render foundation for Ankhorage and standalone React Native or Expo apps.",
+  "license": "MIT",
   "main": "./dist/index.js",
   "sideEffects": false,
   "types": "./dist/index.d.ts",
@@ -33,6 +34,9 @@
       "default": "./dist/index.js"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rm -rf dist tsconfig.tsbuildinfo && bun x tsc -p tsconfig.json",
     "lint": "eslint src --max-warnings=0",
@@ -54,5 +58,5 @@
     "react-native": "0.81.5",
     "typescript": "^5.9.3"
   },
-  "packageManager": "bun@1.3.9"
+  "packageManager": "bun@1.3.11"
 }
