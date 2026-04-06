@@ -1,7 +1,7 @@
 {
   "name": "@ankhorage/surface",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Render foundation for Ankhorage and standalone React Native or Expo apps.",
   "license": "MIT",
   "main": "./dist/index.js",
