@@ -3,7 +3,7 @@ import { describe, expect, mock, test } from 'bun:test';
 const Ionicons = () => null;
 const MaterialIcons = () => null;
 
-mock.module('@expo/vector-icons', () => ({
+await mock.module('@expo/vector-icons', () => ({
   Ionicons,
   MaterialIcons,
 }));

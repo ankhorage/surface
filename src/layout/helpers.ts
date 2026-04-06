@@ -69,7 +69,7 @@ export function resolveRadius(
 ): number | undefined {
   if (value === undefined) return undefined;
   if (typeof value === 'number') return value;
-  return theme.radii[value as RadiusToken];
+  return theme.radii[value];
 }
 
 export function resolveColor(theme: AnkhTheme, value: ColorValue | undefined): string | undefined {

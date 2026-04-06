@@ -53,7 +53,7 @@ export function Box({ children, pointerEvents, style, testID, ...props }: BoxPro
     <View
       pointerEvents={viewPointerEvents}
       testID={testID}
-      style={[resolved, pointerEventsStyle, style as StyleProp<ViewStyle>]}
+      style={[resolved, pointerEventsStyle, style]}
     >
       {children}
     </View>

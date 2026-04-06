@@ -18,8 +18,12 @@ export const ThemeContext = createContext<{
 }>({
   theme: defaultTheme,
   mode: 'light',
-  setThemeConfig: () => {},
-  setMode: () => {},
+  setThemeConfig: () => {
+    /* fallback */
+  },
+  setMode: () => {
+    /* fallback */
+  },
   _hasProvider: false,
 });
 

@@ -17,7 +17,9 @@ export interface FontRuntime {
 const fallbackRuntime: FontRuntime = {
   fontsLoaded: true,
   activeFontId: null,
-  setActiveFontId: () => {},
+  setActiveFontId: () => {
+    /* fallback */
+  },
 };
 
 const FontContext = createContext(fallbackRuntime);

@@ -1,6 +1,10 @@
+import { createRequire } from 'node:module';
+
 import type * as ExpoIcons from '@expo/vector-icons';
 import type React from 'react';
 import { type StyleProp, type TextStyle } from 'react-native';
+
+const require = createRequire(import.meta.url);
 
 type ExpoIconsModule = typeof ExpoIcons;
 
@@ -32,7 +36,7 @@ function loadExpoIcons(): ExpoIconsModule {
 
 export function resolveExpoIconComponent(provider: string): ExpoIconComponent {
   const Icons = loadExpoIcons();
-  const candidate = Reflect.get(Icons, provider);
+  const candidate = (Icons as Record<string, unknown>)[provider];
   if (typeof candidate === 'function') {
     return candidate as ExpoIconComponent;
   }
