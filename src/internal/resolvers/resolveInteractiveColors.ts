@@ -1,7 +1,7 @@
 import type { AnkhTheme } from '../../theme/types';
-import { resolveTone, type ComponentTone } from './resolveTone';
 import type { FieldState } from './resolveFieldState';
 import type { InteractionState } from './resolveInteractiveState';
+import { type ComponentTone, resolveTone } from './resolveTone';
 
 export type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'soft';
 
@@ -99,7 +99,9 @@ export function resolveInputColors(
       backgroundColor: fieldState.readOnly
         ? theme.semantics.surface.subtle
         : theme.semantics.surface.default,
-      borderColor: fieldState.focused ? theme.semantics.danger.base : theme.semantics.danger.outline,
+      borderColor: fieldState.focused
+        ? theme.semantics.danger.base
+        : theme.semantics.danger.outline,
       contentColor: theme.semantics.content.default,
       placeholderColor: theme.semantics.content.muted,
     };

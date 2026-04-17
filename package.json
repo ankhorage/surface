@@ -39,10 +39,13 @@
   },
   "scripts": {
     "build": "rm -rf dist tsconfig.tsbuildinfo && bun x tsc -p tsconfig.json",
+    "changeset": "changeset",
+    "changeset:status": "changeset status --since=origin/main",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix --max-warnings=0",
     "format": "prettier --write .",
-    "test": "bun test src"
+    "test": "bun test src",
+    "version-packages": "changeset version"
   },
   "devDependencies": {
     "@ankhorage/devtools": "^1.0.0",

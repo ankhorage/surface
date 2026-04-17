@@ -9,7 +9,8 @@ import type { TabProps } from './types';
 
 export function Tab({ value, children, disabled = false, testID }: TabProps) {
   const { theme } = useTheme();
-  const { activeValue, registerTab, setActiveValue, setFocusedValue, unregisterTab } = useTabsContext();
+  const { activeValue, registerTab, setActiveValue, setFocusedValue, unregisterTab } =
+    useTabsContext();
   const pressableRef = React.useRef<React.ElementRef<typeof Pressable> | null>(null);
   const selected = activeValue === value;
 
@@ -17,7 +18,10 @@ export function Tab({ value, children, disabled = false, testID }: TabProps) {
     registerTab({
       disabled,
       focus: () => {
-        (pressableRef.current as unknown as { focus?: (() => void) | undefined })?.focus?.();
+        const focusable = pressableRef.current as unknown as {
+          focus?: (() => void) | undefined;
+        } | null;
+        focusable?.focus?.();
       },
       value,
     });

@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
+import { Box } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
 import { Text } from '../../primitives/text';
-import { Box } from '../../layout';
 import { useTheme } from '../../theme/ThemeContext';
 import type { ListItemProps } from './types';
 
@@ -52,12 +52,7 @@ export function ListItem({ onPress, disabled = false, testID, ...content }: List
   }
 
   return (
-    <ButtonBase
-      accessibilityRole="button"
-      disabled={disabled}
-      onPress={onPress}
-      testID={testID}
-    >
+    <ButtonBase accessibilityRole="button" disabled={disabled} onPress={onPress} testID={testID}>
       {(state) => (
         <Box
           style={{

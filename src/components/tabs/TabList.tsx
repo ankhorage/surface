@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Box } from '../../layout';
 import { useFocusManager } from '../../internal/focus/useFocusManager';
+import { Box } from '../../layout';
 import { useTabsContext } from './context';
 import { resolveNextTabValue } from './navigation';
 import type { TabListProps } from './types';
@@ -23,17 +23,7 @@ export function TabList({ children, testID }: TabListProps) {
         event.key === 'ArrowDown' ||
         event.key === 'Home' ||
         event.key === 'End'
-          ? resolveNextTabValue(
-              tabs,
-              focusedValue,
-              event.key as
-                | 'ArrowLeft'
-                | 'ArrowRight'
-                | 'ArrowUp'
-                | 'ArrowDown'
-                | 'Home'
-                | 'End',
-            )
+          ? resolveNextTabValue(tabs, focusedValue, event.key)
           : undefined;
 
       if (!nextValue) {

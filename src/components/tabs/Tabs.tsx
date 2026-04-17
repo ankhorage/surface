@@ -2,16 +2,10 @@ import React from 'react';
 
 import { useControllableState } from '../../internal/useControllableState';
 import { Box } from '../../layout';
-import { TabsContext, type TabRegistration } from './context';
+import { type TabRegistration, TabsContext } from './context';
 import type { TabsProps } from './types';
 
-export function Tabs({
-  children,
-  value,
-  defaultValue,
-  onValueChange,
-  testID,
-}: TabsProps) {
+export function Tabs({ children, value, defaultValue, onValueChange, testID }: TabsProps) {
   const [activeValue, setActiveValue] = useControllableState<string | undefined>({
     value,
     defaultValue,

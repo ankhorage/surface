@@ -12,13 +12,8 @@ export interface FocusScopeProps {
 
 export function FocusScope({ active, children, onEscape, testID }: FocusScopeProps) {
   const containerRef = React.useRef<View | null>(null);
-  const {
-    bindKeydown,
-    capturePreviousFocus,
-    cycleFocus,
-    focusFirst,
-    restorePreviousFocus,
-  } = useFocusManager();
+  const { bindKeydown, capturePreviousFocus, cycleFocus, focusFirst, restorePreviousFocus } =
+    useFocusManager();
 
   React.useEffect(() => {
     if (!active) {
@@ -46,7 +41,15 @@ export function FocusScope({ active, children, onEscape, testID }: FocusScopePro
       unbind();
       restorePreviousFocus();
     };
-  }, [active, bindKeydown, capturePreviousFocus, cycleFocus, focusFirst, onEscape, restorePreviousFocus]);
+  }, [
+    active,
+    bindKeydown,
+    capturePreviousFocus,
+    cycleFocus,
+    focusFirst,
+    onEscape,
+    restorePreviousFocus,
+  ]);
 
   return (
     <View

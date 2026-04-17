@@ -1,10 +1,6 @@
 import type { ViewStyle } from 'react-native';
 
-export function resolveFocusRingStyles(
-  color: string,
-  focused: boolean,
-  isWeb: boolean,
-): ViewStyle {
+export function resolveFocusRingStyles(color: string, focused: boolean, isWeb: boolean): ViewStyle {
   if (!focused || !isWeb) {
     return {};
   }

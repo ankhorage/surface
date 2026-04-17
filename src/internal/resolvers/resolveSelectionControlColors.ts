@@ -1,6 +1,6 @@
 import type { AnkhTheme } from '../../theme/types';
-import { resolveTone, type ComponentTone } from './resolveTone';
 import type { FieldState } from './resolveFieldState';
+import { type ComponentTone, resolveTone } from './resolveTone';
 
 export interface ResolvedSelectionControlColors {
   backgroundColor: string;
@@ -34,7 +34,9 @@ export function resolveSelectionControlColors(
 
   if (isMuted) {
     return {
-      backgroundColor: checked ? theme.semantics.neutral.surfaceActive : theme.semantics.surface.subtle,
+      backgroundColor: checked
+        ? theme.semantics.neutral.surfaceActive
+        : theme.semantics.surface.subtle,
       borderColor: theme.semantics.border.default,
       indicatorColor: checked ? theme.semantics.content.muted : 'transparent',
       labelColor: theme.semantics.content.muted,
@@ -69,7 +71,9 @@ export function resolveSelectionControlColors(
     backgroundColor: checked ? checkedBackgroundColor : uncheckedBackgroundColor,
     borderColor: checked ? semanticTone.base : uncheckedBorderColor,
     indicatorColor: checked ? semanticTone.onSolidText : 'transparent',
-    labelColor: isInteractiveReadOnly ? theme.semantics.content.muted : theme.semantics.content.default,
+    labelColor: isInteractiveReadOnly
+      ? theme.semantics.content.muted
+      : theme.semantics.content.default,
     trackColor: checked ? checkedTrackColor : uncheckedBorderColor,
     thumbColor: checked ? semanticTone.onSolidText : theme.semantics.surface.default,
     opacity: isInteractiveReadOnly ? 0.88 : 1,

@@ -1,11 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
-import {
-  resolveButtonColors,
-  resolveControlSize,
-  resolveIconSize,
-} from '../../internal/resolvers';
+import { resolveButtonColors, resolveControlSize, resolveIconSize } from '../../internal/resolvers';
 import { Box } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
 import { Icon } from '../../primitives/icon';

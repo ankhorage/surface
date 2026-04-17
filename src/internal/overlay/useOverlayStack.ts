@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { resolveOverlayZIndex, type OverlayLayer } from '../resolvers/resolveOverlayZIndex';
+import { type OverlayLayer, resolveOverlayZIndex } from '../resolvers/resolveOverlayZIndex';
 
 export interface OverlayEntry {
   id: string;

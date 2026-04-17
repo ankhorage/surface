@@ -1,14 +1,14 @@
 import React from 'react';
 import { Platform, Pressable, type PressableStateCallbackType } from 'react-native';
 
+import { useResponsiveRuntime } from '../../core/responsive';
 import {
+  type InteractionState,
   resolveFocusRingStyles,
   resolveInteractiveState,
-  type InteractionState,
 } from '../../internal/resolvers';
-import { useResponsiveRuntime } from '../../core/responsive';
-import { useTheme } from '../../theme/ThemeContext';
 import { resolveBoxStyles } from '../../layout/helpers';
+import { useTheme } from '../../theme/ThemeContext';
 import type { ButtonBaseProps } from './types';
 
 function getInteractionState(

@@ -6,13 +6,7 @@ import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { ToastProps } from './types';
 
-export function Toast({
-  title,
-  description,
-  tone = 'default',
-  onDismiss,
-  testID,
-}: ToastProps) {
+export function Toast({ title, description, tone = 'default', onDismiss, testID }: ToastProps) {
   const { theme } = useTheme();
   const toneColor =
     tone === 'success'

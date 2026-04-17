@@ -22,8 +22,11 @@ export function Field({
     invalid,
     readOnly,
   });
-  const labelTone =
-    fieldState.invalid ? 'danger' : fieldState.disabled || fieldState.readOnly ? 'muted' : 'default';
+  const labelTone = fieldState.invalid
+    ? 'danger'
+    : fieldState.disabled || fieldState.readOnly
+      ? 'muted'
+      : 'default';
 
   return (
     <Stack gap="xs" testID={testID}>

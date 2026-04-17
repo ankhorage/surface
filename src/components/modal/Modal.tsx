@@ -47,7 +47,11 @@ export function Modal({
           }}
           testID={testID ? `${testID}-backdrop` : undefined}
         />
-        <FocusScope active={visible} onEscape={onDismiss} testID={testID ? `${testID}-focus` : undefined}>
+        <FocusScope
+          active={visible}
+          onEscape={onDismiss}
+          testID={testID ? `${testID}-focus` : undefined}
+        >
           <Center
             p="l"
             style={{

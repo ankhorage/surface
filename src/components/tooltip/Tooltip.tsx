@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Pressable, View, type LayoutRectangle } from 'react-native';
+import { type LayoutRectangle, Platform, Pressable, View } from 'react-native';
 
 import { Portal } from '../../internal/overlay/Portal';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
@@ -72,11 +72,7 @@ export function Tooltip({
         : 0;
 
   return (
-    <View
-      collapsable={false}
-      ref={anchorRef}
-      testID={testID ? `${testID}-anchor` : undefined}
-    >
+    <View collapsable={false} ref={anchorRef} testID={testID ? `${testID}-anchor` : undefined}>
       <Pressable
         onBlur={hide}
         onFocus={show}

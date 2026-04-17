@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, View, type LayoutRectangle } from 'react-native';
+import { type LayoutRectangle, Pressable, View } from 'react-native';
 
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { useFocusManager } from '../../internal/focus/useFocusManager';
@@ -25,13 +25,7 @@ function measureNode(node: unknown, callback: (layout: LayoutRectangle) => void)
   });
 }
 
-export function Menu({
-  trigger,
-  items,
-  onDismiss,
-  closeOnSelect = true,
-  testID,
-}: MenuProps) {
+export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }: MenuProps) {
   const { theme } = useTheme();
   const { bindKeydown } = useFocusManager();
   const animation = resolveOverlayAnimation('menu');
@@ -58,7 +52,7 @@ export function Menu({
     }
 
     return bindKeydown((event) => {
-      const key = event.key;
+      const { key } = event;
       if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'Home' || key === 'End') {
         event.preventDefault();
         setActiveIndex((current) => resolveNextMenuIndex(items, current, key));
@@ -84,7 +78,10 @@ export function Menu({
 
   return (
     <View collapsable={false} ref={anchorRef}>
-      <ButtonBase onPress={open ? closeMenu : openMenu} testID={testID ? `${testID}-trigger` : undefined}>
+      <ButtonBase
+        onPress={open ? closeMenu : openMenu}
+        testID={testID ? `${testID}-trigger` : undefined}
+      >
         {trigger}
       </ButtonBase>
       <Portal layer="menu" visible={open && Boolean(layout)}>

@@ -138,11 +138,29 @@ Surface currently includes:
 - form composition components: `Field`, `HelperText`, `Label`
 - form controls: `TextInput`, `Textarea`, `Checkbox`, `Radio`, `Switch`
 - overlay and navigation components: `Modal`, `Drawer`, `Menu`, `Tabs`, `TabList`, `Tab`, `TabPanel`, `Toast`, `ToastProvider`, `Tooltip`
+- overlay hooks and helpers: `useToast`
 - theme creation and theme context
 - responsive utilities
 - generic font and translation bridges
 
 All public APIs are exported from the package root.
+
+## Development Workflow
+
+Surface uses [Changesets](https://github.com/changesets/changesets) for release intent tracking.
+When a change should result in a package release, add a changeset file before merging:
+
+```bash
+bun run changeset
+```
+
+You can inspect pending release state locally with:
+
+```bash
+bun run changeset:status
+```
+
+GitHub Actions CI runs lint, tests, build, and changeset validation on pull requests.
 
 ## Theming
 

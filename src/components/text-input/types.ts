@@ -7,17 +7,16 @@ import type {
 
 import type { ControlSize } from '../../internal/resolvers/resolveControlSize';
 
-export interface TextInputProps
-  extends Omit<
-    ReactNativeTextInputProps,
-    | 'defaultValue'
-    | 'editable'
-    | 'onChangeText'
-    | 'placeholderTextColor'
-    | 'style'
-    | 'testID'
-    | 'value'
-  > {
+export interface TextInputProps extends Omit<
+  ReactNativeTextInputProps,
+  | 'defaultValue'
+  | 'editable'
+  | 'onChangeText'
+  | 'placeholderTextColor'
+  | 'style'
+  | 'testID'
+  | 'value'
+> {
   value?: string;
   defaultValue?: string;
   onChangeText?: ((text: string) => void) | undefined;

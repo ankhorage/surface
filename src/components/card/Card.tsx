@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ButtonBase } from '../../primitives/button-base';
 import { Surface } from '../../layout';
+import { ButtonBase } from '../../primitives/button-base';
 import { useTheme } from '../../theme/ThemeContext';
 import type { CardProps } from './types';
 
@@ -17,11 +17,7 @@ function resolveCardStateBackground(
   },
 ) {
   if (variant === 'outline') {
-    return pressed
-      ? themeBackgrounds.active
-      : hovered
-        ? themeBackgrounds.hover
-        : 'transparent';
+    return pressed ? themeBackgrounds.active : hovered ? themeBackgrounds.hover : 'transparent';
   }
 
   if (variant === 'subtle') {
@@ -32,7 +28,11 @@ function resolveCardStateBackground(
         : themeBackgrounds.subtle;
   }
 
-  return pressed ? themeBackgrounds.active : hovered ? themeBackgrounds.hover : themeBackgrounds.base;
+  return pressed
+    ? themeBackgrounds.active
+    : hovered
+      ? themeBackgrounds.hover
+      : themeBackgrounds.base;
 }
 
 export function Card({
@@ -55,12 +55,7 @@ export function Card({
   }
 
   return (
-    <ButtonBase
-      accessibilityRole="button"
-      disabled={disabled}
-      onPress={onPress}
-      testID={testID}
-    >
+    <ButtonBase accessibilityRole="button" disabled={disabled} onPress={onPress} testID={testID}>
       {(state) => (
         <Surface
           {...props}

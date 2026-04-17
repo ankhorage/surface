@@ -39,14 +39,11 @@ export function ToastProvider({
     setToasts((current) => current.filter((toast) => toast.id !== id));
   }, []);
 
-  const showToast = React.useCallback(
-    (options: ToastOptions) => {
-      const id = options.id ?? `toast-${toastCounter++}`;
-      setToasts((current) => [...current, { ...options, id }]);
-      return id;
-    },
-    [],
-  );
+  const showToast = React.useCallback((options: ToastOptions) => {
+    const id = options.id ?? `toast-${toastCounter++}`;
+    setToasts((current) => [...current, { ...options, id }]);
+    return id;
+  }, []);
 
   React.useEffect(() => {
     toasts.forEach((toast) => {

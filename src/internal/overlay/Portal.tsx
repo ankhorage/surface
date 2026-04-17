@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useOverlayStack } from './useOverlayStack';
 import type { OverlayLayer } from '../resolvers/resolveOverlayZIndex';
+import { useOverlayStack } from './useOverlayStack';
 
 let portalCounter = 0;
 

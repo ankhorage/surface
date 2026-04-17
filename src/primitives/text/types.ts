@@ -1,14 +1,8 @@
 import type React from 'react';
 import type { TextStyle } from 'react-native';
 
-import type {
-  TextColorValue,
-  TextTone,
-} from '../../internal/resolvers/resolveTextColor';
-import type {
-  TextVariant,
-  TextWeight,
-} from '../../internal/resolvers/resolveTextStyles';
+import type { TextColorValue, TextTone } from '../../internal/resolvers/resolveTextColor';
+import type { TextVariant, TextWeight } from '../../internal/resolvers/resolveTextStyles';
 
 export interface TextProps {
   children?: React.ReactNode;

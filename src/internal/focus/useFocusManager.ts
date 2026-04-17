@@ -21,8 +21,7 @@ interface WebDocumentLike {
   removeEventListener: (type: 'keydown', listener: (event: WebKeyboardEventLike) => void) => void;
 }
 
-const FOCUSABLE_SELECTOR =
-  'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
+const FOCUSABLE_SELECTOR = 'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
 
 function getWebDocument(): WebDocumentLike | null {
   const maybeDocument = (globalThis as { document?: unknown }).document;
@@ -92,23 +91,20 @@ export function useFocusManager() {
     focusableElements[nextIndex]?.focus();
   }, []);
 
-  const bindKeydown = React.useCallback(
-    (listener: (event: WebKeyboardEventLike) => void) => {
-      const documentRef = getWebDocument();
-      if (!documentRef) {
-        return () => {
-          /* no-op */
-        };
-      }
-
-      documentRef.addEventListener('keydown', listener);
-
+  const bindKeydown = React.useCallback((listener: (event: WebKeyboardEventLike) => void) => {
+    const documentRef = getWebDocument();
+    if (!documentRef) {
       return () => {
-        documentRef.removeEventListener('keydown', listener);
+        /* no-op */
       };
-    },
-    [],
-  );
+    }
+
+    documentRef.addEventListener('keydown', listener);
+
+    return () => {
+      documentRef.removeEventListener('keydown', listener);
+    };
+  }, []);
 
   return {
     bindKeydown,

@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Platform,
-  TextInput as ReactNativeTextInput,
-  View,
-} from 'react-native';
+import { Platform, TextInput as ReactNativeTextInput, View } from 'react-native';
 
 import {
   resolveControlSize,
@@ -85,7 +81,9 @@ export function TextInput({
         resolveFocusRingStyles(theme.semantics.border.focus, focused, Platform.OS === 'web'),
       ]}
     >
-      {leadingAccessory ? <View style={{ marginRight: theme.spacing.s }}>{leadingAccessory}</View> : null}
+      {leadingAccessory ? (
+        <View style={{ marginRight: theme.spacing.s }}>{leadingAccessory}</View>
+      ) : null}
       <ReactNativeTextInput
         {...props}
         defaultValue={defaultValue}
@@ -110,7 +108,9 @@ export function TextInput({
         testID={testID}
         value={value}
       />
-      {trailingAccessory ? <View style={{ marginLeft: theme.spacing.s }}>{trailingAccessory}</View> : null}
+      {trailingAccessory ? (
+        <View style={{ marginLeft: theme.spacing.s }}>{trailingAccessory}</View>
+      ) : null}
     </View>
   );
 }

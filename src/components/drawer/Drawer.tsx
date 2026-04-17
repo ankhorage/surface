@@ -48,7 +48,11 @@ export function Drawer({
           }}
           testID={testID ? `${testID}-backdrop` : undefined}
         />
-        <FocusScope active={visible} onEscape={onDismiss} testID={testID ? `${testID}-focus` : undefined}>
+        <FocusScope
+          active={visible}
+          onEscape={onDismiss}
+          testID={testID ? `${testID}-focus` : undefined}
+        >
           <Box
             pointerEvents="box-none"
             style={{

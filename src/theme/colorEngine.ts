@@ -11,8 +11,8 @@ import type {
   RoleSemantics,
   SurfaceSemantics,
   SystemTone,
-  ThemeSemantics,
   ThemeConfig,
+  ThemeSemantics,
 } from './types';
 
 useMode(modeOklch);

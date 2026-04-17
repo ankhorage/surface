@@ -3,10 +3,10 @@ import { View } from 'react-native';
 
 import {
   createOverlayEntry,
-  OverlayStackContext,
-  sortOverlayEntries,
   type OverlayDescriptor,
   type OverlayEntry,
+  OverlayStackContext,
+  sortOverlayEntries,
 } from './useOverlayStack';
 
 export function OverlayProvider({ children }: { children: React.ReactNode }) {
@@ -16,19 +16,13 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
   const setOverlay = React.useCallback((id: string, descriptor: OverlayDescriptor) => {
     setOverlays((current) => {
       const existing = current.find((entry) => entry.id === id);
-      const nextEntry = createOverlayEntry(
-        id,
-        existing?.order ?? orderRef.current++,
-        descriptor,
-      );
+      const nextEntry = createOverlayEntry(id, existing?.order ?? orderRef.current++, descriptor);
 
       if (!existing) {
         return sortOverlayEntries([...current, nextEntry]);
       }
 
-      return sortOverlayEntries(
-        current.map((entry) => (entry.id === id ? nextEntry : entry)),
-      );
+      return sortOverlayEntries(current.map((entry) => (entry.id === id ? nextEntry : entry)));
     });
   }, []);
 

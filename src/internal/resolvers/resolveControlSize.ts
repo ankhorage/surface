@@ -2,19 +2,16 @@ import type { AnkhTheme } from '../../theme/types';
 
 export type ControlSize = 's' | 'm' | 'l';
 
-export type ResolvedControlSize = {
+export interface ResolvedControlSize {
   minHeight: number;
   paddingHorizontal: number;
   paddingVertical: number;
   borderRadius: number;
   textVariant: 'bodySmall' | 'body';
   iconSize: number;
-};
+}
 
-export function resolveControlSize(
-  theme: AnkhTheme,
-  size: ControlSize = 'm',
-): ResolvedControlSize {
+export function resolveControlSize(theme: AnkhTheme, size: ControlSize = 'm'): ResolvedControlSize {
   switch (size) {
     case 's':
       return {

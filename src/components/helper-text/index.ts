@@ -1,2 +1,2 @@
-export type { HelperTextProps } from './types';
 export { HelperText } from './HelperText';
+export type { HelperTextProps } from './types';

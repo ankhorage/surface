@@ -1,6 +1,6 @@
 import type { TextStyle } from 'react-native';
 
-import type { FontWeight, AnkhTheme } from '../../theme/types';
+import type { AnkhTheme, FontWeight } from '../../theme/types';
 
 export type TextVariant = 'body' | 'bodySmall' | 'caption' | 'label' | 'mono';
 export type TextWeight = keyof AnkhTheme['typography']['weights'] | FontWeight;
@@ -21,9 +21,8 @@ export interface ResolveTextStyleOptions {
 
 function resolveWeight(theme: AnkhTheme, value: TextWeight | undefined): FontWeight {
   if (!value) return theme.typography.weights.regular;
-  const tokenValue = theme.typography.weights[value as keyof AnkhTheme['typography']['weights']];
-  if (tokenValue) {
-    return tokenValue;
+  if (value in theme.typography.weights) {
+    return theme.typography.weights[value as keyof AnkhTheme['typography']['weights']];
   }
   return value as FontWeight;
 }

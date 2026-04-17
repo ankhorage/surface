@@ -1,9 +1,9 @@
-export type InteractionState = {
+export interface InteractionState {
   pressed: boolean;
   hovered: boolean;
   focused: boolean;
   disabled: boolean;
-};
+}
 
 export function resolveInteractiveState(input: Partial<InteractionState>): InteractionState {
   return {

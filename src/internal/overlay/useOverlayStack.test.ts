@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test';
 
-import { sortOverlayEntries, type OverlayEntry } from './useOverlayStack';
+import { type OverlayEntry, sortOverlayEntries } from './useOverlayStack';
 
 describe('sortOverlayEntries', () => {
   it('sorts overlays by z-index then registration order', () => {
