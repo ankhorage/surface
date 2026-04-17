@@ -1,11 +1,5 @@
 # @ankhorage/surface
 
-## 0.1.1
-
-### Patch Changes
-
-- Stabilize the public package surface for Phase 4 by rewriting the adoption docs, broadening shared tone and variant coverage, tightening read-only control semantics, hardening menu and tab accessibility behavior, and adding regression tests for exports and state contracts.
-
 ## 0.1.0
 
 ### Minor Changes
