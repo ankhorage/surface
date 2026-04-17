@@ -6,7 +6,7 @@ import { Box, type BoxProps } from './Box';
 
 export type SurfaceVariant = 'default' | 'subtle' | 'raised' | 'outline';
 
-export interface SurfaceProps extends BoxProps {
+export interface SurfaceProps extends Omit<BoxProps, 'bg' | 'borderColor' | 'borderWidth'> {
   variant?: SurfaceVariant;
 }
 
@@ -53,7 +53,11 @@ export function Surface({ variant = 'default', radius = 'm', style, ...props }: 
   const { theme } = useTheme();
 
   const backgroundColor =
-    variant === 'subtle' ? theme.semantics.surface.subtle : theme.semantics.surface.default;
+    variant === 'subtle'
+      ? theme.semantics.surface.subtle
+      : variant === 'raised'
+        ? theme.semantics.surface.raised
+        : theme.semantics.surface.default;
   const borderColor = theme.semantics.border.default;
 
   return (

@@ -12,13 +12,15 @@ function ListItemContent({
   description,
   leading,
   trailing,
-}: Omit<ListItemProps, 'disabled' | 'onPress' | 'testID'>) {
+  testID,
+}: Omit<ListItemProps, 'disabled' | 'onPress'>) {
   const { theme } = useTheme();
 
   return (
     <Box
       px="m"
       py="m"
+      testID={testID}
       style={{
         flexDirection: 'row',
         alignItems: 'center',
@@ -46,7 +48,7 @@ export function ListItem({ onPress, disabled = false, testID, ...content }: List
   const { theme } = useTheme();
 
   if (!onPress) {
-    return <ListItemContent {...content} />;
+    return <ListItemContent {...content} testID={testID} />;
   }
 
   return (
