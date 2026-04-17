@@ -16,14 +16,10 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
   const setOverlay = React.useCallback((id: string, descriptor: OverlayDescriptor) => {
     setOverlays((current) => {
       const existing = current.find((entry) => entry.id === id);
-      const sameLayerCount = current.filter(
-        (entry) => entry.layer === descriptor.layer && entry.id !== id,
-      ).length;
       const nextEntry = createOverlayEntry(
         id,
         existing?.order ?? orderRef.current++,
         descriptor,
-        sameLayerCount,
       );
 
       if (!existing) {

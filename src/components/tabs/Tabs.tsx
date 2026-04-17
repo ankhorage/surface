@@ -26,24 +26,26 @@ export function Tabs({
 
   const registerTab = React.useCallback((tab: TabRegistration) => {
     setTabs((current) => {
-      const nextTabs = current.some((entry) => entry.value === tab.value)
+      return current.some((entry) => entry.value === tab.value)
         ? current.map((entry) => (entry.value === tab.value ? tab : entry))
         : [...current, tab];
-
-      if (!activeValue) {
-        const firstEnabledTab = nextTabs.find((entry) => !entry.disabled);
-        if (firstEnabledTab) {
-          setActiveValue(firstEnabledTab.value);
-        }
-      }
-
-      return nextTabs;
     });
-  }, [activeValue, setActiveValue]);
+  }, []);
 
   const unregisterTab = React.useCallback((valueToRemove: string) => {
     setTabs((current) => current.filter((entry) => entry.value !== valueToRemove));
   }, []);
+
+  React.useEffect(() => {
+    if (activeValue !== undefined) {
+      return;
+    }
+
+    const firstEnabledTab = tabs.find((entry) => !entry.disabled);
+    if (firstEnabledTab) {
+      setActiveValue(firstEnabledTab.value);
+    }
+  }, [activeValue, setActiveValue, tabs]);
 
   const contextValue = React.useMemo(
     () => ({

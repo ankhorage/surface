@@ -1,21 +1,34 @@
 export function resolveNextMenuIndex(
-  itemCount: number,
+  items: Array<{ disabled?: boolean }>,
   currentIndex: number,
   key: 'ArrowDown' | 'ArrowUp' | 'Home' | 'End',
 ): number {
-  if (itemCount <= 0) {
+  const enabledIndexes = items.reduce<number[]>((indexes, item, index) => {
+    if (!item.disabled) {
+      indexes.push(index);
+    }
+    return indexes;
+  }, []);
+
+  if (enabledIndexes.length === 0) {
     return -1;
   }
 
   if (key === 'Home') {
-    return 0;
+    return enabledIndexes[0] ?? -1;
   }
 
   if (key === 'End') {
-    return itemCount - 1;
+    return enabledIndexes[enabledIndexes.length - 1] ?? -1;
   }
 
-  return key === 'ArrowUp'
-    ? (currentIndex - 1 + itemCount) % itemCount
-    : (currentIndex + 1) % itemCount;
+  const activeEnabledIndex = enabledIndexes.indexOf(currentIndex);
+  const nextEnabledIndex =
+    activeEnabledIndex === -1
+      ? 0
+      : key === 'ArrowUp'
+        ? (activeEnabledIndex - 1 + enabledIndexes.length) % enabledIndexes.length
+        : (activeEnabledIndex + 1) % enabledIndexes.length;
+
+  return enabledIndexes[nextEnabledIndex] ?? -1;
 }

@@ -22,7 +22,20 @@ export interface OverlayStackRuntime {
 }
 
 export function sortOverlayEntries(entries: OverlayEntry[]): OverlayEntry[] {
-  return [...entries].sort((left, right) =>
+  const perLayerCounts: Partial<Record<OverlayLayer, number>> = {};
+  const normalizedEntries = [...entries]
+    .sort((left, right) => left.order - right.order)
+    .map((entry) => {
+      const stackIndex = perLayerCounts[entry.layer] ?? 0;
+      perLayerCounts[entry.layer] = stackIndex + 1;
+
+      return {
+        ...entry,
+        zIndex: resolveOverlayZIndex(entry.layer, stackIndex),
+      };
+    });
+
+  return normalizedEntries.sort((left, right) =>
     left.zIndex === right.zIndex ? left.order - right.order : left.zIndex - right.zIndex,
   );
 }
@@ -37,13 +50,12 @@ export function createOverlayEntry(
   id: string,
   order: number,
   descriptor: OverlayDescriptor,
-  stackIndex: number,
 ): OverlayEntry {
   return {
     id,
     layer: descriptor.layer,
     node: descriptor.node,
     order,
-    zIndex: resolveOverlayZIndex(descriptor.layer, stackIndex),
+    zIndex: resolveOverlayZIndex(descriptor.layer, 0),
   };
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Pressable } from 'react-native';
 
 import { Box, Inline, Surface } from '../../layout';
 import { Text } from '../../primitives/text';
@@ -44,9 +45,14 @@ export function Toast({
           {description ? <Text tone="muted">{description}</Text> : null}
         </Box>
         {onDismiss ? (
-          <Text color={toneColor} testID={testID ? `${testID}-dismiss` : undefined}>
-            ×
-          </Text>
+          <Pressable
+            accessibilityLabel="Dismiss notification"
+            accessibilityRole="button"
+            onPress={onDismiss}
+            testID={testID ? `${testID}-dismiss` : undefined}
+          >
+            <Text color={toneColor}>×</Text>
+          </Pressable>
         ) : null}
       </Inline>
     </Surface>

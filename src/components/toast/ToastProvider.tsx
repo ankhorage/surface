@@ -28,8 +28,14 @@ export function ToastProvider({
 }) {
   const [toasts, setToasts] = React.useState<ToastEntry[]>([]);
   const animation = resolveOverlayAnimation('toast');
+  const timersRef = React.useRef(new Map<string, ReturnType<typeof setTimeout>>());
 
   const dismissToast = React.useCallback((id: string) => {
+    const timer = timersRef.current.get(id);
+    if (timer) {
+      clearTimeout(timer);
+      timersRef.current.delete(id);
+    }
     setToasts((current) => current.filter((toast) => toast.id !== id));
   }, []);
 
@@ -43,16 +49,33 @@ export function ToastProvider({
   );
 
   React.useEffect(() => {
-    const timers = toasts.map((toast) =>
-      setTimeout(() => {
-        dismissToast(toast.id);
-      }, toast.duration ?? defaultDuration),
-    );
+    toasts.forEach((toast) => {
+      if (timersRef.current.has(toast.id)) {
+        return;
+      }
 
-    return () => {
-      timers.forEach((timer) => clearTimeout(timer));
-    };
+      const timer = setTimeout(() => {
+        dismissToast(toast.id);
+      }, toast.duration ?? defaultDuration);
+
+      timersRef.current.set(toast.id, timer);
+    });
+
+    const activeToastIds = new Set(toasts.map((toast) => toast.id));
+    timersRef.current.forEach((timer, id) => {
+      if (!activeToastIds.has(id)) {
+        clearTimeout(timer);
+        timersRef.current.delete(id);
+      }
+    });
   }, [defaultDuration, dismissToast, toasts]);
+
+  React.useEffect(() => {
+    return () => {
+      timersRef.current.forEach((timer) => clearTimeout(timer));
+      timersRef.current.clear();
+    };
+  }, []);
 
   return (
     <ToastContext.Provider value={{ dismissToast, showToast }}>

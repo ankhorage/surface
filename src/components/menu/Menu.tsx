@@ -40,11 +40,6 @@ export function Menu({
   const [layout, setLayout] = React.useState<LayoutRectangle | null>(null);
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const enabledItems = React.useMemo(
-    () => items.filter((item) => !item.disabled),
-    [items],
-  );
-
   const closeMenu = React.useCallback(() => {
     setOpen(false);
     onDismiss?.();
@@ -66,7 +61,7 @@ export function Menu({
       const key = event.key;
       if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'Home' || key === 'End') {
         event.preventDefault();
-        setActiveIndex((current) => resolveNextMenuIndex(items.length, current, key));
+        setActiveIndex((current) => resolveNextMenuIndex(items, current, key));
       }
 
       if (event.key === 'Enter') {
