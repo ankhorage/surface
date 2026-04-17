@@ -1,12 +1,17 @@
 import { formatHex, modeOklch, oklch, useMode } from 'culori';
 
 import type {
+  ActionSemantics,
+  BorderSemantics,
   ColorHarmony,
   ColorScale,
   ColorTone,
+  ContentSemantics,
   NeutralSemantics,
   RoleSemantics,
+  SurfaceSemantics,
   SystemTone,
+  ThemeSemantics,
   ThemeConfig,
 } from './types';
 
@@ -237,13 +242,7 @@ export function generatePalette(
 ): {
   colors: Record<string, string>;
   scales: Record<string, ColorScale>;
-  semantics: {
-    neutral: NeutralSemantics;
-    brand: RoleSemantics;
-    secondary: RoleSemantics;
-    accent: RoleSemantics;
-    highlight: RoleSemantics;
-  };
+  semantics: ThemeSemantics;
 } {
   const modeConfig = mode === 'dark' ? config.dark : config.light;
   const { primaryColor, harmony, systemTone } = modeConfig;
@@ -329,6 +328,24 @@ export function generatePalette(
     c: highlightChroma,
     h: hHue,
   };
+  const dangerBase: OklchColor = {
+    mode: 'oklch',
+    l: 0.6,
+    c: 0.2,
+    h: 25,
+  };
+  const successBase: OklchColor = {
+    mode: 'oklch',
+    l: 0.6,
+    c: 0.2,
+    h: 145,
+  };
+  const warningBase: OklchColor = {
+    mode: 'oklch',
+    l: 0.75,
+    c: 0.15,
+    h: 85,
+  };
 
   const neutralBase: OklchColor =
     surfaceChroma === 0
@@ -343,6 +360,9 @@ export function generatePalette(
     accent: generateColorScale(accentBase, isDark),
     highlight: generateColorScale(highlightBase, isDark),
     neutral: generateColorScale(neutralBase, isDark),
+    danger: generateColorScale(dangerBase, isDark),
+    success: generateColorScale(successBase, isDark),
+    warning: generateColorScale(warningBase, isDark),
   };
 
   // 5. Mappings
@@ -366,12 +386,7 @@ export function generatePalette(
     textSubtle: getStep(scale, steps.textSubtle),
   });
 
-  const getColorMapping = (
-    scale: ColorScale,
-    neutralScale: ColorScale,
-    _tone: ColorTone,
-  ): RoleSemantics => {
-    void _tone;
+  const getColorMapping = (scale: ColorScale, neutralScale: ColorScale): RoleSemantics => {
     const solid = getStep(scale, steps.solid);
     const softChromaLimit = 0.08;
 
@@ -398,6 +413,11 @@ export function generatePalette(
   };
 
   const neutral = getNeutralMapping(scales.neutral);
+  const brand = getColorMapping(scales.primary, scales.neutral);
+  const neutralAction = getColorMapping(scales.neutral, scales.neutral);
+  const danger = getColorMapping(scales.danger, scales.neutral);
+  const success = getColorMapping(scales.success, scales.neutral);
+  const warning = getColorMapping(scales.warning, scales.neutral);
 
   const colors: Record<string, string> = {
     primary: getStep(scales.primary, steps.solid),
@@ -409,9 +429,34 @@ export function generatePalette(
     text: neutral.text,
     textSecondary: neutral.textMuted,
     border: neutral.border,
-    error: formatHex({ mode: 'oklch', l: 0.6, c: 0.2, h: 25 } as OklchColor),
-    success: formatHex({ mode: 'oklch', l: 0.6, c: 0.2, h: 145 } as OklchColor),
-    warning: formatHex({ mode: 'oklch', l: 0.75, c: 0.15, h: 85 } as OklchColor),
+    error: getStep(scales.danger, steps.solid),
+    success: getStep(scales.success, steps.solid),
+    warning: getStep(scales.warning, steps.solid),
+  };
+
+  const surface: SurfaceSemantics = {
+    default: neutral.surface,
+    subtle: neutral.bgSubtle,
+    raised: neutral.surface,
+  };
+
+  const content: ContentSemantics = {
+    default: neutral.text,
+    muted: neutral.textMuted,
+    subtle: neutral.textSubtle,
+    inverse: brand.onSolidText,
+  };
+
+  const border: BorderSemantics = {
+    default: neutral.border,
+    strong: neutral.borderStrong,
+    focus: brand.outline,
+  };
+
+  const action: ActionSemantics = {
+    primary: brand,
+    neutral: neutralAction,
+    danger,
   };
 
   return {
@@ -419,10 +464,17 @@ export function generatePalette(
     scales,
     semantics: {
       neutral,
-      brand: getColorMapping(scales.primary, scales.neutral, toneMap.primary),
-      secondary: getColorMapping(scales.secondary, scales.neutral, toneMap.secondary),
-      accent: getColorMapping(scales.accent, scales.neutral, toneMap.accent),
-      highlight: getColorMapping(scales.highlight, scales.neutral, toneMap.highlight),
+      brand,
+      secondary: getColorMapping(scales.secondary, scales.neutral),
+      accent: getColorMapping(scales.accent, scales.neutral),
+      highlight: getColorMapping(scales.highlight, scales.neutral),
+      danger,
+      success,
+      warning,
+      surface,
+      content,
+      border,
+      action,
     },
   };
 }

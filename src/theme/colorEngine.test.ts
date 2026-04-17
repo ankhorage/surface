@@ -34,6 +34,11 @@ describe('colorEngine', () => {
     expect(semantics.neutral.bgSubtle).toBeDefined();
     expect(semantics.brand.onSolidText).toBeDefined();
     expect(semantics.brand.softBg).toBeDefined();
+    expect(semantics.surface.default).toBe(semantics.neutral.surface);
+    expect(semantics.content.muted).toBe(semantics.neutral.textMuted);
+    expect(semantics.border.focus).toBe(semantics.brand.outline);
+    expect(semantics.action.primary.base).toBe(semantics.brand.base);
+    expect(semantics.action.danger.base).toBe(semantics.danger.base);
 
     // Verify scale coverage
     const primaryScale = scales.primary;
@@ -88,6 +93,7 @@ describe('colorEngine', () => {
     const bg = oklch(colors.background);
     expect(bg?.l).toBeLessThan(0.2); // Should be dark
     expect(colors.background).toBe(semantics.neutral.bg);
+    expect(semantics.content.inverse).toBe(semantics.brand.onSolidText);
   });
 
   it('should fall back to a default color if primaryColor is invalid', () => {

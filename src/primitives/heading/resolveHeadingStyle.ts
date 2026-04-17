@@ -1,5 +1,7 @@
 import type { TextStyle } from 'react-native';
 
+import { resolveTextColor } from '../../internal/resolvers/resolveTextColor';
+import { resolveTextStyles } from '../../internal/resolvers/resolveTextStyles';
 import type { AnkhTheme } from '../../theme/types';
 import type { HeadingLevel, HeadingProps } from './types';
 
@@ -8,24 +10,8 @@ export function resolveHeadingTextStyle(
   level: HeadingLevel,
   align?: HeadingProps['align'],
 ): TextStyle {
-  const typography = theme.typography.headings[level];
-  const resolvedWeight = theme.typography.weights[typography.weight];
-  const textStyle: TextStyle = {
-    fontSize: typography.size,
-    lineHeight: typography.lineHeight,
-    fontWeight: resolvedWeight,
-    color: theme.colors.text,
-    elevation: 0,
+  return {
+    ...resolveTextStyles(theme, { align, level }),
+    color: resolveTextColor(theme, 'default'),
   };
-
-  if (align) {
-    textStyle.textAlign = align;
-  }
-
-  const fontFamily = theme.typography.fonts.normal[resolvedWeight];
-  if (fontFamily) {
-    textStyle.fontFamily = fontFamily;
-  }
-
-  return textStyle;
 }
