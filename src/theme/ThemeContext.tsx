@@ -2,6 +2,7 @@ import React, { createContext, useContext, useMemo } from 'react';
 
 import { useFontContext } from '../context/FontContext';
 import { ResponsiveProvider } from '../core/responsive/ResponsiveProvider';
+import { OverlayProvider } from '../internal/overlay/OverlayProvider';
 import { isDeepEqual } from '../utils/deepEqual';
 import { deepMerge } from '../utils/deepMerge';
 import { createTheme } from './createTheme';
@@ -72,7 +73,9 @@ export const ThemeProvider = ({
 
   return (
     <ResponsiveProvider>
-      <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+      <ThemeContext.Provider value={value}>
+        <OverlayProvider>{children}</OverlayProvider>
+      </ThemeContext.Provider>
     </ResponsiveProvider>
   );
 };

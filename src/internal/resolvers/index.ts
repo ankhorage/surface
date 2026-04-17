@@ -5,6 +5,8 @@ export * from './resolveIndicatorSize';
 export * from './resolveIconSize';
 export * from './resolveInteractiveColors';
 export * from './resolveInteractiveState';
+export * from './resolveOverlayAnimation';
+export * from './resolveOverlayZIndex';
 export * from './resolveSelectionControlColors';
 export * from './resolveTextColor';
 export * from './resolveTextStyles';

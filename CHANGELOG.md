@@ -11,6 +11,9 @@
 - Add the Phase-2 form and control layer, including unified field-state and selection-control
   resolvers, form composition primitives (`Field`, `Label`, `HelperText`), `Textarea`, and the
   selection controls `Checkbox`, `Radio`, and `Switch`.
+- Add the Phase-3 overlay and navigation layer, including portal and overlay-stack
+  infrastructure, centralized focus management, and the new components `Modal`, `Drawer`,
+  `Tabs`, `Toast`, `Tooltip`, and `Menu`.
 
 ## 0.0.2
 
