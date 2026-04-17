@@ -13,7 +13,7 @@ export interface IconButtonProps extends Omit<
     provider?: IconProps['provider'];
   };
   accessibilityLabel: string;
-  variant?: Exclude<ButtonVariant, 'soft'>;
-  tone?: Extract<ComponentTone, 'primary' | 'neutral' | 'danger'>;
+  variant?: ButtonVariant;
+  tone?: ComponentTone;
   size?: ControlSize;
 }

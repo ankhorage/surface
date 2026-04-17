@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useControllableState } from '../../internal/useControllableState';
 import { Box } from '../../layout';
+import { getTabId as resolveTabId, getTabPanelId as resolveTabPanelId } from './a11y';
 import { type TabRegistration, TabsContext } from './context';
 import type { TabsProps } from './types';
 
@@ -45,6 +46,8 @@ export function Tabs({ children, value, defaultValue, onValueChange, testID }: T
     () => ({
       activeValue,
       focusedValue,
+      getPanelId: (tabValue: string) => resolveTabPanelId(testID, tabValue),
+      getTabId: (tabValue: string) => resolveTabId(testID, tabValue),
       registerTab,
       setActiveValue: (nextValue: string) => {
         setActiveValue(nextValue);
@@ -53,7 +56,7 @@ export function Tabs({ children, value, defaultValue, onValueChange, testID }: T
       tabs,
       unregisterTab,
     }),
-    [activeValue, focusedValue, registerTab, setActiveValue, tabs, unregisterTab],
+    [activeValue, focusedValue, registerTab, setActiveValue, tabs, testID, unregisterTab],
   );
 
   return (

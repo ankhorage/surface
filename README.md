@@ -1,39 +1,34 @@
 # @ankhorage/surface
 
-A cross-platform UI foundation for **React Native + Web**.
+Stable UI foundation for React Native and React Native Web.
 
-Build consistent, themeable apps with:
-- layout primitives
-- design tokens & theming
-- responsive helpers
-- accessible components
-- overlay + interaction systems
+Surface gives application packages a consistent layer for layout, typography, theming, forms, and overlays without turning the foundation into a full product UI kit. It is intended to be the reusable base beneath ZORA and other RN/RN-web packages.
 
----
+## Why Surface?
 
-## Why use this?
+- Cross-platform primitives and components with one API for React Native and React Native Web.
+- Semantic theming instead of ad hoc component colors.
+- Shared interaction, field-state, and overlay patterns.
+- Small but complete foundation layer: enough to build on, not a product-pattern kit.
 
-React Native gives you primitives.  
-Surface gives you **a system**.
-
-- consistent spacing, typography, and colors
-- unified interaction states (hover, press, focus)
-- works across native + web
-- no design-system setup required
-- no runtime / no-code abstractions
-
----
-
-## Quick start
+## Install
 
 ```bash
 bun add @ankhorage/surface @ankhorage/contracts
 ```
 
-Wrap your app:
+Peer dependencies:
+
+- `react`
+- `react-native`
+- `@expo/vector-icons` for icon rendering
+- `expo-font` when using runtime font registration
+
+## Quick Start
 
 ```tsx
-import { ThemeProvider } from '@ankhorage/surface'
+import React from 'react';
+import { Button, Stack, Text, ThemeProvider } from '@ankhorage/surface';
 
 const themeConfig = {
   id: 'app',
@@ -48,142 +43,153 @@ const themeConfig = {
     harmony: 'monochromatic',
     systemTone: 'neutral',
   },
-}
+};
 
-export default function App() {
+export function App() {
   return (
     <ThemeProvider initialConfig={themeConfig}>
-      <Main />
+      <Stack gap="m" p="l">
+        <Text variant="body">Surface is ready.</Text>
+        <Button>Continue</Button>
+      </Stack>
     </ThemeProvider>
-  )
+  );
 }
 ```
 
-Use components:
+## Real-World Example
 
 ```tsx
-import { Stack, Text, Button, Card, TextInput } from '@ankhorage/surface'
+import React from 'react';
+import {
+  Button,
+  Field,
+  HelperText,
+  Modal,
+  Stack,
+  Text,
+  TextInput,
+  ThemeProvider,
+} from '@ankhorage/surface';
 
-export function Example() {
+export function SignInCard() {
   return (
-    <Stack gap="m">
-      <Text variant="body">Welcome</Text>
+    <ThemeProvider initialConfig={themeConfig}>
+      <Stack gap="m" p="l">
+        <Field helperText="We only use this for sign-in." label="Email">
+          <TextInput autoCapitalize="none" keyboardType="email-address" />
+        </Field>
 
-      <TextInput placeholder="Email" />
+        <Field errorText="Password is required." invalid label="Password">
+          <TextInput secureTextEntry />
+        </Field>
 
-      <Button tone="primary">Sign in</Button>
+        <Button fullWidth>Sign in</Button>
 
-      <Card>
-        <Text variant="bodySmall">Content</Text>
-      </Card>
-    </Stack>
-  )
+        <Modal visible={false}>
+          <Text variant="body">Overlay content uses the same theme + spacing system.</Text>
+        </Modal>
+
+        <HelperText tone="muted">
+          Forms, controls, and overlays are meant to compose without extra glue code.
+        </HelperText>
+      </Stack>
+    </ThemeProvider>
+  );
 }
 ```
 
----
+## Included APIs
 
-## What you get
+### Providers and theme
+
+- `ThemeProvider`, `useTheme`, `useThemeConfig`, `useThemeMode`
+- `FontProvider`, `useFontContext`
+- `TranslationProvider`, `useTranslationContext`
+- `createTheme`, `resolveToken`
+
+### Responsive helpers
+
+- `ResponsiveProvider`, `useResponsiveRuntime`, `useBreakpoint`
+- `BREAKPOINTS`, `BREAKPOINT_ORDER`, `getBreakpointFromWidth`, `resolveResponsive`
 
 ### Layout
-- `Box`, `Stack`, `Inline`, `Grid`, `Container`
-- `Spacer`, `Divider`, `Center`, `Surface`
 
-### Typography
-- `Text`, `Heading`
+- `Box`, `Surface`
+- `Stack`, `Inline`, `Grid`, `Template`
+- `Container`, `Center`, `Divider`, `Spacer`, `Show`
 
-### Actions
+### Typography and primitives
+
+- `Text`, `Heading`, `Icon`, `ButtonBase`
+
+### Actions and display
+
 - `Button`, `IconButton`
-
-### Data / display
 - `Card`, `Badge`, `ListItem`
 
-### Forms
-- `TextInput`, `Textarea`
+### Forms and controls
+
 - `Field`, `Label`, `HelperText`
+- `TextInput`, `Textarea`
 - `Checkbox`, `Radio`, `Switch`
 
-### Overlays
-- `Modal`, `Drawer`
-- `Tabs`, `Toast`
-- `Tooltip`, `Menu`
+### Overlays and navigation
 
----
+- `Modal`, `Drawer`, `Tooltip`, `Menu`
+- `Tabs`, `TabList`, `Tab`, `TabPanel`
+- `ToastProvider`, `Toast`, `useToast`
 
-## Core ideas
+### Utilities
 
-### 1. Theme-driven
-Everything uses semantic tokens:
+- `deepMerge`, `isDeepEqual`
 
-```tsx
-<Button tone="primary" variant="solid" />
-```
+## Docs-Lite Examples
 
-No hardcoded colors.
+Small usage references live in
+[docs/examples.md](https://github.com/ankhorage/surface/blob/main/docs/examples.md):
 
----
+- provider shell
+- form composition
+- modal and drawer composition
+- tabs and menu usage
+- checkbox, radio, and switch usage
+- theme override example
 
-### 2. Consistent states
+## Scope Boundary
 
-All interactive components share:
+Surface is for reusable foundation concerns:
 
-- hover (web)
-- press
-- focus-visible
-- disabled
+- layout primitives
+- text and icon primitives
+- semantic tokens and theming
+- responsive helpers
+- interaction primitives
+- form controls
+- overlays and navigation primitives
 
-No reimplementation per component.
+Surface is not for ready-made product patterns:
 
----
+- auth flows
+- app shells and dashboards
+- data tables and charts
+- settings panels
+- product-specific dialogs and layouts
 
-### 3. Composable
-
-Everything builds on primitives:
-
-```tsx
-<Field label="Email">
-  <TextInput />
-</Field>
-```
-
----
-
-### 4. Cross-platform first
-
-- React Native
-- Expo
-- React Native Web
-
-Same API everywhere.
-
----
-
-## What this is NOT
-
-- ❌ Not a full design system / UI kit
-- ❌ Not a form engine
-- ❌ Not a router or app framework
-- ❌ Not a low-code runtime
-
----
-
-## When to use it
-
-Use Surface if you want:
-
-- a clean starting point for RN + Web apps
-- consistent UI without reinventing components
-- a scalable design foundation
-
----
+Those belong in ZORA.
 
 ## Status
 
-- Phase 1: primitives + base components ✅
-- Phase 2: form + control layer ✅
-- Phase 3: overlays + navigation ✅
+Surface is in the stabilization phase: the goal is to keep the public API deliberate, typed, and dependency-ready for downstream packages.
 
----
+- Foundation work stays in Surface when it is broadly reusable across RN and RN Web.
+- Product-like patterns should move to ZORA instead of expanding Surface into a UI kit.
+- Release and freeze expectations are tracked in
+  [docs/release-checklist.md](https://github.com/ankhorage/surface/blob/main/docs/release-checklist.md).
+
+## Changelog
+
+Version history is maintained in [CHANGELOG.md](./CHANGELOG.md). New release notes should flow through Changesets so the published changelog matches the package surface.
 
 ## License
 

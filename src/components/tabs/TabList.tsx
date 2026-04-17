@@ -39,6 +39,7 @@ export function TabList({ children, testID }: TabListProps) {
 
   return (
     <Box
+      accessibilityRole="tablist"
       style={{
         flexDirection: 'row',
       }}

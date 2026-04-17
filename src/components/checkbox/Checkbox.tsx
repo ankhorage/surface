@@ -4,6 +4,7 @@ import {
   resolveFieldState,
   resolveIndicatorSize,
   resolveSelectionControlColors,
+  resolveSelectionControlNextChecked,
 } from '../../internal/resolvers';
 import { useControllableState } from '../../internal/useControllableState';
 import { Box } from '../../layout';
@@ -27,13 +28,18 @@ export function Checkbox({
   ...props
 }: CheckboxProps) {
   const { theme } = useTheme();
-  const isDisabled = disabled || readOnly;
   const [isChecked, setChecked] = useControllableState<boolean>({
     value: checked,
     defaultValue: defaultChecked,
     onChange: onCheckedChange,
   });
   const indicatorSize = resolveIndicatorSize(size);
+  const nextChecked = resolveSelectionControlNextChecked({
+    checked: isChecked,
+    disabled,
+    kind: 'checkbox',
+    readOnly,
+  });
 
   return (
     <ButtonBase
@@ -41,12 +47,12 @@ export function Checkbox({
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="checkbox"
       accessibilityState={{ checked: isChecked }}
-      disabled={isDisabled}
+      disabled={disabled}
       onPress={
-        readOnly
+        nextChecked === null
           ? undefined
           : () => {
-              setChecked(!isChecked);
+              setChecked(nextChecked);
             }
       }
       testID={testID}

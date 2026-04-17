@@ -2,7 +2,7 @@
   "name": "@ankhorage/surface",
   "type": "module",
   "version": "0.1.0",
-  "description": "Render foundation for Ankhorage and standalone React Native or Expo apps.",
+  "description": "Stable UI foundation for React Native and React Native Web.",
   "homepage": "https://github.com/ankhorage/surface#readme",
   "bugs": {
     "url": "https://github.com/ankhorage/surface/issues"
@@ -20,8 +20,10 @@
     "react-native-web",
     "expo",
     "ui",
+    "foundation",
     "design-system",
     "theming",
+    "accessibility",
     "components"
   ],
   "peerDependencies": {

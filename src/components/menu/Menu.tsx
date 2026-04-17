@@ -114,6 +114,7 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
               }}
             >
               <Surface
+                accessibilityRole="menu"
                 p="xs"
                 style={{
                   minWidth: Math.max(layout?.width ?? 0, 180),
@@ -130,6 +131,7 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
                   return (
                     <Pressable
                       accessibilityRole="menuitem"
+                      accessibilityState={{ disabled: item.disabled, selected }}
                       disabled={item.disabled}
                       key={item.id}
                       onPress={() => {
@@ -148,15 +150,16 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
                         py="s"
                         style={{
                           backgroundColor: selected
-                            ? theme.semantics.action.primary.softBg
+                            ? theme.semantics.action.neutral.softBg
                             : 'transparent',
                           opacity: item.disabled ? 0.56 : 1,
                         }}
+                        testID={testID ? `${testID}-item-${item.id}` : undefined}
                       >
                         <Text
                           color={
                             selected
-                              ? theme.semantics.action.primary.base
+                              ? theme.semantics.action.neutral.base
                               : theme.semantics.content.default
                           }
                           variant="bodySmall"
