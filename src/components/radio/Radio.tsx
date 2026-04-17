@@ -27,6 +27,7 @@ export function Radio({
   ...props
 }: RadioProps) {
   const { theme } = useTheme();
+  const isDisabled = disabled || readOnly;
   const [isChecked, setChecked] = useControllableState<boolean>({
     value: checked,
     defaultValue: defaultChecked,
@@ -40,7 +41,7 @@ export function Radio({
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="radio"
       accessibilityState={{ checked: isChecked }}
-      disabled={disabled}
+      disabled={isDisabled}
       onPress={
         readOnly || isChecked
           ? undefined

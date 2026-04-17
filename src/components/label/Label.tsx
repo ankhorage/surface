@@ -16,7 +16,11 @@ export function Label({ children, required = false, tone = 'default', testID }: 
       weight="medium"
     >
       {children}
-      {required ? <Text color={theme.semantics.danger.base}> *</Text> : null}
+      {required ? (
+        <Text color={theme.semantics.danger.base} variant="label" weight="medium">
+          {' *'}
+        </Text>
+      ) : null}
     </Text>
   );
 }

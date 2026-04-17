@@ -89,7 +89,7 @@ export function TextInput({
       <ReactNativeTextInput
         {...props}
         defaultValue={defaultValue}
-        editable={!disabled}
+        editable={!disabled && !readOnly}
         numberOfLines={props.multiline ? props.numberOfLines : 1}
         onBlur={handleBlur}
         onChangeText={onChangeText}

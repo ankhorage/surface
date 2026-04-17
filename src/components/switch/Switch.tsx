@@ -27,6 +27,7 @@ export function Switch({
   ...props
 }: SwitchProps) {
   const { theme } = useTheme();
+  const isDisabled = disabled || readOnly;
   const [isChecked, setChecked] = useControllableState<boolean>({
     value: checked,
     defaultValue: defaultChecked,
@@ -40,7 +41,7 @@ export function Switch({
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="switch"
       accessibilityState={{ checked: isChecked }}
-      disabled={disabled}
+      disabled={isDisabled}
       onPress={
         readOnly
           ? undefined
