@@ -12,6 +12,10 @@ import { useTheme } from '../theme/ThemeContext';
 import { type BoxStyleProps, resolveBoxStyles } from './helpers';
 
 export interface BoxProps extends BoxStyleProps {
+  accessibilityLabel?: ReactNativeViewProps['accessibilityLabel'];
+  accessibilityRole?: ReactNativeViewProps['accessibilityRole'];
+  accessibilityState?: ReactNativeViewProps['accessibilityState'];
+  accessible?: ReactNativeViewProps['accessible'];
   children?: React.ReactNode;
   pointerEvents?: ReactNativeViewProps['pointerEvents'];
   testID?: string;
@@ -42,7 +46,17 @@ function resolveViewPointerEvents(
   return undefined;
 }
 
-export function Box({ children, pointerEvents, style, testID, ...props }: BoxProps) {
+export function Box({
+  accessible,
+  accessibilityLabel,
+  accessibilityRole,
+  accessibilityState,
+  children,
+  pointerEvents,
+  style,
+  testID,
+  ...props
+}: BoxProps) {
   const { theme } = useTheme();
   const { breakpoint } = useResponsiveRuntime();
   const resolved = resolveBoxStyles(theme, breakpoint, props);
@@ -51,6 +65,10 @@ export function Box({ children, pointerEvents, style, testID, ...props }: BoxPro
 
   return (
     <View
+      accessible={accessible}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityRole={accessibilityRole}
+      accessibilityState={accessibilityState}
       pointerEvents={viewPointerEvents}
       testID={testID}
       style={[resolved, pointerEventsStyle, style]}

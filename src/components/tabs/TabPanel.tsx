@@ -11,9 +11,5 @@ export function TabPanel({ value, children, testID }: TabPanelProps) {
     return null;
   }
 
-  return (
-    <View accessibilityRole="summary" testID={testID}>
-      {children}
-    </View>
-  );
+  return <View testID={testID}>{children}</View>;
 }

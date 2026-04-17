@@ -7,7 +7,7 @@ import type { ComponentTone } from '../../internal/resolvers/resolveTone';
 export interface BadgeProps {
   content?: React.ReactNode;
   variant?: Extract<ButtonVariant, 'solid' | 'soft' | 'outline'>;
-  tone?: Extract<ComponentTone, 'primary' | 'neutral' | 'danger' | 'success'>;
+  tone?: Extract<ComponentTone, 'primary' | 'neutral' | 'danger' | 'success' | 'warning'>;
   size?: ControlSize;
   testID?: string;
 }

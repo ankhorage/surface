@@ -16,8 +16,8 @@ export interface ButtonProps extends Omit<
   'accessibilityLabel' | 'children' | 'style'
 > {
   children?: React.ReactNode;
-  variant?: Exclude<ButtonVariant, 'soft'>;
-  tone?: Extract<ComponentTone, 'primary' | 'neutral' | 'danger'>;
+  variant?: ButtonVariant;
+  tone?: ComponentTone;
   size?: ControlSize;
   loading?: boolean;
   leadingIcon?: ButtonIconSpec;

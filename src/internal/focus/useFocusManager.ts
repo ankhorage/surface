@@ -2,6 +2,10 @@ import React from 'react';
 
 interface FocusableTarget {
   focus: () => void;
+  disabled?: boolean;
+  hidden?: boolean;
+  tabIndex?: number;
+  getAttribute?: (name: string) => string | null;
 }
 
 interface FocusContainer {
@@ -33,7 +37,29 @@ function getWebDocument(): WebDocumentLike | null {
   return maybeDocument as WebDocumentLike;
 }
 
-function getFocusableElements(container: unknown): FocusableTarget[] {
+function isFocusableTarget(target: FocusableTarget): boolean {
+  if (target.disabled || target.hidden) {
+    return false;
+  }
+
+  if (typeof target.tabIndex === 'number' && target.tabIndex < 0) {
+    return false;
+  }
+
+  const ariaHidden = target.getAttribute?.('aria-hidden');
+  if (ariaHidden === 'true') {
+    return false;
+  }
+
+  const tabIndexAttribute = target.getAttribute?.('tabindex');
+  if (tabIndexAttribute === '-1') {
+    return false;
+  }
+
+  return true;
+}
+
+export function getFocusableElements(container: unknown): FocusableTarget[] {
   if (!container || typeof container !== 'object') {
     return [];
   }
@@ -43,7 +69,7 @@ function getFocusableElements(container: unknown): FocusableTarget[] {
     return [];
   }
 
-  return Array.from(focusContainer.querySelectorAll(FOCUSABLE_SELECTOR));
+  return Array.from(focusContainer.querySelectorAll(FOCUSABLE_SELECTOR)).filter(isFocusableTarget);
 }
 
 export function useFocusManager() {

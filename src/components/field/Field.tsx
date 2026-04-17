@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { resolveFieldState } from '../../internal/resolvers';
+import { resolveFieldPresentation, resolveFieldState } from '../../internal/resolvers';
 import { Box, Stack } from '../../layout';
 import { HelperText } from '../helper-text';
 import { Label } from '../label';
@@ -22,24 +22,20 @@ export function Field({
     invalid,
     readOnly,
   });
-  const labelTone = fieldState.invalid
-    ? 'danger'
-    : fieldState.disabled || fieldState.readOnly
-      ? 'muted'
-      : 'default';
+  const presentation = resolveFieldPresentation(fieldState);
 
   return (
     <Stack gap="xs" testID={testID}>
       {label ? (
-        <Label required={required} tone={labelTone}>
+        <Label required={required} tone={presentation.labelTone}>
           {label}
         </Label>
       ) : null}
       <Box>{children}</Box>
       {errorText ? (
-        <HelperText tone="danger">{errorText}</HelperText>
+        <HelperText tone={presentation.helperTone}>{errorText}</HelperText>
       ) : helperText ? (
-        <HelperText tone={fieldState.disabled ? 'muted' : 'default'}>{helperText}</HelperText>
+        <HelperText tone={presentation.helperTone}>{helperText}</HelperText>
       ) : null}
     </Stack>
   );
