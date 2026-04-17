@@ -17,9 +17,10 @@ export function Field({
   readOnly = false,
   testID,
 }: FieldProps) {
+  const hasErrorText = Boolean(errorText);
   const fieldState = resolveFieldState({
     disabled,
-    invalid,
+    invalid: invalid || hasErrorText,
     readOnly,
   });
   const presentation = resolveFieldPresentation(fieldState);
@@ -32,7 +33,7 @@ export function Field({
         </Label>
       ) : null}
       <Box>{children}</Box>
-      {errorText ? (
+      {hasErrorText ? (
         <HelperText tone={presentation.helperTone}>{errorText}</HelperText>
       ) : helperText ? (
         <HelperText tone={presentation.helperTone}>{helperText}</HelperText>

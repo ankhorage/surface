@@ -9,10 +9,19 @@ import type { TabProps } from './types';
 
 export function Tab({ value, children, disabled = false, testID }: TabProps) {
   const { theme } = useTheme();
-  const { activeValue, registerTab, setActiveValue, setFocusedValue, unregisterTab } =
-    useTabsContext();
+  const {
+    activeValue,
+    getPanelId,
+    getTabId,
+    registerTab,
+    setActiveValue,
+    setFocusedValue,
+    unregisterTab,
+  } = useTabsContext();
   const pressableRef = React.useRef<React.ElementRef<typeof Pressable> | null>(null);
   const selected = activeValue === value;
+  const tabId = getTabId(value);
+  const panelId = getPanelId(value);
 
   React.useEffect(() => {
     registerTab({
@@ -33,8 +42,11 @@ export function Tab({ value, children, disabled = false, testID }: TabProps) {
 
   return (
     <Pressable
+      accessibilityLabel={undefined}
       accessibilityRole="tab"
       accessibilityState={{ disabled, selected }}
+      nativeID={tabId}
+      aria-controls={panelId}
       disabled={disabled}
       onFocus={() => setFocusedValue(value)}
       onBlur={() => setFocusedValue(undefined)}

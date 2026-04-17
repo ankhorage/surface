@@ -9,6 +9,8 @@ export interface TabRegistration {
 export interface TabsContextValue {
   activeValue: string | undefined;
   focusedValue: string | undefined;
+  getPanelId: (value: string) => string;
+  getTabId: (value: string) => string;
   registerTab: (tab: TabRegistration) => void;
   setActiveValue: (value: string) => void;
   setFocusedValue: (value: string | undefined) => void;
