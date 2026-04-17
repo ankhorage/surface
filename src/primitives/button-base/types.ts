@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { AccessibilityRole, GestureResponderEvent } from 'react-native';
+import type { AccessibilityRole, AccessibilityState, GestureResponderEvent } from 'react-native';
 
 import type { BoxProps } from '../../layout';
 import type { InteractionState } from '../../internal/resolvers/resolveInteractiveState';
@@ -11,5 +11,6 @@ export interface ButtonBaseProps extends Omit<BoxProps, 'children' | 'pointerEve
   onLongPress?: ((event: GestureResponderEvent) => void) | undefined;
   accessibilityLabel?: string;
   accessibilityRole?: AccessibilityRole;
+  accessibilityState?: AccessibilityState;
   testID?: string;
 }

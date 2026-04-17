@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'bun:test';
 
 import { createTheme } from '../../theme/createTheme';
+import { resolveFieldState } from './resolveFieldState';
 import { resolveButtonColors, resolveInputColors } from './resolveInteractiveColors';
 
 describe('resolveInteractiveColors', () => {
@@ -35,13 +36,19 @@ describe('resolveInteractiveColors', () => {
 
   it('derives input colors from interaction and validation state', () => {
     const theme = createTheme();
-    const focusedInvalid = resolveInputColors(theme, {
-      focused: true,
-      invalid: true,
-    });
-    const readOnly = resolveInputColors(theme, {
-      readOnly: true,
-    });
+    const focusedInvalid = resolveInputColors(
+      theme,
+      resolveFieldState({
+        focused: true,
+        invalid: true,
+      }),
+    );
+    const readOnly = resolveInputColors(
+      theme,
+      resolveFieldState({
+        readOnly: true,
+      }),
+    );
 
     expect(focusedInvalid.borderColor).toBe(theme.semantics.danger.base);
     expect(readOnly.backgroundColor).toBe(theme.semantics.surface.subtle);

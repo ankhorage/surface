@@ -2,8 +2,8 @@
 
 `@ankhorage/surface` is the render-foundation package extracted from Ankhorage.
 It owns layout primitives, responsive helpers, theming, typography, generic font and
-translation bridges, built-in Expo-backed icon rendering, and a small first-wave component set
-for common application UI.
+translation bridges, built-in Expo-backed icon rendering, and a reusable component layer for
+common application UI and form composition.
 
 It does not own manifest rendering, action execution, Studio authoring, plugin orchestration,
 or CLI generation. Those concerns stay in the Ankhorage monorepo.
@@ -28,13 +28,18 @@ bun add @expo/vector-icons expo-font
 ```tsx
 import {
   Badge,
-  Box,
   Button,
   Card,
+  Checkbox,
+  Field,
   Heading,
-  Icon,
+  HelperText,
+  Label,
+  Radio,
   Stack,
+  Switch,
   Text,
+  Textarea,
   TextInput,
   ThemeProvider,
 } from '@ankhorage/surface';
@@ -59,19 +64,26 @@ export function Example() {
     <ThemeProvider initialConfig={theme}>
       <Stack gap="m" p="m">
         <Heading level={1}>Surface</Heading>
-        <Text tone="muted">Render foundations plus a small reusable component layer.</Text>
+        <Text tone="muted">Render foundations plus reusable components and form controls.</Text>
         <Card p="m">
           <Stack gap="s">
-            <Badge content="Phase 1" />
-            <TextInput placeholder="Search surface" />
+            <Badge content="Phase 2" />
+            <Field helperText="We only use this to sign you in." label="Email" required>
+              <TextInput placeholder="you@example.com" />
+            </Field>
+            <Field errorText="Tell us a bit more." invalid label="Bio">
+              <Textarea placeholder="A short introduction" rows={4} />
+            </Field>
+            <Label required>Preferences</Label>
+            <Checkbox defaultChecked>Email updates</Checkbox>
+            <Radio defaultChecked>Starter plan</Radio>
+            <Switch>Enable notifications</Switch>
+            <HelperText tone="muted">No form engine required.</HelperText>
             <Button leadingIcon={{ name: 'sparkles', provider: 'Ionicons' }}>
               Ship UI
             </Button>
           </Stack>
         </Card>
-        <Box p="s">
-          <Icon name="home" provider="Ionicons" />
-        </Box>
       </Stack>
     </ThemeProvider>
   );
@@ -85,7 +97,9 @@ Surface currently includes:
 - layout primitives: `Box`, `Center`, `Container`, `Divider`, `Grid`, `Inline`, `Show`, `Spacer`, `Stack`, `Surface`, `Template`
 - text and icon primitives: `Text`, `Heading`, `Icon`
 - interaction primitive: `ButtonBase`
-- first-wave components: `Badge`, `Button`, `Card`, `IconButton`, `ListItem`, `TextInput`
+- display and action components: `Badge`, `Button`, `Card`, `IconButton`, `ListItem`
+- form composition components: `Field`, `HelperText`, `Label`
+- form controls: `TextInput`, `Textarea`, `Checkbox`, `Radio`, `Switch`
 - theme creation and theme context
 - responsive utilities
 - generic font and translation bridges
@@ -105,7 +119,7 @@ facing aliases for surfaces, content, borders, and primary interaction tones.
 
 - layout primitives
 - text, heading, icon, and interaction primitives
-- a small first-wave reusable component layer
+- reusable display and form components
 - theme creation and theme context
 - responsive utilities
 - generic font and translation bridges
