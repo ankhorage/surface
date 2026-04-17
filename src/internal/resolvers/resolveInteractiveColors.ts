@@ -1,5 +1,6 @@
 import type { AnkhTheme } from '../../theme/types';
 import { resolveTone, type ComponentTone } from './resolveTone';
+import type { FieldState } from './resolveFieldState';
 import type { InteractionState } from './resolveInteractiveState';
 
 export type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'soft';
@@ -81,19 +82,9 @@ export function resolveButtonColors(
 
 export function resolveInputColors(
   theme: AnkhTheme,
-  {
-    disabled = false,
-    focused = false,
-    invalid = false,
-    readOnly = false,
-  }: {
-    disabled?: boolean;
-    focused?: boolean;
-    invalid?: boolean;
-    readOnly?: boolean;
-  },
+  fieldState: FieldState,
 ): ResolvedInteractiveColors & { placeholderColor: string } {
-  if (disabled) {
+  if (fieldState.disabled) {
     return {
       backgroundColor: theme.semantics.surface.subtle,
       borderColor: theme.semantics.border.default,
@@ -103,16 +94,18 @@ export function resolveInputColors(
     };
   }
 
-  if (invalid) {
+  if (fieldState.invalid) {
     return {
-      backgroundColor: readOnly ? theme.semantics.surface.subtle : theme.semantics.surface.default,
-      borderColor: focused ? theme.semantics.danger.base : theme.semantics.danger.outline,
+      backgroundColor: fieldState.readOnly
+        ? theme.semantics.surface.subtle
+        : theme.semantics.surface.default,
+      borderColor: fieldState.focused ? theme.semantics.danger.base : theme.semantics.danger.outline,
       contentColor: theme.semantics.content.default,
       placeholderColor: theme.semantics.content.muted,
     };
   }
 
-  if (focused) {
+  if (fieldState.focused) {
     return {
       backgroundColor: theme.semantics.surface.default,
       borderColor: theme.semantics.border.focus,
@@ -121,7 +114,7 @@ export function resolveInputColors(
     };
   }
 
-  if (readOnly) {
+  if (fieldState.readOnly) {
     return {
       backgroundColor: theme.semantics.surface.subtle,
       borderColor: theme.semantics.border.default,

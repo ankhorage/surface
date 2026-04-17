@@ -7,8 +7,10 @@ import {
 
 import {
   resolveControlSize,
+  resolveFieldState,
   resolveFocusRingStyles,
   resolveInputColors,
+  resolveTextStyles,
 } from '../../internal/resolvers';
 import { useTheme } from '../../theme/ThemeContext';
 import type { TextInputProps } from './types';
@@ -33,12 +35,27 @@ export function TextInput({
   const { theme } = useTheme();
   const controlSize = resolveControlSize(theme, size);
   const [focused, setFocused] = React.useState(false);
-  const colors = resolveInputColors(theme, {
+  const fieldState = resolveFieldState({
     disabled,
     focused,
     invalid,
     readOnly,
   });
+  const colors = resolveInputColors(theme, fieldState);
+  const resolvedTextStyle = resolveTextStyles(theme, {
+    variant: controlSize.textVariant,
+  });
+  const resolvedLineHeight =
+    typeof resolvedTextStyle.lineHeight === 'number'
+      ? resolvedTextStyle.lineHeight
+      : controlSize.minHeight - controlSize.paddingVertical * 2;
+  const lineCount = Math.max(props.numberOfLines ?? 1, 1);
+  const inputMinHeight = props.multiline
+    ? resolvedLineHeight * lineCount
+    : controlSize.minHeight - controlSize.paddingVertical * 2;
+  const containerMinHeight = props.multiline
+    ? inputMinHeight + controlSize.paddingVertical * 2
+    : controlSize.minHeight;
 
   const handleFocus: NonNullable<TextInputProps['onFocus']> = (event) => {
     setFocused(true);
@@ -54,7 +71,7 @@ export function TextInput({
     <View
       style={[
         {
-          minHeight: controlSize.minHeight,
+          minHeight: containerMinHeight,
           paddingHorizontal: controlSize.paddingHorizontal,
           paddingVertical: controlSize.paddingVertical,
           borderRadius: controlSize.borderRadius,
@@ -62,7 +79,7 @@ export function TextInput({
           borderColor: colors.borderColor,
           backgroundColor: colors.backgroundColor,
           flexDirection: 'row',
-          alignItems: 'center',
+          alignItems: props.multiline ? 'flex-start' : 'center',
           opacity: colors.opacity,
         },
         resolveFocusRingStyles(theme.semantics.border.focus, focused, Platform.OS === 'web'),
@@ -83,9 +100,10 @@ export function TextInput({
         style={[
           {
             flex: 1,
-            minHeight: controlSize.minHeight - controlSize.paddingVertical * 2,
+            minHeight: inputMinHeight,
             padding: 0,
             color: colors.contentColor,
+            textAlignVertical: props.multiline ? 'top' : 'center',
           },
           style,
         ]}

@@ -32,6 +32,7 @@ export function ButtonBase({
   onLongPress,
   accessibilityLabel,
   accessibilityRole = 'button',
+  accessibilityState,
   style,
   testID,
   ...props
@@ -47,7 +48,7 @@ export function ButtonBase({
     <Pressable
       accessibilityLabel={accessibilityLabel}
       accessibilityRole={accessibilityRole}
-      accessibilityState={{ disabled }}
+      accessibilityState={{ ...accessibilityState, disabled }}
       disabled={disabled}
       onBlur={() => setFocused(false)}
       onFocus={() => {
