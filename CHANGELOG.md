@@ -1,6 +1,6 @@
 # @ankhorage/surface
 
-## Unreleased
+## 0.1.0
 
 ### Minor Changes
 
@@ -18,8 +18,8 @@
   in `Menu`, stabilizing tab registration in `Tabs`, recomputing overlay stack ordering after
   removals, and correcting toast timer and dismiss behavior.
 - Adopt Changesets-based release tracking for the package, align release access with the
-  public npm publish config, and add GitHub Actions CI for lint, test, build, and changeset
-  validation.
+  public npm publish config, add GitHub Actions CI for lint, test, build, and changeset
+  validation, and add release automation for npm publishing.
 
 ## 0.0.2
 

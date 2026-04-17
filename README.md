@@ -1,59 +1,41 @@
 # @ankhorage/surface
 
-`@ankhorage/surface` is the render-foundation package extracted from Ankhorage.
-It owns layout primitives, responsive helpers, theming, typography, generic font and
-translation bridges, built-in Expo-backed icon rendering, and a reusable component layer for
-common application UI, form composition, overlays, and lightweight navigation patterns.
+A cross-platform UI foundation for **React Native + Web**.
 
-It does not own manifest rendering, action execution, Studio authoring, plugin orchestration,
-or CLI generation. Those concerns stay in the Ankhorage monorepo.
+Build consistent, themeable apps with:
+- layout primitives
+- design tokens & theming
+- responsive helpers
+- accessible components
+- overlay + interaction systems
 
-## Installation
+---
 
-Install Surface with its required shared contract package and React Native peers:
+## Why use this?
+
+React Native gives you primitives.  
+Surface gives you **a system**.
+
+- consistent spacing, typography, and colors
+- unified interaction states (hover, press, focus)
+- works across native + web
+- no design-system setup required
+- no runtime / no-code abstractions
+
+---
+
+## Quick start
 
 ```bash
 bun add @ankhorage/surface @ankhorage/contracts
-bun add react react-native
 ```
 
-If you use the built-in `Icon` primitive, install the Expo icon peers in the host app too:
-
-```bash
-bun add @expo/vector-icons expo-font
-```
-
-## Basic Usage
+Wrap your app:
 
 ```tsx
-import {
-  Badge,
-  Button,
-  Card,
-  Checkbox,
-  Drawer,
-  Field,
-  Heading,
-  HelperText,
-  Label,
-  Menu,
-  Modal,
-  Radio,
-  Stack,
-  Switch,
-  Tab,
-  TabList,
-  TabPanel,
-  Tabs,
-  Text,
-  Textarea,
-  TextInput,
-  ThemeProvider,
-  ToastProvider,
-  Tooltip,
-} from '@ankhorage/surface';
+import { ThemeProvider } from '@ankhorage/surface'
 
-const theme = {
+const themeConfig = {
   id: 'app',
   name: 'App',
   light: {
@@ -66,125 +48,143 @@ const theme = {
     harmony: 'monochromatic',
     systemTone: 'neutral',
   },
-};
+}
 
-export function Example() {
+export default function App() {
   return (
-    <ThemeProvider initialConfig={theme}>
-      <ToastProvider>
-        <Stack gap="m" p="m">
-          <Heading level={1}>Surface</Heading>
-          <Text tone="muted">
-            Render foundations plus form controls, overlays, and lightweight navigation.
-          </Text>
-          <Card p="m">
-            <Stack gap="s">
-              <Badge content="Phase 3" />
-              <Field helperText="We only use this to sign you in." label="Email" required>
-                <TextInput placeholder="you@example.com" />
-              </Field>
-              <Field errorText="Tell us a bit more." invalid label="Bio">
-                <Textarea placeholder="A short introduction" rows={4} />
-              </Field>
-              <Label required>Preferences</Label>
-              <Checkbox defaultChecked>Email updates</Checkbox>
-              <Radio defaultChecked>Starter plan</Radio>
-              <Switch>Enable notifications</Switch>
-              <HelperText tone="muted">No form engine required.</HelperText>
-              <Tabs defaultValue="account">
-                <TabList>
-                  <Tab value="account">Account</Tab>
-                  <Tab value="billing">Billing</Tab>
-                </TabList>
-                <TabPanel value="account">
-                  <Text>Account settings</Text>
-                </TabPanel>
-                <TabPanel value="billing">
-                  <Text>Billing settings</Text>
-                </TabPanel>
-              </Tabs>
-              <Tooltip content="Open quick actions">
-                <Button leadingIcon={{ name: 'sparkles', provider: 'Ionicons' }}>
-                  Ship UI
-                </Button>
-              </Tooltip>
-            </Stack>
-          </Card>
-          <Menu
-            items={[{ id: 'duplicate', label: 'Duplicate' }, { id: 'archive', label: 'Archive' }]}
-            trigger={<Button variant="ghost">Open Menu</Button>}
-          />
-          <Modal visible={false}>
-            <Text>Dialog content</Text>
-          </Modal>
-          <Drawer visible={false}>
-            <Text>Drawer content</Text>
-          </Drawer>
-        </Stack>
-      </ToastProvider>
+    <ThemeProvider initialConfig={themeConfig}>
+      <Main />
     </ThemeProvider>
-  );
+  )
 }
 ```
 
-## Included APIs
+Use components:
 
-Surface currently includes:
+```tsx
+import { Stack, Text, Button, Card, TextInput } from '@ankhorage/surface'
 
-- layout primitives: `Box`, `Center`, `Container`, `Divider`, `Grid`, `Inline`, `Show`, `Spacer`, `Stack`, `Surface`, `Template`
-- text and icon primitives: `Text`, `Heading`, `Icon`
-- interaction primitive: `ButtonBase`
-- display and action components: `Badge`, `Button`, `Card`, `IconButton`, `ListItem`
-- form composition components: `Field`, `HelperText`, `Label`
-- form controls: `TextInput`, `Textarea`, `Checkbox`, `Radio`, `Switch`
-- overlay and navigation components: `Modal`, `Drawer`, `Menu`, `Tabs`, `TabList`, `Tab`, `TabPanel`, `Toast`, `ToastProvider`, `Tooltip`
-- overlay hooks and helpers: `useToast`
-- theme creation and theme context
-- responsive utilities
-- generic font and translation bridges
+export function Example() {
+  return (
+    <Stack gap="m">
+      <Text variant="body">Welcome</Text>
 
-All public APIs are exported from the package root.
+      <TextInput placeholder="Email" />
 
-## Development Workflow
+      <Button tone="primary">Sign in</Button>
 
-Surface uses [Changesets](https://github.com/changesets/changesets) for release intent tracking.
-When a change should result in a package release, add a changeset file before merging:
-
-```bash
-bun run changeset
+      <Card>
+        <Text variant="bodySmall">Content</Text>
+      </Card>
+    </Stack>
+  )
+}
 ```
 
-You can inspect pending release state locally with:
+---
 
-```bash
-bun run changeset:status
+## What you get
+
+### Layout
+- `Box`, `Stack`, `Inline`, `Grid`, `Container`
+- `Spacer`, `Divider`, `Center`, `Surface`
+
+### Typography
+- `Text`, `Heading`
+
+### Actions
+- `Button`, `IconButton`
+
+### Data / display
+- `Card`, `Badge`, `ListItem`
+
+### Forms
+- `TextInput`, `Textarea`
+- `Field`, `Label`, `HelperText`
+- `Checkbox`, `Radio`, `Switch`
+
+### Overlays
+- `Modal`, `Drawer`
+- `Tabs`, `Toast`
+- `Tooltip`, `Menu`
+
+---
+
+## Core ideas
+
+### 1. Theme-driven
+Everything uses semantic tokens:
+
+```tsx
+<Button tone="primary" variant="solid" />
 ```
 
-GitHub Actions CI runs lint, tests, build, and changeset validation on pull requests.
+No hardcoded colors.
 
-## Theming
+---
 
-Serialized theme configuration types are imported from `@ankhorage/contracts`.
-Surface owns theme creation, resolved runtime theme objects, token lookup, and component
-consumption of those tokens. Theme generation exposes neutral and role semantics plus component-
-facing aliases for surfaces, content, borders, and primary interaction tones.
+### 2. Consistent states
 
-## Scope
+All interactive components share:
 
-`@ankhorage/surface` includes:
+- hover (web)
+- press
+- focus-visible
+- disabled
 
-- layout primitives
-- text, heading, icon, and interaction primitives
-- reusable display, form, overlay, and lightweight navigation components
-- theme creation and theme context
-- responsive utilities
-- generic font and translation bridges
-- render-only utilities
+No reimplementation per component.
 
-`@ankhorage/surface` does not include:
+---
 
-- manifest rendering
-- runtime action execution
-- Studio panels or authoring metadata
-- CLI or project scaffolding logic
-- low-code configuration workflows
+### 3. Composable
+
+Everything builds on primitives:
+
+```tsx
+<Field label="Email">
+  <TextInput />
+</Field>
+```
+
+---
+
+### 4. Cross-platform first
+
+- React Native
+- Expo
+- React Native Web
+
+Same API everywhere.
+
+---
+
+## What this is NOT
+
+- ❌ Not a full design system / UI kit
+- ❌ Not a form engine
+- ❌ Not a router or app framework
+- ❌ Not a low-code runtime
+
+---
+
+## When to use it
+
+Use Surface if you want:
+
+- a clean starting point for RN + Web apps
+- consistent UI without reinventing components
+- a scalable design foundation
+
+---
+
+## Status
+
+- Phase 1: primitives + base components ✅
+- Phase 2: form + control layer ✅
+- Phase 3: overlays + navigation ✅
+
+---
+
+## License
+
+MIT

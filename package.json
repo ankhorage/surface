@@ -1,12 +1,29 @@
 {
   "name": "@ankhorage/surface",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Render foundation for Ankhorage and standalone React Native or Expo apps.",
+  "homepage": "https://github.com/ankhorage/surface#readme",
+  "bugs": {
+    "url": "https://github.com/ankhorage/surface/issues"
+  },
   "license": "MIT",
   "main": "./dist/index.js",
   "sideEffects": false,
   "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankhorage/surface.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-web",
+    "expo",
+    "ui",
+    "design-system",
+    "theming",
+    "components"
+  ],
   "peerDependencies": {
     "@expo/vector-icons": ">=14.0.0",
     "expo-font": ">=14.0.4",
@@ -26,13 +43,18 @@
     "culori": "^4.0.2"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "default": "./dist/index.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
@@ -44,6 +66,7 @@
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix --max-warnings=0",
     "format": "prettier --write .",
+    "prepack": "bun run build",
     "test": "bun test src",
     "version-packages": "changeset version"
   },
