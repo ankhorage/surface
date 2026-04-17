@@ -44,6 +44,46 @@ export interface RoleSemantics {
   onSolidText: string;
 }
 
+export interface SurfaceSemantics {
+  default: string;
+  subtle: string;
+  raised: string;
+}
+
+export interface ContentSemantics {
+  default: string;
+  muted: string;
+  subtle: string;
+  inverse: string;
+}
+
+export interface BorderSemantics {
+  default: string;
+  strong: string;
+  focus: string;
+}
+
+export interface ActionSemantics {
+  primary: RoleSemantics;
+  neutral: RoleSemantics;
+  danger: RoleSemantics;
+}
+
+export interface ThemeSemantics {
+  neutral: NeutralSemantics;
+  brand: RoleSemantics;
+  secondary: RoleSemantics;
+  accent: RoleSemantics;
+  highlight: RoleSemantics;
+  danger: RoleSemantics;
+  success: RoleSemantics;
+  warning: RoleSemantics;
+  surface: SurfaceSemantics;
+  content: ContentSemantics;
+  border: BorderSemantics;
+  action: ActionSemantics;
+}
+
 export type FontWeight =
   | '100'
   | '200'
@@ -74,13 +114,7 @@ export interface ThemeTokens {
     [key: string]: string;
   };
   scales: Record<string, ColorScale>;
-  semantics: {
-    neutral: NeutralSemantics;
-    brand: RoleSemantics;
-    secondary: RoleSemantics;
-    accent: RoleSemantics;
-    highlight: RoleSemantics;
-  };
+  semantics: ThemeSemantics;
   spacing: {
     none: 0;
     xs: number;
