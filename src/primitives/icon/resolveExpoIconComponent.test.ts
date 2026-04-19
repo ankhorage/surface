@@ -3,24 +3,12 @@ import { describe, expect, mock, test } from 'bun:test';
 const Ionicons = () => null;
 const MaterialIcons = () => null;
 
-const runtimeRequire = (id: string) => {
-  if (id === '@expo/vector-icons') {
-    return {
-      Ionicons,
-      MaterialIcons,
-    };
-  }
-
-  throw new Error(`Unexpected module request: ${id}`);
-};
-
 describe('resolveExpoIconComponent', () => {
   test('returns the requested Expo icon family when it exists', async () => {
     await mock.module('@expo/vector-icons', () => ({
       Ionicons,
       MaterialIcons,
     }));
-    (globalThis as { require?: typeof runtimeRequire }).require = runtimeRequire;
 
     const { resolveExpoIconComponent } = await import('./resolveExpoIconComponent');
 
@@ -33,7 +21,6 @@ describe('resolveExpoIconComponent', () => {
       Ionicons,
       MaterialIcons,
     }));
-    (globalThis as { require?: typeof runtimeRequire }).require = runtimeRequire;
 
     const { resolveExpoIconComponent } = await import('./resolveExpoIconComponent');
 

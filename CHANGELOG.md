@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.4
+
+### Patch Changes
+
+- Fix Expo Web icon rendering by importing `@expo/vector-icons` through a bundler-safe static module path instead of runtime `require` resolution.
+
 ## 0.1.3
 
 ### Patch Changes
