@@ -1,10 +1,6 @@
-import { createRequire } from 'node:module';
-
 import type * as ExpoIcons from '@expo/vector-icons';
 import type React from 'react';
 import { type StyleProp, type TextStyle } from 'react-native';
-
-const require = createRequire(import.meta.url);
 
 type ExpoIconsModule = typeof ExpoIcons;
 
@@ -18,14 +14,34 @@ export type ExpoIconComponent = React.ElementType<{
 
 let cachedIcons: ExpoIconsModule | null = null;
 
+function resolveRuntimeRequire(): ((id: string) => unknown) | null {
+  const globalCandidate = (
+    globalThis as {
+      require?: unknown;
+    }
+  ).require;
+
+  if (typeof globalCandidate === 'function') {
+    return globalCandidate as (id: string) => unknown;
+  }
+
+  return null;
+}
+
 function loadExpoIcons(): ExpoIconsModule {
   if (cachedIcons) {
     return cachedIcons;
   }
 
+  const runtimeRequire = resolveRuntimeRequire();
+
   try {
-    // Load Expo icons only when Icon is rendered so non-Expo consumers can install Surface cleanly.
-    cachedIcons = require('@expo/vector-icons') as ExpoIconsModule;
+    if (!runtimeRequire) {
+      throw new Error('runtime require is unavailable');
+    }
+
+    // Keep icon loading lazy so non-Expo consumers do not need the package until Icon is used.
+    cachedIcons = runtimeRequire('@expo/vector-icons') as ExpoIconsModule;
     return cachedIcons;
   } catch {
     throw new Error(

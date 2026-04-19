@@ -3,13 +3,25 @@ import { describe, expect, mock, test } from 'bun:test';
 const Ionicons = () => null;
 const MaterialIcons = () => null;
 
-await mock.module('@expo/vector-icons', () => ({
-  Ionicons,
-  MaterialIcons,
-}));
+const runtimeRequire = (id: string) => {
+  if (id === '@expo/vector-icons') {
+    return {
+      Ionicons,
+      MaterialIcons,
+    };
+  }
+
+  throw new Error(`Unexpected module request: ${id}`);
+};
 
 describe('resolveExpoIconComponent', () => {
   test('returns the requested Expo icon family when it exists', async () => {
+    await mock.module('@expo/vector-icons', () => ({
+      Ionicons,
+      MaterialIcons,
+    }));
+    (globalThis as { require?: typeof runtimeRequire }).require = runtimeRequire;
+
     const { resolveExpoIconComponent } = await import('./resolveExpoIconComponent');
 
     expect(resolveExpoIconComponent('Ionicons')).toBe(Ionicons);
@@ -17,6 +29,12 @@ describe('resolveExpoIconComponent', () => {
   });
 
   test('falls back to Ionicons when the provider is unknown', async () => {
+    await mock.module('@expo/vector-icons', () => ({
+      Ionicons,
+      MaterialIcons,
+    }));
+    (globalThis as { require?: typeof runtimeRequire }).require = runtimeRequire;
+
     const { resolveExpoIconComponent } = await import('./resolveExpoIconComponent');
 
     expect(resolveExpoIconComponent('MissingIconFamily')).toBe(Ionicons);

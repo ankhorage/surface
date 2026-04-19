@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.2
+
+### Patch Changes
+
+- Fix Expo Web icon loading by removing the `import.meta`-based runtime require path so Metro can bundle the package correctly.
+
 ## 0.1.1
 
 ### Patch Changes
