@@ -15,6 +15,10 @@ export type ExpoIconComponent = React.ElementType<{
 let cachedIcons: ExpoIconsModule | null = null;
 
 function resolveRuntimeRequire(): ((id: string) => unknown) | null {
+  if (typeof require === 'function') {
+    return require as (id: string) => unknown;
+  }
+
   const globalCandidate = (
     globalThis as {
       require?: unknown;

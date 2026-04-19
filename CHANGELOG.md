@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.3
+
+### Patch Changes
+
+- Fix Expo Web icon loading by resolving the runtime module loader from the local Metro `require` function before falling back to `globalThis.require`.
+
 ## 0.1.2
 
 ### Patch Changes
