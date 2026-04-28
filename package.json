@@ -28,7 +28,7 @@
   ],
   "peerDependencies": {
     "@expo/vector-icons": ">=14.0.0",
-    "expo-font": ">=14.0.4",
+    "expo-font": "^55.0.6",
     "react": ">=18.2.0",
     "react-native": ">=0.72.0"
   },
@@ -76,16 +76,16 @@
     "version-packages": "changeset version"
   },
   "devDependencies": {
-    "@ankhorage/devtools": "^1.0.0",
-    "@changesets/cli": "^2.30.0",
-    "@expo/vector-icons": "^15.0.3",
-    "@types/bun": "^1.3.8",
+    "@ankhorage/devtools": "^1.0.1",
+    "@changesets/cli": "^2.31.0",
+    "@expo/vector-icons": "^15.1.1",
+    "@types/bun": "^1.3.13",
     "@types/culori": "^4.0.1",
-    "@types/node": "^25.2.3",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "react": "19.1.0",
     "react-native": "0.81.5",
     "typescript": "^5.9.3"
   },
-  "packageManager": "bun@1.3.11"
+  "packageManager": "bun@1.3.13"
 }

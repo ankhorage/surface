@@ -18,6 +18,7 @@
     "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
     "rootDir": "src",
+    "types": ["bun-types", "node"],
     "outDir": "dist"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
