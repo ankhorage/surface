@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.7
+
+### Patch Changes
+
+- 24eb548: Fix eslint
+
 ## 0.1.6
 
 ### Patch Changes
