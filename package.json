@@ -44,14 +44,17 @@
     "@ankhorage/contracts": "^0.0.1",
     "culori": "^4.0.2"
   },
-  "files": [
+"files": [
     "dist",
+    "src",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
   ],
   "exports": {
     ".": {
+      "react-native": "./src/index.ts",
+      "browser": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
