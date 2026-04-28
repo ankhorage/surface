@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.8
+
+### Patch Changes
+
+- 2869a08: Update test file for package.json 'files' & 'exports'
+
 ## 0.1.7
 
 ### Patch Changes
