@@ -51,9 +51,11 @@ describe('public package contract', () => {
   });
 
   it('keeps package metadata aligned with the single-entry public surface', () => {
-    expect(packageJson.files).toEqual(['dist', 'README.md', 'CHANGELOG.md', 'LICENSE']);
+    expect(packageJson.files).toEqual(['dist', 'src', 'README.md', 'CHANGELOG.md', 'LICENSE']);
     expect(packageJson.exports).toEqual({
       '.': {
+        'react-native': './src/index.ts',
+        browser: './src/index.ts',
         default: './dist/index.js',
         import: './dist/index.js',
         types: './dist/index.d.ts',
