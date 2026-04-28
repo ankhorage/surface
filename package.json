@@ -1,7 +1,7 @@
 {
   "name": "@ankhorage/surface",
   "type": "module",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Stable UI foundation for React Native and React Native Web.",
   "homepage": "https://github.com/ankhorage/surface#readme",
   "bugs": {
@@ -44,7 +44,7 @@
     "@ankhorage/contracts": "^0.0.1",
     "culori": "^4.0.2"
   },
-"files": [
+  "files": [
     "dist",
     "src",
     "README.md",

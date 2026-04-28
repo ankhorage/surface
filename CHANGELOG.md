@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.6
+
+### Patch Changes
+
+- d4d6107: Export src/ for better Metro debugging. Enable inlineSources for builds
+
 ## 0.1.5
 
 ### Patch Changes
