@@ -247,15 +247,15 @@ export function generatePalette(
   const modeConfig = mode === 'dark' ? config.dark : config.light;
   const { primaryColor, harmony, systemTone } = modeConfig;
 
-  let base = oklch(primaryColor) as OklchColor | undefined;
+  let base = oklch(primaryColor);
   if (!base) {
     console.warn(
       `[colorEngine] Invalid primary color: "${primaryColor}". Falling back to default blue.`,
     );
-    base = oklch('#3B82F6') as OklchColor;
+    base = oklch('#3B82F6');
   }
 
-  const baseHue = base.h ?? 0;
+  const baseHue = base?.h ?? 0;
   const hues = getHarmonyHues(baseHue, harmony);
   const toneMap = getSystemToneMapping(systemTone);
 

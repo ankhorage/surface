@@ -75,7 +75,7 @@ export function resolveRadius(
 export function resolveColor(theme: AnkhTheme, value: ColorValue | undefined): string | undefined {
   if (value === undefined) return undefined;
   if (Object.prototype.hasOwnProperty.call(theme.colors, value)) {
-    return theme.colors[value as ColorToken];
+    return theme.colors[value];
   }
   return value as string;
 }
