@@ -15,10 +15,13 @@ export interface OverlayDescriptor {
   node: React.ReactNode;
 }
 
-export interface OverlayStackRuntime {
-  overlays: OverlayEntry[];
+export interface OverlayStackActions {
   setOverlay: (id: string, overlay: OverlayDescriptor) => void;
   removeOverlay: (id: string) => void;
+}
+
+export interface OverlayStackRuntime extends OverlayStackActions {
+  overlays: OverlayEntry[];
 }
 
 export function sortOverlayEntries(entries: OverlayEntry[]): OverlayEntry[] {
@@ -42,8 +45,14 @@ export function sortOverlayEntries(entries: OverlayEntry[]): OverlayEntry[] {
 
 export const OverlayStackContext = React.createContext<OverlayStackRuntime | null>(null);
 
+export const OverlayStackActionsContext = React.createContext<OverlayStackActions | null>(null);
+
 export function useOverlayStack(): OverlayStackRuntime | null {
   return React.useContext(OverlayStackContext);
+}
+
+export function useOverlayStackActions(): OverlayStackActions | null {
+  return React.useContext(OverlayStackActionsContext);
 }
 
 export function createOverlayEntry(

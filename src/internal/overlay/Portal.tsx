@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { OverlayLayer } from '../resolvers/resolveOverlayZIndex';
-import { useOverlayStack } from './useOverlayStack';
+import { useOverlayStackActions } from './useOverlayStack';
 
 let portalCounter = 0;
 
@@ -12,25 +12,36 @@ export interface PortalProps {
 }
 
 export function Portal({ children, layer = 'modal', visible = true }: PortalProps) {
-  const overlayStack = useOverlayStack();
+  const overlayActions = useOverlayStackActions();
   const idRef = React.useRef(`surface-portal-${portalCounter++}`);
 
   React.useEffect(() => {
-    if (!overlayStack || !visible || children === undefined || children === null) {
+    if (!overlayActions || !visible) {
       return undefined;
     }
 
-    overlayStack.setOverlay(idRef.current, {
+    return () => {
+      overlayActions.removeOverlay(idRef.current);
+    };
+  }, [overlayActions, visible]);
+
+  React.useEffect(() => {
+    if (!overlayActions || !visible) {
+      return;
+    }
+
+    if (children === undefined || children === null) {
+      overlayActions.removeOverlay(idRef.current);
+      return;
+    }
+
+    overlayActions.setOverlay(idRef.current, {
       layer,
       node: children,
     });
+  }, [children, layer, overlayActions, visible]);
 
-    return () => {
-      overlayStack.removeOverlay(idRef.current);
-    };
-  }, [children, layer, overlayStack, visible]);
-
-  if (!overlayStack) {
+  if (!overlayActions) {
     return visible ? <>{children}</> : null;
   }
 

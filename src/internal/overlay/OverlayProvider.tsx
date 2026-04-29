@@ -5,6 +5,7 @@ import {
   createOverlayEntry,
   type OverlayDescriptor,
   type OverlayEntry,
+  OverlayStackActionsContext,
   OverlayStackContext,
   sortOverlayEntries,
 } from './useOverlayStack';
@@ -30,6 +31,14 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
     setOverlays((current) => current.filter((entry) => entry.id !== id));
   }, []);
 
+  const actions = React.useMemo(
+    () => ({
+      removeOverlay,
+      setOverlay,
+    }),
+    [removeOverlay, setOverlay],
+  );
+
   const value = React.useMemo(
     () => ({
       overlays,
@@ -40,35 +49,37 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <OverlayStackContext.Provider value={value}>
-      {children}
-      <View
-        pointerEvents="box-none"
-        style={{
-          bottom: 0,
-          left: 0,
-          position: 'absolute',
-          right: 0,
-          top: 0,
-        }}
-      >
-        {overlays.map((overlay) => (
-          <View
-            key={overlay.id}
-            pointerEvents="box-none"
-            style={{
-              bottom: 0,
-              left: 0,
-              position: 'absolute',
-              right: 0,
-              top: 0,
-              zIndex: overlay.zIndex,
-            }}
-          >
-            {overlay.node}
-          </View>
-        ))}
-      </View>
-    </OverlayStackContext.Provider>
+    <OverlayStackActionsContext.Provider value={actions}>
+      <OverlayStackContext.Provider value={value}>
+        {children}
+        <View
+          pointerEvents="box-none"
+          style={{
+            bottom: 0,
+            left: 0,
+            position: 'absolute',
+            right: 0,
+            top: 0,
+          }}
+        >
+          {overlays.map((overlay) => (
+            <View
+              key={overlay.id}
+              pointerEvents="box-none"
+              style={{
+                bottom: 0,
+                left: 0,
+                position: 'absolute',
+                right: 0,
+                top: 0,
+                zIndex: overlay.zIndex,
+              }}
+            >
+              {overlay.node}
+            </View>
+          ))}
+        </View>
+      </OverlayStackContext.Provider>
+    </OverlayStackActionsContext.Provider>
   );
 }
