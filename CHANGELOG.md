@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.11
+
+### Patch Changes
+
+- c3ed0d8: Update @ankhorage/contracts
+
 ## 0.1.10
 
 ### Patch Changes
