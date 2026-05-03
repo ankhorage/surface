@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.1.12
+
+### Patch Changes
+
+- 173d938: Export @types/culori as a regular dependency
+
 ## 0.1.11
 
 ### Patch Changes
