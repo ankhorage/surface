@@ -197,8 +197,8 @@ function getColorToneRolePalette(colorTone: ColorTone): {
       return {
         bg: 'pastel',
         surface: 'pastel',
-        primary: 'pastel',
-        secondary: 'pastel',
+        primary: 'jewel',
+        secondary: 'jewel',
         accent: 'jewel',
         highlight: 'fluorescent',
       };
@@ -207,8 +207,8 @@ function getColorToneRolePalette(colorTone: ColorTone): {
       return {
         bg: 'earth',
         surface: 'earth',
-        primary: 'earth',
-        secondary: 'earth',
+        primary: 'mineral',
+        secondary: 'mineral',
         accent: 'jewel',
         highlight: 'jewel',
       };
@@ -245,9 +245,9 @@ function getColorToneRolePalette(colorTone: ColorTone): {
 
     case 'fluorescent':
       return {
-        bg: 'grayscale',
-        surface: 'grayscale',
-        primary: 'jewel',
+        bg: 'obsidian',
+        surface: 'obsidian',
+        primary: 'fluorescent',
         secondary: 'jewel',
         accent: 'fluorescent',
         highlight: 'fluorescent',

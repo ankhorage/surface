@@ -2,7 +2,7 @@ import { describe, expect, it } from 'bun:test';
 import { oklch } from 'culori';
 
 import { generatePalette } from './colorEngine';
-import type { ThemeConfig } from './types';
+import type { ColorTone, ThemeConfig, ThemeSemantics } from './types';
 
 const mockConfig: ThemeConfig = {
   id: 'test',
@@ -18,6 +18,55 @@ const mockConfig: ThemeConfig = {
     colorTone: 'neutral',
   },
 };
+
+function configForColorTone(colorTone: ColorTone): ThemeConfig {
+  return {
+    ...mockConfig,
+    light: {
+      ...mockConfig.light,
+      colorTone,
+    },
+    dark: {
+      ...mockConfig.dark,
+      colorTone,
+    },
+  };
+}
+
+function lightness(hex: string): number {
+  const color = oklch(hex);
+  if (!color) {
+    throw new Error(`Expected valid OKLCH color for ${hex}.`);
+  }
+  return color.l;
+}
+
+function chroma(hex: string): number {
+  const color = oklch(hex);
+  if (!color) {
+    throw new Error(`Expected valid OKLCH color for ${hex}.`);
+  }
+  return color.c;
+}
+
+function expectRequiredSemanticRoles(semantics: ThemeSemantics) {
+  expect(semantics.neutral.bg).toBeDefined();
+  expect(semantics.neutral.surface).toBeDefined();
+  expect(semantics.neutral.text).toBeDefined();
+  expect(semantics.brand.base).toBeDefined();
+  expect(semantics.secondary.base).toBeDefined();
+  expect(semantics.accent.base).toBeDefined();
+  expect(semantics.highlight.base).toBeDefined();
+  expect(semantics.danger.base).toBeDefined();
+  expect(semantics.success.base).toBeDefined();
+  expect(semantics.warning.base).toBeDefined();
+  expect(semantics.surface.default).toBeDefined();
+  expect(semantics.content.default).toBeDefined();
+  expect(semantics.border.default).toBeDefined();
+  expect(semantics.action.primary.base).toBeDefined();
+  expect(semantics.action.neutral.base).toBeDefined();
+  expect(semantics.action.danger.base).toBeDefined();
+}
 
 describe('colorEngine', () => {
   it('should generate a stable palette with deterministic chroma hierarchy', () => {
@@ -110,5 +159,69 @@ describe('colorEngine', () => {
     const fallbackBlue = oklch('#3B82F6');
     expect(fallbackBlue).toBeDefined();
     expect(p?.h).toBeCloseTo(fallbackBlue?.h ?? 0, 0);
+  });
+
+  it('keeps fluorescent and obsidian dark surfaces low-lightness', () => {
+    const fluorescent = generatePalette(configForColorTone('fluorescent'), 'dark');
+    const obsidian = generatePalette(configForColorTone('obsidian'), 'dark');
+
+    expect(lightness(fluorescent.semantics.neutral.bg)).toBeLessThan(0.2);
+    expect(lightness(fluorescent.semantics.surface.default)).toBeLessThan(0.2);
+    expect(lightness(obsidian.semantics.neutral.bg)).toBeLessThan(0.2);
+    expect(lightness(obsidian.semantics.surface.default)).toBeLessThan(0.2);
+  });
+
+  it('keeps fluorescent action colors higher chroma than neutral actions', () => {
+    const fluorescent = generatePalette(configForColorTone('fluorescent'), 'light');
+    const neutral = generatePalette(configForColorTone('neutral'), 'light');
+
+    expect(chroma(fluorescent.semantics.brand.base)).toBeGreaterThan(
+      chroma(neutral.semantics.action.neutral.base),
+    );
+    expect(chroma(fluorescent.semantics.accent.base)).toBeGreaterThan(
+      chroma(neutral.semantics.action.neutral.base),
+    );
+  });
+
+  it('keeps pastel backgrounds lower chroma than foreground and action colors', () => {
+    const { semantics } = generatePalette(configForColorTone('pastel'), 'light');
+
+    expect(chroma(semantics.neutral.bg)).toBeLessThan(chroma(semantics.brand.base));
+    expect(chroma(semantics.neutral.bg)).toBeLessThan(chroma(semantics.accent.base));
+    expect(chroma(semantics.surface.default)).toBeLessThan(chroma(semantics.action.primary.base));
+  });
+
+  it('keeps earth action colors aligned with mineral-like chroma', () => {
+    const earth = generatePalette(configForColorTone('earth'), 'light');
+    const mineral = generatePalette(configForColorTone('mineral'), 'light');
+
+    expect(chroma(earth.semantics.brand.base)).toBeGreaterThan(chroma(earth.semantics.neutral.bg));
+    expect(chroma(earth.semantics.secondary.base)).toBeCloseTo(
+      chroma(mineral.semantics.secondary.base),
+      3,
+    );
+  });
+
+  it('emits required semantic roles for every color tone', () => {
+    const colorTones: readonly ColorTone[] = [
+      'neutral',
+      'pastel',
+      'earth',
+      'mineral',
+      'muted',
+      'jewel',
+      'fluorescent',
+      'obsidian',
+      'vaporwave',
+      'monochromeAccent',
+    ];
+
+    for (const colorTone of colorTones) {
+      const light = generatePalette(configForColorTone(colorTone), 'light');
+      const dark = generatePalette(configForColorTone(colorTone), 'dark');
+
+      expectRequiredSemanticRoles(light.semantics);
+      expectRequiredSemanticRoles(dark.semantics);
+    }
   });
 });
