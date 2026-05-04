@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.2.0
+
+### Minor Changes
+
+- d9c21be: Updates theme configuration to use `colorTone` / `ColorTone` from `@ankhorage/contracts` and aligns internal color-engine naming.
+
 ## 0.1.12
 
 ### Patch Changes
