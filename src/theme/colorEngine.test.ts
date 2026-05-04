@@ -195,9 +195,7 @@ describe('colorEngine', () => {
     const earth = generatePalette(configForColorTone('earth'), 'light');
     const mineral = generatePalette(configForColorTone('mineral'), 'light');
 
-    expect(chroma(earth.semantics.brand.base)).toBeGreaterThan(
-      chroma(earth.semantics.neutral.bg),
-    );
+    expect(chroma(earth.semantics.brand.base)).toBeGreaterThan(chroma(earth.semantics.neutral.bg));
     expect(chroma(earth.semantics.secondary.base)).toBeCloseTo(
       chroma(mineral.semantics.secondary.base),
       3,
