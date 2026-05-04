@@ -195,7 +195,10 @@ describe('colorEngine', () => {
     const earth = generatePalette(configForColorTone('earth'), 'light');
     const mineral = generatePalette(configForColorTone('mineral'), 'light');
 
-    expect(chroma(earth.semantics.brand.base)).toBeCloseTo(chroma(mineral.semantics.secondary.base), 3);
+    expect(chroma(earth.semantics.brand.base)).toBeCloseTo(
+      chroma(mineral.semantics.secondary.base),
+      3,
+    );
   });
 
   it('emits required semantic roles for every color tone', () => {
