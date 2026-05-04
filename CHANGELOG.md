@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.2.3
+
+### Patch Changes
+
+- 55908af: Align Surface color-tone role palette mappings with the background/foreground lane direction used by app-facing theme tooling.
+
 ## 0.2.2
 
 ### Patch Changes
