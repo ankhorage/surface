@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.2.1
+
+### Patch Changes
+
+- 03e62a3: Release Trigger @ankhorage/contracts update
+
 ## 0.2.0
 
 ### Minor Changes
