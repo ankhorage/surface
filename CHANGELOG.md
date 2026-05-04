@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.2.4
+
+### Patch Changes
+
+- 598daa1: Add the standard package tooling baseline script and workflow files.
+
 ## 0.2.3
 
 ### Patch Changes
