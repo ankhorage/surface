@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 0.2.2
+
+### Patch Changes
+
+- 1711172: Update @ankhorage/contracts
+
 ## 0.2.1
 
 ### Patch Changes
