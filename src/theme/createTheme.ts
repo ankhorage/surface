@@ -71,12 +71,12 @@ export const DEFAULT_CONFIG: ThemeConfig = {
   light: {
     primaryColor: '#3B82F6',
     harmony: 'monochromatic',
-    systemTone: 'neutral',
+    colorTone: 'neutral',
   },
   dark: {
     primaryColor: '#3B82F6',
     harmony: 'monochromatic',
-    systemTone: 'neutral',
+    colorTone: 'neutral',
   },
 };
 

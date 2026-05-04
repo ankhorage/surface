@@ -10,7 +10,6 @@ import type {
   NeutralSemantics,
   RoleSemantics,
   SurfaceSemantics,
-  SystemTone,
   ThemeConfig,
   ThemeSemantics,
 } from './types';
@@ -26,6 +25,19 @@ interface OklchColor {
 
 export const SCALE_STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const;
 
+type RolePaletteKind =
+  | 'grayscale'
+  | 'neutral'
+  | 'pastel'
+  | 'earth'
+  | 'mineral'
+  | 'muted'
+  | 'jewel'
+  | 'fluorescent'
+  | 'obsidian'
+  | 'vaporwave'
+  | 'monochromeAccent';
+
 /**
  * Deterministic Lightness Curves (OKLCH L)
  */
@@ -35,14 +47,20 @@ const LIGHTNESS_CURVES = {
 } as const;
 
 /**
- * Lightness anchors per tone
+ * Lightness anchors per internal palette kind
  */
-const TONE_LIGHTNESS_ANCHORS: Record<ColorTone, number> = {
+const ROLE_PALETTE_LIGHTNESS_ANCHORS: Record<RolePaletteKind, number> = {
   grayscale: 0.62,
-  earth: 0.55,
+  neutral: 0.62,
   pastel: 0.7,
+  earth: 0.55,
+  mineral: 0.58,
+  muted: 0.6,
   jewel: 0.62,
   fluorescent: 0.65,
+  obsidian: 0.12,
+  vaporwave: 0.7,
+  monochromeAccent: 0.62,
 };
 
 /**
@@ -54,12 +72,18 @@ const CHROMA_BY_STEP = [0.1, 0.18, 0.3, 0.45, 0.7, 1.0, 0.92, 0.8, 0.6, 0.4, 0.2
 /**
  * Deterministic Chroma Anchors (OKLCH C)
  */
-const CHROMA_ANCHORS: Record<ColorTone, number> = {
+const ROLE_PALETTE_CHROMA_ANCHORS: Record<RolePaletteKind, number> = {
   grayscale: 0,
-  earth: 0.05,
+  neutral: 0.02,
   pastel: 0.08,
+  earth: 0.05,
+  mineral: 0.07,
+  muted: 0.04,
   jewel: 0.16,
   fluorescent: 0.26,
+  obsidian: 0.01,
+  vaporwave: 0.2,
+  monochromeAccent: 0.02,
 };
 
 /**
@@ -160,18 +184,15 @@ function getHarmonyHues(baseHue: number, mode: ColorHarmony): number[] {
   }
 }
 
-/**
- * System Tone Assignment Logic
- */
-function getSystemToneMapping(system: SystemTone): {
-  bg: ColorTone;
-  surface: ColorTone;
-  primary: ColorTone;
-  secondary: ColorTone;
-  accent: ColorTone;
-  highlight: ColorTone;
+function getColorToneRolePalette(colorTone: ColorTone): {
+  bg: RolePaletteKind;
+  surface: RolePaletteKind;
+  primary: RolePaletteKind;
+  secondary: RolePaletteKind;
+  accent: RolePaletteKind;
+  highlight: RolePaletteKind;
 } {
-  switch (system) {
+  switch (colorTone) {
     case 'pastel':
       return {
         bg: 'pastel',
@@ -181,6 +202,7 @@ function getSystemToneMapping(system: SystemTone): {
         accent: 'jewel',
         highlight: 'fluorescent',
       };
+
     case 'earth':
       return {
         bg: 'earth',
@@ -190,6 +212,27 @@ function getSystemToneMapping(system: SystemTone): {
         accent: 'jewel',
         highlight: 'jewel',
       };
+
+    case 'mineral':
+      return {
+        bg: 'mineral',
+        surface: 'mineral',
+        primary: 'jewel',
+        secondary: 'mineral',
+        accent: 'jewel',
+        highlight: 'fluorescent',
+      };
+
+    case 'muted':
+      return {
+        bg: 'muted',
+        surface: 'muted',
+        primary: 'jewel',
+        secondary: 'muted',
+        accent: 'jewel',
+        highlight: 'fluorescent',
+      };
+
     case 'jewel':
       return {
         bg: 'grayscale',
@@ -199,6 +242,7 @@ function getSystemToneMapping(system: SystemTone): {
         accent: 'jewel',
         highlight: 'fluorescent',
       };
+
     case 'fluorescent':
       return {
         bg: 'grayscale',
@@ -208,6 +252,37 @@ function getSystemToneMapping(system: SystemTone): {
         accent: 'fluorescent',
         highlight: 'fluorescent',
       };
+
+    case 'obsidian':
+      return {
+        bg: 'obsidian',
+        surface: 'obsidian',
+        primary: 'fluorescent',
+        secondary: 'jewel',
+        accent: 'fluorescent',
+        highlight: 'fluorescent',
+      };
+
+    case 'vaporwave':
+      return {
+        bg: 'pastel',
+        surface: 'pastel',
+        primary: 'fluorescent',
+        secondary: 'jewel',
+        accent: 'fluorescent',
+        highlight: 'fluorescent',
+      };
+
+    case 'monochromeAccent':
+      return {
+        bg: 'grayscale',
+        surface: 'grayscale',
+        primary: 'jewel',
+        secondary: 'grayscale',
+        accent: 'jewel',
+        highlight: 'fluorescent',
+      };
+
     default: // neutral
       return {
         bg: 'grayscale',
@@ -245,7 +320,7 @@ export function generatePalette(
   semantics: ThemeSemantics;
 } {
   const modeConfig = mode === 'dark' ? config.dark : config.light;
-  const { primaryColor, harmony, systemTone } = modeConfig;
+  const { primaryColor, harmony, colorTone } = modeConfig;
 
   let base = oklch(primaryColor);
   if (!base) {
@@ -257,17 +332,17 @@ export function generatePalette(
 
   const baseHue = base?.h ?? 0;
   const hues = getHarmonyHues(baseHue, harmony);
-  const toneMap = getSystemToneMapping(systemTone);
+  const rolePalette = getColorToneRolePalette(colorTone);
 
   // 1. Resolve Chromas
-  const getC = (t: ColorTone) => CHROMA_ANCHORS[t];
+  const getC = (t: RolePaletteKind) => ROLE_PALETTE_CHROMA_ANCHORS[t];
   const getHue = (index: number, fallback: number) => hues[index] ?? fallback;
 
-  const primaryChroma = getC(toneMap.primary);
-  const secondaryChroma = getC(toneMap.secondary) * CHROMA_HIERARCHY.secondary;
-  const tertiaryChroma = getC(toneMap.accent) * CHROMA_HIERARCHY.accent;
-  const highlightChroma = getC(toneMap.highlight);
-  const surfaceChroma = Math.min(0.02, getC(toneMap.bg) * CHROMA_HIERARCHY.surface);
+  const primaryChroma = getC(rolePalette.primary);
+  const secondaryChroma = getC(rolePalette.secondary) * CHROMA_HIERARCHY.secondary;
+  const tertiaryChroma = getC(rolePalette.accent) * CHROMA_HIERARCHY.accent;
+  const highlightChroma = getC(rolePalette.highlight);
+  const surfaceChroma = Math.min(0.02, getC(rolePalette.bg) * CHROMA_HIERARCHY.surface);
 
   // 2. Stable Role Assignment
   let pHue = getHue(0, baseHue);
@@ -302,29 +377,29 @@ export function generatePalette(
   }
 
   // 3. Build Bases with tuned lightness
-  const getL = (t: ColorTone) => TONE_LIGHTNESS_ANCHORS[t];
+  const getL = (t: RolePaletteKind) => ROLE_PALETTE_LIGHTNESS_ANCHORS[t];
 
   const primaryBase: OklchColor = {
     mode: 'oklch',
-    l: getL(toneMap.primary),
+    l: getL(rolePalette.primary),
     c: primaryChroma,
     h: pHue,
   };
   const secondaryBase: OklchColor = {
     mode: 'oklch',
-    l: getL(toneMap.secondary),
+    l: getL(rolePalette.secondary),
     c: secondaryChroma,
     h: sHue,
   };
   const accentBase: OklchColor = {
     mode: 'oklch',
-    l: getL(toneMap.accent),
+    l: getL(rolePalette.accent),
     c: tertiaryChroma,
     h: aHue,
   };
   const highlightBase: OklchColor = {
     mode: 'oklch',
-    l: getL(toneMap.highlight),
+    l: getL(rolePalette.highlight),
     c: highlightChroma,
     h: hHue,
   };

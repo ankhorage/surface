@@ -1,8 +1,6 @@
 import type { ThemeConfig as ContractsThemeConfig } from '@ankhorage/contracts';
 
-export type { ColorHarmony, SystemTone, ThemeConfig, ThemeModeConfig } from '@ankhorage/contracts';
-
-export type ColorTone = 'jewel' | 'earth' | 'fluorescent' | 'grayscale' | 'pastel';
+export type { ColorHarmony, ColorTone, ThemeConfig, ThemeModeConfig } from '@ankhorage/contracts';
 
 export interface ColorScale {
   [key: number]: string;

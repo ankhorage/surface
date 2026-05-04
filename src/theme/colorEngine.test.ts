@@ -10,12 +10,12 @@ const mockConfig: ThemeConfig = {
   light: {
     primaryColor: '#3B82F6',
     harmony: 'triadic',
-    systemTone: 'neutral',
+    colorTone: 'neutral',
   },
   dark: {
     primaryColor: '#3B82F6',
     harmony: 'triadic',
-    systemTone: 'neutral',
+    colorTone: 'neutral',
   },
 };
 
