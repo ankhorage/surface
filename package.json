@@ -1,7 +1,7 @@
 {
   "name": "@ankhorage/surface",
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Stable UI foundation for React Native and React Native Web.",
   "homepage": "https://github.com/ankhorage/surface#readme",
   "bugs": {
