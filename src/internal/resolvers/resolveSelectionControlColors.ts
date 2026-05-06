@@ -1,4 +1,4 @@
-import type { AnkhTheme } from '../../theme/types';
+import type { SurfaceTheme } from '../../theme/types';
 import type { FieldState } from './resolveFieldState';
 import { type ComponentTone, resolveTone } from './resolveTone';
 
@@ -13,7 +13,7 @@ export interface ResolvedSelectionControlColors {
 }
 
 export function resolveSelectionControlColors(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   {
     tone = 'primary',
     fieldState,

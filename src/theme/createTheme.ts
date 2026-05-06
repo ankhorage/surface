@@ -1,7 +1,7 @@
 import { generatePalette } from './colorEngine';
-import type { AnkhTheme, FontWeight, ThemeConfig, ThemeTokens } from './types';
+import type { FontWeight, SurfaceTheme, ThemeConfig, ThemeTokens } from './types';
 
-export const DEFAULT_TOKENS: Omit<ThemeTokens, 'colors' | 'scales' | 'semantics'> = {
+export const DEFAULT_TOKENS: Omit<ThemeTokens, 'colors' | 'swatches' | 'semantics'> = {
   spacing: {
     none: 0,
     xs: 4,
@@ -71,12 +71,10 @@ export const DEFAULT_CONFIG: ThemeConfig = {
   light: {
     primaryColor: '#3B82F6',
     harmony: 'monochromatic',
-    colorTone: 'neutral',
   },
   dark: {
     primaryColor: '#3B82F6',
     harmony: 'monochromatic',
-    colorTone: 'neutral',
   },
 };
 
@@ -95,13 +93,13 @@ export function createTheme(
   config: ThemeConfig = DEFAULT_CONFIG,
   mode: 'light' | 'dark' = 'light',
   activeFontId?: string | null,
-): AnkhTheme {
-  const { colors, scales, semantics } = generatePalette(config, mode);
+): SurfaceTheme {
+  const { colors, swatches, semantics } = generatePalette(config, mode);
 
   const theme = {
     ...DEFAULT_TOKENS,
-    colors: colors as AnkhTheme['colors'],
-    scales,
+    colors: colors as SurfaceTheme['colors'],
+    swatches,
     semantics,
     config,
   };

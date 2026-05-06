@@ -85,12 +85,10 @@ describe('deepMerge', () => {
       light: {
         primaryColor: 'blue',
         harmony: 'monochromatic',
-        colorTone: 'neutral',
       },
       dark: {
         primaryColor: 'blue',
         harmony: 'monochromatic',
-        colorTone: 'neutral',
       },
     };
     const source: UnknownObject = {
@@ -105,12 +103,10 @@ describe('deepMerge', () => {
       light: {
         primaryColor: 'red',
         harmony: 'monochromatic',
-        colorTone: 'neutral',
       },
       dark: {
         primaryColor: 'blue',
         harmony: 'monochromatic',
-        colorTone: 'neutral',
       },
     });
   });

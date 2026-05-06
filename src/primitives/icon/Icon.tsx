@@ -3,7 +3,7 @@ import { type StyleProp, type TextStyle } from 'react-native';
 
 import { resolveToken } from '../../theme/resolveToken';
 import { useTheme } from '../../theme/ThemeContext';
-import type { AnkhTheme } from '../../theme/types';
+import type { SurfaceTheme } from '../../theme/types';
 import { resolveExpoIconComponent } from './resolveExpoIconComponent';
 
 export type IconProvider = string;
@@ -11,8 +11,8 @@ export type IconProvider = string;
 export interface IconProps {
   name: string;
   provider?: IconProvider;
-  size?: keyof AnkhTheme['spacing'] | number;
-  color?: keyof AnkhTheme['colors'] | string;
+  size?: keyof SurfaceTheme['spacing'] | number;
+  color?: keyof SurfaceTheme['colors'] | string;
   style?: StyleProp<TextStyle>;
   testID?: string;
 }

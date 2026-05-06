@@ -1,5 +1,5 @@
 import { resolveToken } from '../../theme/resolveToken';
-import type { AnkhTheme } from '../../theme/types';
+import type { SurfaceTheme } from '../../theme/types';
 
 export type TextTone =
   | 'default'
@@ -9,10 +9,10 @@ export type TextTone =
   | 'danger'
   | 'success'
   | 'warning';
-export type TextColorValue = keyof AnkhTheme['colors'] | string;
+export type TextColorValue = keyof SurfaceTheme['colors'] | string;
 
 export function resolveTextColor(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   tone: TextTone = 'default',
   color?: TextColorValue,
 ): string {
