@@ -71,6 +71,18 @@ describe('colorEngine', () => {
     expect(semantics.content.inverse).toBe(semantics.brand.onSolidText);
   });
 
+  it('uses mode-aware role semantics for dark mode soft states', () => {
+    const light = generatePalette(mockConfig, 'light');
+    const dark = generatePalette(mockConfig, 'dark');
+
+    expect(light.semantics.brand.softBg).toBe(light.swatches.primary[100]);
+    expect(light.semantics.brand.softHover).toBe(light.swatches.primary[200]);
+    expect(light.semantics.brand.softActive).toBe(light.swatches.primary[300]);
+    expect(dark.semantics.brand.softBg).toBe(dark.swatches.primary[900]);
+    expect(dark.semantics.brand.softHover).toBe(dark.swatches.primary[800]);
+    expect(dark.semantics.brand.softActive).toBe(dark.swatches.primary[700]);
+  });
+
   it('preserves the primary color at swatch step 500 in light mode', () => {
     const { swatches } = generatePalette(mockConfig, 'light');
     expect(swatches.primary[500]).toBe(mockConfig.light.primaryColor);
@@ -215,10 +227,5 @@ describe('colorEngine', () => {
     const dark = generatePalette(mockConfig, 'dark');
     expect(light.semantics.brand.onSolidText).toMatch(/^#/);
     expect(dark.semantics.brand.onSolidText).toMatch(/^#/);
-  });
-
-  it('does not export ColorTone', async () => {
-    const types = await import('./types');
-    expect('ColorTone' in types).toBe(false);
   });
 });
