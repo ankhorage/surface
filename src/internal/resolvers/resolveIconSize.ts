@@ -1,6 +1,6 @@
-import type { AnkhTheme } from '../../theme/types';
+import type { SurfaceTheme } from '../../theme/types';
 import { type ControlSize, resolveControlSize } from './resolveControlSize';
 
-export function resolveIconSize(theme: AnkhTheme, size: ControlSize = 'm'): number {
+export function resolveIconSize(theme: SurfaceTheme, size: ControlSize = 'm'): number {
   return resolveControlSize(theme, size).iconSize;
 }

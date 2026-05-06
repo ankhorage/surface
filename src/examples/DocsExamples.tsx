@@ -30,12 +30,10 @@ const docsThemeConfig = {
   light: {
     harmony: 'monochromatic' as const,
     primaryColor: '#2563eb',
-    colorTone: 'neutral' as const,
   },
   dark: {
     harmony: 'monochromatic' as const,
     primaryColor: '#2563eb',
-    colorTone: 'neutral' as const,
   },
 };
 

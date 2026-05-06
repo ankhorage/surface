@@ -1,4 +1,4 @@
-import type { AnkhTheme } from '../../theme/types';
+import type { SurfaceTheme } from '../../theme/types';
 
 export type ControlSize = 's' | 'm' | 'l';
 
@@ -11,7 +11,10 @@ export interface ResolvedControlSize {
   iconSize: number;
 }
 
-export function resolveControlSize(theme: AnkhTheme, size: ControlSize = 'm'): ResolvedControlSize {
+export function resolveControlSize(
+  theme: SurfaceTheme,
+  size: ControlSize = 'm',
+): ResolvedControlSize {
   switch (size) {
     case 's':
       return {

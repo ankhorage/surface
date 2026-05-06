@@ -6,12 +6,12 @@ import { OverlayProvider } from '../internal/overlay/OverlayProvider';
 import { isDeepEqual } from '../utils/deepEqual';
 import { deepMerge } from '../utils/deepMerge';
 import { createTheme } from './createTheme';
-import type { AnkhTheme, ThemeConfig } from './types';
+import type { SurfaceTheme, ThemeConfig } from './types';
 
 const defaultTheme = createTheme();
 
 export const ThemeContext = createContext<{
-  theme: AnkhTheme;
+  theme: SurfaceTheme;
   mode: 'light' | 'dark';
   setThemeConfig: (config: Partial<ThemeConfig>) => void;
   setMode: (mode: 'light' | 'dark') => void;

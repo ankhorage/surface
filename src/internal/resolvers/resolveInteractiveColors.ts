@@ -1,4 +1,4 @@
-import type { AnkhTheme } from '../../theme/types';
+import type { SurfaceTheme } from '../../theme/types';
 import type { FieldState } from './resolveFieldState';
 import type { InteractionState } from './resolveInteractiveState';
 import { type ComponentTone, resolveTone } from './resolveTone';
@@ -13,7 +13,7 @@ export interface ResolvedInteractiveColors {
 }
 
 export function resolveButtonColors(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   {
     variant,
     tone,
@@ -81,7 +81,7 @@ export function resolveButtonColors(
 }
 
 export function resolveInputColors(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   fieldState: FieldState,
 ): ResolvedInteractiveColors & { placeholderColor: string } {
   if (fieldState.disabled) {

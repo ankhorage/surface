@@ -1,9 +1,9 @@
 import type { TextStyle } from 'react-native';
 
-import type { AnkhTheme, FontWeight } from '../../theme/types';
+import type { FontWeight, SurfaceTheme } from '../../theme/types';
 
 export type TextVariant = 'body' | 'bodySmall' | 'caption' | 'label' | 'mono';
-export type TextWeight = keyof AnkhTheme['typography']['weights'] | FontWeight;
+export type TextWeight = keyof SurfaceTheme['typography']['weights'] | FontWeight;
 
 interface VariantStyle {
   fontSize: number;
@@ -19,15 +19,15 @@ export interface ResolveTextStyleOptions {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
-function resolveWeight(theme: AnkhTheme, value: TextWeight | undefined): FontWeight {
+function resolveWeight(theme: SurfaceTheme, value: TextWeight | undefined): FontWeight {
   if (!value) return theme.typography.weights.regular;
   if (value in theme.typography.weights) {
-    return theme.typography.weights[value as keyof AnkhTheme['typography']['weights']];
+    return theme.typography.weights[value as keyof SurfaceTheme['typography']['weights']];
   }
   return value as FontWeight;
 }
 
-function getVariantStyle(theme: AnkhTheme, variant: TextVariant): VariantStyle {
+function getVariantStyle(theme: SurfaceTheme, variant: TextVariant): VariantStyle {
   switch (variant) {
     case 'bodySmall':
       return {
@@ -64,7 +64,7 @@ function getVariantStyle(theme: AnkhTheme, variant: TextVariant): VariantStyle {
 }
 
 export function resolveTextStyles(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   options: ResolveTextStyleOptions = {},
 ): TextStyle {
   const { level, variant = 'body', align, weight, italic = false } = options;

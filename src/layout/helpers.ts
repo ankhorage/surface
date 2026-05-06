@@ -3,11 +3,11 @@ import type { StyleProp, ViewStyle } from 'react-native';
 import { resolveResponsive } from '../core/responsive/resolve';
 import type { Breakpoint, Responsive } from '../core/responsive/types';
 import { resolveToken } from '../theme/resolveToken';
-import type { AnkhTheme } from '../theme/types';
+import type { SurfaceTheme } from '../theme/types';
 
-type SpaceToken = keyof AnkhTheme['spacing'];
-type RadiusToken = keyof AnkhTheme['radii'];
-type ColorToken = keyof AnkhTheme['colors'];
+type SpaceToken = keyof SurfaceTheme['spacing'];
+type RadiusToken = keyof SurfaceTheme['radii'];
+type ColorToken = keyof SurfaceTheme['colors'];
 
 export type SpaceValue = number | SpaceToken;
 export type RadiusValue = number | RadiusToken;
@@ -55,7 +55,7 @@ export interface BoxStyleProps {
 }
 
 export function resolveSpacing(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   value: SpaceValue | undefined,
 ): number | undefined {
   if (value === undefined) return undefined;
@@ -64,7 +64,7 @@ export function resolveSpacing(
 }
 
 export function resolveRadius(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   value: RadiusValue | undefined,
 ): number | undefined {
   if (value === undefined) return undefined;
@@ -72,7 +72,10 @@ export function resolveRadius(
   return theme.radii[value];
 }
 
-export function resolveColor(theme: AnkhTheme, value: ColorValue | undefined): string | undefined {
+export function resolveColor(
+  theme: SurfaceTheme,
+  value: ColorValue | undefined,
+): string | undefined {
   if (value === undefined) return undefined;
   if (Object.prototype.hasOwnProperty.call(theme.colors, value)) {
     return theme.colors[value];
@@ -81,7 +84,7 @@ export function resolveColor(theme: AnkhTheme, value: ColorValue | undefined): s
 }
 
 export function resolveDimension(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   value: number | string | undefined,
 ): number | string | undefined {
   if (value === undefined || typeof value === 'number') return value;
@@ -93,7 +96,7 @@ function assignIfDefined<T, K extends keyof T>(target: T, key: K, value: T[K] | 
 }
 
 export function resolveBoxStyles(
-  theme: AnkhTheme,
+  theme: SurfaceTheme,
   breakpoint: Breakpoint,
   props: BoxStyleProps,
 ): ViewStyle {

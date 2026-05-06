@@ -3,14 +3,14 @@ import { View } from 'react-native';
 
 import { resolveResponsive, type Responsive, useResponsiveRuntime } from '../core/responsive';
 import { useTheme } from '../theme/ThemeContext';
-import type { AnkhTheme } from '../theme/types';
+import type { SurfaceTheme } from '../theme/types';
 import { Box, type BoxProps } from './Box';
 import { resolveSpacing } from './helpers';
 
 export interface ContainerProps extends Omit<BoxProps, 'children'> {
   children?: React.ReactNode;
   maxWidth?: Responsive<number>;
-  px?: Responsive<number | keyof AnkhTheme['spacing']>;
+  px?: Responsive<number | keyof SurfaceTheme['spacing']>;
 }
 
 export function Container({

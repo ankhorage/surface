@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 
-import type { AnkhTheme } from '../theme/types';
+import type { SurfaceTheme } from '../theme/types';
 import { resolveBoxStyles } from './helpers';
 
 const mockTheme = {
@@ -16,7 +16,7 @@ const mockTheme = {
     primary: '#007AFF',
     surface: '#FFFFFF',
   },
-} as unknown as AnkhTheme;
+} as unknown as SurfaceTheme;
 
 describe('resolveBoxStyles', () => {
   test('resolves padding and margins correctly', () => {
