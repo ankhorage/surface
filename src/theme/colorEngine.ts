@@ -7,11 +7,9 @@ import type {
   SemanticColorToken,
 } from '@ankhorage/color-theory';
 import {
-  DARK_SEMANTIC_COLOR_REFERENCES,
   generateColorSwatch,
   generateThemeModeColors,
   getReadableForeground,
-  LIGHT_SEMANTIC_COLOR_REFERENCES,
   parseHexColorOrThrow,
 } from '@ankhorage/color-theory';
 import type { ThemeConfig } from '@ankhorage/contracts';
@@ -113,10 +111,6 @@ export function generatePalette(
   parseHexColorOrThrow(modeConfig.primaryColor);
 
   const generated = generateThemeModeColors(modeConfig);
-  const references = isDark ? DARK_SEMANTIC_COLOR_REFERENCES : LIGHT_SEMANTIC_COLOR_REFERENCES;
-
-  // Resolve color-theory semantic references (used for cross-cutting semantic tokens)
-  resolveSemanticColors(generated, references);
 
   const { swatches } = generated;
   const neutralSwatch = swatches.neutral;

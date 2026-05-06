@@ -55,6 +55,13 @@ describe('colorEngine', () => {
     expect(semantics.border.focus).toBe(semantics.brand.outline);
     expect(semantics.action.primary.base).toBe(semantics.brand.base);
     expect(semantics.action.danger.base).toBe(semantics.danger.base);
+
+    // Surface runtime semantic aliases derived from ordinal swatches
+    expect(semantics.accent.base).toBeDefined();
+    expect(semantics.highlight.base).toBeDefined();
+    // accent/highlight are Surface semantic aliases (tertiary/quaternary fallback to primary when absent)
+    expect(semantics.accent.base).toBe(colors.accent);
+    expect(semantics.highlight.base).toBe(colors.highlight);
   });
 
   it('generates a valid palette for dark mode', () => {
