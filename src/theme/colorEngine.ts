@@ -25,9 +25,9 @@ import type {
 } from './types';
 
 // Fixed hex values for semantic status colors (not theme-generated)
-const DANGER_HEX = '#ef4444' as HexColor;
-const SUCCESS_HEX = '#22c55e' as HexColor;
-const WARNING_HEX = '#f59e0b' as HexColor;
+const DANGER_HEX = parseHexColorOrThrow('#ef4444');
+const SUCCESS_HEX = parseHexColorOrThrow('#22c55e');
+const WARNING_HEX = parseHexColorOrThrow('#f59e0b');
 
 /**
  * Surface semantic resolver: maps color-theory SemanticColorToken references
@@ -81,9 +81,23 @@ function buildNeutralSemantics(neutralSwatch: ColorSwatch, isDark: boolean): Neu
   };
 }
 
-function buildRoleSemantics(swatch: ColorSwatch): RoleSemantics {
+function buildRoleSemantics(swatch: ColorSwatch, isDark: boolean): RoleSemantics {
   const base = swatch[500];
   const { foreground: onSolidText } = getReadableForeground(base);
+
+  if (isDark) {
+    return {
+      base,
+      hover: swatch[400],
+      strong: swatch[300],
+      softBg: swatch[900],
+      softHover: swatch[800],
+      softActive: swatch[700],
+      outline: swatch[500],
+      onSolidText,
+    };
+  }
+
   return {
     base,
     hover: swatch[600],
@@ -116,7 +130,7 @@ export function generatePalette(
   const neutralSwatch = swatches.neutral;
 
   const neutral = buildNeutralSemantics(neutralSwatch, isDark);
-  const brand = buildRoleSemantics(swatches.primary);
+  const brand = buildRoleSemantics(swatches.primary, isDark);
 
   // Fallback to primary swatch for missing ordinal roles
   const secondarySwatch = swatches.secondary ?? swatches.primary;
@@ -127,9 +141,9 @@ export function generatePalette(
   const successSwatch = generateColorSwatch(SUCCESS_HEX).swatch;
   const warningSwatch = generateColorSwatch(WARNING_HEX).swatch;
 
-  const danger = buildRoleSemantics(dangerSwatch);
-  const success = buildRoleSemantics(successSwatch);
-  const warning = buildRoleSemantics(warningSwatch);
+  const danger = buildRoleSemantics(dangerSwatch, isDark);
+  const success = buildRoleSemantics(successSwatch, isDark);
+  const warning = buildRoleSemantics(warningSwatch, isDark);
 
   const surfaceSemantics: SurfaceSemantics = {
     default: neutral.surface,
@@ -152,7 +166,7 @@ export function generatePalette(
 
   const action: ActionSemantics = {
     primary: brand,
-    neutral: buildRoleSemantics(neutralSwatch),
+    neutral: buildRoleSemantics(neutralSwatch, isDark),
     danger,
   };
 
@@ -177,9 +191,9 @@ export function generatePalette(
     semantics: {
       neutral,
       brand,
-      secondary: buildRoleSemantics(secondarySwatch),
-      accent: buildRoleSemantics(tertiarySwatch),
-      highlight: buildRoleSemantics(quaternarySwatch),
+      secondary: buildRoleSemantics(secondarySwatch, isDark),
+      accent: buildRoleSemantics(tertiarySwatch, isDark),
+      highlight: buildRoleSemantics(quaternarySwatch, isDark),
       danger,
       success,
       warning,
