@@ -71,6 +71,19 @@ describe('colorEngine', () => {
     expect(semantics.content.inverse).toBe(semantics.brand.onSolidText);
   });
 
+  it('uses the color-theory default semantic status seeds', () => {
+    const light = generatePalette(mockConfig, 'light');
+    const dark = generatePalette(mockConfig, 'dark');
+
+    expect(light.semantics.danger.base).toBe('#ef4444');
+    expect(light.semantics.success.base).toBe('#22c55e');
+    expect(light.semantics.warning.base).toBe('#f59e0b');
+
+    expect(dark.semantics.danger.base).toBe('#ef4444');
+    expect(dark.semantics.success.base).toBe('#22c55e');
+    expect(dark.semantics.warning.base).toBe('#f59e0b');
+  });
+
   it('uses mode-aware role semantics for dark mode soft states', () => {
     const light = generatePalette(mockConfig, 'light');
     const dark = generatePalette(mockConfig, 'dark');
