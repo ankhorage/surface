@@ -28,8 +28,6 @@ function resolveExpoIconProviderName(provider: string): string {
   const normalizedProvider = provider.trim().toLowerCase();
 
   return normalizedProvider in EXPO_ICON_PROVIDER_ALIASES
-    ? EXPO_ICON_PROVIDER_ALIASES[
-        normalizedProvider as keyof typeof EXPO_ICON_PROVIDER_ALIASES
-      ]
+    ? EXPO_ICON_PROVIDER_ALIASES[normalizedProvider as keyof typeof EXPO_ICON_PROVIDER_ALIASES]
     : provider;
 }
