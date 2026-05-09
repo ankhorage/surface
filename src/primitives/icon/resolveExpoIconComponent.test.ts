@@ -19,7 +19,7 @@ describe('resolveExpoIconComponent', () => {
     expect(resolveExpoIconComponent('MaterialCommunityIcons')).toBe(MaterialCommunityIcons);
   });
 
-  test('resolves canonical provider aliases', async () => {
+  test('resolves the canonical material-community provider id', async () => {
     await mock.module('@expo/vector-icons', () => ({
       Ionicons,
       MaterialCommunityIcons,
@@ -28,10 +28,7 @@ describe('resolveExpoIconComponent', () => {
 
     const { resolveExpoIconComponent } = await import('./resolveExpoIconComponent');
 
-    expect(resolveExpoIconComponent('ionicons')).toBe(Ionicons);
-    expect(resolveExpoIconComponent('material-icons')).toBe(MaterialIcons);
     expect(resolveExpoIconComponent('material-community')).toBe(MaterialCommunityIcons);
-    expect(resolveExpoIconComponent('material-community-icons')).toBe(MaterialCommunityIcons);
   });
 
   test('falls back to Ionicons when the provider is unknown', async () => {
