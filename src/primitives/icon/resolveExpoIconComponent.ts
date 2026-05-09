@@ -10,11 +10,26 @@ export type ExpoIconComponent = React.ElementType<{
   testID?: string;
 }>;
 
+const EXPO_ICON_PROVIDER_ALIASES: Record<string, string> = {
+  ionicons: 'Ionicons',
+  material: 'MaterialIcons',
+  'material-icons': 'MaterialIcons',
+  materialicons: 'MaterialIcons',
+  'material-community': 'MaterialCommunityIcons',
+  'material-community-icons': 'MaterialCommunityIcons',
+  materialcommunityicons: 'MaterialCommunityIcons',
+};
+
 export function resolveExpoIconComponent(provider: string): ExpoIconComponent {
-  const candidate = (ExpoIcons as Record<string, unknown>)[provider];
+  const normalizedProvider = resolveExpoIconProviderName(provider);
+  const candidate = (ExpoIcons as Record<string, unknown>)[normalizedProvider];
   if (typeof candidate === 'function') {
     return candidate as ExpoIconComponent;
   }
 
   return ExpoIcons.Ionicons as ExpoIconComponent;
+}
+
+function resolveExpoIconProviderName(provider: string): string {
+  return EXPO_ICON_PROVIDER_ALIASES[provider.trim().toLowerCase()] ?? provider;
 }
