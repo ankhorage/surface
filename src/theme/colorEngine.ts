@@ -7,7 +7,7 @@ import type {
   SemanticColorToken,
 } from '@ankhorage/color-theory';
 import {
-  generateColorSwatch,
+  createDefaultSemanticStatusSwatches,
   generateThemeModeColors,
   getReadableForeground,
   parseHexColorOrThrow,
@@ -23,11 +23,6 @@ import type {
   SurfaceSemantics,
   ThemeSemantics,
 } from './types';
-
-// Fixed hex values for semantic status colors (not theme-generated)
-const DANGER_HEX = parseHexColorOrThrow('#ef4444');
-const SUCCESS_HEX = parseHexColorOrThrow('#22c55e');
-const WARNING_HEX = parseHexColorOrThrow('#f59e0b');
 
 /**
  * Surface semantic resolver: maps color-theory SemanticColorToken references
@@ -137,13 +132,11 @@ export function generatePalette(
   const tertiarySwatch = swatches.tertiary ?? swatches.primary;
   const quaternarySwatch = swatches.quaternary ?? swatches.primary;
 
-  const dangerSwatch = generateColorSwatch(DANGER_HEX).swatch;
-  const successSwatch = generateColorSwatch(SUCCESS_HEX).swatch;
-  const warningSwatch = generateColorSwatch(WARNING_HEX).swatch;
+  const semanticStatusSwatches = createDefaultSemanticStatusSwatches().swatches;
 
-  const danger = buildRoleSemantics(dangerSwatch, isDark);
-  const success = buildRoleSemantics(successSwatch, isDark);
-  const warning = buildRoleSemantics(warningSwatch, isDark);
+  const danger = buildRoleSemantics(semanticStatusSwatches.danger, isDark);
+  const success = buildRoleSemantics(semanticStatusSwatches.success, isDark);
+  const warning = buildRoleSemantics(semanticStatusSwatches.warning, isDark);
 
   const surfaceSemantics: SurfaceSemantics = {
     default: neutral.surface,
