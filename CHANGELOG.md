@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 1.0.2
+
+### Patch Changes
+
+- de83ae5: Consume `@ankhorage/color-theory` semantic status helpers for danger/success/warning roles.
+
 ## 1.0.1
 
 ### Patch Changes
