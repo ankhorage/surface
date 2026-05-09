@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 1.0.1
+
+### Patch Changes
+
+- c0c242d: update package
+
 ## 1.0.0
 
 ### Major Changes
