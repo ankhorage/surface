@@ -5,7 +5,7 @@
     "": {
       "name": "@ankhorage/surface",
       "dependencies": {
-        "@ankhorage/color-theory": "^0.0.3",
+        "@ankhorage/color-theory": "^0.0.4",
         "@ankhorage/contracts": "^1.1.0",
       },
       "devDependencies": {
@@ -32,7 +32,7 @@
     },
   },
   "packages": {
-    "@ankhorage/color-theory": ["@ankhorage/color-theory@0.0.3", "", { "dependencies": { "culori": "^4.0.2" } }, "sha512-obKcFrEbnhbsrYEOSCDnH4wSEobB+wTIxaUEXDOlq69Oirwzk7Z2Rsu0drmROCnY14ITpCWvE9BEdeCezzLVOg=="],
+    "@ankhorage/color-theory": ["@ankhorage/color-theory@0.0.4", "", { "dependencies": { "culori": "^4.0.2" } }, "sha512-24/RKqJxQAqWFbqqcWfKzqCCzUcKVAQ+MHWkwVfwrFbxHrhKXV7YV2//svACDbpCYizvvT6OAqOPxbEA3SFmuw=="],
 
     "@ankhorage/contracts": ["@ankhorage/contracts@1.1.0", "", { "dependencies": { "@ankhorage/color-theory": "^0.0.2" } }, "sha512-UJ6Yuw62qqtaU768tQarGdWVnY5vKfdyLKkCvkdKB7zIPGO7mwPZBhIch6BXHSLKLPA+4QBwwxpkZl4a+XTMyQ=="],
 
