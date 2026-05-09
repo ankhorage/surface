@@ -1,5 +1,13 @@
 # @ankhorage/surface
 
+## 1.0.3
+
+### Patch Changes
+
+- c8c99de: Support canonical icon provider aliases for Expo vector icons.
+
+  Surface now resolves provider strings such as `material-community` and `material-community-icons` to Expo's `MaterialCommunityIcons` export, so serialized route icons can use stable provider identifiers without falling back to Ionicons.
+
 ## 1.0.2
 
 ### Patch Changes
