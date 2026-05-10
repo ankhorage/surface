@@ -8,6 +8,7 @@ import {
   resolveAccessibilityLabel,
   resolveAlt,
   resolveImageStyle,
+  resolveRenderedSource,
   resolveResizeMode,
 } from './resolveImageProps';
 import type { ImageProps } from './types';
@@ -37,7 +38,7 @@ export function Image({
 
   const normalizedPrimary = normalizeSource(source);
   const normalizedFallback = normalizeSource(fallbackSource);
-  const resolvedSource = showFallback ? normalizedFallback : normalizedPrimary;
+  const resolvedSource = resolveRenderedSource(normalizedPrimary, normalizedFallback, showFallback);
 
   if (!resolvedSource) return null;
 

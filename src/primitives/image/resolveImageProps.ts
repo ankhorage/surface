@@ -13,6 +13,15 @@ export function normalizeSource(
   return source;
 }
 
+export function resolveRenderedSource(
+  normalizedPrimary: ImageSourcePropType | undefined,
+  normalizedFallback: ImageSourcePropType | undefined,
+  showFallback: boolean,
+): ImageSourcePropType | undefined {
+  if (showFallback || !normalizedPrimary) return normalizedFallback;
+  return normalizedPrimary;
+}
+
 function getUriFromSource(source: ImageSourcePropType): string | undefined {
   if (Array.isArray(source)) {
     const [first] = source;

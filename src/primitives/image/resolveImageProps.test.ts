@@ -5,6 +5,7 @@ import {
   getSourceKey,
   normalizeSource,
   resolveImageStyle,
+  resolveRenderedSource,
   resolveResizeMode,
 } from './resolveImageProps';
 
@@ -34,6 +35,13 @@ describe('resolveResizeMode', () => {
 
   it('defaults to cover when both are absent', () => {
     expect(resolveResizeMode(undefined, undefined)).toBe('cover');
+  });
+});
+
+describe('resolveRenderedSource', () => {
+  it('renders fallback when the primary source is absent', () => {
+    const normalizedFallback = normalizeSource('https://example.com/fallback.png');
+    expect(resolveRenderedSource(undefined, normalizedFallback, false)).toEqual(normalizedFallback);
   });
 });
 
