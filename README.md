@@ -23,9 +23,18 @@ bun add @ankhorage/surface
 ## 📦 Usage
 
 ```tsx
-import { Box, Text } from '@ankhorage/surface';
+import { Box, Image, Text } from '@ankhorage/surface';
 
 <Box padding="lg" gap="md">
+  <Image
+    alt="Hero image"
+    fallbackSource="https://example.com/hero-fallback.jpg"
+    fit="cover"
+    height={240}
+    radius="l"
+    source="https://example.com/hero.jpg"
+    width="100%"
+  />
   <Text variant="title">Title</Text>
   <Text>Content</Text>
 </Box>;
