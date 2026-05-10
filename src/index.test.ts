@@ -21,7 +21,7 @@ const expectedRootExports = [
   "export { IconButton } from './components/icon-button';",
   "export { Label } from './components/label';",
   "export { ListItem } from './components/list-item';",
-  "export { DrawerNavigation, DrawerNavigationItem, NavigationItem, NavigationList, TabBar, TabBarItem } from './components/navigation';",
+  "export {\n  DrawerNavigation,\n  DrawerNavigationItem,\n  NavigationItem,\n  NavigationList,\n  TabBar,\n  TabBarItem,\n} from './components/navigation';",
   "export { Menu } from './components/menu';",
   "export { Modal } from './components/modal';",
   "export { Radio } from './components/radio';",
