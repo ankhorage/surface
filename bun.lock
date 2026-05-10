@@ -9,7 +9,7 @@
         "@ankhorage/contracts": "^1.2.0",
       },
       "devDependencies": {
-        "@ankhorage/devtools": "^1.0.4",
+        "@ankhorage/devtools": "^1.0.5",
         "@changesets/cli": "^2.31.0",
         "@expo/vector-icons": "^15.1.1",
         "@types/bun": "^1.3.13",
@@ -36,7 +36,7 @@
 
     "@ankhorage/contracts": ["@ankhorage/contracts@1.2.0", "", { "dependencies": { "@ankhorage/color-theory": "^0.0.4" } }, "sha512-58wwwCQVPKasQx37Jc11g40DdklxTgR/EY2hc0t062uWXMcGShizBA9JduVVOoLmCW61aiNJLfvebADKwGiYEA=="],
 
-    "@ankhorage/devtools": ["@ankhorage/devtools@1.0.4", "", { "dependencies": { "@eslint/js": "^10.0.1", "eslint": "^10.2.0", "eslint-config-prettier": "^10.1.8", "eslint-plugin-import": "^2.32.0", "eslint-plugin-prettier": "^5.5.5", "eslint-plugin-simple-import-sort": "^12.1.1", "eslint-plugin-unused-imports": "^4.4.1", "knip": "^6.12.2", "prettier": "^3.8.1", "typescript-eslint": "^8.24.0" }, "bin": { "ankhorage-eslint": "dist/eslint-cli.js", "ankhorage-knip": "dist/knip-cli.js", "ankhorage-prettier": "dist/prettier-cli.js" } }, "sha512-fZmhwu1M3sbqZSxg/qXfdS0wzYpjkriZ/nMkSAiUDoTYpdUJQZXVcdJDDWxFmYNv6Xj2HmP0fGByE4p+xdw6Tw=="],
+    "@ankhorage/devtools": ["@ankhorage/devtools@1.0.5", "", { "dependencies": { "@eslint/js": "^10.0.1", "eslint": "^10.2.0", "eslint-config-prettier": "^10.1.8", "eslint-plugin-import": "^2.32.0", "eslint-plugin-prettier": "^5.5.5", "eslint-plugin-simple-import-sort": "^12.1.1", "eslint-plugin-unused-imports": "^4.4.1", "knip": "^6.12.2", "prettier": "^3.8.1", "typescript-eslint": "^8.24.0" }, "bin": { "ankhorage-eslint": "dist/eslint-cli.js", "ankhorage-knip": "dist/knip-cli.js", "ankhorage-prettier": "dist/prettier-cli.js" } }, "sha512-tT8Orldn8vLXLhGnKS/X7ZfX4BqJ/T7z0w1nucr1ZxhW6OmpNcMWN7o7RUo45dWNa+JNIbT8iX9FSecfVq7pUw=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.29.0", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.28.5", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw=="],
 
