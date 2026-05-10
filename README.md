@@ -39,3 +39,10 @@ import { Box, Text } from '@ankhorage/surface';
 ## 🧠 Why this exists
 
 Bridges the gap between raw primitives and full UI frameworks.
+
+## 🧭 Navigation chrome primitives
+
+Surface includes **router-agnostic navigation chrome** building blocks (tab bars, drawer lists, route items).
+
+- These components **do not** implement routing, route state, deep linking, or screen switching.
+- Use **Expo Router / React Navigation** for navigation mechanics, and render UI with Surface by passing `active`, `disabled`, and `onPress`.

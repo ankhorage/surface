@@ -22,6 +22,17 @@ export type { MenuItem, MenuProps } from './components/menu';
 export { Menu } from './components/menu';
 export type { ModalProps } from './components/modal';
 export { Modal } from './components/modal';
+export type {
+  DrawerNavigationItemProps,
+  DrawerNavigationProps,
+  NavigationItemIcon,
+  NavigationItemProps,
+  NavigationItemSpec,
+  NavigationListProps,
+  TabBarItemProps,
+  TabBarProps,
+} from './components/navigation';
+export { DrawerNavigation, DrawerNavigationItem, NavigationItem, NavigationList, TabBar, TabBarItem } from './components/navigation';
 export type { RadioProps } from './components/radio';
 export { Radio } from './components/radio';
 export type { SwitchProps } from './components/switch';
