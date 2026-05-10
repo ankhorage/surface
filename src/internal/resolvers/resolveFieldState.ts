@@ -1,4 +1,4 @@
-export type FieldStateName = 'default' | 'focused' | 'disabled' | 'invalid' | 'readOnly';
+type FieldStateName = 'default' | 'focused' | 'disabled' | 'invalid' | 'readOnly';
 
 export interface FieldState {
   name: FieldStateName;
