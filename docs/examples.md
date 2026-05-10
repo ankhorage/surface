@@ -105,6 +105,50 @@ export function AccountTabs() {
 }
 ```
 
+## Tab Bar Chrome (Router-Agnostic)
+
+```tsx
+import React from 'react';
+import { TabBar, type NavigationItemSpec } from '@ankhorage/surface';
+
+const items: NavigationItemSpec[] = [
+  { id: 'home', label: 'Home', icon: { name: 'home-outline' }, active: true, onPress: () => {} },
+  { id: 'search', label: 'Search', icon: { name: 'search-outline' }, onPress: () => {} },
+  { id: 'profile', label: 'Profile', icon: { name: 'person-outline' }, onPress: () => {} },
+];
+
+export function BottomTabs() {
+  return <TabBar items={items} />;
+}
+```
+
+## Drawer Navigation Chrome (Router-Agnostic)
+
+```tsx
+import React from 'react';
+import { DrawerNavigation, type NavigationItemSpec, Stack, Text } from '@ankhorage/surface';
+
+const items: NavigationItemSpec[] = [
+  { id: 'settings', label: 'Settings', icon: { name: 'settings-outline' }, onPress: () => {} },
+  { id: 'help', label: 'Help', icon: { name: 'help-circle-outline' }, onPress: () => {} },
+];
+
+export function SettingsNav() {
+  return (
+    <DrawerNavigation
+      header={
+        <Stack gap="xs">
+          <Text variant="body" weight="semiBold">
+            Menu
+          </Text>
+        </Stack>
+      }
+      items={items}
+    />
+  );
+}
+```
+
 ## Menu Usage
 
 ```tsx
