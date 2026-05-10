@@ -105,6 +105,30 @@ export function AccountTabs() {
 }
 ```
 
+## Image Usage
+
+```tsx
+import React from 'react';
+import { Image, Stack, Text } from '@ankhorage/surface';
+
+export function ProfileHeader() {
+  return (
+    <Stack gap="m">
+      <Image
+        alt="Avatar"
+        fallbackSource="https://example.com/avatar-fallback.png"
+        fit="cover"
+        height={96}
+        radius="full"
+        source="https://example.com/avatar.png"
+        width={96}
+      />
+      <Text variant="body">Welcome back</Text>
+    </Stack>
+  );
+}
+```
+
 ## Tab Bar Chrome (Router-Agnostic)
 
 ```tsx

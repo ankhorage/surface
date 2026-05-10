@@ -33,6 +33,7 @@ const expectedRootExports = [
   "export { Tooltip } from './components/tooltip';",
   "export * from './core/responsive';",
   "export * from './layout';",
+  "export { Image } from './primitives/image';",
   "export * from './theme';",
 ] as const;
 
