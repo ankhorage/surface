@@ -47,10 +47,6 @@ export const OverlayStackContext = React.createContext<OverlayStackRuntime | nul
 
 export const OverlayStackActionsContext = React.createContext<OverlayStackActions | null>(null);
 
-export function useOverlayStack(): OverlayStackRuntime | null {
-  return React.useContext(OverlayStackContext);
-}
-
 export function useOverlayStackActions(): OverlayStackActions | null {
   return React.useContext(OverlayStackActionsContext);
 }

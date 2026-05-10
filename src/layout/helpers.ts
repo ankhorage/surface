@@ -9,8 +9,8 @@ type SpaceToken = keyof SurfaceTheme['spacing'];
 type RadiusToken = keyof SurfaceTheme['radii'];
 type ColorToken = keyof SurfaceTheme['colors'];
 
+type RadiusValue = number | RadiusToken;
 export type SpaceValue = number | SpaceToken;
-export type RadiusValue = number | RadiusToken;
 export type ColorValue = string | ColorToken;
 
 export interface BoxStyleProps {
@@ -63,19 +63,13 @@ export function resolveSpacing(
   return theme.spacing[value as SpaceToken];
 }
 
-export function resolveRadius(
-  theme: SurfaceTheme,
-  value: RadiusValue | undefined,
-): number | undefined {
+function resolveRadius(theme: SurfaceTheme, value: RadiusValue | undefined): number | undefined {
   if (value === undefined) return undefined;
   if (typeof value === 'number') return value;
   return theme.radii[value];
 }
 
-export function resolveColor(
-  theme: SurfaceTheme,
-  value: ColorValue | undefined,
-): string | undefined {
+function resolveColor(theme: SurfaceTheme, value: ColorValue | undefined): string | undefined {
   if (value === undefined) return undefined;
   if (Object.prototype.hasOwnProperty.call(theme.colors, value)) {
     return theme.colors[value];
@@ -83,7 +77,7 @@ export function resolveColor(
   return value as string;
 }
 
-export function resolveDimension(
+function resolveDimension(
   theme: SurfaceTheme,
   value: number | string | undefined,
 ): number | string | undefined {
