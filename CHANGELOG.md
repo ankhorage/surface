@@ -1,5 +1,13 @@
 # @ankhorage/surface
 
+## 1.2.0
+
+### Minor Changes
+
+- 73fd969: Add a render-only Image primitive.
+
+  This introduces a Surface `Image` component with string and React Native image source support, token-aware sizing and radius props, `fit`/`resizeMode` behavior, accessibility label mapping, and provider-neutral `fallbackSource` handling for load errors.
+
 ## 1.1.0
 
 ### Minor Changes
