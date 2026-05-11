@@ -1,3 +1,5 @@
+export type { AppBarProps } from './AppBar';
+export { AppBar } from './AppBar';
 export type { BoxProps } from './Box';
 export { Box } from './Box';
 export type { CenterProps } from './Center';
