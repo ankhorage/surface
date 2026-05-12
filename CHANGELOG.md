@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 1.3.1
+
+### Patch Changes
+
+- 35a27e9: Update packages
+
 ## 1.3.0
 
 ### Minor Changes
