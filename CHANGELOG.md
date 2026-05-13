@@ -1,5 +1,13 @@
 # @ankhorage/surface
 
+## 1.4.0
+
+### Minor Changes
+
+- 247dd05: Add a `ScrollArea` layout primitive for themed, responsive scroll containers.
+
+  `ScrollArea` wraps React Native `ScrollView` behind Surface so higher-level packages such as ZORA can build screen-level scrolling without importing raw React Native scroll primitives directly.
+
 ## 1.3.1
 
 ### Patch Changes
