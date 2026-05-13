@@ -11,7 +11,8 @@ import { useTheme } from '../theme/ThemeContext';
 import { type BoxStyleProps, resolveBoxStyles } from './helpers';
 
 export interface ScrollAreaProps
-  extends BoxStyleProps,
+  extends
+    BoxStyleProps,
     Omit<ReactNativeScrollViewProps, 'children' | 'contentContainerStyle' | 'style'> {
   children?: React.ReactNode;
   contentContainerStyle?: StyleProp<ViewStyle>;
@@ -103,7 +104,11 @@ export function ScrollArea({
   });
 
   return (
-    <ScrollView {...scrollProps} contentContainerStyle={contentContainerStyle} style={[resolved, style]}>
+    <ScrollView
+      {...scrollProps}
+      contentContainerStyle={contentContainerStyle}
+      style={[resolved, style]}
+    >
       {children}
     </ScrollView>
   );
