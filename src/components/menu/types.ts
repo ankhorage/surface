@@ -3,6 +3,9 @@ import type React from 'react';
 export interface MenuAction {
   id: string;
   title: React.ReactNode;
+  description?: React.ReactNode;
+  leading?: React.ReactNode;
+  trailing?: React.ReactNode;
   disabled?: boolean;
   selected?: boolean;
 }
