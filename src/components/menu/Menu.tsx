@@ -64,7 +64,9 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
 
   const closeMenu = React.useCallback(() => {
     setOpen(false);
-    dismiss?.();
+    if (dismiss) {
+      dismiss();
+    }
   }, [dismiss]);
 
   const activateAction = React.useCallback(
@@ -73,7 +75,10 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
         return;
       }
 
-      action.activate?.();
+      if (action.activate) {
+        action.activate();
+      }
+
       if (closeOnSelect) {
         closeMenu();
       }
@@ -166,7 +171,7 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
               >
                 {actions.map((action, index) => {
                   const active = index === activeIndex;
-                  const selected = action.selected || active;
+                  const selected = action.selected ?? active;
 
                   return (
                     <Pressable
