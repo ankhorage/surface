@@ -98,7 +98,7 @@ export function Tooltip({
             testID={testID}
             variant="raised"
           >
-            <Text color={theme.semantics.content.inverse} variant="caption">
+            <Text emphasis="inverse" variant="caption">
               {content}
             </Text>
           </Surface>

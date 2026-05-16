@@ -60,7 +60,8 @@ export function NavigationItem({ item, compact = false, testID }: NavigationItem
             ) : null}
             <Box flex={1}>
               <Text
-                color={presentation.contentColor}
+                color={active && !disabled ? 'primary' : undefined}
+                emphasis={disabled ? 'muted' : 'default'}
                 numberOfLines={1}
                 variant={compact ? 'bodySmall' : 'body'}
                 weight="medium"

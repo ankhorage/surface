@@ -1,9 +1,10 @@
 import type React from 'react';
 
-import type { TextTone } from '../../internal/resolvers/resolveTextColor';
+import type { SurfaceColor, SurfaceEmphasis } from '../../surfaceColor';
 
 export interface HelperTextProps {
   children?: React.ReactNode;
-  tone?: Extract<TextTone, 'default' | 'muted' | 'danger'>;
+  emphasis?: Extract<SurfaceEmphasis, 'default' | 'muted'>;
+  color?: Extract<SurfaceColor, 'error'>;
   testID?: string;
 }

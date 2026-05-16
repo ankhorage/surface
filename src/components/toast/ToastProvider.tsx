@@ -92,9 +92,9 @@ export function ToastProvider({
               description={toast.description}
               key={toast.id}
               onDismiss={() => dismissToast(toast.id)}
+              status={toast.status}
               testID={toast.testID}
               title={toast.title}
-              tone={toast.tone}
             />
           ))}
         </Stack>

@@ -11,7 +11,7 @@ export function IconButton({
   icon,
   accessibilityLabel,
   variant = 'ghost',
-  tone = 'primary',
+  color = 'primary',
   size = 'm',
   disabled = false,
   onPress,
@@ -30,7 +30,7 @@ export function IconButton({
       testID={testID}
     >
       {(state) => {
-        const colors = resolveButtonColors(theme, { state, tone, variant });
+        const colors = resolveButtonColors(theme, { color, state, variant });
 
         return (
           <Box

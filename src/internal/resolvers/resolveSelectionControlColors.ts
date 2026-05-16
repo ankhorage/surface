@@ -1,6 +1,7 @@
+import type { SurfaceColor } from '../../surfaceColor';
 import type { SurfaceTheme } from '../../theme/types';
 import type { FieldState } from './resolveFieldState';
-import { type ComponentTone, resolveTone } from './resolveTone';
+import { resolveSurfaceColor } from './resolveSurfaceColor';
 
 export interface ResolvedSelectionControlColors {
   backgroundColor: string;
@@ -15,20 +16,20 @@ export interface ResolvedSelectionControlColors {
 export function resolveSelectionControlColors(
   theme: SurfaceTheme,
   {
-    tone = 'primary',
+    color = 'primary',
     fieldState,
     checked,
     hovered = false,
     pressed = false,
   }: {
-    tone?: ComponentTone;
+    color?: SurfaceColor;
     fieldState: FieldState;
     checked: boolean;
     hovered?: boolean;
     pressed?: boolean;
   },
 ): ResolvedSelectionControlColors {
-  const semanticTone = resolveTone(theme, fieldState.invalid ? 'danger' : tone);
+  const semanticTone = resolveSurfaceColor(theme, fieldState.invalid ? 'error' : color);
   const isMuted = fieldState.disabled;
   const isInteractiveReadOnly = fieldState.readOnly && !fieldState.disabled;
 
@@ -47,7 +48,7 @@ export function resolveSelectionControlColors(
   }
 
   const uncheckedBorderColor = fieldState.invalid
-    ? theme.semantics.danger.outline
+    ? theme.semantics.error.outline
     : fieldState.focused
       ? theme.semantics.border.focus
       : theme.semantics.border.strong;

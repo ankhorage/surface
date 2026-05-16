@@ -1,8 +1,8 @@
 import type { ControlSize } from '../../internal/resolvers/resolveControlSize';
 import type { ButtonVariant } from '../../internal/resolvers/resolveInteractiveColors';
-import type { ComponentTone } from '../../internal/resolvers/resolveTone';
 import type { ButtonBaseProps } from '../../primitives/button-base';
 import type { IconProps } from '../../primitives/icon';
+import type { SurfaceColor } from '../../surfaceColor';
 
 export interface IconButtonProps extends Omit<
   ButtonBaseProps,
@@ -14,6 +14,6 @@ export interface IconButtonProps extends Omit<
   };
   accessibilityLabel: string;
   variant?: ButtonVariant;
-  tone?: ComponentTone;
+  color?: SurfaceColor;
   size?: ControlSize;
 }

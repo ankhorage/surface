@@ -1,7 +1,8 @@
+import type { SurfaceColor } from '../../surfaceColor';
 import type { SurfaceTheme } from '../../theme/types';
 import type { FieldState } from './resolveFieldState';
 import type { InteractionState } from './resolveInteractiveState';
-import { type ComponentTone, resolveTone } from './resolveTone';
+import { resolveSurfaceColor } from './resolveSurfaceColor';
 
 export type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'soft';
 
@@ -16,11 +17,11 @@ export function resolveButtonColors(
   theme: SurfaceTheme,
   {
     variant,
-    tone,
+    color,
     state,
   }: {
     variant: ButtonVariant;
-    tone: ComponentTone;
+    color: SurfaceColor;
     state: InteractionState;
   },
 ): ResolvedInteractiveColors {
@@ -33,7 +34,7 @@ export function resolveButtonColors(
     };
   }
 
-  const semanticTone = resolveTone(theme, tone);
+  const semanticTone = resolveSurfaceColor(theme, color);
 
   switch (variant) {
     case 'outline':
@@ -99,9 +100,7 @@ export function resolveInputColors(
       backgroundColor: fieldState.readOnly
         ? theme.semantics.surface.subtle
         : theme.semantics.surface.default,
-      borderColor: fieldState.focused
-        ? theme.semantics.danger.base
-        : theme.semantics.danger.outline,
+      borderColor: fieldState.focused ? theme.semantics.error.base : theme.semantics.error.outline,
       contentColor: theme.semantics.content.default,
       placeholderColor: theme.semantics.content.muted,
     };

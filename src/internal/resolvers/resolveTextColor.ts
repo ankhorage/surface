@@ -1,39 +1,27 @@
-import { resolveToken } from '../../theme/resolveToken';
+import type { SurfaceColor, SurfaceEmphasis } from '../../surfaceColor';
 import type { SurfaceTheme } from '../../theme/types';
-
-export type TextTone =
-  | 'default'
-  | 'muted'
-  | 'subtle'
-  | 'inverse'
-  | 'danger'
-  | 'success'
-  | 'warning';
-export type TextColorValue = keyof SurfaceTheme['colors'] | string;
+import { resolveSurfaceColor } from './resolveSurfaceColor';
 
 export function resolveTextColor(
   theme: SurfaceTheme,
-  tone: TextTone = 'default',
-  color?: TextColorValue,
+  emphasis: SurfaceEmphasis = 'default',
+  color?: SurfaceColor,
 ): string {
   if (color) {
-    return resolveToken(theme.colors, color);
+    if (emphasis === 'inverse') {
+      return resolveSurfaceColor(theme, color).onSolidText;
+    }
+
+    return resolveSurfaceColor(theme, color).base;
   }
 
-  switch (tone) {
+  switch (emphasis) {
     case 'muted':
       return theme.semantics.content.muted;
     case 'subtle':
       return theme.semantics.content.subtle;
     case 'inverse':
       return theme.semantics.content.inverse;
-    case 'danger':
-      return theme.semantics.danger.base;
-    case 'success':
-      return theme.semantics.success.base;
-    case 'warning':
-      return theme.semantics.warning.base;
-    case 'default':
     default:
       return theme.semantics.content.default;
   }

@@ -39,6 +39,8 @@ export const Heading: React.FC<HeadingProps> = ({
   children,
   level = 2,
   align,
+  color,
+  emphasis = 'default',
   numberOfLines,
   i18nKey,
   testID,
@@ -52,7 +54,7 @@ export const Heading: React.FC<HeadingProps> = ({
       accessibilityRole="header"
       testID={testID}
       numberOfLines={numberOfLines}
-      style={resolveHeadingTextStyle(theme, level, align)}
+      style={resolveHeadingTextStyle(theme, level, align, emphasis, color)}
     >
       {content}
     </Text>

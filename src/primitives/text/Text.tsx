@@ -32,7 +32,7 @@ export function Text({
   children,
   i18nKey,
   variant = 'body',
-  tone = 'default',
+  emphasis = 'default',
   color,
   align,
   weight,
@@ -56,7 +56,7 @@ export function Text({
           weight,
         }),
         {
-          color: resolveTextColor(theme, tone, color),
+          color: resolveTextColor(theme, emphasis, color),
         },
       ]}
     >

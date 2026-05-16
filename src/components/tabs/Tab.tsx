@@ -69,11 +69,7 @@ export function Tab({ value, children, disabled = false, testID }: TabProps) {
           opacity: disabled ? 0.64 : 1,
         }}
       >
-        <Text
-          color={selected ? theme.semantics.action.primary.base : theme.semantics.content.default}
-          variant="label"
-          weight="medium"
-        >
+        <Text color={selected ? 'primary' : undefined} variant="label" weight="medium">
           {children}
         </Text>
       </Box>

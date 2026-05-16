@@ -1,8 +1,8 @@
 import type React from 'react';
 
 import type { ControlSize } from '../../internal/resolvers/resolveControlSize';
-import type { ComponentTone } from '../../internal/resolvers/resolveTone';
 import type { ButtonBaseProps } from '../../primitives/button-base';
+import type { SurfaceColor } from '../../surfaceColor';
 
 export interface CheckboxProps extends Omit<
   ButtonBaseProps,
@@ -12,7 +12,7 @@ export interface CheckboxProps extends Omit<
   checked?: boolean;
   defaultChecked?: boolean;
   onCheckedChange?: ((checked: boolean) => void) | undefined;
-  tone?: ComponentTone;
+  color?: SurfaceColor;
   size?: ControlSize;
   invalid?: boolean;
   readOnly?: boolean;

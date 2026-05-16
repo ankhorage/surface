@@ -3,9 +3,9 @@ import React from 'react';
 import { Text } from '../../primitives/text';
 import type { HelperTextProps } from './types';
 
-export function HelperText({ children, tone = 'muted', testID }: HelperTextProps) {
+export function HelperText({ children, emphasis = 'muted', color, testID }: HelperTextProps) {
   return (
-    <Text testID={testID} tone={tone} variant="caption">
+    <Text color={color} emphasis={emphasis} testID={testID} variant="caption">
       {children}
     </Text>
   );

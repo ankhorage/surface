@@ -22,7 +22,7 @@ describe('resolveHeadingTextStyle', () => {
     expect(style.fontFamily).toBe('SpaceGrotesk_700Regular');
   });
 
-  it('shares the default content tone with the text primitive', () => {
+  it('shares the default content emphasis with the text primitive', () => {
     const theme = createTheme();
     const style = resolveHeadingTextStyle(theme, 2);
 

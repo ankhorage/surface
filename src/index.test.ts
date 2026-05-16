@@ -34,6 +34,7 @@ const expectedRootExports = [
   "export * from './core/responsive';",
   "export * from './layout';",
   "export { Image } from './primitives/image';",
+  "export {\n  SURFACE_COLORS,\n  SURFACE_EMPHASES,\n  SURFACE_PALETTE_COLORS,\n  SURFACE_STATUS_COLORS,\n} from './surfaceColor';",
   "export * from './theme';",
 ] as const;
 

@@ -28,15 +28,23 @@ export function Field({
   return (
     <Stack gap="xs" testID={testID}>
       {label ? (
-        <Label required={required} tone={presentation.labelTone}>
+        <Label
+          color={presentation.labelColor}
+          emphasis={presentation.labelEmphasis}
+          required={required}
+        >
           {label}
         </Label>
       ) : null}
       <Box>{children}</Box>
       {hasErrorText ? (
-        <HelperText tone={presentation.helperTone}>{errorText}</HelperText>
+        <HelperText color={presentation.helperColor} emphasis={presentation.helperEmphasis}>
+          {errorText}
+        </HelperText>
       ) : helperText ? (
-        <HelperText tone={presentation.helperTone}>{helperText}</HelperText>
+        <HelperText color={presentation.helperColor} emphasis={presentation.helperEmphasis}>
+          {helperText}
+        </HelperText>
       ) : null}
     </Stack>
   );

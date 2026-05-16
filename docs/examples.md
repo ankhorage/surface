@@ -39,7 +39,7 @@ export function ProfileForm() {
       <Stack gap="xs">
         <Label>Preferences</Label>
         <Switch defaultChecked>Email updates</Switch>
-        <HelperText tone="muted">Read-only fields stay focusable but do not mutate.</HelperText>
+        <HelperText emphasis="muted">Read-only fields stay focusable but do not mutate.</HelperText>
       </Stack>
     </Stack>
   );
@@ -57,7 +57,7 @@ export function ConfirmModal() {
     <Modal visible={open} onDismiss={() => setOpen(false)}>
       <Stack gap="m">
         <Text variant="body">Delete this item?</Text>
-        <Button tone="danger">Delete</Button>
+        <Button color="danger">Delete</Button>
       </Stack>
     </Modal>
   );

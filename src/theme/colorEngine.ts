@@ -137,6 +137,9 @@ export function generatePalette(
   const danger = buildRoleSemantics(semanticStatusSwatches.danger, isDark);
   const success = buildRoleSemantics(semanticStatusSwatches.success, isDark);
   const warning = buildRoleSemantics(semanticStatusSwatches.warning, isDark);
+  // Keep destructive action and feedback error aligned until a dedicated error status swatch is introduced.
+  const error = danger;
+  const info = buildRoleSemantics(secondarySwatch, isDark);
 
   const surfaceSemantics: SurfaceSemantics = {
     default: neutral.surface,
@@ -168,14 +171,17 @@ export function generatePalette(
     secondary: secondarySwatch[500],
     accent: tertiarySwatch[500],
     highlight: quaternarySwatch[500],
+    tertiary: tertiarySwatch[500],
+    quaternary: quaternarySwatch[500],
     background: neutral.bg,
     surface: neutral.surface,
     text: neutral.text,
     textSecondary: neutral.textMuted,
     border: neutral.border,
-    error: danger.base,
+    error: error.base,
     success: success.base,
     warning: warning.base,
+    info: info.base,
   };
 
   return {
@@ -190,6 +196,8 @@ export function generatePalette(
       danger,
       success,
       warning,
+      error,
+      info,
       surface: surfaceSemantics,
       content,
       border,
