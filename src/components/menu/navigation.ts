@@ -1,5 +1,5 @@
 export function resolveNextMenuIndex(
-  items: { disabled?: boolean }[],
+  items: readonly { disabled?: boolean }[],
   currentIndex: number,
   key: 'ArrowDown' | 'ArrowUp' | 'Home' | 'End',
 ): number {

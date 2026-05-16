@@ -5,12 +5,12 @@ import { FocusScope } from '../../internal/focus/FocusScope';
 import { useFocusManager } from '../../internal/focus/useFocusManager';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Box, Surface } from '../../layout';
+import { Box, Inline, Stack, Surface } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
 import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import { resolveNextMenuIndex } from './navigation';
-import type { MenuProps } from './types';
+import type { MenuAction, MenuProps } from './types';
 
 interface MeasurableNode {
   measureInWindow?: (
@@ -25,7 +25,35 @@ function measureNode(node: unknown, callback: (layout: LayoutRectangle) => void)
   });
 }
 
-export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }: MenuProps) {
+function renderActionContent(action: MenuAction, active: boolean) {
+  const titleColor =
+    action.intent === 'danger' ? 'danger' : active || action.selected ? 'neutral' : undefined;
+
+  return (
+    <Inline align="center" gap="s" justify="space-between" wrap="nowrap">
+      {action.leading ? <Box>{action.leading}</Box> : null}
+      <Box flex={1}>
+        <Stack gap="xxs">
+          <Text
+            color={titleColor}
+            variant="bodySmall"
+            weight={action.selected ? 'semiBold' : 'medium'}
+          >
+            {action.title}
+          </Text>
+          {action.description ? (
+            <Text emphasis="muted" variant="caption">
+              {action.description}
+            </Text>
+          ) : null}
+        </Stack>
+      </Box>
+      {action.trailing ? <Box>{action.trailing}</Box> : null}
+    </Inline>
+  );
+}
+
+export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }: MenuProps) {
   const { theme } = useTheme();
   const { bindKeydown } = useFocusManager();
   const animation = resolveOverlayAnimation('menu');
@@ -36,15 +64,34 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
 
   const closeMenu = React.useCallback(() => {
     setOpen(false);
-    onDismiss?.();
-  }, [onDismiss]);
+    if (dismiss) {
+      dismiss();
+    }
+  }, [dismiss]);
+
+  const activateAction = React.useCallback(
+    (action: MenuAction) => {
+      if (action.disabled) {
+        return;
+      }
+
+      if (action.activate) {
+        action.activate();
+      }
+
+      if (closeOnSelect) {
+        closeMenu();
+      }
+    },
+    [closeMenu, closeOnSelect],
+  );
 
   const openMenu = React.useCallback(() => {
     measureNode(anchorRef.current, setLayout);
-    const firstEnabledIndex = items.findIndex((item) => !item.disabled);
+    const firstEnabledIndex = actions.findIndex((action) => !action.disabled);
     setActiveIndex(firstEnabledIndex === -1 ? 0 : firstEnabledIndex);
     setOpen(true);
-  }, [items]);
+  }, [actions]);
 
   React.useEffect(() => {
     if (!open) {
@@ -55,17 +102,14 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
       const { key } = event;
       if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'Home' || key === 'End') {
         event.preventDefault();
-        setActiveIndex((current) => resolveNextMenuIndex(items, current, key));
+        setActiveIndex((current) => resolveNextMenuIndex(actions, current, key));
       }
 
       if (event.key === 'Enter') {
         event.preventDefault();
-        const activeItem = items[activeIndex];
-        if (activeItem && !activeItem.disabled) {
-          activeItem.onPress?.();
-          if (closeOnSelect) {
-            closeMenu();
-          }
+        const activeAction = actions[activeIndex];
+        if (activeAction) {
+          activateAction(activeAction);
         }
       }
 
@@ -74,7 +118,7 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
         closeMenu();
       }
     });
-  }, [activeIndex, bindKeydown, closeMenu, closeOnSelect, items, open]);
+  }, [activateAction, actions, activeIndex, bindKeydown, closeMenu, open]);
 
   return (
     <View collapsable={false} ref={anchorRef}>
@@ -117,7 +161,7 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
                 accessibilityRole="menu"
                 p="xs"
                 style={{
-                  minWidth: Math.max(layout?.width ?? 0, 180),
+                  minWidth: Math.max(layout?.width ?? 0, 220),
                   shadowOpacity: 0.12,
                   shadowRadius: 12,
                   shadowOffset: { width: 0, height: 6 },
@@ -125,40 +169,31 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
                 testID={testID}
                 variant="raised"
               >
-                {items.map((item, index) => {
-                  const selected = index === activeIndex;
+                {actions.map((action, index) => {
+                  const active = index === activeIndex;
+                  const selected = action.selected ?? active;
 
                   return (
                     <Pressable
                       accessibilityRole="menuitem"
-                      accessibilityState={{ disabled: item.disabled, selected }}
-                      disabled={item.disabled}
-                      key={item.id}
-                      onPress={() => {
-                        if (item.disabled) {
-                          return;
-                        }
-
-                        item.onPress?.();
-                        if (closeOnSelect) {
-                          closeMenu();
-                        }
-                      }}
+                      accessibilityState={{ disabled: action.disabled, selected }}
+                      disabled={action.disabled}
+                      key={action.id}
+                      onPress={() => activateAction(action)}
                     >
                       <Box
                         px="m"
                         py="s"
+                        radius="s"
                         style={{
                           backgroundColor: selected
                             ? theme.semantics.action.neutral.softBg
                             : 'transparent',
-                          opacity: item.disabled ? 0.56 : 1,
+                          opacity: action.disabled ? 0.56 : 1,
                         }}
-                        testID={testID ? `${testID}-item-${item.id}` : undefined}
+                        testID={testID ? `${testID}-item-${action.id}` : undefined}
                       >
-                        <Text color={selected ? 'neutral' : undefined} variant="bodySmall">
-                          {item.label}
-                        </Text>
+                        {renderActionContent(action, active)}
                       </Box>
                     </Pressable>
                   );

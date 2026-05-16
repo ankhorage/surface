@@ -1,16 +1,23 @@
 import type React from 'react';
 
-export interface MenuItem {
+export type MenuActionIntent = 'default' | 'danger';
+
+export interface MenuAction {
   id: string;
-  label: React.ReactNode;
+  title: React.ReactNode;
+  description?: React.ReactNode;
+  leading?: React.ReactNode;
+  trailing?: React.ReactNode;
+  intent?: MenuActionIntent;
   disabled?: boolean;
-  onPress?: (() => void) | undefined;
+  selected?: boolean;
+  activate?: () => void;
 }
 
 export interface MenuProps {
   trigger?: React.ReactNode;
-  items: MenuItem[];
-  onDismiss?: (() => void) | undefined;
+  actions: readonly MenuAction[];
+  dismiss?: () => void;
   closeOnSelect?: boolean;
   testID?: string;
 }
