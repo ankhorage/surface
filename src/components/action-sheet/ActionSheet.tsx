@@ -4,7 +4,7 @@ import { Pressable, View } from 'react-native';
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Box, Surface, Stack } from '../../layout';
+import { Box, Stack, Surface } from '../../layout';
 import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import { ActionSheetItem } from './ActionSheetItem';
