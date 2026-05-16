@@ -14,7 +14,7 @@ export function Label({
     <Text color={color} emphasis={emphasis} testID={testID} variant="label" weight="medium">
       {children}
       {required ? (
-        <Text color="danger" variant="label" weight="medium">
+        <Text color="error" variant="label" weight="medium">
           {' *'}
         </Text>
       ) : null}
