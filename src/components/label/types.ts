@@ -6,6 +6,6 @@ export interface LabelProps {
   children?: React.ReactNode;
   required?: boolean;
   emphasis?: Extract<SurfaceEmphasis, 'default' | 'muted'>;
-  color?: Extract<SurfaceColor, 'danger'>;
+  color?: Extract<SurfaceColor, 'error'>;
   testID?: string;
 }

@@ -100,9 +100,7 @@ export function resolveInputColors(
       backgroundColor: fieldState.readOnly
         ? theme.semantics.surface.subtle
         : theme.semantics.surface.default,
-      borderColor: fieldState.focused
-        ? theme.semantics.danger.base
-        : theme.semantics.danger.outline,
+      borderColor: fieldState.focused ? theme.semantics.error.base : theme.semantics.error.outline,
       contentColor: theme.semantics.content.default,
       placeholderColor: theme.semantics.content.muted,
     };

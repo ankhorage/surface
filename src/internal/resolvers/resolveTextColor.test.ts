@@ -22,4 +22,13 @@ describe('resolveTextColor', () => {
     expect(resolveTextColor(theme, 'default', 'error')).toBe(theme.semantics.error.base);
     expect(resolveTextColor(theme, 'default', 'info')).toBe(theme.semantics.info.base);
   });
+
+  it('maps inverse emphasis with a semantic color to role foreground text', () => {
+    const theme = createTheme();
+
+    expect(resolveTextColor(theme, 'inverse', 'primary')).toBe(
+      theme.semantics.action.primary.onSolidText,
+    );
+    expect(resolveTextColor(theme, 'inverse', 'error')).toBe(theme.semantics.error.onSolidText);
+  });
 });

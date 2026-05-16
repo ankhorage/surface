@@ -5,6 +5,6 @@ import type { SurfaceColor, SurfaceEmphasis } from '../../surfaceColor';
 export interface HelperTextProps {
   children?: React.ReactNode;
   emphasis?: Extract<SurfaceEmphasis, 'default' | 'muted'>;
-  color?: Extract<SurfaceColor, 'danger'>;
+  color?: Extract<SurfaceColor, 'error'>;
   testID?: string;
 }

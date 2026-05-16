@@ -29,7 +29,7 @@ export function resolveSelectionControlColors(
     pressed?: boolean;
   },
 ): ResolvedSelectionControlColors {
-  const semanticTone = resolveSurfaceColor(theme, fieldState.invalid ? 'danger' : color);
+  const semanticTone = resolveSurfaceColor(theme, fieldState.invalid ? 'error' : color);
   const isMuted = fieldState.disabled;
   const isInteractiveReadOnly = fieldState.readOnly && !fieldState.disabled;
 
@@ -48,7 +48,7 @@ export function resolveSelectionControlColors(
   }
 
   const uncheckedBorderColor = fieldState.invalid
-    ? theme.semantics.danger.outline
+    ? theme.semantics.error.outline
     : fieldState.focused
       ? theme.semantics.border.focus
       : theme.semantics.border.strong;

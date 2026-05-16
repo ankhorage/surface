@@ -22,11 +22,11 @@ describe('resolveFieldPresentation', () => {
     });
   });
 
-  it('elevates invalid fields to the danger color', () => {
+  it('elevates invalid fields to the error color', () => {
     expect(resolveFieldPresentation(resolveFieldState({ invalid: true, readOnly: true }))).toEqual({
-      helperColor: 'danger',
+      helperColor: 'error',
       helperEmphasis: 'default',
-      labelColor: 'danger',
+      labelColor: 'error',
       labelEmphasis: 'default',
     });
   });

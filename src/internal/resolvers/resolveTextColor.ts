@@ -8,6 +8,10 @@ export function resolveTextColor(
   color?: SurfaceColor,
 ): string {
   if (color) {
+    if (emphasis === 'inverse') {
+      return resolveSurfaceColor(theme, color).onSolidText;
+    }
+
     return resolveSurfaceColor(theme, color).base;
   }
 

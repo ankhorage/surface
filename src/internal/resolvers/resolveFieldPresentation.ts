@@ -2,18 +2,18 @@ import type { SurfaceColor, SurfaceEmphasis } from '../../surfaceColor';
 import type { FieldState } from './resolveFieldState';
 
 export interface ResolvedFieldPresentation {
-  helperColor?: Extract<SurfaceColor, 'danger'>;
+  helperColor?: Extract<SurfaceColor, 'error'>;
   helperEmphasis: Extract<SurfaceEmphasis, 'default' | 'muted'>;
-  labelColor?: Extract<SurfaceColor, 'danger'>;
+  labelColor?: Extract<SurfaceColor, 'error'>;
   labelEmphasis: Extract<SurfaceEmphasis, 'default' | 'muted'>;
 }
 
 export function resolveFieldPresentation(fieldState: FieldState): ResolvedFieldPresentation {
   if (fieldState.invalid) {
     return {
-      helperColor: 'danger',
+      helperColor: 'error',
       helperEmphasis: 'default',
-      labelColor: 'danger',
+      labelColor: 'error',
       labelEmphasis: 'default',
     };
   }

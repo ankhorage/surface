@@ -50,7 +50,7 @@ describe('resolveInteractiveColors', () => {
       }),
     );
 
-    expect(focusedInvalid.borderColor).toBe(theme.semantics.danger.base);
+    expect(focusedInvalid.borderColor).toBe(theme.semantics.error.base);
     expect(readOnly.backgroundColor).toBe(theme.semantics.surface.subtle);
     expect(readOnly.placeholderColor).toBe(theme.semantics.content.muted);
   });

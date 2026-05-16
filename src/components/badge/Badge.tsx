@@ -40,7 +40,7 @@ export function Badge({
       testID={testID}
     >
       <Text
-        color={variant === 'solid' ? undefined : color}
+        color={color}
         emphasis={variant === 'solid' ? 'inverse' : 'default'}
         variant="bodySmall"
         weight="medium"

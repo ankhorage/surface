@@ -25,10 +25,3 @@ Surface color/emphasis constants and types from the root package entrypoint.
 The previous `tone` vocabulary mixed semantic color roles and text emphasis in one concept.
 This change separates those concerns and establishes a single canonical color/emphasis source of
 truth for downstream packages.
-
-### Migration
-
-- Replace `tone` props used for semantic role selection with `color`.
-- Replace `tone` props used for text contrast with `emphasis`.
-- Update imports to use `SurfaceColor`/`SurfaceEmphasis` and the new `SURFACE_*` runtime lists
-  from `@ankhorage/surface`.

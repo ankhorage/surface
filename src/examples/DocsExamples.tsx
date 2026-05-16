@@ -66,7 +66,7 @@ export function FormAndOverlayExample() {
           <Checkbox defaultChecked>Weekly updates</Checkbox>
           <Radio>Product announcements</Radio>
           <Switch readOnly>Read-only setting</Switch>
-          <HelperText color="danger">Invalid fields should reuse the same danger color.</HelperText>
+          <HelperText color="error">Invalid fields should reuse the same error color.</HelperText>
         </Stack>
         <Modal visible={false}>
           <Text>Modal content</Text>

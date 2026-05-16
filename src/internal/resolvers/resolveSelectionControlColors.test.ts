@@ -18,7 +18,7 @@ describe('resolveSelectionControlColors', () => {
     expect(colors.labelColor).toBe(theme.semantics.content.default);
   });
 
-  it('maps invalid unchecked controls through danger/border semantics', () => {
+  it('maps invalid unchecked controls through error/border semantics', () => {
     const theme = createTheme();
     const colors = resolveSelectionControlColors(theme, {
       checked: false,
@@ -26,8 +26,8 @@ describe('resolveSelectionControlColors', () => {
       color: 'primary',
     });
 
-    expect(colors.borderColor).toBe(theme.semantics.danger.outline);
-    expect(colors.trackColor).toBe(theme.semantics.danger.outline);
+    expect(colors.borderColor).toBe(theme.semantics.error.outline);
+    expect(colors.trackColor).toBe(theme.semantics.error.outline);
   });
 
   it('mutes disabled controls regardless of color', () => {
