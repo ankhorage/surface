@@ -8,11 +8,13 @@ export interface MenuAction {
   trailing?: React.ReactNode;
   disabled?: boolean;
   selected?: boolean;
+  activate?: VoidFunction;
 }
 
 export interface MenuProps {
   trigger?: React.ReactNode;
   actions: readonly MenuAction[];
+  dismiss?: VoidFunction;
   closeOnSelect?: boolean;
   testID?: string;
 }
