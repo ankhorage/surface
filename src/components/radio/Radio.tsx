@@ -18,7 +18,7 @@ export function Radio({
   checked,
   defaultChecked = false,
   onCheckedChange,
-  tone = 'primary',
+  color = 'primary',
   size = 'm',
   disabled = false,
   invalid = false,
@@ -69,8 +69,10 @@ export function Radio({
           fieldState,
           hovered: interactionState.hovered,
           pressed: interactionState.pressed,
-          tone,
+          color,
         });
+        const labelEmphasis =
+          colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
 
         return (
           <Box
@@ -105,7 +107,7 @@ export function Radio({
             </Box>
             {children ? (
               <Box ml="s">
-                <Text color={colors.labelColor}>{children}</Text>
+                <Text emphasis={labelEmphasis}>{children}</Text>
               </Box>
             ) : null}
           </Box>

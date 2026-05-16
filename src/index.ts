@@ -50,7 +50,7 @@ export type { TextInputProps } from './components/text-input';
 export { TextInput } from './components/text-input';
 export type { TextareaProps } from './components/textarea';
 export { Textarea } from './components/textarea';
-export type { ToastOptions, ToastProps, ToastTone } from './components/toast';
+export type { ToastOptions, ToastProps, ToastStatus } from './components/toast';
 export { Toast, ToastProvider, useToast } from './components/toast';
 export type { TooltipProps } from './components/tooltip';
 export { Tooltip } from './components/tooltip';
@@ -70,6 +70,18 @@ export type { ImageFit, ImageProps, SurfaceImageSource } from './primitives/imag
 export { Image } from './primitives/image';
 export type { TextProps } from './primitives/text';
 export { Text } from './primitives/text';
+export type {
+  SurfaceColor,
+  SurfaceEmphasis,
+  SurfacePaletteColor,
+  SurfaceStatusColor,
+} from './surfaceColor';
+export {
+  SURFACE_COLORS,
+  SURFACE_EMPHASES,
+  SURFACE_PALETTE_COLORS,
+  SURFACE_STATUS_COLORS,
+} from './surfaceColor';
 export * from './theme';
 export { isDeepEqual } from './utils/deepEqual';
 export { deepMerge } from './utils/deepMerge';

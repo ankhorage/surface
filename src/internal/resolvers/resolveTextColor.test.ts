@@ -4,7 +4,7 @@ import { createTheme } from '../../theme/createTheme';
 import { resolveTextColor } from './resolveTextColor';
 
 describe('resolveTextColor', () => {
-  it('maps semantic text tones through content aliases', () => {
+  it('maps semantic text emphases through content aliases', () => {
     const theme = createTheme();
 
     expect(resolveTextColor(theme, 'default')).toBe(theme.semantics.content.default);
@@ -13,11 +13,13 @@ describe('resolveTextColor', () => {
     expect(resolveTextColor(theme, 'inverse')).toBe(theme.semantics.content.inverse);
   });
 
-  it('supports semantic status tones for shared field and messaging copy', () => {
+  it('supports semantic colors for shared field and messaging copy', () => {
     const theme = createTheme();
 
-    expect(resolveTextColor(theme, 'danger')).toBe(theme.semantics.danger.base);
-    expect(resolveTextColor(theme, 'success')).toBe(theme.semantics.success.base);
-    expect(resolveTextColor(theme, 'warning')).toBe(theme.semantics.warning.base);
+    expect(resolveTextColor(theme, 'default', 'danger')).toBe(theme.semantics.action.danger.base);
+    expect(resolveTextColor(theme, 'default', 'success')).toBe(theme.semantics.success.base);
+    expect(resolveTextColor(theme, 'default', 'warning')).toBe(theme.semantics.warning.base);
+    expect(resolveTextColor(theme, 'default', 'error')).toBe(theme.semantics.error.base);
+    expect(resolveTextColor(theme, 'default', 'info')).toBe(theme.semantics.info.base);
   });
 });

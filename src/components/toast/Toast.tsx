@@ -6,20 +6,35 @@ import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { ToastProps } from './types';
 
-export function Toast({ title, description, tone = 'default', onDismiss, testID }: ToastProps) {
+export function Toast({ title, description, status = 'default', onDismiss, testID }: ToastProps) {
   const { theme } = useTheme();
-  const toneColor =
-    tone === 'success'
+  const statusColor =
+    status === 'success'
       ? theme.semantics.success.base
-      : tone === 'danger'
-        ? theme.semantics.danger.base
-        : theme.semantics.action.primary.base;
+      : status === 'warning'
+        ? theme.semantics.warning.base
+        : status === 'error'
+          ? theme.semantics.error.base
+          : status === 'info'
+            ? theme.semantics.info.base
+            : theme.semantics.action.primary.base;
+
+  const statusTextColor =
+    status === 'success'
+      ? 'success'
+      : status === 'warning'
+        ? 'warning'
+        : status === 'error'
+          ? 'error'
+          : status === 'info'
+            ? 'info'
+            : 'primary';
 
   return (
     <Surface
       p="m"
       style={{
-        borderLeftColor: toneColor,
+        borderLeftColor: statusColor,
         borderLeftWidth: 3,
         minWidth: 280,
         shadowOpacity: 0.14,
@@ -36,7 +51,7 @@ export function Toast({ title, description, tone = 'default', onDismiss, testID 
               {title}
             </Text>
           ) : null}
-          {description ? <Text tone="muted">{description}</Text> : null}
+          {description ? <Text emphasis="muted">{description}</Text> : null}
         </Box>
         {onDismiss ? (
           <Pressable
@@ -45,7 +60,7 @@ export function Toast({ title, description, tone = 'default', onDismiss, testID 
             onPress={onDismiss}
             testID={testID ? `${testID}-dismiss` : undefined}
           >
-            <Text color={toneColor}>×</Text>
+            <Text color={statusTextColor}>×</Text>
           </Pressable>
         ) : null}
       </Inline>

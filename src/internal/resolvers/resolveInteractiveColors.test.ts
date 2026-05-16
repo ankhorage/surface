@@ -5,11 +5,11 @@ import { resolveFieldState } from './resolveFieldState';
 import { resolveButtonColors, resolveInputColors } from './resolveInteractiveColors';
 
 describe('resolveInteractiveColors', () => {
-  it('maps button variant, tone, and state through semantic slots', () => {
+  it('maps button variant, color, and state through semantic slots', () => {
     const theme = createTheme();
     const solid = resolveButtonColors(theme, {
       variant: 'solid',
-      tone: 'primary',
+      color: 'primary',
       state: {
         disabled: false,
         focused: false,
@@ -19,7 +19,7 @@ describe('resolveInteractiveColors', () => {
     });
     const outline = resolveButtonColors(theme, {
       variant: 'outline',
-      tone: 'danger',
+      color: 'danger',
       state: {
         disabled: false,
         focused: false,

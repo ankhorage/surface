@@ -10,6 +10,6 @@ export * from './resolveOverlayAnimation';
 export * from './resolveOverlayZIndex';
 export * from './resolveSelectionControlBehavior';
 export * from './resolveSelectionControlColors';
+export * from './resolveSurfaceColor';
 export * from './resolveTextColor';
 export * from './resolveTextStyles';
-export * from './resolveTone';

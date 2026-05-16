@@ -73,6 +73,8 @@ export interface ThemeSemantics {
   danger: RoleSemantics;
   success: RoleSemantics;
   warning: RoleSemantics;
+  error: RoleSemantics;
+  info: RoleSemantics;
   surface: SurfaceSemantics;
   content: ContentSemantics;
   border: BorderSemantics;
@@ -98,6 +100,8 @@ export interface ThemeTokens {
     secondary: string;
     accent: string;
     highlight: string;
+    tertiary: string;
+    quaternary: string;
     background: string;
     surface: string;
     text: string;
@@ -106,6 +110,7 @@ export interface ThemeTokens {
     error: string;
     success: string;
     warning: string;
+    info: string;
     [key: string]: string;
   };
   swatches: GeneratedThemeSwatches;

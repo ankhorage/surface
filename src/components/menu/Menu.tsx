@@ -156,14 +156,7 @@ export function Menu({ trigger, items, onDismiss, closeOnSelect = true, testID }
                         }}
                         testID={testID ? `${testID}-item-${item.id}` : undefined}
                       >
-                        <Text
-                          color={
-                            selected
-                              ? theme.semantics.action.neutral.base
-                              : theme.semantics.content.default
-                          }
-                          variant="bodySmall"
-                        >
+                        <Text color={selected ? 'neutral' : undefined} variant="bodySmall">
                           {item.label}
                         </Text>
                       </Box>

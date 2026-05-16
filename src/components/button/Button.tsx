@@ -12,7 +12,7 @@ import type { ButtonProps } from './types';
 export function Button({
   children,
   variant = 'solid',
-  tone = 'primary',
+  color = 'primary',
   size = 'm',
   disabled = false,
   loading = false,
@@ -41,9 +41,11 @@ export function Button({
       {(state) => {
         const colors = resolveButtonColors(theme, {
           variant,
-          tone,
+          color,
           state,
         });
+        const textEmphasis =
+          colors.contentColor === theme.semantics.content.muted ? 'muted' : 'default';
         const iconSize = resolveIconSize(theme, size);
 
         return (
@@ -78,7 +80,10 @@ export function Button({
                   </View>
                 ) : null}
                 <Text
-                  color={colors.contentColor}
+                  color={variant === 'solid' || textEmphasis === 'muted' ? undefined : color}
+                  emphasis={
+                    textEmphasis === 'muted' ? 'muted' : variant === 'solid' ? 'inverse' : 'default'
+                  }
                   variant={controlSize.textVariant}
                   weight="semiBold"
                 >

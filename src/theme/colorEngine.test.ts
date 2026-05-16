@@ -31,6 +31,8 @@ function expectRequiredSemanticRoles(semantics: ThemeSemantics) {
   expect(semantics.danger.base).toBeDefined();
   expect(semantics.success.base).toBeDefined();
   expect(semantics.warning.base).toBeDefined();
+  expect(semantics.error.base).toBeDefined();
+  expect(semantics.info.base).toBeDefined();
   expect(semantics.surface.default).toBeDefined();
   expect(semantics.content.default).toBeDefined();
   expect(semantics.border.default).toBeDefined();
@@ -78,10 +80,14 @@ describe('colorEngine', () => {
     expect(light.semantics.danger.base).toBe('#ef4444');
     expect(light.semantics.success.base).toBe('#22c55e');
     expect(light.semantics.warning.base).toBe('#f59e0b');
+    expect(light.semantics.error.base).toBe(light.semantics.danger.base);
+    expect(light.semantics.info.base).toBeDefined();
 
     expect(dark.semantics.danger.base).toBe('#ef4444');
     expect(dark.semantics.success.base).toBe('#22c55e');
     expect(dark.semantics.warning.base).toBe('#f59e0b');
+    expect(dark.semantics.error.base).toBe(dark.semantics.danger.base);
+    expect(dark.semantics.info.base).toBeDefined();
   });
 
   it('uses mode-aware role semantics for dark mode soft states', () => {

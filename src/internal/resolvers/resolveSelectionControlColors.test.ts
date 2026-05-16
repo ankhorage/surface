@@ -5,12 +5,12 @@ import { resolveFieldState } from './resolveFieldState';
 import { resolveSelectionControlColors } from './resolveSelectionControlColors';
 
 describe('resolveSelectionControlColors', () => {
-  it('maps checked controls through the selected tone semantics', () => {
+  it('maps checked controls through the selected color semantics', () => {
     const theme = createTheme();
     const colors = resolveSelectionControlColors(theme, {
       checked: true,
       fieldState: resolveFieldState({ focused: true }),
-      tone: 'primary',
+      color: 'primary',
     });
 
     expect(colors.borderColor).toBe(theme.semantics.action.primary.base);
@@ -23,19 +23,19 @@ describe('resolveSelectionControlColors', () => {
     const colors = resolveSelectionControlColors(theme, {
       checked: false,
       fieldState: resolveFieldState({ invalid: true }),
-      tone: 'primary',
+      color: 'primary',
     });
 
     expect(colors.borderColor).toBe(theme.semantics.danger.outline);
     expect(colors.trackColor).toBe(theme.semantics.danger.outline);
   });
 
-  it('mutes disabled controls regardless of tone', () => {
+  it('mutes disabled controls regardless of color', () => {
     const theme = createTheme();
     const colors = resolveSelectionControlColors(theme, {
       checked: true,
       fieldState: resolveFieldState({ disabled: true }),
-      tone: 'danger',
+      color: 'danger',
     });
 
     expect(colors.labelColor).toBe(theme.semantics.content.muted);

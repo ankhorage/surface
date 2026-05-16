@@ -1,11 +1,13 @@
 import type React from 'react';
 
-export type ToastTone = 'default' | 'success' | 'danger';
+import type { SurfaceStatusColor } from '../../surfaceColor';
+
+export type ToastStatus = 'default' | SurfaceStatusColor;
 
 export interface ToastProps {
   title?: React.ReactNode;
   description?: React.ReactNode;
-  tone?: ToastTone;
+  status?: ToastStatus;
   onDismiss?: (() => void) | undefined;
   testID?: string;
 }

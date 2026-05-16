@@ -42,8 +42,8 @@ export function ProviderExample() {
     <ThemeProvider initialConfig={docsThemeConfig}>
       <Stack gap="m" p="l">
         <Text variant="body">Surface starter</Text>
-        <Badge content="Foundation" tone="success" />
-        <Button tone="warning" variant="soft">
+        <Badge color="success" content="Foundation" />
+        <Button color="warning" variant="soft">
           Continue
         </Button>
       </Stack>
@@ -66,7 +66,7 @@ export function FormAndOverlayExample() {
           <Checkbox defaultChecked>Weekly updates</Checkbox>
           <Radio>Product announcements</Radio>
           <Switch readOnly>Read-only setting</Switch>
-          <HelperText tone="danger">Invalid fields should reuse the same danger tone.</HelperText>
+          <HelperText color="danger">Invalid fields should reuse the same danger color.</HelperText>
         </Stack>
         <Modal visible={false}>
           <Text>Modal content</Text>
@@ -106,7 +106,7 @@ export function NavigationExample() {
           trigger={<Text>Open menu</Text>}
         />
         <Box>
-          <Text tone="success">Theme overrides can stay semantic.</Text>
+          <Text color="success">Theme overrides can stay semantic.</Text>
         </Box>
       </Stack>
     </ThemeProvider>

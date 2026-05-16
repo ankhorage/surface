@@ -18,7 +18,7 @@ export function Checkbox({
   checked,
   defaultChecked = false,
   onCheckedChange,
-  tone = 'primary',
+  color = 'primary',
   size = 'm',
   disabled = false,
   invalid = false,
@@ -69,8 +69,10 @@ export function Checkbox({
           fieldState,
           hovered: interactionState.hovered,
           pressed: interactionState.pressed,
-          tone,
+          color,
         });
+        const labelEmphasis =
+          colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
 
         return (
           <Box
@@ -93,14 +95,14 @@ export function Checkbox({
               }}
             >
               {isChecked ? (
-                <Text color={colors.indicatorColor} variant="caption" weight="bold">
+                <Text emphasis="inverse" variant="caption" weight="bold">
                   ✓
                 </Text>
               ) : null}
             </Box>
             {children ? (
               <Box ml="s">
-                <Text color={colors.labelColor}>{children}</Text>
+                <Text emphasis={labelEmphasis}>{children}</Text>
               </Box>
             ) : null}
           </Box>

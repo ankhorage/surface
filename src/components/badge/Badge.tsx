@@ -9,7 +9,7 @@ import type { BadgeProps } from './types';
 export function Badge({
   content,
   variant = 'soft',
-  tone = 'primary',
+  color = 'primary',
   size = 's',
   testID,
 }: BadgeProps) {
@@ -17,7 +17,7 @@ export function Badge({
   const controlSize = resolveControlSize(theme, size);
   const colors = resolveButtonColors(theme, {
     variant,
-    tone,
+    color,
     state: {
       disabled: false,
       focused: false,
@@ -39,7 +39,12 @@ export function Badge({
       }}
       testID={testID}
     >
-      <Text color={colors.contentColor} variant="bodySmall" weight="medium">
+      <Text
+        color={variant === 'solid' ? undefined : color}
+        emphasis={variant === 'solid' ? 'inverse' : 'default'}
+        variant="bodySmall"
+        weight="medium"
+      >
         {content}
       </Text>
     </Box>

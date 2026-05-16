@@ -66,7 +66,8 @@ export function TabBarItem({ item, compact = false, testID }: TabBarItemProps) {
             ) : null}
             {item.label ? (
               <Text
-                color={contentColor}
+                color={active && !disabled ? 'primary' : undefined}
+                emphasis={active && !disabled ? 'default' : 'muted'}
                 numberOfLines={1}
                 variant={compact ? 'bodySmall' : 'label'}
                 weight="medium"

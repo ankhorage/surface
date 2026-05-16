@@ -1,30 +1,32 @@
+import type { SurfaceColor, SurfaceEmphasis } from '../../surfaceColor';
 import type { FieldState } from './resolveFieldState';
-import type { TextTone } from './resolveTextColor';
-
-type FieldPresentationTone = Extract<TextTone, 'default' | 'muted' | 'danger'>;
 
 export interface ResolvedFieldPresentation {
-  helperTone: FieldPresentationTone;
-  labelTone: FieldPresentationTone;
+  helperColor?: Extract<SurfaceColor, 'danger'>;
+  helperEmphasis: Extract<SurfaceEmphasis, 'default' | 'muted'>;
+  labelColor?: Extract<SurfaceColor, 'danger'>;
+  labelEmphasis: Extract<SurfaceEmphasis, 'default' | 'muted'>;
 }
 
 export function resolveFieldPresentation(fieldState: FieldState): ResolvedFieldPresentation {
   if (fieldState.invalid) {
     return {
-      helperTone: 'danger',
-      labelTone: 'danger',
+      helperColor: 'danger',
+      helperEmphasis: 'default',
+      labelColor: 'danger',
+      labelEmphasis: 'default',
     };
   }
 
   if (fieldState.disabled || fieldState.readOnly) {
     return {
-      helperTone: 'muted',
-      labelTone: 'muted',
+      helperEmphasis: 'muted',
+      labelEmphasis: 'muted',
     };
   }
 
   return {
-    helperTone: 'default',
-    labelTone: 'default',
+    helperEmphasis: 'default',
+    labelEmphasis: 'default',
   };
 }

@@ -34,7 +34,7 @@ function ListItemContent({
           </Text>
         ) : null}
         {description ? (
-          <Text numberOfLines={2} tone="muted" variant="bodySmall">
+          <Text emphasis="muted" numberOfLines={2} variant="bodySmall">
             {description}
           </Text>
         ) : null}
