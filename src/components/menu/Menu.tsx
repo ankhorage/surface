@@ -26,7 +26,8 @@ function measureNode(node: unknown, callback: (layout: LayoutRectangle) => void)
 }
 
 function renderActionContent(action: MenuAction, active: boolean) {
-  const titleColor = active || action.selected ? 'neutral' : undefined;
+  const titleColor =
+    action.intent === 'danger' ? 'danger' : active || action.selected ? 'neutral' : undefined;
 
   return (
     <Inline align="center" gap="s" justify="space-between" wrap="nowrap">
