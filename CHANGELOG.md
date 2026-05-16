@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 2.0.1
+
+### Patch Changes
+
+- 5c55cb1: Add ActionSheet and ActionSheetItem primitives for mobile-friendly contextual actions.
+
 ## 2.0.0
 
 ### Major Changes
