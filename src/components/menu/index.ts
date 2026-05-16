@@ -1,2 +1,2 @@
 export { Menu } from './Menu';
-export type { MenuAction, MenuAction as MenuItem, MenuActionIntent, MenuProps } from './types';
+export type { MenuAction, MenuActionIntent, MenuAction as MenuItem, MenuProps } from './types';

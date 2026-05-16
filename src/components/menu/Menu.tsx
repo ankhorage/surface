@@ -34,7 +34,11 @@ function renderActionContent(action: MenuAction, active: boolean) {
       {action.leading ? <Box>{action.leading}</Box> : null}
       <Box flex={1}>
         <Stack gap="xxs">
-          <Text color={titleColor} variant="bodySmall" weight={action.selected ? 'semiBold' : 'medium'}>
+          <Text
+            color={titleColor}
+            variant="bodySmall"
+            weight={action.selected ? 'semiBold' : 'medium'}
+          >
             {action.title}
           </Text>
           {action.description ? (
