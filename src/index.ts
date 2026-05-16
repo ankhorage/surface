@@ -1,3 +1,5 @@
+export type { ActionSheetItemProps, ActionSheetProps } from './components/action-sheet';
+export { ActionSheet, ActionSheetItem } from './components/action-sheet';
 export type { BadgeProps } from './components/badge';
 export { Badge } from './components/badge';
 export type { ButtonIconSpec, ButtonProps } from './components/button';
