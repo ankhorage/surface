@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 2.0.2
+
+### Patch Changes
+
+- 1f1f02f: Update Menu.
+
 ## 2.0.1
 
 ### Patch Changes
