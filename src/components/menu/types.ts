@@ -11,13 +11,13 @@ export interface MenuAction {
   intent?: MenuActionIntent;
   disabled?: boolean;
   selected?: boolean;
-  activate?: VoidFunction;
+  activate?: () => void;
 }
 
 export interface MenuProps {
   trigger?: React.ReactNode;
   actions: readonly MenuAction[];
-  dismiss?: VoidFunction;
+  dismiss?: () => void;
   closeOnSelect?: boolean;
   testID?: string;
 }
