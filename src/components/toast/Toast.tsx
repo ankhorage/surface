@@ -3,32 +3,45 @@ import { Pressable } from 'react-native';
 
 import { Box, Inline, Surface } from '../../layout';
 import { Text } from '../../primitives/text';
+import type { SurfaceColor } from '../../surfaceColor';
 import { useTheme } from '../../theme/ThemeContext';
+import type { SurfaceTheme } from '../../theme/types';
 import type { ToastProps } from './types';
+
+function resolveToastStatusColor(theme: SurfaceTheme, status: ToastProps['status']) {
+  switch (status) {
+    case 'success':
+      return theme.semantics.success.base;
+    case 'warning':
+      return theme.semantics.warning.base;
+    case 'error':
+      return theme.semantics.error.base;
+    case 'info':
+      return theme.semantics.info.base;
+    default:
+      return theme.semantics.action.primary.base;
+  }
+}
+
+function resolveToastStatusTextColor(status: ToastProps['status']): SurfaceColor {
+  switch (status) {
+    case 'success':
+      return 'success';
+    case 'warning':
+      return 'warning';
+    case 'error':
+      return 'error';
+    case 'info':
+      return 'info';
+    default:
+      return 'primary';
+  }
+}
 
 export function Toast({ title, description, status = 'default', onDismiss, testID }: ToastProps) {
   const { theme } = useTheme();
-  const statusColor =
-    status === 'success'
-      ? theme.semantics.success.base
-      : status === 'warning'
-        ? theme.semantics.warning.base
-        : status === 'error'
-          ? theme.semantics.error.base
-          : status === 'info'
-            ? theme.semantics.info.base
-            : theme.semantics.action.primary.base;
-
-  const statusTextColor =
-    status === 'success'
-      ? 'success'
-      : status === 'warning'
-        ? 'warning'
-        : status === 'error'
-          ? 'error'
-          : status === 'info'
-            ? 'info'
-            : 'primary';
+  const statusColor = resolveToastStatusColor(theme, status);
+  const statusTextColor = resolveToastStatusTextColor(status);
 
   return (
     <Surface

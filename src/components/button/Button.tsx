@@ -46,6 +46,10 @@ export function Button({
         });
         const textEmphasis =
           colors.contentColor === theme.semantics.content.muted ? 'muted' : 'default';
+        const resolvedTextColor =
+          variant === 'solid' || textEmphasis === 'muted' ? undefined : color;
+        const resolvedTextEmphasis =
+          textEmphasis === 'muted' ? 'muted' : variant === 'solid' ? 'inverse' : 'default';
         const iconSize = resolveIconSize(theme, size);
 
         return (
@@ -80,10 +84,8 @@ export function Button({
                   </View>
                 ) : null}
                 <Text
-                  color={variant === 'solid' || textEmphasis === 'muted' ? undefined : color}
-                  emphasis={
-                    textEmphasis === 'muted' ? 'muted' : variant === 'solid' ? 'inverse' : 'default'
-                  }
+                  color={resolvedTextColor}
+                  emphasis={resolvedTextEmphasis}
                   variant={controlSize.textVariant}
                   weight="semiBold"
                 >

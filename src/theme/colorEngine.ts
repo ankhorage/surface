@@ -137,6 +137,7 @@ export function generatePalette(
   const danger = buildRoleSemantics(semanticStatusSwatches.danger, isDark);
   const success = buildRoleSemantics(semanticStatusSwatches.success, isDark);
   const warning = buildRoleSemantics(semanticStatusSwatches.warning, isDark);
+  // Keep destructive action and feedback error aligned until a dedicated error status swatch is introduced.
   const error = danger;
   const info = buildRoleSemantics(secondarySwatch, isDark);
 

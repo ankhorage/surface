@@ -18,7 +18,6 @@ export function resolveTextColor(
       return theme.semantics.content.subtle;
     case 'inverse':
       return theme.semantics.content.inverse;
-    case 'default':
     default:
       return theme.semantics.content.default;
   }

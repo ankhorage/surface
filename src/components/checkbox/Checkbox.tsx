@@ -73,6 +73,8 @@ export function Checkbox({
         });
         const labelEmphasis =
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+        const indicatorEmphasis =
+          colors.indicatorColor === theme.semantics.content.muted ? 'muted' : 'inverse';
 
         return (
           <Box
@@ -95,7 +97,7 @@ export function Checkbox({
               }}
             >
               {isChecked ? (
-                <Text emphasis="inverse" variant="caption" weight="bold">
+                <Text emphasis={indicatorEmphasis} variant="caption" weight="bold">
                   ✓
                 </Text>
               ) : null}
