@@ -31,8 +31,8 @@ export function FormExample() {
         <Field helperText="Use your work email." label="Email" required>
           <TextInput placeholder="you@example.com" />
         </Field>
-        <Checkbox checked label="Accept terms" />
-        <HelperText tone="success">Looks good.</HelperText>
+        <Checkbox checked>Accept terms</Checkbox>
+        <HelperText emphasis="muted">Looks good.</HelperText>
       </Stack>
     </ThemeProvider>
   );
@@ -76,7 +76,14 @@ export function OverlayExample() {
         <Button onPress={() => setModalVisible(true)}>Open modal</Button>
         <Button onPress={() => setDrawerVisible(true)}>Open drawer</Button>
         <Modal onDismiss={() => setModalVisible(false)} visible={modalVisible}>
-          <Card title="Modal title">Modal content</Card>
+          <Card>
+            <Stack gap="s">
+              <Text variant="label" weight="semiBold">
+                Modal title
+              </Text>
+              <Text>Modal content</Text>
+            </Stack>
+          </Card>
         </Modal>
         <Drawer onDismiss={() => setDrawerVisible(false)} visible={drawerVisible}>
           <Text>Drawer content</Text>
