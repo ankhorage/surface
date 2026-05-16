@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { ThemeProvider } from '../theme';
-import { Box, Stack } from '../layout';
 import { Button } from '../components/button';
 import { Card } from '../components/card';
 import { Checkbox } from '../components/checkbox';
@@ -14,7 +12,9 @@ import { Tab, TabList, TabPanel, Tabs } from '../components/tabs';
 import { TextInput } from '../components/text-input';
 import { ToastProvider, useToast } from '../components/toast';
 import { Tooltip } from '../components/tooltip';
+import { Box, Stack } from '../layout';
 import { Text } from '../primitives/text';
+import { ThemeProvider } from '../theme';
 import type { ThemeConfig } from '../theme/types';
 
 const docsThemeConfig: ThemeConfig = {
