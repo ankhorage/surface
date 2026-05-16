@@ -20,7 +20,7 @@ export type { LabelProps } from './components/label';
 export { Label } from './components/label';
 export type { ListItemProps } from './components/list-item';
 export { ListItem } from './components/list-item';
-export type { MenuAction, MenuItem, MenuProps } from './components/menu';
+export type { MenuAction, MenuActionIntent, MenuItem, MenuProps } from './components/menu';
 export { Menu } from './components/menu';
 export type { ModalProps } from './components/modal';
 export { Modal } from './components/modal';
