@@ -1,0 +1,5 @@
+sequenceDiagram
+  participant participant_TranslationProvider as TranslationProvider
+  participant participant_useMemo as useMemo
+  participant_TranslationProvider->>participant_useMemo: useMemo()
+  participant_useMemo-->>participant_TranslationProvider: return

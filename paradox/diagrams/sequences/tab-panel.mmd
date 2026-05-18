@@ -1,0 +1,23 @@
+sequenceDiagram
+  participant participant_createTabsIdBase as createTabsIdBase
+  participant participant_getPanelId as getPanelId
+  participant participant_getTabId as getTabId
+  participant participant_resolveTabId as resolveTabId
+  participant participant_resolveTabPanelId as resolveTabPanelId
+  participant participant_sanitizeTabValue as sanitizeTabValue
+  participant participant_TabPanel as TabPanel
+  participant participant_useTabsContext as useTabsContext
+  participant_TabPanel->>participant_useTabsContext: useTabsContext()
+  participant_useTabsContext-->>participant_TabPanel: return
+  participant_TabPanel->>participant_getTabId: getTabId()
+  participant_getTabId->>participant_createTabsIdBase: createTabsIdBase()
+  participant_createTabsIdBase-->>participant_getTabId: return
+  participant_getTabId->>participant_sanitizeTabValue: sanitizeTabValue()
+  participant_sanitizeTabValue-->>participant_getTabId: return
+  participant_getTabId->>participant_resolveTabId: resolveTabId()
+  participant_resolveTabId-->>participant_getTabId: return
+  participant_getTabId-->>participant_TabPanel: return
+  participant_TabPanel->>participant_getPanelId: getPanelId()
+  participant_getPanelId->>participant_resolveTabPanelId: resolveTabPanelId()
+  participant_resolveTabPanelId-->>participant_getPanelId: return
+  participant_getPanelId-->>participant_TabPanel: return

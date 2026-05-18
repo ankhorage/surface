@@ -1,0 +1,17 @@
+sequenceDiagram
+  participant participant_resolveIndicatorSize as resolveIndicatorSize
+  participant participant_resolveSelectionControlNextChecked as resolveSelectionControlNextChecked
+  participant participant_Switch as Switch
+  participant participant_useContext as useContext
+  participant participant_useControllableState as useControllableState
+  participant participant_useTheme as useTheme
+  participant_Switch->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Switch: return
+  participant_Switch->>participant_useControllableState: useControllableState()
+  participant_useControllableState-->>participant_Switch: return
+  participant_Switch->>participant_resolveIndicatorSize: resolveIndicatorSize()
+  participant_resolveIndicatorSize-->>participant_Switch: return
+  participant_Switch->>participant_resolveSelectionControlNextChecked: resolveSelectionControlNextChecked()
+  participant_resolveSelectionControlNextChecked-->>participant_Switch: return

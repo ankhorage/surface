@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant participant_resolveSurfaceVariantStyles as resolveSurfaceVariantStyles
+  participant participant_Surface as Surface
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_Surface->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Surface: return
+  participant_Surface->>participant_resolveSurfaceVariantStyles: resolveSurfaceVariantStyles()
+  participant_resolveSurfaceVariantStyles-->>participant_Surface: return

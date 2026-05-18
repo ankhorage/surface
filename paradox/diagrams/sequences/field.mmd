@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_Field as Field
+  participant participant_resolveFieldPresentation as resolveFieldPresentation
+  participant participant_resolveFieldState as resolveFieldState
+  participant_Field->>participant_resolveFieldState: resolveFieldState()
+  participant_resolveFieldState-->>participant_Field: return
+  participant_Field->>participant_resolveFieldPresentation: resolveFieldPresentation()
+  participant_resolveFieldPresentation-->>participant_Field: return

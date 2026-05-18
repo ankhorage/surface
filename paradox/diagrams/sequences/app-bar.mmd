@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_AppBar as AppBar
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_AppBar->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_AppBar: return

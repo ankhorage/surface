@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant participant_NavigationItem as NavigationItem
+  participant participant_resolveNavigationAccessibilityState as resolveNavigationAccessibilityState
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_NavigationItem->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_NavigationItem: return
+  participant_NavigationItem->>participant_resolveNavigationAccessibilityState: resolveNavigationAccessibilityState()
+  participant_resolveNavigationAccessibilityState-->>participant_NavigationItem: return

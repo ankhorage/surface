@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant participant_isResponsiveRecord as isResponsiveRecord
+  participant participant_resolveResponsive as resolveResponsive
+  participant participant_Show as Show
+  participant participant_useContext as useContext
+  participant participant_useResponsiveRuntime as useResponsiveRuntime
+  participant_Show->>participant_useResponsiveRuntime: useResponsiveRuntime()
+  participant_useResponsiveRuntime->>participant_useContext: useContext()
+  participant_useContext-->>participant_useResponsiveRuntime: return
+  participant_useResponsiveRuntime-->>participant_Show: return
+  participant_Show->>participant_resolveResponsive: resolveResponsive()
+  participant_resolveResponsive->>participant_isResponsiveRecord: isResponsiveRecord()
+  participant_isResponsiveRecord-->>participant_resolveResponsive: return
+  participant_resolveResponsive-->>participant_Show: return

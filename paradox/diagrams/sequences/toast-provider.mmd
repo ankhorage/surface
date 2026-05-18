@@ -1,0 +1,5 @@
+sequenceDiagram
+  participant participant_resolveOverlayAnimation as resolveOverlayAnimation
+  participant participant_ToastProvider as ToastProvider
+  participant_ToastProvider->>participant_resolveOverlayAnimation: resolveOverlayAnimation()
+  participant_resolveOverlayAnimation-->>participant_ToastProvider: return

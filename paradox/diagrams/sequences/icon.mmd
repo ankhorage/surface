@@ -1,0 +1,17 @@
+sequenceDiagram
+  participant participant_Icon as Icon
+  participant participant_resolveExpoIconComponent as resolveExpoIconComponent
+  participant participant_resolveExpoIconProviderName as resolveExpoIconProviderName
+  participant participant_resolveToken as resolveToken
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_Icon->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Icon: return
+  participant_Icon->>participant_resolveExpoIconComponent: resolveExpoIconComponent()
+  participant_resolveExpoIconComponent->>participant_resolveExpoIconProviderName: resolveExpoIconProviderName()
+  participant_resolveExpoIconProviderName-->>participant_resolveExpoIconComponent: return
+  participant_resolveExpoIconComponent-->>participant_Icon: return
+  participant_Icon->>participant_resolveToken: resolveToken()
+  participant_resolveToken-->>participant_Icon: return

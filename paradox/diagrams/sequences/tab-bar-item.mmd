@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant participant_resolveNavigationAccessibilityState as resolveNavigationAccessibilityState
+  participant participant_TabBarItem as TabBarItem
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_TabBarItem->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_TabBarItem: return
+  participant_TabBarItem->>participant_resolveNavigationAccessibilityState: resolveNavigationAccessibilityState()
+  participant_resolveNavigationAccessibilityState-->>participant_TabBarItem: return

@@ -1,0 +1,20 @@
+sequenceDiagram
+  participant participant_buildNeutralSemantics as buildNeutralSemantics
+  participant participant_buildRoleSemantics as buildRoleSemantics
+  participant participant_createDefaultSemanticStatusSwatches as createDefaultSemanticStatusSwatches
+  participant participant_generatePalette as generatePalette
+  participant participant_generateThemeModeColors as generateThemeModeColors
+  participant participant_getReadableForeground as getReadableForeground
+  participant participant_parseHexColorOrThrow as parseHexColorOrThrow
+  participant_generatePalette->>participant_parseHexColorOrThrow: parseHexColorOrThrow()
+  participant_parseHexColorOrThrow-->>participant_generatePalette: return
+  participant_generatePalette->>participant_generateThemeModeColors: generateThemeModeColors()
+  participant_generateThemeModeColors-->>participant_generatePalette: return
+  participant_generatePalette->>participant_buildNeutralSemantics: buildNeutralSemantics()
+  participant_buildNeutralSemantics-->>participant_generatePalette: return
+  participant_generatePalette->>participant_buildRoleSemantics: buildRoleSemantics()
+  participant_buildRoleSemantics->>participant_getReadableForeground: getReadableForeground()
+  participant_getReadableForeground-->>participant_buildRoleSemantics: return
+  participant_buildRoleSemantics-->>participant_generatePalette: return
+  participant_generatePalette->>participant_createDefaultSemanticStatusSwatches: createDefaultSemanticStatusSwatches()
+  participant_createDefaultSemanticStatusSwatches-->>participant_generatePalette: return

@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant participant_Menu as Menu
+  participant participant_resolveOverlayAnimation as resolveOverlayAnimation
+  participant participant_useContext as useContext
+  participant participant_useFocusManager as useFocusManager
+  participant participant_useTheme as useTheme
+  participant_Menu->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Menu: return
+  participant_Menu->>participant_useFocusManager: useFocusManager()
+  participant_useFocusManager-->>participant_Menu: return
+  participant_Menu->>participant_resolveOverlayAnimation: resolveOverlayAnimation()
+  participant_resolveOverlayAnimation-->>participant_Menu: return

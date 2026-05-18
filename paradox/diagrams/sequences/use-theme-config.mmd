@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant participant_useThemeConfig as useThemeConfig
+  participant_useThemeConfig->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_useThemeConfig: return

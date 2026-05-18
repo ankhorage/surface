@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant participant_resolveToastStatusColor as resolveToastStatusColor
+  participant participant_resolveToastStatusTextColor as resolveToastStatusTextColor
+  participant participant_Toast as Toast
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_Toast->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Toast: return
+  participant_Toast->>participant_resolveToastStatusColor: resolveToastStatusColor()
+  participant_resolveToastStatusColor-->>participant_Toast: return
+  participant_Toast->>participant_resolveToastStatusTextColor: resolveToastStatusTextColor()
+  participant_resolveToastStatusTextColor-->>participant_Toast: return

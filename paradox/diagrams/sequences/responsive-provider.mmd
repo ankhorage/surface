@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_ResponsiveProvider as ResponsiveProvider
+  participant participant_useMemo as useMemo
+  participant participant_useWindowDimensions as useWindowDimensions
+  participant_ResponsiveProvider->>participant_useWindowDimensions: useWindowDimensions()
+  participant_useWindowDimensions-->>participant_ResponsiveProvider: return
+  participant_ResponsiveProvider->>participant_useMemo: useMemo()
+  participant_useMemo-->>participant_ResponsiveProvider: return

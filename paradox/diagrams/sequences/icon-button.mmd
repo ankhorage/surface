@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant participant_IconButton as IconButton
+  participant participant_resolveControlSize as resolveControlSize
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_IconButton->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_IconButton: return
+  participant_IconButton->>participant_resolveControlSize: resolveControlSize()
+  participant_resolveControlSize-->>participant_IconButton: return

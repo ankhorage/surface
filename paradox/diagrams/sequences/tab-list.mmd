@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_TabList as TabList
+  participant participant_useFocusManager as useFocusManager
+  participant participant_useTabsContext as useTabsContext
+  participant_TabList->>participant_useFocusManager: useFocusManager()
+  participant_useFocusManager-->>participant_TabList: return
+  participant_TabList->>participant_useTabsContext: useTabsContext()
+  participant_useTabsContext-->>participant_TabList: return

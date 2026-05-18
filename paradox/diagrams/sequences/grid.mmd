@@ -1,0 +1,22 @@
+sequenceDiagram
+  participant participant_Grid as Grid
+  participant participant_isResponsiveRecord as isResponsiveRecord
+  participant participant_resolveResponsive as resolveResponsive
+  participant participant_resolveSpacing as resolveSpacing
+  participant participant_useContext as useContext
+  participant participant_useResponsiveRuntime as useResponsiveRuntime
+  participant participant_useTheme as useTheme
+  participant_Grid->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Grid: return
+  participant_Grid->>participant_useResponsiveRuntime: useResponsiveRuntime()
+  participant_useResponsiveRuntime->>participant_useContext: useContext()
+  participant_useContext-->>participant_useResponsiveRuntime: return
+  participant_useResponsiveRuntime-->>participant_Grid: return
+  participant_Grid->>participant_resolveResponsive: resolveResponsive()
+  participant_resolveResponsive->>participant_isResponsiveRecord: isResponsiveRecord()
+  participant_isResponsiveRecord-->>participant_resolveResponsive: return
+  participant_resolveResponsive-->>participant_Grid: return
+  participant_Grid->>participant_resolveSpacing: resolveSpacing()
+  participant_resolveSpacing-->>participant_Grid: return

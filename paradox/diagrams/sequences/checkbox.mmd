@@ -1,0 +1,17 @@
+sequenceDiagram
+  participant participant_Checkbox as Checkbox
+  participant participant_resolveIndicatorSize as resolveIndicatorSize
+  participant participant_resolveSelectionControlNextChecked as resolveSelectionControlNextChecked
+  participant participant_useContext as useContext
+  participant participant_useControllableState as useControllableState
+  participant participant_useTheme as useTheme
+  participant_Checkbox->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Checkbox: return
+  participant_Checkbox->>participant_useControllableState: useControllableState()
+  participant_useControllableState-->>participant_Checkbox: return
+  participant_Checkbox->>participant_resolveIndicatorSize: resolveIndicatorSize()
+  participant_resolveIndicatorSize-->>participant_Checkbox: return
+  participant_Checkbox->>participant_resolveSelectionControlNextChecked: resolveSelectionControlNextChecked()
+  participant_resolveSelectionControlNextChecked-->>participant_Checkbox: return

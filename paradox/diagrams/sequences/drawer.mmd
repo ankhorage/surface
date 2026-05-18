@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant participant_Drawer as Drawer
+  participant participant_resolveOverlayAnimation as resolveOverlayAnimation
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_Drawer->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Drawer: return
+  participant_Drawer->>participant_resolveOverlayAnimation: resolveOverlayAnimation()
+  participant_resolveOverlayAnimation-->>participant_Drawer: return

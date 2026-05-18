@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_FontProvider as FontProvider
+  participant participant_useMemo as useMemo
+  participant participant_useState as useState
+  participant_FontProvider->>participant_useState: useState()
+  participant_useState-->>participant_FontProvider: return
+  participant_FontProvider->>participant_useMemo: useMemo()
+  participant_useMemo-->>participant_FontProvider: return

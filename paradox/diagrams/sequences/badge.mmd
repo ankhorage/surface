@@ -1,0 +1,17 @@
+sequenceDiagram
+  participant participant_Badge as Badge
+  participant participant_resolveButtonColors as resolveButtonColors
+  participant participant_resolveControlSize as resolveControlSize
+  participant participant_resolveSurfaceColor as resolveSurfaceColor
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_Badge->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_Badge: return
+  participant_Badge->>participant_resolveControlSize: resolveControlSize()
+  participant_resolveControlSize-->>participant_Badge: return
+  participant_Badge->>participant_resolveButtonColors: resolveButtonColors()
+  participant_resolveButtonColors->>participant_resolveSurfaceColor: resolveSurfaceColor()
+  participant_resolveSurfaceColor-->>participant_resolveButtonColors: return
+  participant_resolveButtonColors-->>participant_Badge: return

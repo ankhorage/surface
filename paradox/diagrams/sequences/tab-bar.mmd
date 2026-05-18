@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_TabBar as TabBar
+  participant participant_useContext as useContext
+  participant participant_useTheme as useTheme
+  participant_TabBar->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_useContext: useContext()
+  participant_useContext-->>participant_useTheme: return
+  participant_useTheme-->>participant_TabBar: return
