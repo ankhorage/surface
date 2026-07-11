@@ -3626,7 +3626,7 @@ Source: `src/primitives/text/types.ts:7:1`
 
 Kind: `type`
 Module: `node_modules/@ankhorage/contracts/dist/types.d.ts`
-Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:7:1`
+Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:10:1`
 
 ### Members
 
@@ -3647,7 +3647,7 @@ Source: `src/theme/ThemeContext.tsx:13:14`
 
 Kind: `type`
 Module: `node_modules/@ankhorage/contracts/dist/types.d.ts`
-Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:3:1`
+Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:6:1`
 
 ### Members
 
