@@ -4,7 +4,7 @@
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:61:1`
+Source: `src/theme/types.ts:62:1`
 
 ### Members
 
@@ -252,7 +252,7 @@ Source: `src/components/badge/types.ts:7:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:55:1`
+Source: `src/theme/types.ts:56:1`
 
 ### Members
 
@@ -926,7 +926,7 @@ Source: `src/layout/Container.tsx:10:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:48:1`
+Source: `src/theme/types.ts:49:1`
 
 ### Members
 
@@ -1245,7 +1245,7 @@ Source: `src/context/FontContext.tsx:6:1`
 
 Kind: `unknown`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:84:1`
+Source: `src/theme/types.ts:85:1`
 
 ## GeneratedColorRole
 
@@ -2787,6 +2787,7 @@ Source: `src/theme/types.ts:42:1`
 | Name    | Kind     | Type     | Required | Description |
 | ------- | -------- | -------- | -------- | ----------- |
 | default | property | `string` | yes      |             |
+| inverse | property | `string` | yes      |             |
 | raised  | property | `string` | yes      |             |
 | subtle  | property | `string` | yes      |             |
 
@@ -2800,7 +2801,7 @@ Source: `src/surfaceColor.ts:20:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:186:1`
+Source: `src/theme/types.ts:187:1`
 
 ### Members
 
@@ -3680,7 +3681,7 @@ Source: `src/theme/ThemeContext.tsx:31:14`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:67:1`
+Source: `src/theme/types.ts:68:1`
 
 ### Members
 
@@ -3705,7 +3706,7 @@ Source: `src/theme/types.ts:67:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:97:1`
+Source: `src/theme/types.ts:98:1`
 
 ### Members
 
