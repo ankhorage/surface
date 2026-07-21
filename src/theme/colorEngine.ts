@@ -120,7 +120,6 @@ export function generatePalette(
   parseHexColorOrThrow(modeConfig.primaryColor);
 
   const generated = generateThemeModeColors(modeConfig);
-
   const { swatches } = generated;
   const neutralSwatch = swatches.neutral;
 
@@ -140,18 +139,21 @@ export function generatePalette(
   // Keep destructive action and feedback error aligned until a dedicated error status swatch is introduced.
   const error = danger;
   const info = buildRoleSemantics(secondarySwatch, isDark);
+  const inverseSurface = isDark ? neutralSwatch[50] : neutralSwatch[900];
+  const inverseOnSurface = isDark ? neutralSwatch[900] : neutralSwatch[50];
 
   const surfaceSemantics: SurfaceSemantics = {
     default: neutral.surface,
     subtle: neutral.bgSubtle,
     raised: neutral.surface,
+    inverse: inverseSurface,
   };
 
   const content: ContentSemantics = {
     default: neutral.text,
     muted: neutral.textMuted,
     subtle: neutral.textSubtle,
-    inverse: brand.onSolidText,
+    inverse: inverseOnSurface,
   };
 
   const border: BorderSemantics = {

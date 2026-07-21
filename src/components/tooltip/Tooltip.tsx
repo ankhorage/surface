@@ -93,7 +93,7 @@ export function Tooltip({
           <Surface
             p="s"
             style={{
-              backgroundColor: theme.semantics.neutral.text,
+              backgroundColor: theme.semantics.surface.inverse,
             }}
             testID={testID}
             variant="raised"

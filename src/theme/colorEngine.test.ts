@@ -67,10 +67,11 @@ describe('colorEngine', () => {
   });
 
   it('generates a valid palette for dark mode', () => {
-    const { colors, semantics } = generatePalette(mockConfig, 'dark');
+    const { colors, swatches, semantics } = generatePalette(mockConfig, 'dark');
 
     expect(colors.background).toBe(semantics.neutral.bg);
-    expect(semantics.content.inverse).toBe(semantics.brand.onSolidText);
+    expect(semantics.surface.inverse).toBe(swatches.neutral[50]);
+    expect(semantics.content.inverse).toBe(swatches.neutral[900]);
   });
 
   it('uses the color-theory default semantic status seeds', () => {

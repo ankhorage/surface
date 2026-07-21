@@ -43,6 +43,7 @@ export interface SurfaceSemantics {
   default: string;
   subtle: string;
   raised: string;
+  inverse: string;
 }
 
 export interface ContentSemantics {

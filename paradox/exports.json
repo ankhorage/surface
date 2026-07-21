@@ -8,7 +8,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 61,
+      "line": 62,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -756,7 +756,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 55,
+      "line": 56,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -3604,7 +3604,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 48,
+      "line": 49,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -4572,7 +4572,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 84,
+      "line": 85,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10161,6 +10161,13 @@
         "description": null
       },
       {
+        "name": "inverse",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "raised",
         "kind": "property",
         "type": "string",
@@ -10204,7 +10211,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 186,
+      "line": 187,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14152,7 +14159,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 67,
+      "line": 68,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14276,7 +14283,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 97,
+      "line": 98,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
