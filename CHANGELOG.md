@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 2.0.3
+
+### Patch Changes
+
+- 7a63a04: Add reusable inverse surface/content semantics and use the paired colors for readable mode-aware tooltips.
+
 ## 2.0.2
 
 ### Patch Changes
