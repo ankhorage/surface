@@ -62,6 +62,7 @@ export type { I18nInstance, TranslationRuntime, Translator } from './context/Tra
 export { TranslationProvider, useTranslationContext } from './context/TranslationContext';
 export * from './core/responsive';
 export * from './layout';
+export type { InteractionPolicy, InteractionPolicyProps } from './primitives/button-base';
 export type { ButtonBaseProps } from './primitives/button-base';
 export { ButtonBase } from './primitives/button-base';
 export type { HeadingLevel, HeadingProps } from './primitives/heading';

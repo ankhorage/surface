@@ -53,7 +53,14 @@ function renderActionContent(action: MenuAction, active: boolean) {
   );
 }
 
-export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }: MenuProps) {
+export function Menu({
+  trigger,
+  actions,
+  dismiss,
+  closeOnSelect = true,
+  interactionPolicy = 'enabled',
+  testID,
+}: MenuProps) {
   const { theme } = useTheme();
   const { bindKeydown } = useFocusManager();
   const animation = resolveOverlayAnimation('menu');
@@ -61,6 +68,7 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
   const [open, setOpen] = React.useState(false);
   const [layout, setLayout] = React.useState<LayoutRectangle | null>(null);
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const passive = interactionPolicy === 'passive';
 
   const closeMenu = React.useCallback(() => {
     setOpen(false);
@@ -123,7 +131,7 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
   return (
     <View collapsable={false} ref={anchorRef}>
       <ButtonBase
-        onPress={open ? closeMenu : openMenu}
+        onPress={passive ? undefined : open ? closeMenu : openMenu}
         testID={testID ? `${testID}-trigger` : undefined}
       >
         {trigger}
@@ -140,7 +148,7 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
           }}
         >
           <Pressable
-            onPress={closeMenu}
+            onPress={passive ? undefined : closeMenu}
             style={{
               bottom: 0,
               left: 0,
@@ -149,7 +157,7 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
               top: 0,
             }}
           />
-          <FocusScope active={open} onEscape={closeMenu}>
+          <FocusScope active={open} onEscape={passive ? undefined : closeMenu}>
             <View
               style={{
                 left: layout?.x ?? 0,
@@ -179,7 +187,7 @@ export function Menu({ trigger, actions, dismiss, closeOnSelect = true, testID }
                       accessibilityState={{ disabled: action.disabled, selected }}
                       disabled={action.disabled}
                       key={action.id}
-                      onPress={() => activateAction(action)}
+                      onPress={passive ? undefined : () => activateAction(action)}
                     >
                       <Box
                         px="m"

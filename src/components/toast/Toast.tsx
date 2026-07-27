@@ -38,10 +38,18 @@ function resolveToastStatusTextColor(status: ToastProps['status']): SurfaceColor
   }
 }
 
-export function Toast({ title, description, status = 'default', onDismiss, testID }: ToastProps) {
+export function Toast({
+  title,
+  description,
+  status = 'default',
+  onDismiss,
+  interactionPolicy = 'enabled',
+  testID,
+}: ToastProps) {
   const { theme } = useTheme();
   const statusColor = resolveToastStatusColor(theme, status);
   const statusTextColor = resolveToastStatusTextColor(status);
+  const passive = interactionPolicy === 'passive';
 
   return (
     <Surface
@@ -70,7 +78,7 @@ export function Toast({ title, description, status = 'default', onDismiss, testI
           <Pressable
             accessibilityLabel="Dismiss notification"
             accessibilityRole="button"
-            onPress={onDismiss}
+            onPress={passive ? undefined : onDismiss}
             testID={testID ? `${testID}-dismiss` : undefined}
           >
             <Text color={statusTextColor}>×</Text>

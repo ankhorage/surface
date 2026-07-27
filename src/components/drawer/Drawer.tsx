@@ -14,10 +14,12 @@ export function Drawer({
   position = 'right',
   children,
   closeOnBackdrop = true,
+  interactionPolicy = 'enabled',
   testID,
 }: DrawerProps) {
   const { theme } = useTheme();
   const animation = resolveOverlayAnimation('drawer');
+  const passive = interactionPolicy === 'passive';
 
   if (!visible) {
     return null;
@@ -36,7 +38,7 @@ export function Drawer({
         }}
       >
         <Pressable
-          onPress={closeOnBackdrop ? onDismiss : undefined}
+          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}
           style={{
             backgroundColor: theme.semantics.neutral.text,
             bottom: 0,
@@ -50,7 +52,7 @@ export function Drawer({
         />
         <FocusScope
           active={visible}
-          onEscape={onDismiss}
+          onEscape={passive ? undefined : onDismiss}
           testID={testID ? `${testID}-focus` : undefined}
         >
           <Box

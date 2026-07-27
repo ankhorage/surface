@@ -1,5 +1,7 @@
 import type React from 'react';
 
+import type { InteractionPolicy } from '../../primitives/button-base';
+
 export interface TabsProps {
   children?: React.ReactNode;
   value?: string;
@@ -17,6 +19,7 @@ export interface TabProps {
   value: string;
   children?: React.ReactNode;
   disabled?: boolean;
+  interactionPolicy?: InteractionPolicy;
   testID?: string;
 }
 

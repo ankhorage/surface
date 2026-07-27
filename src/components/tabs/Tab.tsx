@@ -7,7 +7,13 @@ import { useTheme } from '../../theme/ThemeContext';
 import { useTabsContext } from './context';
 import type { TabProps } from './types';
 
-export function Tab({ value, children, disabled = false, testID }: TabProps) {
+export function Tab({
+  value,
+  children,
+  disabled = false,
+  interactionPolicy = 'enabled',
+  testID,
+}: TabProps) {
   const { theme } = useTheme();
   const {
     activeValue,
@@ -22,6 +28,7 @@ export function Tab({ value, children, disabled = false, testID }: TabProps) {
   const selected = activeValue === value;
   const tabId = getTabId(value);
   const panelId = getPanelId(value);
+  const passive = interactionPolicy === 'passive';
 
   React.useEffect(() => {
     registerTab({
@@ -50,11 +57,15 @@ export function Tab({ value, children, disabled = false, testID }: TabProps) {
       disabled={disabled}
       onFocus={() => setFocusedValue(value)}
       onBlur={() => setFocusedValue(undefined)}
-      onPress={() => {
-        if (!disabled) {
-          setActiveValue(value);
-        }
-      }}
+      onPress={
+        passive
+          ? undefined
+          : () => {
+              if (!disabled) {
+                setActiveValue(value);
+              }
+            }
+      }
       ref={pressableRef}
       testID={testID}
     >

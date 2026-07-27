@@ -25,6 +25,7 @@ export function Tooltip({
   children,
   content,
   delay = 150,
+  interactionPolicy = 'enabled',
   placement = 'top',
   testID,
 }: TooltipProps) {
@@ -34,6 +35,7 @@ export function Tooltip({
   const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const [visible, setVisible] = React.useState(false);
   const [layout, setLayout] = React.useState<LayoutRectangle | null>(null);
+  const passive = interactionPolicy === 'passive';
 
   const show = React.useCallback(() => {
     if (timeoutRef.current) {
@@ -74,10 +76,10 @@ export function Tooltip({
   return (
     <View collapsable={false} ref={anchorRef} testID={testID ? `${testID}-anchor` : undefined}>
       <Pressable
-        onBlur={hide}
-        onFocus={show}
-        onHoverIn={Platform.OS === 'web' ? show : undefined}
-        onHoverOut={Platform.OS === 'web' ? hide : undefined}
+        onBlur={passive ? undefined : hide}
+        onFocus={passive ? undefined : show}
+        onHoverIn={Platform.OS === 'web' && !passive ? show : undefined}
+        onHoverOut={Platform.OS === 'web' && !passive ? hide : undefined}
       >
         {children}
       </Pressable>
