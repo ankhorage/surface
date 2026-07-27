@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import type { InteractionPolicy } from '../../primitives/button-base';
+import type { InteractionPolicy } from '../../interactionPolicy';
 import type { SurfaceStatusColor } from '../../surfaceColor';
 
 export type ToastStatus = 'default' | SurfaceStatusColor;

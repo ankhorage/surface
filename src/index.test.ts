@@ -19,7 +19,7 @@ const expectedRootExports = [
   "export { Field } from './components/field';",
   "export { HelperText } from './components/helper-text';",
   "export { IconButton } from './components/icon-button';",
-  "export type { InteractionPolicy, InteractionPolicyProps } from './primitives/button-base';",
+  "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export { Label } from './components/label';",
   "export { ListItem } from './components/list-item';",
   "export {\n  DrawerNavigation,\n  DrawerNavigationItem,\n  NavigationItem,\n  NavigationList,\n  TabBar,\n  TabBarItem,\n} from './components/navigation';",

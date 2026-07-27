@@ -1,2 +1,2 @@
 export { ButtonBase } from './ButtonBase';
-export type { ButtonBaseProps, InteractionPolicy, InteractionPolicyProps } from './types';
+export type { ButtonBaseProps } from './types';

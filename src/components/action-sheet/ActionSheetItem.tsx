@@ -13,6 +13,7 @@ export function ActionSheetItem({
   color,
   disabled = false,
   selected = false,
+  interactionPolicy = 'enabled',
   onPress,
   testID,
 }: ActionSheetItemProps) {
@@ -21,6 +22,7 @@ export function ActionSheetItem({
       accessibilityRole="button"
       accessibilityState={{ disabled, selected }}
       disabled={disabled}
+      interactionPolicy={interactionPolicy}
       onPress={onPress}
       radius="m"
       testID={testID}

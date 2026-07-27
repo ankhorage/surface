@@ -107,6 +107,10 @@ export function Menu({
     }
 
     return bindKeydown((event) => {
+      if (passive) {
+        return;
+      }
+
       const { key } = event;
       if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'Home' || key === 'End') {
         event.preventDefault();
@@ -126,7 +130,7 @@ export function Menu({
         closeMenu();
       }
     });
-  }, [activateAction, actions, activeIndex, bindKeydown, closeMenu, open]);
+  }, [activateAction, actions, activeIndex, bindKeydown, closeMenu, open, passive]);
 
   return (
     <View collapsable={false} ref={anchorRef}>

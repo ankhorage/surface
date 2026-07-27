@@ -108,6 +108,7 @@ export function ActionSheet({
                   {onDismiss ? (
                     <ActionSheetItem
                       label={cancelLabel}
+                      interactionPolicy={interactionPolicy}
                       onPress={onDismiss}
                       testID={testID ? `${testID}-cancel` : undefined}
                     />

@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import type { InteractionPolicy } from '../../primitives/button-base';
+import type { InteractionPolicy } from '../../interactionPolicy';
 import type { SurfaceColor } from '../../surfaceColor';
 
 export interface ActionSheetProps {
@@ -23,6 +23,7 @@ export interface ActionSheetItemProps {
   color?: SurfaceColor;
   disabled?: boolean;
   selected?: boolean;
+  interactionPolicy?: InteractionPolicy;
   onPress?: (() => void) | undefined;
   testID?: string;
 }

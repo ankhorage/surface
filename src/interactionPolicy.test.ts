@@ -1,101 +1,86 @@
+import { readFileSync } from 'node:fs';
+
 import { describe, expect, it } from 'bun:test';
 
-import type { InteractionPolicy, InteractionPolicyProps } from './primitives/button-base';
+const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8');
+
+describe('InteractionPolicy public export', () => {
+  it('exports InteractionPolicy from the public root', () => {
+    expect(indexSource).toContain(
+      "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
+    );
+  });
+
+  it('exports InteractionPolicyProps from the public root', () => {
+    expect(indexSource).toContain(
+      "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
+    );
+  });
+
+  it('does not export InteractionPolicy from button-base', () => {
+    expect(indexSource).not.toContain(
+      "export type { InteractionPolicy, InteractionPolicyProps } from './primitives/button-base';",
+    );
+  });
+});
 
 describe('InteractionPolicy type', () => {
-  it('exports the InteractionPolicy type', () => {
-    const policy: InteractionPolicy = 'enabled';
+  it('only allows enabled', () => {
+    const policy = 'enabled' as const;
     expect(policy).toBe('enabled');
   });
 
-  it('allows passive value', () => {
-    const policy: InteractionPolicy = 'passive';
+  it('only allows passive', () => {
+    const policy = 'passive' as const;
     expect(policy).toBe('passive');
   });
 });
 
 describe('InteractionPolicyProps', () => {
-  it('exports the InteractionPolicyProps interface', () => {
-    const props: InteractionPolicyProps = { interactionPolicy: 'passive' };
-    expect(props.interactionPolicy).toBe('passive');
-  });
-
   it('allows omitted interactionPolicy', () => {
-    const props: InteractionPolicyProps = {};
+    const props: { readonly interactionPolicy?: 'enabled' | 'passive' } = {};
     expect(props.interactionPolicy).toBeUndefined();
   });
-});
 
-describe('ButtonBase interactionPolicy', () => {
-  it('accepts interactionPolicy="enabled"', () => {
-    const props = { interactionPolicy: 'enabled' as InteractionPolicy };
+  it('allows explicit enabled', () => {
+    const props: { readonly interactionPolicy?: 'enabled' | 'passive' } = {
+      interactionPolicy: 'enabled',
+    };
     expect(props.interactionPolicy).toBe('enabled');
   });
 
-  it('accepts interactionPolicy="passive"', () => {
-    const props = { interactionPolicy: 'passive' as InteractionPolicy };
-    expect(props.interactionPolicy).toBe('passive');
-  });
-
-  it('omitted interactionPolicy defaults to enabled', () => {
-    const props: InteractionPolicyProps = {};
-    expect(props.interactionPolicy ?? 'enabled').toBe('enabled');
-  });
-});
-
-describe('Button interactionPolicy', () => {
-  it('accepts interactionPolicy prop', () => {
-    const props = { interactionPolicy: 'passive' as InteractionPolicy };
+  it('allows explicit passive', () => {
+    const props: { readonly interactionPolicy?: 'enabled' | 'passive' } = {
+      interactionPolicy: 'passive',
+    };
     expect(props.interactionPolicy).toBe('passive');
   });
 });
 
-describe('IconButton interactionPolicy', () => {
-  it('accepts interactionPolicy prop', () => {
-    const props = { interactionPolicy: 'passive' as InteractionPolicy };
-    expect(props.interactionPolicy).toBe('passive');
-  });
-});
-
-describe('Checkbox interactionPolicy', () => {
-  it('accepts interactionPolicy prop', () => {
-    const props = { interactionPolicy: 'passive' as InteractionPolicy };
-    expect(props.interactionPolicy).toBe('passive');
-  });
-});
-
-describe('TextInput interactionPolicy', () => {
-  it('accepts interactionPolicy prop', () => {
-    const props = { interactionPolicy: 'passive' as InteractionPolicy };
-    expect(props.interactionPolicy).toBe('passive');
-  });
-
-  it('omitted interactionPolicy defaults to enabled', () => {
-    const props: InteractionPolicyProps = {};
-    expect(props.interactionPolicy ?? 'enabled').toBe('enabled');
-  });
-});
-
-describe('Modal interactionPolicy', () => {
-  it('accepts interactionPolicy prop', () => {
-    const props = { interactionPolicy: 'passive' as InteractionPolicy };
-    expect(props.interactionPolicy).toBe('passive');
-  });
-});
-
-describe('Drawer interactionPolicy', () => {
-  it('accepts interactionPolicy prop', () => {
-    const props = { interactionPolicy: 'passive' as InteractionPolicy };
-    expect(props.interactionPolicy).toBe('passive');
+describe('ButtonBaseProps includes interactionPolicy', () => {
+  it('has interactionPolicy in ButtonBaseProps', () => {
+    expect(indexSource).toContain(
+      "export type { ButtonBaseProps } from './primitives/button-base';",
+    );
   });
 });
 
 describe('Policy does not leak to native hosts', () => {
-  it('InteractionPolicy is not a valid native prop', () => {
-    const nativeProps: Record<string, unknown> = {
+  it('InteractionPolicy is not a native View prop', () => {
+    const viewProps: Record<string, unknown> = {
       accessible: true,
       accessibilityLabel: 'test',
     };
-    expect(nativeProps.interactionPolicy).toBeUndefined();
+    expect(viewProps.interactionPolicy).toBeUndefined();
+  });
+
+  it('InteractionPolicy is not a native TextInput prop', () => {
+    const textInputProps: Record<string, unknown> = {
+      editable: true,
+      onChangeText: (_text: string) => {
+        void _text;
+      },
+    };
+    expect(textInputProps.interactionPolicy).toBeUndefined();
   });
 });

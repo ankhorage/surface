@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import type { InteractionPolicy } from '../../primitives/button-base';
+import type { InteractionPolicy } from '../../interactionPolicy';
 
 export type MenuActionIntent = 'default' | 'danger';
 
