@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 2.1.0
+
+### Minor Changes
+
+- b09d26d: Add the uniform interactionPolicy="enabled" | "passive" contract to Surface-owned interactive primitives.
+
 ## 2.0.3
 
 ### Patch Changes
