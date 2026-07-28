@@ -10,13 +10,20 @@ export function DrawerNavigation({
   footer,
   compact = false,
   testID,
+  interactionPolicy,
 }: DrawerNavigationProps) {
   return (
     <Stack gap={compact ? 's' : 'm'} testID={testID}>
       {header}
       <Stack gap={compact ? 'xs' : 's'}>
         {items.map((item) => (
-          <DrawerNavigationItem compact={compact} item={item} key={item.id} testID={testID} />
+          <DrawerNavigationItem
+            compact={compact}
+            interactionPolicy={interactionPolicy}
+            item={item}
+            key={item.id}
+            testID={testID}
+          />
         ))}
       </Stack>
       {footer}

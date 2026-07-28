@@ -9,7 +9,12 @@ import { useTheme } from '../../theme/ThemeContext';
 import { resolveNavigationAccessibilityState, resolveNavigationItemPresentation } from './helpers';
 import type { NavigationItemProps } from './types';
 
-export function NavigationItem({ item, compact = false, testID }: NavigationItemProps) {
+export function NavigationItem({
+  item,
+  compact = false,
+  testID,
+  interactionPolicy,
+}: NavigationItemProps) {
   const { theme } = useTheme();
   const active = Boolean(item.active);
   const disabled = Boolean(item.disabled);
@@ -26,6 +31,7 @@ export function NavigationItem({ item, compact = false, testID }: NavigationItem
       accessibilityRole={item.accessibilityRole ?? 'button'}
       accessibilityState={resolvedAccessibilityState}
       disabled={disabled}
+      interactionPolicy={interactionPolicy}
       onPress={item.onPress}
       testID={resolvedTestID}
     >

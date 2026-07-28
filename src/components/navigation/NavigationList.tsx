@@ -9,6 +9,7 @@ export function NavigationList({
   orientation = 'vertical',
   compact = false,
   testID,
+  interactionPolicy,
 }: NavigationListProps) {
   return (
     <Stack
@@ -17,7 +18,13 @@ export function NavigationList({
       testID={testID}
     >
       {items.map((item) => (
-        <NavigationItem compact={compact} item={item} key={item.id} testID={testID} />
+        <NavigationItem
+          compact={compact}
+          interactionPolicy={interactionPolicy}
+          item={item}
+          key={item.id}
+          testID={testID}
+        />
       ))}
     </Stack>
   );
