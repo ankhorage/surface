@@ -9,7 +9,7 @@ import { useTheme } from '../../theme/ThemeContext';
 import { resolveNavigationAccessibilityState, resolveNavigationItemPresentation } from './helpers';
 import type { TabBarItemProps } from './types';
 
-export function TabBarItem({ item, compact = false, testID }: TabBarItemProps) {
+export function TabBarItem({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) {
   const { theme } = useTheme();
   const active = Boolean(item.active);
   const disabled = Boolean(item.disabled);
@@ -26,6 +26,7 @@ export function TabBarItem({ item, compact = false, testID }: TabBarItemProps) {
       accessibilityRole={item.accessibilityRole ?? 'tab'}
       accessibilityState={resolvedAccessibilityState}
       disabled={disabled}
+      interactionPolicy={interactionPolicy}
       onPress={item.onPress}
       style={{ flex: 1 }}
       testID={resolvedTestID}

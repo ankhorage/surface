@@ -18,10 +18,12 @@ export function ActionSheet({
   children,
   cancelLabel = 'Cancel',
   closeOnBackdrop = true,
+  interactionPolicy = 'enabled',
   testID,
 }: ActionSheetProps) {
   const { theme } = useTheme();
   const animation = resolveOverlayAnimation('modal');
+  const passive = interactionPolicy === 'passive';
 
   if (!visible) {
     return null;
@@ -40,7 +42,7 @@ export function ActionSheet({
         }}
       >
         <Pressable
-          onPress={closeOnBackdrop ? onDismiss : undefined}
+          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}
           style={{
             backgroundColor: theme.semantics.neutral.text,
             bottom: 0,
@@ -54,7 +56,7 @@ export function ActionSheet({
         />
         <FocusScope
           active={visible}
-          onEscape={onDismiss}
+          onEscape={passive ? undefined : onDismiss}
           testID={testID ? `${testID}-focus` : undefined}
         >
           <Box
@@ -106,6 +108,7 @@ export function ActionSheet({
                   {onDismiss ? (
                     <ActionSheetItem
                       label={cancelLabel}
+                      interactionPolicy={interactionPolicy}
                       onPress={onDismiss}
                       testID={testID ? `${testID}-cancel` : undefined}
                     />

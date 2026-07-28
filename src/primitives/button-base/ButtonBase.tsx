@@ -28,6 +28,7 @@ function getInteractionState(
 export function ButtonBase({
   children,
   disabled = false,
+  interactionPolicy = 'enabled',
   onPress,
   onLongPress,
   accessibilityLabel,
@@ -43,6 +44,7 @@ export function ButtonBase({
   const [focused, setFocused] = React.useState(false);
   const isWeb = Platform.OS === 'web';
   const resolvedBoxStyles = resolveBoxStyles(theme, breakpoint, props);
+  const passive = interactionPolicy === 'passive';
 
   return (
     <Pressable
@@ -58,8 +60,8 @@ export function ButtonBase({
       }}
       onHoverIn={isWeb ? () => setHovered(true) : undefined}
       onHoverOut={isWeb ? () => setHovered(false) : undefined}
-      onLongPress={onLongPress}
-      onPress={onPress}
+      onLongPress={passive ? undefined : onLongPress}
+      onPress={passive ? undefined : onPress}
       style={(pressableState) => {
         const state = getInteractionState(pressableState, hovered, focused, disabled);
 

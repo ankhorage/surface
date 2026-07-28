@@ -5,7 +5,7 @@ import { useTheme } from '../../theme/ThemeContext';
 import { TabBarItem } from './TabBarItem';
 import type { TabBarProps } from './types';
 
-export function TabBar({ items, compact = false, testID }: TabBarProps) {
+export function TabBar({ items, compact = false, testID, interactionPolicy }: TabBarProps) {
   const { theme } = useTheme();
 
   return (
@@ -18,7 +18,13 @@ export function TabBar({ items, compact = false, testID }: TabBarProps) {
       testID={testID}
     >
       {items.map((item) => (
-        <TabBarItem compact={compact} item={item} key={item.id} testID={testID} />
+        <TabBarItem
+          compact={compact}
+          interactionPolicy={interactionPolicy}
+          item={item}
+          key={item.id}
+          testID={testID}
+        />
       ))}
     </Box>
   );

@@ -1,6 +1,7 @@
 import type React from 'react';
 import type { AccessibilityRole, AccessibilityState } from 'react-native';
 
+import type { InteractionPolicy } from '../../interactionPolicy';
 import type { IconProps } from '../../primitives/icon';
 
 export type NavigationItemIcon = Pick<IconProps, 'name' | 'provider'>;
@@ -23,6 +24,7 @@ export interface NavigationItemProps {
   item: NavigationItemSpec;
   compact?: boolean;
   testID?: string;
+  interactionPolicy?: InteractionPolicy;
 }
 
 export interface NavigationListProps {
@@ -30,18 +32,21 @@ export interface NavigationListProps {
   orientation?: 'vertical' | 'horizontal';
   compact?: boolean;
   testID?: string;
+  interactionPolicy?: InteractionPolicy;
 }
 
 export interface TabBarProps {
   items: readonly NavigationItemSpec[];
   compact?: boolean;
   testID?: string;
+  interactionPolicy?: InteractionPolicy;
 }
 
 export interface TabBarItemProps {
   item: NavigationItemSpec;
   compact?: boolean;
   testID?: string;
+  interactionPolicy?: InteractionPolicy;
 }
 
 export interface DrawerNavigationProps {
@@ -50,10 +55,12 @@ export interface DrawerNavigationProps {
   footer?: React.ReactNode;
   compact?: boolean;
   testID?: string;
+  interactionPolicy?: InteractionPolicy;
 }
 
 export interface DrawerNavigationItemProps {
   item: NavigationItemSpec;
   compact?: boolean;
   testID?: string;
+  interactionPolicy?: InteractionPolicy;
 }

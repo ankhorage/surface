@@ -1,5 +1,6 @@
 import type React from 'react';
 
+import type { InteractionPolicy } from '../../interactionPolicy';
 import type { SurfaceStatusColor } from '../../surfaceColor';
 
 export type ToastStatus = 'default' | SurfaceStatusColor;
@@ -9,6 +10,7 @@ export interface ToastProps {
   description?: React.ReactNode;
   status?: ToastStatus;
   onDismiss?: (() => void) | undefined;
+  interactionPolicy?: InteractionPolicy;
   testID?: string;
 }
 

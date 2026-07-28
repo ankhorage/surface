@@ -22,6 +22,7 @@ export function TextInput({
   invalid = false,
   leadingAccessory,
   trailingAccessory,
+  interactionPolicy = 'enabled',
   style,
   testID,
   onFocus,
@@ -52,6 +53,7 @@ export function TextInput({
   const containerMinHeight = props.multiline
     ? inputMinHeight + controlSize.paddingVertical * 2
     : controlSize.minHeight;
+  const passive = interactionPolicy === 'passive';
 
   const handleFocus: NonNullable<TextInputProps['onFocus']> = (event) => {
     setFocused(true);
@@ -87,10 +89,16 @@ export function TextInput({
       <ReactNativeTextInput
         {...props}
         defaultValue={defaultValue}
-        editable={!disabled && !readOnly}
+        editable={passive ? false : !disabled && !readOnly}
         numberOfLines={props.multiline ? props.numberOfLines : 1}
         onBlur={handleBlur}
-        onChangeText={onChangeText}
+        onChangeText={(nextValue) => {
+          if (passive) {
+            return;
+          }
+
+          onChangeText?.(nextValue);
+        }}
         onFocus={handleFocus}
         placeholder={placeholder}
         placeholderTextColor={colors.placeholderColor}

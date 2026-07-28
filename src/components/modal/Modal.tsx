@@ -13,10 +13,12 @@ export function Modal({
   onDismiss,
   children,
   closeOnBackdrop = true,
+  interactionPolicy = 'enabled',
   testID,
 }: ModalProps) {
   const { theme } = useTheme();
   const animation = resolveOverlayAnimation('modal');
+  const passive = interactionPolicy === 'passive';
 
   if (!visible) {
     return null;
@@ -35,7 +37,7 @@ export function Modal({
         }}
       >
         <Pressable
-          onPress={closeOnBackdrop ? onDismiss : undefined}
+          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}
           style={{
             backgroundColor: theme.semantics.neutral.text,
             bottom: 0,
@@ -49,7 +51,7 @@ export function Modal({
         />
         <FocusScope
           active={visible}
-          onEscape={onDismiss}
+          onEscape={passive ? undefined : onDismiss}
           testID={testID ? `${testID}-focus` : undefined}
         >
           <Center

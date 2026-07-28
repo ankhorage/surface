@@ -1,5 +1,7 @@
 import type React from 'react';
 
+import type { InteractionPolicy } from '../../interactionPolicy';
+
 export type MenuActionIntent = 'default' | 'danger';
 
 export interface MenuAction {
@@ -19,5 +21,6 @@ export interface MenuProps {
   actions: readonly MenuAction[];
   dismiss?: () => void;
   closeOnSelect?: boolean;
+  interactionPolicy?: InteractionPolicy;
   testID?: string;
 }

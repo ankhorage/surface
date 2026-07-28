@@ -61,6 +61,7 @@ export { FontProvider, useFontContext } from './context/FontContext';
 export type { I18nInstance, TranslationRuntime, Translator } from './context/TranslationContext';
 export { TranslationProvider, useTranslationContext } from './context/TranslationContext';
 export * from './core/responsive';
+export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';
 export * from './layout';
 export type { ButtonBaseProps } from './primitives/button-base';
 export { ButtonBase } from './primitives/button-base';
