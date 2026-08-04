@@ -30,6 +30,7 @@ Source: `src/components/action-sheet/ActionSheet.tsx:13:1`
   children,
   cancelLabel = 'Cancel',
   closeOnBackdrop = true,
+  interactionPolicy = 'enabled',
   testID,
 }: ActionSheetProps) => React.JSX.Element | null`
   - {
@@ -40,6 +41,7 @@ Source: `src/components/action-sheet/ActionSheet.tsx:13:1`
     children,
     cancelLabel = 'Cancel',
     closeOnBackdrop = true,
+    interactionPolicy = 'enabled',
     testID,
     }: `ActionSheetProps`
   - returns: `React.JSX.Element | null`
@@ -60,6 +62,7 @@ Source: `src/components/action-sheet/ActionSheetItem.tsx:8:1`
   color,
   disabled = false,
   selected = false,
+  interactionPolicy = 'enabled',
   onPress,
   testID,
 }: ActionSheetItemProps) => React.JSX.Element`
@@ -71,6 +74,7 @@ Source: `src/components/action-sheet/ActionSheetItem.tsx:8:1`
     color,
     disabled = false,
     selected = false,
+    interactionPolicy = 'enabled',
     onPress,
     testID,
     }: `ActionSheetItemProps`
@@ -80,40 +84,42 @@ Source: `src/components/action-sheet/ActionSheetItem.tsx:8:1`
 
 Kind: `type`
 Module: `src/components/action-sheet/types.ts`
-Source: `src/components/action-sheet/types.ts:16:1`
+Source: `src/components/action-sheet/types.ts:18:1`
 
 ### Members
 
-| Name        | Kind     | Type                                                                                                                                          | Required | Description |
-| ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| color       | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
-| description | property | `React.ReactNode`                                                                                                                             | no       |             |
-| disabled    | property | `boolean \| undefined`                                                                                                                        | no       |             |
-| label       | property | `React.ReactNode`                                                                                                                             | yes      |             |
-| leading     | property | `React.ReactNode`                                                                                                                             | no       |             |
-| onPress     | property | `(() => void) \| undefined`                                                                                                                   | no       |             |
-| selected    | property | `boolean \| undefined`                                                                                                                        | no       |             |
-| testID      | property | `string \| undefined`                                                                                                                         | no       |             |
-| trailing    | property | `React.ReactNode`                                                                                                                             | no       |             |
+| Name              | Kind     | Type                                                                                                                                          | Required | Description |
+| ----------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| color             | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
+| description       | property | `React.ReactNode`                                                                                                                             | no       |             |
+| disabled          | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
+| label             | property | `React.ReactNode`                                                                                                                             | yes      |             |
+| leading           | property | `React.ReactNode`                                                                                                                             | no       |             |
+| onPress           | property | `(() => void) \| undefined`                                                                                                                   | no       |             |
+| selected          | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| testID            | property | `string \| undefined`                                                                                                                         | no       |             |
+| trailing          | property | `React.ReactNode`                                                                                                                             | no       |             |
 
 ## ActionSheetProps
 
 Kind: `type`
 Module: `src/components/action-sheet/types.ts`
-Source: `src/components/action-sheet/types.ts:5:1`
+Source: `src/components/action-sheet/types.ts:6:1`
 
 ### Members
 
-| Name            | Kind     | Type                        | Required | Description |
-| --------------- | -------- | --------------------------- | -------- | ----------- |
-| cancelLabel     | property | `React.ReactNode`           | no       |             |
-| children        | property | `React.ReactNode`           | no       |             |
-| closeOnBackdrop | property | `boolean \| undefined`      | no       |             |
-| description     | property | `React.ReactNode`           | no       |             |
-| onDismiss       | property | `(() => void) \| undefined` | no       |             |
-| testID          | property | `string \| undefined`       | no       |             |
-| title           | property | `React.ReactNode`           | no       |             |
-| visible         | property | `boolean`                   | yes      |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| cancelLabel       | property | `React.ReactNode`                | no       |             |
+| children          | property | `React.ReactNode`                | no       |             |
+| closeOnBackdrop   | property | `boolean \| undefined`           | no       |             |
+| description       | property | `React.ReactNode`                | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| onDismiss         | property | `(() => void) \| undefined`      | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
+| title             | property | `React.ReactNode`                | no       |             |
+| visible           | property | `boolean`                        | yes      |             |
 
 ## AppBar
 
@@ -417,6 +423,7 @@ Source: `src/primitives/button-base/ButtonBase.tsx:28:1`
 - `({
   children,
   disabled = false,
+  interactionPolicy = 'enabled',
   onPress,
   onLongPress,
   accessibilityLabel,
@@ -429,6 +436,7 @@ Source: `src/primitives/button-base/ButtonBase.tsx:28:1`
   - {
     children,
     disabled = false,
+    interactionPolicy = 'enabled',
     onPress,
     onLongPress,
     accessibilityLabel,
@@ -444,7 +452,7 @@ Source: `src/primitives/button-base/ButtonBase.tsx:28:1`
 
 Kind: `type`
 Module: `src/primitives/button-base/types.ts`
-Source: `src/primitives/button-base/types.ts:7:1`
+Source: `src/primitives/button-base/types.ts:8:1`
 
 ### Members
 
@@ -466,6 +474,7 @@ Source: `src/primitives/button-base/types.ts:7:1`
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                   | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                   | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                         | no       |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                    | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                   | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                               | no       |             |
 | maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                                         | no       |             |
@@ -538,6 +547,7 @@ Source: `src/components/button/types.ts:14:1`
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | fullWidth          | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | leadingIcon        | property | `ButtonIconSpec \| undefined`                                                                                                                 | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | loading            | property | `boolean \| undefined`                                                                                                                        | no       |             |
@@ -792,6 +802,7 @@ Source: `src/components/checkbox/types.ts:7:1`
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | invalid            | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
@@ -836,7 +847,7 @@ Source: `node_modules/@ankhorage/color-theory/dist/harmony.d.ts:3:1`
 
 Kind: `unknown`
 Module: `node_modules/@ankhorage/color-theory/dist/swatches.d.ts`
-Source: `node_modules/@ankhorage/color-theory/dist/swatches.d.ts:5:1`
+Source: `node_modules/@ankhorage/color-theory/dist/swatches.d.ts:6:1`
 
 ## ColorSwatchStep
 
@@ -1068,6 +1079,7 @@ Source: `src/components/drawer/Drawer.tsx:11:1`
   position = 'right',
   children,
   closeOnBackdrop = true,
+  interactionPolicy = 'enabled',
   testID,
 }: DrawerProps) => React.JSX.Element | null`
   - {
@@ -1076,6 +1088,7 @@ Source: `src/components/drawer/Drawer.tsx:11:1`
     position = 'right',
     children,
     closeOnBackdrop = true,
+    interactionPolicy = 'enabled',
     testID,
     }: `DrawerProps`
   - returns: `React.JSX.Element | null`
@@ -1094,6 +1107,7 @@ Source: `src/components/navigation/DrawerNavigation.tsx:7:1`
   footer,
   compact = false,
   testID,
+  interactionPolicy,
 }: DrawerNavigationProps) => React.JSX.Element`
   - {
     items,
@@ -1101,6 +1115,7 @@ Source: `src/components/navigation/DrawerNavigation.tsx:7:1`
     footer,
     compact = false,
     testID,
+    interactionPolicy,
     }: `DrawerNavigationProps`
   - returns: `React.JSX.Element`
 
@@ -1112,56 +1127,69 @@ Source: `src/components/navigation/DrawerNavigationItem.tsx:6:1`
 
 ### Signatures
 
-- `({ item, compact = false, testID }: DrawerNavigationItemProps) => React.JSX.Element`
-  - { item, compact = false, testID }: `DrawerNavigationItemProps`
+- `({
+  item,
+  compact = false,
+  testID,
+  interactionPolicy,
+}: DrawerNavigationItemProps) => React.JSX.Element`
+  - {
+    item,
+    compact = false,
+    testID,
+    interactionPolicy,
+    }: `DrawerNavigationItemProps`
   - returns: `React.JSX.Element`
 
 ## DrawerNavigationItemProps
 
 Kind: `type`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:55:1`
+Source: `src/components/navigation/types.ts:61:1`
 
 ### Members
 
-| Name    | Kind     | Type                   | Required | Description |
-| ------- | -------- | ---------------------- | -------- | ----------- |
-| compact | property | `boolean \| undefined` | no       |             |
-| item    | property | `NavigationItemSpec`   | yes      |             |
-| testID  | property | `string \| undefined`  | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| compact           | property | `boolean \| undefined`           | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| item              | property | `NavigationItemSpec`             | yes      |             |
+| testID            | property | `string \| undefined`            | no       |             |
 
 ## DrawerNavigationProps
 
 Kind: `type`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:47:1`
+Source: `src/components/navigation/types.ts:52:1`
 
 ### Members
 
-| Name    | Kind     | Type                            | Required | Description |
-| ------- | -------- | ------------------------------- | -------- | ----------- |
-| compact | property | `boolean \| undefined`          | no       |             |
-| footer  | property | `React.ReactNode`               | no       |             |
-| header  | property | `React.ReactNode`               | no       |             |
-| items   | property | `readonly NavigationItemSpec[]` | yes      |             |
-| testID  | property | `string \| undefined`           | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| compact           | property | `boolean \| undefined`           | no       |             |
+| footer            | property | `React.ReactNode`                | no       |             |
+| header            | property | `React.ReactNode`                | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| items             | property | `readonly NavigationItemSpec[]`  | yes      |             |
+| testID            | property | `string \| undefined`            | no       |             |
 
 ## DrawerProps
 
 Kind: `type`
 Module: `src/components/drawer/types.ts`
-Source: `src/components/drawer/types.ts:3:1`
+Source: `src/components/drawer/types.ts:5:1`
 
 ### Members
 
-| Name            | Kind     | Type                             | Required | Description |
-| --------------- | -------- | -------------------------------- | -------- | ----------- |
-| children        | property | `React.ReactNode`                | no       |             |
-| closeOnBackdrop | property | `boolean \| undefined`           | no       |             |
-| onDismiss       | property | `(() => void) \| undefined`      | no       |             |
-| position        | property | `"left" \| "right" \| undefined` | no       |             |
-| testID          | property | `string \| undefined`            | no       |             |
-| visible         | property | `boolean`                        | yes      |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| children          | property | `React.ReactNode`                | no       |             |
+| closeOnBackdrop   | property | `boolean \| undefined`           | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| onDismiss         | property | `(() => void) \| undefined`      | no       |             |
+| position          | property | `"left" \| "right" \| undefined` | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
+| visible           | property | `boolean`                        | yes      |             |
 
 ## Field
 
@@ -1587,6 +1615,7 @@ Source: `src/components/icon-button/types.ts:7:1`
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | icon               | property | `{ name: IconProps["name"]; provider?: IconProps["provider"]; }`                                                                              | yes      |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
@@ -1731,6 +1760,24 @@ Kind: `unknown`
 Module: `src/layout/Inline.tsx`
 Source: `src/layout/Inline.tsx:5:1`
 
+## InteractionPolicy
+
+Kind: `unknown`
+Module: `src/interactionPolicy.ts`
+Source: `src/interactionPolicy.ts:1:1`
+
+## InteractionPolicyProps
+
+Kind: `type`
+Module: `src/interactionPolicy.ts`
+Source: `src/interactionPolicy.ts:3:1`
+
+### Members
+
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+
 ## isDeepEqual
 
 Kind: `value`
@@ -1822,15 +1869,29 @@ Source: `src/components/menu/Menu.tsx:56:1`
 
 ### Signatures
 
-- `({ trigger, actions, dismiss, closeOnSelect = true, testID }: MenuProps) => React.JSX.Element`
-  - { trigger, actions, dismiss, closeOnSelect = true, testID }: `MenuProps`
+- `({
+  trigger,
+  actions,
+  dismiss,
+  closeOnSelect = true,
+  interactionPolicy = 'enabled',
+  testID,
+}: MenuProps) => React.JSX.Element`
+  - {
+    trigger,
+    actions,
+    dismiss,
+    closeOnSelect = true,
+    interactionPolicy = 'enabled',
+    testID,
+    }: `MenuProps`
   - returns: `React.JSX.Element`
 
 ## MenuAction
 
 Kind: `type`
 Module: `src/components/menu/types.ts`
-Source: `src/components/menu/types.ts:5:1`
+Source: `src/components/menu/types.ts:7:1`
 
 ### Members
 
@@ -1850,23 +1911,24 @@ Source: `src/components/menu/types.ts:5:1`
 
 Kind: `unknown`
 Module: `src/components/menu/types.ts`
-Source: `src/components/menu/types.ts:3:1`
+Source: `src/components/menu/types.ts:5:1`
 
 ## MenuProps
 
 Kind: `type`
 Module: `src/components/menu/types.ts`
-Source: `src/components/menu/types.ts:17:1`
+Source: `src/components/menu/types.ts:19:1`
 
 ### Members
 
-| Name          | Kind     | Type                        | Required | Description |
-| ------------- | -------- | --------------------------- | -------- | ----------- |
-| actions       | property | `readonly MenuAction[]`     | yes      |             |
-| closeOnSelect | property | `boolean \| undefined`      | no       |             |
-| dismiss       | property | `(() => void) \| undefined` | no       |             |
-| testID        | property | `string \| undefined`       | no       |             |
-| trigger       | property | `React.ReactNode`           | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| actions           | property | `readonly MenuAction[]`          | yes      |             |
+| closeOnSelect     | property | `boolean \| undefined`           | no       |             |
+| dismiss           | property | `(() => void) \| undefined`      | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
+| trigger           | property | `React.ReactNode`                | no       |             |
 
 ## Modal
 
@@ -1881,6 +1943,7 @@ Source: `src/components/modal/Modal.tsx:11:1`
   onDismiss,
   children,
   closeOnBackdrop = true,
+  interactionPolicy = 'enabled',
   testID,
 }: ModalProps) => React.JSX.Element | null`
   - {
@@ -1888,6 +1951,7 @@ Source: `src/components/modal/Modal.tsx:11:1`
     onDismiss,
     children,
     closeOnBackdrop = true,
+    interactionPolicy = 'enabled',
     testID,
     }: `ModalProps`
   - returns: `React.JSX.Element | null`
@@ -1896,17 +1960,18 @@ Source: `src/components/modal/Modal.tsx:11:1`
 
 Kind: `type`
 Module: `src/components/modal/types.ts`
-Source: `src/components/modal/types.ts:3:1`
+Source: `src/components/modal/types.ts:5:1`
 
 ### Members
 
-| Name            | Kind     | Type                        | Required | Description |
-| --------------- | -------- | --------------------------- | -------- | ----------- |
-| children        | property | `React.ReactNode`           | no       |             |
-| closeOnBackdrop | property | `boolean \| undefined`      | no       |             |
-| onDismiss       | property | `(() => void) \| undefined` | no       |             |
-| testID          | property | `string \| undefined`       | no       |             |
-| visible         | property | `boolean`                   | yes      |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| children          | property | `React.ReactNode`                | no       |             |
+| closeOnBackdrop   | property | `boolean \| undefined`           | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| onDismiss         | property | `(() => void) \| undefined`      | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
+| visible           | property | `boolean`                        | yes      |             |
 
 ## NavigationItem
 
@@ -1916,35 +1981,46 @@ Source: `src/components/navigation/NavigationItem.tsx:12:1`
 
 ### Signatures
 
-- `({ item, compact = false, testID }: NavigationItemProps) => React.JSX.Element`
-  - { item, compact = false, testID }: `NavigationItemProps`
+- `({
+  item,
+  compact = false,
+  testID,
+  interactionPolicy,
+}: NavigationItemProps) => React.JSX.Element`
+  - {
+    item,
+    compact = false,
+    testID,
+    interactionPolicy,
+    }: `NavigationItemProps`
   - returns: `React.JSX.Element`
 
 ## NavigationItemIcon
 
 Kind: `unknown`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:6:1`
+Source: `src/components/navigation/types.ts:7:1`
 
 ## NavigationItemProps
 
 Kind: `type`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:22:1`
+Source: `src/components/navigation/types.ts:23:1`
 
 ### Members
 
-| Name    | Kind     | Type                   | Required | Description |
-| ------- | -------- | ---------------------- | -------- | ----------- |
-| compact | property | `boolean \| undefined` | no       |             |
-| item    | property | `NavigationItemSpec`   | yes      |             |
-| testID  | property | `string \| undefined`  | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| compact           | property | `boolean \| undefined`           | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| item              | property | `NavigationItemSpec`             | yes      |             |
+| testID            | property | `string \| undefined`            | no       |             |
 
 ## NavigationItemSpec
 
 Kind: `type`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:8:1`
+Source: `src/components/navigation/types.ts:9:1`
 
 ### Members
 
@@ -1975,12 +2051,14 @@ Source: `src/components/navigation/NavigationList.tsx:7:1`
   orientation = 'vertical',
   compact = false,
   testID,
+  interactionPolicy,
 }: NavigationListProps) => React.JSX.Element`
   - {
     items,
     orientation = 'vertical',
     compact = false,
     testID,
+    interactionPolicy,
     }: `NavigationListProps`
   - returns: `React.JSX.Element`
 
@@ -1988,16 +2066,17 @@ Source: `src/components/navigation/NavigationList.tsx:7:1`
 
 Kind: `type`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:28:1`
+Source: `src/components/navigation/types.ts:30:1`
 
 ### Members
 
-| Name        | Kind     | Type                                      | Required | Description |
-| ----------- | -------- | ----------------------------------------- | -------- | ----------- |
-| compact     | property | `boolean \| undefined`                    | no       |             |
-| items       | property | `readonly NavigationItemSpec[]`           | yes      |             |
-| orientation | property | `"vertical" \| "horizontal" \| undefined` | no       |             |
-| testID      | property | `string \| undefined`                     | no       |             |
+| Name              | Kind     | Type                                      | Required | Description |
+| ----------------- | -------- | ----------------------------------------- | -------- | ----------- |
+| compact           | property | `boolean \| undefined`                    | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined`          | no       |             |
+| items             | property | `readonly NavigationItemSpec[]`           | yes      |             |
+| orientation       | property | `"vertical" \| "horizontal" \| undefined` | no       |             |
+| testID            | property | `string \| undefined`                     | no       |             |
 
 ## NeutralSemantics
 
@@ -2086,6 +2165,7 @@ Source: `src/components/radio/types.ts:7:1`
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | invalid            | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
@@ -2887,6 +2967,7 @@ Source: `src/components/switch/types.ts:7:1`
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | invalid            | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
@@ -2929,8 +3010,20 @@ Source: `src/components/tabs/Tab.tsx:10:1`
 
 ### Signatures
 
-- `({ value, children, disabled = false, testID }: TabProps) => React.JSX.Element`
-  - { value, children, disabled = false, testID }: `TabProps`
+- `({
+  value,
+  children,
+  disabled = false,
+  interactionPolicy = 'enabled',
+  testID,
+}: TabProps) => React.JSX.Element`
+  - {
+    value,
+    children,
+    disabled = false,
+    interactionPolicy = 'enabled',
+    testID,
+    }: `TabProps`
   - returns: `React.JSX.Element`
 
 ## TabBar
@@ -2941,8 +3034,8 @@ Source: `src/components/navigation/TabBar.tsx:8:1`
 
 ### Signatures
 
-- `({ items, compact = false, testID }: TabBarProps) => React.JSX.Element`
-  - { items, compact = false, testID }: `TabBarProps`
+- `({ items, compact = false, testID, interactionPolicy }: TabBarProps) => React.JSX.Element`
+  - { items, compact = false, testID, interactionPolicy }: `TabBarProps`
   - returns: `React.JSX.Element`
 
 ## TabBarItem
@@ -2953,37 +3046,39 @@ Source: `src/components/navigation/TabBarItem.tsx:12:1`
 
 ### Signatures
 
-- `({ item, compact = false, testID }: TabBarItemProps) => React.JSX.Element`
-  - { item, compact = false, testID }: `TabBarItemProps`
+- `({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) => React.JSX.Element`
+  - { item, compact = false, testID, interactionPolicy }: `TabBarItemProps`
   - returns: `React.JSX.Element`
 
 ## TabBarItemProps
 
 Kind: `type`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:41:1`
+Source: `src/components/navigation/types.ts:45:1`
 
 ### Members
 
-| Name    | Kind     | Type                   | Required | Description |
-| ------- | -------- | ---------------------- | -------- | ----------- |
-| compact | property | `boolean \| undefined` | no       |             |
-| item    | property | `NavigationItemSpec`   | yes      |             |
-| testID  | property | `string \| undefined`  | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| compact           | property | `boolean \| undefined`           | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| item              | property | `NavigationItemSpec`             | yes      |             |
+| testID            | property | `string \| undefined`            | no       |             |
 
 ## TabBarProps
 
 Kind: `type`
 Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:35:1`
+Source: `src/components/navigation/types.ts:38:1`
 
 ### Members
 
-| Name    | Kind     | Type                            | Required | Description |
-| ------- | -------- | ------------------------------- | -------- | ----------- |
-| compact | property | `boolean \| undefined`          | no       |             |
-| items   | property | `readonly NavigationItemSpec[]` | yes      |             |
-| testID  | property | `string \| undefined`           | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| compact           | property | `boolean \| undefined`           | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| items             | property | `readonly NavigationItemSpec[]`  | yes      |             |
+| testID            | property | `string \| undefined`            | no       |             |
 
 ## TabList
 
@@ -3001,7 +3096,7 @@ Source: `src/components/tabs/TabList.tsx:9:1`
 
 Kind: `type`
 Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:11:1`
+Source: `src/components/tabs/types.ts:13:1`
 
 ### Members
 
@@ -3026,7 +3121,7 @@ Source: `src/components/tabs/TabPanel.tsx:9:1`
 
 Kind: `type`
 Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:23:1`
+Source: `src/components/tabs/types.ts:26:1`
 
 ### Members
 
@@ -3040,16 +3135,17 @@ Source: `src/components/tabs/types.ts:23:1`
 
 Kind: `type`
 Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:16:1`
+Source: `src/components/tabs/types.ts:18:1`
 
 ### Members
 
-| Name     | Kind     | Type                   | Required | Description |
-| -------- | -------- | ---------------------- | -------- | ----------- |
-| children | property | `React.ReactNode`      | no       |             |
-| disabled | property | `boolean \| undefined` | no       |             |
-| testID   | property | `string \| undefined`  | no       |             |
-| value    | property | `string`               | yes      |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| children          | property | `React.ReactNode`                | no       |             |
+| disabled          | property | `boolean \| undefined`           | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
+| value             | property | `string`                         | yes      |             |
 
 ## Tabs
 
@@ -3067,7 +3163,7 @@ Source: `src/components/tabs/Tabs.tsx:9:1`
 
 Kind: `type`
 Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:3:1`
+Source: `src/components/tabs/types.ts:5:1`
 
 ### Members
 
@@ -3286,6 +3382,7 @@ Source: `src/components/textarea/types.ts:3:1`
 | inputAccessoryViewButtonLabel          | property | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | no       |             |
 | inputAccessoryViewID                   | property | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | no       |             |
 | inputMode                              | property | `InputModeOptions \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | no       |             |
+| interactionPolicy                      | property | `InteractionPolicy \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | invalid                                | property | `boolean \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | no       |             |
 | isTVSelectable                         | property | `boolean \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | no       |             |
 | keyboardAppearance                     | property | `"default" \| "light" \| "dark" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | no       |             |
@@ -3405,6 +3502,7 @@ Source: `src/components/text-input/TextInput.tsx:14:1`
   invalid = false,
   leadingAccessory,
   trailingAccessory,
+  interactionPolicy = 'enabled',
   style,
   testID,
   onFocus,
@@ -3422,6 +3520,7 @@ Source: `src/components/text-input/TextInput.tsx:14:1`
     invalid = false,
     leadingAccessory,
     trailingAccessory,
+    interactionPolicy = 'enabled',
     style,
     testID,
     onFocus,
@@ -3434,7 +3533,7 @@ Source: `src/components/text-input/TextInput.tsx:14:1`
 
 Kind: `type`
 Module: `src/components/text-input/types.ts`
-Source: `src/components/text-input/types.ts:10:1`
+Source: `src/components/text-input/types.ts:11:1`
 
 ### Members
 
@@ -3502,6 +3601,7 @@ Source: `src/components/text-input/types.ts:10:1`
 | inputAccessoryViewButtonLabel          | property | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | no       |             |
 | inputAccessoryViewID                   | property | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | no       |             |
 | inputMode                              | property | `InputModeOptions \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | no       |             |
+| interactionPolicy                      | property | `InteractionPolicy \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | invalid                                | property | `boolean \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | no       |             |
 | isTVSelectable                         | property | `boolean \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | no       |             |
 | keyboardAppearance                     | property | `"default" \| "light" \| "dark" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | no       |             |
@@ -3728,42 +3828,58 @@ Source: `src/components/toast/Toast.tsx:41:1`
 
 ### Signatures
 
-- `({ title, description, status = 'default', onDismiss, testID }: ToastProps) => React.JSX.Element`
-  - { title, description, status = 'default', onDismiss, testID }: `ToastProps`
+- `({
+  title,
+  description,
+  status = 'default',
+  onDismiss,
+  interactionPolicy = 'enabled',
+  testID,
+}: ToastProps) => React.JSX.Element`
+  - {
+    title,
+    description,
+    status = 'default',
+    onDismiss,
+    interactionPolicy = 'enabled',
+    testID,
+    }: `ToastProps`
   - returns: `React.JSX.Element`
 
 ## ToastOptions
 
 Kind: `type`
 Module: `src/components/toast/types.ts`
-Source: `src/components/toast/types.ts:15:1`
+Source: `src/components/toast/types.ts:17:1`
 
 ### Members
 
-| Name        | Kind     | Type                       | Required | Description |
-| ----------- | -------- | -------------------------- | -------- | ----------- |
-| description | property | `React.ReactNode`          | no       |             |
-| duration    | property | `number \| undefined`      | no       |             |
-| id          | property | `string \| undefined`      | no       |             |
-| status      | property | `ToastStatus \| undefined` | no       |             |
-| testID      | property | `string \| undefined`      | no       |             |
-| title       | property | `React.ReactNode`          | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| description       | property | `React.ReactNode`                | no       |             |
+| duration          | property | `number \| undefined`            | no       |             |
+| id                | property | `string \| undefined`            | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| status            | property | `ToastStatus \| undefined`       | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
+| title             | property | `React.ReactNode`                | no       |             |
 
 ## ToastProps
 
 Kind: `type`
 Module: `src/components/toast/types.ts`
-Source: `src/components/toast/types.ts:7:1`
+Source: `src/components/toast/types.ts:8:1`
 
 ### Members
 
-| Name        | Kind     | Type                        | Required | Description |
-| ----------- | -------- | --------------------------- | -------- | ----------- |
-| description | property | `React.ReactNode`           | no       |             |
-| onDismiss   | property | `(() => void) \| undefined` | no       |             |
-| status      | property | `ToastStatus \| undefined`  | no       |             |
-| testID      | property | `string \| undefined`       | no       |             |
-| title       | property | `React.ReactNode`           | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| description       | property | `React.ReactNode`                | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| onDismiss         | property | `(() => void) \| undefined`      | no       |             |
+| status            | property | `ToastStatus \| undefined`       | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
+| title             | property | `React.ReactNode`                | no       |             |
 
 ## ToastProvider
 
@@ -3787,7 +3903,7 @@ Source: `src/components/toast/ToastProvider.tsx:22:1`
 
 Kind: `unknown`
 Module: `src/components/toast/types.ts`
-Source: `src/components/toast/types.ts:5:1`
+Source: `src/components/toast/types.ts:6:1`
 
 ## Tooltip
 
@@ -3801,6 +3917,7 @@ Source: `src/components/tooltip/Tooltip.tsx:24:1`
   children,
   content,
   delay = 150,
+  interactionPolicy = 'enabled',
   placement = 'top',
   testID,
 }: TooltipProps) => React.JSX.Element`
@@ -3808,6 +3925,7 @@ Source: `src/components/tooltip/Tooltip.tsx:24:1`
     children,
     content,
     delay = 150,
+    interactionPolicy = 'enabled',
     placement = 'top',
     testID,
     }: `TooltipProps`
@@ -3817,17 +3935,18 @@ Source: `src/components/tooltip/Tooltip.tsx:24:1`
 
 Kind: `type`
 Module: `src/components/tooltip/types.ts`
-Source: `src/components/tooltip/types.ts:3:1`
+Source: `src/components/tooltip/types.ts:5:1`
 
 ### Members
 
-| Name      | Kind     | Type                             | Required | Description |
-| --------- | -------- | -------------------------------- | -------- | ----------- |
-| children  | property | `React.ReactNode`                | no       |             |
-| content   | property | `React.ReactNode`                | no       |             |
-| delay     | property | `number \| undefined`            | no       |             |
-| placement | property | `"top" \| "bottom" \| undefined` | no       |             |
-| testID    | property | `string \| undefined`            | no       |             |
+| Name              | Kind     | Type                             | Required | Description |
+| ----------------- | -------- | -------------------------------- | -------- | ----------- |
+| children          | property | `React.ReactNode`                | no       |             |
+| content           | property | `React.ReactNode`                | no       |             |
+| delay             | property | `number \| undefined`            | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
+| placement         | property | `"top" \| "bottom" \| undefined` | no       |             |
+| testID            | property | `string \| undefined`            | no       |             |
 
 ## TranslationProvider
 

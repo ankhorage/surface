@@ -55,10 +55,10 @@
     "relatedSymbols": ["ActionSheetProps"],
     "signatures": [
       {
-        "label": "({\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  testID,\n}: ActionSheetProps) => React.JSX.Element | null",
+        "label": "({\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ActionSheetProps) => React.JSX.Element | null",
         "parameters": [
           {
-            "name": "{\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  testID,\n}",
+            "name": "{\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
             "type": "ActionSheetProps",
             "required": true,
             "description": null
@@ -87,10 +87,10 @@
     "relatedSymbols": ["ActionSheetItemProps"],
     "signatures": [
       {
-        "label": "({\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  onPress,\n  testID,\n}: ActionSheetItemProps) => React.JSX.Element",
+        "label": "({\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}: ActionSheetItemProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  onPress,\n  testID,\n}",
+            "name": "{\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}",
             "type": "ActionSheetItemProps",
             "required": true,
             "description": null
@@ -112,11 +112,11 @@
     "modulePath": "src/components/action-sheet/types.ts",
     "sourceLocation": {
       "filePath": "src/components/action-sheet/types.ts",
-      "line": 16,
+      "line": 18,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -137,6 +137,13 @@
         "name": "disabled",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -194,11 +201,11 @@
     "modulePath": "src/components/action-sheet/types.ts",
     "sourceLocation": {
       "filePath": "src/components/action-sheet/types.ts",
-      "line": 5,
+      "line": 6,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -226,6 +233,13 @@
         "name": "description",
         "kind": "property",
         "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -1255,10 +1269,10 @@
     "relatedSymbols": ["ButtonBaseProps"],
     "signatures": [
       {
-        "label": "({\n  children,\n  disabled = false,\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: ButtonBaseProps) => React.JSX.Element",
+        "label": "({\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: ButtonBaseProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  disabled = false,\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}",
+            "name": "{\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}",
             "type": "ButtonBaseProps",
             "required": true,
             "description": null
@@ -1280,11 +1294,11 @@
     "modulePath": "src/primitives/button-base/types.ts",
     "sourceLocation": {
       "filePath": "src/primitives/button-base/types.ts",
-      "line": 7,
+      "line": 8,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "relatedSymbols": ["InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -1396,6 +1410,13 @@
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -1665,7 +1686,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ButtonIconSpec", "Responsive"],
+    "relatedSymbols": ["ButtonIconSpec", "InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -1784,6 +1805,13 @@
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -2819,7 +2847,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "relatedSymbols": ["InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -2938,6 +2966,13 @@
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -3202,7 +3237,7 @@
     "modulePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
-      "line": 5,
+      "line": 6,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -4142,10 +4177,10 @@
     "relatedSymbols": ["DrawerProps"],
     "signatures": [
       {
-        "label": "({\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  testID,\n}: DrawerProps) => React.JSX.Element | null",
+        "label": "({\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: DrawerProps) => React.JSX.Element | null",
         "parameters": [
           {
-            "name": "{\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  testID,\n}",
+            "name": "{\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
             "type": "DrawerProps",
             "required": true,
             "description": null
@@ -4174,10 +4209,10 @@
     "relatedSymbols": ["DrawerNavigationProps"],
     "signatures": [
       {
-        "label": "({\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n}: DrawerNavigationProps) => React.JSX.Element",
+        "label": "({\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n}",
+            "name": "{\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
             "type": "DrawerNavigationProps",
             "required": true,
             "description": null
@@ -4206,10 +4241,10 @@
     "relatedSymbols": ["DrawerNavigationItemProps"],
     "signatures": [
       {
-        "label": "({ item, compact = false, testID }: DrawerNavigationItemProps) => React.JSX.Element",
+        "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationItemProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ item, compact = false, testID }",
+            "name": "{\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
             "type": "DrawerNavigationItemProps",
             "required": true,
             "description": null
@@ -4231,17 +4266,24 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 55,
+      "line": 61,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemSpec"],
+    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
     "signatures": [],
     "members": [
       {
         "name": "compact",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -4271,11 +4313,11 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 47,
+      "line": 52,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemSpec"],
+    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
     "signatures": [],
     "members": [
       {
@@ -4296,6 +4338,13 @@
         "name": "header",
         "kind": "property",
         "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -4325,11 +4374,11 @@
     "modulePath": "src/components/drawer/types.ts",
     "sourceLocation": {
       "filePath": "src/components/drawer/types.ts",
-      "line": 3,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -4343,6 +4392,13 @@
         "name": "closeOnBackdrop",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -5510,7 +5566,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconProps", "Responsive"],
+    "relatedSymbols": ["IconProps", "InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -5630,6 +5686,13 @@
         "kind": "property",
         "type": "{ name: IconProps[\"name\"]; provider?: IconProps[\"provider\"]; }",
         "required": true,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
+        "required": false,
         "description": null
       },
       {
@@ -6149,6 +6212,50 @@
     "structuredRows": []
   },
   {
+    "name": "InteractionPolicy",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/interactionPolicy.ts",
+    "sourceLocation": {
+      "filePath": "src/interactionPolicy.ts",
+      "line": 1,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "InteractionPolicyProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/interactionPolicy.ts",
+    "sourceLocation": {
+      "filePath": "src/interactionPolicy.ts",
+      "line": 3,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["InteractionPolicy"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
     "name": "isDeepEqual",
     "description": null,
     "isReadme": false,
@@ -6388,10 +6495,10 @@
     "relatedSymbols": ["MenuProps"],
     "signatures": [
       {
-        "label": "({ trigger, actions, dismiss, closeOnSelect = true, testID }: MenuProps) => React.JSX.Element",
+        "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: MenuProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ trigger, actions, dismiss, closeOnSelect = true, testID }",
+            "name": "{\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
             "type": "MenuProps",
             "required": true,
             "description": null
@@ -6413,7 +6520,7 @@
     "modulePath": "src/components/menu/types.ts",
     "sourceLocation": {
       "filePath": "src/components/menu/types.ts",
-      "line": 5,
+      "line": 7,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6495,7 +6602,7 @@
     "modulePath": "src/components/menu/types.ts",
     "sourceLocation": {
       "filePath": "src/components/menu/types.ts",
-      "line": 3,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6513,11 +6620,11 @@
     "modulePath": "src/components/menu/types.ts",
     "sourceLocation": {
       "filePath": "src/components/menu/types.ts",
-      "line": 17,
+      "line": 19,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["MenuAction"],
+    "relatedSymbols": ["InteractionPolicy", "MenuAction"],
     "signatures": [],
     "members": [
       {
@@ -6538,6 +6645,13 @@
         "name": "dismiss",
         "kind": "property",
         "type": "(() => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -6574,10 +6688,10 @@
     "relatedSymbols": ["ModalProps"],
     "signatures": [
       {
-        "label": "({\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  testID,\n}: ModalProps) => React.JSX.Element | null",
+        "label": "({\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ModalProps) => React.JSX.Element | null",
         "parameters": [
           {
-            "name": "{\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  testID,\n}",
+            "name": "{\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
             "type": "ModalProps",
             "required": true,
             "description": null
@@ -6599,11 +6713,11 @@
     "modulePath": "src/components/modal/types.ts",
     "sourceLocation": {
       "filePath": "src/components/modal/types.ts",
-      "line": 3,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -6617,6 +6731,13 @@
         "name": "closeOnBackdrop",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -6660,10 +6781,10 @@
     "relatedSymbols": ["NavigationItemProps"],
     "signatures": [
       {
-        "label": "({ item, compact = false, testID }: NavigationItemProps) => React.JSX.Element",
+        "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationItemProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ item, compact = false, testID }",
+            "name": "{\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
             "type": "NavigationItemProps",
             "required": true,
             "description": null
@@ -6685,7 +6806,7 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 6,
+      "line": 7,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6703,17 +6824,24 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 22,
+      "line": 23,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemSpec"],
+    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
     "signatures": [],
     "members": [
       {
         "name": "compact",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -6743,7 +6871,7 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 8,
+      "line": 9,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6846,10 +6974,10 @@
     "relatedSymbols": ["NavigationListProps"],
     "signatures": [
       {
-        "label": "({\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n}: NavigationListProps) => React.JSX.Element",
+        "label": "({\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationListProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n}",
+            "name": "{\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
             "type": "NavigationListProps",
             "required": true,
             "description": null
@@ -6871,17 +6999,24 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 28,
+      "line": 30,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemSpec"],
+    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
     "signatures": [],
     "members": [
       {
         "name": "compact",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -7050,7 +7185,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "relatedSymbols": ["InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -7169,6 +7304,13 @@
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -10340,7 +10482,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "relatedSymbols": ["InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -10459,6 +10601,13 @@
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -10712,10 +10861,10 @@
     "relatedSymbols": ["TabProps"],
     "signatures": [
       {
-        "label": "({ value, children, disabled = false, testID }: TabProps) => React.JSX.Element",
+        "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}: TabProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ value, children, disabled = false, testID }",
+            "name": "{\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}",
             "type": "TabProps",
             "required": true,
             "description": null
@@ -10744,10 +10893,10 @@
     "relatedSymbols": ["TabBarProps"],
     "signatures": [
       {
-        "label": "({ items, compact = false, testID }: TabBarProps) => React.JSX.Element",
+        "label": "({ items, compact = false, testID, interactionPolicy }: TabBarProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ items, compact = false, testID }",
+            "name": "{ items, compact = false, testID, interactionPolicy }",
             "type": "TabBarProps",
             "required": true,
             "description": null
@@ -10776,10 +10925,10 @@
     "relatedSymbols": ["TabBarItemProps"],
     "signatures": [
       {
-        "label": "({ item, compact = false, testID }: TabBarItemProps) => React.JSX.Element",
+        "label": "({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ item, compact = false, testID }",
+            "name": "{ item, compact = false, testID, interactionPolicy }",
             "type": "TabBarItemProps",
             "required": true,
             "description": null
@@ -10801,17 +10950,24 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 41,
+      "line": 45,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemSpec"],
+    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
     "signatures": [],
     "members": [
       {
         "name": "compact",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -10841,17 +10997,24 @@
     "modulePath": "src/components/navigation/types.ts",
     "sourceLocation": {
       "filePath": "src/components/navigation/types.ts",
-      "line": 35,
+      "line": 38,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemSpec"],
+    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
     "signatures": [],
     "members": [
       {
         "name": "compact",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -10913,7 +11076,7 @@
     "modulePath": "src/components/tabs/types.ts",
     "sourceLocation": {
       "filePath": "src/components/tabs/types.ts",
-      "line": 11,
+      "line": 13,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10978,7 +11141,7 @@
     "modulePath": "src/components/tabs/types.ts",
     "sourceLocation": {
       "filePath": "src/components/tabs/types.ts",
-      "line": 23,
+      "line": 26,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -11018,11 +11181,11 @@
     "modulePath": "src/components/tabs/types.ts",
     "sourceLocation": {
       "filePath": "src/components/tabs/types.ts",
-      "line": 16,
+      "line": 18,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -11036,6 +11199,13 @@
         "name": "disabled",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -11097,7 +11267,7 @@
     "modulePath": "src/components/tabs/types.ts",
     "sourceLocation": {
       "filePath": "src/components/tabs/types.ts",
-      "line": 3,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -11620,7 +11790,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -12054,6 +12224,13 @@
         "name": "inputMode",
         "kind": "property",
         "type": "InputModeOptions | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -12769,10 +12946,10 @@
     "relatedSymbols": ["TextInputProps"],
     "signatures": [
       {
-        "label": "({\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}: TextInputProps) => React.JSX.Element",
+        "label": "({\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  interactionPolicy = 'enabled',\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}: TextInputProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}",
+            "name": "{\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  interactionPolicy = 'enabled',\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}",
             "type": "TextInputProps",
             "required": true,
             "description": null
@@ -12794,11 +12971,11 @@
     "modulePath": "src/components/text-input/types.ts",
     "sourceLocation": {
       "filePath": "src/components/text-input/types.ts",
-      "line": 10,
+      "line": 11,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -13232,6 +13409,13 @@
         "name": "inputMode",
         "kind": "property",
         "type": "InputModeOptions | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -14358,10 +14542,10 @@
     "relatedSymbols": ["ToastProps"],
     "signatures": [
       {
-        "label": "({ title, description, status = 'default', onDismiss, testID }: ToastProps) => React.JSX.Element",
+        "label": "({\n  title,\n  description,\n  status = 'default',\n  onDismiss,\n  interactionPolicy = 'enabled',\n  testID,\n}: ToastProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ title, description, status = 'default', onDismiss, testID }",
+            "name": "{\n  title,\n  description,\n  status = 'default',\n  onDismiss,\n  interactionPolicy = 'enabled',\n  testID,\n}",
             "type": "ToastProps",
             "required": true,
             "description": null
@@ -14383,11 +14567,11 @@
     "modulePath": "src/components/toast/types.ts",
     "sourceLocation": {
       "filePath": "src/components/toast/types.ts",
-      "line": 15,
+      "line": 17,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ToastStatus"],
+    "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
     "signatures": [],
     "members": [
       {
@@ -14408,6 +14592,13 @@
         "name": "id",
         "kind": "property",
         "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -14444,17 +14635,24 @@
     "modulePath": "src/components/toast/types.ts",
     "sourceLocation": {
       "filePath": "src/components/toast/types.ts",
-      "line": 7,
+      "line": 8,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ToastStatus"],
+    "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
     "signatures": [],
     "members": [
       {
         "name": "description",
         "kind": "property",
         "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },
@@ -14530,7 +14728,7 @@
     "modulePath": "src/components/toast/types.ts",
     "sourceLocation": {
       "filePath": "src/components/toast/types.ts",
-      "line": 5,
+      "line": 6,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14555,10 +14753,10 @@
     "relatedSymbols": ["TooltipProps"],
     "signatures": [
       {
-        "label": "({\n  children,\n  content,\n  delay = 150,\n  placement = 'top',\n  testID,\n}: TooltipProps) => React.JSX.Element",
+        "label": "({\n  children,\n  content,\n  delay = 150,\n  interactionPolicy = 'enabled',\n  placement = 'top',\n  testID,\n}: TooltipProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  content,\n  delay = 150,\n  placement = 'top',\n  testID,\n}",
+            "name": "{\n  children,\n  content,\n  delay = 150,\n  interactionPolicy = 'enabled',\n  placement = 'top',\n  testID,\n}",
             "type": "TooltipProps",
             "required": true,
             "description": null
@@ -14580,11 +14778,11 @@
     "modulePath": "src/components/tooltip/types.ts",
     "sourceLocation": {
       "filePath": "src/components/tooltip/types.ts",
-      "line": 3,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
       {
@@ -14605,6 +14803,13 @@
         "name": "delay",
         "kind": "property",
         "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
         "required": false,
         "description": null
       },

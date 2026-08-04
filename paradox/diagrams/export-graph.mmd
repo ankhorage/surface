@@ -88,6 +88,7 @@ graph LR
   module_src_core_responsive_useBreakpoint_ts["src/core/responsive/useBreakpoint.ts"]
   module_src_examples_DocsExamples_tsx["src/examples/DocsExamples.tsx"]
   module_src_index_ts["src/index.ts"]
+  module_src_interactionPolicy_ts["src/interactionPolicy.ts"]
   module_src_internal_focus_FocusScope_tsx["src/internal/focus/FocusScope.tsx"]
   module_src_internal_focus_useFocusManager_ts["src/internal/focus/useFocusManager.ts"]
   module_src_internal_overlay_OverlayProvider_tsx["src/internal/overlay/OverlayProvider.tsx"]
@@ -162,8 +163,10 @@ graph LR
   export_ActionSheetItem -.-> export_ActionSheetItemProps
   export_ActionSheetItemProps["ActionSheetItemProps"]
   module_src_components_action_sheet_types_ts --> export_ActionSheetItemProps
+  export_ActionSheetItemProps -.-> export_InteractionPolicy
   export_ActionSheetProps["ActionSheetProps"]
   module_src_components_action_sheet_types_ts --> export_ActionSheetProps
+  export_ActionSheetProps -.-> export_InteractionPolicy
   export_AppBar["AppBar"]
   module_src_layout_AppBar_tsx --> export_AppBar
   export_AppBar -.-> export_AppBarProps
@@ -197,12 +200,14 @@ graph LR
   export_ButtonBase -.-> export_ButtonBaseProps
   export_ButtonBaseProps["ButtonBaseProps"]
   module_src_primitives_button_base_types_ts --> export_ButtonBaseProps
+  export_ButtonBaseProps -.-> export_InteractionPolicy
   export_ButtonBaseProps -.-> export_Responsive
   export_ButtonIconSpec["ButtonIconSpec"]
   module_src_components_button_types_ts --> export_ButtonIconSpec
   export_ButtonProps["ButtonProps"]
   module_src_components_button_types_ts --> export_ButtonProps
   export_ButtonProps -.-> export_ButtonIconSpec
+  export_ButtonProps -.-> export_InteractionPolicy
   export_ButtonProps -.-> export_Responsive
   export_Card["Card"]
   module_src_components_card_Card_tsx --> export_Card
@@ -222,6 +227,7 @@ graph LR
   export_Checkbox -.-> export_CheckboxProps
   export_CheckboxProps["CheckboxProps"]
   module_src_components_checkbox_types_ts --> export_CheckboxProps
+  export_CheckboxProps -.-> export_InteractionPolicy
   export_CheckboxProps -.-> export_Responsive
   export_ColorHarmony["ColorHarmony"]
   module_node_modules__ankhorage_color_theory_dist_harmony_d_ts --> export_ColorHarmony
@@ -264,12 +270,15 @@ graph LR
   export_DrawerNavigationItem -.-> export_DrawerNavigationItemProps
   export_DrawerNavigationItemProps["DrawerNavigationItemProps"]
   module_src_components_navigation_types_ts --> export_DrawerNavigationItemProps
+  export_DrawerNavigationItemProps -.-> export_InteractionPolicy
   export_DrawerNavigationItemProps -.-> export_NavigationItemSpec
   export_DrawerNavigationProps["DrawerNavigationProps"]
   module_src_components_navigation_types_ts --> export_DrawerNavigationProps
+  export_DrawerNavigationProps -.-> export_InteractionPolicy
   export_DrawerNavigationProps -.-> export_NavigationItemSpec
   export_DrawerProps["DrawerProps"]
   module_src_components_drawer_types_ts --> export_DrawerProps
+  export_DrawerProps -.-> export_InteractionPolicy
   export_Field["Field"]
   module_src_components_field_Field_tsx --> export_Field
   export_Field -.-> export_FieldProps
@@ -329,6 +338,7 @@ graph LR
   export_IconButtonProps["IconButtonProps"]
   module_src_components_icon_button_types_ts --> export_IconButtonProps
   export_IconButtonProps -.-> export_IconProps
+  export_IconButtonProps -.-> export_InteractionPolicy
   export_IconButtonProps -.-> export_Responsive
   export_IconProps["IconProps"]
   module_src_primitives_icon_Icon_tsx --> export_IconProps
@@ -347,6 +357,11 @@ graph LR
   export_Inline -.-> export_InlineProps
   export_InlineProps["InlineProps"]
   module_src_layout_Inline_tsx --> export_InlineProps
+  export_InteractionPolicy["InteractionPolicy"]
+  module_src_interactionPolicy_ts --> export_InteractionPolicy
+  export_InteractionPolicyProps["InteractionPolicyProps"]
+  module_src_interactionPolicy_ts --> export_InteractionPolicyProps
+  export_InteractionPolicyProps -.-> export_InteractionPolicy
   export_isDeepEqual["isDeepEqual"]
   module_src_utils_deepEqual_ts --> export_isDeepEqual
   export_Label["Label"]
@@ -369,12 +384,14 @@ graph LR
   module_src_components_menu_types_ts --> export_MenuActionIntent
   export_MenuProps["MenuProps"]
   module_src_components_menu_types_ts --> export_MenuProps
+  export_MenuProps -.-> export_InteractionPolicy
   export_MenuProps -.-> export_MenuAction
   export_Modal["Modal"]
   module_src_components_modal_Modal_tsx --> export_Modal
   export_Modal -.-> export_ModalProps
   export_ModalProps["ModalProps"]
   module_src_components_modal_types_ts --> export_ModalProps
+  export_ModalProps -.-> export_InteractionPolicy
   export_NavigationItem["NavigationItem"]
   module_src_components_navigation_NavigationItem_tsx --> export_NavigationItem
   export_NavigationItem -.-> export_NavigationItemProps
@@ -382,6 +399,7 @@ graph LR
   module_src_components_navigation_types_ts --> export_NavigationItemIcon
   export_NavigationItemProps["NavigationItemProps"]
   module_src_components_navigation_types_ts --> export_NavigationItemProps
+  export_NavigationItemProps -.-> export_InteractionPolicy
   export_NavigationItemProps -.-> export_NavigationItemSpec
   export_NavigationItemSpec["NavigationItemSpec"]
   module_src_components_navigation_types_ts --> export_NavigationItemSpec
@@ -391,6 +409,7 @@ graph LR
   export_NavigationList -.-> export_NavigationListProps
   export_NavigationListProps["NavigationListProps"]
   module_src_components_navigation_types_ts --> export_NavigationListProps
+  export_NavigationListProps -.-> export_InteractionPolicy
   export_NavigationListProps -.-> export_NavigationItemSpec
   export_NeutralSemantics["NeutralSemantics"]
   module_src_theme_types_ts --> export_NeutralSemantics
@@ -399,6 +418,7 @@ graph LR
   export_Radio -.-> export_RadioProps
   export_RadioProps["RadioProps"]
   module_src_components_radio_types_ts --> export_RadioProps
+  export_RadioProps -.-> export_InteractionPolicy
   export_RadioProps -.-> export_Responsive
   export_resolveResponsive["resolveResponsive"]
   module_src_core_responsive_resolve_ts --> export_resolveResponsive
@@ -486,6 +506,7 @@ graph LR
   export_Switch -.-> export_SwitchProps
   export_SwitchProps["SwitchProps"]
   module_src_components_switch_types_ts --> export_SwitchProps
+  export_SwitchProps -.-> export_InteractionPolicy
   export_SwitchProps -.-> export_Responsive
   export_Tab["Tab"]
   module_src_components_tabs_Tab_tsx --> export_Tab
@@ -498,9 +519,11 @@ graph LR
   export_TabBarItem -.-> export_TabBarItemProps
   export_TabBarItemProps["TabBarItemProps"]
   module_src_components_navigation_types_ts --> export_TabBarItemProps
+  export_TabBarItemProps -.-> export_InteractionPolicy
   export_TabBarItemProps -.-> export_NavigationItemSpec
   export_TabBarProps["TabBarProps"]
   module_src_components_navigation_types_ts --> export_TabBarProps
+  export_TabBarProps -.-> export_InteractionPolicy
   export_TabBarProps -.-> export_NavigationItemSpec
   export_TabList["TabList"]
   module_src_components_tabs_TabList_tsx --> export_TabList
@@ -514,6 +537,7 @@ graph LR
   module_src_components_tabs_types_ts --> export_TabPanelProps
   export_TabProps["TabProps"]
   module_src_components_tabs_types_ts --> export_TabProps
+  export_TabProps -.-> export_InteractionPolicy
   export_Tabs["Tabs"]
   module_src_components_tabs_Tabs_tsx --> export_Tabs
   export_Tabs -.-> export_TabsProps
@@ -533,11 +557,13 @@ graph LR
   export_Textarea -.-> export_TextareaProps
   export_TextareaProps["TextareaProps"]
   module_src_components_textarea_types_ts --> export_TextareaProps
+  export_TextareaProps -.-> export_InteractionPolicy
   export_TextInput["TextInput"]
   module_src_components_text_input_TextInput_tsx --> export_TextInput
   export_TextInput -.-> export_TextInputProps
   export_TextInputProps["TextInputProps"]
   module_src_components_text_input_types_ts --> export_TextInputProps
+  export_TextInputProps -.-> export_InteractionPolicy
   export_TextProps["TextProps"]
   module_src_primitives_text_types_ts --> export_TextProps
   export_ThemeConfig["ThemeConfig"]
@@ -568,9 +594,11 @@ graph LR
   export_Toast -.-> export_ToastProps
   export_ToastOptions["ToastOptions"]
   module_src_components_toast_types_ts --> export_ToastOptions
+  export_ToastOptions -.-> export_InteractionPolicy
   export_ToastOptions -.-> export_ToastStatus
   export_ToastProps["ToastProps"]
   module_src_components_toast_types_ts --> export_ToastProps
+  export_ToastProps -.-> export_InteractionPolicy
   export_ToastProps -.-> export_ToastStatus
   export_ToastProvider["ToastProvider"]
   module_src_components_toast_ToastProvider_tsx --> export_ToastProvider
@@ -581,6 +609,7 @@ graph LR
   export_Tooltip -.-> export_TooltipProps
   export_TooltipProps["TooltipProps"]
   module_src_components_tooltip_types_ts --> export_TooltipProps
+  export_TooltipProps -.-> export_InteractionPolicy
   export_TranslationProvider["TranslationProvider"]
   module_src_context_TranslationContext_tsx --> export_TranslationProvider
   export_TranslationProvider -.-> export_I18nInstance

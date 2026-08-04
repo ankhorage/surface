@@ -6,16 +6,17 @@ Source: `src/components/action-sheet/ActionSheet.tsx:13:1`
 
 Export paths: `src/index.ts`
 
-| Prop            | Type                           | Required | Default    | Description |
-| --------------- | ------------------------------ | -------- | ---------- | ----------- |
-| cancelLabel     | `React.ReactNode \| undefined` | no       | `'Cancel'` |             |
-| children        | `React.ReactNode \| undefined` | no       | —          |             |
-| closeOnBackdrop | `boolean \| undefined`         | no       | `true`     |             |
-| description     | `React.ReactNode \| undefined` | no       | —          |             |
-| onDismiss       | `(() => void) \| undefined`    | no       | —          |             |
-| testID          | `string \| undefined`          | no       | —          |             |
-| title           | `React.ReactNode \| undefined` | no       | —          |             |
-| visible         | `boolean`                      | yes      | —          |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| cancelLabel       | `React.ReactNode \| undefined`   | no       | `'Cancel'`  |             |
+| children          | `React.ReactNode \| undefined`   | no       | —           |             |
+| closeOnBackdrop   | `boolean \| undefined`           | no       | `true`      |             |
+| description       | `React.ReactNode \| undefined`   | no       | —           |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| onDismiss         | `(() => void) \| undefined`      | no       | —           |             |
+| testID            | `string \| undefined`            | no       | —           |             |
+| title             | `React.ReactNode \| undefined`   | no       | —           |             |
+| visible           | `boolean`                        | yes      | —           |             |
 
 ## ActionSheetItem
 
@@ -23,17 +24,18 @@ Source: `src/components/action-sheet/ActionSheetItem.tsx:8:1`
 
 Export paths: `src/index.ts`
 
-| Prop        | Type                           | Required | Default | Description |
-| ----------- | ------------------------------ | -------- | ------- | ----------- |
-| color       | `SurfaceColor \| undefined`    | no       | —       |             |
-| description | `React.ReactNode \| undefined` | no       | —       |             |
-| disabled    | `boolean \| undefined`         | no       | `false` |             |
-| label       | `React.ReactNode \| undefined` | no       | —       |             |
-| leading     | `React.ReactNode \| undefined` | no       | —       |             |
-| onPress     | `(() => void) \| undefined`    | no       | —       |             |
-| selected    | `boolean \| undefined`         | no       | `false` |             |
-| testID      | `string \| undefined`          | no       | —       |             |
-| trailing    | `React.ReactNode \| undefined` | no       | —       |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| color             | `SurfaceColor \| undefined`      | no       | —           |             |
+| description       | `React.ReactNode \| undefined`   | no       | —           |             |
+| disabled          | `boolean \| undefined`           | no       | `false`     |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| label             | `React.ReactNode \| undefined`   | no       | —           |             |
+| leading           | `React.ReactNode \| undefined`   | no       | —           |             |
+| onPress           | `(() => void) \| undefined`      | no       | —           |             |
+| selected          | `boolean \| undefined`           | no       | `false`     |             |
+| testID            | `string \| undefined`            | no       | —           |             |
+| trailing          | `React.ReactNode \| undefined`   | no       | —           |             |
 
 ## AppBar
 
@@ -187,6 +189,7 @@ Export paths: `src/index.ts`
 | flexShrink         | `Responsive<number> \| undefined`                       | no       | —           |             |
 | fullWidth          | `boolean \| undefined`                                  | no       | `false`     |             |
 | height             | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                        | no       | —           |             |
 | leadingIcon        | `ButtonIconSpec \| undefined`                           | no       | —           |             |
 | left               | `Responsive<number> \| undefined`                       | no       | —           |             |
 | loading            | `boolean \| undefined`                                  | no       | `false`     |             |
@@ -229,55 +232,56 @@ Source: `src/primitives/button-base/ButtonBase.tsx:28:1`
 
 Export paths: `src/index.ts`
 
-| Prop               | Type                                                                             | Required | Default    | Description |
-| ------------------ | -------------------------------------------------------------------------------- | -------- | ---------- | ----------- |
-| accessibilityLabel | `string \| undefined`                                                            | no       | —          |             |
-| accessibilityRole  | `AccessibilityRole \| undefined`                                                 | no       | `'button'` |             |
-| accessibilityState | `AccessibilityState \| undefined`                                                | no       | —          |             |
-| accessible         | `ReactNativeViewProps['accessible'] \| undefined`                                | no       | —          |             |
-| alignSelf          | `Responsive<ViewStyle['alignSelf']> \| undefined`                                | no       | —          |             |
-| bg                 | `Responsive<ColorValue> \| undefined`                                            | no       | —          |             |
-| borderColor        | `Responsive<ColorValue> \| undefined`                                            | no       | —          |             |
-| borderWidth        | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| bottom             | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| children           | `React.ReactNode \| ((state: InteractionState) => React.ReactNode) \| undefined` | no       | —          |             |
-| disabled           | `boolean \| undefined`                                                           | no       | `false`    |             |
-| flex               | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| flexBasis          | `Responsive<number \| string> \| undefined`                                      | no       | —          |             |
-| flexGrow           | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| flexShrink         | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| height             | `Responsive<number \| string> \| undefined`                                      | no       | —          |             |
-| left               | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| m                  | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| maxHeight          | `Responsive<number \| string> \| undefined`                                      | no       | —          |             |
-| maxWidth           | `Responsive<number \| string> \| undefined`                                      | no       | —          |             |
-| mb                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| minHeight          | `Responsive<number \| string> \| undefined`                                      | no       | —          |             |
-| minWidth           | `Responsive<number \| string> \| undefined`                                      | no       | —          |             |
-| ml                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| mr                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| mt                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| mx                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| my                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| onLongPress        | `((event: GestureResponderEvent) => void) \| undefined`                          | no       | —          |             |
-| onPress            | `((event: GestureResponderEvent) => void) \| undefined`                          | no       | —          |             |
-| opacity            | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| overflow           | `Responsive<ViewStyle['overflow']> \| undefined`                                 | no       | —          |             |
-| p                  | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| pb                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| pl                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| position           | `Responsive<ViewStyle['position']> \| undefined`                                 | no       | —          |             |
-| pr                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| pt                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| px                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| py                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —          |             |
-| radius             | `Responsive<RadiusValue> \| undefined`                                           | no       | —          |             |
-| right              | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| style              | `StyleProp<ViewStyle> \| undefined`                                              | no       | —          |             |
-| testID             | `string \| undefined`                                                            | no       | —          |             |
-| top                | `Responsive<number> \| undefined`                                                | no       | —          |             |
-| width              | `Responsive<number \| string> \| undefined`                                      | no       | —          |             |
-| zIndex             | `Responsive<number> \| undefined`                                                | no       | —          |             |
+| Prop               | Type                                                                             | Required | Default     | Description |
+| ------------------ | -------------------------------------------------------------------------------- | -------- | ----------- | ----------- |
+| accessibilityLabel | `string \| undefined`                                                            | no       | —           |             |
+| accessibilityRole  | `AccessibilityRole \| undefined`                                                 | no       | `'button'`  |             |
+| accessibilityState | `AccessibilityState \| undefined`                                                | no       | —           |             |
+| accessible         | `ReactNativeViewProps['accessible'] \| undefined`                                | no       | —           |             |
+| alignSelf          | `Responsive<ViewStyle['alignSelf']> \| undefined`                                | no       | —           |             |
+| bg                 | `Responsive<ColorValue> \| undefined`                                            | no       | —           |             |
+| borderColor        | `Responsive<ColorValue> \| undefined`                                            | no       | —           |             |
+| borderWidth        | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| bottom             | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| children           | `React.ReactNode \| ((state: InteractionState) => React.ReactNode) \| undefined` | no       | —           |             |
+| disabled           | `boolean \| undefined`                                                           | no       | `false`     |             |
+| flex               | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| flexBasis          | `Responsive<number \| string> \| undefined`                                      | no       | —           |             |
+| flexGrow           | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| flexShrink         | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| height             | `Responsive<number \| string> \| undefined`                                      | no       | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                                                 | no       | `'enabled'` |             |
+| left               | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| m                  | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| maxHeight          | `Responsive<number \| string> \| undefined`                                      | no       | —           |             |
+| maxWidth           | `Responsive<number \| string> \| undefined`                                      | no       | —           |             |
+| mb                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| minHeight          | `Responsive<number \| string> \| undefined`                                      | no       | —           |             |
+| minWidth           | `Responsive<number \| string> \| undefined`                                      | no       | —           |             |
+| ml                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| mr                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| mt                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| mx                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| my                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| onLongPress        | `((event: GestureResponderEvent) => void) \| undefined`                          | no       | —           |             |
+| onPress            | `((event: GestureResponderEvent) => void) \| undefined`                          | no       | —           |             |
+| opacity            | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| overflow           | `Responsive<ViewStyle['overflow']> \| undefined`                                 | no       | —           |             |
+| p                  | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| pb                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| pl                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| position           | `Responsive<ViewStyle['position']> \| undefined`                                 | no       | —           |             |
+| pr                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| pt                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| px                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| py                 | `Responsive<SpaceValue> \| undefined`                                            | no       | —           |             |
+| radius             | `Responsive<RadiusValue> \| undefined`                                           | no       | —           |             |
+| right              | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| style              | `StyleProp<ViewStyle> \| undefined`                                              | no       | —           |             |
+| testID             | `string \| undefined`                                                            | no       | —           |             |
+| top                | `Responsive<number> \| undefined`                                                | no       | —           |             |
+| width              | `Responsive<number \| string> \| undefined`                                      | no       | —           |             |
+| zIndex             | `Responsive<number> \| undefined`                                                | no       | —           |             |
 
 ## Card
 
@@ -413,6 +417,7 @@ Export paths: `src/index.ts`
 | flexGrow           | `Responsive<number> \| undefined`                       | no       | —           |             |
 | flexShrink         | `Responsive<number> \| undefined`                       | no       | —           |             |
 | height             | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                        | no       | —           |             |
 | invalid            | `boolean \| undefined`                                  | no       | `false`     |             |
 | left               | `Responsive<number> \| undefined`                       | no       | —           |             |
 | m                  | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
@@ -561,14 +566,15 @@ Source: `src/components/drawer/Drawer.tsx:11:1`
 
 Export paths: `src/index.ts`
 
-| Prop            | Type                             | Required | Default   | Description |
-| --------------- | -------------------------------- | -------- | --------- | ----------- |
-| children        | `React.ReactNode \| undefined`   | no       | —         |             |
-| closeOnBackdrop | `boolean \| undefined`           | no       | `true`    |             |
-| onDismiss       | `(() => void) \| undefined`      | no       | —         |             |
-| position        | `'left' \| 'right' \| undefined` | no       | `'right'` |             |
-| testID          | `string \| undefined`            | no       | —         |             |
-| visible         | `boolean`                        | yes      | —         |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| children          | `React.ReactNode \| undefined`   | no       | —           |             |
+| closeOnBackdrop   | `boolean \| undefined`           | no       | `true`      |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| onDismiss         | `(() => void) \| undefined`      | no       | —           |             |
+| position          | `'left' \| 'right' \| undefined` | no       | `'right'`   |             |
+| testID            | `string \| undefined`            | no       | —           |             |
+| visible           | `boolean`                        | yes      | —           |             |
 
 ## DrawerNavigation
 
@@ -576,13 +582,14 @@ Source: `src/components/navigation/DrawerNavigation.tsx:7:1`
 
 Export paths: `src/index.ts`
 
-| Prop    | Type                            | Required | Default | Description |
-| ------- | ------------------------------- | -------- | ------- | ----------- |
-| compact | `boolean \| undefined`          | no       | `false` |             |
-| footer  | `React.ReactNode \| undefined`  | no       | —       |             |
-| header  | `React.ReactNode \| undefined`  | no       | —       |             |
-| items   | `readonly NavigationItemSpec[]` | yes      | —       |             |
-| testID  | `string \| undefined`           | no       | —       |             |
+| Prop              | Type                             | Required | Default | Description |
+| ----------------- | -------------------------------- | -------- | ------- | ----------- |
+| compact           | `boolean \| undefined`           | no       | `false` |             |
+| footer            | `React.ReactNode \| undefined`   | no       | —       |             |
+| header            | `React.ReactNode \| undefined`   | no       | —       |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
+| items             | `readonly NavigationItemSpec[]`  | yes      | —       |             |
+| testID            | `string \| undefined`            | no       | —       |             |
 
 ## DrawerNavigationItem
 
@@ -590,11 +597,12 @@ Source: `src/components/navigation/DrawerNavigationItem.tsx:6:1`
 
 Export paths: `src/index.ts`
 
-| Prop    | Type                   | Required | Default | Description |
-| ------- | ---------------------- | -------- | ------- | ----------- |
-| compact | `boolean \| undefined` | no       | `false` |             |
-| item    | `NavigationItemSpec`   | yes      | —       |             |
-| testID  | `string \| undefined`  | no       | —       |             |
+| Prop              | Type                             | Required | Default | Description |
+| ----------------- | -------------------------------- | -------- | ------- | ----------- |
+| compact           | `boolean \| undefined`           | no       | `false` |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
+| item              | `NavigationItemSpec`             | yes      | —       |             |
+| testID            | `string \| undefined`            | no       | —       |             |
 
 ## Field
 
@@ -757,6 +765,7 @@ Export paths: `src/index.ts`
 | flexShrink         | `Responsive<number> \| undefined`                                | no       | —           |             |
 | height             | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
 | icon               | `{ name: IconProps["name"]; provider?: IconProps["provider"]; }` | yes      | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                                 | no       | —           |             |
 | left               | `Responsive<number> \| undefined`                                | no       | —           |             |
 | m                  | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
 | maxHeight          | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
@@ -908,13 +917,14 @@ Source: `src/components/menu/Menu.tsx:56:1`
 
 Export paths: `src/index.ts`
 
-| Prop          | Type                           | Required | Default | Description |
-| ------------- | ------------------------------ | -------- | ------- | ----------- |
-| actions       | `readonly MenuAction[]`        | yes      | —       |             |
-| closeOnSelect | `boolean \| undefined`         | no       | `true`  |             |
-| dismiss       | `() => void \| undefined`      | no       | —       |             |
-| testID        | `string \| undefined`          | no       | —       |             |
-| trigger       | `React.ReactNode \| undefined` | no       | —       |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| actions           | `readonly MenuAction[]`          | yes      | —           |             |
+| closeOnSelect     | `boolean \| undefined`           | no       | `true`      |             |
+| dismiss           | `() => void \| undefined`        | no       | —           |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| testID            | `string \| undefined`            | no       | —           |             |
+| trigger           | `React.ReactNode \| undefined`   | no       | —           |             |
 
 ## Modal
 
@@ -922,13 +932,14 @@ Source: `src/components/modal/Modal.tsx:11:1`
 
 Export paths: `src/index.ts`
 
-| Prop            | Type                           | Required | Default | Description |
-| --------------- | ------------------------------ | -------- | ------- | ----------- |
-| children        | `React.ReactNode \| undefined` | no       | —       |             |
-| closeOnBackdrop | `boolean \| undefined`         | no       | `true`  |             |
-| onDismiss       | `(() => void) \| undefined`    | no       | —       |             |
-| testID          | `string \| undefined`          | no       | —       |             |
-| visible         | `boolean`                      | yes      | —       |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| children          | `React.ReactNode \| undefined`   | no       | —           |             |
+| closeOnBackdrop   | `boolean \| undefined`           | no       | `true`      |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| onDismiss         | `(() => void) \| undefined`      | no       | —           |             |
+| testID            | `string \| undefined`            | no       | —           |             |
+| visible           | `boolean`                        | yes      | —           |             |
 
 ## NavigationItem
 
@@ -936,11 +947,12 @@ Source: `src/components/navigation/NavigationItem.tsx:12:1`
 
 Export paths: `src/index.ts`
 
-| Prop    | Type                   | Required | Default | Description |
-| ------- | ---------------------- | -------- | ------- | ----------- |
-| compact | `boolean \| undefined` | no       | `false` |             |
-| item    | `NavigationItemSpec`   | yes      | —       |             |
-| testID  | `string \| undefined`  | no       | —       |             |
+| Prop              | Type                             | Required | Default | Description |
+| ----------------- | -------------------------------- | -------- | ------- | ----------- |
+| compact           | `boolean \| undefined`           | no       | `false` |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
+| item              | `NavigationItemSpec`             | yes      | —       |             |
+| testID            | `string \| undefined`            | no       | —       |             |
 
 ## NavigationList
 
@@ -948,12 +960,13 @@ Source: `src/components/navigation/NavigationList.tsx:7:1`
 
 Export paths: `src/index.ts`
 
-| Prop        | Type                                      | Required | Default      | Description |
-| ----------- | ----------------------------------------- | -------- | ------------ | ----------- |
-| compact     | `boolean \| undefined`                    | no       | `false`      |             |
-| items       | `readonly NavigationItemSpec[]`           | yes      | —            |             |
-| orientation | `'vertical' \| 'horizontal' \| undefined` | no       | `'vertical'` |             |
-| testID      | `string \| undefined`                     | no       | —            |             |
+| Prop              | Type                                      | Required | Default      | Description |
+| ----------------- | ----------------------------------------- | -------- | ------------ | ----------- |
+| compact           | `boolean \| undefined`                    | no       | `false`      |             |
+| interactionPolicy | `InteractionPolicy \| undefined`          | no       | —            |             |
+| items             | `readonly NavigationItemSpec[]`           | yes      | —            |             |
+| orientation       | `'vertical' \| 'horizontal' \| undefined` | no       | `'vertical'` |             |
+| testID            | `string \| undefined`                     | no       | —            |             |
 
 ## Radio
 
@@ -980,6 +993,7 @@ Export paths: `src/index.ts`
 | flexGrow           | `Responsive<number> \| undefined`                       | no       | —           |             |
 | flexShrink         | `Responsive<number> \| undefined`                       | no       | —           |             |
 | height             | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                        | no       | —           |             |
 | invalid            | `boolean \| undefined`                                  | no       | `false`     |             |
 | left               | `Responsive<number> \| undefined`                       | no       | —           |             |
 | m                  | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
@@ -1411,6 +1425,7 @@ Export paths: `src/index.ts`
 | flexGrow           | `Responsive<number> \| undefined`                       | no       | —           |             |
 | flexShrink         | `Responsive<number> \| undefined`                       | no       | —           |             |
 | height             | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                        | no       | —           |             |
 | invalid            | `boolean \| undefined`                                  | no       | `false`     |             |
 | left               | `Responsive<number> \| undefined`                       | no       | —           |             |
 | m                  | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
@@ -1451,12 +1466,13 @@ Source: `src/components/tabs/Tab.tsx:10:1`
 
 Export paths: `src/index.ts`
 
-| Prop     | Type                           | Required | Default | Description |
-| -------- | ------------------------------ | -------- | ------- | ----------- |
-| children | `React.ReactNode \| undefined` | no       | —       |             |
-| disabled | `boolean \| undefined`         | no       | `false` |             |
-| testID   | `string \| undefined`          | no       | —       |             |
-| value    | `string`                       | yes      | —       |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| children          | `React.ReactNode \| undefined`   | no       | —           |             |
+| disabled          | `boolean \| undefined`           | no       | `false`     |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| testID            | `string \| undefined`            | no       | —           |             |
+| value             | `string`                         | yes      | —           |             |
 
 ## TabBar
 
@@ -1464,11 +1480,12 @@ Source: `src/components/navigation/TabBar.tsx:8:1`
 
 Export paths: `src/index.ts`
 
-| Prop    | Type                            | Required | Default | Description |
-| ------- | ------------------------------- | -------- | ------- | ----------- |
-| compact | `boolean \| undefined`          | no       | `false` |             |
-| items   | `readonly NavigationItemSpec[]` | yes      | —       |             |
-| testID  | `string \| undefined`           | no       | —       |             |
+| Prop              | Type                             | Required | Default | Description |
+| ----------------- | -------------------------------- | -------- | ------- | ----------- |
+| compact           | `boolean \| undefined`           | no       | `false` |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
+| items             | `readonly NavigationItemSpec[]`  | yes      | —       |             |
+| testID            | `string \| undefined`            | no       | —       |             |
 
 ## TabBarItem
 
@@ -1476,11 +1493,12 @@ Source: `src/components/navigation/TabBarItem.tsx:12:1`
 
 Export paths: `src/index.ts`
 
-| Prop    | Type                   | Required | Default | Description |
-| ------- | ---------------------- | -------- | ------- | ----------- |
-| compact | `boolean \| undefined` | no       | `false` |             |
-| item    | `NavigationItemSpec`   | yes      | —       |             |
-| testID  | `string \| undefined`  | no       | —       |             |
+| Prop              | Type                             | Required | Default | Description |
+| ----------------- | -------------------------------- | -------- | ------- | ----------- |
+| compact           | `boolean \| undefined`           | no       | `false` |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
+| item              | `NavigationItemSpec`             | yes      | —       |             |
+| testID            | `string \| undefined`            | no       | —       |             |
 
 ## TabList
 
@@ -1734,6 +1752,7 @@ Export paths: `src/index.ts`
 | inputAccessoryViewButtonLabel            | `string \| undefined`                                                | no       | —       |             |
 | inputAccessoryViewID                     | `string \| undefined`                                                | no       | —       |             |
 | inputMode                                | `InputModeOptions \| undefined`                                      | no       | —       |             |
+| interactionPolicy                        | `InteractionPolicy \| undefined`                                     | no       | —       |             |
 | invalid                                  | `boolean \| undefined`                                               | no       | —       |             |
 | isTVSelectable                           | `boolean \| undefined`                                               | no       | —       |             |
 | keyboardAppearance                       | `'default' \| 'light' \| 'dark' \| undefined`                        | no       | —       |             |
@@ -1904,40 +1923,40 @@ Source: `src/components/text-input/TextInput.tsx:14:1`
 
 Export paths: `src/index.ts`
 
-| Prop                                     | Type                                                                 | Required | Default | Description |
-| ---------------------------------------- | -------------------------------------------------------------------- | -------- | ------- | ----------- |
-| accessibilityActions                     | `ReadonlyArray<AccessibilityActionInfo> \| undefined`                | no       | —       |             |
-| accessibilityElementsHidden              | `boolean \| undefined`                                               | no       | —       |             |
-| accessibilityHint                        | `string \| undefined`                                                | no       | —       |             |
-| accessibilityIgnoresInvertColors         | `boolean \| undefined`                                               | no       | —       |             |
-| accessibilityLabel                       | `string \| undefined`                                                | no       | —       |             |
-| accessibilityLabelledBy                  | `string \| string[] \| undefined`                                    | no       | —       |             |
-| accessibilityLanguage                    | `string \| undefined`                                                | no       | —       |             |
-| accessibilityLargeContentTitle           | `string \| undefined`                                                | no       | —       |             |
-| accessibilityLiveRegion                  | `'none' \| 'polite' \| 'assertive' \| undefined`                     | no       | —       |             |
-| accessibilityRespondsToUserInteraction   | `boolean \| undefined`                                               | no       | —       |             |
-| accessibilityRole                        | `AccessibilityRole \| undefined`                                     | no       | —       |             |
-| accessibilityShowsLargeContentViewer     | `boolean \| undefined`                                               | no       | —       |             |
-| accessibilityState                       | `AccessibilityState \| undefined`                                    | no       | —       |             |
-| accessibilityValue                       | `AccessibilityValue \| undefined`                                    | no       | —       |             |
-| accessibilityViewIsModal                 | `boolean \| undefined`                                               | no       | —       |             |
-| accessible                               | `boolean \| undefined`                                               | no       | —       |             |
-| allowFontScaling                         | `boolean \| undefined`                                               | no       | —       |             |
-| aria-busy                                | `boolean \| undefined`                                               | no       | —       |             |
-| aria-checked                             | `boolean \| 'mixed' \| undefined`                                    | no       | —       |             |
-| aria-disabled                            | `boolean \| undefined`                                               | no       | —       |             |
-| aria-expanded                            | `boolean \| undefined`                                               | no       | —       |             |
-| aria-hidden                              | `boolean \| undefined`                                               | no       | —       |             |
-| aria-label                               | `string \| undefined`                                                | no       | —       |             |
-| aria-labelledby                          | `string \| undefined`                                                | no       | —       |             |
-| aria-live                                | `('polite' \| 'assertive' \| 'off') \| undefined`                    | no       | —       |             |
-| aria-modal                               | `boolean \| undefined`                                               | no       | —       |             |
-| aria-selected                            | `boolean \| undefined`                                               | no       | —       |             |
-| aria-valuemax                            | `AccessibilityValue['max'] \| undefined`                             | no       | —       |             |
-| aria-valuemin                            | `AccessibilityValue['min'] \| undefined`                             | no       | —       |             |
-| aria-valuenow                            | `AccessibilityValue['now'] \| undefined`                             | no       | —       |             |
-| aria-valuetext                           | `AccessibilityValue['text'] \| undefined`                            | no       | —       |             |
-| autoCapitalize                           | `'none' \| 'sentences' \| 'words' \| 'characters' \| undefined`      | no       | —       |             |
+| Prop                                     | Type                                                                 | Required | Default     | Description |
+| ---------------------------------------- | -------------------------------------------------------------------- | -------- | ----------- | ----------- |
+| accessibilityActions                     | `ReadonlyArray<AccessibilityActionInfo> \| undefined`                | no       | —           |             |
+| accessibilityElementsHidden              | `boolean \| undefined`                                               | no       | —           |             |
+| accessibilityHint                        | `string \| undefined`                                                | no       | —           |             |
+| accessibilityIgnoresInvertColors         | `boolean \| undefined`                                               | no       | —           |             |
+| accessibilityLabel                       | `string \| undefined`                                                | no       | —           |             |
+| accessibilityLabelledBy                  | `string \| string[] \| undefined`                                    | no       | —           |             |
+| accessibilityLanguage                    | `string \| undefined`                                                | no       | —           |             |
+| accessibilityLargeContentTitle           | `string \| undefined`                                                | no       | —           |             |
+| accessibilityLiveRegion                  | `'none' \| 'polite' \| 'assertive' \| undefined`                     | no       | —           |             |
+| accessibilityRespondsToUserInteraction   | `boolean \| undefined`                                               | no       | —           |             |
+| accessibilityRole                        | `AccessibilityRole \| undefined`                                     | no       | —           |             |
+| accessibilityShowsLargeContentViewer     | `boolean \| undefined`                                               | no       | —           |             |
+| accessibilityState                       | `AccessibilityState \| undefined`                                    | no       | —           |             |
+| accessibilityValue                       | `AccessibilityValue \| undefined`                                    | no       | —           |             |
+| accessibilityViewIsModal                 | `boolean \| undefined`                                               | no       | —           |             |
+| accessible                               | `boolean \| undefined`                                               | no       | —           |             |
+| allowFontScaling                         | `boolean \| undefined`                                               | no       | —           |             |
+| aria-busy                                | `boolean \| undefined`                                               | no       | —           |             |
+| aria-checked                             | `boolean \| 'mixed' \| undefined`                                    | no       | —           |             |
+| aria-disabled                            | `boolean \| undefined`                                               | no       | —           |             |
+| aria-expanded                            | `boolean \| undefined`                                               | no       | —           |             |
+| aria-hidden                              | `boolean \| undefined`                                               | no       | —           |             |
+| aria-label                               | `string \| undefined`                                                | no       | —           |             |
+| aria-labelledby                          | `string \| undefined`                                                | no       | —           |             |
+| aria-live                                | `('polite' \| 'assertive' \| 'off') \| undefined`                    | no       | —           |             |
+| aria-modal                               | `boolean \| undefined`                                               | no       | —           |             |
+| aria-selected                            | `boolean \| undefined`                                               | no       | —           |             |
+| aria-valuemax                            | `AccessibilityValue['max'] \| undefined`                             | no       | —           |             |
+| aria-valuemin                            | `AccessibilityValue['min'] \| undefined`                             | no       | —           |             |
+| aria-valuenow                            | `AccessibilityValue['now'] \| undefined`                             | no       | —           |             |
+| aria-valuetext                           | `AccessibilityValue['text'] \| undefined`                            | no       | —           |             |
+| autoCapitalize                           | `'none' \| 'sentences' \| 'words' \| 'characters' \| undefined`      | no       | —           |             |
 | autoComplete                             | `\| 'additional-name'                                                |
 | \| 'address-line1'                       |
 | \| 'address-line2'                       |
@@ -1995,154 +2014,155 @@ Export paths: `src/index.ts`
 | \| 'username'                            |
 | \| 'username-new'                        |
 | \| 'off'                                 |
-| \| undefined`                            | no                                                                   | —        |         |
-| autoCorrect                              | `boolean \| undefined`                                               | no       | —       |             |
-| autoFocus                                | `boolean \| undefined`                                               | no       | —       |             |
-| blurOnSubmit                             | `boolean \| undefined`                                               | no       | —       |             |
-| caretHidden                              | `boolean \| undefined`                                               | no       | —       |             |
-| children                                 | `React.ReactNode \| undefined`                                       | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| autoCorrect                              | `boolean \| undefined`                                               | no       | —           |             |
+| autoFocus                                | `boolean \| undefined`                                               | no       | —           |             |
+| blurOnSubmit                             | `boolean \| undefined`                                               | no       | —           |             |
+| caretHidden                              | `boolean \| undefined`                                               | no       | —           |             |
+| children                                 | `React.ReactNode \| undefined`                                       | no       | —           |             |
 | clearButtonMode                          | `\| 'never'                                                          |
 | \| 'while-editing'                       |
 | \| 'unless-editing'                      |
 | \| 'always'                              |
-| \| undefined`                            | no                                                                   | —        |         |
-| clearTextOnFocus                         | `boolean \| undefined`                                               | no       | —       |             |
-| collapsable                              | `boolean \| undefined`                                               | no       | —       |             |
-| collapsableChildren                      | `boolean \| undefined`                                               | no       | —       |             |
-| contextMenuHidden                        | `boolean \| undefined`                                               | no       | —       |             |
-| cursorColor                              | `ColorValue \| null \| undefined`                                    | no       | —       |             |
-| dataDetectorTypes                        | `DataDetectorTypes \| DataDetectorTypes[] \| undefined`              | no       | —       |             |
-| defaultValue                             | `string \| undefined`                                                | no       | —       |             |
-| disabled                                 | `boolean \| undefined`                                               | no       | `false` |             |
-| disableFullscreenUI                      | `boolean \| undefined`                                               | no       | —       |             |
-| disableKeyboardShortcuts                 | `boolean \| undefined`                                               | no       | —       |             |
-| enablesReturnKeyAutomatically            | `boolean \| undefined`                                               | no       | —       |             |
-| enterKeyHint                             | `EnterKeyHintTypeOptions \| undefined`                               | no       | —       |             |
-| focusable                                | `boolean \| undefined`                                               | no       | —       |             |
-| hasTVPreferredFocus                      | `boolean \| undefined`                                               | no       | —       |             |
-| hitSlop                                  | `null \| Insets \| number \| undefined`                              | no       | —       |             |
-| id                                       | `string \| undefined`                                                | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| clearTextOnFocus                         | `boolean \| undefined`                                               | no       | —           |             |
+| collapsable                              | `boolean \| undefined`                                               | no       | —           |             |
+| collapsableChildren                      | `boolean \| undefined`                                               | no       | —           |             |
+| contextMenuHidden                        | `boolean \| undefined`                                               | no       | —           |             |
+| cursorColor                              | `ColorValue \| null \| undefined`                                    | no       | —           |             |
+| dataDetectorTypes                        | `DataDetectorTypes \| DataDetectorTypes[] \| undefined`              | no       | —           |             |
+| defaultValue                             | `string \| undefined`                                                | no       | —           |             |
+| disabled                                 | `boolean \| undefined`                                               | no       | `false`     |             |
+| disableFullscreenUI                      | `boolean \| undefined`                                               | no       | —           |             |
+| disableKeyboardShortcuts                 | `boolean \| undefined`                                               | no       | —           |             |
+| enablesReturnKeyAutomatically            | `boolean \| undefined`                                               | no       | —           |             |
+| enterKeyHint                             | `EnterKeyHintTypeOptions \| undefined`                               | no       | —           |             |
+| focusable                                | `boolean \| undefined`                                               | no       | —           |             |
+| hasTVPreferredFocus                      | `boolean \| undefined`                                               | no       | —           |             |
+| hitSlop                                  | `null \| Insets \| number \| undefined`                              | no       | —           |             |
+| id                                       | `string \| undefined`                                                | no       | —           |             |
 | importantForAccessibility                | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')               |
-| \| undefined`                            | no                                                                   | —        |         |
+| \| undefined`                            | no                                                                   | —        |             |
 | importantForAutofill                     | `\| 'auto'                                                           |
 | \| 'no'                                  |
 | \| 'noExcludeDescendants'                |
 | \| 'yes'                                 |
 | \| 'yesExcludeDescendants'               |
-| \| undefined`                            | no                                                                   | —        |         |
-| inlineImageLeft                          | `string \| undefined`                                                | no       | —       |             |
-| inlineImagePadding                       | `number \| undefined`                                                | no       | —       |             |
-| inputAccessoryViewButtonLabel            | `string \| undefined`                                                | no       | —       |             |
-| inputAccessoryViewID                     | `string \| undefined`                                                | no       | —       |             |
-| inputMode                                | `InputModeOptions \| undefined`                                      | no       | —       |             |
-| invalid                                  | `boolean \| undefined`                                               | no       | `false` |             |
-| isTVSelectable                           | `boolean \| undefined`                                               | no       | —       |             |
-| keyboardAppearance                       | `'default' \| 'light' \| 'dark' \| undefined`                        | no       | —       |             |
-| keyboardType                             | `KeyboardTypeOptions \| undefined`                                   | no       | —       |             |
-| leadingAccessory                         | `React.ReactNode \| undefined`                                       | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| inlineImageLeft                          | `string \| undefined`                                                | no       | —           |             |
+| inlineImagePadding                       | `number \| undefined`                                                | no       | —           |             |
+| inputAccessoryViewButtonLabel            | `string \| undefined`                                                | no       | —           |             |
+| inputAccessoryViewID                     | `string \| undefined`                                                | no       | —           |             |
+| inputMode                                | `InputModeOptions \| undefined`                                      | no       | —           |             |
+| interactionPolicy                        | `InteractionPolicy \| undefined`                                     | no       | `'enabled'` |             |
+| invalid                                  | `boolean \| undefined`                                               | no       | `false`     |             |
+| isTVSelectable                           | `boolean \| undefined`                                               | no       | —           |             |
+| keyboardAppearance                       | `'default' \| 'light' \| 'dark' \| undefined`                        | no       | —           |             |
+| keyboardType                             | `KeyboardTypeOptions \| undefined`                                   | no       | —           |             |
+| leadingAccessory                         | `React.ReactNode \| undefined`                                       | no       | —           |             |
 | lineBreakModeIOS                         | `\| 'wordWrapping'                                                   |
 | \| 'char'                                |
 | \| 'clip'                                |
 | \| 'head'                                |
 | \| 'middle'                              |
 | \| 'tail'                                |
-| \| undefined`                            | no                                                                   | —        |         |
+| \| undefined`                            | no                                                                   | —        |             |
 | lineBreakStrategyIOS                     | `\| 'none'                                                           |
 | \| 'standard'                            |
 | \| 'hangul-word'                         |
 | \| 'push-out'                            |
-| \| undefined`                            | no                                                                   | —        |         |
-| maxFontSizeMultiplier                    | `number \| null \| undefined`                                        | no       | —       |             |
-| maxLength                                | `number \| undefined`                                                | no       | —       |             |
-| multiline                                | `boolean \| undefined`                                               | no       | —       |             |
-| nativeID                                 | `string \| undefined`                                                | no       | —       |             |
-| needsOffscreenAlphaCompositing           | `boolean \| undefined`                                               | no       | —       |             |
-| numberOfLines                            | `number \| undefined`                                                | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| maxFontSizeMultiplier                    | `number \| null \| undefined`                                        | no       | —           |             |
+| maxLength                                | `number \| undefined`                                                | no       | —           |             |
+| multiline                                | `boolean \| undefined`                                               | no       | —           |             |
+| nativeID                                 | `string \| undefined`                                                | no       | —           |             |
+| needsOffscreenAlphaCompositing           | `boolean \| undefined`                                               | no       | —           |             |
+| numberOfLines                            | `number \| undefined`                                                | no       | —           |             |
 | onAccessibilityAction                    | `\| ((event: AccessibilityActionEvent) => void)                      |
-| \| undefined`                            | no                                                                   | —        |         |
-| onAccessibilityEscape                    | `(() => void) \| undefined`                                          | no       | —       |             |
-| onAccessibilityTap                       | `(() => void) \| undefined`                                          | no       | —       |             |
-| onBlur                                   | `((e: BlurEvent) => void) \| undefined`                              | no       | —       |             |
-| onChange                                 | `((e: TextInputChangeEvent) => void) \| undefined`                   | no       | —       |             |
-| onChangeText                             | `((text: string) => void) \| undefined`                              | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| onAccessibilityEscape                    | `(() => void) \| undefined`                                          | no       | —           |             |
+| onAccessibilityTap                       | `(() => void) \| undefined`                                          | no       | —           |             |
+| onBlur                                   | `((e: BlurEvent) => void) \| undefined`                              | no       | —           |             |
+| onChange                                 | `((e: TextInputChangeEvent) => void) \| undefined`                   | no       | —           |             |
+| onChangeText                             | `((text: string) => void) \| undefined`                              | no       | —           |             |
 | onContentSizeChange                      | `\| ((e: TextInputContentSizeChangeEvent) => void)                   |
-| \| undefined`                            | no                                                                   | —        |         |
-| onEndEditing                             | `((e: TextInputEndEditingEvent) => void) \| undefined`               | no       | —       |             |
-| onFocus                                  | `((e: FocusEvent) => void) \| undefined`                             | no       | —       |             |
-| onKeyPress                               | `((e: TextInputKeyPressEvent) => void) \| undefined`                 | no       | —       |             |
-| onLayout                                 | `((event: LayoutChangeEvent) => void) \| undefined`                  | no       | —       |             |
-| onMagicTap                               | `(() => void) \| undefined`                                          | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| onEndEditing                             | `((e: TextInputEndEditingEvent) => void) \| undefined`               | no       | —           |             |
+| onFocus                                  | `((e: FocusEvent) => void) \| undefined`                             | no       | —           |             |
+| onKeyPress                               | `((e: TextInputKeyPressEvent) => void) \| undefined`                 | no       | —           |             |
+| onLayout                                 | `((event: LayoutChangeEvent) => void) \| undefined`                  | no       | —           |             |
+| onMagicTap                               | `(() => void) \| undefined`                                          | no       | —           |             |
 | onMoveShouldSetResponder                 | `\| ((event: GestureResponderEvent) => boolean)                      |
-| \| undefined`                            | no                                                                   | —        |         |
+| \| undefined`                            | no                                                                   | —        |             |
 | onMoveShouldSetResponderCapture          | `\| ((event: GestureResponderEvent) => boolean)                      |
-| \| undefined`                            | no                                                                   | —        |         |
-| onPointerCancel                          | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerCancelCapture                   | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerDown                            | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerDownCapture                     | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerEnter                           | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerEnterCapture                    | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerLeave                           | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerLeaveCapture                    | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerMove                            | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerMoveCapture                     | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerUp                              | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPointerUpCapture                       | `((event: PointerEvent) => void) \| undefined`                       | no       | —       |             |
-| onPress                                  | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no       | —       |             |
-| onPressIn                                | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| onPointerCancel                          | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerCancelCapture                   | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerDown                            | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerDownCapture                     | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerEnter                           | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerEnterCapture                    | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerLeave                           | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerLeaveCapture                    | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerMove                            | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerMoveCapture                     | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerUp                              | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPointerUpCapture                       | `((event: PointerEvent) => void) \| undefined`                       | no       | —           |             |
+| onPress                                  | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no       | —           |             |
+| onPressIn                                | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no       | —           |             |
 | onPressOut                               | `\| ((e: NativeSyntheticEvent<NativeTouchEvent>) => void)            |
-| \| undefined`                            | no                                                                   | —        |         |
-| onResponderEnd                           | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onResponderGrant                         | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onResponderMove                          | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onResponderReject                        | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onResponderRelease                       | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onResponderStart                         | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onResponderTerminate                     | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| onResponderEnd                           | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onResponderGrant                         | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onResponderMove                          | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onResponderReject                        | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onResponderRelease                       | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onResponderStart                         | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onResponderTerminate                     | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
 | onResponderTerminationRequest            | `\| ((event: GestureResponderEvent) => boolean)                      |
-| \| undefined`                            | no                                                                   | —        |         |
-| onScroll                                 | `((e: TextInputScrollEvent) => void) \| undefined`                   | no       | —       |             |
-| onSelectionChange                        | `((e: TextInputSelectionChangeEvent) => void) \| undefined`          | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| onScroll                                 | `((e: TextInputScrollEvent) => void) \| undefined`                   | no       | —           |             |
+| onSelectionChange                        | `((e: TextInputSelectionChangeEvent) => void) \| undefined`          | no       | —           |             |
 | onStartShouldSetResponder                | `\| ((event: GestureResponderEvent) => boolean)                      |
-| \| undefined`                            | no                                                                   | —        |         |
+| \| undefined`                            | no                                                                   | —        |             |
 | onStartShouldSetResponderCapture         | `\| ((event: GestureResponderEvent) => boolean)                      |
-| \| undefined`                            | no                                                                   | —        |         |
-| onSubmitEditing                          | `((e: TextInputSubmitEditingEvent) => void) \| undefined`            | no       | —       |             |
-| onTouchCancel                            | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onTouchEnd                               | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onTouchEndCapture                        | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onTouchMove                              | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| onTouchStart                             | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —       |             |
-| passwordRules                            | `string \| null \| undefined`                                        | no       | —       |             |
-| placeholder                              | `string \| undefined`                                                | no       | —       |             |
-| pointerEvents                            | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined`          | no       | —       |             |
-| readOnly                                 | `boolean \| undefined`                                               | no       | `false` |             |
-| rejectResponderTermination               | `boolean \| null \| undefined`                                       | no       | —       |             |
-| removeClippedSubviews                    | `boolean \| undefined`                                               | no       | —       |             |
-| renderToHardwareTextureAndroid           | `boolean \| undefined`                                               | no       | —       |             |
-| returnKeyLabel                           | `string \| undefined`                                                | no       | —       |             |
-| returnKeyType                            | `ReturnKeyTypeOptions \| undefined`                                  | no       | —       |             |
-| role                                     | `Role \| undefined`                                                  | no       | —       |             |
-| screenReaderFocusable                    | `boolean \| undefined`                                               | no       | —       |             |
-| scrollEnabled                            | `boolean \| undefined`                                               | no       | —       |             |
-| secureTextEntry                          | `boolean \| undefined`                                               | no       | —       |             |
-| selection                                | `{start: number; end?: number \| undefined} \| undefined`            | no       | —       |             |
-| selectionColor                           | `ColorValue \| undefined`                                            | no       | —       |             |
-| selectionHandleColor                     | `ColorValue \| null \| undefined`                                    | no       | —       |             |
-| selectionState                           | `DocumentSelectionState \| undefined`                                | no       | —       |             |
-| selectTextOnFocus                        | `boolean \| undefined`                                               | no       | —       |             |
-| shouldRasterizeIOS                       | `boolean \| undefined`                                               | no       | —       |             |
-| showSoftInputOnFocus                     | `boolean \| undefined`                                               | no       | —       |             |
-| size                                     | `ControlSize \| undefined`                                           | no       | `'m'`   |             |
-| smartInsertDelete                        | `boolean \| undefined`                                               | no       | —       |             |
-| spellCheck                               | `boolean \| undefined`                                               | no       | —       |             |
-| style                                    | `StyleProp<TextStyle> \| undefined`                                  | no       | —       |             |
-| submitBehavior                           | `SubmitBehavior \| undefined`                                        | no       | —       |             |
-| tabIndex                                 | `0 \| -1 \| undefined`                                               | no       | —       |             |
-| testID                                   | `string \| undefined`                                                | no       | —       |             |
-| textAlign                                | `'left' \| 'center' \| 'right' \| undefined`                         | no       | —       |             |
-| textAlignVertical                        | `'auto' \| 'top' \| 'bottom' \| 'center' \| undefined`               | no       | —       |             |
-| textBreakStrategy                        | `'simple' \| 'highQuality' \| 'balanced' \| undefined`               | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| onSubmitEditing                          | `((e: TextInputSubmitEditingEvent) => void) \| undefined`            | no       | —           |             |
+| onTouchCancel                            | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onTouchEnd                               | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onTouchEndCapture                        | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onTouchMove                              | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| onTouchStart                             | `((event: GestureResponderEvent) => void) \| undefined`              | no       | —           |             |
+| passwordRules                            | `string \| null \| undefined`                                        | no       | —           |             |
+| placeholder                              | `string \| undefined`                                                | no       | —           |             |
+| pointerEvents                            | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined`          | no       | —           |             |
+| readOnly                                 | `boolean \| undefined`                                               | no       | `false`     |             |
+| rejectResponderTermination               | `boolean \| null \| undefined`                                       | no       | —           |             |
+| removeClippedSubviews                    | `boolean \| undefined`                                               | no       | —           |             |
+| renderToHardwareTextureAndroid           | `boolean \| undefined`                                               | no       | —           |             |
+| returnKeyLabel                           | `string \| undefined`                                                | no       | —           |             |
+| returnKeyType                            | `ReturnKeyTypeOptions \| undefined`                                  | no       | —           |             |
+| role                                     | `Role \| undefined`                                                  | no       | —           |             |
+| screenReaderFocusable                    | `boolean \| undefined`                                               | no       | —           |             |
+| scrollEnabled                            | `boolean \| undefined`                                               | no       | —           |             |
+| secureTextEntry                          | `boolean \| undefined`                                               | no       | —           |             |
+| selection                                | `{start: number; end?: number \| undefined} \| undefined`            | no       | —           |             |
+| selectionColor                           | `ColorValue \| undefined`                                            | no       | —           |             |
+| selectionHandleColor                     | `ColorValue \| null \| undefined`                                    | no       | —           |             |
+| selectionState                           | `DocumentSelectionState \| undefined`                                | no       | —           |             |
+| selectTextOnFocus                        | `boolean \| undefined`                                               | no       | —           |             |
+| shouldRasterizeIOS                       | `boolean \| undefined`                                               | no       | —           |             |
+| showSoftInputOnFocus                     | `boolean \| undefined`                                               | no       | —           |             |
+| size                                     | `ControlSize \| undefined`                                           | no       | `'m'`       |             |
+| smartInsertDelete                        | `boolean \| undefined`                                               | no       | —           |             |
+| spellCheck                               | `boolean \| undefined`                                               | no       | —           |             |
+| style                                    | `StyleProp<TextStyle> \| undefined`                                  | no       | —           |             |
+| submitBehavior                           | `SubmitBehavior \| undefined`                                        | no       | —           |             |
+| tabIndex                                 | `0 \| -1 \| undefined`                                               | no       | —           |             |
+| testID                                   | `string \| undefined`                                                | no       | —           |             |
+| textAlign                                | `'left' \| 'center' \| 'right' \| undefined`                         | no       | —           |             |
+| textAlignVertical                        | `'auto' \| 'top' \| 'bottom' \| 'center' \| undefined`               | no       | —           |             |
+| textBreakStrategy                        | `'simple' \| 'highQuality' \| 'balanced' \| undefined`               | no       | —           |             |
 | textContentType                          | `\| 'none'                                                           |
 | \| 'URL'                                 |
 | \| 'addressCity'                         |
@@ -2189,15 +2209,15 @@ Export paths: `src/index.ts`
 | \| 'dateTime'                            |
 | \| 'flightNumber'                        |
 | \| 'shipmentTrackingNumber'              |
-| \| undefined`                            | no                                                                   | —        |         |
-| trailingAccessory                        | `React.ReactNode \| undefined`                                       | no       | —       |             |
-| tvParallaxMagnification                  | `number \| undefined`                                                | no       | —       |             |
-| tvParallaxShiftDistanceX                 | `number \| undefined`                                                | no       | —       |             |
-| tvParallaxShiftDistanceY                 | `number \| undefined`                                                | no       | —       |             |
-| tvParallaxTiltAngle                      | `number \| undefined`                                                | no       | —       |             |
-| underlineColorAndroid                    | `ColorValue \| undefined`                                            | no       | —       |             |
-| value                                    | `string \| undefined`                                                | no       | —       |             |
-| verticalAlign                            | `'auto' \| 'top' \| 'bottom' \| 'middle' \| undefined`               | no       | —       |             |
+| \| undefined`                            | no                                                                   | —        |             |
+| trailingAccessory                        | `React.ReactNode \| undefined`                                       | no       | —           |             |
+| tvParallaxMagnification                  | `number \| undefined`                                                | no       | —           |             |
+| tvParallaxShiftDistanceX                 | `number \| undefined`                                                | no       | —           |             |
+| tvParallaxShiftDistanceY                 | `number \| undefined`                                                | no       | —           |             |
+| tvParallaxTiltAngle                      | `number \| undefined`                                                | no       | —           |             |
+| underlineColorAndroid                    | `ColorValue \| undefined`                                            | no       | —           |             |
+| value                                    | `string \| undefined`                                                | no       | —           |             |
+| verticalAlign                            | `'auto' \| 'top' \| 'bottom' \| 'middle' \| undefined`               | no       | —           |             |
 
 ## ThemeContext
 
@@ -2228,13 +2248,14 @@ Source: `src/components/toast/Toast.tsx:41:1`
 
 Export paths: `src/index.ts`
 
-| Prop        | Type                           | Required | Default     | Description |
-| ----------- | ------------------------------ | -------- | ----------- | ----------- |
-| description | `React.ReactNode \| undefined` | no       | —           |             |
-| onDismiss   | `(() => void) \| undefined`    | no       | —           |             |
-| status      | `ToastStatus \| undefined`     | no       | `'default'` |             |
-| testID      | `string \| undefined`          | no       | —           |             |
-| title       | `React.ReactNode \| undefined` | no       | —           |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| description       | `React.ReactNode \| undefined`   | no       | —           |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| onDismiss         | `(() => void) \| undefined`      | no       | —           |             |
+| status            | `ToastStatus \| undefined`       | no       | `'default'` |             |
+| testID            | `string \| undefined`            | no       | —           |             |
+| title             | `React.ReactNode \| undefined`   | no       | —           |             |
 
 ## ToastProvider
 
@@ -2253,13 +2274,14 @@ Source: `src/components/tooltip/Tooltip.tsx:24:1`
 
 Export paths: `src/index.ts`
 
-| Prop      | Type                             | Required | Default | Description |
-| --------- | -------------------------------- | -------- | ------- | ----------- |
-| children  | `React.ReactNode \| undefined`   | no       | —       |             |
-| content   | `React.ReactNode \| undefined`   | no       | —       |             |
-| delay     | `number \| undefined`            | no       | `150`   |             |
-| placement | `'top' \| 'bottom' \| undefined` | no       | `'top'` |             |
-| testID    | `string \| undefined`            | no       | —       |             |
+| Prop              | Type                             | Required | Default     | Description |
+| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
+| children          | `React.ReactNode \| undefined`   | no       | —           |             |
+| content           | `React.ReactNode \| undefined`   | no       | —           |             |
+| delay             | `number \| undefined`            | no       | `150`       |             |
+| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
+| placement         | `'top' \| 'bottom' \| undefined` | no       | `'top'`     |             |
+| testID            | `string \| undefined`            | no       | —           |             |
 
 ## TranslationProvider
 

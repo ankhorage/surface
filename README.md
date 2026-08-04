@@ -3,7 +3,7 @@
 
 # @ankhorage/surface
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v2.0.2](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v2.1.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
 
 Cross-platform UI foundation for React Native and React Native Web. Provides theming, layout primitives, and core building blocks for modern apps.
 
@@ -90,6 +90,7 @@ graph TD
   package__ankhorage_surface -.-> module_src_components_action_sheet_index_ts
   module_src_components_action_sheet_types_ts["src/components/action-sheet/types.ts"]
   package__ankhorage_surface -.-> module_src_components_action_sheet_types_ts
+  module_src_components_action_sheet_types_ts --> module_src_interactionPolicy_ts
   module_src_components_action_sheet_types_ts --> module_src_surfaceColor_ts
   module_src_components_badge_Badge_tsx["src/components/badge/Badge.tsx"]
   package__ankhorage_surface -.-> module_src_components_badge_Badge_tsx
@@ -162,6 +163,7 @@ graph TD
   package__ankhorage_surface -.-> module_src_components_drawer_index_ts
   module_src_components_drawer_types_ts["src/components/drawer/types.ts"]
   package__ankhorage_surface -.-> module_src_components_drawer_types_ts
+  module_src_components_drawer_types_ts --> module_src_interactionPolicy_ts
   module_src_components_field_Field_tsx["src/components/field/Field.tsx"]
   package__ankhorage_surface -.-> module_src_components_field_Field_tsx
   module_src_components_field_Field_tsx --> module_src_components_field_types_ts
@@ -237,6 +239,7 @@ graph TD
   package__ankhorage_surface -.-> module_src_components_menu_navigation_ts
   module_src_components_menu_types_ts["src/components/menu/types.ts"]
   package__ankhorage_surface -.-> module_src_components_menu_types_ts
+  module_src_components_menu_types_ts --> module_src_interactionPolicy_ts
   module_src_components_modal_index_ts["src/components/modal/index.ts"]
   package__ankhorage_surface -.-> module_src_components_modal_index_ts
   module_src_components_modal_Modal_tsx["src/components/modal/Modal.tsx"]
@@ -249,6 +252,7 @@ graph TD
   module_src_components_modal_Modal_tsx --> module_src_theme_ThemeContext_tsx
   module_src_components_modal_types_ts["src/components/modal/types.ts"]
   package__ankhorage_surface -.-> module_src_components_modal_types_ts
+  module_src_components_modal_types_ts --> module_src_interactionPolicy_ts
   module_src_components_navigation_DrawerNavigation_tsx["src/components/navigation/DrawerNavigation.tsx"]
   package__ankhorage_surface -.-> module_src_components_navigation_DrawerNavigation_tsx
   module_src_components_navigation_DrawerNavigation_tsx --> module_src_components_navigation_DrawerNavigationItem_tsx
@@ -295,6 +299,7 @@ graph TD
   module_src_components_navigation_TabBarItem_tsx --> module_src_theme_ThemeContext_tsx
   module_src_components_navigation_types_ts["src/components/navigation/types.ts"]
   package__ankhorage_surface -.-> module_src_components_navigation_types_ts
+  module_src_components_navigation_types_ts --> module_src_interactionPolicy_ts
   module_src_components_navigation_types_ts --> module_src_primitives_icon_index_ts
   module_src_components_radio_index_ts["src/components/radio/index.ts"]
   package__ankhorage_surface -.-> module_src_components_radio_index_ts
@@ -364,6 +369,7 @@ graph TD
   module_src_components_tabs_Tabs_tsx --> module_src_layout_index_ts
   module_src_components_tabs_types_ts["src/components/tabs/types.ts"]
   package__ankhorage_surface -.-> module_src_components_tabs_types_ts
+  module_src_components_tabs_types_ts --> module_src_interactionPolicy_ts
   module_src_components_text_input_index_ts["src/components/text-input/index.ts"]
   package__ankhorage_surface -.-> module_src_components_text_input_index_ts
   module_src_components_text_input_TextInput_tsx["src/components/text-input/TextInput.tsx"]
@@ -373,6 +379,7 @@ graph TD
   module_src_components_text_input_TextInput_tsx --> module_src_theme_ThemeContext_tsx
   module_src_components_text_input_types_ts["src/components/text-input/types.ts"]
   package__ankhorage_surface -.-> module_src_components_text_input_types_ts
+  module_src_components_text_input_types_ts --> module_src_interactionPolicy_ts
   module_src_components_text_input_types_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_components_textarea_index_ts["src/components/textarea/index.ts"]
   package__ankhorage_surface -.-> module_src_components_textarea_index_ts
@@ -402,6 +409,7 @@ graph TD
   module_src_components_toast_ToastProvider_tsx --> module_src_layout_index_ts
   module_src_components_toast_types_ts["src/components/toast/types.ts"]
   package__ankhorage_surface -.-> module_src_components_toast_types_ts
+  module_src_components_toast_types_ts --> module_src_interactionPolicy_ts
   module_src_components_toast_types_ts --> module_src_surfaceColor_ts
   module_src_components_tooltip_index_ts["src/components/tooltip/index.ts"]
   package__ankhorage_surface -.-> module_src_components_tooltip_index_ts
@@ -415,6 +423,7 @@ graph TD
   module_src_components_tooltip_Tooltip_tsx --> module_src_theme_ThemeContext_tsx
   module_src_components_tooltip_types_ts["src/components/tooltip/types.ts"]
   package__ankhorage_surface -.-> module_src_components_tooltip_types_ts
+  module_src_components_tooltip_types_ts --> module_src_interactionPolicy_ts
   module_src_context_FontContext_tsx["src/context/FontContext.tsx"]
   package__ankhorage_surface -.-> module_src_context_FontContext_tsx
   module_src_context_TranslationContext_tsx["src/context/TranslationContext.tsx"]
@@ -461,6 +470,8 @@ graph TD
   module_src_examples_DocsExamples_tsx --> module_src_theme_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_theme_types_ts
   module_src_index_ts["src/index.ts"]
+  module_src_interactionPolicy_ts["src/interactionPolicy.ts"]
+  package__ankhorage_surface -.-> module_src_interactionPolicy_ts
   module_src_internal_focus_FocusScope_tsx["src/internal/focus/FocusScope.tsx"]
   package__ankhorage_surface -.-> module_src_internal_focus_FocusScope_tsx
   module_src_internal_focus_FocusScope_tsx --> module_src_internal_focus_useFocusManager_ts
@@ -612,6 +623,7 @@ graph TD
   package__ankhorage_surface -.-> module_src_primitives_button_base_index_ts
   module_src_primitives_button_base_types_ts["src/primitives/button-base/types.ts"]
   package__ankhorage_surface -.-> module_src_primitives_button_base_types_ts
+  module_src_primitives_button_base_types_ts --> module_src_interactionPolicy_ts
   module_src_primitives_button_base_types_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
   module_src_primitives_button_base_types_ts --> module_src_layout_index_ts
   module_src_primitives_heading_Heading_tsx["src/primitives/heading/Heading.tsx"]

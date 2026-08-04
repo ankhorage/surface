@@ -12,7 +12,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v2.0.2",
+      "value": "v2.1.0",
       "color": "cb3837"
     },
     {
@@ -97,7 +97,7 @@
     {
       "path": "src/components/action-sheet/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts"],
+      "dependencies": ["src/interactionPolicy.ts", "src/surfaceColor.ts"],
       "exports": ["ActionSheetItemProps", "ActionSheetProps"]
     },
     {
@@ -235,7 +235,7 @@
     {
       "path": "src/components/drawer/types.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["src/interactionPolicy.ts"],
       "exports": ["DrawerProps"]
     },
     {
@@ -385,7 +385,7 @@
     {
       "path": "src/components/menu/types.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["src/interactionPolicy.ts"],
       "exports": ["MenuAction", "MenuActionIntent", "MenuProps"]
     },
     {
@@ -410,7 +410,7 @@
     {
       "path": "src/components/modal/types.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["src/interactionPolicy.ts"],
       "exports": ["ModalProps"]
     },
     {
@@ -515,7 +515,7 @@
     {
       "path": "src/components/navigation/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/primitives/icon/index.ts"],
+      "dependencies": ["src/interactionPolicy.ts", "src/primitives/icon/index.ts"],
       "exports": [
         "DrawerNavigationItemProps",
         "DrawerNavigationProps",
@@ -665,7 +665,7 @@
     {
       "path": "src/components/tabs/types.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["src/interactionPolicy.ts"],
       "exports": ["TabListProps", "TabPanelProps", "TabProps", "TabsProps"]
     },
     {
@@ -687,7 +687,7 @@
     {
       "path": "src/components/text-input/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveControlSize.ts"],
+      "dependencies": ["src/interactionPolicy.ts", "src/internal/resolvers/resolveControlSize.ts"],
       "exports": ["TextInputProps"]
     },
     {
@@ -742,7 +742,7 @@
     {
       "path": "src/components/toast/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts"],
+      "dependencies": ["src/interactionPolicy.ts", "src/surfaceColor.ts"],
       "exports": ["ToastOptions", "ToastProps", "ToastStatus"]
     },
     {
@@ -767,7 +767,7 @@
     {
       "path": "src/components/tooltip/types.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["src/interactionPolicy.ts"],
       "exports": ["TooltipProps"]
     },
     {
@@ -948,6 +948,8 @@
         "ImageProps",
         "Inline",
         "InlineProps",
+        "InteractionPolicy",
+        "InteractionPolicyProps",
         "isDeepEqual",
         "Label",
         "LabelProps",
@@ -1048,6 +1050,12 @@
         "useToast",
         "useTranslationContext"
       ]
+    },
+    {
+      "path": "src/interactionPolicy.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["InteractionPolicy", "InteractionPolicyProps"]
     },
     {
       "path": "src/internal/focus/FocusScope.tsx",
@@ -1423,7 +1431,11 @@
     {
       "path": "src/primitives/button-base/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveInteractiveState.ts", "src/layout/index.ts"],
+      "dependencies": [
+        "src/interactionPolicy.ts",
+        "src/internal/resolvers/resolveInteractiveState.ts",
+        "src/layout/index.ts"
+      ],
       "exports": ["ButtonBaseProps"]
     },
     {
@@ -1732,10 +1744,10 @@
       "relatedSymbols": ["ActionSheetProps"],
       "signatures": [
         {
-          "label": "({\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  testID,\n}: ActionSheetProps) => React.JSX.Element | null",
+          "label": "({\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ActionSheetProps) => React.JSX.Element | null",
           "parameters": [
             {
-              "name": "{\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  testID,\n}",
+              "name": "{\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
               "type": "ActionSheetProps",
               "required": true,
               "description": null
@@ -1764,10 +1776,10 @@
       "relatedSymbols": ["ActionSheetItemProps"],
       "signatures": [
         {
-          "label": "({\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  onPress,\n  testID,\n}: ActionSheetItemProps) => React.JSX.Element",
+          "label": "({\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}: ActionSheetItemProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  onPress,\n  testID,\n}",
+              "name": "{\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}",
               "type": "ActionSheetItemProps",
               "required": true,
               "description": null
@@ -1789,11 +1801,11 @@
       "modulePath": "src/components/action-sheet/types.ts",
       "sourceLocation": {
         "filePath": "src/components/action-sheet/types.ts",
-        "line": 16,
+        "line": 18,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -1814,6 +1826,13 @@
           "name": "disabled",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -1871,11 +1890,11 @@
       "modulePath": "src/components/action-sheet/types.ts",
       "sourceLocation": {
         "filePath": "src/components/action-sheet/types.ts",
-        "line": 5,
+        "line": 6,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -1903,6 +1922,13 @@
           "name": "description",
           "kind": "property",
           "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -2932,10 +2958,10 @@
       "relatedSymbols": ["ButtonBaseProps"],
       "signatures": [
         {
-          "label": "({\n  children,\n  disabled = false,\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: ButtonBaseProps) => React.JSX.Element",
+          "label": "({\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: ButtonBaseProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  disabled = false,\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}",
+              "name": "{\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}",
               "type": "ButtonBaseProps",
               "required": true,
               "description": null
@@ -2957,11 +2983,11 @@
       "modulePath": "src/primitives/button-base/types.ts",
       "sourceLocation": {
         "filePath": "src/primitives/button-base/types.ts",
-        "line": 7,
+        "line": 8,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "relatedSymbols": ["InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -3073,6 +3099,13 @@
           "name": "height",
           "kind": "property",
           "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -3342,7 +3375,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ButtonIconSpec", "Responsive"],
+      "relatedSymbols": ["ButtonIconSpec", "InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -3461,6 +3494,13 @@
           "name": "height",
           "kind": "property",
           "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -4496,7 +4536,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "relatedSymbols": ["InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -4615,6 +4655,13 @@
           "name": "height",
           "kind": "property",
           "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -4879,7 +4926,7 @@
       "modulePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
-        "line": 5,
+        "line": 6,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -5819,10 +5866,10 @@
       "relatedSymbols": ["DrawerProps"],
       "signatures": [
         {
-          "label": "({\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  testID,\n}: DrawerProps) => React.JSX.Element | null",
+          "label": "({\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: DrawerProps) => React.JSX.Element | null",
           "parameters": [
             {
-              "name": "{\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  testID,\n}",
+              "name": "{\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
               "type": "DrawerProps",
               "required": true,
               "description": null
@@ -5851,10 +5898,10 @@
       "relatedSymbols": ["DrawerNavigationProps"],
       "signatures": [
         {
-          "label": "({\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n}: DrawerNavigationProps) => React.JSX.Element",
+          "label": "({\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n}",
+              "name": "{\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
               "type": "DrawerNavigationProps",
               "required": true,
               "description": null
@@ -5883,10 +5930,10 @@
       "relatedSymbols": ["DrawerNavigationItemProps"],
       "signatures": [
         {
-          "label": "({ item, compact = false, testID }: DrawerNavigationItemProps) => React.JSX.Element",
+          "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationItemProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ item, compact = false, testID }",
+              "name": "{\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
               "type": "DrawerNavigationItemProps",
               "required": true,
               "description": null
@@ -5908,17 +5955,24 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 55,
+        "line": 61,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemSpec"],
+      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
       "signatures": [],
       "members": [
         {
           "name": "compact",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -5948,11 +6002,11 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 47,
+        "line": 52,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemSpec"],
+      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
       "signatures": [],
       "members": [
         {
@@ -5973,6 +6027,13 @@
           "name": "header",
           "kind": "property",
           "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -6002,11 +6063,11 @@
       "modulePath": "src/components/drawer/types.ts",
       "sourceLocation": {
         "filePath": "src/components/drawer/types.ts",
-        "line": 3,
+        "line": 5,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -6020,6 +6081,13 @@
           "name": "closeOnBackdrop",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -7187,7 +7255,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["IconProps", "Responsive"],
+      "relatedSymbols": ["IconProps", "InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -7307,6 +7375,13 @@
           "kind": "property",
           "type": "{ name: IconProps[\"name\"]; provider?: IconProps[\"provider\"]; }",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -7826,6 +7901,50 @@
       "structuredRows": []
     },
     {
+      "name": "InteractionPolicy",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "unknown",
+      "modulePath": "src/interactionPolicy.ts",
+      "sourceLocation": {
+        "filePath": "src/interactionPolicy.ts",
+        "line": 1,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "InteractionPolicyProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/interactionPolicy.ts",
+      "sourceLocation": {
+        "filePath": "src/interactionPolicy.ts",
+        "line": 3,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["InteractionPolicy"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
       "name": "isDeepEqual",
       "description": null,
       "isReadme": false,
@@ -8065,10 +8184,10 @@
       "relatedSymbols": ["MenuProps"],
       "signatures": [
         {
-          "label": "({ trigger, actions, dismiss, closeOnSelect = true, testID }: MenuProps) => React.JSX.Element",
+          "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: MenuProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ trigger, actions, dismiss, closeOnSelect = true, testID }",
+              "name": "{\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
               "type": "MenuProps",
               "required": true,
               "description": null
@@ -8090,7 +8209,7 @@
       "modulePath": "src/components/menu/types.ts",
       "sourceLocation": {
         "filePath": "src/components/menu/types.ts",
-        "line": 5,
+        "line": 7,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -8172,7 +8291,7 @@
       "modulePath": "src/components/menu/types.ts",
       "sourceLocation": {
         "filePath": "src/components/menu/types.ts",
-        "line": 3,
+        "line": 5,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -8190,11 +8309,11 @@
       "modulePath": "src/components/menu/types.ts",
       "sourceLocation": {
         "filePath": "src/components/menu/types.ts",
-        "line": 17,
+        "line": 19,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["MenuAction"],
+      "relatedSymbols": ["InteractionPolicy", "MenuAction"],
       "signatures": [],
       "members": [
         {
@@ -8215,6 +8334,13 @@
           "name": "dismiss",
           "kind": "property",
           "type": "(() => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -8251,10 +8377,10 @@
       "relatedSymbols": ["ModalProps"],
       "signatures": [
         {
-          "label": "({\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  testID,\n}: ModalProps) => React.JSX.Element | null",
+          "label": "({\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ModalProps) => React.JSX.Element | null",
           "parameters": [
             {
-              "name": "{\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  testID,\n}",
+              "name": "{\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
               "type": "ModalProps",
               "required": true,
               "description": null
@@ -8276,11 +8402,11 @@
       "modulePath": "src/components/modal/types.ts",
       "sourceLocation": {
         "filePath": "src/components/modal/types.ts",
-        "line": 3,
+        "line": 5,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -8294,6 +8420,13 @@
           "name": "closeOnBackdrop",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -8337,10 +8470,10 @@
       "relatedSymbols": ["NavigationItemProps"],
       "signatures": [
         {
-          "label": "({ item, compact = false, testID }: NavigationItemProps) => React.JSX.Element",
+          "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationItemProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ item, compact = false, testID }",
+              "name": "{\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
               "type": "NavigationItemProps",
               "required": true,
               "description": null
@@ -8362,7 +8495,7 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 6,
+        "line": 7,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -8380,17 +8513,24 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 22,
+        "line": 23,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemSpec"],
+      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
       "signatures": [],
       "members": [
         {
           "name": "compact",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -8420,7 +8560,7 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 8,
+        "line": 9,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -8523,10 +8663,10 @@
       "relatedSymbols": ["NavigationListProps"],
       "signatures": [
         {
-          "label": "({\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n}: NavigationListProps) => React.JSX.Element",
+          "label": "({\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationListProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n}",
+              "name": "{\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
               "type": "NavigationListProps",
               "required": true,
               "description": null
@@ -8548,17 +8688,24 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 28,
+        "line": 30,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemSpec"],
+      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
       "signatures": [],
       "members": [
         {
           "name": "compact",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -8727,7 +8874,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "relatedSymbols": ["InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -8846,6 +8993,13 @@
           "name": "height",
           "kind": "property",
           "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -12017,7 +12171,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "relatedSymbols": ["InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -12136,6 +12290,13 @@
           "name": "height",
           "kind": "property",
           "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -12389,10 +12550,10 @@
       "relatedSymbols": ["TabProps"],
       "signatures": [
         {
-          "label": "({ value, children, disabled = false, testID }: TabProps) => React.JSX.Element",
+          "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}: TabProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ value, children, disabled = false, testID }",
+              "name": "{\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}",
               "type": "TabProps",
               "required": true,
               "description": null
@@ -12421,10 +12582,10 @@
       "relatedSymbols": ["TabBarProps"],
       "signatures": [
         {
-          "label": "({ items, compact = false, testID }: TabBarProps) => React.JSX.Element",
+          "label": "({ items, compact = false, testID, interactionPolicy }: TabBarProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ items, compact = false, testID }",
+              "name": "{ items, compact = false, testID, interactionPolicy }",
               "type": "TabBarProps",
               "required": true,
               "description": null
@@ -12453,10 +12614,10 @@
       "relatedSymbols": ["TabBarItemProps"],
       "signatures": [
         {
-          "label": "({ item, compact = false, testID }: TabBarItemProps) => React.JSX.Element",
+          "label": "({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ item, compact = false, testID }",
+              "name": "{ item, compact = false, testID, interactionPolicy }",
               "type": "TabBarItemProps",
               "required": true,
               "description": null
@@ -12478,17 +12639,24 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 41,
+        "line": 45,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemSpec"],
+      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
       "signatures": [],
       "members": [
         {
           "name": "compact",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -12518,17 +12686,24 @@
       "modulePath": "src/components/navigation/types.ts",
       "sourceLocation": {
         "filePath": "src/components/navigation/types.ts",
-        "line": 35,
+        "line": 38,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemSpec"],
+      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
       "signatures": [],
       "members": [
         {
           "name": "compact",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -12590,7 +12765,7 @@
       "modulePath": "src/components/tabs/types.ts",
       "sourceLocation": {
         "filePath": "src/components/tabs/types.ts",
-        "line": 11,
+        "line": 13,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -12655,7 +12830,7 @@
       "modulePath": "src/components/tabs/types.ts",
       "sourceLocation": {
         "filePath": "src/components/tabs/types.ts",
-        "line": 23,
+        "line": 26,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -12695,11 +12870,11 @@
       "modulePath": "src/components/tabs/types.ts",
       "sourceLocation": {
         "filePath": "src/components/tabs/types.ts",
-        "line": 16,
+        "line": 18,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -12713,6 +12888,13 @@
           "name": "disabled",
           "kind": "property",
           "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -12774,7 +12956,7 @@
       "modulePath": "src/components/tabs/types.ts",
       "sourceLocation": {
         "filePath": "src/components/tabs/types.ts",
-        "line": 3,
+        "line": 5,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -13297,7 +13479,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -13731,6 +13913,13 @@
           "name": "inputMode",
           "kind": "property",
           "type": "InputModeOptions | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -14446,10 +14635,10 @@
       "relatedSymbols": ["TextInputProps"],
       "signatures": [
         {
-          "label": "({\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}: TextInputProps) => React.JSX.Element",
+          "label": "({\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  interactionPolicy = 'enabled',\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}: TextInputProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}",
+              "name": "{\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  interactionPolicy = 'enabled',\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}",
               "type": "TextInputProps",
               "required": true,
               "description": null
@@ -14471,11 +14660,11 @@
       "modulePath": "src/components/text-input/types.ts",
       "sourceLocation": {
         "filePath": "src/components/text-input/types.ts",
-        "line": 10,
+        "line": 11,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -14909,6 +15098,13 @@
           "name": "inputMode",
           "kind": "property",
           "type": "InputModeOptions | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -16035,10 +16231,10 @@
       "relatedSymbols": ["ToastProps"],
       "signatures": [
         {
-          "label": "({ title, description, status = 'default', onDismiss, testID }: ToastProps) => React.JSX.Element",
+          "label": "({\n  title,\n  description,\n  status = 'default',\n  onDismiss,\n  interactionPolicy = 'enabled',\n  testID,\n}: ToastProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ title, description, status = 'default', onDismiss, testID }",
+              "name": "{\n  title,\n  description,\n  status = 'default',\n  onDismiss,\n  interactionPolicy = 'enabled',\n  testID,\n}",
               "type": "ToastProps",
               "required": true,
               "description": null
@@ -16060,11 +16256,11 @@
       "modulePath": "src/components/toast/types.ts",
       "sourceLocation": {
         "filePath": "src/components/toast/types.ts",
-        "line": 15,
+        "line": 17,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ToastStatus"],
+      "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
       "signatures": [],
       "members": [
         {
@@ -16085,6 +16281,13 @@
           "name": "id",
           "kind": "property",
           "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -16121,17 +16324,24 @@
       "modulePath": "src/components/toast/types.ts",
       "sourceLocation": {
         "filePath": "src/components/toast/types.ts",
-        "line": 7,
+        "line": 8,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ToastStatus"],
+      "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
       "signatures": [],
       "members": [
         {
           "name": "description",
           "kind": "property",
           "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -16207,7 +16417,7 @@
       "modulePath": "src/components/toast/types.ts",
       "sourceLocation": {
         "filePath": "src/components/toast/types.ts",
-        "line": 5,
+        "line": 6,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16232,10 +16442,10 @@
       "relatedSymbols": ["TooltipProps"],
       "signatures": [
         {
-          "label": "({\n  children,\n  content,\n  delay = 150,\n  placement = 'top',\n  testID,\n}: TooltipProps) => React.JSX.Element",
+          "label": "({\n  children,\n  content,\n  delay = 150,\n  interactionPolicy = 'enabled',\n  placement = 'top',\n  testID,\n}: TooltipProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  content,\n  delay = 150,\n  placement = 'top',\n  testID,\n}",
+              "name": "{\n  children,\n  content,\n  delay = 150,\n  interactionPolicy = 'enabled',\n  placement = 'top',\n  testID,\n}",
               "type": "TooltipProps",
               "required": true,
               "description": null
@@ -16257,11 +16467,11 @@
       "modulePath": "src/components/tooltip/types.ts",
       "sourceLocation": {
         "filePath": "src/components/tooltip/types.ts",
-        "line": 3,
+        "line": 5,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
         {
@@ -16282,6 +16492,13 @@
           "name": "delay",
           "kind": "property",
           "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -16627,6 +16844,13 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
           "name": "onDismiss",
           "type": "(() => void) | undefined",
           "required": false,
@@ -16682,6 +16906,13 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "false",
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
           "description": null
         },
         {
@@ -17492,6 +17723,12 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "leadingIcon",
           "type": "ButtonIconSpec | undefined",
           "required": false,
@@ -17815,6 +18052,13 @@
           "name": "height",
           "type": "Responsive<number | string> | undefined",
           "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
           "description": null
         },
         {
@@ -18703,6 +18947,12 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "invalid",
           "type": "boolean | undefined",
           "required": false,
@@ -19507,6 +19757,13 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
           "name": "onDismiss",
           "type": "(() => void) | undefined",
           "required": false,
@@ -19566,6 +19823,12 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "items",
           "type": "readonly NavigationItemSpec[]",
           "required": true,
@@ -19597,6 +19860,12 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "false",
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -20321,6 +20590,12 @@
           "name": "icon",
           "type": "{ name: IconProps[\"name\"]; provider?: IconProps[\"provider\"]; }",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -21061,6 +21336,13 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
           "name": "testID",
           "type": "string | undefined",
           "required": false,
@@ -21098,6 +21380,13 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "true",
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
           "description": null
         },
         {
@@ -21141,6 +21430,12 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "item",
           "type": "NavigationItemSpec",
           "required": true,
@@ -21172,6 +21467,12 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "false",
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -21310,6 +21611,12 @@
         {
           "name": "height",
           "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -23454,6 +23761,12 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "invalid",
           "type": "boolean | undefined",
           "required": false,
@@ -23683,6 +23996,13 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
           "name": "testID",
           "type": "string | undefined",
           "required": false,
@@ -23717,6 +24037,12 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "items",
           "type": "readonly NavigationItemSpec[]",
           "required": true,
@@ -23748,6 +24074,12 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "false",
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -24645,6 +24977,12 @@
         {
           "name": "inputMode",
           "type": "InputModeOptions | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
           "required": false,
           "description": null
         },
@@ -25632,6 +25970,13 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
           "name": "invalid",
           "type": "boolean | undefined",
           "required": false,
@@ -26311,6 +26656,13 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
           "name": "onDismiss",
           "type": "(() => void) | undefined",
           "required": false,
@@ -26395,6 +26747,13 @@
           "type": "number | undefined",
           "required": false,
           "defaultValue": "150",
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
           "description": null
         },
         {
@@ -26812,7 +27171,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/components/text-input/TextInput.tsx",
-        "line": 56,
+        "line": 58,
         "column": 9
       }
     },
@@ -26821,7 +27180,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/components/text-input/TextInput.tsx",
-        "line": 61,
+        "line": 63,
         "column": 9
       }
     },
@@ -28467,6 +28826,11 @@
       },
       {
         "fromPath": "src/index.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
         "toPath": "src/layout/index.ts",
         "sourcePath": "src/index.ts"
       },
@@ -29007,6 +29371,11 @@
       },
       {
         "fromPath": "src/components/action-sheet/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/action-sheet/types.ts"
+      },
+      {
+        "fromPath": "src/components/action-sheet/types.ts",
         "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/components/action-sheet/types.ts"
       },
@@ -29266,6 +29635,11 @@
         "sourcePath": "src/components/drawer/index.ts"
       },
       {
+        "fromPath": "src/components/drawer/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/drawer/types.ts"
+      },
+      {
         "fromPath": "src/components/field/Field.tsx",
         "toPath": "src/internal/resolvers/index.ts",
         "sourcePath": "src/components/field/Field.tsx"
@@ -29511,6 +29885,11 @@
         "sourcePath": "src/components/menu/Menu.tsx"
       },
       {
+        "fromPath": "src/components/menu/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/menu/types.ts"
+      },
+      {
         "fromPath": "src/components/modal/index.ts",
         "toPath": "src/components/modal/Modal.tsx",
         "sourcePath": "src/components/modal/index.ts"
@@ -29549,6 +29928,11 @@
         "fromPath": "src/components/modal/Modal.tsx",
         "toPath": "src/components/modal/types.ts",
         "sourcePath": "src/components/modal/Modal.tsx"
+      },
+      {
+        "fromPath": "src/components/modal/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/modal/types.ts"
       },
       {
         "fromPath": "src/components/navigation/DrawerNavigation.tsx",
@@ -29724,6 +30108,11 @@
         "fromPath": "src/components/navigation/TabBarItem.tsx",
         "toPath": "src/components/navigation/types.ts",
         "sourcePath": "src/components/navigation/TabBarItem.tsx"
+      },
+      {
+        "fromPath": "src/components/navigation/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/navigation/types.ts"
       },
       {
         "fromPath": "src/components/navigation/types.ts",
@@ -29966,6 +30355,11 @@
         "sourcePath": "src/components/tabs/Tabs.tsx"
       },
       {
+        "fromPath": "src/components/tabs/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/tabs/types.ts"
+      },
+      {
         "fromPath": "src/components/text-input/index.ts",
         "toPath": "src/components/text-input/TextInput.tsx",
         "sourcePath": "src/components/text-input/index.ts"
@@ -29989,6 +30383,11 @@
         "fromPath": "src/components/text-input/TextInput.tsx",
         "toPath": "src/components/text-input/types.ts",
         "sourcePath": "src/components/text-input/TextInput.tsx"
+      },
+      {
+        "fromPath": "src/components/text-input/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/text-input/types.ts"
       },
       {
         "fromPath": "src/components/text-input/types.ts",
@@ -30092,6 +30491,11 @@
       },
       {
         "fromPath": "src/components/toast/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/toast/types.ts"
+      },
+      {
+        "fromPath": "src/components/toast/types.ts",
         "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/components/toast/types.ts"
       },
@@ -30134,6 +30538,11 @@
         "fromPath": "src/components/tooltip/Tooltip.tsx",
         "toPath": "src/components/tooltip/types.ts",
         "sourcePath": "src/components/tooltip/Tooltip.tsx"
+      },
+      {
+        "fromPath": "src/components/tooltip/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/components/tooltip/types.ts"
       },
       {
         "fromPath": "src/core/responsive/getBreakpointFromWidth.ts",
@@ -30454,6 +30863,11 @@
         "fromPath": "src/primitives/button-base/index.ts",
         "toPath": "src/primitives/button-base/types.ts",
         "sourcePath": "src/primitives/button-base/index.ts"
+      },
+      {
+        "fromPath": "src/primitives/button-base/types.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/primitives/button-base/types.ts"
       },
       {
         "fromPath": "src/primitives/button-base/types.ts",
@@ -31736,6 +32150,12 @@
         "sourcePath": "src/components/text-input/TextInput.tsx"
       },
       {
+        "fromSymbol": "src/components/text-input/TextInput.tsx",
+        "toSymbol": "onChangeText",
+        "callExpression": "onChangeText",
+        "sourcePath": "src/components/text-input/TextInput.tsx"
+      },
+      {
         "fromSymbol": "Toast",
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
@@ -32285,12 +32705,22 @@
     "typeReferences": [
       {
         "fromSymbol": "ActionSheetItemProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/action-sheet/types.ts"
+      },
+      {
+        "fromSymbol": "ActionSheetItemProps",
         "toType": "React",
         "sourcePath": "src/components/action-sheet/types.ts"
       },
       {
         "fromSymbol": "ActionSheetItemProps",
         "toType": "ReactNode",
+        "sourcePath": "src/components/action-sheet/types.ts"
+      },
+      {
+        "fromSymbol": "ActionSheetProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/action-sheet/types.ts"
       },
       {
@@ -32386,6 +32816,11 @@
       {
         "fromSymbol": "ButtonProps",
         "toType": "GestureResponderEvent",
+        "sourcePath": "src/components/button/types.ts"
+      },
+      {
+        "fromSymbol": "ButtonProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/button/types.ts"
       },
       {
@@ -32520,6 +32955,11 @@
       },
       {
         "fromSymbol": "CheckboxProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/checkbox/types.ts"
+      },
+      {
+        "fromSymbol": "CheckboxProps",
         "toType": "RadiusValue",
         "sourcePath": "src/components/checkbox/types.ts"
       },
@@ -32557,6 +32997,11 @@
         "fromSymbol": "Checkbox",
         "toType": "React",
         "sourcePath": "src/components/checkbox/Checkbox.tsx"
+      },
+      {
+        "fromSymbol": "DrawerProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/drawer/types.ts"
       },
       {
         "fromSymbol": "DrawerProps",
@@ -32660,6 +33105,11 @@
       },
       {
         "fromSymbol": "IconButtonProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/icon-button/types.ts"
+      },
+      {
+        "fromSymbol": "IconButtonProps",
         "toType": "RadiusValue",
         "sourcePath": "src/components/icon-button/types.ts"
       },
@@ -32745,6 +33195,11 @@
       },
       {
         "fromSymbol": "MenuProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/menu/types.ts"
+      },
+      {
+        "fromSymbol": "MenuProps",
         "toType": "MenuAction",
         "sourcePath": "src/components/menu/types.ts"
       },
@@ -32770,6 +33225,11 @@
       },
       {
         "fromSymbol": "ModalProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/modal/types.ts"
+      },
+      {
+        "fromSymbol": "ModalProps",
         "toType": "React",
         "sourcePath": "src/components/modal/types.ts"
       },
@@ -32790,7 +33250,17 @@
       },
       {
         "fromSymbol": "DrawerNavigationItemProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/navigation/types.ts"
+      },
+      {
+        "fromSymbol": "DrawerNavigationItemProps",
         "toType": "NavigationItemSpec",
+        "sourcePath": "src/components/navigation/types.ts"
+      },
+      {
+        "fromSymbol": "DrawerNavigationProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/navigation/types.ts"
       },
       {
@@ -32806,6 +33276,11 @@
       {
         "fromSymbol": "DrawerNavigationProps",
         "toType": "ReactNode",
+        "sourcePath": "src/components/navigation/types.ts"
+      },
+      {
+        "fromSymbol": "NavigationItemProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/navigation/types.ts"
       },
       {
@@ -32840,12 +33315,27 @@
       },
       {
         "fromSymbol": "NavigationListProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/navigation/types.ts"
+      },
+      {
+        "fromSymbol": "NavigationListProps",
         "toType": "NavigationItemSpec",
         "sourcePath": "src/components/navigation/types.ts"
       },
       {
         "fromSymbol": "TabBarItemProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/navigation/types.ts"
+      },
+      {
+        "fromSymbol": "TabBarItemProps",
         "toType": "NavigationItemSpec",
+        "sourcePath": "src/components/navigation/types.ts"
+      },
+      {
+        "fromSymbol": "TabBarProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/navigation/types.ts"
       },
       {
@@ -32935,6 +33425,11 @@
       },
       {
         "fromSymbol": "RadioProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/radio/types.ts"
+      },
+      {
+        "fromSymbol": "RadioProps",
         "toType": "RadiusValue",
         "sourcePath": "src/components/radio/types.ts"
       },
@@ -32995,6 +33490,11 @@
       },
       {
         "fromSymbol": "SwitchProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/switch/types.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
         "toType": "RadiusValue",
         "sourcePath": "src/components/switch/types.ts"
       },
@@ -33051,6 +33551,11 @@
       {
         "fromSymbol": "TabPanelProps",
         "toType": "ReactNode",
+        "sourcePath": "src/components/tabs/types.ts"
+      },
+      {
+        "fromSymbol": "TabProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/tabs/types.ts"
       },
       {
@@ -33186,6 +33691,11 @@
       {
         "fromSymbol": "TextInputProps",
         "toType": "Insets",
+        "sourcePath": "src/components/text-input/types.ts"
+      },
+      {
+        "fromSymbol": "TextInputProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/text-input/types.ts"
       },
       {
@@ -33380,6 +33890,11 @@
       },
       {
         "fromSymbol": "TextareaProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/textarea/types.ts"
+      },
+      {
+        "fromSymbol": "TextareaProps",
         "toType": "KeyboardTypeOptions",
         "sourcePath": "src/components/textarea/types.ts"
       },
@@ -33495,6 +34010,11 @@
       },
       {
         "fromSymbol": "ToastOptions",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/toast/types.ts"
+      },
+      {
+        "fromSymbol": "ToastOptions",
         "toType": "React",
         "sourcePath": "src/components/toast/types.ts"
       },
@@ -33506,6 +34026,11 @@
       {
         "fromSymbol": "ToastOptions",
         "toType": "ToastStatus",
+        "sourcePath": "src/components/toast/types.ts"
+      },
+      {
+        "fromSymbol": "ToastProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/components/toast/types.ts"
       },
       {
@@ -33547,6 +34072,11 @@
         "fromSymbol": "useToast",
         "toType": "ToastContextValue",
         "sourcePath": "src/components/toast/ToastProvider.tsx"
+      },
+      {
+        "fromSymbol": "TooltipProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/components/tooltip/types.ts"
       },
       {
         "fromSymbol": "TooltipProps",
@@ -33624,6 +34154,11 @@
         "sourcePath": "src/context/TranslationContext.tsx"
       },
       {
+        "fromSymbol": "InteractionPolicyProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/interactionPolicy.ts"
+      },
+      {
         "fromSymbol": "ButtonBaseProps",
         "toType": "AccessibilityRole",
         "sourcePath": "src/primitives/button-base/types.ts"
@@ -33646,6 +34181,11 @@
       {
         "fromSymbol": "ButtonBaseProps",
         "toType": "GestureResponderEvent",
+        "sourcePath": "src/primitives/button-base/types.ts"
+      },
+      {
+        "fromSymbol": "ButtonBaseProps",
+        "toType": "InteractionPolicy",
         "sourcePath": "src/primitives/button-base/types.ts"
       },
       {
@@ -34940,13 +35480,13 @@
       {
         "fromComponent": "ActionSheet",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n          onPress={closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
+        "jsxElement": "<Pressable\n          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
         "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
       },
       {
         "fromComponent": "ActionSheet",
         "toComponent": "FocusScope",
-        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
+        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={passive ? undefined : onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
         "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
       },
       {
@@ -35000,13 +35540,13 @@
       {
         "fromComponent": "ActionSheet",
         "toComponent": "ActionSheetItem",
-        "jsxElement": "<ActionSheetItem\n                      label={cancelLabel}\n                      onPress={onDismiss}\n                      testID={testID ? `${testID}-cancel` : undefined}\n                    />",
+        "jsxElement": "<ActionSheetItem\n                      label={cancelLabel}\n                      interactionPolicy={interactionPolicy}\n                      onPress={onDismiss}\n                      testID={testID ? `${testID}-cancel` : undefined}\n                    />",
         "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
       },
       {
         "fromComponent": "ActionSheetItem",
         "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      accessibilityRole=\"button\"\n      accessibilityState={{ disabled, selected }}\n      disabled={disabled}\n      onPress={onPress}\n      radius=\"m\"\n      testID={testID}\n    >",
+        "jsxElement": "<ButtonBase\n      accessibilityRole=\"button\"\n      accessibilityState={{ disabled, selected }}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={onPress}\n      radius=\"m\"\n      testID={testID}\n    >",
         "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
       },
       {
@@ -35162,7 +35702,7 @@
       {
         "fromComponent": "ButtonBase",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole={accessibilityRole}\n      accessibilityState={{ ...accessibilityState, disabled }}\n      disabled={disabled}\n      onBlur={() => setFocused(false)}\n      onFocus={() => {\n        if (isWeb) {\n          setFocused(true);\n        }\n      }}\n      onHoverIn={isWeb ? () => setHovered(true) : undefined}\n      onHoverOut={isWeb ? () => setHovered(false) : undefined}\n      onLongPress={onLongPress}\n      onPress={onPress}\n      style={(pressableState) => {\n        const state = getInteractionState(pressableState, hovered, focused, disabled);\n\n        return [\n          resolvedBoxStyles,\n          resolveFocusRingStyles(theme.semantics.border.focus, state.focused, isWeb),\n          style,\n        ];\n      }}\n      testID={testID}\n    >",
+        "jsxElement": "<Pressable\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole={accessibilityRole}\n      accessibilityState={{ ...accessibilityState, disabled }}\n      disabled={disabled}\n      onBlur={() => setFocused(false)}\n      onFocus={() => {\n        if (isWeb) {\n          setFocused(true);\n        }\n      }}\n      onHoverIn={isWeb ? () => setHovered(true) : undefined}\n      onHoverOut={isWeb ? () => setHovered(false) : undefined}\n      onLongPress={passive ? undefined : onLongPress}\n      onPress={passive ? undefined : onPress}\n      style={(pressableState) => {\n        const state = getInteractionState(pressableState, hovered, focused, disabled);\n\n        return [\n          resolvedBoxStyles,\n          resolveFocusRingStyles(theme.semantics.border.focus, state.focused, isWeb),\n          style,\n        ];\n      }}\n      testID={testID}\n    >",
         "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
       },
       {
@@ -35258,13 +35798,13 @@
       {
         "fromComponent": "Drawer",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n          onPress={closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
+        "jsxElement": "<Pressable\n          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
         "sourcePath": "src/components/drawer/Drawer.tsx"
       },
       {
         "fromComponent": "Drawer",
         "toComponent": "FocusScope",
-        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
+        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={passive ? undefined : onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
         "sourcePath": "src/components/drawer/Drawer.tsx"
       },
       {
@@ -35300,13 +35840,13 @@
       {
         "fromComponent": "DrawerNavigation",
         "toComponent": "DrawerNavigationItem",
-        "jsxElement": "<DrawerNavigationItem compact={compact} item={item} key={item.id} testID={testID} />",
+        "jsxElement": "<DrawerNavigationItem\n            compact={compact}\n            interactionPolicy={interactionPolicy}\n            item={item}\n            key={item.id}\n            testID={testID}\n          />",
         "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
       },
       {
         "fromComponent": "DrawerNavigationItem",
         "toComponent": "NavigationItem",
-        "jsxElement": "<NavigationItem\n      compact={compact}\n      item={{\n        ...item,\n        accessibilityRole: item.accessibilityRole ?? 'button',\n      }}\n      testID={testID}\n    />",
+        "jsxElement": "<NavigationItem\n      compact={compact}\n      interactionPolicy={interactionPolicy}\n      item={{\n        ...item,\n        accessibilityRole: item.accessibilityRole ?? 'button',\n      }}\n      testID={testID}\n    />",
         "sourcePath": "src/components/navigation/DrawerNavigationItem.tsx"
       },
       {
@@ -35444,7 +35984,7 @@
       {
         "fromComponent": "Menu",
         "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n        onPress={open ? closeMenu : openMenu}\n        testID={testID ? `${testID}-trigger` : undefined}\n      >",
+        "jsxElement": "<ButtonBase\n        onPress={passive ? undefined : open ? closeMenu : openMenu}\n        testID={testID ? `${testID}-trigger` : undefined}\n      >",
         "sourcePath": "src/components/menu/Menu.tsx"
       },
       {
@@ -35462,13 +36002,13 @@
       {
         "fromComponent": "Menu",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n            onPress={closeMenu}\n            style={{\n              bottom: 0,\n              left: 0,\n              position: 'absolute',\n              right: 0,\n              top: 0,\n            }}\n          />",
+        "jsxElement": "<Pressable\n            onPress={passive ? undefined : closeMenu}\n            style={{\n              bottom: 0,\n              left: 0,\n              position: 'absolute',\n              right: 0,\n              top: 0,\n            }}\n          />",
         "sourcePath": "src/components/menu/Menu.tsx"
       },
       {
         "fromComponent": "Menu",
         "toComponent": "FocusScope",
-        "jsxElement": "<FocusScope active={open} onEscape={closeMenu}>",
+        "jsxElement": "<FocusScope active={open} onEscape={passive ? undefined : closeMenu}>",
         "sourcePath": "src/components/menu/Menu.tsx"
       },
       {
@@ -35486,7 +36026,7 @@
       {
         "fromComponent": "Menu",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n                      accessibilityRole=\"menuitem\"\n                      accessibilityState={{ disabled: action.disabled, selected }}\n                      disabled={action.disabled}\n                      key={action.id}\n                      onPress={() => activateAction(action)}\n                    >",
+        "jsxElement": "<Pressable\n                      accessibilityRole=\"menuitem\"\n                      accessibilityState={{ disabled: action.disabled, selected }}\n                      disabled={action.disabled}\n                      key={action.id}\n                      onPress={passive ? undefined : () => activateAction(action)}\n                    >",
         "sourcePath": "src/components/menu/Menu.tsx"
       },
       {
@@ -35510,13 +36050,13 @@
       {
         "fromComponent": "Modal",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n          onPress={closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
+        "jsxElement": "<Pressable\n          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
         "sourcePath": "src/components/modal/Modal.tsx"
       },
       {
         "fromComponent": "Modal",
         "toComponent": "FocusScope",
-        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
+        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={passive ? undefined : onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
         "sourcePath": "src/components/modal/Modal.tsx"
       },
       {
@@ -35540,7 +36080,7 @@
       {
         "fromComponent": "NavigationItem",
         "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      accessibilityLabel={item.accessibilityLabel}\n      accessibilityRole={item.accessibilityRole ?? 'button'}\n      accessibilityState={resolvedAccessibilityState}\n      disabled={disabled}\n      onPress={item.onPress}\n      testID={resolvedTestID}\n    >",
+        "jsxElement": "<ButtonBase\n      accessibilityLabel={item.accessibilityLabel}\n      accessibilityRole={item.accessibilityRole ?? 'button'}\n      accessibilityState={resolvedAccessibilityState}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={item.onPress}\n      testID={resolvedTestID}\n    >",
         "sourcePath": "src/components/navigation/NavigationItem.tsx"
       },
       {
@@ -35588,7 +36128,7 @@
       {
         "fromComponent": "NavigationList",
         "toComponent": "NavigationItem",
-        "jsxElement": "<NavigationItem compact={compact} item={item} key={item.id} testID={testID} />",
+        "jsxElement": "<NavigationItem\n          compact={compact}\n          interactionPolicy={interactionPolicy}\n          item={item}\n          key={item.id}\n          testID={testID}\n        />",
         "sourcePath": "src/components/navigation/NavigationList.tsx"
       },
       {
@@ -35714,7 +36254,7 @@
       {
         "fromComponent": "Tab",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n      accessibilityLabel={undefined}\n      accessibilityRole=\"tab\"\n      accessibilityState={{ disabled, selected }}\n      nativeID={tabId}\n      aria-controls={panelId}\n      disabled={disabled}\n      onFocus={() => setFocusedValue(value)}\n      onBlur={() => setFocusedValue(undefined)}\n      onPress={() => {\n        if (!disabled) {\n          setActiveValue(value);\n        }\n      }}\n      ref={pressableRef}\n      testID={testID}\n    >",
+        "jsxElement": "<Pressable\n      accessibilityLabel={undefined}\n      accessibilityRole=\"tab\"\n      accessibilityState={{ disabled, selected }}\n      nativeID={tabId}\n      aria-controls={panelId}\n      disabled={disabled}\n      onFocus={() => setFocusedValue(value)}\n      onBlur={() => setFocusedValue(undefined)}\n      onPress={\n        passive\n          ? undefined\n          : () => {\n              if (!disabled) {\n                setActiveValue(value);\n              }\n            }\n      }\n      ref={pressableRef}\n      testID={testID}\n    >",
         "sourcePath": "src/components/tabs/Tab.tsx"
       },
       {
@@ -35738,13 +36278,13 @@
       {
         "fromComponent": "TabBar",
         "toComponent": "TabBarItem",
-        "jsxElement": "<TabBarItem compact={compact} item={item} key={item.id} testID={testID} />",
+        "jsxElement": "<TabBarItem\n          compact={compact}\n          interactionPolicy={interactionPolicy}\n          item={item}\n          key={item.id}\n          testID={testID}\n        />",
         "sourcePath": "src/components/navigation/TabBar.tsx"
       },
       {
         "fromComponent": "TabBarItem",
         "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      accessibilityLabel={item.accessibilityLabel}\n      accessibilityRole={item.accessibilityRole ?? 'tab'}\n      accessibilityState={resolvedAccessibilityState}\n      disabled={disabled}\n      onPress={item.onPress}\n      style={{ flex: 1 }}\n      testID={resolvedTestID}\n    >",
+        "jsxElement": "<ButtonBase\n      accessibilityLabel={item.accessibilityLabel}\n      accessibilityRole={item.accessibilityRole ?? 'tab'}\n      accessibilityState={resolvedAccessibilityState}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={item.onPress}\n      style={{ flex: 1 }}\n      testID={resolvedTestID}\n    >",
         "sourcePath": "src/components/navigation/TabBarItem.tsx"
       },
       {
@@ -35840,7 +36380,7 @@
       {
         "fromComponent": "TextInput",
         "toComponent": "ReactNativeTextInput",
-        "jsxElement": "<ReactNativeTextInput\n        {...props}\n        defaultValue={defaultValue}\n        editable={!disabled && !readOnly}\n        numberOfLines={props.multiline ? props.numberOfLines : 1}\n        onBlur={handleBlur}\n        onChangeText={onChangeText}\n        onFocus={handleFocus}\n        placeholder={placeholder}\n        placeholderTextColor={colors.placeholderColor}\n        readOnly={readOnly}\n        style={[\n          {\n            flex: 1,\n            minHeight: inputMinHeight,\n            padding: 0,\n            color: colors.contentColor,\n            textAlignVertical: props.multiline ? 'top' : 'center',\n          },\n          style,\n        ]}\n        testID={testID}\n        value={value}\n      />",
+        "jsxElement": "<ReactNativeTextInput\n        {...props}\n        defaultValue={defaultValue}\n        editable={passive ? false : !disabled && !readOnly}\n        numberOfLines={props.multiline ? props.numberOfLines : 1}\n        onBlur={handleBlur}\n        onChangeText={(nextValue) => {\n          if (passive) {\n            return;\n          }\n\n          onChangeText?.(nextValue);\n        }}\n        onFocus={handleFocus}\n        placeholder={placeholder}\n        placeholderTextColor={colors.placeholderColor}\n        readOnly={readOnly}\n        style={[\n          {\n            flex: 1,\n            minHeight: inputMinHeight,\n            padding: 0,\n            color: colors.contentColor,\n            textAlignVertical: props.multiline ? 'top' : 'center',\n          },\n          style,\n        ]}\n        testID={testID}\n        value={value}\n      />",
         "sourcePath": "src/components/text-input/TextInput.tsx"
       },
       {
@@ -35900,7 +36440,7 @@
       {
         "fromComponent": "Toast",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n            accessibilityLabel=\"Dismiss notification\"\n            accessibilityRole=\"button\"\n            onPress={onDismiss}\n            testID={testID ? `${testID}-dismiss` : undefined}\n          >",
+        "jsxElement": "<Pressable\n            accessibilityLabel=\"Dismiss notification\"\n            accessibilityRole=\"button\"\n            onPress={passive ? undefined : onDismiss}\n            testID={testID ? `${testID}-dismiss` : undefined}\n          >",
         "sourcePath": "src/components/toast/Toast.tsx"
       },
       {
@@ -35942,7 +36482,7 @@
       {
         "fromComponent": "Tooltip",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n        onBlur={hide}\n        onFocus={show}\n        onHoverIn={Platform.OS === 'web' ? show : undefined}\n        onHoverOut={Platform.OS === 'web' ? hide : undefined}\n      >",
+        "jsxElement": "<Pressable\n        onBlur={passive ? undefined : hide}\n        onFocus={passive ? undefined : show}\n        onHoverIn={Platform.OS === 'web' && !passive ? show : undefined}\n        onHoverOut={Platform.OS === 'web' && !passive ? hide : undefined}\n      >",
         "sourcePath": "src/components/tooltip/Tooltip.tsx"
       },
       {
