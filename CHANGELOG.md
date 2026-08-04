@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 2.1.1
+
+### Patch Changes
+
+- dbfb4e6: Update COLOR-THEORY
+
 ## 2.1.0
 
 ### Minor Changes
