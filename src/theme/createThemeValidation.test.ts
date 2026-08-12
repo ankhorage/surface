@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'bun:test';
 import type { ThemeConfig, ThemeGlobalTokenOverrides } from '@ankhorage/contracts';
+import { describe, expect, it } from 'bun:test';
 
 import { createTheme, DEFAULT_CONFIG } from './createTheme';
 
