@@ -12,7 +12,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v2.1.0",
+      "value": "v2.1.1",
       "color": "cb3837"
     },
     {
@@ -59,8 +59,14 @@
     }
   ],
   "usage": null,
+  "readmeUsageDescription": null,
+  "readmeUsage": [],
+  "readmeCli": null,
+  "readmeConfig": null,
   "config": null,
-  "entrypoints": ["src/index.ts"],
+  "entrypoints": [
+    "src/index.ts"
+  ],
   "modules": [
     {
       "path": "src/components/action-sheet/ActionSheet.tsx",
@@ -75,7 +81,9 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["ActionSheet"]
+      "exports": [
+        "ActionSheet"
+      ]
     },
     {
       "path": "src/components/action-sheet/ActionSheetItem.tsx",
@@ -86,19 +94,32 @@
         "src/primitives/button-base/index.ts",
         "src/primitives/text/index.ts"
       ],
-      "exports": ["ActionSheetItem"]
+      "exports": [
+        "ActionSheetItem"
+      ]
     },
     {
       "path": "src/components/action-sheet/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["ActionSheet", "ActionSheetItem", "ActionSheetItemProps", "ActionSheetProps"]
+      "exports": [
+        "ActionSheet",
+        "ActionSheetItem",
+        "ActionSheetItemProps",
+        "ActionSheetProps"
+      ]
     },
     {
       "path": "src/components/action-sheet/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts", "src/surfaceColor.ts"],
-      "exports": ["ActionSheetItemProps", "ActionSheetProps"]
+      "dependencies": [
+        "src/interactionPolicy.ts",
+        "src/surfaceColor.ts"
+      ],
+      "exports": [
+        "ActionSheetItemProps",
+        "ActionSheetProps"
+      ]
     },
     {
       "path": "src/components/badge/Badge.tsx",
@@ -110,13 +131,18 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Badge"]
+      "exports": [
+        "Badge"
+      ]
     },
     {
       "path": "src/components/badge/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Badge", "BadgeProps"]
+      "exports": [
+        "Badge",
+        "BadgeProps"
+      ]
     },
     {
       "path": "src/components/badge/types.ts",
@@ -126,7 +152,9 @@
         "src/internal/resolvers/resolveInteractiveColors.ts",
         "src/surfaceColor.ts"
       ],
-      "exports": ["BadgeProps"]
+      "exports": [
+        "BadgeProps"
+      ]
     },
     {
       "path": "src/components/button/Button.tsx",
@@ -140,13 +168,19 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Button"]
+      "exports": [
+        "Button"
+      ]
     },
     {
       "path": "src/components/button/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Button", "ButtonIconSpec", "ButtonProps"]
+      "exports": [
+        "Button",
+        "ButtonIconSpec",
+        "ButtonProps"
+      ]
     },
     {
       "path": "src/components/button/types.ts",
@@ -158,7 +192,10 @@
         "src/primitives/icon/index.ts",
         "src/surfaceColor.ts"
       ],
-      "exports": ["ButtonIconSpec", "ButtonProps"]
+      "exports": [
+        "ButtonIconSpec",
+        "ButtonProps"
+      ]
     },
     {
       "path": "src/components/card/Card.tsx",
@@ -169,19 +206,28 @@
         "src/primitives/button-base/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Card"]
+      "exports": [
+        "Card"
+      ]
     },
     {
       "path": "src/components/card/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Card", "CardProps"]
+      "exports": [
+        "Card",
+        "CardProps"
+      ]
     },
     {
       "path": "src/components/card/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/layout/index.ts"],
-      "exports": ["CardProps"]
+      "dependencies": [
+        "src/layout/index.ts"
+      ],
+      "exports": [
+        "CardProps"
+      ]
     },
     {
       "path": "src/components/checkbox/Checkbox.tsx",
@@ -195,13 +241,18 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Checkbox"]
+      "exports": [
+        "Checkbox"
+      ]
     },
     {
       "path": "src/components/checkbox/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Checkbox", "CheckboxProps"]
+      "exports": [
+        "Checkbox",
+        "CheckboxProps"
+      ]
     },
     {
       "path": "src/components/checkbox/types.ts",
@@ -211,7 +262,9 @@
         "src/primitives/button-base/index.ts",
         "src/surfaceColor.ts"
       ],
-      "exports": ["CheckboxProps"]
+      "exports": [
+        "CheckboxProps"
+      ]
     },
     {
       "path": "src/components/drawer/Drawer.tsx",
@@ -224,19 +277,28 @@
         "src/layout/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Drawer"]
+      "exports": [
+        "Drawer"
+      ]
     },
     {
       "path": "src/components/drawer/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Drawer", "DrawerProps"]
+      "exports": [
+        "Drawer",
+        "DrawerProps"
+      ]
     },
     {
       "path": "src/components/drawer/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["DrawerProps"]
+      "dependencies": [
+        "src/interactionPolicy.ts"
+      ],
+      "exports": [
+        "DrawerProps"
+      ]
     },
     {
       "path": "src/components/field/Field.tsx",
@@ -248,37 +310,56 @@
         "src/internal/resolvers/index.ts",
         "src/layout/index.ts"
       ],
-      "exports": ["Field"]
+      "exports": [
+        "Field"
+      ]
     },
     {
       "path": "src/components/field/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Field", "FieldProps"]
+      "exports": [
+        "Field",
+        "FieldProps"
+      ]
     },
     {
       "path": "src/components/field/types.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["FieldProps"]
+      "exports": [
+        "FieldProps"
+      ]
     },
     {
       "path": "src/components/helper-text/HelperText.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/components/helper-text/types.ts", "src/primitives/text/index.ts"],
-      "exports": ["HelperText"]
+      "dependencies": [
+        "src/components/helper-text/types.ts",
+        "src/primitives/text/index.ts"
+      ],
+      "exports": [
+        "HelperText"
+      ]
     },
     {
       "path": "src/components/helper-text/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["HelperText", "HelperTextProps"]
+      "exports": [
+        "HelperText",
+        "HelperTextProps"
+      ]
     },
     {
       "path": "src/components/helper-text/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts"],
-      "exports": ["HelperTextProps"]
+      "dependencies": [
+        "src/surfaceColor.ts"
+      ],
+      "exports": [
+        "HelperTextProps"
+      ]
     },
     {
       "path": "src/components/icon-button/IconButton.tsx",
@@ -291,13 +372,18 @@
         "src/primitives/icon/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["IconButton"]
+      "exports": [
+        "IconButton"
+      ]
     },
     {
       "path": "src/components/icon-button/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["IconButton", "IconButtonProps"]
+      "exports": [
+        "IconButton",
+        "IconButtonProps"
+      ]
     },
     {
       "path": "src/components/icon-button/types.ts",
@@ -309,31 +395,48 @@
         "src/primitives/icon/index.ts",
         "src/surfaceColor.ts"
       ],
-      "exports": ["IconButtonProps"]
+      "exports": [
+        "IconButtonProps"
+      ]
     },
     {
       "path": "src/components/label/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Label", "LabelProps"]
+      "exports": [
+        "Label",
+        "LabelProps"
+      ]
     },
     {
       "path": "src/components/label/Label.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/components/label/types.ts", "src/primitives/text/index.ts"],
-      "exports": ["Label"]
+      "dependencies": [
+        "src/components/label/types.ts",
+        "src/primitives/text/index.ts"
+      ],
+      "exports": [
+        "Label"
+      ]
     },
     {
       "path": "src/components/label/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts"],
-      "exports": ["LabelProps"]
+      "dependencies": [
+        "src/surfaceColor.ts"
+      ],
+      "exports": [
+        "LabelProps"
+      ]
     },
     {
       "path": "src/components/list-item/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["ListItem", "ListItemProps"]
+      "exports": [
+        "ListItem",
+        "ListItemProps"
+      ]
     },
     {
       "path": "src/components/list-item/ListItem.tsx",
@@ -345,19 +448,29 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["ListItem"]
+      "exports": [
+        "ListItem"
+      ]
     },
     {
       "path": "src/components/list-item/types.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["ListItemProps"]
+      "exports": [
+        "ListItemProps"
+      ]
     },
     {
       "path": "src/components/menu/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Menu", "MenuAction", "MenuActionIntent", "MenuItem", "MenuProps"]
+      "exports": [
+        "Menu",
+        "MenuAction",
+        "MenuActionIntent",
+        "MenuItem",
+        "MenuProps"
+      ]
     },
     {
       "path": "src/components/menu/Menu.tsx",
@@ -374,25 +487,38 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Menu"]
+      "exports": [
+        "Menu"
+      ]
     },
     {
       "path": "src/components/menu/navigation.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["resolveNextMenuIndex"]
+      "exports": [
+        "resolveNextMenuIndex"
+      ]
     },
     {
       "path": "src/components/menu/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["MenuAction", "MenuActionIntent", "MenuProps"]
+      "dependencies": [
+        "src/interactionPolicy.ts"
+      ],
+      "exports": [
+        "MenuAction",
+        "MenuActionIntent",
+        "MenuProps"
+      ]
     },
     {
       "path": "src/components/modal/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Modal", "ModalProps"]
+      "exports": [
+        "Modal",
+        "ModalProps"
+      ]
     },
     {
       "path": "src/components/modal/Modal.tsx",
@@ -405,13 +531,19 @@
         "src/layout/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Modal"]
+      "exports": [
+        "Modal"
+      ]
     },
     {
       "path": "src/components/modal/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["ModalProps"]
+      "dependencies": [
+        "src/interactionPolicy.ts"
+      ],
+      "exports": [
+        "ModalProps"
+      ]
     },
     {
       "path": "src/components/navigation/DrawerNavigation.tsx",
@@ -421,7 +553,9 @@
         "src/components/navigation/types.ts",
         "src/layout/index.ts"
       ],
-      "exports": ["DrawerNavigation"]
+      "exports": [
+        "DrawerNavigation"
+      ]
     },
     {
       "path": "src/components/navigation/DrawerNavigationItem.tsx",
@@ -430,12 +564,17 @@
         "src/components/navigation/NavigationItem.tsx",
         "src/components/navigation/types.ts"
       ],
-      "exports": ["DrawerNavigationItem"]
+      "exports": [
+        "DrawerNavigationItem"
+      ]
     },
     {
       "path": "src/components/navigation/helpers.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveInteractiveState.ts", "src/theme/types.ts"],
+      "dependencies": [
+        "src/internal/resolvers/resolveInteractiveState.ts",
+        "src/theme/types.ts"
+      ],
       "exports": [
         "ResolvedNavigationItemPresentation",
         "resolveNavigationAccessibilityState",
@@ -475,7 +614,9 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["NavigationItem"]
+      "exports": [
+        "NavigationItem"
+      ]
     },
     {
       "path": "src/components/navigation/NavigationList.tsx",
@@ -485,7 +626,9 @@
         "src/components/navigation/types.ts",
         "src/layout/index.ts"
       ],
-      "exports": ["NavigationList"]
+      "exports": [
+        "NavigationList"
+      ]
     },
     {
       "path": "src/components/navigation/TabBar.tsx",
@@ -496,7 +639,9 @@
         "src/layout/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["TabBar"]
+      "exports": [
+        "TabBar"
+      ]
     },
     {
       "path": "src/components/navigation/TabBarItem.tsx",
@@ -510,12 +655,17 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["TabBarItem"]
+      "exports": [
+        "TabBarItem"
+      ]
     },
     {
       "path": "src/components/navigation/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts", "src/primitives/icon/index.ts"],
+      "dependencies": [
+        "src/interactionPolicy.ts",
+        "src/primitives/icon/index.ts"
+      ],
       "exports": [
         "DrawerNavigationItemProps",
         "DrawerNavigationProps",
@@ -531,7 +681,10 @@
       "path": "src/components/radio/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Radio", "RadioProps"]
+      "exports": [
+        "Radio",
+        "RadioProps"
+      ]
     },
     {
       "path": "src/components/radio/Radio.tsx",
@@ -545,7 +698,9 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Radio"]
+      "exports": [
+        "Radio"
+      ]
     },
     {
       "path": "src/components/radio/types.ts",
@@ -555,13 +710,18 @@
         "src/primitives/button-base/index.ts",
         "src/surfaceColor.ts"
       ],
-      "exports": ["RadioProps"]
+      "exports": [
+        "RadioProps"
+      ]
     },
     {
       "path": "src/components/switch/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Switch", "SwitchProps"]
+      "exports": [
+        "Switch",
+        "SwitchProps"
+      ]
     },
     {
       "path": "src/components/switch/Switch.tsx",
@@ -575,7 +735,9 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Switch"]
+      "exports": [
+        "Switch"
+      ]
     },
     {
       "path": "src/components/switch/types.ts",
@@ -585,19 +747,29 @@
         "src/primitives/button-base/index.ts",
         "src/surfaceColor.ts"
       ],
-      "exports": ["SwitchProps"]
+      "exports": [
+        "SwitchProps"
+      ]
     },
     {
       "path": "src/components/tabs/a11y.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["getTabId", "getTabPanelId"]
+      "exports": [
+        "getTabId",
+        "getTabPanelId"
+      ]
     },
     {
       "path": "src/components/tabs/context.tsx",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["TabRegistration", "TabsContext", "TabsContextValue", "useTabsContext"]
+      "exports": [
+        "TabRegistration",
+        "TabsContext",
+        "TabsContextValue",
+        "useTabsContext"
+      ]
     },
     {
       "path": "src/components/tabs/index.ts",
@@ -617,8 +789,12 @@
     {
       "path": "src/components/tabs/navigation.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/components/tabs/context.tsx"],
-      "exports": ["resolveNextTabValue"]
+      "dependencies": [
+        "src/components/tabs/context.tsx"
+      ],
+      "exports": [
+        "resolveNextTabValue"
+      ]
     },
     {
       "path": "src/components/tabs/Tab.tsx",
@@ -630,7 +806,9 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Tab"]
+      "exports": [
+        "Tab"
+      ]
     },
     {
       "path": "src/components/tabs/TabList.tsx",
@@ -642,13 +820,20 @@
         "src/internal/focus/useFocusManager.ts",
         "src/layout/index.ts"
       ],
-      "exports": ["TabList"]
+      "exports": [
+        "TabList"
+      ]
     },
     {
       "path": "src/components/tabs/TabPanel.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/components/tabs/context.tsx", "src/components/tabs/types.ts"],
-      "exports": ["TabPanel"]
+      "dependencies": [
+        "src/components/tabs/context.tsx",
+        "src/components/tabs/types.ts"
+      ],
+      "exports": [
+        "TabPanel"
+      ]
     },
     {
       "path": "src/components/tabs/Tabs.tsx",
@@ -660,19 +845,31 @@
         "src/internal/useControllableState.ts",
         "src/layout/index.ts"
       ],
-      "exports": ["Tabs"]
+      "exports": [
+        "Tabs"
+      ]
     },
     {
       "path": "src/components/tabs/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["TabListProps", "TabPanelProps", "TabProps", "TabsProps"]
+      "dependencies": [
+        "src/interactionPolicy.ts"
+      ],
+      "exports": [
+        "TabListProps",
+        "TabPanelProps",
+        "TabProps",
+        "TabsProps"
+      ]
     },
     {
       "path": "src/components/text-input/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["TextInput", "TextInputProps"]
+      "exports": [
+        "TextInput",
+        "TextInputProps"
+      ]
     },
     {
       "path": "src/components/text-input/TextInput.tsx",
@@ -682,37 +879,63 @@
         "src/internal/resolvers/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["TextInput"]
+      "exports": [
+        "TextInput"
+      ]
     },
     {
       "path": "src/components/text-input/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts", "src/internal/resolvers/resolveControlSize.ts"],
-      "exports": ["TextInputProps"]
+      "dependencies": [
+        "src/interactionPolicy.ts",
+        "src/internal/resolvers/resolveControlSize.ts"
+      ],
+      "exports": [
+        "TextInputProps"
+      ]
     },
     {
       "path": "src/components/textarea/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Textarea", "TextareaProps"]
+      "exports": [
+        "Textarea",
+        "TextareaProps"
+      ]
     },
     {
       "path": "src/components/textarea/Textarea.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/components/text-input/index.ts", "src/components/textarea/types.ts"],
-      "exports": ["Textarea"]
+      "dependencies": [
+        "src/components/text-input/index.ts",
+        "src/components/textarea/types.ts"
+      ],
+      "exports": [
+        "Textarea"
+      ]
     },
     {
       "path": "src/components/textarea/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/components/text-input/index.ts"],
-      "exports": ["TextareaProps"]
+      "dependencies": [
+        "src/components/text-input/index.ts"
+      ],
+      "exports": [
+        "TextareaProps"
+      ]
     },
     {
       "path": "src/components/toast/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Toast", "ToastOptions", "ToastProps", "ToastProvider", "ToastStatus", "useToast"]
+      "exports": [
+        "Toast",
+        "ToastOptions",
+        "ToastProps",
+        "ToastProvider",
+        "ToastStatus",
+        "useToast"
+      ]
     },
     {
       "path": "src/components/toast/Toast.tsx",
@@ -725,7 +948,9 @@
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts"
       ],
-      "exports": ["Toast"]
+      "exports": [
+        "Toast"
+      ]
     },
     {
       "path": "src/components/toast/ToastProvider.tsx",
@@ -737,19 +962,32 @@
         "src/internal/resolvers/index.ts",
         "src/layout/index.ts"
       ],
-      "exports": ["ToastProvider", "useToast"]
+      "exports": [
+        "ToastProvider",
+        "useToast"
+      ]
     },
     {
       "path": "src/components/toast/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts", "src/surfaceColor.ts"],
-      "exports": ["ToastOptions", "ToastProps", "ToastStatus"]
+      "dependencies": [
+        "src/interactionPolicy.ts",
+        "src/surfaceColor.ts"
+      ],
+      "exports": [
+        "ToastOptions",
+        "ToastProps",
+        "ToastStatus"
+      ]
     },
     {
       "path": "src/components/tooltip/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Tooltip", "TooltipProps"]
+      "exports": [
+        "Tooltip",
+        "TooltipProps"
+      ]
     },
     {
       "path": "src/components/tooltip/Tooltip.tsx",
@@ -762,19 +1000,29 @@
         "src/primitives/text/index.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Tooltip"]
+      "exports": [
+        "Tooltip"
+      ]
     },
     {
       "path": "src/components/tooltip/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["TooltipProps"]
+      "dependencies": [
+        "src/interactionPolicy.ts"
+      ],
+      "exports": [
+        "TooltipProps"
+      ]
     },
     {
       "path": "src/context/FontContext.tsx",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["FontProvider", "FontRuntime", "useFontContext"]
+      "exports": [
+        "FontProvider",
+        "FontRuntime",
+        "useFontContext"
+      ]
     },
     {
       "path": "src/context/TranslationContext.tsx",
@@ -792,13 +1040,21 @@
       "path": "src/core/responsive/breakpoints.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["BREAKPOINT_ORDER", "BREAKPOINTS"]
+      "exports": [
+        "BREAKPOINT_ORDER",
+        "BREAKPOINTS"
+      ]
     },
     {
       "path": "src/core/responsive/getBreakpointFromWidth.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/core/responsive/breakpoints.ts", "src/core/responsive/types.ts"],
-      "exports": ["getBreakpointFromWidth"]
+      "dependencies": [
+        "src/core/responsive/breakpoints.ts",
+        "src/core/responsive/types.ts"
+      ],
+      "exports": [
+        "getBreakpointFromWidth"
+      ]
     },
     {
       "path": "src/core/responsive/index.ts",
@@ -820,8 +1076,13 @@
     {
       "path": "src/core/responsive/resolve.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/core/responsive/breakpoints.ts", "src/core/responsive/types.ts"],
-      "exports": ["resolveResponsive"]
+      "dependencies": [
+        "src/core/responsive/breakpoints.ts",
+        "src/core/responsive/types.ts"
+      ],
+      "exports": [
+        "resolveResponsive"
+      ]
     },
     {
       "path": "src/core/responsive/ResponsiveProvider.tsx",
@@ -830,13 +1091,22 @@
         "src/core/responsive/getBreakpointFromWidth.ts",
         "src/core/responsive/types.ts"
       ],
-      "exports": ["ResponsiveProvider", "useResponsiveRuntime"]
+      "exports": [
+        "ResponsiveProvider",
+        "useResponsiveRuntime"
+      ]
     },
     {
       "path": "src/core/responsive/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/core/responsive/breakpoints.ts"],
-      "exports": ["Breakpoint", "Responsive", "ResponsiveRuntime"]
+      "dependencies": [
+        "src/core/responsive/breakpoints.ts"
+      ],
+      "exports": [
+        "Breakpoint",
+        "Responsive",
+        "ResponsiveRuntime"
+      ]
     },
     {
       "path": "src/core/responsive/useBreakpoint.ts",
@@ -845,7 +1115,9 @@
         "src/core/responsive/getBreakpointFromWidth.ts",
         "src/core/responsive/types.ts"
       ],
-      "exports": ["useBreakpoint"]
+      "exports": [
+        "useBreakpoint"
+      ]
     },
     {
       "path": "src/examples/DocsExamples.tsx",
@@ -868,7 +1140,12 @@
         "src/theme/index.ts",
         "src/theme/types.ts"
       ],
-      "exports": ["FeedbackExample", "FormExample", "NavigationExample", "OverlayExample"]
+      "exports": [
+        "FeedbackExample",
+        "FormExample",
+        "NavigationExample",
+        "OverlayExample"
+      ]
     },
     {
       "path": "src/index.ts",
@@ -1055,25 +1332,40 @@
       "path": "src/interactionPolicy.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["InteractionPolicy", "InteractionPolicyProps"]
+      "exports": [
+        "InteractionPolicy",
+        "InteractionPolicyProps"
+      ]
     },
     {
       "path": "src/internal/focus/FocusScope.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/focus/useFocusManager.ts"],
-      "exports": ["FocusScope", "FocusScopeProps"]
+      "dependencies": [
+        "src/internal/focus/useFocusManager.ts"
+      ],
+      "exports": [
+        "FocusScope",
+        "FocusScopeProps"
+      ]
     },
     {
       "path": "src/internal/focus/useFocusManager.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["getFocusableElements", "useFocusManager"]
+      "exports": [
+        "getFocusableElements",
+        "useFocusManager"
+      ]
     },
     {
       "path": "src/internal/overlay/OverlayProvider.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/overlay/useOverlayStack.ts"],
-      "exports": ["OverlayProvider"]
+      "dependencies": [
+        "src/internal/overlay/useOverlayStack.ts"
+      ],
+      "exports": [
+        "OverlayProvider"
+      ]
     },
     {
       "path": "src/internal/overlay/Portal.tsx",
@@ -1082,12 +1374,17 @@
         "src/internal/overlay/useOverlayStack.ts",
         "src/internal/resolvers/resolveOverlayZIndex.ts"
       ],
-      "exports": ["Portal", "PortalProps"]
+      "exports": [
+        "Portal",
+        "PortalProps"
+      ]
     },
     {
       "path": "src/internal/overlay/useOverlayStack.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveOverlayZIndex.ts"],
+      "dependencies": [
+        "src/internal/resolvers/resolveOverlayZIndex.ts"
+      ],
       "exports": [
         "createOverlayEntry",
         "OverlayDescriptor",
@@ -1141,38 +1438,65 @@
     {
       "path": "src/internal/resolvers/resolveControlSize.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/theme/types.ts"],
-      "exports": ["ControlSize", "resolveControlSize", "ResolvedControlSize"]
+      "dependencies": [
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "ControlSize",
+        "resolveControlSize",
+        "ResolvedControlSize"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveFieldPresentation.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveFieldState.ts", "src/surfaceColor.ts"],
-      "exports": ["ResolvedFieldPresentation", "resolveFieldPresentation"]
+      "dependencies": [
+        "src/internal/resolvers/resolveFieldState.ts",
+        "src/surfaceColor.ts"
+      ],
+      "exports": [
+        "ResolvedFieldPresentation",
+        "resolveFieldPresentation"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveFieldState.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["FieldState", "resolveFieldState"]
+      "exports": [
+        "FieldState",
+        "resolveFieldState"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveFocusRingStyles.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["resolveFocusRingStyles"]
+      "exports": [
+        "resolveFocusRingStyles"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveIconSize.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveControlSize.ts", "src/theme/types.ts"],
-      "exports": ["resolveIconSize"]
+      "dependencies": [
+        "src/internal/resolvers/resolveControlSize.ts",
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "resolveIconSize"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveIndicatorSize.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveControlSize.ts"],
-      "exports": ["ResolvedIndicatorSize", "resolveIndicatorSize"]
+      "dependencies": [
+        "src/internal/resolvers/resolveControlSize.ts"
+      ],
+      "exports": [
+        "ResolvedIndicatorSize",
+        "resolveIndicatorSize"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveInteractiveColors.ts",
@@ -1195,25 +1519,39 @@
       "path": "src/internal/resolvers/resolveInteractiveState.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["InteractionState", "resolveInteractiveState"]
+      "exports": [
+        "InteractionState",
+        "resolveInteractiveState"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveOverlayAnimation.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveOverlayZIndex.ts"],
-      "exports": ["OverlayAnimationValues", "resolveOverlayAnimation"]
+      "dependencies": [
+        "src/internal/resolvers/resolveOverlayZIndex.ts"
+      ],
+      "exports": [
+        "OverlayAnimationValues",
+        "resolveOverlayAnimation"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveOverlayZIndex.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["OverlayLayer", "resolveOverlayZIndex"]
+      "exports": [
+        "OverlayLayer",
+        "resolveOverlayZIndex"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveSelectionControlBehavior.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["resolveSelectionControlNextChecked", "SelectionControlKind"]
+      "exports": [
+        "resolveSelectionControlNextChecked",
+        "SelectionControlKind"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveSelectionControlColors.ts",
@@ -1224,13 +1562,21 @@
         "src/surfaceColor.ts",
         "src/theme/types.ts"
       ],
-      "exports": ["ResolvedSelectionControlColors", "resolveSelectionControlColors"]
+      "exports": [
+        "ResolvedSelectionControlColors",
+        "resolveSelectionControlColors"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveSurfaceColor.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts", "src/theme/types.ts"],
-      "exports": ["resolveSurfaceColor"]
+      "dependencies": [
+        "src/surfaceColor.ts",
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "resolveSurfaceColor"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveTextColor.ts",
@@ -1240,19 +1586,30 @@
         "src/surfaceColor.ts",
         "src/theme/types.ts"
       ],
-      "exports": ["resolveTextColor"]
+      "exports": [
+        "resolveTextColor"
+      ]
     },
     {
       "path": "src/internal/resolvers/resolveTextStyles.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/theme/types.ts"],
-      "exports": ["ResolveTextStyleOptions", "resolveTextStyles", "TextVariant", "TextWeight"]
+      "dependencies": [
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "ResolveTextStyleOptions",
+        "resolveTextStyles",
+        "TextVariant",
+        "TextWeight"
+      ]
     },
     {
       "path": "src/internal/useControllableState.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["useControllableState"]
+      "exports": [
+        "useControllableState"
+      ]
     },
     {
       "path": "src/layout/AppBar.tsx",
@@ -1262,7 +1619,10 @@
         "src/layout/Divider.tsx",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["AppBar", "AppBarProps"]
+      "exports": [
+        "AppBar",
+        "AppBarProps"
+      ]
     },
     {
       "path": "src/layout/Box.tsx",
@@ -1272,13 +1632,21 @@
         "src/layout/helpers.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Box", "BoxProps"]
+      "exports": [
+        "Box",
+        "BoxProps"
+      ]
     },
     {
       "path": "src/layout/Center.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/layout/Box.tsx"],
-      "exports": ["Center", "CenterProps"]
+      "dependencies": [
+        "src/layout/Box.tsx"
+      ],
+      "exports": [
+        "Center",
+        "CenterProps"
+      ]
     },
     {
       "path": "src/layout/Container.tsx",
@@ -1290,13 +1658,22 @@
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts"
       ],
-      "exports": ["Container", "ContainerProps"]
+      "exports": [
+        "Container",
+        "ContainerProps"
+      ]
     },
     {
       "path": "src/layout/Divider.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/layout/Box.tsx", "src/layout/helpers.ts"],
-      "exports": ["Divider", "DividerProps"]
+      "dependencies": [
+        "src/layout/Box.tsx",
+        "src/layout/helpers.ts"
+      ],
+      "exports": [
+        "Divider",
+        "DividerProps"
+      ]
     },
     {
       "path": "src/layout/Grid.tsx",
@@ -1307,7 +1684,10 @@
         "src/layout/helpers.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Grid", "GridProps"]
+      "exports": [
+        "Grid",
+        "GridProps"
+      ]
     },
     {
       "path": "src/layout/helpers.ts",
@@ -1318,7 +1698,13 @@
         "src/theme/resolveToken.ts",
         "src/theme/types.ts"
       ],
-      "exports": ["BoxStyleProps", "ColorValue", "resolveBoxStyles", "resolveSpacing", "SpaceValue"]
+      "exports": [
+        "BoxStyleProps",
+        "ColorValue",
+        "resolveBoxStyles",
+        "resolveSpacing",
+        "SpaceValue"
+      ]
     },
     {
       "path": "src/layout/index.ts",
@@ -1357,8 +1743,13 @@
     {
       "path": "src/layout/Inline.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/layout/Stack.tsx"],
-      "exports": ["Inline", "InlineProps"]
+      "dependencies": [
+        "src/layout/Stack.tsx"
+      ],
+      "exports": [
+        "Inline",
+        "InlineProps"
+      ]
     },
     {
       "path": "src/layout/ScrollArea.tsx",
@@ -1368,19 +1759,33 @@
         "src/layout/helpers.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["ScrollArea", "ScrollAreaProps"]
+      "exports": [
+        "ScrollArea",
+        "ScrollAreaProps"
+      ]
     },
     {
       "path": "src/layout/Show.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/core/responsive/index.ts"],
-      "exports": ["Show", "ShowProps"]
+      "dependencies": [
+        "src/core/responsive/index.ts"
+      ],
+      "exports": [
+        "Show",
+        "ShowProps"
+      ]
     },
     {
       "path": "src/layout/Spacer.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/layout/Box.tsx", "src/layout/helpers.ts"],
-      "exports": ["Spacer", "SpacerProps"]
+      "dependencies": [
+        "src/layout/Box.tsx",
+        "src/layout/helpers.ts"
+      ],
+      "exports": [
+        "Spacer",
+        "SpacerProps"
+      ]
     },
     {
       "path": "src/layout/Stack.tsx",
@@ -1391,13 +1796,23 @@
         "src/layout/helpers.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Stack", "StackProps"]
+      "exports": [
+        "Stack",
+        "StackProps"
+      ]
     },
     {
       "path": "src/layout/Surface.tsx",
       "isEntrypoint": false,
-      "dependencies": ["src/layout/Box.tsx", "src/theme/ThemeContext.tsx"],
-      "exports": ["Surface", "SurfaceProps", "SurfaceVariant"]
+      "dependencies": [
+        "src/layout/Box.tsx",
+        "src/theme/ThemeContext.tsx"
+      ],
+      "exports": [
+        "Surface",
+        "SurfaceProps",
+        "SurfaceVariant"
+      ]
     },
     {
       "path": "src/layout/Template.tsx",
@@ -1408,7 +1823,10 @@
         "src/layout/helpers.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Template", "TemplateProps"]
+      "exports": [
+        "Template",
+        "TemplateProps"
+      ]
     },
     {
       "path": "src/primitives/button-base/ButtonBase.tsx",
@@ -1420,13 +1838,18 @@
         "src/primitives/button-base/types.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["ButtonBase"]
+      "exports": [
+        "ButtonBase"
+      ]
     },
     {
       "path": "src/primitives/button-base/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["ButtonBase", "ButtonBaseProps"]
+      "exports": [
+        "ButtonBase",
+        "ButtonBaseProps"
+      ]
     },
     {
       "path": "src/primitives/button-base/types.ts",
@@ -1436,7 +1859,9 @@
         "src/internal/resolvers/resolveInteractiveState.ts",
         "src/layout/index.ts"
       ],
-      "exports": ["ButtonBaseProps"]
+      "exports": [
+        "ButtonBaseProps"
+      ]
     },
     {
       "path": "src/primitives/heading/Heading.tsx",
@@ -1447,13 +1872,19 @@
         "src/primitives/heading/types.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Heading"]
+      "exports": [
+        "Heading"
+      ]
     },
     {
       "path": "src/primitives/heading/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Heading", "HeadingLevel", "HeadingProps"]
+      "exports": [
+        "Heading",
+        "HeadingLevel",
+        "HeadingProps"
+      ]
     },
     {
       "path": "src/primitives/heading/resolveHeadingStyle.ts",
@@ -1465,13 +1896,20 @@
         "src/surfaceColor.ts",
         "src/theme/types.ts"
       ],
-      "exports": ["resolveHeadingTextStyle"]
+      "exports": [
+        "resolveHeadingTextStyle"
+      ]
     },
     {
       "path": "src/primitives/heading/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts"],
-      "exports": ["HeadingLevel", "HeadingProps"]
+      "dependencies": [
+        "src/surfaceColor.ts"
+      ],
+      "exports": [
+        "HeadingLevel",
+        "HeadingProps"
+      ]
     },
     {
       "path": "src/primitives/icon/Icon.tsx",
@@ -1482,19 +1920,30 @@
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts"
       ],
-      "exports": ["Icon", "IconProps", "IconProvider"]
+      "exports": [
+        "Icon",
+        "IconProps",
+        "IconProvider"
+      ]
     },
     {
       "path": "src/primitives/icon/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Icon", "IconProps", "IconProvider"]
+      "exports": [
+        "Icon",
+        "IconProps",
+        "IconProvider"
+      ]
     },
     {
       "path": "src/primitives/icon/resolveExpoIconComponent.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["ExpoIconComponent", "resolveExpoIconComponent"]
+      "exports": [
+        "ExpoIconComponent",
+        "resolveExpoIconComponent"
+      ]
     },
     {
       "path": "src/primitives/image/Image.tsx",
@@ -1504,13 +1953,20 @@
         "src/primitives/image/types.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Image"]
+      "exports": [
+        "Image"
+      ]
     },
     {
       "path": "src/primitives/image/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Image", "ImageFit", "ImageProps", "SurfaceImageSource"]
+      "exports": [
+        "Image",
+        "ImageFit",
+        "ImageProps",
+        "SurfaceImageSource"
+      ]
     },
     {
       "path": "src/primitives/image/resolveImageProps.ts",
@@ -1533,14 +1989,23 @@
     {
       "path": "src/primitives/image/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/theme/types.ts"],
-      "exports": ["ImageFit", "ImageProps", "SurfaceImageSource"]
+      "dependencies": [
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "ImageFit",
+        "ImageProps",
+        "SurfaceImageSource"
+      ]
     },
     {
       "path": "src/primitives/text/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Text", "TextProps"]
+      "exports": [
+        "Text",
+        "TextProps"
+      ]
     },
     {
       "path": "src/primitives/text/Text.tsx",
@@ -1551,13 +2016,20 @@
         "src/primitives/text/types.ts",
         "src/theme/ThemeContext.tsx"
       ],
-      "exports": ["Text"]
+      "exports": [
+        "Text"
+      ]
     },
     {
       "path": "src/primitives/text/types.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveTextStyles.ts", "src/surfaceColor.ts"],
-      "exports": ["TextProps"]
+      "dependencies": [
+        "src/internal/resolvers/resolveTextStyles.ts",
+        "src/surfaceColor.ts"
+      ],
+      "exports": [
+        "TextProps"
+      ]
     },
     {
       "path": "src/surfaceColor.ts",
@@ -1577,14 +2049,38 @@
     {
       "path": "src/theme/colorEngine.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/theme/types.ts"],
-      "exports": ["generatePalette", "resolveSemanticColors", "SurfaceSemanticColors"]
+      "dependencies": [
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "generatePalette",
+        "resolveSemanticColors",
+        "SurfaceSemanticColors"
+      ]
     },
     {
       "path": "src/theme/createTheme.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/theme/colorEngine.ts", "src/theme/types.ts"],
-      "exports": ["createTheme", "DEFAULT_CONFIG", "DEFAULT_TOKENS"]
+      "dependencies": [
+        "src/theme/colorEngine.ts",
+        "src/theme/resolveGlobalTokens.ts",
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "createTheme",
+        "DEFAULT_CONFIG",
+        "DEFAULT_TOKENS"
+      ]
+    },
+    {
+      "path": "src/theme/defaultTokens.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "DEFAULT_TOKENS"
+      ]
     },
     {
       "path": "src/theme/index.ts",
@@ -1627,10 +2123,54 @@
       ]
     },
     {
+      "path": "src/theme/resolveGlobalTokens.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/theme/defaultTokens.ts",
+        "src/theme/resolveHeadingTokenOverrides.ts",
+        "src/theme/resolveNumericTokenOverrides.ts",
+        "src/theme/resolveWeightTokenOverrides.ts",
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "resolveGlobalTokens"
+      ]
+    },
+    {
+      "path": "src/theme/resolveHeadingTokenOverrides.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "resolveHeadingTokenOverrides"
+      ]
+    },
+    {
+      "path": "src/theme/resolveNumericTokenOverrides.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "resolveNumericTokenOverrides"
+      ]
+    },
+    {
       "path": "src/theme/resolveToken.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["resolveToken"]
+      "exports": [
+        "resolveToken"
+      ]
+    },
+    {
+      "path": "src/theme/resolveWeightTokenOverrides.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/theme/types.ts"
+      ],
+      "exports": [
+        "resolveWeightTokenOverrides"
+      ]
     },
     {
       "path": "src/theme/ThemeContext.tsx",
@@ -1644,7 +2184,13 @@
         "src/utils/deepEqual.ts",
         "src/utils/deepMerge.ts"
       ],
-      "exports": ["ThemeContext", "ThemeProvider", "useTheme", "useThemeConfig", "useThemeMode"]
+      "exports": [
+        "ThemeContext",
+        "ThemeProvider",
+        "useTheme",
+        "useThemeConfig",
+        "useThemeMode"
+      ]
     },
     {
       "path": "src/theme/types.ts",
@@ -1678,13 +2224,17 @@
       "path": "src/utils/deepEqual.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["isDeepEqual"]
+      "exports": [
+        "isDeepEqual"
+      ]
     },
     {
       "path": "src/utils/deepMerge.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["deepMerge"]
+      "exports": [
+        "deepMerge"
+      ]
     }
   ],
   "exports": [
@@ -1700,8 +2250,12 @@
         "line": 62,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["RoleSemantics"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "RoleSemantics"
+      ],
       "signatures": [],
       "members": [
         {
@@ -1740,8 +2294,12 @@
         "line": 13,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ActionSheetProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ActionSheetProps"
+      ],
       "signatures": [
         {
           "label": "({\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ActionSheetProps) => React.JSX.Element | null",
@@ -1772,8 +2330,12 @@
         "line": 8,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ActionSheetItemProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ActionSheetItemProps"
+      ],
       "signatures": [
         {
           "label": "({\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}: ActionSheetItemProps) => React.JSX.Element",
@@ -1804,8 +2366,12 @@
         "line": 18,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -1893,8 +2459,12 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -1975,8 +2545,12 @@
         "line": 18,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["AppBarProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "AppBarProps"
+      ],
       "signatures": [
         {
           "label": "({\n  leading,\n  trailing,\n  children,\n  safeAreaTop = true,\n  divider = false,\n  contentStyle,\n  bg,\n  style,\n  ...props\n}: AppBarProps) => React.JSX.Element",
@@ -2007,8 +2581,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -2021,14 +2599,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -2042,7 +2620,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -2376,8 +2954,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["BadgeProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "BadgeProps"
+      ],
       "signatures": [
         {
           "label": "({\n  content,\n  variant = 'soft',\n  color = 'primary',\n  size = 's',\n  testID,\n}: BadgeProps) => React.JSX.Element",
@@ -2408,7 +2990,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -2462,7 +3046,9 @@
         "line": 56,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -2502,8 +3088,12 @@
         "line": 49,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["BoxProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "BoxProps"
+      ],
       "signatures": [
         {
           "label": "({\n  accessible,\n  accessibilityLabel,\n  accessibilityRole,\n  accessibilityState,\n  children,\n  pointerEvents,\n  style,\n  testID,\n  ...props\n}: BoxProps) => React.JSX.Element",
@@ -2534,8 +3124,12 @@
         "line": 14,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -2548,14 +3142,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -2569,7 +3163,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -2868,7 +3462,9 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -2886,7 +3482,9 @@
         "line": 9,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -2904,7 +3502,9 @@
         "line": 1,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -2922,8 +3522,12 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ButtonProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ButtonProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  variant = 'solid',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  fullWidth = false,\n  onPress,\n  testID,\n  ...props\n}: ButtonProps) => React.JSX.Element",
@@ -2954,8 +3558,12 @@
         "line": 28,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ButtonBaseProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ButtonBaseProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: ButtonBaseProps) => React.JSX.Element",
@@ -2986,8 +3594,13 @@
         "line": 8,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -3021,7 +3634,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -3341,7 +3954,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -3374,8 +3989,14 @@
         "line": 14,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ButtonIconSpec", "InteractionPolicy", "Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ButtonIconSpec",
+        "InteractionPolicy",
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -3402,7 +4023,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -3764,8 +4385,12 @@
         "line": 38,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["CardProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "CardProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  variant = 'default',\n  onPress,\n  disabled = false,\n  testID,\n  style,\n  ...props\n}: CardProps) => React.JSX.Element",
@@ -3796,8 +4421,13 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive", "SurfaceVariant"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive",
+        "SurfaceVariant"
+      ],
       "signatures": [],
       "members": [
         {
@@ -3810,14 +4440,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -3831,7 +4461,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -4130,8 +4760,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["CenterProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "CenterProps"
+      ],
       "signatures": [
         {
           "label": "({ axis = 'both', style, ...props }: CenterProps) => React.JSX.Element",
@@ -4162,8 +4796,12 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -4176,14 +4814,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -4197,7 +4835,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -4503,8 +5141,12 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["CheckboxProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "CheckboxProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  checked,\n  defaultChecked = false,\n  onCheckedChange,\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  accessibilityLabel,\n  testID,\n  ...props\n}: CheckboxProps) => React.JSX.Element",
@@ -4535,8 +5177,13 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -4556,7 +5203,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -4911,7 +5558,9 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -4929,7 +5578,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -4947,7 +5598,9 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -4965,8 +5618,12 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ContainerProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ContainerProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },\n  px = { base: 16, md: 24, lg: 32 },\n  ...props\n}: ContainerProps) => React.JSX.Element",
@@ -4997,8 +5654,12 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -5011,14 +5672,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -5032,7 +5693,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -5331,7 +5992,9 @@
         "line": 49,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -5375,11 +6038,16 @@
       "modulePath": "src/theme/createTheme.ts",
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 92,
+        "line": 26,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["SurfaceTheme", "ThemeConfig"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "SurfaceTheme",
+        "ThemeConfig"
+      ],
       "signatures": [
         {
           "label": "(config?: ThemeConfig, mode?: \"light\" | \"dark\", activeFontId?: string | null | undefined) => SurfaceTheme",
@@ -5422,7 +6090,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -5457,10 +6127,12 @@
       "modulePath": "src/theme/createTheme.ts",
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 68,
+        "line": 7,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -5472,13 +6144,15 @@
       "isReadme": false,
       "examples": [],
       "kind": "value",
-      "modulePath": "src/theme/createTheme.ts",
+      "modulePath": "src/theme/defaultTokens.ts",
       "sourceLocation": {
-        "filePath": "src/theme/createTheme.ts",
-        "line": 4,
+        "filePath": "src/theme/defaultTokens.ts",
+        "line": 17,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -5496,8 +6170,12 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["DividerProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DividerProps"
+      ],
       "signatures": [
         {
           "label": "({\n  orientation = 'horizontal',\n  color = 'border',\n  thickness = 1,\n  ...props\n}: DividerProps) => React.JSX.Element",
@@ -5528,8 +6206,12 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -5542,14 +6224,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -5563,7 +6245,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -5862,8 +6544,12 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["DrawerProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DrawerProps"
+      ],
       "signatures": [
         {
           "label": "({\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: DrawerProps) => React.JSX.Element | null",
@@ -5894,8 +6580,12 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["DrawerNavigationProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DrawerNavigationProps"
+      ],
       "signatures": [
         {
           "label": "({\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationProps) => React.JSX.Element",
@@ -5926,8 +6616,12 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["DrawerNavigationItemProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DrawerNavigationItemProps"
+      ],
       "signatures": [
         {
           "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationItemProps) => React.JSX.Element",
@@ -5958,8 +6652,13 @@
         "line": 61,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "NavigationItemSpec"
+      ],
       "signatures": [],
       "members": [
         {
@@ -6005,8 +6704,13 @@
         "line": 52,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "NavigationItemSpec"
+      ],
       "signatures": [],
       "members": [
         {
@@ -6066,8 +6770,12 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -6134,8 +6842,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["FieldProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "FieldProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  label,\n  helperText,\n  errorText,\n  required = false,\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  testID,\n}: FieldProps) => React.JSX.Element",
@@ -6166,7 +6878,9 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -6248,7 +6962,9 @@
         "line": 27,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -6280,7 +6996,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -6320,7 +7038,9 @@
         "line": 85,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -6338,7 +7058,9 @@
         "line": 4,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -6356,8 +7078,12 @@
         "line": 20,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["GeneratedThemeSwatches"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "GeneratedThemeSwatches"
+      ],
       "signatures": [],
       "members": [
         {
@@ -6396,8 +7122,12 @@
         "line": 13,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ColorSwatch"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ColorSwatch"
+      ],
       "signatures": [],
       "members": [
         {
@@ -6447,14 +7177,21 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 108,
+        "line": 109,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "GeneratedThemeSwatches",
+        "ThemeConfig",
+        "ThemeSemantics",
+        "ThemeTokens"
+      ],
       "signatures": [
         {
-          "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+          "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
           "parameters": [
             {
               "name": "config",
@@ -6469,7 +7206,7 @@
               "description": null
             }
           ],
-          "returnType": "{ colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+          "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
           "returnDescription": null
         }
       ],
@@ -6488,7 +7225,9 @@
         "line": 4,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -6520,8 +7259,12 @@
         "line": 18,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["GridProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "GridProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  cols,\n  gap = 0,\n  rowGap,\n  colGap,\n  minItemWidth,\n  ...props\n}: GridProps) => React.JSX.Element",
@@ -6552,8 +7295,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -6566,14 +7313,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -6587,7 +7334,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -6921,8 +7668,12 @@
         "line": 37,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["HeadingProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "HeadingProps"
+      ],
       "signatures": [
         {
           "label": "({\n  text,\n  children,\n  level = 2,\n  align,\n  color,\n  emphasis = 'default',\n  numberOfLines,\n  i18nKey,\n  testID,\n}: HeadingProps) => React.JSX.Element",
@@ -6953,7 +7704,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -6971,8 +7724,12 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["HeadingLevel"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "HeadingLevel"
+      ],
       "signatures": [],
       "members": [
         {
@@ -7053,8 +7810,12 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["HelperTextProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "HelperTextProps"
+      ],
       "signatures": [
         {
           "label": "({ children, emphasis = 'muted', color, testID }: HelperTextProps) => React.JSX.Element",
@@ -7085,7 +7846,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -7132,7 +7895,9 @@
         "line": 1,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -7150,8 +7915,12 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Translator"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Translator"
+      ],
       "signatures": [],
       "members": [
         {
@@ -7190,8 +7959,12 @@
         "line": 20,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["IconProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "IconProps"
+      ],
       "signatures": [
         {
           "label": "({\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}: IconProps) => React.ReactElement<{ color?: string; name?: string; size?: number; style?: StyleProp<TextStyle>; testID?: string; }, string | React.JSXElementConstructor<any>>",
@@ -7222,8 +7995,12 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["IconButtonProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "IconButtonProps"
+      ],
       "signatures": [
         {
           "label": "({\n  icon,\n  accessibilityLabel,\n  variant = 'ghost',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  onPress,\n  testID,\n  ...props\n}: IconButtonProps) => React.JSX.Element",
@@ -7254,8 +8031,14 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["IconProps", "InteractionPolicy", "Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "IconProps",
+        "InteractionPolicy",
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -7289,7 +8072,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -7623,7 +8406,9 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -7684,7 +8469,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -7702,8 +8489,12 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ImageProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ImageProps"
+      ],
       "signatures": [
         {
           "label": "({\n  source,\n  fallbackSource,\n  alt,\n  accessibilityLabel,\n  width,\n  height,\n  aspectRatio,\n  fit,\n  resizeMode,\n  radius,\n  style,\n  testID,\n  onError,\n}: ImageProps) => React.JSX.Element | null",
@@ -7734,7 +8525,9 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -7752,8 +8545,12 @@
         "line": 14,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["SurfaceImageSource"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "SurfaceImageSource"
+      ],
       "signatures": [],
       "members": [
         {
@@ -7801,14 +8598,14 @@
         {
           "name": "onError",
           "kind": "property",
-          "type": "((error: import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").ImageErrorEvent) => void) | undefined",
+          "type": "((error: import(\"react-native/types/index\").ImageErrorEvent) => void) | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "radius",
           "kind": "property",
-          "type": "number | \"s\" | \"m\" | \"l\" | \"none\" | \"full\" | undefined",
+          "type": "string | number | undefined",
           "required": false,
           "description": null
         },
@@ -7862,8 +8659,12 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InlineProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InlineProps"
+      ],
       "signatures": [
         {
           "label": "({ wrap = 'wrap', align = 'center', ...props }: InlineProps) => React.JSX.Element",
@@ -7894,7 +8695,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -7912,7 +8715,9 @@
         "line": 1,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -7930,8 +8735,12 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -7956,7 +8765,9 @@
         "line": 5,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -7994,8 +8805,12 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["LabelProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "LabelProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  required = false,\n  emphasis = 'default',\n  color,\n  testID,\n}: LabelProps) => React.JSX.Element",
@@ -8026,7 +8841,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -8080,8 +8897,12 @@
         "line": 47,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ListItemProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ListItemProps"
+      ],
       "signatures": [
         {
           "label": "({ onPress, disabled = false, testID, ...content }: ListItemProps) => React.JSX.Element",
@@ -8112,7 +8933,9 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -8180,8 +9003,12 @@
         "line": 56,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["MenuProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MenuProps"
+      ],
       "signatures": [
         {
           "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: MenuProps) => React.JSX.Element",
@@ -8212,8 +9039,12 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["MenuActionIntent"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MenuActionIntent"
+      ],
       "signatures": [],
       "members": [
         {
@@ -8294,7 +9125,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -8312,8 +9145,13 @@
         "line": 19,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "MenuAction"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "MenuAction"
+      ],
       "signatures": [],
       "members": [
         {
@@ -8373,8 +9211,12 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ModalProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ModalProps"
+      ],
       "signatures": [
         {
           "label": "({\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ModalProps) => React.JSX.Element | null",
@@ -8405,8 +9247,12 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -8466,8 +9312,12 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "NavigationItemProps"
+      ],
       "signatures": [
         {
           "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationItemProps) => React.JSX.Element",
@@ -8498,7 +9348,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -8516,8 +9368,13 @@
         "line": 23,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "NavigationItemSpec"
+      ],
       "signatures": [],
       "members": [
         {
@@ -8563,8 +9420,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemIcon"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "NavigationItemIcon"
+      ],
       "signatures": [],
       "members": [
         {
@@ -8659,8 +9520,12 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationListProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "NavigationListProps"
+      ],
       "signatures": [
         {
           "label": "({\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationListProps) => React.JSX.Element",
@@ -8691,8 +9556,13 @@
         "line": 30,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "NavigationItemSpec"
+      ],
       "signatures": [],
       "members": [
         {
@@ -8745,7 +9615,9 @@
         "line": 17,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -8841,8 +9713,12 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["RadioProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "RadioProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  checked,\n  defaultChecked = false,\n  onCheckedChange,\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  accessibilityLabel,\n  testID,\n  ...props\n}: RadioProps) => React.JSX.Element",
@@ -8873,8 +9749,13 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -8894,7 +9775,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -9249,8 +10130,12 @@
         "line": 8,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [
         {
           "label": "(value: Responsive<T> | undefined, breakpoint: \"base\" | \"sm\" | \"md\" | \"lg\" | \"xl\") => T | undefined",
@@ -9284,10 +10169,12 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 33,
+        "line": 34,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [
         "GeneratedThemeModeColors",
         "SemanticColorReferenceMap",
@@ -9329,7 +10216,9 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -9367,7 +10256,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -9385,7 +10276,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -9417,7 +10310,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -9450,7 +10345,9 @@
         "line": 31,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -9525,8 +10422,12 @@
         "line": 21,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ScrollAreaProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ScrollAreaProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  contentContainerStyle,\n  p,\n  px,\n  py,\n  pt,\n  pb,\n  pl,\n  pr,\n  m,\n  mx,\n  my,\n  mt,\n  mb,\n  ml,\n  mr,\n  bg,\n  radius,\n  borderWidth,\n  borderColor,\n  width,\n  height,\n  minWidth,\n  maxWidth,\n  minHeight,\n  maxHeight,\n  flex,\n  flexGrow,\n  flexShrink,\n  flexBasis,\n  alignSelf,\n  position,\n  top,\n  bottom,\n  left,\n  right,\n  overflow,\n  zIndex,\n  opacity,\n  style,\n  ...scrollProps\n}: ScrollAreaProps) => React.JSX.Element",
@@ -9557,8 +10458,12 @@
         "line": 13,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -9676,7 +10581,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -10885,7 +11790,9 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -10903,7 +11810,9 @@
         "line": 4,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -10921,8 +11830,12 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ShowProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ShowProps"
+      ],
       "signatures": [
         {
           "label": "({ when, children, fallback = null }: ShowProps) => React.JSX.Element",
@@ -10953,8 +11866,12 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -10993,8 +11910,12 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["SpacerProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "SpacerProps"
+      ],
       "signatures": [
         {
           "label": "({ size = 'm', axis = 'vertical', testID }: SpacerProps) => React.JSX.Element",
@@ -11025,7 +11946,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -11065,8 +11988,12 @@
         "line": 20,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["StackProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "StackProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  direction = 'column',\n  gap = 0,\n  align,\n  justify,\n  wrap,\n  ...props\n}: StackProps) => React.JSX.Element",
@@ -11097,8 +12024,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -11111,14 +12042,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -11139,7 +12070,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -11466,8 +12397,12 @@
         "line": 52,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["SurfaceProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "SurfaceProps"
+      ],
       "signatures": [
         {
           "label": "({ variant = 'default', radius = 'm', style, ...props }: SurfaceProps) => React.JSX.Element",
@@ -11498,7 +12433,9 @@
         "line": 11,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11516,7 +12453,9 @@
         "line": 17,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11534,7 +12473,9 @@
         "line": 1,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11552,7 +12493,9 @@
         "line": 9,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11570,7 +12513,9 @@
         "line": 21,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11588,7 +12533,9 @@
         "line": 22,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11606,7 +12553,9 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11624,7 +12573,9 @@
         "line": 19,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11642,8 +12593,13 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive", "SurfaceVariant"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive",
+        "SurfaceVariant"
+      ],
       "signatures": [],
       "members": [
         {
@@ -11656,14 +12612,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -11677,7 +12633,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -11959,10 +12915,12 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 31,
+        "line": 32,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -11980,7 +12938,9 @@
         "line": 42,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -12027,7 +12987,9 @@
         "line": 20,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -12042,11 +13004,17 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 187,
+        "line": 188,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "FontWeight",
+        "GeneratedThemeSwatches",
+        "ThemeSemantics"
+      ],
       "signatures": [],
       "members": [
         {
@@ -12066,7 +13034,7 @@
         {
           "name": "radii",
           "kind": "property",
-          "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+          "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
           "required": true,
           "description": null
         },
@@ -12120,7 +13088,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -12138,8 +13108,12 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["SwitchProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "SwitchProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  checked,\n  defaultChecked = false,\n  onCheckedChange,\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  accessibilityLabel,\n  testID,\n  ...props\n}: SwitchProps) => React.JSX.Element",
@@ -12170,8 +13144,13 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -12191,7 +13170,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -12546,8 +13525,12 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TabProps"
+      ],
       "signatures": [
         {
           "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}: TabProps) => React.JSX.Element",
@@ -12578,8 +13561,12 @@
         "line": 8,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabBarProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TabBarProps"
+      ],
       "signatures": [
         {
           "label": "({ items, compact = false, testID, interactionPolicy }: TabBarProps) => React.JSX.Element",
@@ -12610,8 +13597,12 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabBarItemProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TabBarItemProps"
+      ],
       "signatures": [
         {
           "label": "({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) => React.JSX.Element",
@@ -12642,8 +13633,13 @@
         "line": 45,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "NavigationItemSpec"
+      ],
       "signatures": [],
       "members": [
         {
@@ -12689,8 +13685,13 @@
         "line": 38,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "NavigationItemSpec"
+      ],
       "signatures": [],
       "members": [
         {
@@ -12736,8 +13737,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabListProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TabListProps"
+      ],
       "signatures": [
         {
           "label": "({ children, testID }: TabListProps) => React.JSX.Element",
@@ -12768,7 +13773,9 @@
         "line": 13,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -12801,8 +13808,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabPanelProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TabPanelProps"
+      ],
       "signatures": [
         {
           "label": "({ value, children, testID }: TabPanelProps) => React.JSX.Element | null",
@@ -12833,7 +13844,9 @@
         "line": 26,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -12873,8 +13886,12 @@
         "line": 18,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -12927,8 +13944,12 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabsProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TabsProps"
+      ],
       "signatures": [
         {
           "label": "({ children, value, defaultValue, onValueChange, testID }: TabsProps) => React.JSX.Element",
@@ -12959,7 +13980,9 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -13013,8 +14036,12 @@
         "line": 34,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TemplateProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TemplateProps"
+      ],
       "signatures": [
         {
           "label": "({\n  slots,\n  templates,\n  columns,\n  gap = 0,\n  rowGap,\n  colGap,\n  ...props\n}: TemplateProps) => React.JSX.Element",
@@ -13045,8 +14072,12 @@
         "line": 18,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["Responsive"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "Responsive"
+      ],
       "signatures": [],
       "members": [
         {
@@ -13059,14 +14090,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -13080,7 +14111,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -13414,8 +14445,12 @@
         "line": 31,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TextProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TextProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  i18nKey,\n  variant = 'body',\n  emphasis = 'default',\n  color,\n  align,\n  weight,\n  italic = false,\n  numberOfLines,\n  testID,\n}: TextProps) => React.JSX.Element",
@@ -13446,8 +14481,12 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TextareaProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TextareaProps"
+      ],
       "signatures": [
         {
           "label": "({ rows = 4, numberOfLines, style, ...props }: TextareaProps) => React.JSX.Element",
@@ -13478,8 +14517,12 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -14631,8 +15674,12 @@
         "line": 14,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TextInputProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TextInputProps"
+      ],
       "signatures": [
         {
           "label": "({\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  interactionPolicy = 'enabled',\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}: TextInputProps) => React.JSX.Element",
@@ -14663,8 +15710,12 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -15816,7 +16867,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -15902,11 +16955,15 @@
       "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-        "line": 10,
+        "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ThemeModeConfig"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ThemeModeConfig"
+      ],
       "signatures": [],
       "members": [
         {
@@ -15936,6 +16993,20 @@
           "type": "string",
           "required": true,
           "description": null
+        },
+        {
+          "name": "recipes",
+          "kind": "property",
+          "type": "ThemeRecipeOverrides | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "tokens",
+          "kind": "property",
+          "type": "ThemeGlobalTokenOverrides | undefined",
+          "required": false,
+          "description": null
         }
       ],
       "structuredRows": []
@@ -15952,7 +17023,9 @@
         "line": 13,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -15967,10 +17040,12 @@
       "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-        "line": 6,
+        "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -16003,8 +17078,12 @@
         "line": 31,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ThemeConfig"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ThemeConfig"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  initialConfig,\n  initialMode = 'light',\n}: { children: React.ReactNode; initialConfig?: Partial<ThemeConfig>; initialMode?: \"light\" | \"dark\"; }) => React.JSX.Element",
@@ -16035,7 +17114,9 @@
         "line": 68,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [
         "ActionSemantics",
         "BorderSemantics",
@@ -16159,8 +17240,14 @@
         "line": 98,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "FontWeight",
+        "GeneratedThemeSwatches",
+        "ThemeSemantics"
+      ],
       "signatures": [],
       "members": [
         {
@@ -16173,7 +17260,7 @@
         {
           "name": "radii",
           "kind": "property",
-          "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+          "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
           "required": true,
           "description": null
         },
@@ -16227,8 +17314,12 @@
         "line": 41,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ToastProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ToastProps"
+      ],
       "signatures": [
         {
           "label": "({\n  title,\n  description,\n  status = 'default',\n  onDismiss,\n  interactionPolicy = 'enabled',\n  testID,\n}: ToastProps) => React.JSX.Element",
@@ -16259,8 +17350,13 @@
         "line": 17,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "ToastStatus"
+      ],
       "signatures": [],
       "members": [
         {
@@ -16327,8 +17423,13 @@
         "line": 8,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy",
+        "ToastStatus"
+      ],
       "signatures": [],
       "members": [
         {
@@ -16388,7 +17489,9 @@
         "line": 22,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -16420,7 +17523,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -16438,8 +17543,12 @@
         "line": 24,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TooltipProps"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TooltipProps"
+      ],
       "signatures": [
         {
           "label": "({\n  children,\n  content,\n  delay = 150,\n  interactionPolicy = 'enabled',\n  placement = 'top',\n  testID,\n}: TooltipProps) => React.JSX.Element",
@@ -16470,8 +17579,12 @@
         "line": 5,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "InteractionPolicy"
+      ],
       "signatures": [],
       "members": [
         {
@@ -16531,8 +17644,13 @@
         "line": 27,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["I18nInstance", "Translator"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "I18nInstance",
+        "Translator"
+      ],
       "signatures": [
         {
           "label": "(props: { t: Translator; i18n?: I18nInstance | null; children: React.ReactNode; }) => React.JSX.Element",
@@ -16563,8 +17681,13 @@
         "line": 15,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["I18nInstance", "Translator"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "I18nInstance",
+        "Translator"
+      ],
       "signatures": [],
       "members": [
         {
@@ -16596,7 +17719,9 @@
         "line": 13,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -16614,7 +17739,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -16639,8 +17766,12 @@
         "line": 57,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["FontRuntime"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "FontRuntime"
+      ],
       "signatures": [
         {
           "label": "() => FontRuntime",
@@ -16664,8 +17795,12 @@
         "line": 23,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ResponsiveRuntime"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ResponsiveRuntime"
+      ],
       "signatures": [
         {
           "label": "() => ResponsiveRuntime",
@@ -16689,8 +17824,13 @@
         "line": 83,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["SurfaceTheme", "ThemeConfig"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "SurfaceTheme",
+        "ThemeConfig"
+      ],
       "signatures": [
         {
           "label": "() => { theme: SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
@@ -16714,8 +17854,12 @@
         "line": 87,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ThemeConfig"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "ThemeConfig"
+      ],
       "signatures": [
         {
           "label": "() => (config: Partial<ThemeConfig>) => void",
@@ -16739,7 +17883,9 @@
         "line": 92,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -16764,7 +17910,9 @@
         "line": 106,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -16789,8 +17937,12 @@
         "line": 52,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TranslationRuntime"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "TranslationRuntime"
+      ],
       "signatures": [
         {
           "label": "() => TranslationRuntime",
@@ -16815,7 +17967,9 @@
         "line": 13,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "cancelLabel",
@@ -16887,7 +18041,9 @@
         "line": 8,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "color",
@@ -16965,7 +18121,9 @@
         "line": 18,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -17282,7 +18440,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "color",
@@ -17330,7 +18490,9 @@
         "line": 49,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -17615,7 +18777,9 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityRole",
@@ -17954,7 +19118,9 @@
         "line": 28,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -18260,7 +19426,9 @@
         "line": 38,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -18547,7 +19715,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -18839,7 +20009,9 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -19166,7 +20338,9 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -19453,7 +20627,9 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -19741,7 +20917,9 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -19801,7 +20979,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "compact",
@@ -19853,7 +21033,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "compact",
@@ -19893,7 +21075,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -19966,7 +21150,9 @@
         "line": 27,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "activeFontId",
@@ -20005,7 +21191,9 @@
         "line": 18,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -20321,7 +21509,9 @@
         "line": 37,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "align",
@@ -20392,7 +21582,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -20432,7 +21624,9 @@
         "line": 20,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "color",
@@ -20486,7 +21680,9 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -20805,7 +22001,9 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -20898,7 +22096,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -21209,7 +22409,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -21256,7 +22458,9 @@
         "line": 47,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "description",
@@ -21314,7 +22518,9 @@
         "line": 56,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "actions",
@@ -21367,7 +22573,9 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -21420,7 +22628,9 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "compact",
@@ -21460,7 +22670,9 @@
         "line": 7,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "compact",
@@ -21507,7 +22719,9 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -21834,7 +23048,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -21855,7 +23071,9 @@
         "line": 21,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityActions",
@@ -22992,7 +24210,9 @@
         "line": 11,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -23026,7 +24246,9 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "axis",
@@ -23061,7 +24283,9 @@
         "line": 20,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -23378,7 +24602,9 @@
         "line": 52,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -23653,7 +24879,9 @@
         "line": 16,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -23980,7 +25208,9 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -24027,7 +25257,9 @@
         "line": 8,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "compact",
@@ -24067,7 +25299,9 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "compact",
@@ -24107,7 +25341,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -24134,7 +25370,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -24167,7 +25405,9 @@
         "line": 9,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -24212,7 +25452,9 @@
         "line": 34,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityLabel",
@@ -24528,7 +25770,9 @@
         "line": 31,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "align",
@@ -24606,7 +25850,9 @@
         "line": 6,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityActions",
@@ -25594,7 +26840,9 @@
         "line": 14,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "accessibilityActions",
@@ -26586,7 +27834,9 @@
         "line": 13,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -26596,7 +27846,7 @@
         },
         {
           "name": "value",
-          "type": "{ theme: import(\"/Users/a_rtiphishl_e/git/surface/src/index\").SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<import(\"/Users/a_rtiphishl_e/git/surface/src/index\").ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
+          "type": "{ theme: import(\"./src/index\").SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<import(\"./src/index\").ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
           "required": true,
           "description": null
         }
@@ -26613,7 +27863,9 @@
         "line": 31,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -26647,7 +27899,9 @@
         "line": 41,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "description",
@@ -26700,7 +27954,9 @@
         "line": 22,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -26728,7 +27984,9 @@
         "line": 24,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -26782,7 +28040,9 @@
         "line": 27,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "props": [
         {
           "name": "children",
@@ -28035,7 +29295,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 33,
+        "line": 34,
         "column": 1
       }
     },
@@ -28044,7 +29304,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 48,
+        "line": 49,
         "column": 1
       }
     },
@@ -28053,7 +29313,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 79,
+        "line": 80,
         "column": 1
       }
     },
@@ -28062,16 +29322,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 108,
-        "column": 1
-      }
-    },
-    {
-      "name": "toPascalCase",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/theme/createTheme.ts",
-        "line": 85,
+        "line": 109,
         "column": 1
       }
     },
@@ -28080,7 +29331,88 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 92,
+        "line": 26,
+        "column": 1
+      }
+    },
+    {
+      "name": "applyActiveFont",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/createTheme.ts",
+        "line": 44,
+        "column": 1
+      }
+    },
+    {
+      "name": "toPascalCase",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/createTheme.ts",
+        "line": 54,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveGlobalTokens",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveGlobalTokens.ts",
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "validateZeroTokens",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveGlobalTokens.ts",
+        "line": 48,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveHeadingTokenOverrides",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "validateHeadingKeys",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 27,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveHeading",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 35,
+        "column": 1
+      }
+    },
+    {
+      "name": "isHeadingWeight",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 59,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveNumericTokenOverrides",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveNumericTokenOverrides.ts",
+        "line": 1,
         "column": 1
       }
     },
@@ -28090,6 +29422,24 @@
       "sourceLocation": {
         "filePath": "src/theme/resolveToken.ts",
         "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveWeightTokenOverrides",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveWeightTokenOverrides.ts",
+        "line": 28,
+        "column": 1
+      }
+    },
+    {
+      "name": "isFontWeight",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveWeightTokenOverrides.ts",
+        "line": 46,
         "column": 1
       }
     },
@@ -29231,8 +30581,23 @@
       },
       {
         "fromPath": "src/theme/createTheme.ts",
+        "toPath": "src/theme/resolveGlobalTokens.ts",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromPath": "src/theme/createTheme.ts",
         "toPath": "src/theme/types.ts",
         "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromPath": "src/theme/createTheme.ts",
+        "toPath": "src/theme/defaultTokens.ts",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromPath": "src/theme/defaultTokens.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/defaultTokens.ts"
       },
       {
         "fromPath": "src/theme/index.ts",
@@ -29258,6 +30623,41 @@
         "fromPath": "src/theme/index.ts",
         "toPath": "src/theme/types.ts",
         "sourcePath": "src/theme/index.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/defaultTokens.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/resolveNumericTokenOverrides.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/resolveWeightTokenOverrides.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveWeightTokenOverrides.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveWeightTokenOverrides.ts"
       },
       {
         "fromPath": "src/theme/ThemeContext.tsx",
@@ -31425,9 +32825,69 @@
       },
       {
         "fromSymbol": "createTheme",
+        "toSymbol": "resolveGlobalTokens",
+        "callExpression": "resolveGlobalTokens",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromSymbol": "createTheme",
+        "toSymbol": "applyActiveFont",
+        "callExpression": "applyActiveFont",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromSymbol": "applyActiveFont",
         "toSymbol": "toPascalCase",
         "callExpression": "toPascalCase",
         "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "validateZeroTokens",
+        "callExpression": "validateZeroTokens",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "resolveNumericTokenOverrides",
+        "callExpression": "resolveNumericTokenOverrides",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "resolveHeadingTokenOverrides",
+        "callExpression": "resolveHeadingTokenOverrides",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "resolveWeightTokenOverrides",
+        "callExpression": "resolveWeightTokenOverrides",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveHeadingTokenOverrides",
+        "toSymbol": "validateHeadingKeys",
+        "callExpression": "validateHeadingKeys",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromSymbol": "resolveHeadingTokenOverrides",
+        "toSymbol": "resolveHeading",
+        "callExpression": "resolveHeading",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromSymbol": "resolveHeading",
+        "toSymbol": "isHeadingWeight",
+        "callExpression": "isHeadingWeight",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromSymbol": "resolveWeightTokenOverrides",
+        "toSymbol": "isFontWeight",
+        "callExpression": "isFontWeight",
+        "sourcePath": "src/theme/resolveWeightTokenOverrides.ts"
       },
       {
         "fromSymbol": "src/theme/ThemeContext.tsx",
@@ -32849,11 +34309,6 @@
         "sourcePath": "src/components/button/types.ts"
       },
       {
-        "fromSymbol": "ButtonProps",
-        "toType": "Users",
-        "sourcePath": "src/components/button/types.ts"
-      },
-      {
         "fromSymbol": "Button",
         "toType": "ButtonProps",
         "sourcePath": "src/components/button/Button.tsx"
@@ -32911,11 +34366,6 @@
       {
         "fromSymbol": "CardProps",
         "toType": "SurfaceVariant",
-        "sourcePath": "src/components/card/types.ts"
-      },
-      {
-        "fromSymbol": "CardProps",
-        "toType": "Users",
         "sourcePath": "src/components/card/types.ts"
       },
       {
@@ -32981,11 +34431,6 @@
       {
         "fromSymbol": "CheckboxProps",
         "toType": "SpaceValue",
-        "sourcePath": "src/components/checkbox/types.ts"
-      },
-      {
-        "fromSymbol": "CheckboxProps",
-        "toType": "Users",
         "sourcePath": "src/components/checkbox/types.ts"
       },
       {
@@ -33121,11 +34566,6 @@
       {
         "fromSymbol": "IconButtonProps",
         "toType": "SpaceValue",
-        "sourcePath": "src/components/icon-button/types.ts"
-      },
-      {
-        "fromSymbol": "IconButtonProps",
-        "toType": "Users",
         "sourcePath": "src/components/icon-button/types.ts"
       },
       {
@@ -33454,11 +34894,6 @@
         "sourcePath": "src/components/radio/types.ts"
       },
       {
-        "fromSymbol": "RadioProps",
-        "toType": "Users",
-        "sourcePath": "src/components/radio/types.ts"
-      },
-      {
         "fromSymbol": "Radio",
         "toType": "RadioProps",
         "sourcePath": "src/components/radio/Radio.tsx"
@@ -33516,11 +34951,6 @@
       {
         "fromSymbol": "SwitchProps",
         "toType": "SpaceValue",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "Users",
         "sourcePath": "src/components/switch/types.ts"
       },
       {
@@ -34225,11 +35655,6 @@
       },
       {
         "fromSymbol": "ButtonBaseProps",
-        "toType": "Users",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
         "toType": "ViewStyle",
         "sourcePath": "src/primitives/button-base/types.ts"
       },
@@ -34331,11 +35756,6 @@
       {
         "fromSymbol": "ImageProps",
         "toType": "SurfaceImageSource",
-        "sourcePath": "src/primitives/image/types.ts"
-      },
-      {
-        "fromSymbol": "ImageProps",
-        "toType": "Users",
         "sourcePath": "src/primitives/image/types.ts"
       },
       {
@@ -34465,11 +35885,6 @@
       },
       {
         "fromSymbol": "AppBarProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/AppBar.tsx"
-      },
-      {
-        "fromSymbol": "AppBarProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/AppBar.tsx"
       },
@@ -34531,11 +35946,6 @@
       {
         "fromSymbol": "BoxProps",
         "toType": "StyleProp",
-        "sourcePath": "src/layout/Box.tsx"
-      },
-      {
-        "fromSymbol": "BoxProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Box.tsx"
       },
       {
@@ -34605,11 +36015,6 @@
       },
       {
         "fromSymbol": "CenterProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Center.tsx"
-      },
-      {
-        "fromSymbol": "CenterProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Center.tsx"
       },
@@ -34671,11 +36076,6 @@
       {
         "fromSymbol": "ContainerProps",
         "toType": "StyleProp",
-        "sourcePath": "src/layout/Container.tsx"
-      },
-      {
-        "fromSymbol": "ContainerProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Container.tsx"
       },
       {
@@ -34745,11 +36145,6 @@
       },
       {
         "fromSymbol": "DividerProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Divider.tsx"
-      },
-      {
-        "fromSymbol": "DividerProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Divider.tsx"
       },
@@ -34811,11 +36206,6 @@
       {
         "fromSymbol": "GridProps",
         "toType": "StyleProp",
-        "sourcePath": "src/layout/Grid.tsx"
-      },
-      {
-        "fromSymbol": "GridProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Grid.tsx"
       },
       {
@@ -34995,11 +36385,6 @@
       },
       {
         "fromSymbol": "ScrollAreaProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/ScrollArea.tsx"
-      },
-      {
-        "fromSymbol": "ScrollAreaProps",
         "toType": "View",
         "sourcePath": "src/layout/ScrollArea.tsx"
       },
@@ -35110,11 +36495,6 @@
       },
       {
         "fromSymbol": "StackProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Stack.tsx"
-      },
-      {
-        "fromSymbol": "StackProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Stack.tsx"
       },
@@ -35176,11 +36556,6 @@
       {
         "fromSymbol": "SurfaceProps",
         "toType": "SurfaceVariant",
-        "sourcePath": "src/layout/Surface.tsx"
-      },
-      {
-        "fromSymbol": "SurfaceProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Surface.tsx"
       },
       {
@@ -35250,11 +36625,6 @@
       },
       {
         "fromSymbol": "TemplateProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Template.tsx"
-      },
-      {
-        "fromSymbol": "TemplateProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Template.tsx"
       },
@@ -35296,6 +36666,11 @@
       {
         "fromSymbol": "generatePalette",
         "toType": "ThemeSemantics",
+        "sourcePath": "src/theme/colorEngine.ts"
+      },
+      {
+        "fromSymbol": "generatePalette",
+        "toType": "ThemeTokens",
         "sourcePath": "src/theme/colorEngine.ts"
       },
       {
@@ -35390,7 +36765,17 @@
       },
       {
         "fromSymbol": "ThemeConfig",
+        "toType": "ThemeGlobalTokenOverrides",
+        "sourcePath": "node_modules/@ankhorage/contracts/dist/types.d.ts"
+      },
+      {
+        "fromSymbol": "ThemeConfig",
         "toType": "ThemeModeConfig",
+        "sourcePath": "node_modules/@ankhorage/contracts/dist/types.d.ts"
+      },
+      {
+        "fromSymbol": "ThemeConfig",
+        "toType": "ThemeRecipeOverrides",
         "sourcePath": "node_modules/@ankhorage/contracts/dist/types.d.ts"
       },
       {

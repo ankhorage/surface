@@ -12,7 +12,15 @@ export const DEFAULT_CONFIG: ThemeConfig = {
 };
 
 const ACTIVE_FONT_WEIGHTS: readonly FontWeight[] = [
-  '100', '200', '300', '400', '500', '600', '700', '800', '900',
+  '100',
+  '200',
+  '300',
+  '400',
+  '500',
+  '600',
+  '700',
+  '800',
+  '900',
 ];
 
 export function createTheme(

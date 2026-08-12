@@ -21,7 +21,10 @@ export function resolveGlobalTokens(overrides?: ThemeGlobalTokenOverrides): Glob
       ...resolveNumericTokenOverrides('radii', overrides?.radii),
     },
     typography: {
-      headings: resolveHeadingTokenOverrides(DEFAULT_TOKENS.typography.headings, typography?.headings),
+      headings: resolveHeadingTokenOverrides(
+        DEFAULT_TOKENS.typography.headings,
+        typography?.headings,
+      ),
       sizes: {
         ...DEFAULT_TOKENS.typography.sizes,
         ...resolveNumericTokenOverrides('typography.sizes', typography?.sizes, true),

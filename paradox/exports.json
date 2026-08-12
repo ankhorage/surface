@@ -11,8 +11,12 @@
       "line": 62,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["RoleSemantics"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "RoleSemantics"
+    ],
     "signatures": [],
     "members": [
       {
@@ -51,8 +55,12 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ActionSheetProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ActionSheetProps"
+    ],
     "signatures": [
       {
         "label": "({\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ActionSheetProps) => React.JSX.Element | null",
@@ -83,8 +91,12 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ActionSheetItemProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ActionSheetItemProps"
+    ],
     "signatures": [
       {
         "label": "({\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}: ActionSheetItemProps) => React.JSX.Element",
@@ -115,8 +127,12 @@
       "line": 18,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -204,8 +220,12 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -286,8 +306,12 @@
       "line": 18,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["AppBarProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "AppBarProps"
+    ],
     "signatures": [
       {
         "label": "({\n  leading,\n  trailing,\n  children,\n  safeAreaTop = true,\n  divider = false,\n  contentStyle,\n  bg,\n  style,\n  ...props\n}: AppBarProps) => React.JSX.Element",
@@ -318,8 +342,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -332,14 +360,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -353,7 +381,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -687,8 +715,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["BadgeProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "BadgeProps"
+    ],
     "signatures": [
       {
         "label": "({\n  content,\n  variant = 'soft',\n  color = 'primary',\n  size = 's',\n  testID,\n}: BadgeProps) => React.JSX.Element",
@@ -719,7 +751,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -773,7 +807,9 @@
       "line": 56,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -813,8 +849,12 @@
       "line": 49,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["BoxProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "BoxProps"
+    ],
     "signatures": [
       {
         "label": "({\n  accessible,\n  accessibilityLabel,\n  accessibilityRole,\n  accessibilityState,\n  children,\n  pointerEvents,\n  style,\n  testID,\n  ...props\n}: BoxProps) => React.JSX.Element",
@@ -845,8 +885,12 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -859,14 +903,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -880,7 +924,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -1179,7 +1223,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -1197,7 +1243,9 @@
       "line": 9,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -1215,7 +1263,9 @@
       "line": 1,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -1233,8 +1283,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ButtonProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ButtonProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  variant = 'solid',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  fullWidth = false,\n  onPress,\n  testID,\n  ...props\n}: ButtonProps) => React.JSX.Element",
@@ -1265,8 +1319,12 @@
       "line": 28,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ButtonBaseProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ButtonBaseProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: ButtonBaseProps) => React.JSX.Element",
@@ -1297,8 +1355,13 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -1332,7 +1395,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -1652,7 +1715,9 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -1685,8 +1750,14 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ButtonIconSpec", "InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ButtonIconSpec",
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -1713,7 +1784,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -2075,8 +2146,12 @@
       "line": 38,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["CardProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "CardProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  variant = 'default',\n  onPress,\n  disabled = false,\n  testID,\n  style,\n  ...props\n}: CardProps) => React.JSX.Element",
@@ -2107,8 +2182,13 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive", "SurfaceVariant"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive",
+      "SurfaceVariant"
+    ],
     "signatures": [],
     "members": [
       {
@@ -2121,14 +2201,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -2142,7 +2222,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -2441,8 +2521,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["CenterProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "CenterProps"
+    ],
     "signatures": [
       {
         "label": "({ axis = 'both', style, ...props }: CenterProps) => React.JSX.Element",
@@ -2473,8 +2557,12 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -2487,14 +2575,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -2508,7 +2596,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -2814,8 +2902,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["CheckboxProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "CheckboxProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  checked,\n  defaultChecked = false,\n  onCheckedChange,\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  accessibilityLabel,\n  testID,\n  ...props\n}: CheckboxProps) => React.JSX.Element",
@@ -2846,8 +2938,13 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -2867,7 +2964,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -3222,7 +3319,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -3240,7 +3339,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -3258,7 +3359,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -3276,8 +3379,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ContainerProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ContainerProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },\n  px = { base: 16, md: 24, lg: 32 },\n  ...props\n}: ContainerProps) => React.JSX.Element",
@@ -3308,8 +3415,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -3322,14 +3433,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -3343,7 +3454,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -3642,7 +3753,9 @@
       "line": 49,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -3686,11 +3799,16 @@
     "modulePath": "src/theme/createTheme.ts",
     "sourceLocation": {
       "filePath": "src/theme/createTheme.ts",
-      "line": 92,
+      "line": 26,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceTheme", "ThemeConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceTheme",
+      "ThemeConfig"
+    ],
     "signatures": [
       {
         "label": "(config?: ThemeConfig, mode?: \"light\" | \"dark\", activeFontId?: string | null | undefined) => SurfaceTheme",
@@ -3733,7 +3851,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -3768,10 +3888,12 @@
     "modulePath": "src/theme/createTheme.ts",
     "sourceLocation": {
       "filePath": "src/theme/createTheme.ts",
-      "line": 68,
+      "line": 7,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -3783,13 +3905,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "value",
-    "modulePath": "src/theme/createTheme.ts",
+    "modulePath": "src/theme/defaultTokens.ts",
     "sourceLocation": {
-      "filePath": "src/theme/createTheme.ts",
-      "line": 4,
+      "filePath": "src/theme/defaultTokens.ts",
+      "line": 17,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -3807,8 +3931,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["DividerProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DividerProps"
+    ],
     "signatures": [
       {
         "label": "({\n  orientation = 'horizontal',\n  color = 'border',\n  thickness = 1,\n  ...props\n}: DividerProps) => React.JSX.Element",
@@ -3839,8 +3967,12 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -3853,14 +3985,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -3874,7 +4006,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -4173,8 +4305,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["DrawerProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DrawerProps"
+    ],
     "signatures": [
       {
         "label": "({\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: DrawerProps) => React.JSX.Element | null",
@@ -4205,8 +4341,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["DrawerNavigationProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DrawerNavigationProps"
+    ],
     "signatures": [
       {
         "label": "({\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationProps) => React.JSX.Element",
@@ -4237,8 +4377,12 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["DrawerNavigationItemProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DrawerNavigationItemProps"
+    ],
     "signatures": [
       {
         "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationItemProps) => React.JSX.Element",
@@ -4269,8 +4413,13 @@
       "line": 61,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "NavigationItemSpec"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4316,8 +4465,13 @@
       "line": 52,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "NavigationItemSpec"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4377,8 +4531,12 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4445,8 +4603,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FieldProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "FieldProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  label,\n  helperText,\n  errorText,\n  required = false,\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  testID,\n}: FieldProps) => React.JSX.Element",
@@ -4477,7 +4639,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -4559,7 +4723,9 @@
       "line": 27,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -4591,7 +4757,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -4631,7 +4799,9 @@
       "line": 85,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -4649,7 +4819,9 @@
       "line": 4,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -4667,8 +4839,12 @@
       "line": 20,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["GeneratedThemeSwatches"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "GeneratedThemeSwatches"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4707,8 +4883,12 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ColorSwatch"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ColorSwatch"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4758,14 +4938,21 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 108,
+      "line": 109,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "GeneratedThemeSwatches",
+      "ThemeConfig",
+      "ThemeSemantics",
+      "ThemeTokens"
+    ],
     "signatures": [
       {
-        "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+        "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
         "parameters": [
           {
             "name": "config",
@@ -4780,7 +4967,7 @@
             "description": null
           }
         ],
-        "returnType": "{ colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+        "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
         "returnDescription": null
       }
     ],
@@ -4799,7 +4986,9 @@
       "line": 4,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -4831,8 +5020,12 @@
       "line": 18,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["GridProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "GridProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  cols,\n  gap = 0,\n  rowGap,\n  colGap,\n  minItemWidth,\n  ...props\n}: GridProps) => React.JSX.Element",
@@ -4863,8 +5056,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4877,14 +5074,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -4898,7 +5095,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -5232,8 +5429,12 @@
       "line": 37,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["HeadingProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "HeadingProps"
+    ],
     "signatures": [
       {
         "label": "({\n  text,\n  children,\n  level = 2,\n  align,\n  color,\n  emphasis = 'default',\n  numberOfLines,\n  i18nKey,\n  testID,\n}: HeadingProps) => React.JSX.Element",
@@ -5264,7 +5465,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -5282,8 +5485,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["HeadingLevel"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "HeadingLevel"
+    ],
     "signatures": [],
     "members": [
       {
@@ -5364,8 +5571,12 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["HelperTextProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "HelperTextProps"
+    ],
     "signatures": [
       {
         "label": "({ children, emphasis = 'muted', color, testID }: HelperTextProps) => React.JSX.Element",
@@ -5396,7 +5607,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -5443,7 +5656,9 @@
       "line": 1,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -5461,8 +5676,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Translator"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Translator"
+    ],
     "signatures": [],
     "members": [
       {
@@ -5501,8 +5720,12 @@
       "line": 20,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "IconProps"
+    ],
     "signatures": [
       {
         "label": "({\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}: IconProps) => React.ReactElement<{ color?: string; name?: string; size?: number; style?: StyleProp<TextStyle>; testID?: string; }, string | React.JSXElementConstructor<any>>",
@@ -5533,8 +5756,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconButtonProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "IconButtonProps"
+    ],
     "signatures": [
       {
         "label": "({\n  icon,\n  accessibilityLabel,\n  variant = 'ghost',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  onPress,\n  testID,\n  ...props\n}: IconButtonProps) => React.JSX.Element",
@@ -5565,8 +5792,14 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconProps", "InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "IconProps",
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -5600,7 +5833,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -5934,7 +6167,9 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -5995,7 +6230,9 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -6013,8 +6250,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ImageProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ImageProps"
+    ],
     "signatures": [
       {
         "label": "({\n  source,\n  fallbackSource,\n  alt,\n  accessibilityLabel,\n  width,\n  height,\n  aspectRatio,\n  fit,\n  resizeMode,\n  radius,\n  style,\n  testID,\n  onError,\n}: ImageProps) => React.JSX.Element | null",
@@ -6045,7 +6286,9 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -6063,8 +6306,12 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceImageSource"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceImageSource"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6112,14 +6359,14 @@
       {
         "name": "onError",
         "kind": "property",
-        "type": "((error: import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").ImageErrorEvent) => void) | undefined",
+        "type": "((error: import(\"react-native/types/index\").ImageErrorEvent) => void) | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "radius",
         "kind": "property",
-        "type": "number | \"s\" | \"m\" | \"l\" | \"none\" | \"full\" | undefined",
+        "type": "string | number | undefined",
         "required": false,
         "description": null
       },
@@ -6173,8 +6420,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InlineProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InlineProps"
+    ],
     "signatures": [
       {
         "label": "({ wrap = 'wrap', align = 'center', ...props }: InlineProps) => React.JSX.Element",
@@ -6205,7 +6456,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -6223,7 +6476,9 @@
       "line": 1,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -6241,8 +6496,12 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6267,7 +6526,9 @@
       "line": 5,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -6305,8 +6566,12 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["LabelProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "LabelProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  required = false,\n  emphasis = 'default',\n  color,\n  testID,\n}: LabelProps) => React.JSX.Element",
@@ -6337,7 +6602,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -6391,8 +6658,12 @@
       "line": 47,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ListItemProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ListItemProps"
+    ],
     "signatures": [
       {
         "label": "({ onPress, disabled = false, testID, ...content }: ListItemProps) => React.JSX.Element",
@@ -6423,7 +6694,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -6491,8 +6764,12 @@
       "line": 56,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["MenuProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "MenuProps"
+    ],
     "signatures": [
       {
         "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: MenuProps) => React.JSX.Element",
@@ -6523,8 +6800,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["MenuActionIntent"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "MenuActionIntent"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6605,7 +6886,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -6623,8 +6906,13 @@
       "line": 19,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "MenuAction"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "MenuAction"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6684,8 +6972,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ModalProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ModalProps"
+    ],
     "signatures": [
       {
         "label": "({\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ModalProps) => React.JSX.Element | null",
@@ -6716,8 +7008,12 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6777,8 +7073,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "NavigationItemProps"
+    ],
     "signatures": [
       {
         "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationItemProps) => React.JSX.Element",
@@ -6809,7 +7109,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -6827,8 +7129,13 @@
       "line": 23,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "NavigationItemSpec"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6874,8 +7181,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemIcon"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "NavigationItemIcon"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6970,8 +7281,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationListProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "NavigationListProps"
+    ],
     "signatures": [
       {
         "label": "({\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationListProps) => React.JSX.Element",
@@ -7002,8 +7317,13 @@
       "line": 30,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "NavigationItemSpec"
+    ],
     "signatures": [],
     "members": [
       {
@@ -7056,7 +7376,9 @@
       "line": 17,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -7152,8 +7474,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["RadioProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "RadioProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  checked,\n  defaultChecked = false,\n  onCheckedChange,\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  accessibilityLabel,\n  testID,\n  ...props\n}: RadioProps) => React.JSX.Element",
@@ -7184,8 +7510,13 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -7205,7 +7536,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -7560,8 +7891,12 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [
       {
         "label": "(value: Responsive<T> | undefined, breakpoint: \"base\" | \"sm\" | \"md\" | \"lg\" | \"xl\") => T | undefined",
@@ -7595,10 +7930,12 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 33,
+      "line": 34,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [
       "GeneratedThemeModeColors",
       "SemanticColorReferenceMap",
@@ -7640,7 +7977,9 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -7678,7 +8017,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -7696,7 +8037,9 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -7728,7 +8071,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -7761,7 +8106,9 @@
       "line": 31,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -7836,8 +8183,12 @@
       "line": 21,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ScrollAreaProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ScrollAreaProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  contentContainerStyle,\n  p,\n  px,\n  py,\n  pt,\n  pb,\n  pl,\n  pr,\n  m,\n  mx,\n  my,\n  mt,\n  mb,\n  ml,\n  mr,\n  bg,\n  radius,\n  borderWidth,\n  borderColor,\n  width,\n  height,\n  minWidth,\n  maxWidth,\n  minHeight,\n  maxHeight,\n  flex,\n  flexGrow,\n  flexShrink,\n  flexBasis,\n  alignSelf,\n  position,\n  top,\n  bottom,\n  left,\n  right,\n  overflow,\n  zIndex,\n  opacity,\n  style,\n  ...scrollProps\n}: ScrollAreaProps) => React.JSX.Element",
@@ -7868,8 +8219,12 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -7987,7 +8342,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -9196,7 +9551,9 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9214,7 +9571,9 @@
       "line": 4,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9232,8 +9591,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ShowProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ShowProps"
+    ],
     "signatures": [
       {
         "label": "({ when, children, fallback = null }: ShowProps) => React.JSX.Element",
@@ -9264,8 +9627,12 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -9304,8 +9671,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SpacerProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SpacerProps"
+    ],
     "signatures": [
       {
         "label": "({ size = 'm', axis = 'vertical', testID }: SpacerProps) => React.JSX.Element",
@@ -9336,7 +9707,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -9376,8 +9749,12 @@
       "line": 20,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["StackProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "StackProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  direction = 'column',\n  gap = 0,\n  align,\n  justify,\n  wrap,\n  ...props\n}: StackProps) => React.JSX.Element",
@@ -9408,8 +9785,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -9422,14 +9803,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -9450,7 +9831,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -9777,8 +10158,12 @@
       "line": 52,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceProps"
+    ],
     "signatures": [
       {
         "label": "({ variant = 'default', radius = 'm', style, ...props }: SurfaceProps) => React.JSX.Element",
@@ -9809,7 +10194,9 @@
       "line": 11,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9827,7 +10214,9 @@
       "line": 17,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9845,7 +10234,9 @@
       "line": 1,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9863,7 +10254,9 @@
       "line": 9,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9881,7 +10274,9 @@
       "line": 21,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9899,7 +10294,9 @@
       "line": 22,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9917,7 +10314,9 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9935,7 +10334,9 @@
       "line": 19,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -9953,8 +10354,13 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive", "SurfaceVariant"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive",
+      "SurfaceVariant"
+    ],
     "signatures": [],
     "members": [
       {
@@ -9967,14 +10373,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -9988,7 +10394,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -10270,10 +10676,12 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 31,
+      "line": 32,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -10291,7 +10699,9 @@
       "line": 42,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -10338,7 +10748,9 @@
       "line": 20,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -10353,11 +10765,17 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 187,
+      "line": 188,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "FontWeight",
+      "GeneratedThemeSwatches",
+      "ThemeSemantics"
+    ],
     "signatures": [],
     "members": [
       {
@@ -10377,7 +10795,7 @@
       {
         "name": "radii",
         "kind": "property",
-        "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+        "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
         "required": true,
         "description": null
       },
@@ -10431,7 +10849,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -10449,8 +10869,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SwitchProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SwitchProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  checked,\n  defaultChecked = false,\n  onCheckedChange,\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  accessibilityLabel,\n  testID,\n  ...props\n}: SwitchProps) => React.JSX.Element",
@@ -10481,8 +10905,13 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -10502,7 +10931,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -10857,8 +11286,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabProps"
+    ],
     "signatures": [
       {
         "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}: TabProps) => React.JSX.Element",
@@ -10889,8 +11322,12 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabBarProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabBarProps"
+    ],
     "signatures": [
       {
         "label": "({ items, compact = false, testID, interactionPolicy }: TabBarProps) => React.JSX.Element",
@@ -10921,8 +11358,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabBarItemProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabBarItemProps"
+    ],
     "signatures": [
       {
         "label": "({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) => React.JSX.Element",
@@ -10953,8 +11394,13 @@
       "line": 45,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "NavigationItemSpec"
+    ],
     "signatures": [],
     "members": [
       {
@@ -11000,8 +11446,13 @@
       "line": 38,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "NavigationItemSpec"
+    ],
     "signatures": [],
     "members": [
       {
@@ -11047,8 +11498,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabListProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabListProps"
+    ],
     "signatures": [
       {
         "label": "({ children, testID }: TabListProps) => React.JSX.Element",
@@ -11079,7 +11534,9 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -11112,8 +11569,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabPanelProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabPanelProps"
+    ],
     "signatures": [
       {
         "label": "({ value, children, testID }: TabPanelProps) => React.JSX.Element | null",
@@ -11144,7 +11605,9 @@
       "line": 26,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -11184,8 +11647,12 @@
       "line": 18,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -11238,8 +11705,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabsProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabsProps"
+    ],
     "signatures": [
       {
         "label": "({ children, value, defaultValue, onValueChange, testID }: TabsProps) => React.JSX.Element",
@@ -11270,7 +11741,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -11324,8 +11797,12 @@
       "line": 34,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TemplateProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TemplateProps"
+    ],
     "signatures": [
       {
         "label": "({\n  slots,\n  templates,\n  columns,\n  gap = 0,\n  rowGap,\n  colGap,\n  ...props\n}: TemplateProps) => React.JSX.Element",
@@ -11356,8 +11833,12 @@
       "line": 18,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -11370,14 +11851,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -11391,7 +11872,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -11725,8 +12206,12 @@
       "line": 31,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TextProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TextProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  i18nKey,\n  variant = 'body',\n  emphasis = 'default',\n  color,\n  align,\n  weight,\n  italic = false,\n  numberOfLines,\n  testID,\n}: TextProps) => React.JSX.Element",
@@ -11757,8 +12242,12 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TextareaProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TextareaProps"
+    ],
     "signatures": [
       {
         "label": "({ rows = 4, numberOfLines, style, ...props }: TextareaProps) => React.JSX.Element",
@@ -11789,8 +12278,12 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -12942,8 +13435,12 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TextInputProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TextInputProps"
+    ],
     "signatures": [
       {
         "label": "({\n  value,\n  defaultValue,\n  onChangeText,\n  placeholder,\n  size = 'm',\n  disabled = false,\n  readOnly = false,\n  invalid = false,\n  leadingAccessory,\n  trailingAccessory,\n  interactionPolicy = 'enabled',\n  style,\n  testID,\n  onFocus,\n  onBlur,\n  ...props\n}: TextInputProps) => React.JSX.Element",
@@ -12974,8 +13471,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14127,7 +14628,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -14213,11 +14716,15 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 10,
+      "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ThemeModeConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ThemeModeConfig"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14247,6 +14754,20 @@
         "type": "string",
         "required": true,
         "description": null
+      },
+      {
+        "name": "recipes",
+        "kind": "property",
+        "type": "ThemeRecipeOverrides | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "tokens",
+        "kind": "property",
+        "type": "ThemeGlobalTokenOverrides | undefined",
+        "required": false,
+        "description": null
       }
     ],
     "structuredRows": []
@@ -14263,7 +14784,9 @@
       "line": 13,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -14278,10 +14801,12 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 6,
+      "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -14314,8 +14839,12 @@
       "line": 31,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ThemeConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ThemeConfig"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  initialConfig,\n  initialMode = 'light',\n}: { children: React.ReactNode; initialConfig?: Partial<ThemeConfig>; initialMode?: \"light\" | \"dark\"; }) => React.JSX.Element",
@@ -14346,7 +14875,9 @@
       "line": 68,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [
       "ActionSemantics",
       "BorderSemantics",
@@ -14470,8 +15001,14 @@
       "line": 98,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "FontWeight",
+      "GeneratedThemeSwatches",
+      "ThemeSemantics"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14484,7 +15021,7 @@
       {
         "name": "radii",
         "kind": "property",
-        "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+        "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
         "required": true,
         "description": null
       },
@@ -14538,8 +15075,12 @@
       "line": 41,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ToastProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ToastProps"
+    ],
     "signatures": [
       {
         "label": "({\n  title,\n  description,\n  status = 'default',\n  onDismiss,\n  interactionPolicy = 'enabled',\n  testID,\n}: ToastProps) => React.JSX.Element",
@@ -14570,8 +15111,13 @@
       "line": 17,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "ToastStatus"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14638,8 +15184,13 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "ToastStatus"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14699,7 +15250,9 @@
       "line": 22,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -14731,7 +15284,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -14749,8 +15304,12 @@
       "line": 24,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TooltipProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TooltipProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  content,\n  delay = 150,\n  interactionPolicy = 'enabled',\n  placement = 'top',\n  testID,\n}: TooltipProps) => React.JSX.Element",
@@ -14781,8 +15340,12 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14842,8 +15405,13 @@
       "line": 27,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["I18nInstance", "Translator"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "I18nInstance",
+      "Translator"
+    ],
     "signatures": [
       {
         "label": "(props: { t: Translator; i18n?: I18nInstance | null; children: React.ReactNode; }) => React.JSX.Element",
@@ -14874,8 +15442,13 @@
       "line": 15,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["I18nInstance", "Translator"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "I18nInstance",
+      "Translator"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14907,7 +15480,9 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -14925,7 +15500,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -14950,8 +15527,12 @@
       "line": 57,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FontRuntime"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "FontRuntime"
+    ],
     "signatures": [
       {
         "label": "() => FontRuntime",
@@ -14975,8 +15556,12 @@
       "line": 23,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ResponsiveRuntime"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ResponsiveRuntime"
+    ],
     "signatures": [
       {
         "label": "() => ResponsiveRuntime",
@@ -15000,8 +15585,13 @@
       "line": 83,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceTheme", "ThemeConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceTheme",
+      "ThemeConfig"
+    ],
     "signatures": [
       {
         "label": "() => { theme: SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
@@ -15025,8 +15615,12 @@
       "line": 87,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ThemeConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ThemeConfig"
+    ],
     "signatures": [
       {
         "label": "() => (config: Partial<ThemeConfig>) => void",
@@ -15050,7 +15644,9 @@
       "line": 92,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -15075,7 +15671,9 @@
       "line": 106,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -15100,8 +15698,12 @@
       "line": 52,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TranslationRuntime"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TranslationRuntime"
+    ],
     "signatures": [
       {
         "label": "() => TranslationRuntime",

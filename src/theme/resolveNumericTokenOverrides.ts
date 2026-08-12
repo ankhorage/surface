@@ -8,7 +8,9 @@ export function resolveNumericTokenOverrides(
   for (const [token, value] of Object.entries(overrides)) {
     const invalid = !Number.isFinite(value) || (requirePositive ? value <= 0 : value < 0);
     if (invalid) {
-      const expectation = requirePositive ? 'a finite positive number' : 'a finite non-negative number';
+      const expectation = requirePositive
+        ? 'a finite positive number'
+        : 'a finite non-negative number';
       throw new RangeError(`Theme token ${family}.${token} must be ${expectation}.`);
     }
   }

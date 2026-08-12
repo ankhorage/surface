@@ -30,18 +30,18 @@ describe('createTheme token validation', () => {
     expect(() =>
       createTheme(withTokens({ typography: { headings: { hero: { size: 40 } } } })),
     ).toThrow('Unknown typography heading token');
-    expect(() =>
-      createTheme(withTokens({ typography: { weights: { hero: '700' } } })),
-    ).toThrow('Unknown typography weight token');
+    expect(() => createTheme(withTokens({ typography: { weights: { hero: '700' } } }))).toThrow(
+      'Unknown typography weight token',
+    );
   });
 
   it('rejects unsupported heading and font-weight values', () => {
     expect(() =>
       createTheme(withTokens({ typography: { headings: { '1': { weight: '900' } } } })),
     ).toThrow('Invalid heading weight');
-    expect(() =>
-      createTheme(withTokens({ typography: { weights: { medium: '950' } } })),
-    ).toThrow('Invalid font weight');
+    expect(() => createTheme(withTokens({ typography: { weights: { medium: '950' } } }))).toThrow(
+      'Invalid font weight',
+    );
   });
 });
 

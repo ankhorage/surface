@@ -41,10 +41,14 @@ function resolveHeading(
   const lineHeight = override?.lineHeight ?? fallback.lineHeight;
   const weight = override?.weight ?? fallback.weight;
   if (!Number.isFinite(size) || size <= 0) {
-    throw new RangeError(`Theme token typography.headings.${key}.size must be a finite positive number.`);
+    throw new RangeError(
+      `Theme token typography.headings.${key}.size must be a finite positive number.`,
+    );
   }
   if (!Number.isFinite(lineHeight) || lineHeight <= 0) {
-    throw new RangeError(`Theme token typography.headings.${key}.lineHeight must be a finite positive number.`);
+    throw new RangeError(
+      `Theme token typography.headings.${key}.lineHeight must be a finite positive number.`,
+    );
   }
   if (!isHeadingWeight(weight)) {
     throw new RangeError(`Invalid heading weight for typography.headings.${key}: ${weight}.`);

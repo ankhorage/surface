@@ -1,11 +1,28 @@
 import type { FontWeight } from './types';
 
 const WEIGHT_TOKEN_KEYS = new Set<string>([
-  'thin', 'extraLight', 'light', 'regular', 'medium',
-  'semiBold', 'bold', 'extraBold', 'black',
+  'thin',
+  'extraLight',
+  'light',
+  'regular',
+  'medium',
+  'semiBold',
+  'bold',
+  'extraBold',
+  'black',
 ]);
 const FONT_WEIGHT_VALUES = new Set<string>([
-  '100', '200', '300', '400', '500', '600', '700', '800', '900', 'bold', 'normal',
+  '100',
+  '200',
+  '300',
+  '400',
+  '500',
+  '600',
+  '700',
+  '800',
+  '900',
+  'bold',
+  'normal',
 ]);
 
 export function resolveWeightTokenOverrides(
