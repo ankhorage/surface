@@ -132,6 +132,7 @@ export interface ThemeTokens {
     m: number;
     l: number;
     full: number;
+    [key: string]: number;
   };
   typography: {
     headings: Record<
@@ -168,6 +169,7 @@ export interface ThemeTokens {
       bold: FontWeight;
       extraBold: FontWeight;
       black: FontWeight;
+      [key: string]: FontWeight;
     };
     fonts: {
       /** Map of weight -> fontFamily name for normal style */
