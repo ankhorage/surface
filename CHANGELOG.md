@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 2.2.0
+
+### Minor Changes
+
+- a75ca48: Resolve canonical authored theme token overrides into Surface runtime tokens while preserving defaults, validating invalid values explicitly, avoiding default-token mutation, and keeping module-derived font families isolated from persisted theme source.
+
 ## 2.1.1
 
 ### Patch Changes
