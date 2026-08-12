@@ -132,6 +132,7 @@ export interface ThemeTokens {
     m: number;
     l: number;
     full: number;
+    [key: string]: number;
   };
   typography: {
     headings: Record<

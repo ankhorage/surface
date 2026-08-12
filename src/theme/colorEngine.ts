@@ -22,6 +22,7 @@ import type {
   RoleSemantics,
   SurfaceSemantics,
   ThemeSemantics,
+  ThemeTokens,
 } from './types';
 
 /**
@@ -109,7 +110,7 @@ export function generatePalette(
   config: ThemeConfig,
   mode: 'light' | 'dark' = 'light',
 ): {
-  colors: Record<string, string>;
+  colors: ThemeTokens['colors'];
   swatches: GeneratedThemeSwatches;
   semantics: ThemeSemantics;
 } {
@@ -168,7 +169,7 @@ export function generatePalette(
     danger,
   };
 
-  const colors: Record<string, string> = {
+  const colors: ThemeTokens['colors'] = {
     primary: brand.base,
     secondary: secondarySwatch[500],
     accent: tertiarySwatch[500],

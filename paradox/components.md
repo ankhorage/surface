@@ -2225,10 +2225,10 @@ Source: `src/theme/ThemeContext.tsx:13:14`
 
 Export paths: `src/index.ts`
 
-| Prop     | Type                                                                                                                                                                                                                                                                                      | Required | Default | Description |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- | ----------- |
-| children | `ReactNode`                                                                                                                                                                                                                                                                               | no       | —       |             |
-| value    | `{ theme: import("/Users/a_rtiphishl_e/git/surface/src/index").SurfaceTheme; mode: "light" \| "dark"; setThemeConfig: (config: Partial<import("/Users/a_rtiphishl_e/git/surface/src/index").ThemeConfig>) => void; setMode: (mode: "light" \| "dark") => void; _hasProvider?: boolean; }` | yes      | —       |             |
+| Prop     | Type                                                                                                                                                                                                                        | Required | Default | Description |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- | ----------- |
+| children | `ReactNode`                                                                                                                                                                                                                 | no       | —       |             |
+| value    | `{ theme: import("./src/index").SurfaceTheme; mode: "light" \| "dark"; setThemeConfig: (config: Partial<import("./src/index").ThemeConfig>) => void; setMode: (mode: "light" \| "dark") => void; _hasProvider?: boolean; }` | yes      | —       |             |
 
 ## ThemeProvider
 

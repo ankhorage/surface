@@ -943,13 +943,53 @@
             <li>
               <button class="nav-button" type="button" data-target="src/theme/createTheme.ts">
                 src/theme/createTheme.ts
+                <small>3 functions</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/theme/resolveGlobalTokens.ts"
+              >
+                src/theme/resolveGlobalTokens.ts
                 <small>2 functions</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/theme/resolveHeadingTokenOverrides.ts"
+              >
+                src/theme/resolveHeadingTokenOverrides.ts
+                <small>4 functions</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/theme/resolveNumericTokenOverrides.ts"
+              >
+                src/theme/resolveNumericTokenOverrides.ts
+                <small>1 function</small>
               </button>
             </li>
             <li>
               <button class="nav-button" type="button" data-target="src/theme/resolveToken.ts">
                 src/theme/resolveToken.ts
                 <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/theme/resolveWeightTokenOverrides.ts"
+              >
+                src/theme/resolveWeightTokenOverrides.ts
+                <small>2 functions</small>
               </button>
             </li>
             <li>
@@ -980,7 +1020,7 @@
             <div class="summary">
               <div><strong>173</strong><span class="muted">public exports</span></div>
               <div><strong>54</strong><span class="muted">components</span></div>
-              <div><strong>153</strong><span class="muted">modules</span></div>
+              <div><strong>158</strong><span class="muted">modules</span></div>
               <div><strong>1</strong><span class="muted">entrypoints</span></div>
             </div>
             <h3>Entrypoints</h3>
@@ -2870,18 +2910,27 @@
             </article>
             <article
               class="item"
-              data-search="src/theme/createTheme.ts src/theme/colorEngine.ts src/theme/types.ts createTheme DEFAULT_CONFIG DEFAULT_TOKENS"
+              data-search="src/theme/createTheme.ts src/theme/colorEngine.ts src/theme/resolveGlobalTokens.ts src/theme/types.ts createTheme DEFAULT_CONFIG DEFAULT_TOKENS"
             >
               <h3>src/theme/createTheme.ts</h3>
               <p class="muted">Referenced module</p>
               <p>
                 <strong>Dependencies:</strong> <code>src/theme/colorEngine.ts</code>,
-                <code>src/theme/types.ts</code>
+                <code>src/theme/resolveGlobalTokens.ts</code>, <code>src/theme/types.ts</code>
               </p>
               <p>
                 <strong>Exports:</strong> <code>createTheme</code>, <code>DEFAULT_CONFIG</code>,
                 <code>DEFAULT_TOKENS</code>
               </p>
+            </article>
+            <article
+              class="item"
+              data-search="src/theme/defaultTokens.ts src/theme/types.ts DEFAULT_TOKENS"
+            >
+              <h3>src/theme/defaultTokens.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/theme/types.ts</code></p>
+              <p><strong>Exports:</strong> <code>DEFAULT_TOKENS</code></p>
             </article>
             <article
               class="item"
@@ -2907,11 +2956,53 @@
                 <code>useThemeConfig</code>, <code>useThemeMode</code>
               </p>
             </article>
+            <article
+              class="item"
+              data-search="src/theme/resolveGlobalTokens.ts src/theme/defaultTokens.ts src/theme/resolveHeadingTokenOverrides.ts src/theme/resolveNumericTokenOverrides.ts src/theme/resolveWeightTokenOverrides.ts src/theme/types.ts resolveGlobalTokens"
+            >
+              <h3>src/theme/resolveGlobalTokens.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p>
+                <strong>Dependencies:</strong> <code>src/theme/defaultTokens.ts</code>,
+                <code>src/theme/resolveHeadingTokenOverrides.ts</code>,
+                <code>src/theme/resolveNumericTokenOverrides.ts</code>,
+                <code>src/theme/resolveWeightTokenOverrides.ts</code>,
+                <code>src/theme/types.ts</code>
+              </p>
+              <p><strong>Exports:</strong> <code>resolveGlobalTokens</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/theme/resolveHeadingTokenOverrides.ts src/theme/types.ts resolveHeadingTokenOverrides"
+            >
+              <h3>src/theme/resolveHeadingTokenOverrides.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/theme/types.ts</code></p>
+              <p><strong>Exports:</strong> <code>resolveHeadingTokenOverrides</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/theme/resolveNumericTokenOverrides.ts resolveNumericTokenOverrides"
+            >
+              <h3>src/theme/resolveNumericTokenOverrides.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+              <p><strong>Exports:</strong> <code>resolveNumericTokenOverrides</code></p>
+            </article>
             <article class="item" data-search="src/theme/resolveToken.ts resolveToken">
               <h3>src/theme/resolveToken.ts</h3>
               <p class="muted">Referenced module</p>
               <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
               <p><strong>Exports:</strong> <code>resolveToken</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/theme/resolveWeightTokenOverrides.ts src/theme/types.ts resolveWeightTokenOverrides"
+            >
+              <h3>src/theme/resolveWeightTokenOverrides.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/theme/types.ts</code></p>
+              <p><strong>Exports:</strong> <code>resolveWeightTokenOverrides</code></p>
             </article>
             <article
               class="item"
@@ -3205,7 +3296,7 @@
               >
                 <h4>ThemeConfig</h4>
                 <p class="muted">
-                  type • <code>node_modules/@ankhorage/contracts/dist/types.d.ts:10:1</code>
+                  type • <code>node_modules/@ankhorage/contracts/dist/types.d.ts:11:1</code>
                 </p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -3255,6 +3346,20 @@
                       <td>yes</td>
                       <td></td>
                     </tr>
+                    <tr>
+                      <td><code>recipes</code></td>
+                      <td>property</td>
+                      <td><code>ThemeRecipeOverrides | undefined</code></td>
+                      <td>no</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>tokens</code></td>
+                      <td>property</td>
+                      <td><code>ThemeGlobalTokenOverrides | undefined</code></td>
+                      <td>no</td>
+                      <td></td>
+                    </tr>
                   </tbody>
                 </table>
               </article>
@@ -3265,7 +3370,7 @@
               >
                 <h4>ThemeModeConfig</h4>
                 <p class="muted">
-                  type • <code>node_modules/@ankhorage/contracts/dist/types.d.ts:6:1</code>
+                  type • <code>node_modules/@ankhorage/contracts/dist/types.d.ts:7:1</code>
                 </p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -3924,8 +4029,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -4394,8 +4499,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -4406,8 +4511,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -4426,8 +4531,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -4847,8 +4952,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -5732,8 +5837,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -7608,8 +7713,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -8085,8 +8190,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -12770,8 +12875,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -12782,8 +12887,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -12802,8 +12907,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -13241,8 +13346,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -13253,8 +13358,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -13273,8 +13378,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -13661,8 +13766,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -13673,8 +13778,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -13693,8 +13798,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -14103,8 +14208,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -14115,8 +14220,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -14135,8 +14240,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -14533,8 +14638,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -14545,8 +14650,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -14565,8 +14670,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -14968,8 +15073,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -14980,8 +15085,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -15000,8 +15105,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -15646,8 +15751,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -17248,8 +17353,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -17260,8 +17365,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -17293,8 +17398,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -17729,8 +17834,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -17741,8 +17846,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -17761,8 +17866,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -18158,8 +18263,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityRole
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityRole |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -18170,8 +18275,8 @@
                       <td>property</td>
                       <td>
                         <code
-                          >import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).AccessibilityState
-                          | undefined</code
+                          >import(&quot;react-native/types/index&quot;).AccessibilityState |
+                          undefined</code
                         >
                       </td>
                       <td>no</td>
@@ -18190,8 +18295,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -18669,8 +18774,8 @@
                       <td>
                         <code
                           >Responsive&lt;&quot;auto&quot; |
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).FlexAlignType
-                          | undefined&gt;</code
+                          import(&quot;react-native/types/index&quot;).FlexAlignType |
+                          undefined&gt;</code
                         >
                       </td>
                       <td>no</td>
@@ -19469,8 +19574,7 @@
                       <td>property</td>
                       <td>
                         <code
-                          >((error:
-                          import(&quot;/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index&quot;).ImageErrorEvent)
+                          >((error: import(&quot;react-native/types/index&quot;).ImageErrorEvent)
                           =&gt; void) | undefined</code
                         >
                       </td>
@@ -19480,12 +19584,7 @@
                     <tr>
                       <td><code>radius</code></td>
                       <td>property</td>
-                      <td>
-                        <code
-                          >number | &quot;s&quot; | &quot;m&quot; | &quot;l&quot; | &quot;none&quot;
-                          | &quot;full&quot; | undefined</code
-                        >
-                      </td>
+                      <td><code>string | number | undefined</code></td>
                       <td>no</td>
                       <td></td>
                     </tr>
@@ -19811,10 +19910,10 @@
               <article
                 class="item"
                 id="symbol-generatepalette"
-                data-search='generatePalette function src/theme/colorEngine.ts  GeneratedThemeSwatches ThemeConfig ThemeSemantics (config: ThemeConfig, mode?: "light" | "dark") =&gt; { colors: Record&lt;string, string&gt;; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }'
+                data-search='generatePalette function src/theme/colorEngine.ts  GeneratedThemeSwatches ThemeConfig ThemeSemantics ThemeTokens (config: ThemeConfig, mode?: "light" | "dark") =&gt; { colors: ThemeTokens["colors"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }'
               >
                 <h4>generatePalette</h4>
-                <p class="muted">function • <code>src/theme/colorEngine.ts:108:1</code></p>
+                <p class="muted">function • <code>src/theme/colorEngine.ts:109:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div>
@@ -19823,12 +19922,13 @@
                     <li class="chip">GeneratedThemeSwatches</li>
                     <li class="chip">ThemeConfig</li>
                     <li class="chip">ThemeSemantics</li>
+                    <li class="chip">ThemeTokens</li>
                   </ul>
                 </div>
                 <div>
                   <h5>Signature</h5>
                   <pre>
-(config: ThemeConfig, mode?: &quot;light&quot; | &quot;dark&quot;) =&gt; { colors: Record&lt;string, string&gt;; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }</pre
+(config: ThemeConfig, mode?: &quot;light&quot; | &quot;dark&quot;) =&gt; { colors: ThemeTokens[&quot;colors&quot;]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }</pre
                   >
                   <table>
                     <thead>
@@ -19857,7 +19957,7 @@
                   <p>
                     <strong>Returns:</strong>
                     <code
-                      >{ colors: Record&lt;string, string&gt;; swatches: GeneratedThemeSwatches;
+                      >{ colors: ThemeTokens[&quot;colors&quot;]; swatches: GeneratedThemeSwatches;
                       semantics: ThemeSemantics; }</code
                     >
                   </p>
@@ -19869,7 +19969,7 @@
                 data-search="resolveSemanticColors function src/theme/colorEngine.ts  GeneratedThemeModeColors SemanticColorReferenceMap SurfaceSemanticColors (generated: GeneratedThemeModeColors, references: SemanticColorReferenceMap) =&gt; SurfaceSemanticColors"
               >
                 <h4>resolveSemanticColors</h4>
-                <p class="muted">function • <code>src/theme/colorEngine.ts:33:1</code></p>
+                <p class="muted">function • <code>src/theme/colorEngine.ts:34:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div>
@@ -19918,7 +20018,7 @@
                 data-search="SurfaceSemanticColors unknown src/theme/colorEngine.ts "
               >
                 <h4>SurfaceSemanticColors</h4>
-                <p class="muted">unknown • <code>src/theme/colorEngine.ts:31:1</code></p>
+                <p class="muted">unknown • <code>src/theme/colorEngine.ts:32:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -19932,7 +20032,7 @@
                 data-search='createTheme function src/theme/createTheme.ts  SurfaceTheme ThemeConfig (config?: ThemeConfig, mode?: "light" | "dark", activeFontId?: string | null | undefined) =&gt; SurfaceTheme'
               >
                 <h4>createTheme</h4>
-                <p class="muted">function • <code>src/theme/createTheme.ts:92:1</code></p>
+                <p class="muted">function • <code>src/theme/createTheme.ts:26:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div>
@@ -19986,18 +20086,21 @@
                 data-search="DEFAULT_CONFIG value src/theme/createTheme.ts "
               >
                 <h4>DEFAULT_CONFIG</h4>
-                <p class="muted">value • <code>src/theme/createTheme.ts:68:14</code></p>
+                <p class="muted">value • <code>src/theme/createTheme.ts:7:14</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
               </article>
+            </section>
+            <section>
+              <h3>src/theme/defaultTokens.ts</h3>
               <article
                 class="item"
                 id="symbol-default-tokens"
-                data-search="DEFAULT_TOKENS value src/theme/createTheme.ts "
+                data-search="DEFAULT_TOKENS value src/theme/defaultTokens.ts "
               >
                 <h4>DEFAULT_TOKENS</h4>
-                <p class="muted">value • <code>src/theme/createTheme.ts:4:14</code></p>
+                <p class="muted">value • <code>src/theme/defaultTokens.ts:17:14</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -20601,7 +20704,7 @@
                 data-search="SurfaceTheme type src/theme/types.ts  FontWeight GeneratedThemeSwatches ThemeSemantics"
               >
                 <h4>SurfaceTheme</h4>
-                <p class="muted">type • <code>src/theme/types.ts:187:1</code></p>
+                <p class="muted">type • <code>src/theme/types.ts:188:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div>
@@ -20650,7 +20753,10 @@
                       <td><code>radii</code></td>
                       <td>property</td>
                       <td>
-                        <code>{ none: 0; s: number; m: number; l: number; full: number; }</code>
+                        <code
+                          >{ [key: string]: number; none: 0; s: number; m: number; l: number; full:
+                          number; }</code
+                        >
                       </td>
                       <td>yes</td>
                       <td></td>
@@ -20898,7 +21004,10 @@
                       <td><code>radii</code></td>
                       <td>property</td>
                       <td>
-                        <code>{ none: 0; s: number; m: number; l: number; full: number; }</code>
+                        <code
+                          >{ [key: string]: number; none: 0; s: number; m: number; l: number; full:
+                          number; }</code
+                        >
                       </td>
                       <td>yes</td>
                       <td></td>
@@ -31686,7 +31795,7 @@
             <article
               class="item"
               id="component-themecontext"
-              data-search='ThemeContext src/theme/ThemeContext.tsx  children ReactNode value { theme: import("/Users/a_rtiphishl_e/git/surface/src/index").SurfaceTheme; mode: "light" | "dark"; setThemeConfig: (config: Partial&lt;import("/Users/a_rtiphishl_e/git/surface/src/index").ThemeConfig&gt;) =&gt; void; setMode: (mode: "light" | "dark") =&gt; void; _hasProvider?: boolean; }'
+              data-search='ThemeContext src/theme/ThemeContext.tsx  children ReactNode value { theme: import("./src/index").SurfaceTheme; mode: "light" | "dark"; setThemeConfig: (config: Partial&lt;import("./src/index").ThemeConfig&gt;) =&gt; void; setMode: (mode: "light" | "dark") =&gt; void; _hasProvider?: boolean; }'
             >
               <h3>ThemeContext</h3>
               <p class="muted"><code>src/theme/ThemeContext.tsx:13:14</code></p>
@@ -31712,12 +31821,11 @@
                     <td><code>value</code></td>
                     <td>
                       <code
-                        >{ theme:
-                        import(&quot;/Users/a_rtiphishl_e/git/surface/src/index&quot;).SurfaceTheme;
-                        mode: &quot;light&quot; | &quot;dark&quot;; setThemeConfig: (config:
-                        Partial&lt;import(&quot;/Users/a_rtiphishl_e/git/surface/src/index&quot;).ThemeConfig&gt;)
-                        =&gt; void; setMode: (mode: &quot;light&quot; | &quot;dark&quot;) =&gt;
-                        void; _hasProvider?: boolean; }</code
+                        >{ theme: import(&quot;./src/index&quot;).SurfaceTheme; mode:
+                        &quot;light&quot; | &quot;dark&quot;; setThemeConfig: (config:
+                        Partial&lt;import(&quot;./src/index&quot;).ThemeConfig&gt;) =&gt; void;
+                        setMode: (mode: &quot;light&quot; | &quot;dark&quot;) =&gt; void;
+                        _hasProvider?: boolean; }</code
                       >
                     </td>
                     <td>yes</td>
@@ -32738,11 +32846,33 @@
                 module_src_theme_createTheme_ts[&quot;src/theme/createTheme.ts&quot;]
                 package__ankhorage_surface -.-&gt; module_src_theme_createTheme_ts
                 module_src_theme_createTheme_ts --&gt; module_src_theme_colorEngine_ts
+                module_src_theme_createTheme_ts --&gt; module_src_theme_resolveGlobalTokens_ts
                 module_src_theme_createTheme_ts --&gt; module_src_theme_types_ts
+                module_src_theme_defaultTokens_ts[&quot;src/theme/defaultTokens.ts&quot;]
+                package__ankhorage_surface -.-&gt; module_src_theme_defaultTokens_ts
+                module_src_theme_defaultTokens_ts --&gt; module_src_theme_types_ts
                 module_src_theme_index_ts[&quot;src/theme/index.ts&quot;] package__ankhorage_surface
                 -.-&gt; module_src_theme_index_ts
+                module_src_theme_resolveGlobalTokens_ts[&quot;src/theme/resolveGlobalTokens.ts&quot;]
+                package__ankhorage_surface -.-&gt; module_src_theme_resolveGlobalTokens_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_defaultTokens_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt;
+                module_src_theme_resolveHeadingTokenOverrides_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt;
+                module_src_theme_resolveNumericTokenOverrides_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt;
+                module_src_theme_resolveWeightTokenOverrides_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_types_ts
+                module_src_theme_resolveHeadingTokenOverrides_ts[&quot;src/theme/resolveHeadingTokenOverrides.ts&quot;]
+                package__ankhorage_surface -.-&gt; module_src_theme_resolveHeadingTokenOverrides_ts
+                module_src_theme_resolveHeadingTokenOverrides_ts --&gt; module_src_theme_types_ts
+                module_src_theme_resolveNumericTokenOverrides_ts[&quot;src/theme/resolveNumericTokenOverrides.ts&quot;]
+                package__ankhorage_surface -.-&gt; module_src_theme_resolveNumericTokenOverrides_ts
                 module_src_theme_resolveToken_ts[&quot;src/theme/resolveToken.ts&quot;]
                 package__ankhorage_surface -.-&gt; module_src_theme_resolveToken_ts
+                module_src_theme_resolveWeightTokenOverrides_ts[&quot;src/theme/resolveWeightTokenOverrides.ts&quot;]
+                package__ankhorage_surface -.-&gt; module_src_theme_resolveWeightTokenOverrides_ts
+                module_src_theme_resolveWeightTokenOverrides_ts --&gt; module_src_theme_types_ts
                 module_src_theme_ThemeContext_tsx[&quot;src/theme/ThemeContext.tsx&quot;]
                 package__ankhorage_surface -.-&gt; module_src_theme_ThemeContext_tsx
                 module_src_theme_ThemeContext_tsx --&gt; module_src_context_FontContext_tsx
@@ -33386,11 +33516,30 @@ graph TD
   module_src_theme_createTheme_ts[&quot;src/theme/createTheme.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_theme_createTheme_ts
   module_src_theme_createTheme_ts --&gt; module_src_theme_colorEngine_ts
+  module_src_theme_createTheme_ts --&gt; module_src_theme_resolveGlobalTokens_ts
   module_src_theme_createTheme_ts --&gt; module_src_theme_types_ts
+  module_src_theme_defaultTokens_ts[&quot;src/theme/defaultTokens.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_theme_defaultTokens_ts
+  module_src_theme_defaultTokens_ts --&gt; module_src_theme_types_ts
   module_src_theme_index_ts[&quot;src/theme/index.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_theme_index_ts
+  module_src_theme_resolveGlobalTokens_ts[&quot;src/theme/resolveGlobalTokens.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_theme_resolveGlobalTokens_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_defaultTokens_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_resolveHeadingTokenOverrides_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_resolveNumericTokenOverrides_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_resolveWeightTokenOverrides_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_types_ts
+  module_src_theme_resolveHeadingTokenOverrides_ts[&quot;src/theme/resolveHeadingTokenOverrides.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_theme_resolveHeadingTokenOverrides_ts
+  module_src_theme_resolveHeadingTokenOverrides_ts --&gt; module_src_theme_types_ts
+  module_src_theme_resolveNumericTokenOverrides_ts[&quot;src/theme/resolveNumericTokenOverrides.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_theme_resolveNumericTokenOverrides_ts
   module_src_theme_resolveToken_ts[&quot;src/theme/resolveToken.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_theme_resolveToken_ts
+  module_src_theme_resolveWeightTokenOverrides_ts[&quot;src/theme/resolveWeightTokenOverrides.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_theme_resolveWeightTokenOverrides_ts
+  module_src_theme_resolveWeightTokenOverrides_ts --&gt; module_src_theme_types_ts
   module_src_theme_ThemeContext_tsx[&quot;src/theme/ThemeContext.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_theme_ThemeContext_tsx
   module_src_theme_ThemeContext_tsx --&gt; module_src_context_FontContext_tsx
@@ -33565,8 +33714,13 @@ graph TD
                 module_src_surfaceColor_ts[&quot;src/surfaceColor.ts&quot;]
                 module_src_theme_colorEngine_ts[&quot;src/theme/colorEngine.ts&quot;]
                 module_src_theme_createTheme_ts[&quot;src/theme/createTheme.ts&quot;]
+                module_src_theme_defaultTokens_ts[&quot;src/theme/defaultTokens.ts&quot;]
                 module_src_theme_index_ts[&quot;src/theme/index.ts&quot;]
+                module_src_theme_resolveGlobalTokens_ts[&quot;src/theme/resolveGlobalTokens.ts&quot;]
+                module_src_theme_resolveHeadingTokenOverrides_ts[&quot;src/theme/resolveHeadingTokenOverrides.ts&quot;]
+                module_src_theme_resolveNumericTokenOverrides_ts[&quot;src/theme/resolveNumericTokenOverrides.ts&quot;]
                 module_src_theme_resolveToken_ts[&quot;src/theme/resolveToken.ts&quot;]
+                module_src_theme_resolveWeightTokenOverrides_ts[&quot;src/theme/resolveWeightTokenOverrides.ts&quot;]
                 module_src_theme_ThemeContext_tsx[&quot;src/theme/ThemeContext.tsx&quot;]
                 module_src_theme_types_ts[&quot;src/theme/types.ts&quot;]
                 module_src_utils_deepEqual_ts[&quot;src/utils/deepEqual.ts&quot;]
@@ -33992,7 +34146,19 @@ graph TD
                 module_src_primitives_text_types_ts --&gt; module_src_surfaceColor_ts
                 module_src_theme_colorEngine_ts --&gt; module_src_theme_types_ts
                 module_src_theme_createTheme_ts --&gt; module_src_theme_colorEngine_ts
+                module_src_theme_createTheme_ts --&gt; module_src_theme_resolveGlobalTokens_ts
                 module_src_theme_createTheme_ts --&gt; module_src_theme_types_ts
+                module_src_theme_defaultTokens_ts --&gt; module_src_theme_types_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_defaultTokens_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt;
+                module_src_theme_resolveHeadingTokenOverrides_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt;
+                module_src_theme_resolveNumericTokenOverrides_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt;
+                module_src_theme_resolveWeightTokenOverrides_ts
+                module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_types_ts
+                module_src_theme_resolveHeadingTokenOverrides_ts --&gt; module_src_theme_types_ts
+                module_src_theme_resolveWeightTokenOverrides_ts --&gt; module_src_theme_types_ts
                 module_src_theme_ThemeContext_tsx --&gt; module_src_context_FontContext_tsx
                 module_src_theme_ThemeContext_tsx --&gt;
                 module_src_core_responsive_ResponsiveProvider_tsx module_src_theme_ThemeContext_tsx
@@ -34153,8 +34319,13 @@ graph LR
   module_src_surfaceColor_ts[&quot;src/surfaceColor.ts&quot;]
   module_src_theme_colorEngine_ts[&quot;src/theme/colorEngine.ts&quot;]
   module_src_theme_createTheme_ts[&quot;src/theme/createTheme.ts&quot;]
+  module_src_theme_defaultTokens_ts[&quot;src/theme/defaultTokens.ts&quot;]
   module_src_theme_index_ts[&quot;src/theme/index.ts&quot;]
+  module_src_theme_resolveGlobalTokens_ts[&quot;src/theme/resolveGlobalTokens.ts&quot;]
+  module_src_theme_resolveHeadingTokenOverrides_ts[&quot;src/theme/resolveHeadingTokenOverrides.ts&quot;]
+  module_src_theme_resolveNumericTokenOverrides_ts[&quot;src/theme/resolveNumericTokenOverrides.ts&quot;]
   module_src_theme_resolveToken_ts[&quot;src/theme/resolveToken.ts&quot;]
+  module_src_theme_resolveWeightTokenOverrides_ts[&quot;src/theme/resolveWeightTokenOverrides.ts&quot;]
   module_src_theme_ThemeContext_tsx[&quot;src/theme/ThemeContext.tsx&quot;]
   module_src_theme_types_ts[&quot;src/theme/types.ts&quot;]
   module_src_utils_deepEqual_ts[&quot;src/utils/deepEqual.ts&quot;]
@@ -34485,7 +34656,16 @@ graph LR
   module_src_primitives_text_types_ts --&gt; module_src_surfaceColor_ts
   module_src_theme_colorEngine_ts --&gt; module_src_theme_types_ts
   module_src_theme_createTheme_ts --&gt; module_src_theme_colorEngine_ts
+  module_src_theme_createTheme_ts --&gt; module_src_theme_resolveGlobalTokens_ts
   module_src_theme_createTheme_ts --&gt; module_src_theme_types_ts
+  module_src_theme_defaultTokens_ts --&gt; module_src_theme_types_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_defaultTokens_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_resolveHeadingTokenOverrides_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_resolveNumericTokenOverrides_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_resolveWeightTokenOverrides_ts
+  module_src_theme_resolveGlobalTokens_ts --&gt; module_src_theme_types_ts
+  module_src_theme_resolveHeadingTokenOverrides_ts --&gt; module_src_theme_types_ts
+  module_src_theme_resolveWeightTokenOverrides_ts --&gt; module_src_theme_types_ts
   module_src_theme_ThemeContext_tsx --&gt; module_src_context_FontContext_tsx
   module_src_theme_ThemeContext_tsx --&gt; module_src_core_responsive_ResponsiveProvider_tsx
   module_src_theme_ThemeContext_tsx --&gt; module_src_internal_overlay_OverlayProvider_tsx
@@ -34649,8 +34829,13 @@ graph LR
                 module_src_surfaceColor_ts[&quot;src/surfaceColor.ts&quot;]
                 module_src_theme_colorEngine_ts[&quot;src/theme/colorEngine.ts&quot;]
                 module_src_theme_createTheme_ts[&quot;src/theme/createTheme.ts&quot;]
+                module_src_theme_defaultTokens_ts[&quot;src/theme/defaultTokens.ts&quot;]
                 module_src_theme_index_ts[&quot;src/theme/index.ts&quot;]
+                module_src_theme_resolveGlobalTokens_ts[&quot;src/theme/resolveGlobalTokens.ts&quot;]
+                module_src_theme_resolveHeadingTokenOverrides_ts[&quot;src/theme/resolveHeadingTokenOverrides.ts&quot;]
+                module_src_theme_resolveNumericTokenOverrides_ts[&quot;src/theme/resolveNumericTokenOverrides.ts&quot;]
                 module_src_theme_resolveToken_ts[&quot;src/theme/resolveToken.ts&quot;]
+                module_src_theme_resolveWeightTokenOverrides_ts[&quot;src/theme/resolveWeightTokenOverrides.ts&quot;]
                 module_src_theme_ThemeContext_tsx[&quot;src/theme/ThemeContext.tsx&quot;]
                 module_src_theme_types_ts[&quot;src/theme/types.ts&quot;]
                 module_src_utils_deepEqual_ts[&quot;src/utils/deepEqual.ts&quot;]
@@ -34730,7 +34915,7 @@ graph LR
                 module_src_utils_deepMerge_ts --&gt; export_deepMerge
                 export_DEFAULT_CONFIG[&quot;DEFAULT_CONFIG&quot;] module_src_theme_createTheme_ts
                 --&gt; export_DEFAULT_CONFIG export_DEFAULT_TOKENS[&quot;DEFAULT_TOKENS&quot;]
-                module_src_theme_createTheme_ts --&gt; export_DEFAULT_TOKENS
+                module_src_theme_defaultTokens_ts --&gt; export_DEFAULT_TOKENS
                 export_Divider[&quot;Divider&quot;] module_src_layout_Divider_tsx --&gt;
                 export_Divider export_Divider -.-&gt; export_DividerProps
                 export_DividerProps[&quot;DividerProps&quot;] module_src_layout_Divider_tsx --&gt;
@@ -34776,6 +34961,7 @@ graph LR
                 module_src_theme_colorEngine_ts --&gt; export_generatePalette export_generatePalette
                 -.-&gt; export_GeneratedThemeSwatches export_generatePalette -.-&gt;
                 export_ThemeConfig export_generatePalette -.-&gt; export_ThemeSemantics
+                export_generatePalette -.-&gt; export_ThemeTokens
                 export_getBreakpointFromWidth[&quot;getBreakpointFromWidth&quot;]
                 module_src_core_responsive_getBreakpointFromWidth_ts --&gt;
                 export_getBreakpointFromWidth export_Grid[&quot;Grid&quot;]
@@ -35192,8 +35378,13 @@ graph LR
   module_src_surfaceColor_ts[&quot;src/surfaceColor.ts&quot;]
   module_src_theme_colorEngine_ts[&quot;src/theme/colorEngine.ts&quot;]
   module_src_theme_createTheme_ts[&quot;src/theme/createTheme.ts&quot;]
+  module_src_theme_defaultTokens_ts[&quot;src/theme/defaultTokens.ts&quot;]
   module_src_theme_index_ts[&quot;src/theme/index.ts&quot;]
+  module_src_theme_resolveGlobalTokens_ts[&quot;src/theme/resolveGlobalTokens.ts&quot;]
+  module_src_theme_resolveHeadingTokenOverrides_ts[&quot;src/theme/resolveHeadingTokenOverrides.ts&quot;]
+  module_src_theme_resolveNumericTokenOverrides_ts[&quot;src/theme/resolveNumericTokenOverrides.ts&quot;]
   module_src_theme_resolveToken_ts[&quot;src/theme/resolveToken.ts&quot;]
+  module_src_theme_resolveWeightTokenOverrides_ts[&quot;src/theme/resolveWeightTokenOverrides.ts&quot;]
   module_src_theme_ThemeContext_tsx[&quot;src/theme/ThemeContext.tsx&quot;]
   module_src_theme_types_ts[&quot;src/theme/types.ts&quot;]
   module_src_utils_deepEqual_ts[&quot;src/utils/deepEqual.ts&quot;]
@@ -35298,7 +35489,7 @@ graph LR
   export_DEFAULT_CONFIG[&quot;DEFAULT_CONFIG&quot;]
   module_src_theme_createTheme_ts --&gt; export_DEFAULT_CONFIG
   export_DEFAULT_TOKENS[&quot;DEFAULT_TOKENS&quot;]
-  module_src_theme_createTheme_ts --&gt; export_DEFAULT_TOKENS
+  module_src_theme_defaultTokens_ts --&gt; export_DEFAULT_TOKENS
   export_Divider[&quot;Divider&quot;]
   module_src_layout_Divider_tsx --&gt; export_Divider
   export_Divider -.-&gt; export_DividerProps
@@ -35349,6 +35540,7 @@ graph LR
   export_generatePalette -.-&gt; export_GeneratedThemeSwatches
   export_generatePalette -.-&gt; export_ThemeConfig
   export_generatePalette -.-&gt; export_ThemeSemantics
+  export_generatePalette -.-&gt; export_ThemeTokens
   export_getBreakpointFromWidth[&quot;getBreakpointFromWidth&quot;]
   module_src_core_responsive_getBreakpointFromWidth_ts --&gt; export_getBreakpointFromWidth
   export_Grid[&quot;Grid&quot;]
@@ -38999,22 +39191,22 @@ sequenceDiagram
             <h2>src/theme/colorEngine.ts</h2>
             <article class="item" data-search="resolveSemanticColors src/theme/colorEngine.ts ">
               <h3>resolveSemanticColors</h3>
-              <p class="muted"><code>src/theme/colorEngine.ts:33:1</code></p>
+              <p class="muted"><code>src/theme/colorEngine.ts:34:1</code></p>
               <p class="empty">No description available.</p>
             </article>
             <article class="item" data-search="buildNeutralSemantics src/theme/colorEngine.ts ">
               <h3>buildNeutralSemantics</h3>
-              <p class="muted"><code>src/theme/colorEngine.ts:48:1</code></p>
+              <p class="muted"><code>src/theme/colorEngine.ts:49:1</code></p>
               <p class="empty">No description available.</p>
             </article>
             <article class="item" data-search="buildRoleSemantics src/theme/colorEngine.ts ">
               <h3>buildRoleSemantics</h3>
-              <p class="muted"><code>src/theme/colorEngine.ts:79:1</code></p>
+              <p class="muted"><code>src/theme/colorEngine.ts:80:1</code></p>
               <p class="empty">No description available.</p>
             </article>
             <article class="item" data-search="generatePalette src/theme/colorEngine.ts ">
               <h3>generatePalette</h3>
-              <p class="muted"><code>src/theme/colorEngine.ts:108:1</code></p>
+              <p class="muted"><code>src/theme/colorEngine.ts:109:1</code></p>
               <p class="empty">No description available.</p>
             </article>
           </section>
@@ -39027,14 +39219,105 @@ sequenceDiagram
         >
           <section class="panel">
             <h2>src/theme/createTheme.ts</h2>
-            <article class="item" data-search="toPascalCase src/theme/createTheme.ts ">
-              <h3>toPascalCase</h3>
-              <p class="muted"><code>src/theme/createTheme.ts:85:1</code></p>
-              <p class="empty">No description available.</p>
-            </article>
             <article class="item" data-search="createTheme src/theme/createTheme.ts ">
               <h3>createTheme</h3>
-              <p class="muted"><code>src/theme/createTheme.ts:92:1</code></p>
+              <p class="muted"><code>src/theme/createTheme.ts:26:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article class="item" data-search="applyActiveFont src/theme/createTheme.ts ">
+              <h3>applyActiveFont</h3>
+              <p class="muted"><code>src/theme/createTheme.ts:44:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article class="item" data-search="toPascalCase src/theme/createTheme.ts ">
+              <h3>toPascalCase</h3>
+              <p class="muted"><code>src/theme/createTheme.ts:54:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-theme-resolveglobaltokens-ts"
+          class="view"
+          data-view="src/theme/resolveGlobalTokens.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/theme/resolveGlobalTokens.ts</h2>
+            <article
+              class="item"
+              data-search="resolveGlobalTokens src/theme/resolveGlobalTokens.ts "
+            >
+              <h3>resolveGlobalTokens</h3>
+              <p class="muted"><code>src/theme/resolveGlobalTokens.ts:11:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article
+              class="item"
+              data-search="validateZeroTokens src/theme/resolveGlobalTokens.ts "
+            >
+              <h3>validateZeroTokens</h3>
+              <p class="muted"><code>src/theme/resolveGlobalTokens.ts:48:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-theme-resolveheadingtokenoverrides-ts"
+          class="view"
+          data-view="src/theme/resolveHeadingTokenOverrides.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/theme/resolveHeadingTokenOverrides.ts</h2>
+            <article
+              class="item"
+              data-search="resolveHeadingTokenOverrides src/theme/resolveHeadingTokenOverrides.ts "
+            >
+              <h3>resolveHeadingTokenOverrides</h3>
+              <p class="muted"><code>src/theme/resolveHeadingTokenOverrides.ts:12:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article
+              class="item"
+              data-search="validateHeadingKeys src/theme/resolveHeadingTokenOverrides.ts "
+            >
+              <h3>validateHeadingKeys</h3>
+              <p class="muted"><code>src/theme/resolveHeadingTokenOverrides.ts:27:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article
+              class="item"
+              data-search="resolveHeading src/theme/resolveHeadingTokenOverrides.ts "
+            >
+              <h3>resolveHeading</h3>
+              <p class="muted"><code>src/theme/resolveHeadingTokenOverrides.ts:35:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article
+              class="item"
+              data-search="isHeadingWeight src/theme/resolveHeadingTokenOverrides.ts "
+            >
+              <h3>isHeadingWeight</h3>
+              <p class="muted"><code>src/theme/resolveHeadingTokenOverrides.ts:59:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-theme-resolvenumerictokenoverrides-ts"
+          class="view"
+          data-view="src/theme/resolveNumericTokenOverrides.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/theme/resolveNumericTokenOverrides.ts</h2>
+            <article
+              class="item"
+              data-search="resolveNumericTokenOverrides src/theme/resolveNumericTokenOverrides.ts "
+            >
+              <h3>resolveNumericTokenOverrides</h3>
+              <p class="muted"><code>src/theme/resolveNumericTokenOverrides.ts:1:1</code></p>
               <p class="empty">No description available.</p>
             </article>
           </section>
@@ -39050,6 +39333,32 @@ sequenceDiagram
             <article class="item" data-search="resolveToken src/theme/resolveToken.ts ">
               <h3>resolveToken</h3>
               <p class="muted"><code>src/theme/resolveToken.ts:11:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-theme-resolveweighttokenoverrides-ts"
+          class="view"
+          data-view="src/theme/resolveWeightTokenOverrides.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/theme/resolveWeightTokenOverrides.ts</h2>
+            <article
+              class="item"
+              data-search="resolveWeightTokenOverrides src/theme/resolveWeightTokenOverrides.ts "
+            >
+              <h3>resolveWeightTokenOverrides</h3>
+              <p class="muted"><code>src/theme/resolveWeightTokenOverrides.ts:28:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article
+              class="item"
+              data-search="isFontWeight src/theme/resolveWeightTokenOverrides.ts "
+            >
+              <h3>isFontWeight</h3>
+              <p class="muted"><code>src/theme/resolveWeightTokenOverrides.ts:46:1</code></p>
               <p class="empty">No description available.</p>
             </article>
           </section>

@@ -146,8 +146,13 @@ graph LR
   module_src_surfaceColor_ts["src/surfaceColor.ts"]
   module_src_theme_colorEngine_ts["src/theme/colorEngine.ts"]
   module_src_theme_createTheme_ts["src/theme/createTheme.ts"]
+  module_src_theme_defaultTokens_ts["src/theme/defaultTokens.ts"]
   module_src_theme_index_ts["src/theme/index.ts"]
+  module_src_theme_resolveGlobalTokens_ts["src/theme/resolveGlobalTokens.ts"]
+  module_src_theme_resolveHeadingTokenOverrides_ts["src/theme/resolveHeadingTokenOverrides.ts"]
+  module_src_theme_resolveNumericTokenOverrides_ts["src/theme/resolveNumericTokenOverrides.ts"]
   module_src_theme_resolveToken_ts["src/theme/resolveToken.ts"]
+  module_src_theme_resolveWeightTokenOverrides_ts["src/theme/resolveWeightTokenOverrides.ts"]
   module_src_theme_ThemeContext_tsx["src/theme/ThemeContext.tsx"]
   module_src_theme_types_ts["src/theme/types.ts"]
   module_src_utils_deepEqual_ts["src/utils/deepEqual.ts"]
@@ -252,7 +257,7 @@ graph LR
   export_DEFAULT_CONFIG["DEFAULT_CONFIG"]
   module_src_theme_createTheme_ts --> export_DEFAULT_CONFIG
   export_DEFAULT_TOKENS["DEFAULT_TOKENS"]
-  module_src_theme_createTheme_ts --> export_DEFAULT_TOKENS
+  module_src_theme_defaultTokens_ts --> export_DEFAULT_TOKENS
   export_Divider["Divider"]
   module_src_layout_Divider_tsx --> export_Divider
   export_Divider -.-> export_DividerProps
@@ -303,6 +308,7 @@ graph LR
   export_generatePalette -.-> export_GeneratedThemeSwatches
   export_generatePalette -.-> export_ThemeConfig
   export_generatePalette -.-> export_ThemeSemantics
+  export_generatePalette -.-> export_ThemeTokens
   export_getBreakpointFromWidth["getBreakpointFromWidth"]
   module_src_core_responsive_getBreakpointFromWidth_ts --> export_getBreakpointFromWidth
   export_Grid["Grid"]

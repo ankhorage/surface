@@ -332,14 +332,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -353,7 +353,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -859,14 +859,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -880,7 +880,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -1332,7 +1332,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -1713,7 +1713,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -2121,14 +2121,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -2142,7 +2142,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -2487,14 +2487,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -2508,7 +2508,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -2867,7 +2867,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -3322,14 +3322,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -3343,7 +3343,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -3686,7 +3686,7 @@
     "modulePath": "src/theme/createTheme.ts",
     "sourceLocation": {
       "filePath": "src/theme/createTheme.ts",
-      "line": 92,
+      "line": 26,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -3768,7 +3768,7 @@
     "modulePath": "src/theme/createTheme.ts",
     "sourceLocation": {
       "filePath": "src/theme/createTheme.ts",
-      "line": 68,
+      "line": 7,
       "column": 14
     },
     "exportPaths": ["src/index.ts"],
@@ -3783,10 +3783,10 @@
     "isReadme": false,
     "examples": [],
     "kind": "value",
-    "modulePath": "src/theme/createTheme.ts",
+    "modulePath": "src/theme/defaultTokens.ts",
     "sourceLocation": {
-      "filePath": "src/theme/createTheme.ts",
-      "line": 4,
+      "filePath": "src/theme/defaultTokens.ts",
+      "line": 17,
       "column": 14
     },
     "exportPaths": ["src/index.ts"],
@@ -3853,14 +3853,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -3874,7 +3874,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -4758,14 +4758,14 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 108,
+      "line": 109,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics"],
+    "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics", "ThemeTokens"],
     "signatures": [
       {
-        "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+        "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
         "parameters": [
           {
             "name": "config",
@@ -4780,7 +4780,7 @@
             "description": null
           }
         ],
-        "returnType": "{ colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+        "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
         "returnDescription": null
       }
     ],
@@ -4877,14 +4877,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -4898,7 +4898,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -5600,7 +5600,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -6112,14 +6112,14 @@
       {
         "name": "onError",
         "kind": "property",
-        "type": "((error: import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").ImageErrorEvent) => void) | undefined",
+        "type": "((error: import(\"react-native/types/index\").ImageErrorEvent) => void) | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "radius",
         "kind": "property",
-        "type": "number | \"s\" | \"m\" | \"l\" | \"none\" | \"full\" | undefined",
+        "type": "string | number | undefined",
         "required": false,
         "description": null
       },
@@ -7205,7 +7205,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -7595,7 +7595,7 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 33,
+      "line": 34,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -7987,7 +7987,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -9422,14 +9422,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -9450,7 +9450,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -9967,14 +9967,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -9988,7 +9988,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -10270,7 +10270,7 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 31,
+      "line": 32,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10353,7 +10353,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 187,
+      "line": 188,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10377,7 +10377,7 @@
       {
         "name": "radii",
         "kind": "property",
-        "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+        "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
         "required": true,
         "description": null
       },
@@ -10502,7 +10502,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -11370,14 +11370,14 @@
       {
         "name": "accessibilityRole",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "accessibilityState",
         "kind": "property",
-        "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+        "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
         "required": false,
         "description": null
       },
@@ -11391,7 +11391,7 @@
       {
         "name": "alignSelf",
         "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+        "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
         "required": false,
         "description": null
       },
@@ -14213,7 +14213,7 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 10,
+      "line": 11,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14247,6 +14247,20 @@
         "type": "string",
         "required": true,
         "description": null
+      },
+      {
+        "name": "recipes",
+        "kind": "property",
+        "type": "ThemeRecipeOverrides | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "tokens",
+        "kind": "property",
+        "type": "ThemeGlobalTokenOverrides | undefined",
+        "required": false,
+        "description": null
       }
     ],
     "structuredRows": []
@@ -14278,7 +14292,7 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 6,
+      "line": 7,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14484,7 +14498,7 @@
       {
         "name": "radii",
         "kind": "property",
-        "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+        "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
         "required": true,
         "description": null
       },

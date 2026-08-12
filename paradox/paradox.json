@@ -12,7 +12,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v2.1.0",
+      "value": "v2.1.1",
       "color": "cb3837"
     },
     {
@@ -59,6 +59,10 @@
     }
   ],
   "usage": null,
+  "readmeUsageDescription": null,
+  "readmeUsage": [],
+  "readmeCli": null,
+  "readmeConfig": null,
   "config": null,
   "entrypoints": ["src/index.ts"],
   "modules": [
@@ -1583,8 +1587,18 @@
     {
       "path": "src/theme/createTheme.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/theme/colorEngine.ts", "src/theme/types.ts"],
+      "dependencies": [
+        "src/theme/colorEngine.ts",
+        "src/theme/resolveGlobalTokens.ts",
+        "src/theme/types.ts"
+      ],
       "exports": ["createTheme", "DEFAULT_CONFIG", "DEFAULT_TOKENS"]
+    },
+    {
+      "path": "src/theme/defaultTokens.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/theme/types.ts"],
+      "exports": ["DEFAULT_TOKENS"]
     },
     {
       "path": "src/theme/index.ts",
@@ -1627,10 +1641,40 @@
       ]
     },
     {
+      "path": "src/theme/resolveGlobalTokens.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/theme/defaultTokens.ts",
+        "src/theme/resolveHeadingTokenOverrides.ts",
+        "src/theme/resolveNumericTokenOverrides.ts",
+        "src/theme/resolveWeightTokenOverrides.ts",
+        "src/theme/types.ts"
+      ],
+      "exports": ["resolveGlobalTokens"]
+    },
+    {
+      "path": "src/theme/resolveHeadingTokenOverrides.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/theme/types.ts"],
+      "exports": ["resolveHeadingTokenOverrides"]
+    },
+    {
+      "path": "src/theme/resolveNumericTokenOverrides.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["resolveNumericTokenOverrides"]
+    },
+    {
       "path": "src/theme/resolveToken.ts",
       "isEntrypoint": false,
       "dependencies": [],
       "exports": ["resolveToken"]
+    },
+    {
+      "path": "src/theme/resolveWeightTokenOverrides.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/theme/types.ts"],
+      "exports": ["resolveWeightTokenOverrides"]
     },
     {
       "path": "src/theme/ThemeContext.tsx",
@@ -2021,14 +2065,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -2042,7 +2086,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -2548,14 +2592,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -2569,7 +2613,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -3021,7 +3065,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -3402,7 +3446,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -3810,14 +3854,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -3831,7 +3875,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -4176,14 +4220,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -4197,7 +4241,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -4556,7 +4600,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -5011,14 +5055,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -5032,7 +5076,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -5375,7 +5419,7 @@
       "modulePath": "src/theme/createTheme.ts",
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 92,
+        "line": 26,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -5457,7 +5501,7 @@
       "modulePath": "src/theme/createTheme.ts",
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 68,
+        "line": 7,
         "column": 14
       },
       "exportPaths": ["src/index.ts"],
@@ -5472,10 +5516,10 @@
       "isReadme": false,
       "examples": [],
       "kind": "value",
-      "modulePath": "src/theme/createTheme.ts",
+      "modulePath": "src/theme/defaultTokens.ts",
       "sourceLocation": {
-        "filePath": "src/theme/createTheme.ts",
-        "line": 4,
+        "filePath": "src/theme/defaultTokens.ts",
+        "line": 17,
         "column": 14
       },
       "exportPaths": ["src/index.ts"],
@@ -5542,14 +5586,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -5563,7 +5607,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -6447,14 +6491,14 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 108,
+        "line": 109,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics"],
+      "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics", "ThemeTokens"],
       "signatures": [
         {
-          "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+          "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
           "parameters": [
             {
               "name": "config",
@@ -6469,7 +6513,7 @@
               "description": null
             }
           ],
-          "returnType": "{ colors: Record<string, string>; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+          "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
           "returnDescription": null
         }
       ],
@@ -6566,14 +6610,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -6587,7 +6631,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -7289,7 +7333,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -7801,14 +7845,14 @@
         {
           "name": "onError",
           "kind": "property",
-          "type": "((error: import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").ImageErrorEvent) => void) | undefined",
+          "type": "((error: import(\"react-native/types/index\").ImageErrorEvent) => void) | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "radius",
           "kind": "property",
-          "type": "number | \"s\" | \"m\" | \"l\" | \"none\" | \"full\" | undefined",
+          "type": "string | number | undefined",
           "required": false,
           "description": null
         },
@@ -8894,7 +8938,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -9284,7 +9328,7 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 33,
+        "line": 34,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -9676,7 +9720,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -11111,14 +11155,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -11139,7 +11183,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -11656,14 +11700,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -11677,7 +11721,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -11959,7 +12003,7 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 31,
+        "line": 32,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -12042,7 +12086,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 187,
+        "line": 188,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -12066,7 +12110,7 @@
         {
           "name": "radii",
           "kind": "property",
-          "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+          "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
           "required": true,
           "description": null
         },
@@ -12191,7 +12235,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -13059,14 +13103,14 @@
         {
           "name": "accessibilityRole",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityRole | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityRole | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "accessibilityState",
           "kind": "property",
-          "type": "import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").AccessibilityState | undefined",
+          "type": "import(\"react-native/types/index\").AccessibilityState | undefined",
           "required": false,
           "description": null
         },
@@ -13080,7 +13124,7 @@
         {
           "name": "alignSelf",
           "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"/Users/a_rtiphishl_e/git/surface/node_modules/react-native/types/index\").FlexAlignType | undefined>",
+          "type": "Responsive<\"auto\" | import(\"react-native/types/index\").FlexAlignType | undefined>",
           "required": false,
           "description": null
         },
@@ -15902,7 +15946,7 @@
       "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-        "line": 10,
+        "line": 11,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -15936,6 +15980,20 @@
           "type": "string",
           "required": true,
           "description": null
+        },
+        {
+          "name": "recipes",
+          "kind": "property",
+          "type": "ThemeRecipeOverrides | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "tokens",
+          "kind": "property",
+          "type": "ThemeGlobalTokenOverrides | undefined",
+          "required": false,
+          "description": null
         }
       ],
       "structuredRows": []
@@ -15967,7 +16025,7 @@
       "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-        "line": 6,
+        "line": 7,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16173,7 +16231,7 @@
         {
           "name": "radii",
           "kind": "property",
-          "type": "{ none: 0; s: number; m: number; l: number; full: number; }",
+          "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
           "required": true,
           "description": null
         },
@@ -26596,7 +26654,7 @@
         },
         {
           "name": "value",
-          "type": "{ theme: import(\"/Users/a_rtiphishl_e/git/surface/src/index\").SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<import(\"/Users/a_rtiphishl_e/git/surface/src/index\").ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
+          "type": "{ theme: import(\"./src/index\").SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<import(\"./src/index\").ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
           "required": true,
           "description": null
         }
@@ -28035,7 +28093,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 33,
+        "line": 34,
         "column": 1
       }
     },
@@ -28044,7 +28102,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 48,
+        "line": 49,
         "column": 1
       }
     },
@@ -28053,7 +28111,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 79,
+        "line": 80,
         "column": 1
       }
     },
@@ -28062,16 +28120,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 108,
-        "column": 1
-      }
-    },
-    {
-      "name": "toPascalCase",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/theme/createTheme.ts",
-        "line": 85,
+        "line": 109,
         "column": 1
       }
     },
@@ -28080,7 +28129,88 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 92,
+        "line": 26,
+        "column": 1
+      }
+    },
+    {
+      "name": "applyActiveFont",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/createTheme.ts",
+        "line": 44,
+        "column": 1
+      }
+    },
+    {
+      "name": "toPascalCase",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/createTheme.ts",
+        "line": 54,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveGlobalTokens",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveGlobalTokens.ts",
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "validateZeroTokens",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveGlobalTokens.ts",
+        "line": 48,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveHeadingTokenOverrides",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "validateHeadingKeys",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 27,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveHeading",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 35,
+        "column": 1
+      }
+    },
+    {
+      "name": "isHeadingWeight",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "line": 59,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveNumericTokenOverrides",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveNumericTokenOverrides.ts",
+        "line": 1,
         "column": 1
       }
     },
@@ -28090,6 +28220,24 @@
       "sourceLocation": {
         "filePath": "src/theme/resolveToken.ts",
         "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveWeightTokenOverrides",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveWeightTokenOverrides.ts",
+        "line": 28,
+        "column": 1
+      }
+    },
+    {
+      "name": "isFontWeight",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveWeightTokenOverrides.ts",
+        "line": 46,
         "column": 1
       }
     },
@@ -29231,8 +29379,23 @@
       },
       {
         "fromPath": "src/theme/createTheme.ts",
+        "toPath": "src/theme/resolveGlobalTokens.ts",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromPath": "src/theme/createTheme.ts",
         "toPath": "src/theme/types.ts",
         "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromPath": "src/theme/createTheme.ts",
+        "toPath": "src/theme/defaultTokens.ts",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromPath": "src/theme/defaultTokens.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/defaultTokens.ts"
       },
       {
         "fromPath": "src/theme/index.ts",
@@ -29258,6 +29421,41 @@
         "fromPath": "src/theme/index.ts",
         "toPath": "src/theme/types.ts",
         "sourcePath": "src/theme/index.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/defaultTokens.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/resolveNumericTokenOverrides.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/resolveWeightTokenOverrides.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveGlobalTokens.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveHeadingTokenOverrides.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveWeightTokenOverrides.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveWeightTokenOverrides.ts"
       },
       {
         "fromPath": "src/theme/ThemeContext.tsx",
@@ -31425,9 +31623,69 @@
       },
       {
         "fromSymbol": "createTheme",
+        "toSymbol": "resolveGlobalTokens",
+        "callExpression": "resolveGlobalTokens",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromSymbol": "createTheme",
+        "toSymbol": "applyActiveFont",
+        "callExpression": "applyActiveFont",
+        "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromSymbol": "applyActiveFont",
         "toSymbol": "toPascalCase",
         "callExpression": "toPascalCase",
         "sourcePath": "src/theme/createTheme.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "validateZeroTokens",
+        "callExpression": "validateZeroTokens",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "resolveNumericTokenOverrides",
+        "callExpression": "resolveNumericTokenOverrides",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "resolveHeadingTokenOverrides",
+        "callExpression": "resolveHeadingTokenOverrides",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveGlobalTokens",
+        "toSymbol": "resolveWeightTokenOverrides",
+        "callExpression": "resolveWeightTokenOverrides",
+        "sourcePath": "src/theme/resolveGlobalTokens.ts"
+      },
+      {
+        "fromSymbol": "resolveHeadingTokenOverrides",
+        "toSymbol": "validateHeadingKeys",
+        "callExpression": "validateHeadingKeys",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromSymbol": "resolveHeadingTokenOverrides",
+        "toSymbol": "resolveHeading",
+        "callExpression": "resolveHeading",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromSymbol": "resolveHeading",
+        "toSymbol": "isHeadingWeight",
+        "callExpression": "isHeadingWeight",
+        "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromSymbol": "resolveWeightTokenOverrides",
+        "toSymbol": "isFontWeight",
+        "callExpression": "isFontWeight",
+        "sourcePath": "src/theme/resolveWeightTokenOverrides.ts"
       },
       {
         "fromSymbol": "src/theme/ThemeContext.tsx",
@@ -32849,11 +33107,6 @@
         "sourcePath": "src/components/button/types.ts"
       },
       {
-        "fromSymbol": "ButtonProps",
-        "toType": "Users",
-        "sourcePath": "src/components/button/types.ts"
-      },
-      {
         "fromSymbol": "Button",
         "toType": "ButtonProps",
         "sourcePath": "src/components/button/Button.tsx"
@@ -32911,11 +33164,6 @@
       {
         "fromSymbol": "CardProps",
         "toType": "SurfaceVariant",
-        "sourcePath": "src/components/card/types.ts"
-      },
-      {
-        "fromSymbol": "CardProps",
-        "toType": "Users",
         "sourcePath": "src/components/card/types.ts"
       },
       {
@@ -32981,11 +33229,6 @@
       {
         "fromSymbol": "CheckboxProps",
         "toType": "SpaceValue",
-        "sourcePath": "src/components/checkbox/types.ts"
-      },
-      {
-        "fromSymbol": "CheckboxProps",
-        "toType": "Users",
         "sourcePath": "src/components/checkbox/types.ts"
       },
       {
@@ -33121,11 +33364,6 @@
       {
         "fromSymbol": "IconButtonProps",
         "toType": "SpaceValue",
-        "sourcePath": "src/components/icon-button/types.ts"
-      },
-      {
-        "fromSymbol": "IconButtonProps",
-        "toType": "Users",
         "sourcePath": "src/components/icon-button/types.ts"
       },
       {
@@ -33454,11 +33692,6 @@
         "sourcePath": "src/components/radio/types.ts"
       },
       {
-        "fromSymbol": "RadioProps",
-        "toType": "Users",
-        "sourcePath": "src/components/radio/types.ts"
-      },
-      {
         "fromSymbol": "Radio",
         "toType": "RadioProps",
         "sourcePath": "src/components/radio/Radio.tsx"
@@ -33516,11 +33749,6 @@
       {
         "fromSymbol": "SwitchProps",
         "toType": "SpaceValue",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "Users",
         "sourcePath": "src/components/switch/types.ts"
       },
       {
@@ -34225,11 +34453,6 @@
       },
       {
         "fromSymbol": "ButtonBaseProps",
-        "toType": "Users",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
         "toType": "ViewStyle",
         "sourcePath": "src/primitives/button-base/types.ts"
       },
@@ -34331,11 +34554,6 @@
       {
         "fromSymbol": "ImageProps",
         "toType": "SurfaceImageSource",
-        "sourcePath": "src/primitives/image/types.ts"
-      },
-      {
-        "fromSymbol": "ImageProps",
-        "toType": "Users",
         "sourcePath": "src/primitives/image/types.ts"
       },
       {
@@ -34465,11 +34683,6 @@
       },
       {
         "fromSymbol": "AppBarProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/AppBar.tsx"
-      },
-      {
-        "fromSymbol": "AppBarProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/AppBar.tsx"
       },
@@ -34531,11 +34744,6 @@
       {
         "fromSymbol": "BoxProps",
         "toType": "StyleProp",
-        "sourcePath": "src/layout/Box.tsx"
-      },
-      {
-        "fromSymbol": "BoxProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Box.tsx"
       },
       {
@@ -34605,11 +34813,6 @@
       },
       {
         "fromSymbol": "CenterProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Center.tsx"
-      },
-      {
-        "fromSymbol": "CenterProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Center.tsx"
       },
@@ -34671,11 +34874,6 @@
       {
         "fromSymbol": "ContainerProps",
         "toType": "StyleProp",
-        "sourcePath": "src/layout/Container.tsx"
-      },
-      {
-        "fromSymbol": "ContainerProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Container.tsx"
       },
       {
@@ -34745,11 +34943,6 @@
       },
       {
         "fromSymbol": "DividerProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Divider.tsx"
-      },
-      {
-        "fromSymbol": "DividerProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Divider.tsx"
       },
@@ -34811,11 +35004,6 @@
       {
         "fromSymbol": "GridProps",
         "toType": "StyleProp",
-        "sourcePath": "src/layout/Grid.tsx"
-      },
-      {
-        "fromSymbol": "GridProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Grid.tsx"
       },
       {
@@ -34995,11 +35183,6 @@
       },
       {
         "fromSymbol": "ScrollAreaProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/ScrollArea.tsx"
-      },
-      {
-        "fromSymbol": "ScrollAreaProps",
         "toType": "View",
         "sourcePath": "src/layout/ScrollArea.tsx"
       },
@@ -35110,11 +35293,6 @@
       },
       {
         "fromSymbol": "StackProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Stack.tsx"
-      },
-      {
-        "fromSymbol": "StackProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Stack.tsx"
       },
@@ -35176,11 +35354,6 @@
       {
         "fromSymbol": "SurfaceProps",
         "toType": "SurfaceVariant",
-        "sourcePath": "src/layout/Surface.tsx"
-      },
-      {
-        "fromSymbol": "SurfaceProps",
-        "toType": "Users",
         "sourcePath": "src/layout/Surface.tsx"
       },
       {
@@ -35250,11 +35423,6 @@
       },
       {
         "fromSymbol": "TemplateProps",
-        "toType": "Users",
-        "sourcePath": "src/layout/Template.tsx"
-      },
-      {
-        "fromSymbol": "TemplateProps",
         "toType": "ViewStyle",
         "sourcePath": "src/layout/Template.tsx"
       },
@@ -35296,6 +35464,11 @@
       {
         "fromSymbol": "generatePalette",
         "toType": "ThemeSemantics",
+        "sourcePath": "src/theme/colorEngine.ts"
+      },
+      {
+        "fromSymbol": "generatePalette",
+        "toType": "ThemeTokens",
         "sourcePath": "src/theme/colorEngine.ts"
       },
       {
@@ -35390,7 +35563,17 @@
       },
       {
         "fromSymbol": "ThemeConfig",
+        "toType": "ThemeGlobalTokenOverrides",
+        "sourcePath": "node_modules/@ankhorage/contracts/dist/types.d.ts"
+      },
+      {
+        "fromSymbol": "ThemeConfig",
         "toType": "ThemeModeConfig",
+        "sourcePath": "node_modules/@ankhorage/contracts/dist/types.d.ts"
+      },
+      {
+        "fromSymbol": "ThemeConfig",
+        "toType": "ThemeRecipeOverrides",
         "sourcePath": "node_modules/@ankhorage/contracts/dist/types.d.ts"
       },
       {
