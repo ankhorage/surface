@@ -169,7 +169,6 @@ export interface ThemeTokens {
       bold: FontWeight;
       extraBold: FontWeight;
       black: FontWeight;
-      [key: string]: FontWeight;
     };
     fonts: {
       /** Map of weight -> fontFamily name for normal style */
