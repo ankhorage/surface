@@ -1,5 +1,4 @@
-import React from 'react';
-import { View } from 'react-native';
+import type React from 'react';
 
 import { resolveResponsive, type Responsive, useResponsiveRuntime } from '../core/responsive';
 import { useTheme } from '../theme/ThemeContext';
@@ -34,14 +33,13 @@ export function Stack({
   const activeJustify = resolveResponsive(justify, breakpoint);
   const activeWrap = resolveResponsive(wrap, breakpoint);
 
-  const nodes = React.Children.toArray(children);
-
   return (
     <Box
       {...props}
       style={[
         {
           flexDirection: activeDirection,
+          gap: activeGap,
           alignItems: activeAlign,
           justifyContent: activeJustify,
           flexWrap: activeWrap,
@@ -49,19 +47,7 @@ export function Stack({
         props.style,
       ]}
     >
-      {nodes.map((node, index) => {
-        const spacing =
-          index === 0
-            ? undefined
-            : activeDirection === 'row'
-              ? { marginLeft: activeGap }
-              : { marginTop: activeGap };
-        return (
-          <View key={String(index)} style={spacing}>
-            {node}
-          </View>
-        );
-      })}
+      {children}
     </Box>
   );
 }

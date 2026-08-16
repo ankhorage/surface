@@ -1289,7 +1289,7 @@ Export paths: `src/index.ts`
 
 ## Stack
 
-Source: `src/layout/Stack.tsx:20:1`
+Source: `src/layout/Stack.tsx:19:1`
 
 Export paths: `src/index.ts`
 

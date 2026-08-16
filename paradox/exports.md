@@ -2651,7 +2651,7 @@ Source: `src/layout/Spacer.tsx:6:1`
 
 Kind: `function`
 Module: `src/layout/Stack.tsx`
-Source: `src/layout/Stack.tsx:20:1`
+Source: `src/layout/Stack.tsx:19:1`
 
 ### Signatures
 
@@ -2679,7 +2679,7 @@ Source: `src/layout/Stack.tsx:20:1`
 
 Kind: `type`
 Module: `src/layout/Stack.tsx`
-Source: `src/layout/Stack.tsx:9:1`
+Source: `src/layout/Stack.tsx:8:1`
 
 ### Members
 
