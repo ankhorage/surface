@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 2.2.1
+
+### Patch Changes
+
+- 7f410d4: Preserve Stack child flex and min-size semantics by applying spacing with the container gap property instead of wrapper views.
+
 ## 2.2.0
 
 ### Minor Changes
