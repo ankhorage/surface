@@ -12,7 +12,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v2.1.1",
+      "value": "v2.2.0",
       "color": "cb3837"
     },
     {
@@ -11106,7 +11106,7 @@
       "modulePath": "src/layout/Stack.tsx",
       "sourceLocation": {
         "filePath": "src/layout/Stack.tsx",
-        "line": 20,
+        "line": 19,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -11138,7 +11138,7 @@
       "modulePath": "src/layout/Stack.tsx",
       "sourceLocation": {
         "filePath": "src/layout/Stack.tsx",
-        "line": 9,
+        "line": 8,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -23116,7 +23116,7 @@
       "modulePath": "src/layout/Stack.tsx",
       "sourceLocation": {
         "filePath": "src/layout/Stack.tsx",
-        "line": 20,
+        "line": 19,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -27877,7 +27877,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/layout/Stack.tsx",
-        "line": 20,
+        "line": 19,
         "column": 1
       }
     },
@@ -36383,13 +36383,7 @@
       {
         "fromComponent": "Stack",
         "toComponent": "Box",
-        "jsxElement": "<Box\n      {...props}\n      style={[\n        {\n          flexDirection: activeDirection,\n          alignItems: activeAlign,\n          justifyContent: activeJustify,\n          flexWrap: activeWrap,\n        },\n        props.style,\n      ]}\n    >",
-        "sourcePath": "src/layout/Stack.tsx"
-      },
-      {
-        "fromComponent": "Stack",
-        "toComponent": "View",
-        "jsxElement": "<View key={String(index)} style={spacing}>",
+        "jsxElement": "<Box\n      {...props}\n      style={[\n        {\n          flexDirection: activeDirection,\n          gap: activeGap,\n          alignItems: activeAlign,\n          justifyContent: activeJustify,\n          flexWrap: activeWrap,\n        },\n        props.style,\n      ]}\n    >",
         "sourcePath": "src/layout/Stack.tsx"
       },
       {
