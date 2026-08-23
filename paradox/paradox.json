@@ -32322,7 +32322,7 @@
       }
     },
     {
-      "name": "renderFontAwesome5",
+      "name": "assertNever",
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
@@ -32331,11 +32331,20 @@
       }
     },
     {
+      "name": "renderFontAwesome5",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 54,
+        "column": 1
+      }
+    },
+    {
       "name": "renderFontAwesome6",
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 64,
+        "line": 72,
         "column": 1
       }
     },
@@ -32344,7 +32353,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 78,
+        "line": 90,
         "column": 1
       }
     },
@@ -38516,6 +38525,18 @@
         "sourcePath": "src/primitives/icon/Icon.tsx"
       },
       {
+        "fromSymbol": "renderFontAwesome5",
+        "toSymbol": "assertNever",
+        "callExpression": "assertNever",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
+        "fromSymbol": "renderFontAwesome6",
+        "toSymbol": "assertNever",
+        "callExpression": "assertNever",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
         "fromSymbol": "PortableIcon",
         "toSymbol": "renderFontAwesome5",
         "callExpression": "renderFontAwesome5",
@@ -38525,6 +38546,12 @@
         "fromSymbol": "PortableIcon",
         "toSymbol": "renderFontAwesome6",
         "callExpression": "renderFontAwesome6",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
+        "fromSymbol": "PortableIcon",
+        "toSymbol": "assertNever",
+        "callExpression": "assertNever",
         "sourcePath": "src/primitives/icon/PortableIcon.tsx"
       },
       {

@@ -47,17 +47,25 @@ type PortableIconProps = IconSource & {
 
 type SharedIconProps = Pick<PortableIconProps, 'color' | 'size' | 'style' | 'testID'>;
 
+function assertNever(value: never, configuration: string): never {
+  throw new Error(`Unsupported icon ${configuration}: ${String(value)}`);
+}
+
 function renderFontAwesome5(
   props: Extract<IconSource, { provider: 'FontAwesome5' }>,
   sharedProps: SharedIconProps,
 ) {
-  switch (props.variant) {
+  const { variant } = props;
+
+  switch (variant) {
     case 'brand':
       return <FontAwesome5 {...sharedProps} iconStyle="brand" name={props.name} />;
     case 'regular':
       return <FontAwesome5 {...sharedProps} iconStyle="regular" name={props.name} />;
     case 'solid':
       return <FontAwesome5 {...sharedProps} iconStyle="solid" name={props.name} />;
+    default:
+      return assertNever(variant, 'FontAwesome5 variant');
   }
 }
 
@@ -65,17 +73,22 @@ function renderFontAwesome6(
   props: Extract<IconSource, { provider: 'FontAwesome6' }>,
   sharedProps: SharedIconProps,
 ) {
-  switch (props.variant) {
+  const { variant } = props;
+
+  switch (variant) {
     case 'brand':
       return <FontAwesome6 {...sharedProps} iconStyle="brand" name={props.name} />;
     case 'regular':
       return <FontAwesome6 {...sharedProps} iconStyle="regular" name={props.name} />;
     case 'solid':
       return <FontAwesome6 {...sharedProps} iconStyle="solid" name={props.name} />;
+    default:
+      return assertNever(variant, 'FontAwesome6 variant');
   }
 }
 
 export function PortableIcon(props: PortableIconProps) {
+  const { provider } = props;
   const sharedProps = {
     color: props.color,
     size: props.size,
@@ -83,15 +96,17 @@ export function PortableIcon(props: PortableIconProps) {
     testID: props.testID,
   };
 
-  switch (props.provider) {
+  switch (provider) {
+    case undefined:
+    case 'Ionicons':
+      return <Ionicons {...sharedProps} name={props.name} />;
     case 'FontAwesome':
       return <FontAwesome {...sharedProps} name={props.name} />;
     case 'FontAwesome5':
       return renderFontAwesome5(props, sharedProps);
     case 'FontAwesome6':
       return renderFontAwesome6(props, sharedProps);
-    case 'Ionicons':
     default:
-      return <Ionicons {...sharedProps} name={props.name} />;
+      return assertNever(provider, 'provider');
   }
 }
