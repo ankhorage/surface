@@ -31,11 +31,9 @@ export function Button({
       {...props}
       disabled={disabled || loading}
       onPress={onPress}
-      style={[
-        {
-          alignSelf: fullWidth ? 'stretch' : 'flex-start',
-        },
-      ]}
+      style={{
+        alignSelf: fullWidth ? 'stretch' : 'flex-start',
+      }}
       testID={testID}
     >
       {(state) => {
@@ -74,12 +72,7 @@ export function Button({
               <>
                 {leadingIcon ? (
                   <View style={{ marginRight: theme.spacing.s }}>
-                    <Icon
-                      color={colors.contentColor}
-                      name={leadingIcon.name}
-                      provider={leadingIcon.provider}
-                      size={iconSize}
-                    />
+                    <Icon {...leadingIcon} color={colors.contentColor} size={iconSize} />
                   </View>
                 ) : null}
                 <Text
@@ -92,12 +85,7 @@ export function Button({
                 </Text>
                 {trailingIcon ? (
                   <View style={{ marginLeft: theme.spacing.s }}>
-                    <Icon
-                      color={colors.contentColor}
-                      name={trailingIcon.name}
-                      provider={trailingIcon.provider}
-                      size={iconSize}
-                    />
+                    <Icon {...trailingIcon} color={colors.contentColor} size={iconSize} />
                   </View>
                 ) : null}
               </>

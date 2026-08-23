@@ -4,6 +4,7 @@ import { type LayoutRectangle, Pressable, View } from 'react-native';
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { useFocusManager } from '../../internal/focus/useFocusManager';
 import { Portal } from '../../internal/overlay/Portal';
+import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
 import { Box, Inline, Stack, Surface } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
@@ -11,6 +12,8 @@ import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import { resolveNextMenuIndex } from './navigation';
 import type { MenuAction, MenuProps } from './types';
+
+const boxNonePointerEvents = resolvePointerEvents('box-none');
 
 interface MeasurableNode {
   measureInWindow?: (
@@ -142,14 +145,17 @@ export function Menu({
       </ButtonBase>
       <Portal layer="menu" visible={open && Boolean(layout)}>
         <View
-          pointerEvents="box-none"
-          style={{
-            bottom: 0,
-            left: 0,
-            position: 'absolute',
-            right: 0,
-            top: 0,
-          }}
+          {...boxNonePointerEvents.props}
+          style={[
+            boxNonePointerEvents.style,
+            {
+              bottom: 0,
+              left: 0,
+              position: 'absolute',
+              right: 0,
+              top: 0,
+            },
+          ]}
         >
           <Pressable
             onPress={passive ? undefined : closeMenu}

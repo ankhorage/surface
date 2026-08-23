@@ -57,12 +57,7 @@ export function TabBarItem({ item, compact = false, testID, interactionPolicy }:
           >
             {item.icon ? (
               <View style={{ marginBottom: item.label ? theme.spacing.xs : 0 }}>
-                <Icon
-                  color={contentColor}
-                  name={item.icon.name}
-                  provider={item.icon.provider}
-                  size={compact ? 's' : 'm'}
-                />
+                <Icon {...item.icon} color={contentColor} size={compact ? 's' : 'm'} />
               </View>
             ) : null}
             {item.label ? (

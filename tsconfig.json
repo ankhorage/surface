@@ -2,8 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ES2022",
-    "inlineSources": true,
-    "lib": ["ES2022"],
+    "lib": ["ES2022", "DOM"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "jsx": "react-native",
@@ -12,15 +11,11 @@
     "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
     "rootDir": "src",
-    "types": ["bun", "node"],
-    "outDir": "dist"
+    "types": ["bun", "node"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["dist", "node_modules", "src/**/*.test.ts", "src/**/*.test.tsx"]
+  "exclude": ["dist", "node_modules"]
 }

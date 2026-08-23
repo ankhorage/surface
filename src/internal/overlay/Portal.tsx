@@ -19,9 +19,10 @@ export function Portal({ children, layer = 'modal', visible = true }: PortalProp
     if (!overlayActions || !visible) {
       return undefined;
     }
+    const id = idRef.current;
 
     return () => {
-      overlayActions.removeOverlay(idRef.current);
+      overlayActions.removeOverlay(id);
     };
   }, [overlayActions, visible]);
 

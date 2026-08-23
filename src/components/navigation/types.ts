@@ -2,9 +2,9 @@ import type React from 'react';
 import type { AccessibilityRole, AccessibilityState } from 'react-native';
 
 import type { InteractionPolicy } from '../../interactionPolicy';
-import type { IconProps } from '../../primitives/icon';
+import type { IconSource } from '../../primitives/icon';
 
-export type NavigationItemIcon = Pick<IconProps, 'name' | 'provider'>;
+export type NavigationItemIcon = IconSource;
 
 export interface NavigationItemSpec {
   id: string;

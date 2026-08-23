@@ -3,10 +3,13 @@ import { Pressable, View } from 'react-native';
 
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { Portal } from '../../internal/overlay/Portal';
+import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
 import { Center, Surface } from '../../layout';
 import { useTheme } from '../../theme/ThemeContext';
 import type { ModalProps } from './types';
+
+const boxNonePointerEvents = resolvePointerEvents('box-none');
 
 export function Modal({
   visible,
@@ -27,14 +30,17 @@ export function Modal({
   return (
     <Portal layer="modal" visible={visible}>
       <View
-        pointerEvents="box-none"
-        style={{
-          bottom: 0,
-          left: 0,
-          position: 'absolute',
-          right: 0,
-          top: 0,
-        }}
+        {...boxNonePointerEvents.props}
+        style={[
+          boxNonePointerEvents.style,
+          {
+            bottom: 0,
+            left: 0,
+            position: 'absolute',
+            right: 0,
+            top: 0,
+          },
+        ]}
       >
         <Pressable
           onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}

@@ -33,7 +33,7 @@ export function AppBar({
     topInset === 0 ? undefined : { paddingTop: topInset };
 
   return (
-    <Box {...props} bg={bg ?? theme.semantics.surface.default} style={[style]}>
+    <Box {...props} bg={bg ?? theme.semantics.surface.default} style={style}>
       <View style={safeAreaStyle}>
         <View
           style={[

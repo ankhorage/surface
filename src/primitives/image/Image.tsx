@@ -29,12 +29,9 @@ export function Image({
   onError,
 }: ImageProps) {
   const { theme } = useTheme();
-  const [showFallback, setShowFallback] = React.useState(false);
   const primaryKey = React.useMemo(() => getSourceKey(source), [source]);
-
-  React.useEffect(() => {
-    setShowFallback(false);
-  }, [primaryKey]);
+  const [failedPrimaryKey, setFailedPrimaryKey] = React.useState<string | null>(null);
+  const showFallback = primaryKey !== null && failedPrimaryKey === primaryKey;
 
   const normalizedPrimary = normalizeSource(source);
   const normalizedFallback = normalizeSource(fallbackSource);
@@ -56,7 +53,7 @@ export function Image({
         onError?.(event);
 
         if (!showFallback && normalizedFallback) {
-          setShowFallback(true);
+          setFailedPrimaryKey(primaryKey);
         }
       }}
       resizeMode={resolvedResizeMode}

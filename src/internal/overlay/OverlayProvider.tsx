@@ -1,6 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
+import { resolvePointerEvents } from '../resolvePointerEvents';
 import {
   createOverlayEntry,
   type OverlayDescriptor,
@@ -9,6 +10,21 @@ import {
   OverlayStackContext,
   sortOverlayEntries,
 } from './useOverlayStack';
+
+const boxNonePointerEvents = resolvePointerEvents('box-none');
+const styles = StyleSheet.create({
+  fill: {
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+    top: 0,
+  },
+});
+
+function overlayZIndex(zIndex: number): ViewStyle {
+  return { zIndex };
+}
 
 export function OverlayProvider({ children }: { children: React.ReactNode }) {
   const orderRef = React.useRef(0);
@@ -52,28 +68,12 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
     <OverlayStackActionsContext.Provider value={actions}>
       <OverlayStackContext.Provider value={value}>
         {children}
-        <View
-          pointerEvents="box-none"
-          style={{
-            bottom: 0,
-            left: 0,
-            position: 'absolute',
-            right: 0,
-            top: 0,
-          }}
-        >
+        <View {...boxNonePointerEvents.props} style={[boxNonePointerEvents.style, styles.fill]}>
           {overlays.map((overlay) => (
             <View
+              {...boxNonePointerEvents.props}
               key={overlay.id}
-              pointerEvents="box-none"
-              style={{
-                bottom: 0,
-                left: 0,
-                position: 'absolute',
-                right: 0,
-                top: 0,
-                zIndex: overlay.zIndex,
-              }}
+              style={[boxNonePointerEvents.style, styles.fill, overlayZIndex(overlay.zIndex)]}
             >
               {overlay.node}
             </View>

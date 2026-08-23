@@ -19,6 +19,7 @@ const expectedRootExports = [
   "export { Field } from './components/field';",
   "export { HelperText } from './components/helper-text';",
   "export { IconButton } from './components/icon-button';",
+  "export { Icon, SUPPORTED_ICON_PROVIDERS } from './primitives/icon';",
   "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export { Label } from './components/label';",
   "export { ListItem } from './components/list-item';",
