@@ -3,10 +3,13 @@ import { Pressable, View } from 'react-native';
 
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { Portal } from '../../internal/overlay/Portal';
+import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
 import { Box, Surface } from '../../layout';
 import { useTheme } from '../../theme/ThemeContext';
 import type { DrawerProps } from './types';
+
+const boxNonePointerEvents = resolvePointerEvents('box-none');
 
 export function Drawer({
   visible,
@@ -28,14 +31,17 @@ export function Drawer({
   return (
     <Portal layer="drawer" visible={visible}>
       <View
-        pointerEvents="box-none"
-        style={{
-          bottom: 0,
-          left: 0,
-          position: 'absolute',
-          right: 0,
-          top: 0,
-        }}
+        {...boxNonePointerEvents.props}
+        style={[
+          boxNonePointerEvents.style,
+          {
+            bottom: 0,
+            left: 0,
+            position: 'absolute',
+            right: 0,
+            top: 0,
+          },
+        ]}
       >
         <Pressable
           onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}

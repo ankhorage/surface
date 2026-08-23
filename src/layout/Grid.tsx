@@ -35,7 +35,7 @@ export function Grid({
   const colSpacing = Number(resolveSpacing(theme, activeColGap) ?? 0);
   const activeMinItemWidth = resolveResponsive(minItemWidth, breakpoint);
 
-  const basisPercent = `${100 / activeCols}%`;
+  const basisPercent: `${number}%` = `${100 / activeCols}%`;
   const nodes = React.Children.toArray(children);
 
   return (
@@ -58,8 +58,8 @@ export function Grid({
                   flexGrow: 1,
                 }
               : {
-                  width: basisPercent as ViewStyle['width'],
-                  flexBasis: basisPercent as ViewStyle['flexBasis'],
+                  width: basisPercent,
+                  flexBasis: basisPercent,
                 };
 
           return (

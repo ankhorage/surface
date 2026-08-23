@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo } from 'react';
+import React, { createContext, useContext } from 'react';
 
 /**
  * Minimal translation runtime surface.
@@ -31,20 +31,17 @@ export function TranslationProvider(props: {
 }) {
   const { t, i18n, children } = props;
 
-  const value = useMemo<TranslationRuntime>(
-    () => ({
-      t: (key: string, options?: Record<string, unknown>) => {
-        if (i18n?.t) {
-          const result = i18n.t(key, options);
-          // If translation returns the key, it's missing in the current dictionary
-          if (result !== key) return result;
-        }
-        return t(key, options);
-      },
-      i18n: i18n ?? null,
-    }),
-    [t, i18n, i18n?.language],
-  );
+  const value: TranslationRuntime = {
+    t: (key: string, options?: Record<string, unknown>) => {
+      if (i18n?.t) {
+        const result = i18n.t(key, options);
+        // If translation returns the key, it's missing in the current dictionary
+        if (result !== key) return result;
+      }
+      return t(key, options);
+    },
+    i18n: i18n ?? null,
+  };
 
   return <TranslationContext.Provider value={value}>{children}</TranslationContext.Provider>;
 }

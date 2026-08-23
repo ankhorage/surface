@@ -68,7 +68,7 @@ export { ButtonBase } from './primitives/button-base';
 export type { HeadingLevel, HeadingProps } from './primitives/heading';
 export { Heading } from './primitives/heading';
 export type { IconProps, IconProvider } from './primitives/icon';
-export { Icon } from './primitives/icon';
+export { Icon, SUPPORTED_ICON_PROVIDERS } from './primitives/icon';
 export type { ImageFit, ImageProps, SurfaceImageSource } from './primitives/image';
 export { Image } from './primitives/image';
 export type { TextProps } from './primitives/text';

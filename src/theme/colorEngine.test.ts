@@ -105,12 +105,12 @@ describe('colorEngine', () => {
 
   it('preserves the primary color at swatch step 500 in light mode', () => {
     const { swatches } = generatePalette(mockConfig, 'light');
-    expect(swatches.primary[500]).toBe(mockConfig.light.primaryColor);
+    expect(String(swatches.primary[500])).toBe(mockConfig.light.primaryColor);
   });
 
   it('preserves the primary color at swatch step 500 in dark mode', () => {
     const { swatches } = generatePalette(mockConfig, 'dark');
-    expect(swatches.primary[500]).toBe(mockConfig.dark.primaryColor);
+    expect(String(swatches.primary[500])).toBe(mockConfig.dark.primaryColor);
   });
 
   it('provides a neutral swatch with neutralKeyColor at step 500', () => {

@@ -48,7 +48,7 @@
     "modulePath": "src/components/action-sheet/ActionSheet.tsx",
     "sourceLocation": {
       "filePath": "src/components/action-sheet/ActionSheet.tsx",
-      "line": 13,
+      "line": 16,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -542,7 +542,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -577,7 +577,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -810,7 +810,7 @@
     "modulePath": "src/layout/Box.tsx",
     "sourceLocation": {
       "filePath": "src/layout/Box.tsx",
-      "line": 49,
+      "line": 19,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -842,7 +842,7 @@
     "modulePath": "src/layout/Box.tsx",
     "sourceLocation": {
       "filePath": "src/layout/Box.tsx",
-      "line": 14,
+      "line": 9,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -1048,7 +1048,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -1083,7 +1083,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -1528,7 +1528,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -1556,7 +1556,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -1666,7 +1666,7 @@
       {
         "name": "provider",
         "kind": "property",
-        "type": "string | undefined",
+        "type": "\"Ionicons\" | \"FontAwesome\" | \"FontAwesome5\" | \"FontAwesome6\" | undefined",
         "required": false,
         "description": null
       }
@@ -1937,7 +1937,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -1965,7 +1965,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -2303,7 +2303,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -2338,7 +2338,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -2683,7 +2683,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -2718,7 +2718,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -3091,7 +3091,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -3119,7 +3119,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -3511,7 +3511,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -3546,7 +3546,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -4042,7 +4042,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -4077,7 +4077,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -4170,7 +4170,7 @@
     "modulePath": "src/components/drawer/Drawer.tsx",
     "sourceLocation": {
       "filePath": "src/components/drawer/Drawer.tsx",
-      "line": 11,
+      "line": 14,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -5094,7 +5094,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -5129,7 +5129,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -5498,14 +5498,14 @@
     "modulePath": "src/primitives/icon/Icon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/Icon.tsx",
-      "line": 20,
+      "line": 19,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
     "relatedSymbols": ["IconProps"],
     "signatures": [
       {
-        "label": "({\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}: IconProps) => React.ReactElement<{ color?: string; name?: string; size?: number; style?: StyleProp<TextStyle>; testID?: string; }, string | React.JSXElementConstructor<any>>",
+        "label": "({\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}: IconProps) => import(\"@types/react/index\").JSX.Element",
         "parameters": [
           {
             "name": "{\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}",
@@ -5514,7 +5514,7 @@
             "description": null
           }
         ],
-        "returnType": "React.ReactElement<{ color?: string; name?: string; size?: number; style?: StyleProp<TextStyle>; testID?: string; }, string | React.JSXElementConstructor<any>>",
+        "returnType": "import(\"@types/react/index\").JSX.Element",
         "returnDescription": null
       }
     ],
@@ -5803,7 +5803,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -5831,7 +5831,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -5931,7 +5931,7 @@
     "modulePath": "src/primitives/icon/Icon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/Icon.tsx",
-      "line": 11,
+      "line": 10,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -5955,7 +5955,7 @@
       {
         "name": "provider",
         "kind": "property",
-        "type": "string | undefined",
+        "type": "\"Ionicons\" | \"FontAwesome\" | \"FontAwesome5\" | \"FontAwesome6\" | undefined",
         "required": false,
         "description": null
       },
@@ -5989,10 +5989,10 @@
     "isReadme": false,
     "examples": [],
     "kind": "unknown",
-    "modulePath": "src/primitives/icon/Icon.tsx",
+    "modulePath": "src/primitives/icon/PortableIcon.tsx",
     "sourceLocation": {
-      "filePath": "src/primitives/icon/Icon.tsx",
-      "line": 9,
+      "filePath": "src/primitives/icon/PortableIcon.tsx",
+      "line": 24,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6488,7 +6488,7 @@
     "modulePath": "src/components/menu/Menu.tsx",
     "sourceLocation": {
       "filePath": "src/components/menu/Menu.tsx",
-      "line": 56,
+      "line": 59,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6681,7 +6681,7 @@
     "modulePath": "src/components/modal/Modal.tsx",
     "sourceLocation": {
       "filePath": "src/components/modal/Modal.tsx",
-      "line": 11,
+      "line": 14,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -7429,7 +7429,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -7457,7 +7457,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -7880,7 +7880,133 @@
         "description": null
       },
       {
+        "name": "accessibilityActiveDescendant",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityAtomic",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityAutoComplete",
+        "kind": "property",
+        "type": "\"none\" | \"list\" | \"inline\" | \"both\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityBusy",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityChecked",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnCount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnIndex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnSpan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityControls",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityCurrent",
+        "kind": "property",
+        "type": "boolean | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDescribedBy",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDetails",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDisabled",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityElementsHidden",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityErrorMessage",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityExpanded",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityFlowTo",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityHasPopup",
+        "kind": "property",
+        "type": "false | \"menu\" | \"dialog\" | \"grid\" | \"tree\" | \"listbox\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityHidden",
         "kind": "property",
         "type": "boolean | undefined",
         "required": false,
@@ -7901,6 +8027,20 @@
         "description": null
       },
       {
+        "name": "accessibilityInvalid",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityKeyShortcuts",
+        "kind": "property",
+        "type": "string[] | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityLabel",
         "kind": "property",
         "type": "string | undefined",
@@ -7910,7 +8050,7 @@
       {
         "name": "accessibilityLabelledBy",
         "kind": "property",
-        "type": "string | string[] | undefined",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -7929,9 +8069,86 @@
         "description": null
       },
       {
+        "name": "accessibilityLevel",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityLiveRegion",
         "kind": "property",
-        "type": "\"none\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"none\" | \"assertive\" | \"polite\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityModal",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityMultiline",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityMultiSelectable",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityOrientation",
+        "kind": "property",
+        "type": "\"vertical\" | \"horizontal\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityOwns",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPlaceholder",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPosInSet",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPressed",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityReadOnly",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRequired",
+        "kind": "property",
+        "type": "boolean | undefined",
         "required": false,
         "description": null
       },
@@ -7950,9 +8167,58 @@
         "description": null
       },
       {
+        "name": "accessibilityRoleDescription",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowCount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowIndex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowSpan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySelected",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySetSize",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityShowsLargeContentViewer",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySort",
+        "kind": "property",
+        "type": "\"none\" | \"ascending\" | \"descending\" | \"other\" | undefined",
         "required": false,
         "description": null
       },
@@ -7967,6 +8233,34 @@
         "name": "accessibilityValue",
         "kind": "property",
         "type": "AccessibilityValue | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueMax",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueMin",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueNow",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueText",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -8006,6 +8300,27 @@
         "description": null
       },
       {
+        "name": "aria-activedescendant",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-atomic",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-autocomplete",
+        "kind": "property",
+        "type": "\"none\" | \"list\" | \"inline\" | \"both\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-busy",
         "kind": "property",
         "type": "boolean | undefined",
@@ -8020,9 +8335,65 @@
         "description": null
       },
       {
+        "name": "aria-colcount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-colindex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-colspan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-controls",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-current",
+        "kind": "property",
+        "type": "boolean | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-describedby",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-details",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-disabled",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-errormessage",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -8034,9 +8405,37 @@
         "description": null
       },
       {
+        "name": "aria-flowto",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-haspopup",
+        "kind": "property",
+        "type": "false | \"menu\" | \"dialog\" | \"grid\" | \"tree\" | \"listbox\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-hidden",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-invalid",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-keyshortcuts",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -8055,9 +8454,16 @@
         "description": null
       },
       {
+        "name": "aria-level",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"off\" | \"assertive\" | \"polite\" | undefined",
         "required": false,
         "description": null
       },
@@ -8069,9 +8475,114 @@
         "description": null
       },
       {
+        "name": "aria-multiline",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-multiselectable",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-orientation",
+        "kind": "property",
+        "type": "\"vertical\" | \"horizontal\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-owns",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-placeholder",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-posinset",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-pressed",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-readonly",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-required",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-roledescription",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowcount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowindex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowspan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-selected",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-setsize",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-sort",
+        "kind": "property",
+        "type": "\"none\" | \"ascending\" | \"descending\" | \"other\" | undefined",
         "required": false,
         "description": null
       },
@@ -8230,9 +8741,23 @@
         "description": null
       },
       {
+        "name": "dataSet",
+        "kind": "property",
+        "type": "Record<string, unknown> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "decelerationRate",
         "kind": "property",
         "type": "number | \"normal\" | \"fast\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "dir",
+        "kind": "property",
+        "type": "\"ltr\" | \"rtl\" | undefined",
         "required": false,
         "description": null
       },
@@ -8335,6 +8860,20 @@
         "description": null
       },
       {
+        "name": "href",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "hrefAttrs",
+        "kind": "property",
+        "type": "{ download?: boolean; rel?: string; target?: string; } | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "id",
         "kind": "property",
         "type": "string | undefined",
@@ -8387,6 +8926,13 @@
         "name": "keyboardShouldPersistTaps",
         "kind": "property",
         "type": "boolean | \"never\" | \"always\" | \"handled\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "lang",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -8538,9 +9084,23 @@
         "description": null
       },
       {
+        "name": "onAuxClick",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onBlur",
         "kind": "property",
         "type": "((e: BlurEvent) => void) | null | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onClick",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -8552,6 +9112,13 @@
         "description": null
       },
       {
+        "name": "onContextMenu",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onFocus",
         "kind": "property",
         "type": "((e: FocusEvent) => void) | null | undefined",
@@ -8559,9 +9126,51 @@
         "description": null
       },
       {
+        "name": "onGotPointerCapture",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyDown",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyDownCapture",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyUp",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyUpCapture",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onLayout",
         "kind": "property",
         "type": "((event: LayoutChangeEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onLostPointerCapture",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -8583,6 +9192,55 @@
         "name": "onMomentumScrollEnd",
         "kind": "property",
         "type": "((event: NativeSyntheticEvent<NativeScrollEvent>) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseDown",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseEnter",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseLeave",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseMove",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseOut",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseOver",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseUp",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -8667,6 +9325,20 @@
         "name": "onPointerMoveCapture",
         "kind": "property",
         "type": "((event: PointerEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onPointerOut",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onPointerOver",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -8769,9 +9441,37 @@
         "description": null
       },
       {
+        "name": "onScrollShouldSetResponder",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onScrollShouldSetResponderCapture",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onScrollToTop",
         "kind": "property",
         "type": "((event: NativeSyntheticEvent<NativeScrollEvent>) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onSelectionChangeShouldSetResponder",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onSelectionChangeShouldSetResponderCapture",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
         "required": false,
         "description": null
       },
@@ -8797,6 +9497,13 @@
         "description": null
       },
       {
+        "name": "onTouchCancelCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onTouchEnd",
         "kind": "property",
         "type": "((event: GestureResponderEvent) => void) | undefined",
@@ -8818,9 +9525,30 @@
         "description": null
       },
       {
+        "name": "onTouchMoveCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onTouchStart",
         "kind": "property",
         "type": "((event: GestureResponderEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onTouchStartCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onWheel",
+        "kind": "property",
+        "type": "WheelEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -8834,7 +9562,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -8897,7 +9625,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -9003,6 +9731,13 @@
         "name": "scrollPerfTag",
         "kind": "property",
         "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "scrollsChildToFocus",
+        "kind": "property",
+        "type": "boolean | undefined",
         "required": false,
         "description": null
       },
@@ -9639,7 +10374,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -9674,7 +10409,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -9763,6 +10498,24 @@
         "description": null
       }
     ],
+    "structuredRows": []
+  },
+  {
+    "name": "SUPPORTED_ICON_PROVIDERS",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "value",
+    "modulePath": "src/primitives/icon/PortableIcon.tsx",
+    "sourceLocation": {
+      "filePath": "src/primitives/icon/PortableIcon.tsx",
+      "line": 17,
+      "column": 14
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
     "structuredRows": []
   },
   {
@@ -10135,7 +10888,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -10170,7 +10923,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -10726,7 +11479,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -10754,7 +11507,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -11573,7 +12326,7 @@
       {
         "name": "overflow",
         "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Overflow | undefined>",
         "required": false,
         "description": null
       },
@@ -11608,7 +12361,7 @@
       {
         "name": "position",
         "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "type": "Responsive<import(\"csstype/index\").Property.Position | undefined>",
         "required": false,
         "description": null
       },
@@ -11801,7 +12554,133 @@
         "description": null
       },
       {
+        "name": "accessibilityActiveDescendant",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityAtomic",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityAutoComplete",
+        "kind": "property",
+        "type": "\"none\" | \"list\" | \"inline\" | \"both\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityBusy",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityChecked",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnCount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnIndex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnSpan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityControls",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityCurrent",
+        "kind": "property",
+        "type": "boolean | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDescribedBy",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDetails",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDisabled",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityElementsHidden",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityErrorMessage",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityExpanded",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityFlowTo",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityHasPopup",
+        "kind": "property",
+        "type": "false | \"menu\" | \"dialog\" | \"grid\" | \"tree\" | \"listbox\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityHidden",
         "kind": "property",
         "type": "boolean | undefined",
         "required": false,
@@ -11822,6 +12701,20 @@
         "description": null
       },
       {
+        "name": "accessibilityInvalid",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityKeyShortcuts",
+        "kind": "property",
+        "type": "string[] | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityLabel",
         "kind": "property",
         "type": "string | undefined",
@@ -11831,7 +12724,7 @@
       {
         "name": "accessibilityLabelledBy",
         "kind": "property",
-        "type": "string | string[] | undefined",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -11850,9 +12743,86 @@
         "description": null
       },
       {
+        "name": "accessibilityLevel",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityLiveRegion",
         "kind": "property",
-        "type": "\"none\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"none\" | \"assertive\" | \"polite\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityModal",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityMultiline",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityMultiSelectable",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityOrientation",
+        "kind": "property",
+        "type": "\"vertical\" | \"horizontal\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityOwns",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPlaceholder",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPosInSet",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPressed",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityReadOnly",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRequired",
+        "kind": "property",
+        "type": "boolean | undefined",
         "required": false,
         "description": null
       },
@@ -11871,9 +12841,58 @@
         "description": null
       },
       {
+        "name": "accessibilityRoleDescription",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowCount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowIndex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowSpan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySelected",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySetSize",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityShowsLargeContentViewer",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySort",
+        "kind": "property",
+        "type": "\"none\" | \"ascending\" | \"descending\" | \"other\" | undefined",
         "required": false,
         "description": null
       },
@@ -11888,6 +12907,34 @@
         "name": "accessibilityValue",
         "kind": "property",
         "type": "AccessibilityValue | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueMax",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueMin",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueNow",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueText",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -11913,6 +12960,27 @@
         "description": null
       },
       {
+        "name": "aria-activedescendant",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-atomic",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-autocomplete",
+        "kind": "property",
+        "type": "\"none\" | \"list\" | \"inline\" | \"both\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-busy",
         "kind": "property",
         "type": "boolean | undefined",
@@ -11927,9 +12995,65 @@
         "description": null
       },
       {
+        "name": "aria-colcount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-colindex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-colspan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-controls",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-current",
+        "kind": "property",
+        "type": "boolean | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-describedby",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-details",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-disabled",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-errormessage",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -11941,9 +13065,37 @@
         "description": null
       },
       {
+        "name": "aria-flowto",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-haspopup",
+        "kind": "property",
+        "type": "false | \"menu\" | \"dialog\" | \"grid\" | \"tree\" | \"listbox\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-hidden",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-invalid",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-keyshortcuts",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -11962,9 +13114,16 @@
         "description": null
       },
       {
+        "name": "aria-level",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"off\" | \"assertive\" | \"polite\" | undefined",
         "required": false,
         "description": null
       },
@@ -11976,9 +13135,114 @@
         "description": null
       },
       {
+        "name": "aria-multiline",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-multiselectable",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-orientation",
+        "kind": "property",
+        "type": "\"vertical\" | \"horizontal\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-owns",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-placeholder",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-posinset",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-pressed",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-readonly",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-required",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-roledescription",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowcount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowindex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowspan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-selected",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-setsize",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-sort",
+        "kind": "property",
+        "type": "\"none\" | \"ascending\" | \"descending\" | \"other\" | undefined",
         "required": false,
         "description": null
       },
@@ -12020,7 +13284,7 @@
       {
         "name": "autoComplete",
         "kind": "property",
-        "type": "\"name\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"family-name\" | \"gender\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"url\" | \"username\" | \"username-new\" | \"off\" | undefined",
+        "type": "\"name\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -12109,9 +13373,23 @@
         "description": null
       },
       {
+        "name": "dataSet",
+        "kind": "property",
+        "type": "Record<string, unknown> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "defaultValue",
         "kind": "property",
         "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "dir",
+        "kind": "property",
+        "type": "\"ltr\" | \"rtl\" | undefined",
         "required": false,
         "description": null
       },
@@ -12168,6 +13446,20 @@
         "name": "hitSlop",
         "kind": "property",
         "type": "number | Insets | null | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "href",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "hrefAttrs",
+        "kind": "property",
+        "type": "{ download?: boolean; rel?: string; target?: string; } | undefined",
         "required": false,
         "description": null
       },
@@ -12263,6 +13555,13 @@
         "description": null
       },
       {
+        "name": "lang",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "leadingAccessory",
         "kind": "property",
         "type": "React.ReactNode",
@@ -12272,7 +13571,7 @@
       {
         "name": "lineBreakModeIOS",
         "kind": "property",
-        "type": "\"wordWrapping\" | \"char\" | \"clip\" | \"head\" | \"middle\" | \"tail\" | undefined",
+        "type": "\"clip\" | \"wordWrapping\" | \"char\" | \"head\" | \"middle\" | \"tail\" | undefined",
         "required": false,
         "description": null
       },
@@ -12340,6 +13639,13 @@
         "description": null
       },
       {
+        "name": "onAuxClick",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onBlur",
         "kind": "property",
         "type": "((e: BlurEvent) => void) | undefined",
@@ -12361,9 +13667,23 @@
         "description": null
       },
       {
+        "name": "onClick",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onContentSizeChange",
         "kind": "property",
         "type": "((e: TextInputContentSizeChangeEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onContextMenu",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -12382,9 +13702,44 @@
         "description": null
       },
       {
+        "name": "onGotPointerCapture",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyDown",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyDownCapture",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onKeyPress",
         "kind": "property",
         "type": "((e: TextInputKeyPressEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyUp",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyUpCapture",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -12396,9 +13751,65 @@
         "description": null
       },
       {
+        "name": "onLostPointerCapture",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onMagicTap",
         "kind": "property",
         "type": "(() => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseDown",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseEnter",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseLeave",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseMove",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseOut",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseOver",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseUp",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -12483,6 +13894,20 @@
         "name": "onPointerMoveCapture",
         "kind": "property",
         "type": "((event: PointerEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onPointerOut",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onPointerOver",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -12585,9 +14010,37 @@
         "description": null
       },
       {
+        "name": "onScrollShouldSetResponder",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onScrollShouldSetResponderCapture",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onSelectionChange",
         "kind": "property",
         "type": "((e: TextInputSelectionChangeEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onSelectionChangeShouldSetResponder",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onSelectionChangeShouldSetResponderCapture",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
         "required": false,
         "description": null
       },
@@ -12620,6 +14073,13 @@
         "description": null
       },
       {
+        "name": "onTouchCancelCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onTouchEnd",
         "kind": "property",
         "type": "((event: GestureResponderEvent) => void) | undefined",
@@ -12641,9 +14101,30 @@
         "description": null
       },
       {
+        "name": "onTouchMoveCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onTouchStart",
         "kind": "property",
         "type": "((event: GestureResponderEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onTouchStartCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onWheel",
+        "kind": "property",
+        "type": "WheelEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -12867,7 +14348,7 @@
       {
         "name": "textContentType",
         "kind": "property",
-        "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"location\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
+        "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
         "required": false,
         "description": null
       },
@@ -12986,7 +14467,133 @@
         "description": null
       },
       {
+        "name": "accessibilityActiveDescendant",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityAtomic",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityAutoComplete",
+        "kind": "property",
+        "type": "\"none\" | \"list\" | \"inline\" | \"both\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityBusy",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityChecked",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnCount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnIndex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityColumnSpan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityControls",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityCurrent",
+        "kind": "property",
+        "type": "boolean | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDescribedBy",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDetails",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityDisabled",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityElementsHidden",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityErrorMessage",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityExpanded",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityFlowTo",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityHasPopup",
+        "kind": "property",
+        "type": "false | \"menu\" | \"dialog\" | \"grid\" | \"tree\" | \"listbox\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityHidden",
         "kind": "property",
         "type": "boolean | undefined",
         "required": false,
@@ -13007,6 +14614,20 @@
         "description": null
       },
       {
+        "name": "accessibilityInvalid",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityKeyShortcuts",
+        "kind": "property",
+        "type": "string[] | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityLabel",
         "kind": "property",
         "type": "string | undefined",
@@ -13016,7 +14637,7 @@
       {
         "name": "accessibilityLabelledBy",
         "kind": "property",
-        "type": "string | string[] | undefined",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -13035,9 +14656,86 @@
         "description": null
       },
       {
+        "name": "accessibilityLevel",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityLiveRegion",
         "kind": "property",
-        "type": "\"none\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"none\" | \"assertive\" | \"polite\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityModal",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityMultiline",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityMultiSelectable",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityOrientation",
+        "kind": "property",
+        "type": "\"vertical\" | \"horizontal\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityOwns",
+        "kind": "property",
+        "type": "idRefList | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPlaceholder",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPosInSet",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityPressed",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityReadOnly",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRequired",
+        "kind": "property",
+        "type": "boolean | undefined",
         "required": false,
         "description": null
       },
@@ -13056,9 +14754,58 @@
         "description": null
       },
       {
+        "name": "accessibilityRoleDescription",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowCount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowIndex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRowSpan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySelected",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySetSize",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "accessibilityShowsLargeContentViewer",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilitySort",
+        "kind": "property",
+        "type": "\"none\" | \"ascending\" | \"descending\" | \"other\" | undefined",
         "required": false,
         "description": null
       },
@@ -13073,6 +14820,34 @@
         "name": "accessibilityValue",
         "kind": "property",
         "type": "AccessibilityValue | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueMax",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueMin",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueNow",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityValueText",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -13098,6 +14873,27 @@
         "description": null
       },
       {
+        "name": "aria-activedescendant",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-atomic",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-autocomplete",
+        "kind": "property",
+        "type": "\"none\" | \"list\" | \"inline\" | \"both\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-busy",
         "kind": "property",
         "type": "boolean | undefined",
@@ -13112,9 +14908,65 @@
         "description": null
       },
       {
+        "name": "aria-colcount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-colindex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-colspan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-controls",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-current",
+        "kind": "property",
+        "type": "boolean | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-describedby",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-details",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-disabled",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-errormessage",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -13126,9 +14978,37 @@
         "description": null
       },
       {
+        "name": "aria-flowto",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-haspopup",
+        "kind": "property",
+        "type": "false | \"menu\" | \"dialog\" | \"grid\" | \"tree\" | \"listbox\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-hidden",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-invalid",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-keyshortcuts",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       },
@@ -13147,9 +15027,16 @@
         "description": null
       },
       {
+        "name": "aria-level",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"off\" | \"assertive\" | \"polite\" | undefined",
         "required": false,
         "description": null
       },
@@ -13161,9 +15048,114 @@
         "description": null
       },
       {
+        "name": "aria-multiline",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-multiselectable",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-orientation",
+        "kind": "property",
+        "type": "\"vertical\" | \"horizontal\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-owns",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-placeholder",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-posinset",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-pressed",
+        "kind": "property",
+        "type": "boolean | \"mixed\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-readonly",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-required",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-roledescription",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowcount",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowindex",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-rowspan",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "aria-selected",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-setsize",
+        "kind": "property",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "aria-sort",
+        "kind": "property",
+        "type": "\"none\" | \"ascending\" | \"descending\" | \"other\" | undefined",
         "required": false,
         "description": null
       },
@@ -13205,7 +15197,7 @@
       {
         "name": "autoComplete",
         "kind": "property",
-        "type": "\"name\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"family-name\" | \"gender\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"url\" | \"username\" | \"username-new\" | \"off\" | undefined",
+        "type": "\"name\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -13294,9 +15286,23 @@
         "description": null
       },
       {
+        "name": "dataSet",
+        "kind": "property",
+        "type": "Record<string, unknown> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "defaultValue",
         "kind": "property",
         "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "dir",
+        "kind": "property",
+        "type": "\"ltr\" | \"rtl\" | undefined",
         "required": false,
         "description": null
       },
@@ -13353,6 +15359,20 @@
         "name": "hitSlop",
         "kind": "property",
         "type": "number | Insets | null | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "href",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "hrefAttrs",
+        "kind": "property",
+        "type": "{ download?: boolean; rel?: string; target?: string; } | undefined",
         "required": false,
         "description": null
       },
@@ -13448,6 +15468,13 @@
         "description": null
       },
       {
+        "name": "lang",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "leadingAccessory",
         "kind": "property",
         "type": "React.ReactNode",
@@ -13457,7 +15484,7 @@
       {
         "name": "lineBreakModeIOS",
         "kind": "property",
-        "type": "\"wordWrapping\" | \"char\" | \"clip\" | \"head\" | \"middle\" | \"tail\" | undefined",
+        "type": "\"clip\" | \"wordWrapping\" | \"char\" | \"head\" | \"middle\" | \"tail\" | undefined",
         "required": false,
         "description": null
       },
@@ -13532,6 +15559,13 @@
         "description": null
       },
       {
+        "name": "onAuxClick",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onBlur",
         "kind": "property",
         "type": "((e: BlurEvent) => void) | undefined",
@@ -13553,9 +15587,23 @@
         "description": null
       },
       {
+        "name": "onClick",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onContentSizeChange",
         "kind": "property",
         "type": "((e: TextInputContentSizeChangeEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onContextMenu",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -13574,9 +15622,44 @@
         "description": null
       },
       {
+        "name": "onGotPointerCapture",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyDown",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyDownCapture",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onKeyPress",
         "kind": "property",
         "type": "((e: TextInputKeyPressEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyUp",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onKeyUpCapture",
+        "kind": "property",
+        "type": "KeyboardEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -13588,9 +15671,65 @@
         "description": null
       },
       {
+        "name": "onLostPointerCapture",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onMagicTap",
         "kind": "property",
         "type": "(() => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseDown",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseEnter",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseLeave",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseMove",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseOut",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseOver",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onMouseUp",
+        "kind": "property",
+        "type": "MouseEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -13675,6 +15814,20 @@
         "name": "onPointerMoveCapture",
         "kind": "property",
         "type": "((event: PointerEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onPointerOut",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onPointerOver",
+        "kind": "property",
+        "type": "PointerEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -13777,9 +15930,37 @@
         "description": null
       },
       {
+        "name": "onScrollShouldSetResponder",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onScrollShouldSetResponderCapture",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onSelectionChange",
         "kind": "property",
         "type": "((e: TextInputSelectionChangeEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onSelectionChangeShouldSetResponder",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onSelectionChangeShouldSetResponderCapture",
+        "kind": "property",
+        "type": "((event: ResponderEvent) => boolean) | undefined",
         "required": false,
         "description": null
       },
@@ -13812,6 +15993,13 @@
         "description": null
       },
       {
+        "name": "onTouchCancelCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onTouchEnd",
         "kind": "property",
         "type": "((event: GestureResponderEvent) => void) | undefined",
@@ -13833,9 +16021,30 @@
         "description": null
       },
       {
+        "name": "onTouchMoveCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onTouchStart",
         "kind": "property",
         "type": "((event: GestureResponderEvent) => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onTouchStartCapture",
+        "kind": "property",
+        "type": "TouchEventHandler | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "onWheel",
+        "kind": "property",
+        "type": "WheelEventHandler | undefined",
         "required": false,
         "description": null
       },
@@ -14052,7 +16261,7 @@
       {
         "name": "textContentType",
         "kind": "property",
-        "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"location\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
+        "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
         "required": false,
         "description": null
       },
@@ -14213,7 +16422,7 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 11,
+      "line": 13,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14292,7 +16501,7 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 7,
+      "line": 9,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14760,7 +16969,7 @@
     "modulePath": "src/components/tooltip/Tooltip.tsx",
     "sourceLocation": {
       "filePath": "src/components/tooltip/Tooltip.tsx",
-      "line": 24,
+      "line": 27,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -15086,7 +17295,7 @@
     "modulePath": "src/components/toast/ToastProvider.tsx",
     "sourceLocation": {
       "filePath": "src/components/toast/ToastProvider.tsx",
-      "line": 106,
+      "line": 107,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -15111,7 +17320,7 @@
     "modulePath": "src/context/TranslationContext.tsx",
     "sourceLocation": {
       "filePath": "src/context/TranslationContext.tsx",
-      "line": 52,
+      "line": 49,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],

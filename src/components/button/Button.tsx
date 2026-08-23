@@ -31,11 +31,9 @@ export function Button({
       {...props}
       disabled={disabled || loading}
       onPress={onPress}
-      style={[
-        {
-          alignSelf: fullWidth ? 'stretch' : 'flex-start',
-        },
-      ]}
+      style={{
+        alignSelf: fullWidth ? 'stretch' : 'flex-start',
+      }}
       testID={testID}
     >
       {(state) => {

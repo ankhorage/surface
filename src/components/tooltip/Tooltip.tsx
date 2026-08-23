@@ -2,11 +2,14 @@ import React from 'react';
 import { type LayoutRectangle, Platform, Pressable, View } from 'react-native';
 
 import { Portal } from '../../internal/overlay/Portal';
+import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
 import { Surface } from '../../layout';
 import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { TooltipProps } from './types';
+
+const noPointerEvents = resolvePointerEvents('none');
 
 interface MeasurableNode {
   measureInWindow?: (
@@ -85,12 +88,15 @@ export function Tooltip({
       </Pressable>
       <Portal layer="tooltip" visible={visible && Boolean(layout)}>
         <View
-          pointerEvents="none"
-          style={{
-            left: tooltipLeft,
-            position: 'absolute',
-            top: tooltipTop,
-          }}
+          {...noPointerEvents.props}
+          style={[
+            noPointerEvents.style,
+            {
+              left: tooltipLeft,
+              position: 'absolute',
+              top: tooltipTop,
+            },
+          ]}
         >
           <Surface
             p="s"

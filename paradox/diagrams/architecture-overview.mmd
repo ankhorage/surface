@@ -8,6 +8,7 @@ graph TD
   module_src_components_action_sheet_ActionSheet_tsx --> module_src_components_action_sheet_types_ts
   module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_focus_FocusScope_tsx
   module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_overlay_Portal_tsx
+  module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_resolvers_index_ts
   module_src_components_action_sheet_ActionSheet_tsx --> module_src_layout_index_ts
   module_src_components_action_sheet_ActionSheet_tsx --> module_src_primitives_text_index_ts
@@ -88,6 +89,7 @@ graph TD
   module_src_components_drawer_Drawer_tsx --> module_src_components_drawer_types_ts
   module_src_components_drawer_Drawer_tsx --> module_src_internal_focus_FocusScope_tsx
   module_src_components_drawer_Drawer_tsx --> module_src_internal_overlay_Portal_tsx
+  module_src_components_drawer_Drawer_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_components_drawer_Drawer_tsx --> module_src_internal_resolvers_index_ts
   module_src_components_drawer_Drawer_tsx --> module_src_layout_index_ts
   module_src_components_drawer_Drawer_tsx --> module_src_theme_ThemeContext_tsx
@@ -162,11 +164,15 @@ graph TD
   module_src_components_menu_Menu_tsx --> module_src_internal_focus_FocusScope_tsx
   module_src_components_menu_Menu_tsx --> module_src_internal_focus_useFocusManager_ts
   module_src_components_menu_Menu_tsx --> module_src_internal_overlay_Portal_tsx
+  module_src_components_menu_Menu_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_components_menu_Menu_tsx --> module_src_internal_resolvers_index_ts
   module_src_components_menu_Menu_tsx --> module_src_layout_index_ts
   module_src_components_menu_Menu_tsx --> module_src_primitives_button_base_index_ts
   module_src_components_menu_Menu_tsx --> module_src_primitives_text_index_ts
   module_src_components_menu_Menu_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_components_menu_navigation_test_ts["src/components/menu/navigation.test.ts"]
+  package__ankhorage_surface -.-> module_src_components_menu_navigation_test_ts
+  module_src_components_menu_navigation_test_ts --> module_src_components_menu_navigation_ts
   module_src_components_menu_navigation_ts["src/components/menu/navigation.ts"]
   package__ankhorage_surface -.-> module_src_components_menu_navigation_ts
   module_src_components_menu_types_ts["src/components/menu/types.ts"]
@@ -179,6 +185,7 @@ graph TD
   module_src_components_modal_Modal_tsx --> module_src_components_modal_types_ts
   module_src_components_modal_Modal_tsx --> module_src_internal_focus_FocusScope_tsx
   module_src_components_modal_Modal_tsx --> module_src_internal_overlay_Portal_tsx
+  module_src_components_modal_Modal_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_components_modal_Modal_tsx --> module_src_internal_resolvers_index_ts
   module_src_components_modal_Modal_tsx --> module_src_layout_index_ts
   module_src_components_modal_Modal_tsx --> module_src_theme_ThemeContext_tsx
@@ -194,6 +201,10 @@ graph TD
   package__ankhorage_surface -.-> module_src_components_navigation_DrawerNavigationItem_tsx
   module_src_components_navigation_DrawerNavigationItem_tsx --> module_src_components_navigation_NavigationItem_tsx
   module_src_components_navigation_DrawerNavigationItem_tsx --> module_src_components_navigation_types_ts
+  module_src_components_navigation_helpers_test_ts["src/components/navigation/helpers.test.ts"]
+  package__ankhorage_surface -.-> module_src_components_navigation_helpers_test_ts
+  module_src_components_navigation_helpers_test_ts --> module_src_components_navigation_helpers_ts
+  module_src_components_navigation_helpers_test_ts --> module_src_theme_createTheme_ts
   module_src_components_navigation_helpers_ts["src/components/navigation/helpers.ts"]
   package__ankhorage_surface -.-> module_src_components_navigation_helpers_ts
   module_src_components_navigation_helpers_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
@@ -214,6 +225,8 @@ graph TD
   module_src_components_navigation_NavigationList_tsx --> module_src_components_navigation_NavigationItem_tsx
   module_src_components_navigation_NavigationList_tsx --> module_src_components_navigation_types_ts
   module_src_components_navigation_NavigationList_tsx --> module_src_layout_index_ts
+  module_src_components_navigation_policy_test_ts["src/components/navigation/policy.test.ts"]
+  package__ankhorage_surface -.-> module_src_components_navigation_policy_test_ts
   module_src_components_navigation_TabBar_tsx["src/components/navigation/TabBar.tsx"]
   package__ankhorage_surface -.-> module_src_components_navigation_TabBar_tsx
   module_src_components_navigation_TabBar_tsx --> module_src_components_navigation_TabBarItem_tsx
@@ -265,12 +278,18 @@ graph TD
   module_src_components_switch_types_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_components_switch_types_ts --> module_src_primitives_button_base_index_ts
   module_src_components_switch_types_ts --> module_src_surfaceColor_ts
+  module_src_components_tabs_a11y_test_ts["src/components/tabs/a11y.test.ts"]
+  package__ankhorage_surface -.-> module_src_components_tabs_a11y_test_ts
+  module_src_components_tabs_a11y_test_ts --> module_src_components_tabs_a11y_ts
   module_src_components_tabs_a11y_ts["src/components/tabs/a11y.ts"]
   package__ankhorage_surface -.-> module_src_components_tabs_a11y_ts
   module_src_components_tabs_context_tsx["src/components/tabs/context.tsx"]
   package__ankhorage_surface -.-> module_src_components_tabs_context_tsx
   module_src_components_tabs_index_ts["src/components/tabs/index.ts"]
   package__ankhorage_surface -.-> module_src_components_tabs_index_ts
+  module_src_components_tabs_navigation_test_ts["src/components/tabs/navigation.test.ts"]
+  package__ankhorage_surface -.-> module_src_components_tabs_navigation_test_ts
+  module_src_components_tabs_navigation_test_ts --> module_src_components_tabs_navigation_ts
   module_src_components_tabs_navigation_ts["src/components/tabs/navigation.ts"]
   package__ankhorage_surface -.-> module_src_components_tabs_navigation_ts
   module_src_components_tabs_navigation_ts --> module_src_components_tabs_context_tsx
@@ -349,6 +368,7 @@ graph TD
   package__ankhorage_surface -.-> module_src_components_tooltip_Tooltip_tsx
   module_src_components_tooltip_Tooltip_tsx --> module_src_components_tooltip_types_ts
   module_src_components_tooltip_Tooltip_tsx --> module_src_internal_overlay_Portal_tsx
+  module_src_components_tooltip_Tooltip_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_components_tooltip_Tooltip_tsx --> module_src_internal_resolvers_index_ts
   module_src_components_tooltip_Tooltip_tsx --> module_src_layout_index_ts
   module_src_components_tooltip_Tooltip_tsx --> module_src_primitives_text_index_ts
@@ -362,12 +382,18 @@ graph TD
   package__ankhorage_surface -.-> module_src_context_TranslationContext_tsx
   module_src_core_responsive_breakpoints_ts["src/core/responsive/breakpoints.ts"]
   package__ankhorage_surface -.-> module_src_core_responsive_breakpoints_ts
+  module_src_core_responsive_getBreakpointFromWidth_test_ts["src/core/responsive/getBreakpointFromWidth.test.ts"]
+  package__ankhorage_surface -.-> module_src_core_responsive_getBreakpointFromWidth_test_ts
+  module_src_core_responsive_getBreakpointFromWidth_test_ts --> module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_getBreakpointFromWidth_ts["src/core/responsive/getBreakpointFromWidth.ts"]
   package__ankhorage_surface -.-> module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_getBreakpointFromWidth_ts --> module_src_core_responsive_breakpoints_ts
   module_src_core_responsive_getBreakpointFromWidth_ts --> module_src_core_responsive_types_ts
   module_src_core_responsive_index_ts["src/core/responsive/index.ts"]
   package__ankhorage_surface -.-> module_src_core_responsive_index_ts
+  module_src_core_responsive_resolve_test_ts["src/core/responsive/resolve.test.ts"]
+  package__ankhorage_surface -.-> module_src_core_responsive_resolve_test_ts
+  module_src_core_responsive_resolve_test_ts --> module_src_core_responsive_resolve_ts
   module_src_core_responsive_resolve_ts["src/core/responsive/resolve.ts"]
   package__ankhorage_surface -.-> module_src_core_responsive_resolve_ts
   module_src_core_responsive_resolve_ts --> module_src_core_responsive_breakpoints_ts
@@ -401,33 +427,60 @@ graph TD
   module_src_examples_DocsExamples_tsx --> module_src_primitives_text_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_theme_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_theme_types_ts
+  module_src_index_test_ts["src/index.test.ts"]
+  package__ankhorage_surface -.-> module_src_index_test_ts
   module_src_index_ts["src/index.ts"]
+  module_src_interactionPolicy_test_ts["src/interactionPolicy.test.ts"]
+  package__ankhorage_surface -.-> module_src_interactionPolicy_test_ts
   module_src_interactionPolicy_ts["src/interactionPolicy.ts"]
   package__ankhorage_surface -.-> module_src_interactionPolicy_ts
   module_src_internal_focus_FocusScope_tsx["src/internal/focus/FocusScope.tsx"]
   package__ankhorage_surface -.-> module_src_internal_focus_FocusScope_tsx
   module_src_internal_focus_FocusScope_tsx --> module_src_internal_focus_useFocusManager_ts
+  module_src_internal_focus_useFocusManager_test_ts["src/internal/focus/useFocusManager.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_focus_useFocusManager_test_ts
+  module_src_internal_focus_useFocusManager_test_ts --> module_src_internal_focus_useFocusManager_ts
   module_src_internal_focus_useFocusManager_ts["src/internal/focus/useFocusManager.ts"]
   package__ankhorage_surface -.-> module_src_internal_focus_useFocusManager_ts
   module_src_internal_overlay_OverlayProvider_tsx["src/internal/overlay/OverlayProvider.tsx"]
   package__ankhorage_surface -.-> module_src_internal_overlay_OverlayProvider_tsx
   module_src_internal_overlay_OverlayProvider_tsx --> module_src_internal_overlay_useOverlayStack_ts
+  module_src_internal_overlay_OverlayProvider_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_internal_overlay_Portal_tsx["src/internal/overlay/Portal.tsx"]
   package__ankhorage_surface -.-> module_src_internal_overlay_Portal_tsx
   module_src_internal_overlay_Portal_tsx --> module_src_internal_overlay_useOverlayStack_ts
   module_src_internal_overlay_Portal_tsx --> module_src_internal_resolvers_resolveOverlayZIndex_ts
+  module_src_internal_overlay_useOverlayStack_test_ts["src/internal/overlay/useOverlayStack.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_overlay_useOverlayStack_test_ts
+  module_src_internal_overlay_useOverlayStack_test_ts --> module_src_internal_overlay_useOverlayStack_ts
   module_src_internal_overlay_useOverlayStack_ts["src/internal/overlay/useOverlayStack.ts"]
   package__ankhorage_surface -.-> module_src_internal_overlay_useOverlayStack_ts
   module_src_internal_overlay_useOverlayStack_ts --> module_src_internal_resolvers_resolveOverlayZIndex_ts
+  module_src_internal_resolvePointerEvents_test_ts["src/internal/resolvePointerEvents.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvePointerEvents_test_ts
+  module_src_internal_resolvePointerEvents_test_ts --> module_src_internal_resolvePointerEvents_ts
+  module_src_internal_resolvePointerEvents_ts["src/internal/resolvePointerEvents.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvePointerEvents_ts
   module_src_internal_resolvers_index_ts["src/internal/resolvers/index.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_index_ts
+  module_src_internal_resolvers_resolveControlSize_test_ts["src/internal/resolvers/resolveControlSize.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveControlSize_test_ts
+  module_src_internal_resolvers_resolveControlSize_test_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_internal_resolvers_resolveControlSize_test_ts --> module_src_theme_createTheme_ts
   module_src_internal_resolvers_resolveControlSize_ts["src/internal/resolvers/resolveControlSize.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveControlSize_ts
   module_src_internal_resolvers_resolveControlSize_ts --> module_src_theme_types_ts
+  module_src_internal_resolvers_resolveFieldPresentation_test_ts["src/internal/resolvers/resolveFieldPresentation.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveFieldPresentation_test_ts
+  module_src_internal_resolvers_resolveFieldPresentation_test_ts --> module_src_internal_resolvers_resolveFieldPresentation_ts
+  module_src_internal_resolvers_resolveFieldPresentation_test_ts --> module_src_internal_resolvers_resolveFieldState_ts
   module_src_internal_resolvers_resolveFieldPresentation_ts["src/internal/resolvers/resolveFieldPresentation.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveFieldPresentation_ts
   module_src_internal_resolvers_resolveFieldPresentation_ts --> module_src_internal_resolvers_resolveFieldState_ts
   module_src_internal_resolvers_resolveFieldPresentation_ts --> module_src_surfaceColor_ts
+  module_src_internal_resolvers_resolveFieldState_test_ts["src/internal/resolvers/resolveFieldState.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveFieldState_test_ts
+  module_src_internal_resolvers_resolveFieldState_test_ts --> module_src_internal_resolvers_resolveFieldState_ts
   module_src_internal_resolvers_resolveFieldState_ts["src/internal/resolvers/resolveFieldState.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveFieldState_ts
   module_src_internal_resolvers_resolveFocusRingStyles_ts["src/internal/resolvers/resolveFocusRingStyles.ts"]
@@ -436,9 +489,17 @@ graph TD
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveIconSize_ts
   module_src_internal_resolvers_resolveIconSize_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_internal_resolvers_resolveIconSize_ts --> module_src_theme_types_ts
+  module_src_internal_resolvers_resolveIndicatorSize_test_ts["src/internal/resolvers/resolveIndicatorSize.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveIndicatorSize_test_ts
+  module_src_internal_resolvers_resolveIndicatorSize_test_ts --> module_src_internal_resolvers_resolveIndicatorSize_ts
   module_src_internal_resolvers_resolveIndicatorSize_ts["src/internal/resolvers/resolveIndicatorSize.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveIndicatorSize_ts
   module_src_internal_resolvers_resolveIndicatorSize_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_internal_resolvers_resolveInteractiveColors_test_ts["src/internal/resolvers/resolveInteractiveColors.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveInteractiveColors_test_ts
+  module_src_internal_resolvers_resolveInteractiveColors_test_ts --> module_src_internal_resolvers_resolveFieldState_ts
+  module_src_internal_resolvers_resolveInteractiveColors_test_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
+  module_src_internal_resolvers_resolveInteractiveColors_test_ts --> module_src_theme_createTheme_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts["src/internal/resolvers/resolveInteractiveColors.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveInteractiveColors_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_internal_resolvers_resolveFieldState_ts
@@ -446,30 +507,59 @@ graph TD
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_internal_resolvers_resolveSurfaceColor_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_surfaceColor_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_theme_types_ts
+  module_src_internal_resolvers_resolveInteractiveState_test_ts["src/internal/resolvers/resolveInteractiveState.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveInteractiveState_test_ts
+  module_src_internal_resolvers_resolveInteractiveState_test_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
   module_src_internal_resolvers_resolveInteractiveState_ts["src/internal/resolvers/resolveInteractiveState.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveInteractiveState_ts
+  module_src_internal_resolvers_resolveOverlayAnimation_test_ts["src/internal/resolvers/resolveOverlayAnimation.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveOverlayAnimation_test_ts
+  module_src_internal_resolvers_resolveOverlayAnimation_test_ts --> module_src_internal_resolvers_resolveOverlayAnimation_ts
   module_src_internal_resolvers_resolveOverlayAnimation_ts["src/internal/resolvers/resolveOverlayAnimation.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveOverlayAnimation_ts
   module_src_internal_resolvers_resolveOverlayAnimation_ts --> module_src_internal_resolvers_resolveOverlayZIndex_ts
+  module_src_internal_resolvers_resolveOverlayZIndex_test_ts["src/internal/resolvers/resolveOverlayZIndex.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveOverlayZIndex_test_ts
+  module_src_internal_resolvers_resolveOverlayZIndex_test_ts --> module_src_internal_resolvers_resolveOverlayZIndex_ts
   module_src_internal_resolvers_resolveOverlayZIndex_ts["src/internal/resolvers/resolveOverlayZIndex.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveOverlayZIndex_ts
+  module_src_internal_resolvers_resolveSelectionControlBehavior_test_ts["src/internal/resolvers/resolveSelectionControlBehavior.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveSelectionControlBehavior_test_ts
+  module_src_internal_resolvers_resolveSelectionControlBehavior_test_ts --> module_src_internal_resolvers_resolveSelectionControlBehavior_ts
   module_src_internal_resolvers_resolveSelectionControlBehavior_ts["src/internal/resolvers/resolveSelectionControlBehavior.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveSelectionControlBehavior_ts
+  module_src_internal_resolvers_resolveSelectionControlColors_test_ts["src/internal/resolvers/resolveSelectionControlColors.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveSelectionControlColors_test_ts
+  module_src_internal_resolvers_resolveSelectionControlColors_test_ts --> module_src_internal_resolvers_resolveFieldState_ts
+  module_src_internal_resolvers_resolveSelectionControlColors_test_ts --> module_src_internal_resolvers_resolveSelectionControlColors_ts
+  module_src_internal_resolvers_resolveSelectionControlColors_test_ts --> module_src_theme_createTheme_ts
   module_src_internal_resolvers_resolveSelectionControlColors_ts["src/internal/resolvers/resolveSelectionControlColors.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveSelectionControlColors_ts
   module_src_internal_resolvers_resolveSelectionControlColors_ts --> module_src_internal_resolvers_resolveFieldState_ts
   module_src_internal_resolvers_resolveSelectionControlColors_ts --> module_src_internal_resolvers_resolveSurfaceColor_ts
   module_src_internal_resolvers_resolveSelectionControlColors_ts --> module_src_surfaceColor_ts
   module_src_internal_resolvers_resolveSelectionControlColors_ts --> module_src_theme_types_ts
+  module_src_internal_resolvers_resolveSurfaceColor_test_ts["src/internal/resolvers/resolveSurfaceColor.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveSurfaceColor_test_ts
+  module_src_internal_resolvers_resolveSurfaceColor_test_ts --> module_src_internal_resolvers_resolveSurfaceColor_ts
+  module_src_internal_resolvers_resolveSurfaceColor_test_ts --> module_src_theme_createTheme_ts
   module_src_internal_resolvers_resolveSurfaceColor_ts["src/internal/resolvers/resolveSurfaceColor.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveSurfaceColor_ts
   module_src_internal_resolvers_resolveSurfaceColor_ts --> module_src_surfaceColor_ts
   module_src_internal_resolvers_resolveSurfaceColor_ts --> module_src_theme_types_ts
+  module_src_internal_resolvers_resolveTextColor_test_ts["src/internal/resolvers/resolveTextColor.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveTextColor_test_ts
+  module_src_internal_resolvers_resolveTextColor_test_ts --> module_src_internal_resolvers_resolveTextColor_ts
+  module_src_internal_resolvers_resolveTextColor_test_ts --> module_src_theme_createTheme_ts
   module_src_internal_resolvers_resolveTextColor_ts["src/internal/resolvers/resolveTextColor.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveTextColor_ts
   module_src_internal_resolvers_resolveTextColor_ts --> module_src_internal_resolvers_resolveSurfaceColor_ts
   module_src_internal_resolvers_resolveTextColor_ts --> module_src_surfaceColor_ts
   module_src_internal_resolvers_resolveTextColor_ts --> module_src_theme_types_ts
+  module_src_internal_resolvers_resolveTextStyles_test_ts["src/internal/resolvers/resolveTextStyles.test.ts"]
+  package__ankhorage_surface -.-> module_src_internal_resolvers_resolveTextStyles_test_ts
+  module_src_internal_resolvers_resolveTextStyles_test_ts --> module_src_internal_resolvers_resolveTextStyles_ts
+  module_src_internal_resolvers_resolveTextStyles_test_ts --> module_src_theme_createTheme_ts
   module_src_internal_resolvers_resolveTextStyles_ts["src/internal/resolvers/resolveTextStyles.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveTextStyles_ts
   module_src_internal_resolvers_resolveTextStyles_ts --> module_src_theme_types_ts
@@ -483,6 +573,7 @@ graph TD
   module_src_layout_Box_tsx["src/layout/Box.tsx"]
   package__ankhorage_surface -.-> module_src_layout_Box_tsx
   module_src_layout_Box_tsx --> module_src_core_responsive_index_ts
+  module_src_layout_Box_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_layout_Box_tsx --> module_src_layout_helpers_ts
   module_src_layout_Box_tsx --> module_src_theme_ThemeContext_tsx
   module_src_layout_Center_tsx["src/layout/Center.tsx"]
@@ -505,6 +596,10 @@ graph TD
   module_src_layout_Grid_tsx --> module_src_layout_Box_tsx
   module_src_layout_Grid_tsx --> module_src_layout_helpers_ts
   module_src_layout_Grid_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_layout_helpers_test_ts["src/layout/helpers.test.ts"]
+  package__ankhorage_surface -.-> module_src_layout_helpers_test_ts
+  module_src_layout_helpers_test_ts --> module_src_layout_helpers_ts
+  module_src_layout_helpers_test_ts --> module_src_theme_types_ts
   module_src_layout_helpers_ts["src/layout/helpers.ts"]
   package__ankhorage_surface -.-> module_src_layout_helpers_ts
   module_src_layout_helpers_ts --> module_src_core_responsive_resolve_ts
@@ -528,6 +623,8 @@ graph TD
   package__ankhorage_surface -.-> module_src_layout_Spacer_tsx
   module_src_layout_Spacer_tsx --> module_src_layout_Box_tsx
   module_src_layout_Spacer_tsx --> module_src_layout_helpers_ts
+  module_src_layout_Stack_test_ts["src/layout/Stack.test.ts"]
+  package__ankhorage_surface -.-> module_src_layout_Stack_test_ts
   module_src_layout_Stack_tsx["src/layout/Stack.tsx"]
   package__ankhorage_surface -.-> module_src_layout_Stack_tsx
   module_src_layout_Stack_tsx --> module_src_core_responsive_index_ts
@@ -566,6 +663,10 @@ graph TD
   module_src_primitives_heading_Heading_tsx --> module_src_theme_ThemeContext_tsx
   module_src_primitives_heading_index_ts["src/primitives/heading/index.ts"]
   package__ankhorage_surface -.-> module_src_primitives_heading_index_ts
+  module_src_primitives_heading_resolveHeadingStyle_test_ts["src/primitives/heading/resolveHeadingStyle.test.ts"]
+  package__ankhorage_surface -.-> module_src_primitives_heading_resolveHeadingStyle_test_ts
+  module_src_primitives_heading_resolveHeadingStyle_test_ts --> module_src_primitives_heading_resolveHeadingStyle_ts
+  module_src_primitives_heading_resolveHeadingStyle_test_ts --> module_src_theme_createTheme_ts
   module_src_primitives_heading_resolveHeadingStyle_ts["src/primitives/heading/resolveHeadingStyle.ts"]
   package__ankhorage_surface -.-> module_src_primitives_heading_resolveHeadingStyle_ts
   module_src_primitives_heading_resolveHeadingStyle_ts --> module_src_internal_resolvers_resolveTextColor_ts
@@ -578,14 +679,16 @@ graph TD
   module_src_primitives_heading_types_ts --> module_src_surfaceColor_ts
   module_src_primitives_icon_Icon_tsx["src/primitives/icon/Icon.tsx"]
   package__ankhorage_surface -.-> module_src_primitives_icon_Icon_tsx
-  module_src_primitives_icon_Icon_tsx --> module_src_primitives_icon_resolveExpoIconComponent_ts
+  module_src_primitives_icon_Icon_tsx --> module_src_primitives_icon_PortableIcon_tsx
   module_src_primitives_icon_Icon_tsx --> module_src_theme_resolveToken_ts
   module_src_primitives_icon_Icon_tsx --> module_src_theme_ThemeContext_tsx
   module_src_primitives_icon_Icon_tsx --> module_src_theme_types_ts
   module_src_primitives_icon_index_ts["src/primitives/icon/index.ts"]
   package__ankhorage_surface -.-> module_src_primitives_icon_index_ts
-  module_src_primitives_icon_resolveExpoIconComponent_ts["src/primitives/icon/resolveExpoIconComponent.ts"]
-  package__ankhorage_surface -.-> module_src_primitives_icon_resolveExpoIconComponent_ts
+  module_src_primitives_icon_PortableIcon_tsx["src/primitives/icon/PortableIcon.tsx"]
+  package__ankhorage_surface -.-> module_src_primitives_icon_PortableIcon_tsx
+  module_src_primitives_icon_PortableIcon_web_test_tsx["src/primitives/icon/PortableIcon.web.test.tsx"]
+  package__ankhorage_surface -.-> module_src_primitives_icon_PortableIcon_web_test_tsx
   module_src_primitives_image_Image_tsx["src/primitives/image/Image.tsx"]
   package__ankhorage_surface -.-> module_src_primitives_image_Image_tsx
   module_src_primitives_image_Image_tsx --> module_src_primitives_image_resolveImageProps_ts
@@ -593,6 +696,10 @@ graph TD
   module_src_primitives_image_Image_tsx --> module_src_theme_ThemeContext_tsx
   module_src_primitives_image_index_ts["src/primitives/image/index.ts"]
   package__ankhorage_surface -.-> module_src_primitives_image_index_ts
+  module_src_primitives_image_resolveImageProps_test_ts["src/primitives/image/resolveImageProps.test.ts"]
+  package__ankhorage_surface -.-> module_src_primitives_image_resolveImageProps_test_ts
+  module_src_primitives_image_resolveImageProps_test_ts --> module_src_primitives_image_resolveImageProps_ts
+  module_src_primitives_image_resolveImageProps_test_ts --> module_src_theme_createTheme_ts
   module_src_primitives_image_resolveImageProps_ts["src/primitives/image/resolveImageProps.ts"]
   package__ankhorage_surface -.-> module_src_primitives_image_resolveImageProps_ts
   module_src_primitives_image_resolveImageProps_ts --> module_src_primitives_image_types_ts
@@ -613,8 +720,16 @@ graph TD
   package__ankhorage_surface -.-> module_src_primitives_text_types_ts
   module_src_primitives_text_types_ts --> module_src_internal_resolvers_resolveTextStyles_ts
   module_src_primitives_text_types_ts --> module_src_surfaceColor_ts
+  module_src_surfaceColor_test_ts["src/surfaceColor.test.ts"]
+  package__ankhorage_surface -.-> module_src_surfaceColor_test_ts
+  module_src_surfaceColor_test_ts --> module_src_index_ts
+  module_src_surfaceColor_test_ts --> module_src_surfaceColor_ts
   module_src_surfaceColor_ts["src/surfaceColor.ts"]
   package__ankhorage_surface -.-> module_src_surfaceColor_ts
+  module_src_theme_colorEngine_test_ts["src/theme/colorEngine.test.ts"]
+  package__ankhorage_surface -.-> module_src_theme_colorEngine_test_ts
+  module_src_theme_colorEngine_test_ts --> module_src_theme_colorEngine_ts
+  module_src_theme_colorEngine_test_ts --> module_src_theme_types_ts
   module_src_theme_colorEngine_ts["src/theme/colorEngine.ts"]
   package__ankhorage_surface -.-> module_src_theme_colorEngine_ts
   module_src_theme_colorEngine_ts --> module_src_theme_types_ts
@@ -623,11 +738,20 @@ graph TD
   module_src_theme_createTheme_ts --> module_src_theme_colorEngine_ts
   module_src_theme_createTheme_ts --> module_src_theme_resolveGlobalTokens_ts
   module_src_theme_createTheme_ts --> module_src_theme_types_ts
+  module_src_theme_createThemeOverrides_test_ts["src/theme/createThemeOverrides.test.ts"]
+  package__ankhorage_surface -.-> module_src_theme_createThemeOverrides_test_ts
+  module_src_theme_createThemeOverrides_test_ts --> module_src_theme_createTheme_ts
+  module_src_theme_createThemeValidation_test_ts["src/theme/createThemeValidation.test.ts"]
+  package__ankhorage_surface -.-> module_src_theme_createThemeValidation_test_ts
+  module_src_theme_createThemeValidation_test_ts --> module_src_theme_createTheme_ts
   module_src_theme_defaultTokens_ts["src/theme/defaultTokens.ts"]
   package__ankhorage_surface -.-> module_src_theme_defaultTokens_ts
   module_src_theme_defaultTokens_ts --> module_src_theme_types_ts
   module_src_theme_index_ts["src/theme/index.ts"]
   package__ankhorage_surface -.-> module_src_theme_index_ts
+  module_src_theme_inverseSemantics_test_ts["src/theme/inverseSemantics.test.ts"]
+  package__ankhorage_surface -.-> module_src_theme_inverseSemantics_test_ts
+  module_src_theme_inverseSemantics_test_ts --> module_src_theme_colorEngine_ts
   module_src_theme_resolveGlobalTokens_ts["src/theme/resolveGlobalTokens.ts"]
   package__ankhorage_surface -.-> module_src_theme_resolveGlobalTokens_ts
   module_src_theme_resolveGlobalTokens_ts --> module_src_theme_defaultTokens_ts
@@ -658,5 +782,10 @@ graph TD
   package__ankhorage_surface -.-> module_src_theme_types_ts
   module_src_utils_deepEqual_ts["src/utils/deepEqual.ts"]
   package__ankhorage_surface -.-> module_src_utils_deepEqual_ts
+  module_src_utils_deepMerge_test_ts["src/utils/deepMerge.test.ts"]
+  package__ankhorage_surface -.-> module_src_utils_deepMerge_test_ts
+  module_src_utils_deepMerge_test_ts --> module_src_utils_deepMerge_ts
   module_src_utils_deepMerge_ts["src/utils/deepMerge.ts"]
   package__ankhorage_surface -.-> module_src_utils_deepMerge_ts
+  module_src_webAcceptance_test_tsx["src/webAcceptance.test.tsx"]
+  package__ankhorage_surface -.-> module_src_webAcceptance_test_tsx

@@ -1,12 +1,11 @@
-import React from 'react';
 import { type StyleProp, type TextStyle } from 'react-native';
 
 import { resolveToken } from '../../theme/resolveToken';
 import { useTheme } from '../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../theme/types';
-import { resolveExpoIconComponent } from './resolveExpoIconComponent';
+import { type IconProvider, PortableIcon } from './PortableIcon';
 
-export type IconProvider = string;
+export type { IconProvider } from './PortableIcon';
 
 export interface IconProps {
   name: string;
@@ -26,15 +25,17 @@ export function Icon({
   testID,
 }: IconProps) {
   const { theme } = useTheme();
-  const IconComponent = resolveExpoIconComponent(provider);
   const resolvedSize = typeof size === 'number' ? size : resolveToken(theme.spacing, size);
   const resolvedColor = resolveToken(theme.colors, color);
 
-  return React.createElement(IconComponent, {
-    color: resolvedColor,
-    name,
-    size: resolvedSize,
-    style,
-    testID,
-  });
+  return (
+    <PortableIcon
+      color={resolvedColor}
+      name={name}
+      provider={provider}
+      size={resolvedSize}
+      style={style}
+      testID={testID}
+    />
+  );
 }
