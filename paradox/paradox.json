@@ -1000,6 +1000,8 @@
         "IconButtonProps",
         "IconProps",
         "IconProvider",
+        "IconSource",
+        "IconVariant",
         "Image",
         "ImageFit",
         "ImageProps",
@@ -1681,19 +1683,32 @@
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts"
       ],
-      "exports": ["Icon", "IconProps", "IconProvider"]
+      "exports": ["Icon", "IconProps", "IconProvider", "IconSource", "IconVariant"]
     },
     {
       "path": "src/primitives/icon/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["Icon", "IconProps", "IconProvider", "SUPPORTED_ICON_PROVIDERS"]
+      "exports": [
+        "Icon",
+        "IconProps",
+        "IconProvider",
+        "IconSource",
+        "IconVariant",
+        "SUPPORTED_ICON_PROVIDERS"
+      ]
     },
     {
       "path": "src/primitives/icon/PortableIcon.tsx",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["IconProvider", "PortableIcon", "SUPPORTED_ICON_PROVIDERS"]
+      "exports": [
+        "IconProvider",
+        "IconSource",
+        "IconVariant",
+        "PortableIcon",
+        "SUPPORTED_ICON_PROVIDERS"
+      ]
     },
     {
       "path": "src/primitives/icon/PortableIcon.web.test.tsx",
@@ -3627,7 +3642,7 @@
       "description": null,
       "isReadme": false,
       "examples": [],
-      "kind": "type",
+      "kind": "unknown",
       "modulePath": "src/components/button/types.ts",
       "sourceLocation": {
         "filePath": "src/components/button/types.ts",
@@ -3637,22 +3652,7 @@
       "exportPaths": ["src/index.ts"],
       "relatedSymbols": [],
       "signatures": [],
-      "members": [
-        {
-          "name": "name",
-          "kind": "property",
-          "type": "string",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "provider",
-          "kind": "property",
-          "type": "\"Ionicons\" | \"FontAwesome\" | \"FontAwesome5\" | \"FontAwesome6\" | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
+      "members": [],
       "structuredRows": []
     },
     {
@@ -3664,11 +3664,11 @@
       "modulePath": "src/components/button/types.ts",
       "sourceLocation": {
         "filePath": "src/components/button/types.ts",
-        "line": 14,
+        "line": 11,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ButtonIconSpec", "InteractionPolicy", "Responsive"],
+      "relatedSymbols": ["IconSource", "InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -3800,7 +3800,7 @@
         {
           "name": "leadingIcon",
           "kind": "property",
-          "type": "ButtonIconSpec | undefined",
+          "type": "IconSource | undefined",
           "required": false,
           "description": null
         },
@@ -4017,7 +4017,7 @@
         {
           "name": "trailingIcon",
           "kind": "property",
-          "type": "ButtonIconSpec | undefined",
+          "type": "IconSource | undefined",
           "required": false,
           "description": null
         },
@@ -7487,10 +7487,10 @@
       "relatedSymbols": ["IconProps"],
       "signatures": [
         {
-          "label": "({\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}: IconProps) => import(\"@types/react/index\").JSX.Element",
+          "label": "(props: IconProps) => import(\"@types/react/index\").JSX.Element",
           "parameters": [
             {
-              "name": "{\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}",
+              "name": "props",
               "type": "IconProps",
               "required": true,
               "description": null
@@ -7548,7 +7548,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["IconProps", "InteractionPolicy", "Responsive"],
+      "relatedSymbols": ["IconSource", "InteractionPolicy", "Responsive"],
       "signatures": [],
       "members": [
         {
@@ -7666,7 +7666,7 @@
         {
           "name": "icon",
           "kind": "property",
-          "type": "{ name: IconProps[\"name\"]; provider?: IconProps[\"provider\"]; }",
+          "type": "IconSource",
           "required": true,
           "description": null
         },
@@ -7909,60 +7909,17 @@
       "description": null,
       "isReadme": false,
       "examples": [],
-      "kind": "type",
+      "kind": "unknown",
       "modulePath": "src/primitives/icon/Icon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/Icon.tsx",
-        "line": 10,
+        "line": 17,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
       "relatedSymbols": [],
       "signatures": [],
-      "members": [
-        {
-          "name": "color",
-          "kind": "property",
-          "type": "string | number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "name",
-          "kind": "property",
-          "type": "string",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "provider",
-          "kind": "property",
-          "type": "\"Ionicons\" | \"FontAwesome\" | \"FontAwesome5\" | \"FontAwesome6\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "size",
-          "kind": "property",
-          "type": "string | number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "style",
-          "kind": "property",
-          "type": "StyleProp<TextStyle>",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
+      "members": [],
       "structuredRows": []
     },
     {
@@ -7974,7 +7931,43 @@
       "modulePath": "src/primitives/icon/PortableIcon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 24,
+        "line": 28,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "IconSource",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "unknown",
+      "modulePath": "src/primitives/icon/PortableIcon.tsx",
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 31,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "IconVariant",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "unknown",
+      "modulePath": "src/primitives/icon/PortableIcon.tsx",
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 29,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -8857,7 +8850,7 @@
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemIcon"],
+      "relatedSymbols": ["IconSource"],
       "signatures": [],
       "members": [
         {
@@ -8905,7 +8898,7 @@
         {
           "name": "icon",
           "kind": "property",
-          "type": "NavigationItemIcon | undefined",
+          "type": "IconSource | undefined",
           "required": false,
           "description": null
         },
@@ -12491,7 +12484,7 @@
       "modulePath": "src/primitives/icon/PortableIcon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 17,
+        "line": 21,
         "column": 14
       },
       "exportPaths": ["src/index.ts"],
@@ -15266,7 +15259,7 @@
         {
           "name": "autoComplete",
           "kind": "property",
-          "type": "\"name\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
+          "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -16330,7 +16323,7 @@
         {
           "name": "textContentType",
           "kind": "property",
-          "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
+          "type": "\"none\" | \"name\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
           "required": false,
           "description": null
         },
@@ -17179,7 +17172,7 @@
         {
           "name": "autoComplete",
           "kind": "property",
-          "type": "\"name\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
+          "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -18243,7 +18236,7 @@
         {
           "name": "textContentType",
           "kind": "property",
-          "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
+          "type": "\"none\" | \"name\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
           "required": false,
           "description": null
         },
@@ -22954,27 +22947,24 @@
           "name": "color",
           "type": "keyof SurfaceTheme['colors'] | string | undefined",
           "required": false,
-          "defaultValue": "'text'",
           "description": null
         },
         {
           "name": "name",
-          "type": "string",
+          "type": "IoniconsIconName",
           "required": true,
           "description": null
         },
         {
           "name": "provider",
-          "type": "IconProvider | undefined",
+          "type": "'Ionicons' | undefined",
           "required": false,
-          "defaultValue": "'Ionicons'",
           "description": null
         },
         {
           "name": "size",
           "type": "keyof SurfaceTheme['spacing'] | number | undefined",
           "required": false,
-          "defaultValue": "'m'",
           "description": null
         },
         {
@@ -22986,6 +22976,12 @@
         {
           "name": "testID",
           "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "variant",
+          "type": "never | undefined",
           "required": false,
           "description": null
         }
@@ -23104,7 +23100,7 @@
         },
         {
           "name": "icon",
-          "type": "{ name: IconProps[\"name\"]; provider?: IconProps[\"provider\"]; }",
+          "type": "IconSource",
           "required": true,
           "description": null
         },
@@ -32326,11 +32322,29 @@
       }
     },
     {
+      "name": "renderFontAwesome5",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 50,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderFontAwesome6",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 64,
+        "column": 1
+      }
+    },
+    {
       "name": "PortableIcon",
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 35,
+        "line": 78,
         "column": 1
       }
     },
@@ -38502,6 +38516,18 @@
         "sourcePath": "src/primitives/icon/Icon.tsx"
       },
       {
+        "fromSymbol": "PortableIcon",
+        "toSymbol": "renderFontAwesome5",
+        "callExpression": "renderFontAwesome5",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
+        "fromSymbol": "PortableIcon",
+        "toSymbol": "renderFontAwesome6",
+        "callExpression": "renderFontAwesome6",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
         "fromSymbol": "src/primitives/icon/PortableIcon.web.test.tsx",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -38771,26 +38797,6 @@
         "sourcePath": "src/components/badge/Badge.tsx"
       },
       {
-        "fromSymbol": "ButtonIconSpec",
-        "toType": "FontAwesome",
-        "sourcePath": "src/components/button/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonIconSpec",
-        "toType": "FontAwesome5",
-        "sourcePath": "src/components/button/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonIconSpec",
-        "toType": "FontAwesome6",
-        "sourcePath": "src/components/button/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonIconSpec",
-        "toType": "Ionicons",
-        "sourcePath": "src/components/button/types.ts"
-      },
-      {
         "fromSymbol": "ButtonProps",
         "toType": "AccessibilityRole",
         "sourcePath": "src/components/button/types.ts"
@@ -38798,11 +38804,6 @@
       {
         "fromSymbol": "ButtonProps",
         "toType": "AccessibilityState",
-        "sourcePath": "src/components/button/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonProps",
-        "toType": "ButtonIconSpec",
         "sourcePath": "src/components/button/types.ts"
       },
       {
@@ -38828,6 +38829,11 @@
       {
         "fromSymbol": "ButtonProps",
         "toType": "GestureResponderEvent",
+        "sourcePath": "src/components/button/types.ts"
+      },
+      {
+        "fromSymbol": "ButtonProps",
+        "toType": "IconSource",
         "sourcePath": "src/components/button/types.ts"
       },
       {
@@ -39142,7 +39148,7 @@
       },
       {
         "fromSymbol": "IconButtonProps",
-        "toType": "IconProps",
+        "toType": "IconSource",
         "sourcePath": "src/components/icon-button/types.ts"
       },
       {
@@ -39352,7 +39358,7 @@
       },
       {
         "fromSymbol": "NavigationItemSpec",
-        "toType": "NavigationItemIcon",
+        "toType": "IconSource",
         "sourcePath": "src/components/navigation/types.ts"
       },
       {
@@ -40409,36 +40415,6 @@
         "fromSymbol": "Heading",
         "toType": "React",
         "sourcePath": "src/primitives/heading/Heading.tsx"
-      },
-      {
-        "fromSymbol": "IconProps",
-        "toType": "FontAwesome",
-        "sourcePath": "src/primitives/icon/Icon.tsx"
-      },
-      {
-        "fromSymbol": "IconProps",
-        "toType": "FontAwesome5",
-        "sourcePath": "src/primitives/icon/Icon.tsx"
-      },
-      {
-        "fromSymbol": "IconProps",
-        "toType": "FontAwesome6",
-        "sourcePath": "src/primitives/icon/Icon.tsx"
-      },
-      {
-        "fromSymbol": "IconProps",
-        "toType": "Ionicons",
-        "sourcePath": "src/primitives/icon/Icon.tsx"
-      },
-      {
-        "fromSymbol": "IconProps",
-        "toType": "StyleProp",
-        "sourcePath": "src/primitives/icon/Icon.tsx"
-      },
-      {
-        "fromSymbol": "IconProps",
-        "toType": "TextStyle",
-        "sourcePath": "src/primitives/icon/Icon.tsx"
       },
       {
         "fromSymbol": "Icon",
@@ -41955,7 +41931,7 @@
       {
         "fromComponent": "Button",
         "toComponent": "Icon",
-        "jsxElement": "<Icon\n                      color={colors.contentColor}\n                      name={leadingIcon.name}\n                      provider={leadingIcon.provider}\n                      size={iconSize}\n                    />",
+        "jsxElement": "<Icon {...leadingIcon} color={colors.contentColor} size={iconSize} />",
         "sourcePath": "src/components/button/Button.tsx"
       },
       {
@@ -41973,7 +41949,7 @@
       {
         "fromComponent": "Button",
         "toComponent": "Icon",
-        "jsxElement": "<Icon\n                      color={colors.contentColor}\n                      name={trailingIcon.name}\n                      provider={trailingIcon.provider}\n                      size={iconSize}\n                    />",
+        "jsxElement": "<Icon {...trailingIcon} color={colors.contentColor} size={iconSize} />",
         "sourcePath": "src/components/button/Button.tsx"
       },
       {
@@ -42189,7 +42165,7 @@
       {
         "fromComponent": "Icon",
         "toComponent": "PortableIcon",
-        "jsxElement": "<PortableIcon\n      color={resolvedColor}\n      name={name}\n      provider={provider}\n      size={resolvedSize}\n      style={style}\n      testID={testID}\n    />",
+        "jsxElement": "<PortableIcon {...props} color={resolvedColor} size={resolvedSize} />",
         "sourcePath": "src/primitives/icon/Icon.tsx"
       },
       {
@@ -42207,7 +42183,7 @@
       {
         "fromComponent": "IconButton",
         "toComponent": "Icon",
-        "jsxElement": "<Icon\n              color={colors.contentColor}\n              name={icon.name}\n              provider={icon.provider}\n              size={resolveIconSize(theme, size)}\n            />",
+        "jsxElement": "<Icon {...icon} color={colors.contentColor} size={resolveIconSize(theme, size)} />",
         "sourcePath": "src/components/icon-button/IconButton.tsx"
       },
       {
@@ -42381,7 +42357,7 @@
       {
         "fromComponent": "NavigationItem",
         "toComponent": "Icon",
-        "jsxElement": "<Icon\n                  color={presentation.contentColor}\n                  name={item.icon.name}\n                  provider={item.icon.provider}\n                  size={compact ? 's' : 'm'}\n                />",
+        "jsxElement": "<Icon {...item.icon} color={presentation.contentColor} size={compact ? 's' : 'm'} />",
         "sourcePath": "src/components/navigation/NavigationItem.tsx"
       },
       {
@@ -42579,7 +42555,7 @@
       {
         "fromComponent": "TabBarItem",
         "toComponent": "Icon",
-        "jsxElement": "<Icon\n                  color={contentColor}\n                  name={item.icon.name}\n                  provider={item.icon.provider}\n                  size={compact ? 's' : 'm'}\n                />",
+        "jsxElement": "<Icon {...item.icon} color={contentColor} size={compact ? 's' : 'm'} />",
         "sourcePath": "src/components/navigation/TabBarItem.tsx"
       },
       {

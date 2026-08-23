@@ -731,14 +731,15 @@ Source: `src/primitives/icon/Icon.tsx:19:1`
 
 Export paths: `src/index.ts`
 
-| Prop     | Type                                                   | Required | Default      | Description |
-| -------- | ------------------------------------------------------ | -------- | ------------ | ----------- |
-| color    | `keyof SurfaceTheme['colors'] \| string \| undefined`  | no       | `'text'`     |             |
-| name     | `string`                                               | yes      | —            |             |
-| provider | `IconProvider \| undefined`                            | no       | `'Ionicons'` |             |
-| size     | `keyof SurfaceTheme['spacing'] \| number \| undefined` | no       | `'m'`        |             |
-| style    | `StyleProp<TextStyle> \| undefined`                    | no       | —            |             |
-| testID   | `string \| undefined`                                  | no       | —            |             |
+| Prop     | Type                                                   | Required | Default | Description |
+| -------- | ------------------------------------------------------ | -------- | ------- | ----------- |
+| color    | `keyof SurfaceTheme['colors'] \| string \| undefined`  | no       | —       |             |
+| name     | `IoniconsIconName`                                     | yes      | —       |             |
+| provider | `'Ionicons' \| undefined`                              | no       | —       |             |
+| size     | `keyof SurfaceTheme['spacing'] \| number \| undefined` | no       | —       |             |
+| style    | `StyleProp<TextStyle> \| undefined`                    | no       | —       |             |
+| testID   | `string \| undefined`                                  | no       | —       |             |
+| variant  | `never \| undefined`                                   | no       | —       |             |
 
 ## IconButton
 
@@ -746,58 +747,58 @@ Source: `src/components/icon-button/IconButton.tsx:10:1`
 
 Export paths: `src/index.ts`
 
-| Prop               | Type                                                             | Required | Default     | Description |
-| ------------------ | ---------------------------------------------------------------- | -------- | ----------- | ----------- |
-| accessibilityLabel | `string`                                                         | yes      | —           |             |
-| accessibilityRole  | `AccessibilityRole \| undefined`                                 | no       | —           |             |
-| accessibilityState | `AccessibilityState \| undefined`                                | no       | —           |             |
-| accessible         | `ReactNativeViewProps['accessible'] \| undefined`                | no       | —           |             |
-| alignSelf          | `Responsive<ViewStyle['alignSelf']> \| undefined`                | no       | —           |             |
-| bg                 | `Responsive<ColorValue> \| undefined`                            | no       | —           |             |
-| borderColor        | `Responsive<ColorValue> \| undefined`                            | no       | —           |             |
-| borderWidth        | `Responsive<number> \| undefined`                                | no       | —           |             |
-| bottom             | `Responsive<number> \| undefined`                                | no       | —           |             |
-| color              | `SurfaceColor \| undefined`                                      | no       | `'primary'` |             |
-| disabled           | `boolean \| undefined`                                           | no       | `false`     |             |
-| flex               | `Responsive<number> \| undefined`                                | no       | —           |             |
-| flexBasis          | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
-| flexGrow           | `Responsive<number> \| undefined`                                | no       | —           |             |
-| flexShrink         | `Responsive<number> \| undefined`                                | no       | —           |             |
-| height             | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
-| icon               | `{ name: IconProps["name"]; provider?: IconProps["provider"]; }` | yes      | —           |             |
-| interactionPolicy  | `InteractionPolicy \| undefined`                                 | no       | —           |             |
-| left               | `Responsive<number> \| undefined`                                | no       | —           |             |
-| m                  | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| maxHeight          | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
-| maxWidth           | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
-| mb                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| minHeight          | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
-| minWidth           | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
-| ml                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| mr                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| mt                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| mx                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| my                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| onLongPress        | `((event: GestureResponderEvent) => void) \| undefined`          | no       | —           |             |
-| onPress            | `((event: GestureResponderEvent) => void) \| undefined`          | no       | —           |             |
-| opacity            | `Responsive<number> \| undefined`                                | no       | —           |             |
-| overflow           | `Responsive<ViewStyle['overflow']> \| undefined`                 | no       | —           |             |
-| p                  | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| pb                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| pl                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| position           | `Responsive<ViewStyle['position']> \| undefined`                 | no       | —           |             |
-| pr                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| pt                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| px                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| py                 | `Responsive<SpaceValue> \| undefined`                            | no       | —           |             |
-| radius             | `Responsive<RadiusValue> \| undefined`                           | no       | —           |             |
-| right              | `Responsive<number> \| undefined`                                | no       | —           |             |
-| size               | `ControlSize \| undefined`                                       | no       | `'m'`       |             |
-| testID             | `string \| undefined`                                            | no       | —           |             |
-| top                | `Responsive<number> \| undefined`                                | no       | —           |             |
-| variant            | `ButtonVariant \| undefined`                                     | no       | `'ghost'`   |             |
-| width              | `Responsive<number \| string> \| undefined`                      | no       | —           |             |
-| zIndex             | `Responsive<number> \| undefined`                                | no       | —           |             |
+| Prop               | Type                                                    | Required | Default     | Description |
+| ------------------ | ------------------------------------------------------- | -------- | ----------- | ----------- |
+| accessibilityLabel | `string`                                                | yes      | —           |             |
+| accessibilityRole  | `AccessibilityRole \| undefined`                        | no       | —           |             |
+| accessibilityState | `AccessibilityState \| undefined`                       | no       | —           |             |
+| accessible         | `ReactNativeViewProps['accessible'] \| undefined`       | no       | —           |             |
+| alignSelf          | `Responsive<ViewStyle['alignSelf']> \| undefined`       | no       | —           |             |
+| bg                 | `Responsive<ColorValue> \| undefined`                   | no       | —           |             |
+| borderColor        | `Responsive<ColorValue> \| undefined`                   | no       | —           |             |
+| borderWidth        | `Responsive<number> \| undefined`                       | no       | —           |             |
+| bottom             | `Responsive<number> \| undefined`                       | no       | —           |             |
+| color              | `SurfaceColor \| undefined`                             | no       | `'primary'` |             |
+| disabled           | `boolean \| undefined`                                  | no       | `false`     |             |
+| flex               | `Responsive<number> \| undefined`                       | no       | —           |             |
+| flexBasis          | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| flexGrow           | `Responsive<number> \| undefined`                       | no       | —           |             |
+| flexShrink         | `Responsive<number> \| undefined`                       | no       | —           |             |
+| height             | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| icon               | `IconSource`                                            | yes      | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                        | no       | —           |             |
+| left               | `Responsive<number> \| undefined`                       | no       | —           |             |
+| m                  | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| maxHeight          | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| maxWidth           | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| mb                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| minHeight          | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| minWidth           | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| ml                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| mr                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| mt                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| mx                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| my                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| onLongPress        | `((event: GestureResponderEvent) => void) \| undefined` | no       | —           |             |
+| onPress            | `((event: GestureResponderEvent) => void) \| undefined` | no       | —           |             |
+| opacity            | `Responsive<number> \| undefined`                       | no       | —           |             |
+| overflow           | `Responsive<ViewStyle['overflow']> \| undefined`        | no       | —           |             |
+| p                  | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| pb                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| pl                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| position           | `Responsive<ViewStyle['position']> \| undefined`        | no       | —           |             |
+| pr                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| pt                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| px                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| py                 | `Responsive<SpaceValue> \| undefined`                   | no       | —           |             |
+| radius             | `Responsive<RadiusValue> \| undefined`                  | no       | —           |             |
+| right              | `Responsive<number> \| undefined`                       | no       | —           |             |
+| size               | `ControlSize \| undefined`                              | no       | `'m'`       |             |
+| testID             | `string \| undefined`                                   | no       | —           |             |
+| top                | `Responsive<number> \| undefined`                       | no       | —           |             |
+| variant            | `ButtonVariant \| undefined`                            | no       | `'ghost'`   |             |
+| width              | `Responsive<number \| string> \| undefined`             | no       | —           |             |
+| zIndex             | `Responsive<number> \| undefined`                       | no       | —           |             |
 
 ## Image
 

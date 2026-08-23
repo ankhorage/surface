@@ -56,12 +56,7 @@ export function NavigationItem({
           >
             {item.icon ? (
               <View style={{ marginRight: theme.spacing.s }}>
-                <Icon
-                  color={presentation.contentColor}
-                  name={item.icon.name}
-                  provider={item.icon.provider}
-                  size={compact ? 's' : 'm'}
-                />
+                <Icon {...item.icon} color={presentation.contentColor} size={compact ? 's' : 'm'} />
               </View>
             ) : null}
             <Box flex={1}>

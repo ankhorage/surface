@@ -46,12 +46,7 @@ export function IconButton({
               opacity: colors.opacity,
             }}
           >
-            <Icon
-              color={colors.contentColor}
-              name={icon.name}
-              provider={icon.provider}
-              size={resolveIconSize(theme, size)}
-            />
+            <Icon {...icon} color={colors.contentColor} size={resolveIconSize(theme, size)} />
           </Box>
         );
       }}

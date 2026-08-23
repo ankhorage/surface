@@ -249,7 +249,7 @@ graph LR
   module_src_components_button_types_ts --> export_ButtonIconSpec
   export_ButtonProps["ButtonProps"]
   module_src_components_button_types_ts --> export_ButtonProps
-  export_ButtonProps -.-> export_ButtonIconSpec
+  export_ButtonProps -.-> export_IconSource
   export_ButtonProps -.-> export_InteractionPolicy
   export_ButtonProps -.-> export_Responsive
   export_Card["Card"]
@@ -381,13 +381,17 @@ graph LR
   export_IconButton -.-> export_IconButtonProps
   export_IconButtonProps["IconButtonProps"]
   module_src_components_icon_button_types_ts --> export_IconButtonProps
-  export_IconButtonProps -.-> export_IconProps
+  export_IconButtonProps -.-> export_IconSource
   export_IconButtonProps -.-> export_InteractionPolicy
   export_IconButtonProps -.-> export_Responsive
   export_IconProps["IconProps"]
   module_src_primitives_icon_Icon_tsx --> export_IconProps
   export_IconProvider["IconProvider"]
   module_src_primitives_icon_PortableIcon_tsx --> export_IconProvider
+  export_IconSource["IconSource"]
+  module_src_primitives_icon_PortableIcon_tsx --> export_IconSource
+  export_IconVariant["IconVariant"]
+  module_src_primitives_icon_PortableIcon_tsx --> export_IconVariant
   export_Image["Image"]
   module_src_primitives_image_Image_tsx --> export_Image
   export_Image -.-> export_ImageProps
@@ -447,7 +451,7 @@ graph LR
   export_NavigationItemProps -.-> export_NavigationItemSpec
   export_NavigationItemSpec["NavigationItemSpec"]
   module_src_components_navigation_types_ts --> export_NavigationItemSpec
-  export_NavigationItemSpec -.-> export_NavigationItemIcon
+  export_NavigationItemSpec -.-> export_IconSource
   export_NavigationList["NavigationList"]
   module_src_components_navigation_NavigationList_tsx --> export_NavigationList
   export_NavigationList -.-> export_NavigationListProps

@@ -1645,7 +1645,7 @@
     "description": null,
     "isReadme": false,
     "examples": [],
-    "kind": "type",
+    "kind": "unknown",
     "modulePath": "src/components/button/types.ts",
     "sourceLocation": {
       "filePath": "src/components/button/types.ts",
@@ -1655,22 +1655,7 @@
     "exportPaths": ["src/index.ts"],
     "relatedSymbols": [],
     "signatures": [],
-    "members": [
-      {
-        "name": "name",
-        "kind": "property",
-        "type": "string",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "provider",
-        "kind": "property",
-        "type": "\"Ionicons\" | \"FontAwesome\" | \"FontAwesome5\" | \"FontAwesome6\" | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
+    "members": [],
     "structuredRows": []
   },
   {
@@ -1682,11 +1667,11 @@
     "modulePath": "src/components/button/types.ts",
     "sourceLocation": {
       "filePath": "src/components/button/types.ts",
-      "line": 14,
+      "line": 11,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ButtonIconSpec", "InteractionPolicy", "Responsive"],
+    "relatedSymbols": ["IconSource", "InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -1818,7 +1803,7 @@
       {
         "name": "leadingIcon",
         "kind": "property",
-        "type": "ButtonIconSpec | undefined",
+        "type": "IconSource | undefined",
         "required": false,
         "description": null
       },
@@ -2035,7 +2020,7 @@
       {
         "name": "trailingIcon",
         "kind": "property",
-        "type": "ButtonIconSpec | undefined",
+        "type": "IconSource | undefined",
         "required": false,
         "description": null
       },
@@ -5505,10 +5490,10 @@
     "relatedSymbols": ["IconProps"],
     "signatures": [
       {
-        "label": "({\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}: IconProps) => import(\"@types/react/index\").JSX.Element",
+        "label": "(props: IconProps) => import(\"@types/react/index\").JSX.Element",
         "parameters": [
           {
-            "name": "{\n  name,\n  provider = 'Ionicons',\n  size = 'm',\n  color = 'text',\n  style,\n  testID,\n}",
+            "name": "props",
             "type": "IconProps",
             "required": true,
             "description": null
@@ -5566,7 +5551,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconProps", "InteractionPolicy", "Responsive"],
+    "relatedSymbols": ["IconSource", "InteractionPolicy", "Responsive"],
     "signatures": [],
     "members": [
       {
@@ -5684,7 +5669,7 @@
       {
         "name": "icon",
         "kind": "property",
-        "type": "{ name: IconProps[\"name\"]; provider?: IconProps[\"provider\"]; }",
+        "type": "IconSource",
         "required": true,
         "description": null
       },
@@ -5927,60 +5912,17 @@
     "description": null,
     "isReadme": false,
     "examples": [],
-    "kind": "type",
+    "kind": "unknown",
     "modulePath": "src/primitives/icon/Icon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/Icon.tsx",
-      "line": 10,
+      "line": 17,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
     "relatedSymbols": [],
     "signatures": [],
-    "members": [
-      {
-        "name": "color",
-        "kind": "property",
-        "type": "string | number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "name",
-        "kind": "property",
-        "type": "string",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "provider",
-        "kind": "property",
-        "type": "\"Ionicons\" | \"FontAwesome\" | \"FontAwesome5\" | \"FontAwesome6\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "size",
-        "kind": "property",
-        "type": "string | number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "style",
-        "kind": "property",
-        "type": "StyleProp<TextStyle>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
+    "members": [],
     "structuredRows": []
   },
   {
@@ -5992,7 +5934,43 @@
     "modulePath": "src/primitives/icon/PortableIcon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/PortableIcon.tsx",
-      "line": 24,
+      "line": 28,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "IconSource",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/primitives/icon/PortableIcon.tsx",
+    "sourceLocation": {
+      "filePath": "src/primitives/icon/PortableIcon.tsx",
+      "line": 31,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "IconVariant",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/primitives/icon/PortableIcon.tsx",
+    "sourceLocation": {
+      "filePath": "src/primitives/icon/PortableIcon.tsx",
+      "line": 29,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6875,7 +6853,7 @@
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["NavigationItemIcon"],
+    "relatedSymbols": ["IconSource"],
     "signatures": [],
     "members": [
       {
@@ -6923,7 +6901,7 @@
       {
         "name": "icon",
         "kind": "property",
-        "type": "NavigationItemIcon | undefined",
+        "type": "IconSource | undefined",
         "required": false,
         "description": null
       },
@@ -10509,7 +10487,7 @@
     "modulePath": "src/primitives/icon/PortableIcon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/PortableIcon.tsx",
-      "line": 17,
+      "line": 21,
       "column": 14
     },
     "exportPaths": ["src/index.ts"],
@@ -13284,7 +13262,7 @@
       {
         "name": "autoComplete",
         "kind": "property",
-        "type": "\"name\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
+        "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -14348,7 +14326,7 @@
       {
         "name": "textContentType",
         "kind": "property",
-        "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
+        "type": "\"none\" | \"name\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
         "required": false,
         "description": null
       },
@@ -15197,7 +15175,7 @@
       {
         "name": "autoComplete",
         "kind": "property",
-        "type": "\"name\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
+        "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -16261,7 +16239,7 @@
       {
         "name": "textContentType",
         "kind": "property",
-        "type": "\"name\" | \"none\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
+        "type": "\"none\" | \"name\" | \"nickname\" | \"password\" | \"username\" | \"location\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
         "required": false,
         "description": null
       },
