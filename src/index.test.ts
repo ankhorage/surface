@@ -6,8 +6,10 @@ const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8')
 const packageJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 ) as {
+  devDependencies: Record<string, string>;
   exports: Record<string, unknown>;
   files: string[];
+  peerDependencies: Record<string, string>;
 };
 
 const expectedRootExports = [
@@ -67,5 +69,10 @@ describe('public package contract', () => {
       },
       './package.json': './package.json',
     });
+  });
+
+  it('supports RN 0.86 patches while validating the canonical RN 0.86.3 baseline', () => {
+    expect(packageJson.peerDependencies['react-native']).toBe('0.86.x');
+    expect(packageJson.devDependencies['react-native']).toBe('0.86.3');
   });
 });
