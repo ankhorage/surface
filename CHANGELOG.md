@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.0.1
+
+### Patch Changes
+
+- c07471b: Support the React Native 0.86 patch line as a peer while validating Surface against the canonical React Native 0.86.3 application baseline.
+
 ## 3.0.0
 
 ### Major Changes
