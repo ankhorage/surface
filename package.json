@@ -65,7 +65,7 @@
     "changeset": "changeset",
     "changeset:status": "changeset status --since=origin/main",
     "docs": "paradox && ankhorage-prettier --write README.md paradox",
-    "knip": "ankhorage-knip",
+    "knip:check": "ankhorage-knip",
     "lint": "ankhorage-eslint . --max-warnings=0",
     "lint:fix": "ankhorage-eslint . --fix --max-warnings=0",
     "format": "ankhorage-prettier --write .",
