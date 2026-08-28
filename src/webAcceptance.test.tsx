@@ -12,6 +12,7 @@ const { Container } = await import('./layout/Container');
 const { Grid } = await import('./layout/Grid');
 const { ScrollArea } = await import('./layout/ScrollArea');
 const { Show } = await import('./layout/Show');
+const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
 const { ThemeProvider } = await import('./theme/ThemeContext');
 
 function ResponsiveAcceptanceTree() {
@@ -81,4 +82,15 @@ test('RN Web 0.21 statically renders and hydrates representative responsive prim
     Reflect.deleteProperty(globalThis, 'navigator');
     Reflect.deleteProperty(globalThis, 'window');
   }
+});
+
+test('RN Web 0.21 compiles box-none overlay pointer events into a hit-test-safe class', () => {
+  const markup = renderToString(
+    <OverlayProvider>
+      <ReactNativeWeb.View testID="interactive-content" />
+    </OverlayProvider>,
+  );
+
+  expect(markup).toContain('data-testid="interactive-content"');
+  expect(markup).toContain('r-pointerEvents-');
 });
