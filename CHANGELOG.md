@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.0.2
+
+### Patch Changes
+
+- 6151096: Compile React Native Web box pointer-event modes through static styles so empty overlay roots no longer intercept application controls.
+
 ## 3.0.1
 
 ### Patch Changes
