@@ -83,17 +83,7 @@ export interface ThemeSemantics {
 }
 
 export type FontWeight =
-  | '100'
-  | '200'
-  | '300'
-  | '400'
-  | '500'
-  | '600'
-  | '700'
-  | '800'
-  | '900'
-  | 'bold'
-  | 'normal';
+  '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'bold' | 'normal';
 
 export interface ThemeTokens {
   colors: {

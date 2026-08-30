@@ -23,15 +23,15 @@ Source: `src/components/action-sheet/ActionSheet.tsx:16:1`
 ### Signatures
 
 - `({
-  visible,
-  onDismiss,
-  title,
-  description,
-  children,
-  cancelLabel = 'Cancel',
-  closeOnBackdrop = true,
-  interactionPolicy = 'enabled',
-  testID,
+visible,
+onDismiss,
+title,
+description,
+children,
+cancelLabel = 'Cancel',
+closeOnBackdrop = true,
+interactionPolicy = 'enabled',
+testID,
 }: ActionSheetProps) => React.JSX.Element | null`
   - {
     visible,
@@ -55,16 +55,16 @@ Source: `src/components/action-sheet/ActionSheetItem.tsx:8:1`
 ### Signatures
 
 - `({
-  label,
-  description,
-  leading,
-  trailing,
-  color,
-  disabled = false,
-  selected = false,
-  interactionPolicy = 'enabled',
-  onPress,
-  testID,
+label,
+description,
+leading,
+trailing,
+color,
+disabled = false,
+selected = false,
+interactionPolicy = 'enabled',
+onPress,
+testID,
 }: ActionSheetItemProps) => React.JSX.Element`
   - {
     label,
@@ -130,15 +130,15 @@ Source: `src/layout/AppBar.tsx:18:1`
 ### Signatures
 
 - `({
-  leading,
-  trailing,
-  children,
-  safeAreaTop = true,
-  divider = false,
-  contentStyle,
-  bg,
-  style,
-  ...props
+leading,
+trailing,
+children,
+safeAreaTop = true,
+divider = false,
+contentStyle,
+bg,
+style,
+...props
 }: AppBarProps) => React.JSX.Element`
   - {
     leading,
@@ -223,11 +223,11 @@ Source: `src/components/badge/Badge.tsx:9:1`
 ### Signatures
 
 - `({
-  content,
-  variant = 'soft',
-  color = 'primary',
-  size = 's',
-  testID,
+content,
+variant = 'soft',
+color = 'primary',
+size = 's',
+testID,
 }: BadgeProps) => React.JSX.Element`
   - {
     content,
@@ -277,15 +277,15 @@ Source: `src/layout/Box.tsx:19:1`
 ### Signatures
 
 - `({
-  accessible,
-  accessibilityLabel,
-  accessibilityRole,
-  accessibilityState,
-  children,
-  pointerEvents,
-  style,
-  testID,
-  ...props
+accessible,
+accessibilityLabel,
+accessibilityRole,
+accessibilityState,
+children,
+pointerEvents,
+style,
+testID,
+...props
 }: BoxProps) => React.JSX.Element`
   - {
     accessible,
@@ -383,18 +383,18 @@ Source: `src/components/button/Button.tsx:12:1`
 ### Signatures
 
 - `({
-  children,
-  variant = 'solid',
-  color = 'primary',
-  size = 'm',
-  disabled = false,
-  loading = false,
-  leadingIcon,
-  trailingIcon,
-  fullWidth = false,
-  onPress,
-  testID,
-  ...props
+children,
+variant = 'solid',
+color = 'primary',
+size = 'm',
+disabled = false,
+loading = false,
+leadingIcon,
+trailingIcon,
+fullWidth = false,
+onPress,
+testID,
+...props
 }: ButtonProps) => React.JSX.Element`
   - {
     children,
@@ -421,17 +421,17 @@ Source: `src/primitives/button-base/ButtonBase.tsx:28:1`
 ### Signatures
 
 - `({
-  children,
-  disabled = false,
-  interactionPolicy = 'enabled',
-  onPress,
-  onLongPress,
-  accessibilityLabel,
-  accessibilityRole = 'button',
-  accessibilityState,
-  style,
-  testID,
-  ...props
+children,
+disabled = false,
+interactionPolicy = 'enabled',
+onPress,
+onLongPress,
+accessibilityLabel,
+accessibilityRole = 'button',
+accessibilityState,
+style,
+testID,
+...props
 }: ButtonBaseProps) => React.JSX.Element`
   - {
     children,
@@ -586,13 +586,13 @@ Source: `src/components/card/Card.tsx:38:1`
 ### Signatures
 
 - `({
-  children,
-  variant = 'default',
-  onPress,
-  disabled = false,
-  testID,
-  style,
-  ...props
+children,
+variant = 'default',
+onPress,
+disabled = false,
+testID,
+style,
+...props
 }: CardProps) => React.JSX.Element`
   - {
     children,
@@ -739,18 +739,18 @@ Source: `src/components/checkbox/Checkbox.tsx:16:1`
 ### Signatures
 
 - `({
-  children,
-  checked,
-  defaultChecked = false,
-  onCheckedChange,
-  color = 'primary',
-  size = 'm',
-  disabled = false,
-  invalid = false,
-  readOnly = false,
-  accessibilityLabel,
-  testID,
-  ...props
+children,
+checked,
+defaultChecked = false,
+onCheckedChange,
+color = 'primary',
+size = 'm',
+disabled = false,
+invalid = false,
+readOnly = false,
+accessibilityLabel,
+testID,
+...props
 }: CheckboxProps) => React.JSX.Element`
   - {
     children,
@@ -857,10 +857,10 @@ Source: `src/layout/Container.tsx:16:1`
 ### Signatures
 
 - `({
-  children,
-  maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },
-  px = { base: 16, md: 24, lg: 32 },
-  ...props
+children,
+maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },
+px = { base: 16, md: 24, lg: 32 },
+...props
 }: ContainerProps) => React.JSX.Element`
   - {
     children,
@@ -989,10 +989,10 @@ Source: `src/layout/Divider.tsx:12:1`
 ### Signatures
 
 - `({
-  orientation = 'horizontal',
-  color = 'border',
-  thickness = 1,
-  ...props
+orientation = 'horizontal',
+color = 'border',
+thickness = 1,
+...props
 }: DividerProps) => React.JSX.Element`
   - {
     orientation = 'horizontal',
@@ -1067,13 +1067,13 @@ Source: `src/components/drawer/Drawer.tsx:14:1`
 ### Signatures
 
 - `({
-  visible,
-  onDismiss,
-  position = 'right',
-  children,
-  closeOnBackdrop = true,
-  interactionPolicy = 'enabled',
-  testID,
+visible,
+onDismiss,
+position = 'right',
+children,
+closeOnBackdrop = true,
+interactionPolicy = 'enabled',
+testID,
 }: DrawerProps) => React.JSX.Element | null`
   - {
     visible,
@@ -1095,12 +1095,12 @@ Source: `src/components/navigation/DrawerNavigation.tsx:7:1`
 ### Signatures
 
 - `({
-  items,
-  header,
-  footer,
-  compact = false,
-  testID,
-  interactionPolicy,
+items,
+header,
+footer,
+compact = false,
+testID,
+interactionPolicy,
 }: DrawerNavigationProps) => React.JSX.Element`
   - {
     items,
@@ -1121,10 +1121,10 @@ Source: `src/components/navigation/DrawerNavigationItem.tsx:6:1`
 ### Signatures
 
 - `({
-  item,
-  compact = false,
-  testID,
-  interactionPolicy,
+item,
+compact = false,
+testID,
+interactionPolicy,
 }: DrawerNavigationItemProps) => React.JSX.Element`
   - {
     item,
@@ -1193,15 +1193,15 @@ Source: `src/components/field/Field.tsx:9:1`
 ### Signatures
 
 - `({
-  children,
-  label,
-  helperText,
-  errorText,
-  required = false,
-  disabled = false,
-  invalid = false,
-  readOnly = false,
-  testID,
+children,
+label,
+helperText,
+errorText,
+required = false,
+disabled = false,
+invalid = false,
+readOnly = false,
+testID,
 }: FieldProps) => React.JSX.Element`
   - {
     children,
@@ -1338,13 +1338,13 @@ Source: `src/layout/Grid.tsx:18:1`
 ### Signatures
 
 - `({
-  children,
-  cols,
-  gap = 0,
-  rowGap,
-  colGap,
-  minItemWidth,
-  ...props
+children,
+cols,
+gap = 0,
+rowGap,
+colGap,
+minItemWidth,
+...props
 }: GridProps) => React.JSX.Element`
   - {
     children,
@@ -1427,15 +1427,15 @@ Source: `src/primitives/heading/Heading.tsx:37:14`
 ### Signatures
 
 - `({
-  text,
-  children,
-  level = 2,
-  align,
-  color,
-  emphasis = 'default',
-  numberOfLines,
-  i18nKey,
-  testID,
+text,
+children,
+level = 2,
+align,
+color,
+emphasis = 'default',
+numberOfLines,
+i18nKey,
+testID,
 }: HeadingProps) => React.JSX.Element`
   - {
     text,
@@ -1544,15 +1544,15 @@ Source: `src/components/icon-button/IconButton.tsx:10:1`
 ### Signatures
 
 - `({
-  icon,
-  accessibilityLabel,
-  variant = 'ghost',
-  color = 'primary',
-  size = 'm',
-  disabled = false,
-  onPress,
-  testID,
-  ...props
+icon,
+accessibilityLabel,
+variant = 'ghost',
+color = 'primary',
+size = 'm',
+disabled = false,
+onPress,
+testID,
+...props
 }: IconButtonProps) => React.JSX.Element`
   - {
     icon,
@@ -1661,19 +1661,19 @@ Source: `src/primitives/image/Image.tsx:16:1`
 ### Signatures
 
 - `({
-  source,
-  fallbackSource,
-  alt,
-  accessibilityLabel,
-  width,
-  height,
-  aspectRatio,
-  fit,
-  resizeMode,
-  radius,
-  style,
-  testID,
-  onError,
+source,
+fallbackSource,
+alt,
+accessibilityLabel,
+width,
+height,
+aspectRatio,
+fit,
+resizeMode,
+radius,
+style,
+testID,
+onError,
 }: ImageProps) => React.JSX.Element | null`
   - {
     source,
@@ -1780,11 +1780,11 @@ Source: `src/components/label/Label.tsx:6:1`
 ### Signatures
 
 - `({
-  children,
-  required = false,
-  emphasis = 'default',
-  color,
-  testID,
+children,
+required = false,
+emphasis = 'default',
+color,
+testID,
 }: LabelProps) => React.JSX.Element`
   - {
     children,
@@ -1850,12 +1850,12 @@ Source: `src/components/menu/Menu.tsx:59:1`
 ### Signatures
 
 - `({
-  trigger,
-  actions,
-  dismiss,
-  closeOnSelect = true,
-  interactionPolicy = 'enabled',
-  testID,
+trigger,
+actions,
+dismiss,
+closeOnSelect = true,
+interactionPolicy = 'enabled',
+testID,
 }: MenuProps) => React.JSX.Element`
   - {
     trigger,
@@ -1919,12 +1919,12 @@ Source: `src/components/modal/Modal.tsx:14:1`
 ### Signatures
 
 - `({
-  visible,
-  onDismiss,
-  children,
-  closeOnBackdrop = true,
-  interactionPolicy = 'enabled',
-  testID,
+visible,
+onDismiss,
+children,
+closeOnBackdrop = true,
+interactionPolicy = 'enabled',
+testID,
 }: ModalProps) => React.JSX.Element | null`
   - {
     visible,
@@ -1962,10 +1962,10 @@ Source: `src/components/navigation/NavigationItem.tsx:12:1`
 ### Signatures
 
 - `({
-  item,
-  compact = false,
-  testID,
-  interactionPolicy,
+item,
+compact = false,
+testID,
+interactionPolicy,
 }: NavigationItemProps) => React.JSX.Element`
   - {
     item,
@@ -2027,11 +2027,11 @@ Source: `src/components/navigation/NavigationList.tsx:7:1`
 ### Signatures
 
 - `({
-  items,
-  orientation = 'vertical',
-  compact = false,
-  testID,
-  interactionPolicy,
+items,
+orientation = 'vertical',
+compact = false,
+testID,
+interactionPolicy,
 }: NavigationListProps) => React.JSX.Element`
   - {
     items,
@@ -2089,18 +2089,18 @@ Source: `src/components/radio/Radio.tsx:16:1`
 ### Signatures
 
 - `({
-  children,
-  checked,
-  defaultChecked = false,
-  onCheckedChange,
-  color = 'primary',
-  size = 'm',
-  disabled = false,
-  invalid = false,
-  readOnly = false,
-  accessibilityLabel,
-  testID,
-  ...props
+children,
+checked,
+defaultChecked = false,
+onCheckedChange,
+color = 'primary',
+size = 'm',
+disabled = false,
+invalid = false,
+readOnly = false,
+accessibilityLabel,
+testID,
+...props
 }: RadioProps) => React.JSX.Element`
   - {
     children,
@@ -2278,47 +2278,47 @@ Source: `src/layout/ScrollArea.tsx:21:1`
 ### Signatures
 
 - `({
-  children,
-  contentContainerStyle,
-  p,
-  px,
-  py,
-  pt,
-  pb,
-  pl,
-  pr,
-  m,
-  mx,
-  my,
-  mt,
-  mb,
-  ml,
-  mr,
-  bg,
-  radius,
-  borderWidth,
-  borderColor,
-  width,
-  height,
-  minWidth,
-  maxWidth,
-  minHeight,
-  maxHeight,
-  flex,
-  flexGrow,
-  flexShrink,
-  flexBasis,
-  alignSelf,
-  position,
-  top,
-  bottom,
-  left,
-  right,
-  overflow,
-  zIndex,
-  opacity,
-  style,
-  ...scrollProps
+children,
+contentContainerStyle,
+p,
+px,
+py,
+pt,
+pb,
+pl,
+pr,
+m,
+mx,
+my,
+mt,
+mb,
+ml,
+mr,
+bg,
+radius,
+borderWidth,
+borderColor,
+width,
+height,
+minWidth,
+maxWidth,
+minHeight,
+maxHeight,
+flex,
+flexGrow,
+flexShrink,
+flexBasis,
+alignSelf,
+position,
+top,
+bottom,
+left,
+right,
+overflow,
+zIndex,
+opacity,
+style,
+...scrollProps
 }: ScrollAreaProps) => React.JSX.Element`
   - {
     children,
@@ -2741,13 +2741,13 @@ Source: `src/layout/Stack.tsx:19:1`
 ### Signatures
 
 - `({
-  children,
-  direction = 'column',
-  gap = 0,
-  align,
-  justify,
-  wrap,
-  ...props
+children,
+direction = 'column',
+gap = 0,
+align,
+justify,
+wrap,
+...props
 }: StackProps) => React.JSX.Element`
   - {
     children,
@@ -3002,18 +3002,18 @@ Source: `src/components/switch/Switch.tsx:16:1`
 ### Signatures
 
 - `({
-  children,
-  checked,
-  defaultChecked = false,
-  onCheckedChange,
-  color = 'primary',
-  size = 'm',
-  disabled = false,
-  invalid = false,
-  readOnly = false,
-  accessibilityLabel,
-  testID,
-  ...props
+children,
+checked,
+defaultChecked = false,
+onCheckedChange,
+color = 'primary',
+size = 'm',
+disabled = false,
+invalid = false,
+readOnly = false,
+accessibilityLabel,
+testID,
+...props
 }: SwitchProps) => React.JSX.Element`
   - {
     children,
@@ -3102,11 +3102,11 @@ Source: `src/components/tabs/Tab.tsx:10:1`
 ### Signatures
 
 - `({
-  value,
-  children,
-  disabled = false,
-  interactionPolicy = 'enabled',
-  testID,
+value,
+children,
+disabled = false,
+interactionPolicy = 'enabled',
+testID,
 }: TabProps) => React.JSX.Element`
   - {
     value,
@@ -3275,13 +3275,13 @@ Source: `src/layout/Template.tsx:34:1`
 ### Signatures
 
 - `({
-  slots,
-  templates,
-  columns,
-  gap = 0,
-  rowGap,
-  colGap,
-  ...props
+slots,
+templates,
+columns,
+gap = 0,
+rowGap,
+colGap,
+...props
 }: TemplateProps) => React.JSX.Element`
   - {
     slots,
@@ -3364,16 +3364,16 @@ Source: `src/primitives/text/Text.tsx:31:1`
 ### Signatures
 
 - `({
-  children,
-  i18nKey,
-  variant = 'body',
-  emphasis = 'default',
-  color,
-  align,
-  weight,
-  italic = false,
-  numberOfLines,
-  testID,
+children,
+i18nKey,
+variant = 'body',
+emphasis = 'default',
+color,
+align,
+weight,
+italic = false,
+numberOfLines,
+testID,
 }: TextProps) => React.JSX.Element`
   - {
     children,
@@ -3687,22 +3687,22 @@ Source: `src/components/text-input/TextInput.tsx:14:1`
 ### Signatures
 
 - `({
-  value,
-  defaultValue,
-  onChangeText,
-  placeholder,
-  size = 'm',
-  disabled = false,
-  readOnly = false,
-  invalid = false,
-  leadingAccessory,
-  trailingAccessory,
-  interactionPolicy = 'enabled',
-  style,
-  testID,
-  onFocus,
-  onBlur,
-  ...props
+value,
+defaultValue,
+onChangeText,
+placeholder,
+size = 'm',
+disabled = false,
+readOnly = false,
+invalid = false,
+leadingAccessory,
+trailingAccessory,
+interactionPolicy = 'enabled',
+style,
+testID,
+onFocus,
+onBlur,
+...props
 }: TextInputProps) => React.JSX.Element`
   - {
     value,
@@ -4067,9 +4067,9 @@ Source: `src/theme/ThemeContext.tsx:31:14`
 ### Signatures
 
 - `({
-  children,
-  initialConfig,
-  initialMode = 'light',
+children,
+initialConfig,
+initialMode = 'light',
 }: { children: React.ReactNode; initialConfig?: Partial<ThemeConfig>; initialMode?: "light" | "dark"; }) => React.JSX.Element`
   - {
     children,
@@ -4130,12 +4130,12 @@ Source: `src/components/toast/Toast.tsx:41:1`
 ### Signatures
 
 - `({
-  title,
-  description,
-  status = 'default',
-  onDismiss,
-  interactionPolicy = 'enabled',
-  testID,
+title,
+description,
+status = 'default',
+onDismiss,
+interactionPolicy = 'enabled',
+testID,
 }: ToastProps) => React.JSX.Element`
   - {
     title,
@@ -4191,8 +4191,8 @@ Source: `src/components/toast/ToastProvider.tsx:22:1`
 ### Signatures
 
 - `({
-  children,
-  defaultDuration = 4000,
+children,
+defaultDuration = 4000,
 }: { children: React.ReactNode; defaultDuration?: number; }) => React.JSX.Element`
   - {
     children,
@@ -4215,12 +4215,12 @@ Source: `src/components/tooltip/Tooltip.tsx:27:1`
 ### Signatures
 
 - `({
-  children,
-  content,
-  delay = 150,
-  interactionPolicy = 'enabled',
-  placement = 'top',
-  testID,
+children,
+content,
+delay = 150,
+interactionPolicy = 'enabled',
+placement = 'top',
+testID,
 }: TooltipProps) => React.JSX.Element`
   - {
     children,
