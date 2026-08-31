@@ -15,6 +15,10 @@ import {
   type FontAwesome6SolidIconName,
 } from '@react-native-vector-icons/fontawesome6/static';
 import { Ionicons, type IoniconsIconName } from '@react-native-vector-icons/ionicons/static';
+import {
+  MaterialDesignIcons,
+  type MaterialDesignIconsIconName,
+} from '@react-native-vector-icons/material-design-icons/static';
 import React from 'react';
 import { type StyleProp, type TextStyle } from 'react-native';
 
@@ -23,6 +27,7 @@ export const SUPPORTED_ICON_PROVIDERS = [
   'FontAwesome',
   'FontAwesome5',
   'FontAwesome6',
+  'MaterialDesignIcons',
 ] as const;
 
 export type IconProvider = (typeof SUPPORTED_ICON_PROVIDERS)[number];
@@ -36,7 +41,8 @@ export type IconSource =
   | { name: FontAwesome5BrandIconName; provider: 'FontAwesome5'; variant: 'brand' }
   | { name: FontAwesome6RegularIconName; provider: 'FontAwesome6'; variant: 'regular' }
   | { name: FontAwesome6SolidIconName; provider: 'FontAwesome6'; variant: 'solid' }
-  | { name: FontAwesome6BrandIconName; provider: 'FontAwesome6'; variant: 'brand' };
+  | { name: FontAwesome6BrandIconName; provider: 'FontAwesome6'; variant: 'brand' }
+  | { name: MaterialDesignIconsIconName; provider: 'MaterialDesignIcons'; variant?: never };
 
 type PortableIconProps = IconSource & {
   color: string;
@@ -106,6 +112,8 @@ export function PortableIcon(props: PortableIconProps) {
       return renderFontAwesome5(props, sharedProps);
     case 'FontAwesome6':
       return renderFontAwesome6(props, sharedProps);
+    case 'MaterialDesignIcons':
+      return <MaterialDesignIcons {...sharedProps} name={props.name} />;
     default:
       return assertNever(provider, 'provider');
   }

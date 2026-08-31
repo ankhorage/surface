@@ -48,6 +48,14 @@ describe('portable icon rendering', () => {
 
     expect(markup).toContain('font-family:FontAwesome6Brands-Regular');
   });
+
+  test('renders Material Design Icons through the public Icon API', () => {
+    const markup = renderToStaticMarkup(
+      <Icon color="#123456" name="bookshelf" provider="MaterialDesignIcons" size={18} />,
+    );
+
+    expect(markup).toContain('font-family:MaterialDesignIcons');
+  });
 });
 
 describe('portable icon contract', () => {
@@ -57,6 +65,7 @@ describe('portable icon contract', () => {
       'FontAwesome',
       'FontAwesome5',
       'FontAwesome6',
+      'MaterialDesignIcons',
     ]);
   });
 });
