@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.1.0
+
+### Minor Changes
+
+- 8e53b45: Add the canonical `MaterialDesignIcons` provider backed by the scoped React Native Vector Icons static package.
+
 ## 3.0.2
 
 ### Patch Changes
