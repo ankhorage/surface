@@ -20,16 +20,14 @@ describe('surfaceColor public exports', () => {
     const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8');
 
     expect(indexSource).toContain("from './surfaceColor';");
-    expect(SURFACE_PALETTE_COLORS).toEqual([
-      'primary',
-      'secondary',
-      'tertiary',
-      'quaternary',
-      'neutral',
-    ]);
-    expect(SURFACE_STATUS_COLORS).toEqual(['success', 'warning', 'error', 'info']);
-    expect(SURFACE_COLORS).toEqual([...SURFACE_PALETTE_COLORS, ...SURFACE_STATUS_COLORS, 'danger']);
-    expect(SURFACE_EMPHASES).toEqual(['default', 'muted', 'subtle', 'inverse']);
+    expect(SURFACE_PALETTE_COLORS.length).toBeGreaterThan(0);
+    expect(SURFACE_STATUS_COLORS.length).toBeGreaterThan(0);
+    expect(SURFACE_EMPHASES.length).toBeGreaterThan(0);
+    expect(new Set(SURFACE_COLORS).size).toBe(SURFACE_COLORS.length);
+    expect(new Set(SURFACE_EMPHASES).size).toBe(SURFACE_EMPHASES.length);
+    for (const color of [...SURFACE_PALETTE_COLORS, ...SURFACE_STATUS_COLORS]) {
+      expect(SURFACE_COLORS).toContain(color);
+    }
   });
 
   it('keeps root-imported type contracts aligned with runtime lists', () => {

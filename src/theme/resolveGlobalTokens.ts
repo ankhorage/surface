@@ -6,7 +6,10 @@ import { resolveNumericTokenOverrides } from './resolveNumericTokenOverrides';
 import { resolveWeightTokenOverrides } from './resolveWeightTokenOverrides';
 import type { ThemeTokens } from './types';
 
-type GlobalThemeTokens = Omit<ThemeTokens, 'colors' | 'swatches' | 'semantics'>;
+type GlobalThemeTokens = Omit<
+  ThemeTokens,
+  'colors' | 'swatches' | 'semantics' | 'colorDiagnostics'
+>;
 
 export function resolveGlobalTokens(overrides?: ThemeGlobalTokenOverrides): GlobalThemeTokens {
   validateZeroTokens(overrides);

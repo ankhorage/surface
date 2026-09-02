@@ -35,15 +35,12 @@ export function resolveSelectionControlColors(
 
   if (isMuted) {
     return {
-      backgroundColor: checked
-        ? theme.semantics.neutral.surfaceActive
-        : theme.semantics.surface.subtle,
-      borderColor: theme.semantics.border.default,
-      indicatorColor: checked ? theme.semantics.content.muted : 'transparent',
-      labelColor: theme.semantics.content.muted,
-      trackColor: checked ? theme.semantics.neutral.surfaceActive : theme.semantics.neutral.border,
+      backgroundColor: theme.semantics.surface.disabled,
+      borderColor: theme.semantics.border.subtle,
+      indicatorColor: checked ? theme.semantics.content.disabled : 'transparent',
+      labelColor: theme.semantics.content.disabled,
+      trackColor: theme.semantics.surface.disabled,
       thumbColor: theme.semantics.surface.default,
-      opacity: 0.72,
     };
   }
 
@@ -71,12 +68,24 @@ export function resolveSelectionControlColors(
   return {
     backgroundColor: checked ? checkedBackgroundColor : uncheckedBackgroundColor,
     borderColor: checked ? semanticTone.base : uncheckedBorderColor,
-    indicatorColor: checked ? semanticTone.onSolidText : 'transparent',
+    indicatorColor: checked
+      ? pressed
+        ? semanticTone.onStrongText
+        : hovered
+          ? semanticTone.onHoverText
+          : semanticTone.onSolidText
+      : 'transparent',
     labelColor: isInteractiveReadOnly
       ? theme.semantics.content.muted
       : theme.semantics.content.default,
     trackColor: checked ? checkedTrackColor : uncheckedBorderColor,
-    thumbColor: checked ? semanticTone.onSolidText : theme.semantics.surface.default,
+    thumbColor: checked
+      ? pressed
+        ? semanticTone.onStrongText
+        : hovered
+          ? semanticTone.onHoverText
+          : semanticTone.onSolidText
+      : theme.semantics.surface.default,
     opacity: isInteractiveReadOnly ? 0.88 : 1,
   };
 }

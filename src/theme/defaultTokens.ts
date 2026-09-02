@@ -14,7 +14,10 @@ const EMPTY_FONT_MAP: Record<FontWeight, string | undefined> = {
   normal: undefined,
 };
 
-export const DEFAULT_TOKENS: Omit<ThemeTokens, 'colors' | 'swatches' | 'semantics'> = {
+export const DEFAULT_TOKENS: Omit<
+  ThemeTokens,
+  'colors' | 'swatches' | 'semantics' | 'colorDiagnostics'
+> = {
   spacing: { none: 0, xs: 4, s: 8, m: 16, l: 24, xl: 32, xxl: 48 },
   radii: { none: 0, s: 4, m: 8, l: 16, full: 9999 },
   typography: {

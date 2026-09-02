@@ -1,4 +1,13 @@
-import type { GeneratedThemeSwatches } from '@ankhorage/color-theory';
+import type {
+  ColorSwatchDiagnostics,
+  ColorSwatchSelectionResult,
+  DefaultSemanticStatusRole,
+  GeneratedThemeModeColors,
+  GeneratedThemeSwatches,
+  HexColor,
+  SemanticColorReferenceMap,
+  ThemeColorMode,
+} from '@ankhorage/color-theory';
 import type { ThemeConfig as ContractsThemeConfig } from '@ankhorage/contracts';
 
 export type {
@@ -26,6 +35,8 @@ export interface NeutralSemantics {
   text: string;
   textMuted: string;
   textSubtle: string;
+  disabledBg: string;
+  disabledText: string;
 }
 
 export interface RoleSemantics {
@@ -36,13 +47,25 @@ export interface RoleSemantics {
   softHover: string;
   softActive: string;
   outline: string;
+  onSurfaceText: string;
   onSolidText: string;
+  onHoverText: string;
+  onStrongText: string;
+  onSoftText: string;
+  onSoftHoverText: string;
+  onSoftActiveText: string;
+  disabledBg: string;
+  onDisabledText: string;
 }
 
 export interface SurfaceSemantics {
   default: string;
   subtle: string;
   raised: string;
+  sunken: string;
+  overlay: string;
+  scrim: string;
+  disabled: string;
   inverse: string;
 }
 
@@ -50,13 +73,25 @@ export interface ContentSemantics {
   default: string;
   muted: string;
   subtle: string;
+  disabled: string;
+  icon: string;
+  link: string;
+  visited: string;
   inverse: string;
 }
 
 export interface BorderSemantics {
   default: string;
+  subtle: string;
   strong: string;
+  divider: string;
   focus: string;
+}
+
+export interface SelectionSemantics {
+  background: string;
+  content: string;
+  border: string;
 }
 
 export interface ActionSemantics {
@@ -79,7 +114,34 @@ export interface ThemeSemantics {
   surface: SurfaceSemantics;
   content: ContentSemantics;
   border: BorderSemantics;
+  selection: SelectionSemantics;
   action: ActionSemantics;
+}
+
+export interface SurfaceContrastDiagnostic {
+  id: string;
+  foreground: HexColor;
+  background: HexColor;
+  contrast: number;
+  minimumContrast: number;
+  passes: boolean;
+}
+
+/** A Color Theory swatch selection together with its stable Surface purpose. */
+export interface SurfaceColorSelectionDiagnostic {
+  id: string;
+  result: ColorSwatchSelectionResult;
+}
+
+/** Owner-produced color evidence used to explain a resolved Surface theme. */
+export interface SurfaceColorDiagnostics {
+  mode: ThemeColorMode;
+  generated: GeneratedThemeModeColors;
+  semanticReferences: SemanticColorReferenceMap;
+  statusSwatches: Record<DefaultSemanticStatusRole, ColorSwatchDiagnostics>;
+  selections: readonly SurfaceColorSelectionDiagnostic[];
+  contrasts: readonly SurfaceContrastDiagnostic[];
+  surfaceSeparation: readonly SurfaceContrastDiagnostic[];
 }
 
 export type FontWeight =
@@ -106,6 +168,8 @@ export interface ThemeTokens {
   };
   swatches: GeneratedThemeSwatches;
   semantics: ThemeSemantics;
+  /** Generated owner evidence; this is runtime output and is not persisted in ThemeConfig. */
+  colorDiagnostics: SurfaceColorDiagnostics;
   spacing: {
     none: 0;
     xs: number;
