@@ -70,6 +70,14 @@ describe('public package contract', () => {
         import: './dist/index.js',
         types: './dist/index.d.ts',
       },
+      './theme': {
+        bun: './src/theme/public.ts',
+        'react-native': './src/theme/public.ts',
+        browser: './src/theme/public.ts',
+        default: './dist/theme/public.js',
+        import: './dist/theme/public.js',
+        types: './dist/theme/public.d.ts',
+      },
       './package.json': './package.json',
     });
   });
