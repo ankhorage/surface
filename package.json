@@ -56,6 +56,14 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./theme": {
+      "bun": "./src/theme/public.ts",
+      "react-native": "./src/theme/public.ts",
+      "browser": "./src/theme/public.ts",
+      "types": "./dist/theme/public.d.ts",
+      "import": "./dist/theme/public.js",
+      "default": "./dist/theme/public.js"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
