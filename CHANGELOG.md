@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.3.0
+
+### Minor Changes
+
+- 79e8f63: Add a pure `@ankhorage/surface/theme` package entrypoint so non-React tooling can resolve themes and inspect canonical color diagnostics without loading the component runtime.
+
 ## 3.2.0
 
 ### Minor Changes
