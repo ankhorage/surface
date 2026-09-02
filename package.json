@@ -38,7 +38,7 @@
     "react-native-web": "~0.21.0"
   },
   "dependencies": {
-    "@ankhorage/color-theory": "^0.0.8",
+    "@ankhorage/color-theory": "^0.3.0",
     "@ankhorage/contracts": "^8.0.1"
   },
   "files": [
