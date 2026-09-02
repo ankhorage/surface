@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.1.2
+
+### Patch Changes
+
+- 5e322be: Update Ankhorage dependencies: `@ankhorage/color-theory`.
+
 ## 3.1.1
 
 ### Patch Changes
