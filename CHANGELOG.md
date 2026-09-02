@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.2.0
+
+### Minor Changes
+
+- 6d870b5: Complete the resolved runtime color semantics with canonical status colors, accessible interaction states, and Color Theory selection and contrast diagnostics.
+
 ## 3.1.3
 
 ### Patch Changes
