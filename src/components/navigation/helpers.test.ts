@@ -40,7 +40,7 @@ describe('navigation helpers', () => {
     });
 
     expect(resolved.backgroundColor).toBe(theme.semantics.action.primary.softHover);
-    expect(resolved.contentColor).toBe(theme.semantics.action.primary.base);
+    expect(resolved.contentColor).toBe(theme.semantics.action.primary.onSoftHoverText);
     expect(resolved.opacity).toBe(1);
   });
 
@@ -67,8 +67,8 @@ describe('navigation helpers', () => {
       state,
     });
 
-    expect(resolved.backgroundColor).toBe(theme.semantics.action.primary.softBg);
-    expect(resolved.contentColor).toBe(theme.semantics.content.muted);
-    expect(resolved.opacity).toBe(0.72);
+    expect(resolved.backgroundColor).toBe(theme.semantics.surface.disabled);
+    expect(resolved.contentColor).toBe(theme.semantics.content.disabled);
+    expect(resolved.opacity).toBe(1);
   });
 });

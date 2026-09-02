@@ -2,6 +2,9 @@ import { readFileSync } from 'node:fs';
 
 import { describe, expect, it } from 'bun:test';
 
+import type { SelectionSemantics, SurfaceColorDiagnostics } from './index';
+import { createTheme } from './theme/createTheme';
+
 const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8');
 const packageJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
@@ -74,5 +77,14 @@ describe('public package contract', () => {
   it('supports RN 0.86 patches while validating the canonical RN 0.86.3 baseline', () => {
     expect(packageJson.peerDependencies['react-native']).toBe('0.86.x');
     expect(packageJson.devDependencies['react-native']).toBe('0.86.3');
+  });
+
+  it('exports the resolved semantic and diagnostic contracts from the public root', () => {
+    const theme = createTheme();
+    const selection: SelectionSemantics = theme.semantics.selection;
+    const diagnostics: SurfaceColorDiagnostics = theme.colorDiagnostics;
+
+    expect(selection.background).toBeDefined();
+    expect(diagnostics.generated.swatches).toBe(theme.swatches);
   });
 });

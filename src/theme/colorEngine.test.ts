@@ -1,6 +1,8 @@
 import type { SemanticColorToken } from '@ankhorage/color-theory';
 import {
+  COLOR_HARMONIES,
   DARK_SEMANTIC_COLOR_REFERENCES,
+  DEFAULT_SEMANTIC_STATUS_COLOR_SEEDS,
   LIGHT_SEMANTIC_COLOR_REFERENCES,
 } from '@ankhorage/color-theory';
 import type { ThemeConfig } from '@ankhorage/contracts';
@@ -22,23 +24,18 @@ const mockConfig: ThemeConfig = {
   },
 };
 
-function expectRequiredSemanticRoles(semantics: ThemeSemantics) {
-  expect(semantics.neutral.bg).toBeDefined();
-  expect(semantics.neutral.surface).toBeDefined();
-  expect(semantics.neutral.text).toBeDefined();
-  expect(semantics.brand.base).toBeDefined();
-  expect(semantics.secondary.base).toBeDefined();
-  expect(semantics.danger.base).toBeDefined();
-  expect(semantics.success.base).toBeDefined();
-  expect(semantics.warning.base).toBeDefined();
-  expect(semantics.error.base).toBeDefined();
-  expect(semantics.info.base).toBeDefined();
-  expect(semantics.surface.default).toBeDefined();
-  expect(semantics.content.default).toBeDefined();
-  expect(semantics.border.default).toBeDefined();
-  expect(semantics.action.primary.base).toBeDefined();
-  expect(semantics.action.neutral.base).toBeDefined();
-  expect(semantics.action.danger.base).toBeDefined();
+function expectCompleteSemanticValues(semantics: ThemeSemantics) {
+  visitSemanticValues(semantics);
+}
+
+function visitSemanticValues(value: object): void {
+  for (const entry of Object.values(value)) {
+    if (typeof entry === 'string') {
+      expect(entry.length).toBeGreaterThan(0);
+    } else {
+      visitSemanticValues(entry as object);
+    }
+  }
 }
 
 describe('colorEngine', () => {
@@ -74,21 +71,30 @@ describe('colorEngine', () => {
     expect(semantics.content.inverse).toBe(swatches.neutral[900]);
   });
 
-  it('uses the color-theory default semantic status seeds', () => {
-    const light = generatePalette(mockConfig, 'light');
-    const dark = generatePalette(mockConfig, 'dark');
+  it('uses the Color Theory status owner independently from brand harmony', () => {
+    const statusConfig: ThemeConfig = {
+      ...mockConfig,
+      light: { primaryColor: '#dc2626', harmony: 'monochromatic' },
+      dark: { primaryColor: '#dc2626', harmony: 'monochromatic' },
+    };
+    const light = generatePalette(statusConfig, 'light');
+    const dark = generatePalette(statusConfig, 'dark');
 
     expect(light.semantics.danger.base).toBe('#ef4444');
     expect(light.semantics.success.base).toBe('#22c55e');
     expect(light.semantics.warning.base).toBe('#f59e0b');
     expect(light.semantics.error.base).toBe(light.semantics.danger.base);
-    expect(light.semantics.info.base).toBeDefined();
+    expect(light.semantics.info.base).toBe(DEFAULT_SEMANTIC_STATUS_COLOR_SEEDS.info);
+    expect(light.semantics.info.base).not.toBe(light.semantics.brand.base);
 
     expect(dark.semantics.danger.base).toBe('#ef4444');
     expect(dark.semantics.success.base).toBe('#22c55e');
     expect(dark.semantics.warning.base).toBe('#f59e0b');
     expect(dark.semantics.error.base).toBe(dark.semantics.danger.base);
-    expect(dark.semantics.info.base).toBeDefined();
+    expect(dark.semantics.info.base).toBe(DEFAULT_SEMANTIC_STATUS_COLOR_SEEDS.info);
+    expect(dark.semantics.info.base).not.toBe(dark.semantics.brand.base);
+    expect(light.semantics.error).toBe(light.semantics.danger);
+    expect(dark.semantics.error).toBe(dark.semantics.danger);
   });
 
   it('uses mode-aware role semantics for dark mode soft states', () => {
@@ -136,16 +142,7 @@ describe('colorEngine', () => {
   });
 
   it('emits required semantic roles for all harmonies', () => {
-    const harmonies = [
-      'monochromatic',
-      'analogous',
-      'complementary',
-      'triadic',
-      'tetradic',
-      'splitComplementary',
-    ] as const;
-
-    for (const harmony of harmonies) {
+    for (const harmony of COLOR_HARMONIES) {
       const config = {
         ...mockConfig,
         light: { ...mockConfig.light, harmony },
@@ -153,9 +150,63 @@ describe('colorEngine', () => {
       };
       const light = generatePalette(config, 'light');
       const dark = generatePalette(config, 'dark');
-      expectRequiredSemanticRoles(light.semantics);
-      expectRequiredSemanticRoles(dark.semantics);
+      expectCompleteSemanticValues(light.semantics);
+      expectCompleteSemanticValues(dark.semantics);
     }
+  });
+
+  it('resolves canonical semantic references and returns their selected steps', () => {
+    const light = generatePalette(mockConfig, 'light');
+    const dark = generatePalette(mockConfig, 'dark');
+
+    expect(light.colorDiagnostics.semanticReferences).toBe(LIGHT_SEMANTIC_COLOR_REFERENCES);
+    expect(dark.colorDiagnostics.semanticReferences).toBe(DARK_SEMANTIC_COLOR_REFERENCES);
+    expect(light.colorDiagnostics.generated.swatches).toBe(light.swatches);
+    expect(dark.colorDiagnostics.generated.swatches).toBe(dark.swatches);
+  });
+
+  it('returns measured selections and contrast diagnostics for both modes', () => {
+    for (const mode of ['light', 'dark'] as const) {
+      const palette = generatePalette(mockConfig, mode);
+
+      expect(palette.colorDiagnostics.selections.length).toBeGreaterThan(0);
+      expect(
+        palette.colorDiagnostics.selections.every(({ result }) => result.selected !== null),
+      ).toBe(true);
+      expect(palette.colorDiagnostics.contrasts.length).toBeGreaterThan(0);
+      expect(palette.colorDiagnostics.contrasts.every(({ passes }) => passes)).toBe(true);
+      expect(palette.colorDiagnostics.surfaceSeparation.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('reports neutral and surface-separation evidence without hiding failed separation', () => {
+    const palette = generatePalette(mockConfig, 'light');
+    const failedSeparation = palette.colorDiagnostics.surfaceSeparation.find(
+      ({ passes }) => !passes,
+    );
+
+    expect(palette.colorDiagnostics.generated.neutral.neutralKeyColor).toBe(
+      palette.swatches.neutral[500],
+    );
+    expect(palette.colorDiagnostics.generated.neutral.diagnostics.isUsable).toBeBoolean();
+    expect(failedSeparation).toBeDefined();
+    expect(failedSeparation?.contrast).toBeLessThan(failedSeparation?.minimumContrast ?? 0);
+  });
+
+  it('preserves owner diagnostics for achromatic and low-chroma inputs', () => {
+    const achromaticConfig: ThemeConfig = {
+      ...mockConfig,
+      light: { primaryColor: '#777777', harmony: 'square' },
+    };
+    const palette = generatePalette(achromaticConfig, 'light');
+
+    expect(palette.colorDiagnostics.generated.harmonyRoleColors.diagnostics.isHueReliable).toBe(
+      false,
+    );
+    expect(
+      palette.colorDiagnostics.generated.harmonyRoleColors.diagnostics.warnings.length,
+    ).toBeGreaterThan(0);
+    expect(palette.colorDiagnostics.generated.neutral.diagnostics).toBeDefined();
   });
 
   it('generates ordinal chromatic role swatches (no accent/highlight as swatch keys)', () => {

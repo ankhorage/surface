@@ -32,6 +32,7 @@ describe('resolveInteractiveColors', () => {
     expect(solid.contentColor).toBe(theme.semantics.action.primary.onSolidText);
     expect(outline.borderColor).toBe(theme.semantics.action.danger.outline);
     expect(outline.backgroundColor).toBe(theme.semantics.action.danger.softHover);
+    expect(outline.contentColor).toBe(theme.semantics.action.danger.onSurfaceText);
   });
 
   it('derives input colors from interaction and validation state', () => {

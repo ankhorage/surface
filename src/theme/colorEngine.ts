@@ -1,29 +1,21 @@
 import type {
-  ColorSwatch,
   GeneratedThemeModeColors,
   GeneratedThemeSwatches,
   HexColor,
   SemanticColorReferenceMap,
   SemanticColorToken,
+  ThemeColorMode,
 } from '@ankhorage/color-theory';
 import {
-  createDefaultSemanticStatusSwatches,
+  DARK_SEMANTIC_COLOR_REFERENCES,
   generateThemeModeColors,
-  getReadableForeground,
+  LIGHT_SEMANTIC_COLOR_REFERENCES,
   parseHexColorOrThrow,
 } from '@ankhorage/color-theory';
 import type { ThemeConfig } from '@ankhorage/contracts';
 
-import type {
-  ActionSemantics,
-  BorderSemantics,
-  ContentSemantics,
-  NeutralSemantics,
-  RoleSemantics,
-  SurfaceSemantics,
-  ThemeSemantics,
-  ThemeTokens,
-} from './types';
+import { resolveSurfaceSemanticModel } from './resolveSurfaceSemanticModel';
+import type { SurfaceColorDiagnostics, ThemeSemantics, ThemeTokens } from './types';
 
 /**
  * Surface semantic resolver: maps color-theory SemanticColorToken references
@@ -46,141 +38,44 @@ export function resolveSemanticColors(
   ) as SurfaceSemanticColors;
 }
 
-function buildNeutralSemantics(neutralSwatch: ColorSwatch, isDark: boolean): NeutralSemantics {
-  if (isDark) {
-    return {
-      bg: neutralSwatch[950],
-      bgSubtle: neutralSwatch[900],
-      surface: neutralSwatch[900],
-      surfaceHover: neutralSwatch[800],
-      surfaceActive: neutralSwatch[700],
-      border: neutralSwatch[800],
-      borderStrong: neutralSwatch[600],
-      divider: neutralSwatch[800],
-      text: neutralSwatch[50],
-      textMuted: neutralSwatch[200],
-      textSubtle: neutralSwatch[300],
-    };
-  }
-  return {
-    bg: neutralSwatch[50],
-    bgSubtle: neutralSwatch[100],
-    surface: neutralSwatch[100],
-    surfaceHover: neutralSwatch[200],
-    surfaceActive: neutralSwatch[300],
-    border: neutralSwatch[200],
-    borderStrong: neutralSwatch[300],
-    divider: neutralSwatch[200],
-    text: neutralSwatch[900],
-    textMuted: neutralSwatch[700],
-    textSubtle: neutralSwatch[600],
-  };
-}
-
-function buildRoleSemantics(swatch: ColorSwatch, isDark: boolean): RoleSemantics {
-  const base = swatch[500];
-  const { foreground: onSolidText } = getReadableForeground(base);
-
-  if (isDark) {
-    return {
-      base,
-      hover: swatch[400],
-      strong: swatch[300],
-      softBg: swatch[900],
-      softHover: swatch[800],
-      softActive: swatch[700],
-      outline: swatch[500],
-      onSolidText,
-    };
-  }
-
-  return {
-    base,
-    hover: swatch[600],
-    strong: swatch[700],
-    softBg: swatch[100],
-    softHover: swatch[200],
-    softActive: swatch[300],
-    outline: swatch[400],
-    onSolidText,
-  };
-}
-
 export function generatePalette(
   config: ThemeConfig,
-  mode: 'light' | 'dark' = 'light',
+  mode: ThemeColorMode = 'light',
 ): {
   colors: ThemeTokens['colors'];
   swatches: GeneratedThemeSwatches;
   semantics: ThemeSemantics;
+  colorDiagnostics: SurfaceColorDiagnostics;
 } {
   const modeConfig = mode === 'dark' ? config.dark : config.light;
   const isDark = mode === 'dark';
 
-  // Throws deterministically on invalid primary color
   parseHexColorOrThrow(modeConfig.primaryColor);
 
   const generated = generateThemeModeColors(modeConfig);
   const { swatches } = generated;
-  const neutralSwatch = swatches.neutral;
-
-  const neutral = buildNeutralSemantics(neutralSwatch, isDark);
-  const brand = buildRoleSemantics(swatches.primary, isDark);
-
-  // Fallback to primary swatch for missing ordinal roles
-  const secondarySwatch = swatches.secondary ?? swatches.primary;
-  const tertiarySwatch = swatches.tertiary ?? swatches.primary;
-  const quaternarySwatch = swatches.quaternary ?? swatches.primary;
-
-  const semanticStatusSwatches = createDefaultSemanticStatusSwatches().swatches;
-
-  const danger = buildRoleSemantics(semanticStatusSwatches.danger, isDark);
-  const success = buildRoleSemantics(semanticStatusSwatches.success, isDark);
-  const warning = buildRoleSemantics(semanticStatusSwatches.warning, isDark);
-  // Keep destructive action and feedback error aligned until a dedicated error status swatch is introduced.
-  const error = danger;
-  const info = buildRoleSemantics(secondarySwatch, isDark);
-  const inverseSurface = isDark ? neutralSwatch[50] : neutralSwatch[900];
-  const inverseOnSurface = isDark ? neutralSwatch[900] : neutralSwatch[50];
-
-  const surfaceSemantics: SurfaceSemantics = {
-    default: neutral.surface,
-    subtle: neutral.bgSubtle,
-    raised: neutral.surface,
-    inverse: inverseSurface,
-  };
-
-  const content: ContentSemantics = {
-    default: neutral.text,
-    muted: neutral.textMuted,
-    subtle: neutral.textSubtle,
-    inverse: inverseOnSurface,
-  };
-
-  const border: BorderSemantics = {
-    default: neutral.border,
-    strong: neutral.borderStrong,
-    focus: brand.outline,
-  };
-
-  const action: ActionSemantics = {
-    primary: brand,
-    neutral: buildRoleSemantics(neutralSwatch, isDark),
-    danger,
-  };
+  const references = isDark ? DARK_SEMANTIC_COLOR_REFERENCES : LIGHT_SEMANTIC_COLOR_REFERENCES;
+  const resolved = resolveSemanticColors(generated, references);
+  const { semantics, colorDiagnostics } = resolveSurfaceSemanticModel({
+    generated,
+    mode,
+    references,
+    resolved,
+  });
+  const { border, content, error, info, neutral, success, surface, warning } = semantics;
 
   const colors: ThemeTokens['colors'] = {
-    primary: brand.base,
-    secondary: secondarySwatch[500],
-    accent: tertiarySwatch[500],
-    highlight: quaternarySwatch[500],
-    tertiary: tertiarySwatch[500],
-    quaternary: quaternarySwatch[500],
+    primary: swatches.primary[500],
+    secondary: (swatches.secondary ?? swatches.primary)[500],
+    accent: (swatches.tertiary ?? swatches.primary)[500],
+    highlight: (swatches.quaternary ?? swatches.primary)[500],
+    tertiary: (swatches.tertiary ?? swatches.primary)[500],
+    quaternary: (swatches.quaternary ?? swatches.primary)[500],
     background: neutral.bg,
-    surface: neutral.surface,
-    text: neutral.text,
-    textSecondary: neutral.textMuted,
-    border: neutral.border,
+    surface: surface.default,
+    text: content.default,
+    textSecondary: content.muted,
+    border: border.default,
     error: error.base,
     success: success.base,
     warning: warning.base,
@@ -190,21 +85,7 @@ export function generatePalette(
   return {
     colors,
     swatches,
-    semantics: {
-      neutral,
-      brand,
-      secondary: buildRoleSemantics(secondarySwatch, isDark),
-      accent: buildRoleSemantics(tertiarySwatch, isDark),
-      highlight: buildRoleSemantics(quaternarySwatch, isDark),
-      danger,
-      success,
-      warning,
-      error,
-      info,
-      surface: surfaceSemantics,
-      content,
-      border,
-      action,
-    },
+    semantics,
+    colorDiagnostics,
   };
 }

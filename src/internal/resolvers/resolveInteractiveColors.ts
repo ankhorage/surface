@@ -27,10 +27,9 @@ export function resolveButtonColors(
 ): ResolvedInteractiveColors {
   if (state.disabled) {
     return {
-      backgroundColor: theme.semantics.neutral.surface,
-      borderColor: theme.semantics.neutral.divider,
-      contentColor: theme.semantics.content.muted,
-      opacity: 0.72,
+      backgroundColor: theme.semantics.surface.disabled,
+      borderColor: theme.semantics.border.subtle,
+      contentColor: theme.semantics.content.disabled,
     };
   }
 
@@ -45,7 +44,7 @@ export function resolveButtonColors(
             ? semanticTone.softHover
             : 'transparent',
         borderColor: semanticTone.outline,
-        contentColor: semanticTone.base,
+        contentColor: semanticTone.onSurfaceText,
       };
     case 'ghost':
       return {
@@ -55,7 +54,7 @@ export function resolveButtonColors(
             ? semanticTone.softHover
             : 'transparent',
         borderColor: 'transparent',
-        contentColor: semanticTone.base,
+        contentColor: semanticTone.onSurfaceText,
       };
     case 'soft':
       return {
@@ -65,7 +64,11 @@ export function resolveButtonColors(
             ? semanticTone.softHover
             : semanticTone.softBg,
         borderColor: 'transparent',
-        contentColor: semanticTone.base,
+        contentColor: state.pressed
+          ? semanticTone.onSoftActiveText
+          : state.hovered
+            ? semanticTone.onSoftHoverText
+            : semanticTone.onSoftText,
       };
     case 'solid':
     default:
@@ -76,7 +79,11 @@ export function resolveButtonColors(
             ? semanticTone.hover
             : semanticTone.base,
         borderColor: semanticTone.base,
-        contentColor: semanticTone.onSolidText,
+        contentColor: state.pressed
+          ? semanticTone.onStrongText
+          : state.hovered
+            ? semanticTone.onHoverText
+            : semanticTone.onSolidText,
       };
   }
 }
@@ -87,11 +94,10 @@ export function resolveInputColors(
 ): ResolvedInteractiveColors & { placeholderColor: string } {
   if (fieldState.disabled) {
     return {
-      backgroundColor: theme.semantics.surface.subtle,
-      borderColor: theme.semantics.border.default,
-      contentColor: theme.semantics.content.muted,
-      placeholderColor: theme.semantics.content.subtle,
-      opacity: 0.72,
+      backgroundColor: theme.semantics.surface.disabled,
+      borderColor: theme.semantics.border.subtle,
+      contentColor: theme.semantics.content.disabled,
+      placeholderColor: theme.semantics.content.disabled,
     };
   }
 

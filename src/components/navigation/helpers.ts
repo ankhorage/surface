@@ -41,12 +41,21 @@ export function resolveNavigationItemPresentation(
 ): ResolvedNavigationItemPresentation {
   const interactionState = disabled ? { ...state, hovered: false, pressed: false } : state;
 
-  const opacity = disabled ? 0.72 : 1;
-  const contentColor = disabled
-    ? theme.semantics.content.muted
-    : active
-      ? theme.semantics.action.primary.base
-      : theme.semantics.content.default;
+  if (disabled) {
+    return {
+      backgroundColor: theme.semantics.surface.disabled,
+      contentColor: theme.semantics.content.disabled,
+      opacity: 1,
+    };
+  }
+
+  const contentColor = active
+    ? interactionState.pressed
+      ? theme.semantics.action.primary.onSoftActiveText
+      : interactionState.hovered
+        ? theme.semantics.action.primary.onSoftHoverText
+        : theme.semantics.action.primary.onSoftText
+    : theme.semantics.content.default;
 
   if (active) {
     return {
@@ -56,7 +65,7 @@ export function resolveNavigationItemPresentation(
           ? theme.semantics.action.primary.softHover
           : theme.semantics.action.primary.softBg,
       contentColor,
-      opacity,
+      opacity: 1,
     };
   }
 
@@ -67,6 +76,6 @@ export function resolveNavigationItemPresentation(
         ? theme.semantics.neutral.surfaceHover
         : 'transparent',
     contentColor,
-    opacity,
+    opacity: 1,
   };
 }

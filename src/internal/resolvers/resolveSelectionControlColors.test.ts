@@ -38,7 +38,8 @@ describe('resolveSelectionControlColors', () => {
       color: 'danger',
     });
 
-    expect(colors.labelColor).toBe(theme.semantics.content.muted);
-    expect(colors.opacity).toBe(0.72);
+    expect(colors.backgroundColor).toBe(theme.semantics.surface.disabled);
+    expect(colors.labelColor).toBe(theme.semantics.content.disabled);
+    expect(colors.opacity).toBeUndefined();
   });
 });

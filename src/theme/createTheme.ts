@@ -28,12 +28,13 @@ export function createTheme(
   mode: 'light' | 'dark' = 'light',
   activeFontId?: string | null,
 ): SurfaceTheme {
-  const { colors, swatches, semantics } = generatePalette(config, mode);
+  const { colors, swatches, semantics, colorDiagnostics } = generatePalette(config, mode);
   const theme: SurfaceTheme = {
     ...resolveGlobalTokens(config.tokens),
     colors,
     swatches,
     semantics,
+    colorDiagnostics,
     config,
   };
 
