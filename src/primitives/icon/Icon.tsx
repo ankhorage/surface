@@ -1,9 +1,9 @@
-import { type StyleProp, type TextStyle } from 'react-native';
+import { type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
 import { resolveToken } from '../../theme/resolveToken';
 import { useTheme } from '../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../theme/types';
-import { type IconSource, PortableIcon } from './PortableIcon';
+import { type FontIconSource, PortableIcon, type SvgIconSource } from './PortableIcon';
 
 export type {
   FontIconSource,
@@ -16,11 +16,12 @@ export type {
 interface IconPresentationProps {
   size?: keyof SurfaceTheme['spacing'] | number;
   color?: keyof SurfaceTheme['colors'] | string;
-  style?: StyleProp<TextStyle>;
   testID?: string;
 }
 
-export type IconProps = IconSource & IconPresentationProps;
+export type IconProps =
+  | (FontIconSource & IconPresentationProps & { style?: StyleProp<TextStyle> })
+  | (SvgIconSource & IconPresentationProps & { style?: StyleProp<ViewStyle> });
 
 export function Icon(props: IconProps) {
   const { theme } = useTheme();

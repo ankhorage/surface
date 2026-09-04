@@ -20,7 +20,7 @@ import {
   type MaterialDesignIconsIconName,
 } from '@react-native-vector-icons/material-design-icons/static';
 import React from 'react';
-import { Image, type StyleProp, type TextStyle } from 'react-native';
+import { Image, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import { SvgUri } from 'react-native-svg';
 
 import type { SurfaceImageSource } from '../image';
@@ -56,14 +56,27 @@ export interface SvgIconSource {
 
 export type IconSource = FontIconSource | SvgIconSource;
 
-type PortableIconProps = IconSource & {
+interface PortableIconPresentationProps {
   color: string;
   size: number;
-  style?: StyleProp<TextStyle>;
   testID?: string;
-};
+}
 
-type SharedIconProps = Pick<PortableIconProps, 'color' | 'size' | 'style' | 'testID'>;
+type FontPortableIconProps = FontIconSource &
+  PortableIconPresentationProps & {
+    style?: StyleProp<TextStyle>;
+  };
+
+type SvgPortableIconProps = SvgIconSource &
+  PortableIconPresentationProps & {
+    style?: StyleProp<ViewStyle>;
+  };
+
+type PortableIconProps = FontPortableIconProps | SvgPortableIconProps;
+
+type SharedIconProps = PortableIconPresentationProps & {
+  style?: StyleProp<TextStyle>;
+};
 
 /*** Resolve either a direct URI or a React Native bundled image module to its SVG URI. */
 function resolveSvgIconUri(source: SurfaceImageSource): string {
