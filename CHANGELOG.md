@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.4.1
+
+### Patch Changes
+
+- 313476c: Type SVG Icon styles as view styles while keeping font Icon styles as text styles.
+
 ## 3.4.0
 
 ### Minor Changes
