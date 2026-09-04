@@ -6,6 +6,15 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import * as ReactNativeWeb from 'react-native-web';
 
 await mock.module('react-native', () => ReactNativeWeb);
+await mock.module('react-native-svg', () => ({
+  SvgUri: ({ color, height, uri, width }: Record<string, unknown>) =>
+    React.createElement('svg', {
+      'data-color': color,
+      'data-uri': uri,
+      height,
+      width,
+    }),
+}));
 
 const { Icon } = await import('./Icon');
 const { PortableIcon, SUPPORTED_ICON_PROVIDERS } = await import('./PortableIcon');
@@ -55,6 +64,17 @@ describe('portable icon rendering', () => {
     );
 
     expect(markup).toContain('font-family:MaterialDesignIcons');
+  });
+
+  test('renders an SVG URI through the same public Icon API', () => {
+    const markup = renderToStaticMarkup(
+      <Icon color="#123456" size={18} source="https://example.com/icons/home.svg" />,
+    );
+
+    expect(markup).toContain('data-uri="https://example.com/icons/home.svg"');
+    expect(markup).toContain('data-color="#123456"');
+    expect(markup).toContain('width="18"');
+    expect(markup).toContain('height="18"');
   });
 });
 

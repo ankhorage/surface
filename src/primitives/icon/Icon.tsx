@@ -5,7 +5,13 @@ import { useTheme } from '../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../theme/types';
 import { type IconSource, PortableIcon } from './PortableIcon';
 
-export type { IconProvider, IconSource, IconVariant } from './PortableIcon';
+export type {
+  FontIconSource,
+  IconProvider,
+  IconSource,
+  IconVariant,
+  SvgIconSource,
+} from './PortableIcon';
 
 interface IconPresentationProps {
   size?: keyof SurfaceTheme['spacing'] | number;
