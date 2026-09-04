@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 3.4.0
+
+### Minor Changes
+
+- 2ceb0de: Render SVG assets through the existing `Icon` component by accepting a mutually exclusive
+  `source` prop backed by `react-native-svg`.
+
 ## 3.3.0
 
 ### Minor Changes
