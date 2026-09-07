@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.4.4
+
+### Patch Changes
+
+- f25351a: Render bundled SVG icon assets on React Native Web without relying on the native-only Image asset resolver.
+
 ## 3.4.3
 
 ### Patch Changes
