@@ -8,7 +8,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 62,
+      "line": 97,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -770,7 +770,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 56,
+      "line": 83,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -785,6 +785,13 @@
         "description": null
       },
       {
+        "name": "divider",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "focus",
         "kind": "property",
         "type": "string",
@@ -793,6 +800,13 @@
       },
       {
         "name": "strong",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "subtle",
         "kind": "property",
         "type": "string",
         "required": true,
@@ -3204,7 +3218,7 @@
     "modulePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-      "line": 3,
+      "line": 54,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -3624,7 +3638,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 49,
+      "line": 72,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -3639,7 +3653,28 @@
         "description": null
       },
       {
+        "name": "disabled",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "icon",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "inverse",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "link",
         "kind": "property",
         "type": "string",
         "required": true,
@@ -3654,6 +3689,13 @@
       },
       {
         "name": "subtle",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "visited",
         "kind": "property",
         "type": "string",
         "required": true,
@@ -4533,6 +4575,24 @@
     "structuredRows": []
   },
   {
+    "name": "FontIconSource",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/primitives/icon/PortableIcon.tsx",
+    "sourceLocation": {
+      "filePath": "src/primitives/icon/PortableIcon.tsx",
+      "line": 46,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
     "name": "FontProvider",
     "description": null,
     "isReadme": false,
@@ -4613,7 +4673,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 85,
+      "line": 147,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -4631,7 +4691,7 @@
     "modulePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-      "line": 4,
+      "line": 2,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -4743,14 +4803,20 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 109,
+      "line": 41,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics", "ThemeTokens"],
+    "relatedSymbols": [
+      "GeneratedThemeSwatches",
+      "SurfaceColorDiagnostics",
+      "ThemeConfig",
+      "ThemeSemantics",
+      "ThemeTokens"
+    ],
     "signatures": [
       {
-        "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+        "label": "(config: ThemeConfig, mode?: ThemeColorMode) => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }",
         "parameters": [
           {
             "name": "config",
@@ -4760,12 +4826,12 @@
           },
           {
             "name": "mode",
-            "type": "\"light\" | \"dark\"",
+            "type": "ThemeColorMode",
             "required": false,
             "description": null
           }
         ],
-        "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+        "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }",
         "returnDescription": null
       }
     ],
@@ -5483,7 +5549,7 @@
     "modulePath": "src/primitives/icon/Icon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/Icon.tsx",
-      "line": 19,
+      "line": 26,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -5916,7 +5982,7 @@
     "modulePath": "src/primitives/icon/Icon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/Icon.tsx",
-      "line": 17,
+      "line": 22,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -5934,7 +6000,7 @@
     "modulePath": "src/primitives/icon/PortableIcon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/PortableIcon.tsx",
-      "line": 33,
+      "line": 43,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -5952,7 +6018,7 @@
     "modulePath": "src/primitives/icon/PortableIcon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/PortableIcon.tsx",
-      "line": 36,
+      "line": 64,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -5970,7 +6036,7 @@
     "modulePath": "src/primitives/icon/PortableIcon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/PortableIcon.tsx",
-      "line": 34,
+      "line": 44,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -7031,7 +7097,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 17,
+      "line": 26,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -7061,6 +7127,20 @@
       },
       {
         "name": "borderStrong",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "disabledBg",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "disabledText",
         "kind": "property",
         "type": "string",
         "required": true,
@@ -7573,7 +7653,7 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 34,
+      "line": 26,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -7736,7 +7816,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 31,
+      "line": 42,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -7751,6 +7831,13 @@
         "description": null
       },
       {
+        "name": "disabledBg",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "hover",
         "kind": "property",
         "type": "string",
@@ -7758,7 +7845,56 @@
         "description": null
       },
       {
+        "name": "onDisabledText",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "onHoverText",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "onSoftActiveText",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "onSoftHoverText",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "onSoftText",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "onSolidText",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "onStrongText",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "onSurfaceText",
         "kind": "property",
         "type": "string",
         "required": true,
@@ -9170,6 +9306,46 @@
     "structuredRows": []
   },
   {
+    "name": "SelectionSemantics",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/theme/types.ts",
+    "sourceLocation": {
+      "filePath": "src/theme/types.ts",
+      "line": 91,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "background",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "border",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "content",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
     "name": "SemanticColorReferenceMap",
     "description": null,
     "isReadme": false,
@@ -9759,7 +9935,7 @@
     "modulePath": "src/primitives/icon/PortableIcon.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/icon/PortableIcon.tsx",
-      "line": 25,
+      "line": 35,
       "column": 14
     },
     "exportPaths": ["src/index.ts"],
@@ -9888,6 +10064,173 @@
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "SurfaceColorDiagnostics",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/theme/types.ts",
+    "sourceLocation": {
+      "filePath": "src/theme/types.ts",
+      "line": 137,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [
+      "GeneratedThemeModeColors",
+      "SemanticColorReferenceMap",
+      "SurfaceColorSelectionDiagnostic",
+      "SurfaceContrastDiagnostic"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "contrasts",
+        "kind": "property",
+        "type": "readonly SurfaceContrastDiagnostic[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "generated",
+        "kind": "property",
+        "type": "GeneratedThemeModeColors",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "mode",
+        "kind": "property",
+        "type": "ThemeColorMode",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "selections",
+        "kind": "property",
+        "type": "readonly SurfaceColorSelectionDiagnostic[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "semanticReferences",
+        "kind": "property",
+        "type": "SemanticColorReferenceMap",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "statusSwatches",
+        "kind": "property",
+        "type": "Record<\"success\" | \"warning\" | \"info\" | \"danger\", ColorSwatchDiagnostics>",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "surfaceSeparation",
+        "kind": "property",
+        "type": "readonly SurfaceContrastDiagnostic[]",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "SurfaceColorSelectionDiagnostic",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/theme/types.ts",
+    "sourceLocation": {
+      "filePath": "src/theme/types.ts",
+      "line": 131,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "id",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "result",
+        "kind": "property",
+        "type": "ColorSwatchSelectionResult",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "SurfaceContrastDiagnostic",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/theme/types.ts",
+    "sourceLocation": {
+      "filePath": "src/theme/types.ts",
+      "line": 121,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["HexColor"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "background",
+        "kind": "property",
+        "type": "HexColor",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "contrast",
+        "kind": "property",
+        "type": "number",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "foreground",
+        "kind": "property",
+        "type": "HexColor",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "id",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "minimumContrast",
+        "kind": "property",
+        "type": "number",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "passes",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      }
+    ],
     "structuredRows": []
   },
   {
@@ -10273,7 +10616,7 @@
     "modulePath": "src/theme/colorEngine.ts",
     "sourceLocation": {
       "filePath": "src/theme/colorEngine.ts",
-      "line": 32,
+      "line": 24,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10291,7 +10634,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 42,
+      "line": 61,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10306,7 +10649,21 @@
         "description": null
       },
       {
+        "name": "disabled",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "inverse",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "overlay",
         "kind": "property",
         "type": "string",
         "required": true,
@@ -10320,7 +10677,21 @@
         "description": null
       },
       {
+        "name": "scrim",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "subtle",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "sunken",
         "kind": "property",
         "type": "string",
         "required": true,
@@ -10356,13 +10727,25 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 178,
+      "line": 242,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+    "relatedSymbols": [
+      "FontWeight",
+      "GeneratedThemeSwatches",
+      "SurfaceColorDiagnostics",
+      "ThemeSemantics"
+    ],
     "signatures": [],
     "members": [
+      {
+        "name": "colorDiagnostics",
+        "kind": "property",
+        "type": "SurfaceColorDiagnostics",
+        "required": true,
+        "description": null
+      },
       {
         "name": "colors",
         "kind": "property",
@@ -10438,6 +10821,53 @@
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "SvgIconSource",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/primitives/icon/PortableIcon.tsx",
+    "sourceLocation": {
+      "filePath": "src/primitives/icon/PortableIcon.tsx",
+      "line": 57,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["SurfaceImageSource"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "name",
+        "kind": "property",
+        "type": "undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "provider",
+        "kind": "property",
+        "type": "undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "source",
+        "kind": "property",
+        "type": "SurfaceImageSource",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "variant",
+        "kind": "property",
+        "type": "undefined",
+        "required": false,
+        "description": null
+      }
+    ],
     "structuredRows": []
   },
   {
@@ -14216,7 +14646,7 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 13,
+      "line": 15,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14295,7 +14725,7 @@
     "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
     "sourceLocation": {
       "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 9,
+      "line": 11,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14305,7 +14735,7 @@
       {
         "name": "harmony",
         "kind": "property",
-        "type": "\"complementary\" | \"monochromatic\" | \"analogous\" | \"triadic\" | \"tetradic\" | \"splitComplementary\"",
+        "type": "\"complementary\" | \"monochromatic\" | \"analogous\" | \"splitComplementary\" | \"triadic\" | \"tetradic\" | \"square\"",
         "required": true,
         "description": null
       },
@@ -14360,7 +14790,7 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 68,
+      "line": 103,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14370,6 +14800,7 @@
       "ContentSemantics",
       "NeutralSemantics",
       "RoleSemantics",
+      "SelectionSemantics",
       "SurfaceSemantics"
     ],
     "signatures": [],
@@ -14452,6 +14883,13 @@
         "description": null
       },
       {
+        "name": "selection",
+        "kind": "property",
+        "type": "SelectionSemantics",
+        "required": true,
+        "description": null
+      },
+      {
         "name": "success",
         "kind": "property",
         "type": "RoleSemantics",
@@ -14484,13 +14922,25 @@
     "modulePath": "src/theme/types.ts",
     "sourceLocation": {
       "filePath": "src/theme/types.ts",
-      "line": 88,
+      "line": 150,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+    "relatedSymbols": [
+      "FontWeight",
+      "GeneratedThemeSwatches",
+      "SurfaceColorDiagnostics",
+      "ThemeSemantics"
+    ],
     "signatures": [],
     "members": [
+      {
+        "name": "colorDiagnostics",
+        "kind": "property",
+        "type": "SurfaceColorDiagnostics",
+        "required": true,
+        "description": null
+      },
       {
         "name": "colors",
         "kind": "property",

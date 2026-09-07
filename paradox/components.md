@@ -727,14 +727,14 @@ Export paths: `src/index.ts`
 
 ## Icon
 
-Source: `src/primitives/icon/Icon.tsx:19:1`
+Source: `src/primitives/icon/Icon.tsx:26:1`
 
 Export paths: `src/index.ts`
 
 | Prop     | Type                                                   | Required | Default | Description |
 | -------- | ------------------------------------------------------ | -------- | ------- | ----------- |
 | color    | `keyof SurfaceTheme['colors'] \| string \| undefined`  | no       | —       |             |
-| name     | `IoniconsIconName`                                     | yes      | —       |             |
+| name     | `IoniconsIconName \| undefined`                        | no       | —       |             |
 | provider | `'Ionicons' \| undefined`                              | no       | —       |             |
 | size     | `keyof SurfaceTheme['spacing'] \| number \| undefined` | no       | —       |             |
 | style    | `StyleProp<TextStyle> \| undefined`                    | no       | —       |             |

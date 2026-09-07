@@ -4,7 +4,7 @@
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:62:1`
+Source: `src/theme/types.ts:97:1`
 
 ### Members
 
@@ -258,15 +258,17 @@ Source: `src/components/badge/types.ts:7:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:56:1`
+Source: `src/theme/types.ts:83:1`
 
 ### Members
 
 | Name    | Kind     | Type     | Required | Description |
 | ------- | -------- | -------- | -------- | ----------- |
 | default | property | `string` | yes      |             |
+| divider | property | `string` | yes      |             |
 | focus   | property | `string` | yes      |             |
 | strong  | property | `string` | yes      |             |
+| subtle  | property | `string` | yes      |             |
 
 ## Box
 
@@ -834,7 +836,7 @@ Source: `src/components/checkbox/types.ts:7:1`
 
 Kind: `unknown`
 Module: `node_modules/@ankhorage/color-theory/dist/harmony.d.ts`
-Source: `node_modules/@ankhorage/color-theory/dist/harmony.d.ts:3:1`
+Source: `node_modules/@ankhorage/color-theory/dist/harmony.d.ts:54:1`
 
 ## ColorSwatch
 
@@ -930,16 +932,20 @@ Source: `src/layout/Container.tsx:10:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:49:1`
+Source: `src/theme/types.ts:72:1`
 
 ### Members
 
-| Name    | Kind     | Type     | Required | Description |
-| ------- | -------- | -------- | -------- | ----------- |
-| default | property | `string` | yes      |             |
-| inverse | property | `string` | yes      |             |
-| muted   | property | `string` | yes      |             |
-| subtle  | property | `string` | yes      |             |
+| Name     | Kind     | Type     | Required | Description |
+| -------- | -------- | -------- | -------- | ----------- |
+| default  | property | `string` | yes      |             |
+| disabled | property | `string` | yes      |             |
+| icon     | property | `string` | yes      |             |
+| inverse  | property | `string` | yes      |             |
+| link     | property | `string` | yes      |             |
+| muted    | property | `string` | yes      |             |
+| subtle   | property | `string` | yes      |             |
+| visited  | property | `string` | yes      |             |
 
 ## createTheme
 
@@ -1236,6 +1242,12 @@ Source: `src/components/field/types.ts:3:1`
 | required   | property | `boolean \| undefined` | no       |             |
 | testID     | property | `string \| undefined`  | no       |             |
 
+## FontIconSource
+
+Kind: `unknown`
+Module: `src/primitives/icon/PortableIcon.tsx`
+Source: `src/primitives/icon/PortableIcon.tsx:46:1`
+
 ## FontProvider
 
 Kind: `function`
@@ -1266,13 +1278,13 @@ Source: `src/context/FontContext.tsx:6:1`
 
 Kind: `unknown`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:85:1`
+Source: `src/theme/types.ts:147:1`
 
 ## GeneratedColorRole
 
 Kind: `unknown`
 Module: `node_modules/@ankhorage/color-theory/dist/harmony.d.ts`
-Source: `node_modules/@ankhorage/color-theory/dist/harmony.d.ts:4:1`
+Source: `node_modules/@ankhorage/color-theory/dist/harmony.d.ts:2:1`
 
 ## GeneratedThemeModeColors
 
@@ -1308,14 +1320,14 @@ Source: `node_modules/@ankhorage/color-theory/dist/theme-colors.d.ts:13:1`
 
 Kind: `function`
 Module: `src/theme/colorEngine.ts`
-Source: `src/theme/colorEngine.ts:109:1`
+Source: `src/theme/colorEngine.ts:41:1`
 
 ### Signatures
 
-- `(config: ThemeConfig, mode?: "light" | "dark") => { colors: ThemeTokens["colors"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }`
+- `(config: ThemeConfig, mode?: ThemeColorMode) => { colors: ThemeTokens["colors"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }`
   - config: `ThemeConfig`
-  - mode: `"light" | "dark"` (optional)
-  - returns: `{ colors: ThemeTokens["colors"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }`
+  - mode: `ThemeColorMode` (optional)
+  - returns: `{ colors: ThemeTokens["colors"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }`
 
 ## getBreakpointFromWidth
 
@@ -1527,7 +1539,7 @@ Source: `src/context/TranslationContext.tsx:7:1`
 
 Kind: `function`
 Module: `src/primitives/icon/Icon.tsx`
-Source: `src/primitives/icon/Icon.tsx:19:1`
+Source: `src/primitives/icon/Icon.tsx:26:1`
 
 ### Signatures
 
@@ -1632,25 +1644,25 @@ Source: `src/components/icon-button/types.ts:7:1`
 
 Kind: `unknown`
 Module: `src/primitives/icon/Icon.tsx`
-Source: `src/primitives/icon/Icon.tsx:17:1`
+Source: `src/primitives/icon/Icon.tsx:22:1`
 
 ## IconProvider
 
 Kind: `unknown`
 Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:33:1`
+Source: `src/primitives/icon/PortableIcon.tsx:43:1`
 
 ## IconSource
 
 Kind: `unknown`
 Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:36:1`
+Source: `src/primitives/icon/PortableIcon.tsx:64:1`
 
 ## IconVariant
 
 Kind: `unknown`
 Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:34:1`
+Source: `src/primitives/icon/PortableIcon.tsx:44:1`
 
 ## Image
 
@@ -2062,7 +2074,7 @@ Source: `src/components/navigation/types.ts:30:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:17:1`
+Source: `src/theme/types.ts:26:1`
 
 ### Members
 
@@ -2072,6 +2084,8 @@ Source: `src/theme/types.ts:17:1`
 | bgSubtle      | property | `string` | yes      |             |
 | border        | property | `string` | yes      |             |
 | borderStrong  | property | `string` | yes      |             |
+| disabledBg    | property | `string` | yes      |             |
+| disabledText  | property | `string` | yes      |             |
 | divider       | property | `string` | yes      |             |
 | surface       | property | `string` | yes      |             |
 | surfaceActive | property | `string` | yes      |             |
@@ -2197,7 +2211,7 @@ Source: `src/core/responsive/resolve.ts:8:1`
 
 Kind: `function`
 Module: `src/theme/colorEngine.ts`
-Source: `src/theme/colorEngine.ts:34:1`
+Source: `src/theme/colorEngine.ts:26:1`
 
 ### Signatures
 
@@ -2254,20 +2268,28 @@ Source: `src/core/responsive/types.ts:7:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:31:1`
+Source: `src/theme/types.ts:42:1`
 
 ### Members
 
-| Name        | Kind     | Type     | Required | Description |
-| ----------- | -------- | -------- | -------- | ----------- |
-| base        | property | `string` | yes      |             |
-| hover       | property | `string` | yes      |             |
-| onSolidText | property | `string` | yes      |             |
-| outline     | property | `string` | yes      |             |
-| softActive  | property | `string` | yes      |             |
-| softBg      | property | `string` | yes      |             |
-| softHover   | property | `string` | yes      |             |
-| strong      | property | `string` | yes      |             |
+| Name             | Kind     | Type     | Required | Description |
+| ---------------- | -------- | -------- | -------- | ----------- |
+| base             | property | `string` | yes      |             |
+| disabledBg       | property | `string` | yes      |             |
+| hover            | property | `string` | yes      |             |
+| onDisabledText   | property | `string` | yes      |             |
+| onHoverText      | property | `string` | yes      |             |
+| onSoftActiveText | property | `string` | yes      |             |
+| onSoftHoverText  | property | `string` | yes      |             |
+| onSoftText       | property | `string` | yes      |             |
+| onSolidText      | property | `string` | yes      |             |
+| onStrongText     | property | `string` | yes      |             |
+| onSurfaceText    | property | `string` | yes      |             |
+| outline          | property | `string` | yes      |             |
+| softActive       | property | `string` | yes      |             |
+| softBg           | property | `string` | yes      |             |
+| softHover        | property | `string` | yes      |             |
+| strong           | property | `string` | yes      |             |
 
 ## ScrollArea
 
@@ -2564,6 +2586,20 @@ Source: `src/layout/ScrollArea.tsx:13:1`
 | zIndex                                    | property | `Responsive<number> \| undefined`                                                                              | no       |             |
 | zoomScale                                 | property | `number \| undefined`                                                                                          | no       |             |
 
+## SelectionSemantics
+
+Kind: `type`
+Module: `src/theme/types.ts`
+Source: `src/theme/types.ts:91:1`
+
+### Members
+
+| Name       | Kind     | Type     | Required | Description |
+| ---------- | -------- | -------- | -------- | ----------- |
+| background | property | `string` | yes      |             |
+| border     | property | `string` | yes      |             |
+| content    | property | `string` | yes      |             |
+
 ## SemanticColorReferenceMap
 
 Kind: `unknown`
@@ -2721,7 +2757,7 @@ Source: `src/layout/Stack.tsx:8:1`
 
 Kind: `value`
 Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:25:14`
+Source: `src/primitives/icon/PortableIcon.tsx:35:14`
 
 ## Surface
 
@@ -2764,6 +2800,54 @@ Source: `src/surfaceColor.ts:9:14`
 Kind: `unknown`
 Module: `src/surfaceColor.ts`
 Source: `src/surfaceColor.ts:21:1`
+
+## SurfaceColorDiagnostics
+
+Kind: `type`
+Module: `src/theme/types.ts`
+Source: `src/theme/types.ts:137:1`
+
+### Members
+
+| Name               | Kind     | Type                                                                           | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------ | -------- | ----------- |
+| contrasts          | property | `readonly SurfaceContrastDiagnostic[]`                                         | yes      |             |
+| generated          | property | `GeneratedThemeModeColors`                                                     | yes      |             |
+| mode               | property | `ThemeColorMode`                                                               | yes      |             |
+| selections         | property | `readonly SurfaceColorSelectionDiagnostic[]`                                   | yes      |             |
+| semanticReferences | property | `SemanticColorReferenceMap`                                                    | yes      |             |
+| statusSwatches     | property | `Record<"success" \| "warning" \| "info" \| "danger", ColorSwatchDiagnostics>` | yes      |             |
+| surfaceSeparation  | property | `readonly SurfaceContrastDiagnostic[]`                                         | yes      |             |
+
+## SurfaceColorSelectionDiagnostic
+
+Kind: `type`
+Module: `src/theme/types.ts`
+Source: `src/theme/types.ts:131:1`
+
+### Members
+
+| Name   | Kind     | Type                         | Required | Description |
+| ------ | -------- | ---------------------------- | -------- | ----------- |
+| id     | property | `string`                     | yes      |             |
+| result | property | `ColorSwatchSelectionResult` | yes      |             |
+
+## SurfaceContrastDiagnostic
+
+Kind: `type`
+Module: `src/theme/types.ts`
+Source: `src/theme/types.ts:121:1`
+
+### Members
+
+| Name            | Kind     | Type       | Required | Description |
+| --------------- | -------- | ---------- | -------- | ----------- |
+| background      | property | `HexColor` | yes      |             |
+| contrast        | property | `number`   | yes      |             |
+| foreground      | property | `HexColor` | yes      |             |
+| id              | property | `string`   | yes      |             |
+| minimumContrast | property | `number`   | yes      |             |
+| passes          | property | `boolean`  | yes      |             |
 
 ## SurfaceEmphasis
 
@@ -2841,22 +2925,26 @@ Source: `src/layout/Surface.tsx:9:1`
 
 Kind: `unknown`
 Module: `src/theme/colorEngine.ts`
-Source: `src/theme/colorEngine.ts:32:1`
+Source: `src/theme/colorEngine.ts:24:1`
 
 ## SurfaceSemantics
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:42:1`
+Source: `src/theme/types.ts:61:1`
 
 ### Members
 
-| Name    | Kind     | Type     | Required | Description |
-| ------- | -------- | -------- | -------- | ----------- |
-| default | property | `string` | yes      |             |
-| inverse | property | `string` | yes      |             |
-| raised  | property | `string` | yes      |             |
-| subtle  | property | `string` | yes      |             |
+| Name     | Kind     | Type     | Required | Description |
+| -------- | -------- | -------- | -------- | ----------- |
+| default  | property | `string` | yes      |             |
+| disabled | property | `string` | yes      |             |
+| inverse  | property | `string` | yes      |             |
+| overlay  | property | `string` | yes      |             |
+| raised   | property | `string` | yes      |             |
+| scrim    | property | `string` | yes      |             |
+| subtle   | property | `string` | yes      |             |
+| sunken   | property | `string` | yes      |             |
 
 ## SurfaceStatusColor
 
@@ -2868,26 +2956,42 @@ Source: `src/surfaceColor.ts:20:1`
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:178:1`
+Source: `src/theme/types.ts:242:1`
 
 ### Members
 
-| Name       | Kind     | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Required | Description |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| colors     | property | `{ [key: string]: string; primary: string; secondary: string; accent: string; highlight: string; tertiary: string; quaternary: string; background: string; surface: string; text: string; textSecondary: string; border: string; error: string; success: string; warning: string; info: string; }`                                                                                                                                                                                                                                                                                                                                                                    | yes      |             |
-| config     | property | `ContractsThemeConfig`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | yes      |             |
-| radii      | property | `{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | yes      |             |
-| semantics  | property | `ThemeSemantics`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | yes      |             |
-| shadows    | property | `{ [key: string]: number; soft: number; medium: number; hard: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
-| spacing    | property | `{ [key: string]: number; none: 0; xs: number; s: number; m: number; l: number; xl: number; xxl: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | yes      |             |
-| swatches   | property | `GeneratedThemeSwatches`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
-| typography | property | `{ headings: Record<1 \| 2 \| 3 \| 4 \| 5 \| 6, { size: number; lineHeight: number; weight: "regular" \| "medium" \| "semiBold" \| "bold"; }>; sizes: { xs: number; s: number; m: number; l: number; xl: number; xxl: number; "3xl": number; h1: number; h2: number; h3: number; h4: number; h5: number; h6: number; [key: string]: number; }; weights: { thin: FontWeight; extraLight: FontWeight; light: FontWeight; regular: FontWeight; medium: FontWeight; semiBold: FontWeight; bold: FontWeight; extraBold: FontWeight; black: FontWeight; }; fonts: { normal: Record<FontWeight, string \| undefined>; italic: Record<FontWeight, string \| undefined>; }; }` | yes      |             |
+| Name             | Kind     | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Required | Description |
+| ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| colorDiagnostics | property | `SurfaceColorDiagnostics`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | yes      |             |
+| colors           | property | `{ [key: string]: string; primary: string; secondary: string; accent: string; highlight: string; tertiary: string; quaternary: string; background: string; surface: string; text: string; textSecondary: string; border: string; error: string; success: string; warning: string; info: string; }`                                                                                                                                                                                                                                                                                                                                                                    | yes      |             |
+| config           | property | `ContractsThemeConfig`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | yes      |             |
+| radii            | property | `{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | yes      |             |
+| semantics        | property | `ThemeSemantics`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | yes      |             |
+| shadows          | property | `{ [key: string]: number; soft: number; medium: number; hard: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
+| spacing          | property | `{ [key: string]: number; none: 0; xs: number; s: number; m: number; l: number; xl: number; xxl: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | yes      |             |
+| swatches         | property | `GeneratedThemeSwatches`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
+| typography       | property | `{ headings: Record<1 \| 2 \| 3 \| 4 \| 5 \| 6, { size: number; lineHeight: number; weight: "regular" \| "medium" \| "semiBold" \| "bold"; }>; sizes: { xs: number; s: number; m: number; l: number; xl: number; xxl: number; "3xl": number; h1: number; h2: number; h3: number; h4: number; h5: number; h6: number; [key: string]: number; }; weights: { thin: FontWeight; extraLight: FontWeight; light: FontWeight; regular: FontWeight; medium: FontWeight; semiBold: FontWeight; bold: FontWeight; extraBold: FontWeight; black: FontWeight; }; fonts: { normal: Record<FontWeight, string \| undefined>; italic: Record<FontWeight, string \| undefined>; }; }` | yes      |             |
 
 ## SurfaceVariant
 
 Kind: `unknown`
 Module: `src/layout/Surface.tsx`
 Source: `src/layout/Surface.tsx:7:1`
+
+## SvgIconSource
+
+Kind: `type`
+Module: `src/primitives/icon/PortableIcon.tsx`
+Source: `src/primitives/icon/PortableIcon.tsx:57:1`
+
+### Members
+
+| Name     | Kind     | Type                 | Required | Description |
+| -------- | -------- | -------------------- | -------- | ----------- |
+| name     | property | `undefined`          | no       |             |
+| provider | property | `undefined`          | no       |             |
+| source   | property | `SurfaceImageSource` | yes      |             |
+| variant  | property | `undefined`          | no       |             |
 
 ## Switch
 
@@ -3714,7 +3818,7 @@ Source: `src/primitives/text/types.ts:7:1`
 
 Kind: `type`
 Module: `node_modules/@ankhorage/contracts/dist/types.d.ts`
-Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:13:1`
+Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:15:1`
 
 ### Members
 
@@ -3737,14 +3841,14 @@ Source: `src/theme/ThemeContext.tsx:13:14`
 
 Kind: `type`
 Module: `node_modules/@ankhorage/contracts/dist/types.d.ts`
-Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:9:1`
+Source: `node_modules/@ankhorage/contracts/dist/types.d.ts:11:1`
 
 ### Members
 
-| Name         | Kind     | Type                                                                                                   | Required | Description |
-| ------------ | -------- | ------------------------------------------------------------------------------------------------------ | -------- | ----------- |
-| harmony      | property | `"complementary" \| "monochromatic" \| "analogous" \| "triadic" \| "tetradic" \| "splitComplementary"` | yes      |             |
-| primaryColor | property | `string`                                                                                               | yes      |             |
+| Name         | Kind     | Type                                                                                                               | Required | Description |
+| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| harmony      | property | `"complementary" \| "monochromatic" \| "analogous" \| "splitComplementary" \| "triadic" \| "tetradic" \| "square"` | yes      |             |
+| primaryColor | property | `string`                                                                                                           | yes      |             |
 
 ## ThemeProvider
 
@@ -3770,44 +3874,46 @@ initialMode = 'light',
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:68:1`
+Source: `src/theme/types.ts:103:1`
 
 ### Members
 
-| Name      | Kind     | Type               | Required | Description |
-| --------- | -------- | ------------------ | -------- | ----------- |
-| accent    | property | `RoleSemantics`    | yes      |             |
-| action    | property | `ActionSemantics`  | yes      |             |
-| border    | property | `BorderSemantics`  | yes      |             |
-| brand     | property | `RoleSemantics`    | yes      |             |
-| content   | property | `ContentSemantics` | yes      |             |
-| danger    | property | `RoleSemantics`    | yes      |             |
-| error     | property | `RoleSemantics`    | yes      |             |
-| highlight | property | `RoleSemantics`    | yes      |             |
-| info      | property | `RoleSemantics`    | yes      |             |
-| neutral   | property | `NeutralSemantics` | yes      |             |
-| secondary | property | `RoleSemantics`    | yes      |             |
-| success   | property | `RoleSemantics`    | yes      |             |
-| surface   | property | `SurfaceSemantics` | yes      |             |
-| warning   | property | `RoleSemantics`    | yes      |             |
+| Name      | Kind     | Type                 | Required | Description |
+| --------- | -------- | -------------------- | -------- | ----------- |
+| accent    | property | `RoleSemantics`      | yes      |             |
+| action    | property | `ActionSemantics`    | yes      |             |
+| border    | property | `BorderSemantics`    | yes      |             |
+| brand     | property | `RoleSemantics`      | yes      |             |
+| content   | property | `ContentSemantics`   | yes      |             |
+| danger    | property | `RoleSemantics`      | yes      |             |
+| error     | property | `RoleSemantics`      | yes      |             |
+| highlight | property | `RoleSemantics`      | yes      |             |
+| info      | property | `RoleSemantics`      | yes      |             |
+| neutral   | property | `NeutralSemantics`   | yes      |             |
+| secondary | property | `RoleSemantics`      | yes      |             |
+| selection | property | `SelectionSemantics` | yes      |             |
+| success   | property | `RoleSemantics`      | yes      |             |
+| surface   | property | `SurfaceSemantics`   | yes      |             |
+| warning   | property | `RoleSemantics`      | yes      |             |
 
 ## ThemeTokens
 
 Kind: `type`
 Module: `src/theme/types.ts`
-Source: `src/theme/types.ts:88:1`
+Source: `src/theme/types.ts:150:1`
 
 ### Members
 
-| Name       | Kind     | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Required | Description |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| colors     | property | `{ [key: string]: string; primary: string; secondary: string; accent: string; highlight: string; tertiary: string; quaternary: string; background: string; surface: string; text: string; textSecondary: string; border: string; error: string; success: string; warning: string; info: string; }`                                                                                                                                                                                                                                                                                                                                                                    | yes      |             |
-| radii      | property | `{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | yes      |             |
-| semantics  | property | `ThemeSemantics`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | yes      |             |
-| shadows    | property | `{ [key: string]: number; soft: number; medium: number; hard: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
-| spacing    | property | `{ [key: string]: number; none: 0; xs: number; s: number; m: number; l: number; xl: number; xxl: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | yes      |             |
-| swatches   | property | `GeneratedThemeSwatches`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
-| typography | property | `{ headings: Record<1 \| 2 \| 3 \| 4 \| 5 \| 6, { size: number; lineHeight: number; weight: "regular" \| "medium" \| "semiBold" \| "bold"; }>; sizes: { xs: number; s: number; m: number; l: number; xl: number; xxl: number; "3xl": number; h1: number; h2: number; h3: number; h4: number; h5: number; h6: number; [key: string]: number; }; weights: { thin: FontWeight; extraLight: FontWeight; light: FontWeight; regular: FontWeight; medium: FontWeight; semiBold: FontWeight; bold: FontWeight; extraBold: FontWeight; black: FontWeight; }; fonts: { normal: Record<FontWeight, string \| undefined>; italic: Record<FontWeight, string \| undefined>; }; }` | yes      |             |
+| Name             | Kind     | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Required | Description |
+| ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| colorDiagnostics | property | `SurfaceColorDiagnostics`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | yes      |             |
+| colors           | property | `{ [key: string]: string; primary: string; secondary: string; accent: string; highlight: string; tertiary: string; quaternary: string; background: string; surface: string; text: string; textSecondary: string; border: string; error: string; success: string; warning: string; info: string; }`                                                                                                                                                                                                                                                                                                                                                                    | yes      |             |
+| radii            | property | `{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | yes      |             |
+| semantics        | property | `ThemeSemantics`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | yes      |             |
+| shadows          | property | `{ [key: string]: number; soft: number; medium: number; hard: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
+| spacing          | property | `{ [key: string]: number; none: 0; xs: number; s: number; m: number; l: number; xl: number; xxl: number; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | yes      |             |
+| swatches         | property | `GeneratedThemeSwatches`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | yes      |             |
+| typography       | property | `{ headings: Record<1 \| 2 \| 3 \| 4 \| 5 \| 6, { size: number; lineHeight: number; weight: "regular" \| "medium" \| "semiBold" \| "bold"; }>; sizes: { xs: number; s: number; m: number; l: number; xl: number; xxl: number; "3xl": number; h1: number; h2: number; h3: number; h4: number; h5: number; h6: number; [key: string]: number; }; weights: { thin: FontWeight; extraLight: FontWeight; light: FontWeight; regular: FontWeight; medium: FontWeight; semiBold: FontWeight; bold: FontWeight; extraBold: FontWeight; black: FontWeight; }; fonts: { normal: Record<FontWeight, string \| undefined>; italic: Record<FontWeight, string \| undefined>; }; }` | yes      |             |
 
 ## Toast
 

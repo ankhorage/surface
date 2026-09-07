@@ -5,7 +5,25 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import * as ReactNativeWeb from 'react-native-web';
 
-await mock.module('react-native', () => ReactNativeWeb);
+const WebImageWithoutResolveAssetSource = ({
+  source,
+  testID,
+  tintColor,
+}: {
+  source?: unknown;
+  testID?: string;
+  tintColor?: unknown;
+}) =>
+  React.createElement('span', {
+    'data-image-source': String(source),
+    'data-testid': testID,
+    'data-tint-color': String(tintColor),
+  });
+
+await mock.module('react-native', () => ({
+  ...ReactNativeWeb,
+  Image: WebImageWithoutResolveAssetSource,
+}));
 await mock.module('react-native-svg', () => ({
   SvgUri: ({ color, height, uri, width }: Record<string, unknown>) =>
     React.createElement('svg', {
@@ -75,6 +93,18 @@ describe('portable icon rendering', () => {
     expect(markup).toContain('data-color="#123456"');
     expect(markup).toContain('width="18"');
     expect(markup).toContain('height="18"');
+  });
+});
+
+describe('portable icon web assets', () => {
+  test('renders a bundled SVG asset through React Native Web Image', () => {
+    const markup = renderToStaticMarkup(
+      <Icon color="#123456" size={18} source={42} testID="bundled-svg" />,
+    );
+
+    expect(markup).toContain('data-image-source="42"');
+    expect(markup).toContain('data-testid="bundled-svg"');
+    expect(markup).toContain('data-tint-color="#123456"');
   });
 });
 
