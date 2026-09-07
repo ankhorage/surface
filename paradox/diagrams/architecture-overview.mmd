@@ -429,6 +429,8 @@ graph TD
   module_src_examples_DocsExamples_tsx --> module_src_theme_types_ts
   module_src_index_test_ts["src/index.test.ts"]
   package__ankhorage_surface -.-> module_src_index_test_ts
+  module_src_index_test_ts --> module_src_index_ts
+  module_src_index_test_ts --> module_src_theme_createTheme_ts
   module_src_index_ts["src/index.ts"]
   module_src_interactionPolicy_test_ts["src/interactionPolicy.test.ts"]
   package__ankhorage_surface -.-> module_src_interactionPolicy_test_ts
@@ -687,6 +689,7 @@ graph TD
   package__ankhorage_surface -.-> module_src_primitives_icon_index_ts
   module_src_primitives_icon_PortableIcon_tsx["src/primitives/icon/PortableIcon.tsx"]
   package__ankhorage_surface -.-> module_src_primitives_icon_PortableIcon_tsx
+  module_src_primitives_icon_PortableIcon_tsx --> module_src_primitives_image_index_ts
   module_src_primitives_icon_PortableIcon_web_test_tsx["src/primitives/icon/PortableIcon.web.test.tsx"]
   package__ankhorage_surface -.-> module_src_primitives_icon_PortableIcon_web_test_tsx
   module_src_primitives_image_Image_tsx["src/primitives/image/Image.tsx"]
@@ -732,7 +735,15 @@ graph TD
   module_src_theme_colorEngine_test_ts --> module_src_theme_types_ts
   module_src_theme_colorEngine_ts["src/theme/colorEngine.ts"]
   package__ankhorage_surface -.-> module_src_theme_colorEngine_ts
+  module_src_theme_colorEngine_ts --> module_src_theme_resolveSurfaceSemanticModel_ts
   module_src_theme_colorEngine_ts --> module_src_theme_types_ts
+  module_src_theme_createSurfaceColorDiagnosticCollector_ts["src/theme/createSurfaceColorDiagnosticCollector.ts"]
+  package__ankhorage_surface -.-> module_src_theme_createSurfaceColorDiagnosticCollector_ts
+  module_src_theme_createSurfaceColorDiagnosticCollector_ts --> module_src_theme_types_ts
+  module_src_theme_createSurfaceSemanticPolicy_ts["src/theme/createSurfaceSemanticPolicy.ts"]
+  package__ankhorage_surface -.-> module_src_theme_createSurfaceSemanticPolicy_ts
+  module_src_theme_createSurfaceSemanticPolicy_ts --> module_src_theme_surfaceColorPolicy_ts
+  module_src_theme_createSurfaceSemanticPolicy_ts --> module_src_theme_types_ts
   module_src_theme_createTheme_ts["src/theme/createTheme.ts"]
   package__ankhorage_surface -.-> module_src_theme_createTheme_ts
   module_src_theme_createTheme_ts --> module_src_theme_colorEngine_ts
@@ -752,6 +763,11 @@ graph TD
   module_src_theme_inverseSemantics_test_ts["src/theme/inverseSemantics.test.ts"]
   package__ankhorage_surface -.-> module_src_theme_inverseSemantics_test_ts
   module_src_theme_inverseSemantics_test_ts --> module_src_theme_colorEngine_ts
+  module_src_theme_public_test_ts["src/theme/public.test.ts"]
+  package__ankhorage_surface -.-> module_src_theme_public_test_ts
+  module_src_theme_public_test_ts --> module_src_theme_public_ts
+  module_src_theme_public_ts["src/theme/public.ts"]
+  package__ankhorage_surface -.-> module_src_theme_public_ts
   module_src_theme_resolveGlobalTokens_ts["src/theme/resolveGlobalTokens.ts"]
   package__ankhorage_surface -.-> module_src_theme_resolveGlobalTokens_ts
   module_src_theme_resolveGlobalTokens_ts --> module_src_theme_defaultTokens_ts
@@ -764,11 +780,23 @@ graph TD
   module_src_theme_resolveHeadingTokenOverrides_ts --> module_src_theme_types_ts
   module_src_theme_resolveNumericTokenOverrides_ts["src/theme/resolveNumericTokenOverrides.ts"]
   package__ankhorage_surface -.-> module_src_theme_resolveNumericTokenOverrides_ts
+  module_src_theme_resolveRoleSemantics_ts["src/theme/resolveRoleSemantics.ts"]
+  package__ankhorage_surface -.-> module_src_theme_resolveRoleSemantics_ts
+  module_src_theme_resolveRoleSemantics_ts --> module_src_theme_surfaceColorPolicy_ts
+  module_src_theme_resolveRoleSemantics_ts --> module_src_theme_types_ts
+  module_src_theme_resolveSurfaceSemanticModel_ts["src/theme/resolveSurfaceSemanticModel.ts"]
+  package__ankhorage_surface -.-> module_src_theme_resolveSurfaceSemanticModel_ts
+  module_src_theme_resolveSurfaceSemanticModel_ts --> module_src_theme_createSurfaceColorDiagnosticCollector_ts
+  module_src_theme_resolveSurfaceSemanticModel_ts --> module_src_theme_createSurfaceSemanticPolicy_ts
+  module_src_theme_resolveSurfaceSemanticModel_ts --> module_src_theme_resolveRoleSemantics_ts
+  module_src_theme_resolveSurfaceSemanticModel_ts --> module_src_theme_types_ts
   module_src_theme_resolveToken_ts["src/theme/resolveToken.ts"]
   package__ankhorage_surface -.-> module_src_theme_resolveToken_ts
   module_src_theme_resolveWeightTokenOverrides_ts["src/theme/resolveWeightTokenOverrides.ts"]
   package__ankhorage_surface -.-> module_src_theme_resolveWeightTokenOverrides_ts
   module_src_theme_resolveWeightTokenOverrides_ts --> module_src_theme_types_ts
+  module_src_theme_surfaceColorPolicy_ts["src/theme/surfaceColorPolicy.ts"]
+  package__ankhorage_surface -.-> module_src_theme_surfaceColorPolicy_ts
   module_src_theme_ThemeContext_tsx["src/theme/ThemeContext.tsx"]
   package__ankhorage_surface -.-> module_src_theme_ThemeContext_tsx
   module_src_theme_ThemeContext_tsx --> module_src_context_FontContext_tsx

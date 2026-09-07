@@ -3,7 +3,7 @@
 
 # @ankhorage/surface
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v3.0.2](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v3.4.3](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
 
 Cross-platform UI foundation for React Native and React Native Web. Provides theming, layout primitives, and core building blocks for modern apps.
 
@@ -25,7 +25,6 @@ Cross-platform UI foundation for React Native and React Native Web. Provides the
 - [Drawer sequence](././paradox/diagrams/sequences/drawer.mmd)
 - [Field sequence](././paradox/diagrams/sequences/field.mmd)
 - [FontProvider sequence](././paradox/diagrams/sequences/font-provider.mmd)
-- [generatePalette sequence](././paradox/diagrams/sequences/generate-palette.mmd)
 - [Grid sequence](././paradox/diagrams/sequences/grid.mmd)
 - [Icon sequence](././paradox/diagrams/sequences/icon.mmd)
 - [IconButton sequence](././paradox/diagrams/sequences/icon-button.mmd)

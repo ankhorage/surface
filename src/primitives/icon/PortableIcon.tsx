@@ -20,7 +20,14 @@ import {
   type MaterialDesignIconsIconName,
 } from '@react-native-vector-icons/material-design-icons/static';
 import React from 'react';
-import { Image, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import {
+  Image,
+  type StyleProp,
+  StyleSheet,
+  type TextStyle,
+  View,
+  type ViewStyle,
+} from 'react-native';
 import { SvgUri } from 'react-native-svg';
 
 import type { SurfaceImageSource } from '../image';
@@ -78,11 +85,43 @@ type SharedIconProps = PortableIconPresentationProps & {
   style?: StyleProp<TextStyle>;
 };
 
-/*** Resolve either a direct URI or a React Native bundled image module to its SVG URI. */
-function resolveSvgIconUri(source: SurfaceImageSource): string {
+const styles = StyleSheet.create({
+  bundledSvgImage: { height: '100%', width: '100%' },
+});
+
+/*** Resolve an SVG URI directly or through React Native's native bundled-asset API when available. */
+function resolveSvgIconUri(source: SurfaceImageSource): string | null {
   if (typeof source === 'string') return source;
+  if (!Array.isArray(source) && typeof source === 'object' && typeof source.uri === 'string') {
+    return source.uri;
+  }
+  if (typeof Image.resolveAssetSource !== 'function') return null;
 
   return Image.resolveAssetSource(source).uri;
+}
+
+/*** Render URI-backed SVGs through SvgUri and let React Native Web resolve bundled numeric assets through Image. */
+function renderSvgIcon(props: SvgPortableIconProps) {
+  const uri = resolveSvgIconUri(props.source);
+  if (uri) {
+    return (
+      <SvgUri
+        color={props.color}
+        height={props.size}
+        style={props.style}
+        testID={props.testID}
+        uri={uri}
+        width={props.size}
+      />
+    );
+  }
+
+  const imageSource = typeof props.source === 'string' ? { uri: props.source } : props.source;
+  return (
+    <View style={[{ height: props.size, width: props.size }, props.style]} testID={props.testID}>
+      <Image source={imageSource} style={styles.bundledSvgImage} tintColor={props.color} />
+    </View>
+  );
 }
 
 function assertNever(value: never, configuration: string): never {
@@ -127,16 +166,7 @@ function renderFontAwesome6(
 
 export function PortableIcon(props: PortableIconProps) {
   if ('source' in props) {
-    return (
-      <SvgUri
-        color={props.color}
-        height={props.size}
-        style={props.style}
-        testID={props.testID}
-        uri={resolveSvgIconUri(props.source)}
-        width={props.size}
-      />
-    );
+    return renderSvgIcon(props);
   }
 
   const { provider } = props;

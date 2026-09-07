@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v3.0.2",
+      "value": "v3.4.3",
       "color": "cb3837"
     },
     {
@@ -926,7 +926,7 @@
     {
       "path": "src/index.test.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["src/index.ts", "src/theme/createTheme.ts"],
       "exports": []
     },
     {
@@ -980,6 +980,7 @@
         "DrawerProps",
         "Field",
         "FieldProps",
+        "FontIconSource",
         "FontProvider",
         "FontRuntime",
         "FontWeight",
@@ -1041,6 +1042,7 @@
         "RoleSemantics",
         "ScrollArea",
         "ScrollAreaProps",
+        "SelectionSemantics",
         "SemanticColorReferenceMap",
         "SemanticColorToken",
         "Show",
@@ -1056,6 +1058,9 @@
         "SURFACE_PALETTE_COLORS",
         "SURFACE_STATUS_COLORS",
         "SurfaceColor",
+        "SurfaceColorDiagnostics",
+        "SurfaceColorSelectionDiagnostic",
+        "SurfaceContrastDiagnostic",
         "SurfaceEmphasis",
         "SurfaceImageSource",
         "SurfacePaletteColor",
@@ -1065,6 +1070,7 @@
         "SurfaceStatusColor",
         "SurfaceTheme",
         "SurfaceVariant",
+        "SvgIconSource",
         "Switch",
         "SwitchProps",
         "Tab",
@@ -1685,31 +1691,43 @@
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts"
       ],
-      "exports": ["Icon", "IconProps", "IconProvider", "IconSource", "IconVariant"]
+      "exports": [
+        "FontIconSource",
+        "Icon",
+        "IconProps",
+        "IconProvider",
+        "IconSource",
+        "IconVariant",
+        "SvgIconSource"
+      ]
     },
     {
       "path": "src/primitives/icon/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
       "exports": [
+        "FontIconSource",
         "Icon",
         "IconProps",
         "IconProvider",
         "IconSource",
         "IconVariant",
-        "SUPPORTED_ICON_PROVIDERS"
+        "SUPPORTED_ICON_PROVIDERS",
+        "SvgIconSource"
       ]
     },
     {
       "path": "src/primitives/icon/PortableIcon.tsx",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["src/primitives/image/index.ts"],
       "exports": [
+        "FontIconSource",
         "IconProvider",
         "IconSource",
         "IconVariant",
         "PortableIcon",
-        "SUPPORTED_ICON_PROVIDERS"
+        "SUPPORTED_ICON_PROVIDERS",
+        "SvgIconSource"
       ]
     },
     {
@@ -1817,8 +1835,20 @@
     {
       "path": "src/theme/colorEngine.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/theme/types.ts"],
+      "dependencies": ["src/theme/resolveSurfaceSemanticModel.ts", "src/theme/types.ts"],
       "exports": ["generatePalette", "resolveSemanticColors", "SurfaceSemanticColors"]
+    },
+    {
+      "path": "src/theme/createSurfaceColorDiagnosticCollector.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/theme/types.ts"],
+      "exports": ["createSurfaceColorDiagnosticCollector"]
+    },
+    {
+      "path": "src/theme/createSurfaceSemanticPolicy.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/theme/surfaceColorPolicy.ts", "src/theme/types.ts"],
+      "exports": ["createSurfaceSemanticPolicy"]
     },
     {
       "path": "src/theme/createTheme.ts",
@@ -1872,8 +1902,12 @@
         "resolveSemanticColors",
         "resolveToken",
         "RoleSemantics",
+        "SelectionSemantics",
         "SemanticColorReferenceMap",
         "SemanticColorToken",
+        "SurfaceColorDiagnostics",
+        "SurfaceColorSelectionDiagnostic",
+        "SurfaceContrastDiagnostic",
         "SurfaceSemanticColors",
         "SurfaceSemantics",
         "SurfaceTheme",
@@ -1893,6 +1927,51 @@
       "isEntrypoint": false,
       "dependencies": ["src/theme/colorEngine.ts"],
       "exports": []
+    },
+    {
+      "path": "src/theme/public.test.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/theme/public.ts"],
+      "exports": []
+    },
+    {
+      "path": "src/theme/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "ActionSemantics",
+        "BorderSemantics",
+        "ColorHarmony",
+        "ColorSwatch",
+        "ColorSwatchStep",
+        "ContentSemantics",
+        "createTheme",
+        "DEFAULT_CONFIG",
+        "DEFAULT_TOKENS",
+        "FontWeight",
+        "GeneratedColorRole",
+        "GeneratedThemeModeColors",
+        "GeneratedThemeSwatches",
+        "generatePalette",
+        "HexColor",
+        "NeutralSemantics",
+        "resolveSemanticColors",
+        "resolveToken",
+        "RoleSemantics",
+        "SelectionSemantics",
+        "SemanticColorReferenceMap",
+        "SemanticColorToken",
+        "SurfaceColorDiagnostics",
+        "SurfaceColorSelectionDiagnostic",
+        "SurfaceContrastDiagnostic",
+        "SurfaceSemanticColors",
+        "SurfaceSemantics",
+        "SurfaceTheme",
+        "ThemeConfig",
+        "ThemeModeConfig",
+        "ThemeSemantics",
+        "ThemeTokens"
+      ]
     },
     {
       "path": "src/theme/resolveGlobalTokens.ts",
@@ -1919,6 +1998,23 @@
       "exports": ["resolveNumericTokenOverrides"]
     },
     {
+      "path": "src/theme/resolveRoleSemantics.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/theme/surfaceColorPolicy.ts", "src/theme/types.ts"],
+      "exports": ["resolveRoleSemantics"]
+    },
+    {
+      "path": "src/theme/resolveSurfaceSemanticModel.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/theme/createSurfaceColorDiagnosticCollector.ts",
+        "src/theme/createSurfaceSemanticPolicy.ts",
+        "src/theme/resolveRoleSemantics.ts",
+        "src/theme/types.ts"
+      ],
+      "exports": ["resolveSurfaceSemanticModel"]
+    },
+    {
       "path": "src/theme/resolveToken.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -1929,6 +2025,12 @@
       "isEntrypoint": false,
       "dependencies": ["src/theme/types.ts"],
       "exports": ["resolveWeightTokenOverrides"]
+    },
+    {
+      "path": "src/theme/surfaceColorPolicy.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["SURFACE_COLOR_POLICY"]
     },
     {
       "path": "src/theme/ThemeContext.tsx",
@@ -1962,8 +2064,12 @@
         "HexColor",
         "NeutralSemantics",
         "RoleSemantics",
+        "SelectionSemantics",
         "SemanticColorReferenceMap",
         "SemanticColorToken",
+        "SurfaceColorDiagnostics",
+        "SurfaceColorSelectionDiagnostic",
+        "SurfaceContrastDiagnostic",
         "SurfaceSemantics",
         "SurfaceTheme",
         "ThemeConfig",
@@ -2007,7 +2113,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 62,
+        "line": 97,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -2769,7 +2875,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 56,
+        "line": 83,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -2784,6 +2890,13 @@
           "description": null
         },
         {
+          "name": "divider",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
           "name": "focus",
           "kind": "property",
           "type": "string",
@@ -2792,6 +2905,13 @@
         },
         {
           "name": "strong",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "subtle",
           "kind": "property",
           "type": "string",
           "required": true,
@@ -5203,7 +5323,7 @@
       "modulePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-        "line": 3,
+        "line": 54,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -5623,7 +5743,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 49,
+        "line": 72,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -5638,7 +5758,28 @@
           "description": null
         },
         {
+          "name": "disabled",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "icon",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
           "name": "inverse",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "link",
           "kind": "property",
           "type": "string",
           "required": true,
@@ -5653,6 +5794,13 @@
         },
         {
           "name": "subtle",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "visited",
           "kind": "property",
           "type": "string",
           "required": true,
@@ -6532,6 +6680,24 @@
       "structuredRows": []
     },
     {
+      "name": "FontIconSource",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "unknown",
+      "modulePath": "src/primitives/icon/PortableIcon.tsx",
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 46,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
       "name": "FontProvider",
       "description": null,
       "isReadme": false,
@@ -6612,7 +6778,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 85,
+        "line": 147,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -6630,7 +6796,7 @@
       "modulePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-        "line": 4,
+        "line": 2,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -6742,14 +6908,20 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 109,
+        "line": 41,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["GeneratedThemeSwatches", "ThemeConfig", "ThemeSemantics", "ThemeTokens"],
+      "relatedSymbols": [
+        "GeneratedThemeSwatches",
+        "SurfaceColorDiagnostics",
+        "ThemeConfig",
+        "ThemeSemantics",
+        "ThemeTokens"
+      ],
       "signatures": [
         {
-          "label": "(config: ThemeConfig, mode?: \"light\" | \"dark\") => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+          "label": "(config: ThemeConfig, mode?: ThemeColorMode) => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }",
           "parameters": [
             {
               "name": "config",
@@ -6759,12 +6931,12 @@
             },
             {
               "name": "mode",
-              "type": "\"light\" | \"dark\"",
+              "type": "ThemeColorMode",
               "required": false,
               "description": null
             }
           ],
-          "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; }",
+          "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }",
           "returnDescription": null
         }
       ],
@@ -7482,7 +7654,7 @@
       "modulePath": "src/primitives/icon/Icon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/Icon.tsx",
-        "line": 19,
+        "line": 26,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -7915,7 +8087,7 @@
       "modulePath": "src/primitives/icon/Icon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/Icon.tsx",
-        "line": 17,
+        "line": 22,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -7933,7 +8105,7 @@
       "modulePath": "src/primitives/icon/PortableIcon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 33,
+        "line": 43,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -7951,7 +8123,7 @@
       "modulePath": "src/primitives/icon/PortableIcon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 36,
+        "line": 64,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -7969,7 +8141,7 @@
       "modulePath": "src/primitives/icon/PortableIcon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 34,
+        "line": 44,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -9030,7 +9202,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 17,
+        "line": 26,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -9060,6 +9232,20 @@
         },
         {
           "name": "borderStrong",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "disabledBg",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "disabledText",
           "kind": "property",
           "type": "string",
           "required": true,
@@ -9572,7 +9758,7 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 34,
+        "line": 26,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -9735,7 +9921,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 31,
+        "line": 42,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -9750,6 +9936,13 @@
           "description": null
         },
         {
+          "name": "disabledBg",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
           "name": "hover",
           "kind": "property",
           "type": "string",
@@ -9757,7 +9950,56 @@
           "description": null
         },
         {
+          "name": "onDisabledText",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "onHoverText",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "onSoftActiveText",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "onSoftHoverText",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "onSoftText",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
           "name": "onSolidText",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "onStrongText",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "onSurfaceText",
           "kind": "property",
           "type": "string",
           "required": true,
@@ -11169,6 +11411,46 @@
       "structuredRows": []
     },
     {
+      "name": "SelectionSemantics",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/theme/types.ts",
+      "sourceLocation": {
+        "filePath": "src/theme/types.ts",
+        "line": 91,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "background",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "border",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "content",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
       "name": "SemanticColorReferenceMap",
       "description": null,
       "isReadme": false,
@@ -11758,7 +12040,7 @@
       "modulePath": "src/primitives/icon/PortableIcon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 25,
+        "line": 35,
         "column": 14
       },
       "exportPaths": ["src/index.ts"],
@@ -11887,6 +12169,173 @@
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "SurfaceColorDiagnostics",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/theme/types.ts",
+      "sourceLocation": {
+        "filePath": "src/theme/types.ts",
+        "line": 137,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [
+        "GeneratedThemeModeColors",
+        "SemanticColorReferenceMap",
+        "SurfaceColorSelectionDiagnostic",
+        "SurfaceContrastDiagnostic"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "contrasts",
+          "kind": "property",
+          "type": "readonly SurfaceContrastDiagnostic[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "generated",
+          "kind": "property",
+          "type": "GeneratedThemeModeColors",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "mode",
+          "kind": "property",
+          "type": "ThemeColorMode",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "selections",
+          "kind": "property",
+          "type": "readonly SurfaceColorSelectionDiagnostic[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "semanticReferences",
+          "kind": "property",
+          "type": "SemanticColorReferenceMap",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "statusSwatches",
+          "kind": "property",
+          "type": "Record<\"success\" | \"warning\" | \"info\" | \"danger\", ColorSwatchDiagnostics>",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "surfaceSeparation",
+          "kind": "property",
+          "type": "readonly SurfaceContrastDiagnostic[]",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "SurfaceColorSelectionDiagnostic",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/theme/types.ts",
+      "sourceLocation": {
+        "filePath": "src/theme/types.ts",
+        "line": 131,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "id",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "result",
+          "kind": "property",
+          "type": "ColorSwatchSelectionResult",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "SurfaceContrastDiagnostic",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/theme/types.ts",
+      "sourceLocation": {
+        "filePath": "src/theme/types.ts",
+        "line": 121,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["HexColor"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "background",
+          "kind": "property",
+          "type": "HexColor",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "contrast",
+          "kind": "property",
+          "type": "number",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "foreground",
+          "kind": "property",
+          "type": "HexColor",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "id",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "minimumContrast",
+          "kind": "property",
+          "type": "number",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "passes",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        }
+      ],
       "structuredRows": []
     },
     {
@@ -12272,7 +12721,7 @@
       "modulePath": "src/theme/colorEngine.ts",
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 32,
+        "line": 24,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -12290,7 +12739,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 42,
+        "line": 61,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -12305,7 +12754,21 @@
           "description": null
         },
         {
+          "name": "disabled",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
           "name": "inverse",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "overlay",
           "kind": "property",
           "type": "string",
           "required": true,
@@ -12319,7 +12782,21 @@
           "description": null
         },
         {
+          "name": "scrim",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
           "name": "subtle",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "sunken",
           "kind": "property",
           "type": "string",
           "required": true,
@@ -12355,13 +12832,25 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 178,
+        "line": 242,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+      "relatedSymbols": [
+        "FontWeight",
+        "GeneratedThemeSwatches",
+        "SurfaceColorDiagnostics",
+        "ThemeSemantics"
+      ],
       "signatures": [],
       "members": [
+        {
+          "name": "colorDiagnostics",
+          "kind": "property",
+          "type": "SurfaceColorDiagnostics",
+          "required": true,
+          "description": null
+        },
         {
           "name": "colors",
           "kind": "property",
@@ -12437,6 +12926,53 @@
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "SvgIconSource",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/primitives/icon/PortableIcon.tsx",
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 57,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["SurfaceImageSource"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "name",
+          "kind": "property",
+          "type": "undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "provider",
+          "kind": "property",
+          "type": "undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "source",
+          "kind": "property",
+          "type": "SurfaceImageSource",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "variant",
+          "kind": "property",
+          "type": "undefined",
+          "required": false,
+          "description": null
+        }
+      ],
       "structuredRows": []
     },
     {
@@ -16215,7 +16751,7 @@
       "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-        "line": 13,
+        "line": 15,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16294,7 +16830,7 @@
       "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
       "sourceLocation": {
         "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-        "line": 9,
+        "line": 11,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16304,7 +16840,7 @@
         {
           "name": "harmony",
           "kind": "property",
-          "type": "\"complementary\" | \"monochromatic\" | \"analogous\" | \"triadic\" | \"tetradic\" | \"splitComplementary\"",
+          "type": "\"complementary\" | \"monochromatic\" | \"analogous\" | \"splitComplementary\" | \"triadic\" | \"tetradic\" | \"square\"",
           "required": true,
           "description": null
         },
@@ -16359,7 +16895,7 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 68,
+        "line": 103,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16369,6 +16905,7 @@
         "ContentSemantics",
         "NeutralSemantics",
         "RoleSemantics",
+        "SelectionSemantics",
         "SurfaceSemantics"
       ],
       "signatures": [],
@@ -16451,6 +16988,13 @@
           "description": null
         },
         {
+          "name": "selection",
+          "kind": "property",
+          "type": "SelectionSemantics",
+          "required": true,
+          "description": null
+        },
+        {
           "name": "success",
           "kind": "property",
           "type": "RoleSemantics",
@@ -16483,13 +17027,25 @@
       "modulePath": "src/theme/types.ts",
       "sourceLocation": {
         "filePath": "src/theme/types.ts",
-        "line": 88,
+        "line": 150,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["FontWeight", "GeneratedThemeSwatches", "ThemeSemantics"],
+      "relatedSymbols": [
+        "FontWeight",
+        "GeneratedThemeSwatches",
+        "SurfaceColorDiagnostics",
+        "ThemeSemantics"
+      ],
       "signatures": [],
       "members": [
+        {
+          "name": "colorDiagnostics",
+          "kind": "property",
+          "type": "SurfaceColorDiagnostics",
+          "required": true,
+          "description": null
+        },
         {
           "name": "colors",
           "kind": "property",
@@ -20756,7 +21312,7 @@
       "modulePath": "src/primitives/icon/Icon.tsx",
       "sourceLocation": {
         "filePath": "src/primitives/icon/Icon.tsx",
-        "line": 19,
+        "line": 26,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -20769,8 +21325,8 @@
         },
         {
           "name": "name",
-          "type": "IoniconsIconName",
-          "required": true,
+          "type": "IoniconsIconName | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -27930,7 +28486,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveInteractiveColors.ts",
-        "line": 84,
+        "line": 91,
         "column": 1
       }
     },
@@ -28272,7 +28828,25 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/Icon.tsx",
-        "line": 19,
+        "line": 26,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveSvgIconUri",
+      "description": "Resolve an SVG URI directly or through React Native's native bundled-asset API when available.",
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 93,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderSvgIcon",
+      "description": "Render URI-backed SVGs through SvgUri and let React Native Web resolve bundled numeric assets through Image.",
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.tsx",
+        "line": 104,
         "column": 1
       }
     },
@@ -28281,7 +28855,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 56,
+        "line": 127,
         "column": 1
       }
     },
@@ -28290,7 +28864,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 60,
+        "line": 131,
         "column": 1
       }
     },
@@ -28299,7 +28873,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 78,
+        "line": 149,
         "column": 1
       }
     },
@@ -28308,8 +28882,17 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/primitives/icon/PortableIcon.tsx",
-        "line": 96,
+        "line": 167,
         "column": 1
+      }
+    },
+    {
+      "name": "WebImageWithoutResolveAssetSource",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/primitives/icon/PortableIcon.web.test.tsx",
+        "line": 8,
+        "column": 7
       }
     },
     {
@@ -28412,11 +28995,20 @@
       }
     },
     {
-      "name": "expectRequiredSemanticRoles",
+      "name": "expectCompleteSemanticValues",
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.test.ts",
-        "line": 25,
+        "line": 27,
+        "column": 1
+      }
+    },
+    {
+      "name": "visitSemanticValues",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/colorEngine.test.ts",
+        "line": 31,
         "column": 1
       }
     },
@@ -28425,25 +29017,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 34,
-        "column": 1
-      }
-    },
-    {
-      "name": "buildNeutralSemantics",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/theme/colorEngine.ts",
-        "line": 49,
-        "column": 1
-      }
-    },
-    {
-      "name": "buildRoleSemantics",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/theme/colorEngine.ts",
-        "line": 80,
+        "line": 26,
         "column": 1
       }
     },
@@ -28452,7 +29026,25 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/colorEngine.ts",
-        "line": 109,
+        "line": 41,
+        "column": 1
+      }
+    },
+    {
+      "name": "createSurfaceColorDiagnosticCollector",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/createSurfaceColorDiagnosticCollector.ts",
+        "line": 17,
+        "column": 1
+      }
+    },
+    {
+      "name": "createSurfaceSemanticPolicy",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/createSurfaceSemanticPolicy.ts",
+        "line": 37,
         "column": 1
       }
     },
@@ -28470,7 +29062,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 44,
+        "line": 45,
         "column": 1
       }
     },
@@ -28479,7 +29071,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/createTheme.ts",
-        "line": 54,
+        "line": 55,
         "column": 1
       }
     },
@@ -28497,7 +29089,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/resolveGlobalTokens.ts",
-        "line": 11,
+        "line": 14,
         "column": 1
       }
     },
@@ -28506,7 +29098,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/theme/resolveGlobalTokens.ts",
-        "line": 48,
+        "line": 51,
         "column": 1
       }
     },
@@ -28552,6 +29144,78 @@
       "sourceLocation": {
         "filePath": "src/theme/resolveNumericTokenOverrides.ts",
         "line": 1,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveRoleSemantics",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveRoleSemantics.ts",
+        "line": 35,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveRoleStateColors",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveRoleSemantics.ts",
+        "line": 82,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveSurfaceSemanticModel",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "line": 50,
+        "column": 1
+      }
+    },
+    {
+      "name": "createResolutionContext",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "line": 98,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveBorderSemantics",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "line": 122,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveContentSemantics",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "line": 148,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveRole",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "line": 178,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveSemanticRoles",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "line": 212,
         "column": 1
       }
     },
@@ -29203,6 +29867,16 @@
   "graphs": {
     "imports": [
       {
+        "fromPath": "src/index.test.ts",
+        "toPath": "src/index.ts",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromPath": "src/index.test.ts",
+        "toPath": "src/theme/createTheme.ts",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
         "fromPath": "src/index.ts",
         "toPath": "src/components/action-sheet/index.ts",
         "sourcePath": "src/index.ts"
@@ -29759,8 +30433,28 @@
       },
       {
         "fromPath": "src/theme/colorEngine.ts",
+        "toPath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "sourcePath": "src/theme/colorEngine.ts"
+      },
+      {
+        "fromPath": "src/theme/colorEngine.ts",
         "toPath": "src/theme/types.ts",
         "sourcePath": "src/theme/colorEngine.ts"
+      },
+      {
+        "fromPath": "src/theme/createSurfaceColorDiagnosticCollector.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/createSurfaceColorDiagnosticCollector.ts"
+      },
+      {
+        "fromPath": "src/theme/createSurfaceSemanticPolicy.ts",
+        "toPath": "src/theme/surfaceColorPolicy.ts",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
+      },
+      {
+        "fromPath": "src/theme/createSurfaceSemanticPolicy.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
       },
       {
         "fromPath": "src/theme/createTheme.ts",
@@ -29799,17 +30493,7 @@
       },
       {
         "fromPath": "src/theme/index.ts",
-        "toPath": "src/theme/colorEngine.ts",
-        "sourcePath": "src/theme/index.ts"
-      },
-      {
-        "fromPath": "src/theme/index.ts",
-        "toPath": "src/theme/createTheme.ts",
-        "sourcePath": "src/theme/index.ts"
-      },
-      {
-        "fromPath": "src/theme/index.ts",
-        "toPath": "src/theme/resolveToken.ts",
+        "toPath": "src/theme/public.ts",
         "sourcePath": "src/theme/index.ts"
       },
       {
@@ -29818,14 +30502,34 @@
         "sourcePath": "src/theme/index.ts"
       },
       {
-        "fromPath": "src/theme/index.ts",
-        "toPath": "src/theme/types.ts",
-        "sourcePath": "src/theme/index.ts"
-      },
-      {
         "fromPath": "src/theme/inverseSemantics.test.ts",
         "toPath": "src/theme/colorEngine.ts",
         "sourcePath": "src/theme/inverseSemantics.test.ts"
+      },
+      {
+        "fromPath": "src/theme/public.test.ts",
+        "toPath": "src/theme/public.ts",
+        "sourcePath": "src/theme/public.test.ts"
+      },
+      {
+        "fromPath": "src/theme/public.ts",
+        "toPath": "src/theme/colorEngine.ts",
+        "sourcePath": "src/theme/public.ts"
+      },
+      {
+        "fromPath": "src/theme/public.ts",
+        "toPath": "src/theme/createTheme.ts",
+        "sourcePath": "src/theme/public.ts"
+      },
+      {
+        "fromPath": "src/theme/public.ts",
+        "toPath": "src/theme/resolveToken.ts",
+        "sourcePath": "src/theme/public.ts"
+      },
+      {
+        "fromPath": "src/theme/public.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/public.ts"
       },
       {
         "fromPath": "src/theme/resolveGlobalTokens.ts",
@@ -29856,6 +30560,36 @@
         "fromPath": "src/theme/resolveHeadingTokenOverrides.ts",
         "toPath": "src/theme/types.ts",
         "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveRoleSemantics.ts",
+        "toPath": "src/theme/surfaceColorPolicy.ts",
+        "sourcePath": "src/theme/resolveRoleSemantics.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveRoleSemantics.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveRoleSemantics.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "toPath": "src/theme/createSurfaceColorDiagnosticCollector.ts",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "toPath": "src/theme/createSurfaceSemanticPolicy.ts",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "toPath": "src/theme/resolveRoleSemantics.ts",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromPath": "src/theme/resolveSurfaceSemanticModel.ts",
+        "toPath": "src/theme/types.ts",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
       },
       {
         "fromPath": "src/theme/resolveWeightTokenOverrides.ts",
@@ -31773,6 +32507,11 @@
         "sourcePath": "src/primitives/icon/index.ts"
       },
       {
+        "fromPath": "src/primitives/icon/PortableIcon.tsx",
+        "toPath": "src/primitives/image/index.ts",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
         "fromPath": "src/primitives/image/Image.tsx",
         "toPath": "src/theme/ThemeContext.tsx",
         "sourcePath": "src/primitives/image/Image.tsx"
@@ -31891,6 +32630,12 @@
         "fromSymbol": "src/index.test.ts",
         "toSymbol": "expect",
         "callExpression": "expect",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "createTheme",
+        "callExpression": "createTheme",
         "sourcePath": "src/index.test.ts"
       },
       {
@@ -32374,9 +33119,21 @@
         "sourcePath": "src/layout/Template.tsx"
       },
       {
-        "fromSymbol": "expectRequiredSemanticRoles",
+        "fromSymbol": "expectCompleteSemanticValues",
+        "toSymbol": "visitSemanticValues",
+        "callExpression": "visitSemanticValues",
+        "sourcePath": "src/theme/colorEngine.test.ts"
+      },
+      {
+        "fromSymbol": "visitSemanticValues",
         "toSymbol": "expect",
         "callExpression": "expect",
+        "sourcePath": "src/theme/colorEngine.test.ts"
+      },
+      {
+        "fromSymbol": "visitSemanticValues",
+        "toSymbol": "visitSemanticValues",
+        "callExpression": "visitSemanticValues",
         "sourcePath": "src/theme/colorEngine.test.ts"
       },
       {
@@ -32405,8 +33162,8 @@
       },
       {
         "fromSymbol": "src/theme/colorEngine.test.ts",
-        "toSymbol": "expectRequiredSemanticRoles",
-        "callExpression": "expectRequiredSemanticRoles",
+        "toSymbol": "expectCompleteSemanticValues",
+        "callExpression": "expectCompleteSemanticValues",
         "sourcePath": "src/theme/colorEngine.test.ts"
       },
       {
@@ -32414,12 +33171,6 @@
         "toSymbol": "resolveSemanticColors",
         "callExpression": "resolveSemanticColors",
         "sourcePath": "src/theme/colorEngine.test.ts"
-      },
-      {
-        "fromSymbol": "buildRoleSemantics",
-        "toSymbol": "getReadableForeground",
-        "callExpression": "getReadableForeground",
-        "sourcePath": "src/theme/colorEngine.ts"
       },
       {
         "fromSymbol": "generatePalette",
@@ -32435,21 +33186,69 @@
       },
       {
         "fromSymbol": "generatePalette",
-        "toSymbol": "buildNeutralSemantics",
-        "callExpression": "buildNeutralSemantics",
+        "toSymbol": "resolveSemanticColors",
+        "callExpression": "resolveSemanticColors",
         "sourcePath": "src/theme/colorEngine.ts"
       },
       {
         "fromSymbol": "generatePalette",
-        "toSymbol": "buildRoleSemantics",
-        "callExpression": "buildRoleSemantics",
+        "toSymbol": "resolveSurfaceSemanticModel",
+        "callExpression": "resolveSurfaceSemanticModel",
         "sourcePath": "src/theme/colorEngine.ts"
       },
       {
-        "fromSymbol": "generatePalette",
-        "toSymbol": "createDefaultSemanticStatusSwatches",
-        "callExpression": "createDefaultSemanticStatusSwatches",
-        "sourcePath": "src/theme/colorEngine.ts"
+        "fromSymbol": "src/theme/createSurfaceColorDiagnosticCollector.ts",
+        "toSymbol": "getContrastRatio",
+        "callExpression": "getContrastRatio",
+        "sourcePath": "src/theme/createSurfaceColorDiagnosticCollector.ts"
+      },
+      {
+        "fromSymbol": "src/theme/createSurfaceColorDiagnosticCollector.ts",
+        "toSymbol": "selectColorSwatchStep",
+        "callExpression": "selectColorSwatchStep",
+        "sourcePath": "src/theme/createSurfaceColorDiagnosticCollector.ts"
+      },
+      {
+        "fromSymbol": "src/theme/createSurfaceColorDiagnosticCollector.ts",
+        "toSymbol": "getReadableForeground",
+        "callExpression": "getReadableForeground",
+        "sourcePath": "src/theme/createSurfaceColorDiagnosticCollector.ts"
+      },
+      {
+        "fromSymbol": "SurfaceSemanticPolicy",
+        "toSymbol": "createSurfaceContexts",
+        "callExpression": "this.createSurfaceContexts",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
+      },
+      {
+        "fromSymbol": "measureContent",
+        "toSymbol": "measureForeground",
+        "callExpression": "this.measurements.measureForeground",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
+      },
+      {
+        "fromSymbol": "measureContent",
+        "toSymbol": "parseHexColorOrThrow",
+        "callExpression": "parseHexColorOrThrow",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
+      },
+      {
+        "fromSymbol": "measureSurfaceSeparation",
+        "toSymbol": "measureSurface",
+        "callExpression": "this.measureSurface",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
+      },
+      {
+        "fromSymbol": "measureSurface",
+        "toSymbol": "measureSurface",
+        "callExpression": "this.measurements.measureSurface",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
+      },
+      {
+        "fromSymbol": "measureSurface",
+        "toSymbol": "parseHexColorOrThrow",
+        "callExpression": "parseHexColorOrThrow",
+        "sourcePath": "src/theme/createSurfaceSemanticPolicy.ts"
       },
       {
         "fromSymbol": "createTheme",
@@ -32554,6 +33353,36 @@
         "sourcePath": "src/theme/inverseSemantics.test.ts"
       },
       {
+        "fromSymbol": "src/theme/public.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/theme/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/theme/public.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/theme/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/theme/public.test.ts",
+        "toSymbol": "createTheme",
+        "callExpression": "createTheme",
+        "sourcePath": "src/theme/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/theme/public.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/theme/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/theme/public.test.ts",
+        "toSymbol": "readFileSync",
+        "callExpression": "readFileSync",
+        "sourcePath": "src/theme/public.test.ts"
+      },
+      {
         "fromSymbol": "resolveGlobalTokens",
         "toSymbol": "validateZeroTokens",
         "callExpression": "validateZeroTokens",
@@ -32594,6 +33423,156 @@
         "toSymbol": "isHeadingWeight",
         "callExpression": "isHeadingWeight",
         "sourcePath": "src/theme/resolveHeadingTokenOverrides.ts"
+      },
+      {
+        "fromSymbol": "resolveRoleSemantics",
+        "toSymbol": "resolveRoleStateColors",
+        "callExpression": "resolveRoleStateColors",
+        "sourcePath": "src/theme/resolveRoleSemantics.ts"
+      },
+      {
+        "fromSymbol": "resolveRoleSemantics",
+        "toSymbol": "selectForeground",
+        "callExpression": "selectForeground",
+        "sourcePath": "src/theme/resolveRoleSemantics.ts"
+      },
+      {
+        "fromSymbol": "resolveRoleSemantics",
+        "toSymbol": "measureForeground",
+        "callExpression": "measureForeground",
+        "sourcePath": "src/theme/resolveRoleSemantics.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "createResolutionContext",
+        "callExpression": "createResolutionContext",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "resolveSemanticRoles",
+        "callExpression": "resolveSemanticRoles",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "buildNeutral",
+        "callExpression": "context.policy.buildNeutral",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "buildSurface",
+        "callExpression": "context.policy.buildSurface",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "resolveContentSemantics",
+        "callExpression": "resolveContentSemantics",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "resolveBorderSemantics",
+        "callExpression": "resolveBorderSemantics",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "measureContent",
+        "callExpression": "context.policy.measureContent",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSurfaceSemanticModel",
+        "toSymbol": "measureSurfaceSeparation",
+        "callExpression": "context.policy.measureSurfaceSeparation",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "createResolutionContext",
+        "toSymbol": "createSurfaceColorDiagnosticCollector",
+        "callExpression": "createSurfaceColorDiagnosticCollector",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "createResolutionContext",
+        "toSymbol": "createSurfaceSemanticPolicy",
+        "callExpression": "createSurfaceSemanticPolicy",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "createResolutionContext",
+        "toSymbol": "createDefaultSemanticStatusSwatches",
+        "callExpression": "createDefaultSemanticStatusSwatches",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveBorderSemantics",
+        "toSymbol": "selectColor",
+        "callExpression": "collector.selectColor",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveBorderSemantics",
+        "toSymbol": "neutralTarget",
+        "callExpression": "policy.neutralTarget",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveBorderSemantics",
+        "toSymbol": "strongNeutralTarget",
+        "callExpression": "policy.strongNeutralTarget",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveContentSemantics",
+        "toSymbol": "selectColor",
+        "callExpression": "collector.selectColor",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveContentSemantics",
+        "toSymbol": "textTarget",
+        "callExpression": "policy.textTarget",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveRole",
+        "toSymbol": "resolveRoleSemantics",
+        "callExpression": "resolveRoleSemantics",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveRole",
+        "toSymbol": "selectColor",
+        "callExpression": "collector.selectColor",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveRole",
+        "toSymbol": "textTarget",
+        "callExpression": "policy.textTarget",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveRole",
+        "toSymbol": "roleTarget",
+        "callExpression": "policy.roleTarget",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSemanticRoles",
+        "toSymbol": "resolveRole",
+        "callExpression": "resolveRole",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
+      },
+      {
+        "fromSymbol": "resolveSemanticRoles",
+        "toSymbol": "neutralTarget",
+        "callExpression": "context.policy.neutralTarget",
+        "sourcePath": "src/theme/resolveSurfaceSemanticModel.ts"
       },
       {
         "fromSymbol": "resolveWeightTokenOverrides",
@@ -34486,6 +35465,12 @@
         "sourcePath": "src/primitives/icon/Icon.tsx"
       },
       {
+        "fromSymbol": "renderSvgIcon",
+        "toSymbol": "resolveSvgIconUri",
+        "callExpression": "resolveSvgIconUri",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
         "fromSymbol": "renderFontAwesome5",
         "toSymbol": "assertNever",
         "callExpression": "assertNever",
@@ -34495,6 +35480,12 @@
         "fromSymbol": "renderFontAwesome6",
         "toSymbol": "assertNever",
         "callExpression": "assertNever",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
+        "fromSymbol": "PortableIcon",
+        "toSymbol": "renderSvgIcon",
+        "callExpression": "renderSvgIcon",
         "sourcePath": "src/primitives/icon/PortableIcon.tsx"
       },
       {
@@ -36240,6 +37231,11 @@
         "sourcePath": "src/primitives/heading/Heading.tsx"
       },
       {
+        "fromSymbol": "SvgIconSource",
+        "toType": "SurfaceImageSource",
+        "sourcePath": "src/primitives/icon/PortableIcon.tsx"
+      },
+      {
         "fromSymbol": "Icon",
         "toType": "IconProps",
         "sourcePath": "src/primitives/icon/Icon.tsx"
@@ -37171,6 +38167,16 @@
       },
       {
         "fromSymbol": "generatePalette",
+        "toType": "SurfaceColorDiagnostics",
+        "sourcePath": "src/theme/colorEngine.ts"
+      },
+      {
+        "fromSymbol": "generatePalette",
+        "toType": "ThemeColorMode",
+        "sourcePath": "src/theme/colorEngine.ts"
+      },
+      {
+        "fromSymbol": "generatePalette",
         "toType": "ThemeConfig",
         "sourcePath": "src/theme/colorEngine.ts"
       },
@@ -37208,51 +38214,6 @@
         "fromSymbol": "resolveToken",
         "toType": "TValue",
         "sourcePath": "src/theme/resolveToken.ts"
-      },
-      {
-        "fromSymbol": "ThemeProvider",
-        "toType": "Partial",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "ThemeProvider",
-        "toType": "React",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "ThemeProvider",
-        "toType": "ReactNode",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "ThemeProvider",
-        "toType": "ThemeConfig",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "useTheme",
-        "toType": "Partial",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "useTheme",
-        "toType": "SurfaceTheme",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "useTheme",
-        "toType": "ThemeConfig",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "useThemeConfig",
-        "toType": "Partial",
-        "sourcePath": "src/theme/ThemeContext.tsx"
-      },
-      {
-        "fromSymbol": "useThemeConfig",
-        "toType": "ThemeConfig",
-        "sourcePath": "src/theme/ThemeContext.tsx"
       },
       {
         "fromSymbol": "GeneratedThemeModeColors",
@@ -37321,7 +38282,52 @@
       },
       {
         "fromSymbol": "ThemeSemantics",
+        "toType": "SelectionSemantics",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "ThemeSemantics",
         "toType": "SurfaceSemantics",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceContrastDiagnostic",
+        "toType": "HexColor",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceColorSelectionDiagnostic",
+        "toType": "ColorSwatchSelectionResult",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceColorDiagnostics",
+        "toType": "ColorSwatchDiagnostics",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceColorDiagnostics",
+        "toType": "GeneratedThemeModeColors",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceColorDiagnostics",
+        "toType": "SemanticColorReferenceMap",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceColorDiagnostics",
+        "toType": "SurfaceColorSelectionDiagnostic",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceColorDiagnostics",
+        "toType": "SurfaceContrastDiagnostic",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceColorDiagnostics",
+        "toType": "ThemeColorMode",
         "sourcePath": "src/theme/types.ts"
       },
       {
@@ -37332,6 +38338,11 @@
       {
         "fromSymbol": "ThemeTokens",
         "toType": "GeneratedThemeSwatches",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "ThemeTokens",
+        "toType": "SurfaceColorDiagnostics",
         "sourcePath": "src/theme/types.ts"
       },
       {
@@ -37356,8 +38367,58 @@
       },
       {
         "fromSymbol": "SurfaceTheme",
+        "toType": "SurfaceColorDiagnostics",
+        "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "SurfaceTheme",
         "toType": "ThemeSemantics",
         "sourcePath": "src/theme/types.ts"
+      },
+      {
+        "fromSymbol": "ThemeProvider",
+        "toType": "Partial",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "ThemeProvider",
+        "toType": "React",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "ThemeProvider",
+        "toType": "ReactNode",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "ThemeProvider",
+        "toType": "ThemeConfig",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "useTheme",
+        "toType": "Partial",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "useTheme",
+        "toType": "SurfaceTheme",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "useTheme",
+        "toType": "ThemeConfig",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "useThemeConfig",
+        "toType": "Partial",
+        "sourcePath": "src/theme/ThemeContext.tsx"
+      },
+      {
+        "fromSymbol": "useThemeConfig",
+        "toType": "ThemeConfig",
+        "sourcePath": "src/theme/ThemeContext.tsx"
       }
     ],
     "componentComposition": [
