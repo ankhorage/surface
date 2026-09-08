@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 3.4.6
+
+### Patch Changes
+
+- 191daf8: Render structured Radio children directly instead of nesting non-text React nodes inside native Text while preserving primitive label typography and radio semantics.
+
 ## 3.4.5
 
 ### Patch Changes
