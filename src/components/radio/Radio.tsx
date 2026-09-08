@@ -11,8 +11,12 @@ import { Box } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
 import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
+import { isRadioTextContent } from './isRadioTextContent';
 import type { RadioProps } from './types';
 
+/***
+ * Renders one radio control with either text or structured label content.
+ */
 export function Radio({
   children,
   checked,
@@ -40,6 +44,7 @@ export function Radio({
     kind: 'radio',
     readOnly,
   });
+  const hasContent = children !== undefined && children !== null && children !== false;
 
   return (
     <ButtonBase
@@ -73,6 +78,7 @@ export function Radio({
         });
         const labelEmphasis =
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+        const isTextContent = isRadioTextContent(children);
 
         return (
           <Box
@@ -105,9 +111,9 @@ export function Radio({
                 />
               ) : null}
             </Box>
-            {children ? (
-              <Box ml="s">
-                <Text emphasis={labelEmphasis}>{children}</Text>
+            {hasContent ? (
+              <Box flex={1} ml="s">
+                {isTextContent ? <Text emphasis={labelEmphasis}>{children}</Text> : children}
               </Box>
             ) : null}
           </Box>
