@@ -40,6 +40,7 @@ export function Radio({
     kind: 'radio',
     readOnly,
   });
+  const hasContent = children !== undefined && children !== null && children !== false;
 
   return (
     <ButtonBase
@@ -73,6 +74,7 @@ export function Radio({
         });
         const labelEmphasis =
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+        const isTextContent = typeof children === 'string' || typeof children === 'number';
 
         return (
           <Box
@@ -105,9 +107,9 @@ export function Radio({
                 />
               ) : null}
             </Box>
-            {children ? (
-              <Box ml="s">
-                <Text emphasis={labelEmphasis}>{children}</Text>
+            {hasContent ? (
+              <Box flex={1} ml="s">
+                {isTextContent ? <Text emphasis={labelEmphasis}>{children}</Text> : children}
               </Box>
             ) : null}
           </Box>
