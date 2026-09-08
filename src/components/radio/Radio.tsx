@@ -13,6 +13,9 @@ import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { RadioProps } from './types';
 
+/***
+ * Renders one radio control with either text or structured label content.
+ */
 export function Radio({
   children,
   checked,
