@@ -11,6 +11,7 @@ import { Box } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
 import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
+import { isRadioTextContent } from './isRadioTextContent';
 import type { RadioProps } from './types';
 
 /***
@@ -77,7 +78,7 @@ export function Radio({
         });
         const labelEmphasis =
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
-        const isTextContent = typeof children === 'string' || typeof children === 'number';
+        const isTextContent = isRadioTextContent(children);
 
         return (
           <Box
