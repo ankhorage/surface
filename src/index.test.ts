@@ -9,6 +9,7 @@ const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8')
 const packageJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 ) as {
+  dependencies: Record<string, string>;
   devDependencies: Record<string, string>;
   exports: Record<string, unknown>;
   files: string[];
@@ -60,7 +61,7 @@ describe('public package contract', () => {
     expect(indexSource).not.toContain('useFocusManager');
   });
 
-  it('keeps package metadata aligned with the single-entry public surface', () => {
+  it('keeps package metadata aligned with deliberate public entrypoints', () => {
     expect(packageJson.files).toEqual(['dist', 'src', 'README.md', 'CHANGELOG.md', 'LICENSE']);
     expect(packageJson.exports).toEqual({
       '.': {
@@ -69,6 +70,13 @@ describe('public package contract', () => {
         default: './dist/index.js',
         import: './dist/index.js',
         types: './dist/index.d.ts',
+      },
+      './bottom-sheet': {
+        'react-native': './src/features/bottom-sheet/public.ts',
+        browser: './src/features/bottom-sheet/public.ts',
+        default: './dist/features/bottom-sheet/public.js',
+        import: './dist/features/bottom-sheet/public.js',
+        types: './dist/features/bottom-sheet/public.d.ts',
       },
       './theme': {
         bun: './src/theme/public.ts',
@@ -80,6 +88,13 @@ describe('public package contract', () => {
       },
       './package.json': './package.json',
     });
+  });
+
+  it('keeps the bottom-sheet implementation and Expo 57 runtime boundary explicit', () => {
+    expect(packageJson.dependencies['@gorhom/bottom-sheet']).toMatch(/^\^5\./);
+    expect(packageJson.peerDependencies['react-native-gesture-handler']).toMatch(/^~2\.32\./);
+    expect(packageJson.peerDependencies['react-native-reanimated']).toBe('4.5.1');
+    expect(packageJson.peerDependencies['react-native-worklets']).toBe('0.10.1');
   });
 
   it('supports RN 0.86 patches while validating the canonical RN 0.86.3 baseline', () => {
