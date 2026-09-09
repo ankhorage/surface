@@ -9,6 +9,7 @@ const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8')
 const packageJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 ) as {
+  dependencies: Record<string, string>;
   devDependencies: Record<string, string>;
   exports: Record<string, unknown>;
   files: string[];
@@ -20,7 +21,6 @@ const expectedRootExports = [
   "export { Button } from './components/button';",
   "export { Card } from './components/card';",
   "export { Checkbox } from './components/checkbox';",
-  "export { Drawer } from './components/drawer';",
   "export { Field } from './components/field';",
   "export { HelperText } from './components/helper-text';",
   "export { IconButton } from './components/icon-button';",
@@ -28,7 +28,6 @@ const expectedRootExports = [
   "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export { Label } from './components/label';",
   "export { ListItem } from './components/list-item';",
-  "export {\n  DrawerNavigation,\n  DrawerNavigationItem,\n  NavigationItem,\n  NavigationList,\n  TabBar,\n  TabBarItem,\n} from './components/navigation';",
   "export { Menu } from './components/menu';",
   "export { Modal } from './components/modal';",
   "export { Radio } from './components/radio';",
@@ -43,6 +42,7 @@ const expectedRootExports = [
   "export { Image } from './primitives/image';",
   "export {\n  SURFACE_COLORS,\n  SURFACE_EMPHASES,\n  SURFACE_PALETTE_COLORS,\n  SURFACE_STATUS_COLORS,\n} from './surfaceColor';",
   "export * from './theme';",
+  "export { useToggle } from './utils/useToggle';",
 ] as const;
 
 describe('public package contract', () => {
@@ -50,6 +50,13 @@ describe('public package contract', () => {
     expectedRootExports.forEach((line) => {
       expect(indexSource).toContain(line);
     });
+  });
+
+  it('removes obsolete navigation and action-sheet chrome from the root barrel', () => {
+    expect(indexSource).not.toContain('ActionSheet');
+    expect(indexSource).not.toContain('DrawerNavigation');
+    expect(indexSource).not.toContain("'./components/drawer'");
+    expect(indexSource).not.toContain("'./components/navigation'");
   });
 
   it('keeps internal infrastructure off the public barrel', () => {
@@ -60,7 +67,7 @@ describe('public package contract', () => {
     expect(indexSource).not.toContain('useFocusManager');
   });
 
-  it('keeps package metadata aligned with the single-entry public surface', () => {
+  it('keeps package metadata aligned with explicit public surfaces', () => {
     expect(packageJson.files).toEqual(['dist', 'src', 'README.md', 'CHANGELOG.md', 'LICENSE']);
     expect(packageJson.exports).toEqual({
       '.': {
@@ -69,6 +76,13 @@ describe('public package contract', () => {
         default: './dist/index.js',
         import: './dist/index.js',
         types: './dist/index.d.ts',
+      },
+      './bottom-sheet': {
+        'react-native': './src/features/bottom-sheet/public.ts',
+        browser: './src/features/bottom-sheet/public.ts',
+        default: './dist/features/bottom-sheet/public.js',
+        import: './dist/features/bottom-sheet/public.js',
+        types: './dist/features/bottom-sheet/public.d.ts',
       },
       './theme': {
         bun: './src/theme/public.ts',
@@ -80,6 +94,13 @@ describe('public package contract', () => {
       },
       './package.json': './package.json',
     });
+  });
+
+  it('owns the Gorhom integration while keeping animation runtimes as host peers', () => {
+    expect(packageJson.dependencies['@gorhom/bottom-sheet']).toMatch(/^\^5\./);
+    expect(packageJson.peerDependencies['react-native-gesture-handler']).toBe('~2.32.0');
+    expect(packageJson.peerDependencies['react-native-reanimated']).toBe('4.5.1');
+    expect(packageJson.peerDependencies['react-native-worklets']).toBe('0.10.1');
   });
 
   it('supports RN 0.86 patches while validating the canonical RN 0.86.3 baseline', () => {
