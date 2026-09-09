@@ -20,7 +20,6 @@ const expectedRootExports = [
   "export { Button } from './components/button';",
   "export { Card } from './components/card';",
   "export { Checkbox } from './components/checkbox';",
-  "export { Drawer } from './components/drawer';",
   "export { Field } from './components/field';",
   "export { HelperText } from './components/helper-text';",
   "export { IconButton } from './components/icon-button';",
@@ -28,7 +27,6 @@ const expectedRootExports = [
   "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export { Label } from './components/label';",
   "export { ListItem } from './components/list-item';",
-  "export {\n  DrawerNavigation,\n  DrawerNavigationItem,\n  NavigationItem,\n  NavigationList,\n  TabBar,\n  TabBarItem,\n} from './components/navigation';",
   "export { Menu } from './components/menu';",
   "export { Modal } from './components/modal';",
   "export { Radio } from './components/radio';",
@@ -50,6 +48,17 @@ describe('public package contract', () => {
     expectedRootExports.forEach((line) => {
       expect(indexSource).toContain(line);
     });
+  });
+
+  it('does not retain obsolete action-sheet, drawer, or navigation chrome', () => {
+    expect(indexSource).not.toContain('ActionSheet');
+    expect(indexSource).not.toContain("'./components/action-sheet'");
+    expect(indexSource).not.toContain("'./components/drawer'");
+    expect(indexSource).not.toContain("'./components/navigation'");
+    expect(indexSource).not.toContain('DrawerNavigation');
+    expect(indexSource).not.toContain('NavigationItem');
+    expect(indexSource).not.toContain('NavigationList');
+    expect(indexSource).not.toContain('TabBar');
   });
 
   it('keeps internal infrastructure off the public barrel', () => {
