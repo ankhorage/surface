@@ -1,0 +1,21 @@
+name: Generate lockfile
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.2'
+      - run: bun install
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generated-bun-lock
+          path: bun.lock
