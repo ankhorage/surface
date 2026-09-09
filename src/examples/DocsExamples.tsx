@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from '../components/button';
 import { Card } from '../components/card';
 import { Checkbox } from '../components/checkbox';
-import { Drawer } from '../components/drawer';
 import { Field } from '../components/field';
 import { HelperText } from '../components/helper-text';
 import { Menu } from '../components/menu';
@@ -68,13 +67,11 @@ export function FeedbackExample() {
 
 export function OverlayExample() {
   const [modalVisible, setModalVisible] = React.useState(false);
-  const [drawerVisible, setDrawerVisible] = React.useState(false);
 
   return (
     <ThemeProvider initialConfig={docsThemeConfig}>
       <Stack gap="m" p="l">
         <Button onPress={() => setModalVisible(true)}>Open modal</Button>
-        <Button onPress={() => setDrawerVisible(true)}>Open drawer</Button>
         <Modal onDismiss={() => setModalVisible(false)} visible={modalVisible}>
           <Card>
             <Stack gap="s">
@@ -85,9 +82,6 @@ export function OverlayExample() {
             </Stack>
           </Card>
         </Modal>
-        <Drawer onDismiss={() => setDrawerVisible(false)} visible={drawerVisible}>
-          <Text>Drawer content</Text>
-        </Drawer>
       </Stack>
     </ThemeProvider>
   );
