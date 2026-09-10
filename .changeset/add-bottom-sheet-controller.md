@@ -1,5 +1,5 @@
 ---
-"@ankhorage/surface": minor
+'@ankhorage/surface': minor
 ---
 
 Add the provider-backed BottomSheetModal controller with `BottomSheetProvider` and
