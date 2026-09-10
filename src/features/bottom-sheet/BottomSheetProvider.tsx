@@ -1,9 +1,9 @@
 import {
   BottomSheetBackdrop,
+  type BottomSheetBackdropProps,
   BottomSheetModal,
   BottomSheetModalProvider,
   BottomSheetView,
-  type BottomSheetBackdropProps,
 } from '@gorhom/bottom-sheet';
 import React from 'react';
 
