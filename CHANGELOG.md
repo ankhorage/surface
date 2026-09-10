@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 4.1.0
+
+### Minor Changes
+
+- 6476bf4: Add the provider-backed BottomSheetModal controller with `BottomSheetProvider` and
+  `useBottomSheet()` through the dedicated `@ankhorage/surface/bottom-sheet` entrypoint.
+
 ## 4.0.0
 
 ### Major Changes
