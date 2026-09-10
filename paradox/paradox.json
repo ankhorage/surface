@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v3.4.6",
+      "value": "v4.0.0",
       "color": "cb3837"
     },
     {
@@ -743,6 +743,47 @@
         "src/theme/types.ts"
       ],
       "exports": ["FeedbackExample", "FormExample", "NavigationExample", "OverlayExample"]
+    },
+    {
+      "path": "src/features/bottom-sheet/BottomSheetContext.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/bottomSheet.ts"],
+      "exports": ["BottomSheetContext"]
+    },
+    {
+      "path": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/bottom-sheet/BottomSheetContext.ts",
+        "src/types/bottomSheet.ts"
+      ],
+      "exports": ["BottomSheetProvider"]
+    },
+    {
+      "path": "src/features/bottom-sheet/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "BottomSheetController",
+        "BottomSheetPresentOptions",
+        "BottomSheetProvider",
+        "useBottomSheet"
+      ]
+    },
+    {
+      "path": "src/features/bottom-sheet/useBottomSheet.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/bottom-sheet/useBottomSheet.ts"],
+      "exports": []
+    },
+    {
+      "path": "src/features/bottom-sheet/useBottomSheet.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/bottom-sheet/BottomSheetContext.ts",
+        "src/types/bottomSheet.ts"
+      ],
+      "exports": ["useBottomSheet"]
     },
     {
       "path": "src/index.test.ts",
@@ -1878,6 +1919,12 @@
         "ThemeSemantics",
         "ThemeTokens"
       ]
+    },
+    {
+      "path": "src/types/bottomSheet.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["BottomSheetController", "BottomSheetPresentOptions"]
     },
     {
       "path": "src/utils/deepEqual.ts",
@@ -26582,6 +26629,51 @@
       }
     },
     {
+      "name": "BottomSheetProvider",
+      "description": "Installs the shared bottom-sheet modal host and controller for descendant consumers.",
+      "sourceLocation": {
+        "filePath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "line": 14,
+        "column": 1
+      }
+    },
+    {
+      "name": "BottomSheetHost",
+      "description": "Renders and presents the single Gorhom modal owned by the provider.",
+      "sourceLocation": {
+        "filePath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "line": 73,
+        "column": 1
+      }
+    },
+    {
+      "name": "useBottomSheetBackdrop",
+      "description": "Creates the backdrop renderer for the active bottom-sheet request.",
+      "sourceLocation": {
+        "filePath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "line": 117,
+        "column": 1
+      }
+    },
+    {
+      "name": "Consumer",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/bottom-sheet/useBottomSheet.test.tsx",
+        "line": 9,
+        "column": 5
+      }
+    },
+    {
+      "name": "useBottomSheet",
+      "description": "Returns the shared bottom-sheet controller installed by BottomSheetProvider.",
+      "sourceLocation": {
+        "filePath": "src/features/bottom-sheet/useBottomSheet.ts",
+        "line": 7,
+        "column": 1
+      }
+    },
+    {
       "name": "FocusScope",
       "description": null,
       "sourceLocation": {
@@ -29894,6 +29986,51 @@
         "sourcePath": "src/core/responsive/useBreakpoint.ts"
       },
       {
+        "fromPath": "src/features/bottom-sheet/BottomSheetContext.ts",
+        "toPath": "src/types/bottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/BottomSheetContext.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "toPath": "src/types/bottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.tsx"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "toPath": "src/features/bottom-sheet/BottomSheetContext.ts",
+        "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.tsx"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/public.ts",
+        "toPath": "src/types/bottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/public.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/public.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "sourcePath": "src/features/bottom-sheet/public.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/public.ts",
+        "toPath": "src/features/bottom-sheet/useBottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/public.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/useBottomSheet.test.tsx",
+        "toPath": "src/features/bottom-sheet/useBottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/useBottomSheet.ts",
+        "toPath": "src/types/bottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/useBottomSheet.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetContext.ts",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.ts"
+      },
+      {
         "fromPath": "src/internal/focus/FocusScope.tsx",
         "toPath": "src/internal/focus/useFocusManager.ts",
         "sourcePath": "src/internal/focus/FocusScope.tsx"
@@ -32417,6 +32554,54 @@
         "toSymbol": "getBreakpointFromWidth",
         "callExpression": "getBreakpointFromWidth",
         "sourcePath": "src/core/responsive/useBreakpoint.ts"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "toSymbol": "setActiveRequest",
+        "callExpression": "setActiveRequest",
+        "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.tsx"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "toSymbol": "onDismiss",
+        "callExpression": "request?.onDismiss",
+        "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.tsx"
+      },
+      {
+        "fromSymbol": "BottomSheetHost",
+        "toSymbol": "useBottomSheetBackdrop",
+        "callExpression": "useBottomSheetBackdrop",
+        "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.tsx"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/useBottomSheet.test.tsx",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/useBottomSheet.test.tsx",
+        "toSymbol": "it",
+        "callExpression": "it",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
+      },
+      {
+        "fromSymbol": "Consumer",
+        "toSymbol": "useBottomSheet",
+        "callExpression": "useBottomSheet",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/useBottomSheet.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/useBottomSheet.test.tsx",
+        "toSymbol": "renderToStaticMarkup",
+        "callExpression": "renderToStaticMarkup",
+        "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
       },
       {
         "fromSymbol": "FocusScope",

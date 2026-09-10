@@ -341,6 +341,22 @@ graph TD
   module_src_examples_DocsExamples_tsx --> module_src_primitives_text_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_theme_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_theme_types_ts
+  module_src_features_bottom_sheet_BottomSheetContext_ts["src/features/bottom-sheet/BottomSheetContext.ts"]
+  package__ankhorage_surface -.-> module_src_features_bottom_sheet_BottomSheetContext_ts
+  module_src_features_bottom_sheet_BottomSheetContext_ts --> module_src_types_bottomSheet_ts
+  module_src_features_bottom_sheet_BottomSheetProvider_tsx["src/features/bottom-sheet/BottomSheetProvider.tsx"]
+  package__ankhorage_surface -.-> module_src_features_bottom_sheet_BottomSheetProvider_tsx
+  module_src_features_bottom_sheet_BottomSheetProvider_tsx --> module_src_features_bottom_sheet_BottomSheetContext_ts
+  module_src_features_bottom_sheet_BottomSheetProvider_tsx --> module_src_types_bottomSheet_ts
+  module_src_features_bottom_sheet_public_ts["src/features/bottom-sheet/public.ts"]
+  package__ankhorage_surface -.-> module_src_features_bottom_sheet_public_ts
+  module_src_features_bottom_sheet_useBottomSheet_test_tsx["src/features/bottom-sheet/useBottomSheet.test.tsx"]
+  package__ankhorage_surface -.-> module_src_features_bottom_sheet_useBottomSheet_test_tsx
+  module_src_features_bottom_sheet_useBottomSheet_test_tsx --> module_src_features_bottom_sheet_useBottomSheet_ts
+  module_src_features_bottom_sheet_useBottomSheet_ts["src/features/bottom-sheet/useBottomSheet.ts"]
+  package__ankhorage_surface -.-> module_src_features_bottom_sheet_useBottomSheet_ts
+  module_src_features_bottom_sheet_useBottomSheet_ts --> module_src_features_bottom_sheet_BottomSheetContext_ts
+  module_src_features_bottom_sheet_useBottomSheet_ts --> module_src_types_bottomSheet_ts
   module_src_index_test_ts["src/index.test.ts"]
   package__ankhorage_surface -.-> module_src_index_test_ts
   module_src_index_test_ts --> module_src_index_ts
@@ -722,6 +738,8 @@ graph TD
   module_src_theme_ThemeContext_tsx --> module_src_utils_deepMerge_ts
   module_src_theme_types_ts["src/theme/types.ts"]
   package__ankhorage_surface -.-> module_src_theme_types_ts
+  module_src_types_bottomSheet_ts["src/types/bottomSheet.ts"]
+  package__ankhorage_surface -.-> module_src_types_bottomSheet_ts
   module_src_utils_deepEqual_ts["src/utils/deepEqual.ts"]
   package__ankhorage_surface -.-> module_src_utils_deepEqual_ts
   module_src_utils_deepMerge_test_ts["src/utils/deepMerge.test.ts"]
