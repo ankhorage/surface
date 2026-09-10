@@ -1,0 +1,42 @@
+name: Regenerate cleanup documentation
+
+on:
+  push:
+    branches:
+      - cleanup/remove-obsolete-ui-chrome
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: cleanup/remove-obsolete-ui-chrome
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.2'
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Regenerate Paradox documentation
+        run: bun run docs
+
+      - name: Remove temporary workflow and commit generated output
+        run: |
+          rm .github/workflows/regenerate-cleanup-docs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md paradox .github/workflows/regenerate-cleanup-docs.yml
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: regenerate Paradox after UI cleanup"
+            git push origin HEAD:cleanup/remove-obsolete-ui-chrome
+          fi
