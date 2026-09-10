@@ -1,42 +1,5 @@
 # Components
 
-## ActionSheet
-
-Source: `src/components/action-sheet/ActionSheet.tsx:16:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default     | Description |
-| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
-| cancelLabel       | `React.ReactNode \| undefined`   | no       | `'Cancel'`  |             |
-| children          | `React.ReactNode \| undefined`   | no       | —           |             |
-| closeOnBackdrop   | `boolean \| undefined`           | no       | `true`      |             |
-| description       | `React.ReactNode \| undefined`   | no       | —           |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
-| onDismiss         | `(() => void) \| undefined`      | no       | —           |             |
-| testID            | `string \| undefined`            | no       | —           |             |
-| title             | `React.ReactNode \| undefined`   | no       | —           |             |
-| visible           | `boolean`                        | yes      | —           |             |
-
-## ActionSheetItem
-
-Source: `src/components/action-sheet/ActionSheetItem.tsx:8:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default     | Description |
-| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
-| color             | `SurfaceColor \| undefined`      | no       | —           |             |
-| description       | `React.ReactNode \| undefined`   | no       | —           |             |
-| disabled          | `boolean \| undefined`           | no       | `false`     |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
-| label             | `React.ReactNode \| undefined`   | no       | —           |             |
-| leading           | `React.ReactNode \| undefined`   | no       | —           |             |
-| onPress           | `(() => void) \| undefined`      | no       | —           |             |
-| selected          | `boolean \| undefined`           | no       | `false`     |             |
-| testID            | `string \| undefined`            | no       | —           |             |
-| trailing          | `React.ReactNode \| undefined`   | no       | —           |             |
-
 ## AppBar
 
 Source: `src/layout/AppBar.tsx:18:1`
@@ -560,50 +523,6 @@ Export paths: `src/index.ts`
 | top                | `Responsive<number> \| undefined`                         | no       | —              |             |
 | zIndex             | `Responsive<number> \| undefined`                         | no       | —              |             |
 
-## Drawer
-
-Source: `src/components/drawer/Drawer.tsx:14:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default     | Description |
-| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
-| children          | `React.ReactNode \| undefined`   | no       | —           |             |
-| closeOnBackdrop   | `boolean \| undefined`           | no       | `true`      |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
-| onDismiss         | `(() => void) \| undefined`      | no       | —           |             |
-| position          | `'left' \| 'right' \| undefined` | no       | `'right'`   |             |
-| testID            | `string \| undefined`            | no       | —           |             |
-| visible           | `boolean`                        | yes      | —           |             |
-
-## DrawerNavigation
-
-Source: `src/components/navigation/DrawerNavigation.tsx:7:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default | Description |
-| ----------------- | -------------------------------- | -------- | ------- | ----------- |
-| compact           | `boolean \| undefined`           | no       | `false` |             |
-| footer            | `React.ReactNode \| undefined`   | no       | —       |             |
-| header            | `React.ReactNode \| undefined`   | no       | —       |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
-| items             | `readonly NavigationItemSpec[]`  | yes      | —       |             |
-| testID            | `string \| undefined`            | no       | —       |             |
-
-## DrawerNavigationItem
-
-Source: `src/components/navigation/DrawerNavigationItem.tsx:6:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default | Description |
-| ----------------- | -------------------------------- | -------- | ------- | ----------- |
-| compact           | `boolean \| undefined`           | no       | `false` |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
-| item              | `NavigationItemSpec`             | yes      | —       |             |
-| testID            | `string \| undefined`            | no       | —       |             |
-
 ## Field
 
 Source: `src/components/field/Field.tsx:9:1`
@@ -944,36 +863,11 @@ Export paths: `src/index.ts`
 | testID            | `string \| undefined`            | no       | —           |             |
 | visible           | `boolean`                        | yes      | —           |             |
 
-## NavigationItem
-
-Source: `src/components/navigation/NavigationItem.tsx:12:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default | Description |
-| ----------------- | -------------------------------- | -------- | ------- | ----------- |
-| compact           | `boolean \| undefined`           | no       | `false` |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
-| item              | `NavigationItemSpec`             | yes      | —       |             |
-| testID            | `string \| undefined`            | no       | —       |             |
-
-## NavigationList
-
-Source: `src/components/navigation/NavigationList.tsx:7:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                                      | Required | Default      | Description |
-| ----------------- | ----------------------------------------- | -------- | ------------ | ----------- |
-| compact           | `boolean \| undefined`                    | no       | `false`      |             |
-| interactionPolicy | `InteractionPolicy \| undefined`          | no       | —            |             |
-| items             | `readonly NavigationItemSpec[]`           | yes      | —            |             |
-| orientation       | `'vertical' \| 'horizontal' \| undefined` | no       | `'vertical'` |             |
-| testID            | `string \| undefined`                     | no       | —            |             |
-
 ## Radio
 
-Source: `src/components/radio/Radio.tsx:16:1`
+Source: `src/components/radio/Radio.tsx:20:1`
+
+Renders one radio control with either text or structured label content.
 
 Export paths: `src/index.ts`
 
@@ -1479,32 +1373,6 @@ Export paths: `src/index.ts`
 | interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
 | testID            | `string \| undefined`            | no       | —           |             |
 | value             | `string`                         | yes      | —           |             |
-
-## TabBar
-
-Source: `src/components/navigation/TabBar.tsx:8:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default | Description |
-| ----------------- | -------------------------------- | -------- | ------- | ----------- |
-| compact           | `boolean \| undefined`           | no       | `false` |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
-| items             | `readonly NavigationItemSpec[]`  | yes      | —       |             |
-| testID            | `string \| undefined`            | no       | —       |             |
-
-## TabBarItem
-
-Source: `src/components/navigation/TabBarItem.tsx:12:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default | Description |
-| ----------------- | -------------------------------- | -------- | ------- | ----------- |
-| compact           | `boolean \| undefined`           | no       | `false` |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | —       |             |
-| item              | `NavigationItemSpec`             | yes      | —       |             |
-| testID            | `string \| undefined`            | no       | —       |             |
 
 ## TabList
 

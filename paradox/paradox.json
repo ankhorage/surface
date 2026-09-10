@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v3.4.3",
+      "value": "v3.4.6",
       "color": "cb3837"
     },
     {
@@ -68,45 +68,6 @@
   "config": null,
   "entrypoints": ["src/index.ts"],
   "modules": [
-    {
-      "path": "src/components/action-sheet/ActionSheet.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/action-sheet/ActionSheetItem.tsx",
-        "src/components/action-sheet/types.ts",
-        "src/internal/focus/FocusScope.tsx",
-        "src/internal/overlay/Portal.tsx",
-        "src/internal/resolvePointerEvents.ts",
-        "src/internal/resolvers/index.ts",
-        "src/layout/index.ts",
-        "src/primitives/text/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["ActionSheet"]
-    },
-    {
-      "path": "src/components/action-sheet/ActionSheetItem.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/action-sheet/types.ts",
-        "src/layout/index.ts",
-        "src/primitives/button-base/index.ts",
-        "src/primitives/text/index.ts"
-      ],
-      "exports": ["ActionSheetItem"]
-    },
-    {
-      "path": "src/components/action-sheet/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["ActionSheet", "ActionSheetItem", "ActionSheetItemProps", "ActionSheetProps"]
-    },
-    {
-      "path": "src/components/action-sheet/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts", "src/surfaceColor.ts"],
-      "exports": ["ActionSheetItemProps", "ActionSheetProps"]
-    },
     {
       "path": "src/components/badge/Badge.tsx",
       "isEntrypoint": false,
@@ -219,32 +180,6 @@
         "src/surfaceColor.ts"
       ],
       "exports": ["CheckboxProps"]
-    },
-    {
-      "path": "src/components/drawer/Drawer.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/drawer/types.ts",
-        "src/internal/focus/FocusScope.tsx",
-        "src/internal/overlay/Portal.tsx",
-        "src/internal/resolvePointerEvents.ts",
-        "src/internal/resolvers/index.ts",
-        "src/layout/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["Drawer"]
-    },
-    {
-      "path": "src/components/drawer/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Drawer", "DrawerProps"]
-    },
-    {
-      "path": "src/components/drawer/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["DrawerProps"]
     },
     {
       "path": "src/components/field/Field.tsx",
@@ -430,141 +365,28 @@
       "exports": ["ModalProps"]
     },
     {
-      "path": "src/components/navigation/DrawerNavigation.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/navigation/DrawerNavigationItem.tsx",
-        "src/components/navigation/types.ts",
-        "src/layout/index.ts"
-      ],
-      "exports": ["DrawerNavigation"]
-    },
-    {
-      "path": "src/components/navigation/DrawerNavigationItem.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/navigation/NavigationItem.tsx",
-        "src/components/navigation/types.ts"
-      ],
-      "exports": ["DrawerNavigationItem"]
-    },
-    {
-      "path": "src/components/navigation/helpers.test.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/navigation/helpers.ts", "src/theme/createTheme.ts"],
-      "exports": []
-    },
-    {
-      "path": "src/components/navigation/helpers.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/internal/resolvers/resolveInteractiveState.ts", "src/theme/types.ts"],
-      "exports": [
-        "ResolvedNavigationItemPresentation",
-        "resolveNavigationAccessibilityState",
-        "resolveNavigationItemPresentation"
-      ]
-    },
-    {
-      "path": "src/components/navigation/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": [
-        "DrawerNavigation",
-        "DrawerNavigationItem",
-        "DrawerNavigationItemProps",
-        "DrawerNavigationProps",
-        "NavigationItem",
-        "NavigationItemIcon",
-        "NavigationItemProps",
-        "NavigationItemSpec",
-        "NavigationList",
-        "NavigationListProps",
-        "TabBar",
-        "TabBarItem",
-        "TabBarItemProps",
-        "TabBarProps"
-      ]
-    },
-    {
-      "path": "src/components/navigation/NavigationItem.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/navigation/helpers.ts",
-        "src/components/navigation/types.ts",
-        "src/layout/index.ts",
-        "src/primitives/button-base/index.ts",
-        "src/primitives/icon/index.ts",
-        "src/primitives/text/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["NavigationItem"]
-    },
-    {
-      "path": "src/components/navigation/NavigationList.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/navigation/NavigationItem.tsx",
-        "src/components/navigation/types.ts",
-        "src/layout/index.ts"
-      ],
-      "exports": ["NavigationList"]
-    },
-    {
-      "path": "src/components/navigation/policy.test.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": []
-    },
-    {
-      "path": "src/components/navigation/TabBar.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/navigation/TabBarItem.tsx",
-        "src/components/navigation/types.ts",
-        "src/layout/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["TabBar"]
-    },
-    {
-      "path": "src/components/navigation/TabBarItem.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/navigation/helpers.ts",
-        "src/components/navigation/types.ts",
-        "src/layout/index.ts",
-        "src/primitives/button-base/index.ts",
-        "src/primitives/icon/index.ts",
-        "src/primitives/text/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["TabBarItem"]
-    },
-    {
-      "path": "src/components/navigation/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts", "src/primitives/icon/index.ts"],
-      "exports": [
-        "DrawerNavigationItemProps",
-        "DrawerNavigationProps",
-        "NavigationItemIcon",
-        "NavigationItemProps",
-        "NavigationItemSpec",
-        "NavigationListProps",
-        "TabBarItemProps",
-        "TabBarProps"
-      ]
-    },
-    {
       "path": "src/components/radio/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
       "exports": ["Radio", "RadioProps"]
     },
     {
+      "path": "src/components/radio/isRadioTextContent.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["isRadioTextContent"]
+    },
+    {
+      "path": "src/components/radio/Radio.test.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/components/radio/isRadioTextContent.ts"],
+      "exports": []
+    },
+    {
       "path": "src/components/radio/Radio.tsx",
       "isEntrypoint": false,
       "dependencies": [
+        "src/components/radio/isRadioTextContent.ts",
         "src/components/radio/types.ts",
         "src/internal/resolvers/index.ts",
         "src/internal/useControllableState.ts",
@@ -907,7 +729,6 @@
         "src/components/button/index.ts",
         "src/components/card/index.ts",
         "src/components/checkbox/index.ts",
-        "src/components/drawer/index.ts",
         "src/components/field/index.ts",
         "src/components/helper-text/index.ts",
         "src/components/menu/index.ts",
@@ -935,10 +756,6 @@
       "dependencies": [],
       "exports": [
         "ActionSemantics",
-        "ActionSheet",
-        "ActionSheetItem",
-        "ActionSheetItemProps",
-        "ActionSheetProps",
         "AppBar",
         "AppBarProps",
         "Badge",
@@ -972,12 +789,6 @@
         "DEFAULT_TOKENS",
         "Divider",
         "DividerProps",
-        "Drawer",
-        "DrawerNavigation",
-        "DrawerNavigationItem",
-        "DrawerNavigationItemProps",
-        "DrawerNavigationProps",
-        "DrawerProps",
         "Field",
         "FieldProps",
         "FontIconSource",
@@ -1024,12 +835,6 @@
         "MenuProps",
         "Modal",
         "ModalProps",
-        "NavigationItem",
-        "NavigationItemIcon",
-        "NavigationItemProps",
-        "NavigationItemSpec",
-        "NavigationList",
-        "NavigationListProps",
         "NeutralSemantics",
         "Radio",
         "RadioProps",
@@ -1074,10 +879,6 @@
         "Switch",
         "SwitchProps",
         "Tab",
-        "TabBar",
-        "TabBarItem",
-        "TabBarItemProps",
-        "TabBarProps",
         "TabList",
         "TabListProps",
         "TabPanel",
@@ -2138,241 +1939,6 @@
           "name": "primary",
           "kind": "property",
           "type": "RoleSemantics",
-          "required": true,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "ActionSheet",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/action-sheet/ActionSheet.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/ActionSheet.tsx",
-        "line": 16,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ActionSheetProps"],
-      "signatures": [
-        {
-          "label": "({\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ActionSheetProps) => React.JSX.Element | null",
-          "parameters": [
-            {
-              "name": "{\n  visible,\n  onDismiss,\n  title,\n  description,\n  children,\n  cancelLabel = 'Cancel',\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
-              "type": "ActionSheetProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element | null",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "ActionSheetItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/action-sheet/ActionSheetItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "line": 8,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ActionSheetItemProps"],
-      "signatures": [
-        {
-          "label": "({\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}: ActionSheetItemProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{\n  label,\n  description,\n  leading,\n  trailing,\n  color,\n  disabled = false,\n  selected = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  testID,\n}",
-              "type": "ActionSheetItemProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "ActionSheetItemProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/action-sheet/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/types.ts",
-        "line": 18,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "color",
-          "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "description",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "label",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "leading",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPress",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selected",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "trailing",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "ActionSheetProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/action-sheet/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/types.ts",
-        "line": 6,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "cancelLabel",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "children",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "closeOnBackdrop",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "description",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onDismiss",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "title",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "visible",
-          "kind": "property",
-          "type": "boolean",
           "required": true,
           "description": null
         }
@@ -4619,7 +4185,7 @@
         {
           "name": "axis",
           "kind": "property",
-          "type": "\"vertical\" | \"horizontal\" | \"both\" | undefined",
+          "type": "\"horizontal\" | \"vertical\" | \"both\" | undefined",
           "required": false,
           "description": null
         },
@@ -6167,7 +5733,7 @@
         {
           "name": "orientation",
           "kind": "property",
-          "type": "\"vertical\" | \"horizontal\" | undefined",
+          "type": "\"horizontal\" | \"vertical\" | undefined",
           "required": false,
           "description": null
         },
@@ -6288,278 +5854,6 @@
           "kind": "property",
           "type": "Responsive<number> | undefined",
           "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "Drawer",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/drawer/Drawer.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/drawer/Drawer.tsx",
-        "line": 14,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["DrawerProps"],
-      "signatures": [
-        {
-          "label": "({\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: DrawerProps) => React.JSX.Element | null",
-          "parameters": [
-            {
-              "name": "{\n  visible,\n  onDismiss,\n  position = 'right',\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
-              "type": "DrawerProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element | null",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "DrawerNavigation",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/navigation/DrawerNavigation.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/DrawerNavigation.tsx",
-        "line": 7,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["DrawerNavigationProps"],
-      "signatures": [
-        {
-          "label": "({\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{\n  items,\n  header,\n  footer,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
-              "type": "DrawerNavigationProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "DrawerNavigationItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/navigation/DrawerNavigationItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/DrawerNavigationItem.tsx",
-        "line": 6,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["DrawerNavigationItemProps"],
-      "signatures": [
-        {
-          "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: DrawerNavigationItemProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
-              "type": "DrawerNavigationItemProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "DrawerNavigationItemProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 61,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "compact",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "item",
-          "kind": "property",
-          "type": "NavigationItemSpec",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "DrawerNavigationProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 52,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "compact",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "footer",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "header",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "items",
-          "kind": "property",
-          "type": "readonly NavigationItemSpec[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "DrawerProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/drawer/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/drawer/types.ts",
-        "line": 5,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "children",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "closeOnBackdrop",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onDismiss",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "position",
-          "kind": "property",
-          "type": "\"left\" | \"right\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "visible",
-          "kind": "property",
-          "type": "boolean",
-          "required": true,
           "description": null
         }
       ],
@@ -8915,285 +8209,6 @@
       "structuredRows": []
     },
     {
-      "name": "NavigationItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/navigation/NavigationItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/NavigationItem.tsx",
-        "line": 12,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationItemProps"],
-      "signatures": [
-        {
-          "label": "({\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationItemProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{\n  item,\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
-              "type": "NavigationItemProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "NavigationItemIcon",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "unknown",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 7,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
-      "signatures": [],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "NavigationItemProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 23,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "compact",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "item",
-          "kind": "property",
-          "type": "NavigationItemSpec",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "NavigationItemSpec",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 9,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["IconSource"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "accessibilityLabel",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityRole",
-          "kind": "property",
-          "type": "AccessibilityRole | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityState",
-          "kind": "property",
-          "type": "AccessibilityState | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "active",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "badge",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "icon",
-          "kind": "property",
-          "type": "IconSource | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "id",
-          "kind": "property",
-          "type": "string",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "label",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "onPress",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "NavigationList",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/navigation/NavigationList.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/NavigationList.tsx",
-        "line": 7,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["NavigationListProps"],
-      "signatures": [
-        {
-          "label": "({\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}: NavigationListProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{\n  items,\n  orientation = 'vertical',\n  compact = false,\n  testID,\n  interactionPolicy,\n}",
-              "type": "NavigationListProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "NavigationListProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 30,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "compact",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "items",
-          "kind": "property",
-          "type": "readonly NavigationItemSpec[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "orientation",
-          "kind": "property",
-          "type": "\"vertical\" | \"horizontal\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
       "name": "NeutralSemantics",
       "description": null,
       "isReadme": false,
@@ -9305,14 +8320,14 @@
     },
     {
       "name": "Radio",
-      "description": null,
+      "description": "Renders one radio control with either text or structured label content.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
       "modulePath": "src/components/radio/Radio.tsx",
       "sourceLocation": {
         "filePath": "src/components/radio/Radio.tsx",
-        "line": 16,
+        "line": 20,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -11609,7 +10624,7 @@
         {
           "name": "axis",
           "kind": "property",
-          "type": "\"vertical\" | \"horizontal\" | \"both\" | undefined",
+          "type": "\"horizontal\" | \"vertical\" | \"both\" | undefined",
           "required": false,
           "description": null
         },
@@ -13413,164 +12428,6 @@
         }
       ],
       "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "TabBar",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/navigation/TabBar.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/TabBar.tsx",
-        "line": 8,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabBarProps"],
-      "signatures": [
-        {
-          "label": "({ items, compact = false, testID, interactionPolicy }: TabBarProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{ items, compact = false, testID, interactionPolicy }",
-              "type": "TabBarProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "TabBarItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/navigation/TabBarItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/TabBarItem.tsx",
-        "line": 12,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TabBarItemProps"],
-      "signatures": [
-        {
-          "label": "({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{ item, compact = false, testID, interactionPolicy }",
-              "type": "TabBarItemProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "TabBarItemProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 45,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "compact",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "item",
-          "kind": "property",
-          "type": "NavigationItemSpec",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "TabBarProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/navigation/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/types.ts",
-        "line": 38,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "NavigationItemSpec"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "compact",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "items",
-          "kind": "property",
-          "type": "readonly NavigationItemSpec[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
       "structuredRows": []
     },
     {
@@ -17688,156 +16545,6 @@
   ],
   "components": [
     {
-      "name": "ActionSheet",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/action-sheet/ActionSheet.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/ActionSheet.tsx",
-        "line": 16,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "cancelLabel",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "defaultValue": "'Cancel'",
-          "description": null
-        },
-        {
-          "name": "children",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "closeOnBackdrop",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "true",
-          "description": null
-        },
-        {
-          "name": "description",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "defaultValue": "'enabled'",
-          "description": null
-        },
-        {
-          "name": "onDismiss",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "title",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "visible",
-          "type": "boolean",
-          "required": true,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "ActionSheetItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/action-sheet/ActionSheetItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "line": 8,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "color",
-          "type": "SurfaceColor | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "description",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "defaultValue": "'enabled'",
-          "description": null
-        },
-        {
-          "name": "label",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "leading",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPress",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selected",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "trailing",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
       "name": "AppBar",
       "description": null,
       "isReadme": false,
@@ -20614,158 +19321,6 @@
       ]
     },
     {
-      "name": "Drawer",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/drawer/Drawer.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/drawer/Drawer.tsx",
-        "line": 14,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "children",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "closeOnBackdrop",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "true",
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "defaultValue": "'enabled'",
-          "description": null
-        },
-        {
-          "name": "onDismiss",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "position",
-          "type": "'left' | 'right' | undefined",
-          "required": false,
-          "defaultValue": "'right'",
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "visible",
-          "type": "boolean",
-          "required": true,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "DrawerNavigation",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/navigation/DrawerNavigation.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/DrawerNavigation.tsx",
-        "line": 7,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "compact",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "footer",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "header",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "items",
-          "type": "readonly NavigationItemSpec[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "DrawerNavigationItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/navigation/DrawerNavigationItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/DrawerNavigationItem.tsx",
-        "line": 6,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "compact",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "item",
-          "type": "NavigationItemSpec",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
       "name": "Field",
       "description": null,
       "isReadme": false,
@@ -22296,101 +20851,14 @@
       ]
     },
     {
-      "name": "NavigationItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/navigation/NavigationItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/NavigationItem.tsx",
-        "line": 12,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "compact",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "item",
-          "type": "NavigationItemSpec",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "NavigationList",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/navigation/NavigationList.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/NavigationList.tsx",
-        "line": 7,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "compact",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "items",
-          "type": "readonly NavigationItemSpec[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "orientation",
-          "type": "'vertical' | 'horizontal' | undefined",
-          "required": false,
-          "defaultValue": "'vertical'",
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
       "name": "Radio",
-      "description": null,
+      "description": "Renders one radio control with either text or structured label content.",
       "isReadme": false,
       "examples": [],
       "modulePath": "src/components/radio/Radio.tsx",
       "sourceLocation": {
         "filePath": "src/components/radio/Radio.tsx",
-        "line": 16,
+        "line": 20,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -24904,86 +23372,6 @@
           "name": "value",
           "type": "string",
           "required": true,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "TabBar",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/navigation/TabBar.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/TabBar.tsx",
-        "line": 8,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "compact",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "items",
-          "type": "readonly NavigationItemSpec[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "TabBarItem",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/navigation/TabBarItem.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/navigation/TabBarItem.tsx",
-        "line": 12,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "compact",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "item",
-          "type": "NavigationItemSpec",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
           "description": null
         }
       ]
@@ -27699,24 +26087,6 @@
   ],
   "sourceFunctions": [
     {
-      "name": "ActionSheet",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/ActionSheet.tsx",
-        "line": 16,
-        "column": 1
-      }
-    },
-    {
-      "name": "ActionSheetItem",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "line": 8,
-        "column": 1
-      }
-    },
-    {
       "name": "Badge",
       "description": null,
       "sourceLocation": {
@@ -27758,15 +26128,6 @@
       "sourceLocation": {
         "filePath": "src/components/checkbox/Checkbox.tsx",
         "line": 16,
-        "column": 1
-      }
-    },
-    {
-      "name": "Drawer",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/drawer/Drawer.tsx",
-        "line": 14,
         "column": 1
       }
     },
@@ -27870,92 +26231,20 @@
       }
     },
     {
-      "name": "DrawerNavigation",
-      "description": null,
+      "name": "isRadioTextContent",
+      "description": "Reports whether Radio content should use the built-in text-label presentation.",
       "sourceLocation": {
-        "filePath": "src/components/navigation/DrawerNavigation.tsx",
-        "line": 7,
-        "column": 1
-      }
-    },
-    {
-      "name": "DrawerNavigationItem",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/DrawerNavigationItem.tsx",
+        "filePath": "src/components/radio/isRadioTextContent.ts",
         "line": 6,
-        "column": 1
-      }
-    },
-    {
-      "name": "resolveNavigationAccessibilityState",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/helpers.ts",
-        "line": 6,
-        "column": 1
-      }
-    },
-    {
-      "name": "resolveNavigationItemPresentation",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/helpers.ts",
-        "line": 30,
-        "column": 1
-      }
-    },
-    {
-      "name": "NavigationItem",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/NavigationItem.tsx",
-        "line": 12,
-        "column": 1
-      }
-    },
-    {
-      "name": "NavigationList",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/NavigationList.tsx",
-        "line": 7,
-        "column": 1
-      }
-    },
-    {
-      "name": "listNavigationSources",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/policy.test.ts",
-        "line": 18,
-        "column": 1
-      }
-    },
-    {
-      "name": "TabBar",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/TabBar.tsx",
-        "line": 8,
-        "column": 1
-      }
-    },
-    {
-      "name": "TabBarItem",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/navigation/TabBarItem.tsx",
-        "line": 12,
         "column": 1
       }
     },
     {
       "name": "Radio",
-      "description": null,
+      "description": "Renders one radio control with either text or structured label content.",
       "sourceLocation": {
         "filePath": "src/components/radio/Radio.tsx",
-        "line": 16,
+        "line": 20,
         "column": 1
       }
     },
@@ -28252,7 +26541,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/examples/DocsExamples.tsx",
-        "line": 27,
+        "line": 26,
         "column": 1
       }
     },
@@ -28261,7 +26550,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/examples/DocsExamples.tsx",
-        "line": 41,
+        "line": 40,
         "column": 1
       }
     },
@@ -28270,7 +26559,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/examples/DocsExamples.tsx",
-        "line": 54,
+        "line": 53,
         "column": 1
       }
     },
@@ -28279,7 +26568,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/examples/DocsExamples.tsx",
-        "line": 69,
+        "line": 68,
         "column": 1
       }
     },
@@ -28288,7 +26577,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/examples/DocsExamples.tsx",
-        "line": 96,
+        "line": 90,
         "column": 1
       }
     },
@@ -29313,22 +27602,6 @@
   "sequenceScenarios": [
     {
       "kind": "export",
-      "name": "ActionSheet",
-      "sourcePath": "src/components/action-sheet/ActionSheet.tsx",
-      "symbolName": "ActionSheet",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "ActionSheetItem",
-      "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx",
-      "symbolName": "ActionSheetItem",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
       "name": "AppBar",
       "sourcePath": "src/layout/AppBar.tsx",
       "symbolName": "AppBar",
@@ -29420,30 +27693,6 @@
       "name": "Divider",
       "sourcePath": "src/layout/Divider.tsx",
       "symbolName": "Divider",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "Drawer",
-      "sourcePath": "src/components/drawer/Drawer.tsx",
-      "symbolName": "Drawer",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "DrawerNavigation",
-      "sourcePath": "src/components/navigation/DrawerNavigation.tsx",
-      "symbolName": "DrawerNavigation",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "DrawerNavigationItem",
-      "sourcePath": "src/components/navigation/DrawerNavigationItem.tsx",
-      "symbolName": "DrawerNavigationItem",
       "description": null,
       "isReadme": false
     },
@@ -29577,26 +27826,10 @@
     },
     {
       "kind": "export",
-      "name": "NavigationItem",
-      "sourcePath": "src/components/navigation/NavigationItem.tsx",
-      "symbolName": "NavigationItem",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "NavigationList",
-      "sourcePath": "src/components/navigation/NavigationList.tsx",
-      "symbolName": "NavigationList",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
       "name": "Radio",
       "sourcePath": "src/components/radio/Radio.tsx",
       "symbolName": "Radio",
-      "description": null,
+      "description": "Renders one radio control with either text or structured label content.",
       "isReadme": false
     },
     {
@@ -29684,22 +27917,6 @@
       "name": "Tab",
       "sourcePath": "src/components/tabs/Tab.tsx",
       "symbolName": "Tab",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "TabBar",
-      "sourcePath": "src/components/navigation/TabBar.tsx",
-      "symbolName": "TabBar",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "TabBarItem",
-      "sourcePath": "src/components/navigation/TabBarItem.tsx",
-      "symbolName": "TabBarItem",
       "description": null,
       "isReadme": false
     },
@@ -29878,11 +28095,6 @@
       },
       {
         "fromPath": "src/index.ts",
-        "toPath": "src/components/action-sheet/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
         "toPath": "src/components/badge/index.ts",
         "sourcePath": "src/index.ts"
       },
@@ -29899,11 +28111,6 @@
       {
         "fromPath": "src/index.ts",
         "toPath": "src/components/checkbox/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/drawer/index.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -29939,11 +28146,6 @@
       {
         "fromPath": "src/index.ts",
         "toPath": "src/components/modal/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/navigation/index.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -30074,11 +28276,6 @@
       {
         "fromPath": "src/examples/DocsExamples.tsx",
         "toPath": "src/components/checkbox/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/components/drawer/index.ts",
         "sourcePath": "src/examples/DocsExamples.tsx"
       },
       {
@@ -30637,96 +28834,6 @@
         "sourcePath": "src/utils/deepMerge.test.ts"
       },
       {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/internal/focus/FocusScope.tsx",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/internal/overlay/Portal.tsx",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/internal/resolvePointerEvents.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/primitives/text/index.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheet.tsx",
-        "toPath": "src/components/action-sheet/types.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "toPath": "src/primitives/text/index.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "toPath": "src/components/action-sheet/types.ts",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromPath": "src/components/action-sheet/index.ts",
-        "toPath": "src/components/action-sheet/ActionSheet.tsx",
-        "sourcePath": "src/components/action-sheet/index.ts"
-      },
-      {
-        "fromPath": "src/components/action-sheet/index.ts",
-        "toPath": "src/components/action-sheet/ActionSheetItem.tsx",
-        "sourcePath": "src/components/action-sheet/index.ts"
-      },
-      {
-        "fromPath": "src/components/action-sheet/index.ts",
-        "toPath": "src/components/action-sheet/types.ts",
-        "sourcePath": "src/components/action-sheet/index.ts"
-      },
-      {
-        "fromPath": "src/components/action-sheet/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
-        "fromPath": "src/components/action-sheet/types.ts",
-        "toPath": "src/surfaceColor.ts",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
         "fromPath": "src/components/badge/Badge.tsx",
         "toPath": "src/internal/resolvers/index.ts",
         "sourcePath": "src/components/badge/Badge.tsx"
@@ -30940,56 +29047,6 @@
         "fromPath": "src/components/checkbox/types.ts",
         "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/components/checkbox/types.ts"
-      },
-      {
-        "fromPath": "src/components/drawer/Drawer.tsx",
-        "toPath": "src/internal/focus/FocusScope.tsx",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromPath": "src/components/drawer/Drawer.tsx",
-        "toPath": "src/internal/overlay/Portal.tsx",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromPath": "src/components/drawer/Drawer.tsx",
-        "toPath": "src/internal/resolvePointerEvents.ts",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromPath": "src/components/drawer/Drawer.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromPath": "src/components/drawer/Drawer.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromPath": "src/components/drawer/Drawer.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromPath": "src/components/drawer/Drawer.tsx",
-        "toPath": "src/components/drawer/types.ts",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromPath": "src/components/drawer/index.ts",
-        "toPath": "src/components/drawer/Drawer.tsx",
-        "sourcePath": "src/components/drawer/index.ts"
-      },
-      {
-        "fromPath": "src/components/drawer/index.ts",
-        "toPath": "src/components/drawer/types.ts",
-        "sourcePath": "src/components/drawer/index.ts"
-      },
-      {
-        "fromPath": "src/components/drawer/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/components/drawer/types.ts"
       },
       {
         "fromPath": "src/components/field/Field.tsx",
@@ -31302,201 +29359,6 @@
         "sourcePath": "src/components/modal/types.ts"
       },
       {
-        "fromPath": "src/components/navigation/DrawerNavigation.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/DrawerNavigation.tsx",
-        "toPath": "src/components/navigation/DrawerNavigationItem.tsx",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/DrawerNavigation.tsx",
-        "toPath": "src/components/navigation/types.ts",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/DrawerNavigationItem.tsx",
-        "toPath": "src/components/navigation/NavigationItem.tsx",
-        "sourcePath": "src/components/navigation/DrawerNavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/DrawerNavigationItem.tsx",
-        "toPath": "src/components/navigation/types.ts",
-        "sourcePath": "src/components/navigation/DrawerNavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/helpers.test.ts",
-        "toPath": "src/theme/createTheme.ts",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/helpers.test.ts",
-        "toPath": "src/components/navigation/helpers.ts",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/helpers.ts",
-        "toPath": "src/internal/resolvers/resolveInteractiveState.ts",
-        "sourcePath": "src/components/navigation/helpers.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/helpers.ts",
-        "toPath": "src/theme/types.ts",
-        "sourcePath": "src/components/navigation/helpers.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/index.ts",
-        "toPath": "src/components/navigation/DrawerNavigation.tsx",
-        "sourcePath": "src/components/navigation/index.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/index.ts",
-        "toPath": "src/components/navigation/DrawerNavigationItem.tsx",
-        "sourcePath": "src/components/navigation/index.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/index.ts",
-        "toPath": "src/components/navigation/NavigationItem.tsx",
-        "sourcePath": "src/components/navigation/index.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/index.ts",
-        "toPath": "src/components/navigation/NavigationList.tsx",
-        "sourcePath": "src/components/navigation/index.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/index.ts",
-        "toPath": "src/components/navigation/TabBar.tsx",
-        "sourcePath": "src/components/navigation/index.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/index.ts",
-        "toPath": "src/components/navigation/TabBarItem.tsx",
-        "sourcePath": "src/components/navigation/index.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/index.ts",
-        "toPath": "src/components/navigation/types.ts",
-        "sourcePath": "src/components/navigation/index.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationItem.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationItem.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationItem.tsx",
-        "toPath": "src/primitives/icon/index.ts",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationItem.tsx",
-        "toPath": "src/primitives/text/index.ts",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationItem.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationItem.tsx",
-        "toPath": "src/components/navigation/helpers.ts",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationItem.tsx",
-        "toPath": "src/components/navigation/types.ts",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationList.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/navigation/NavigationList.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationList.tsx",
-        "toPath": "src/components/navigation/NavigationItem.tsx",
-        "sourcePath": "src/components/navigation/NavigationList.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/NavigationList.tsx",
-        "toPath": "src/components/navigation/types.ts",
-        "sourcePath": "src/components/navigation/NavigationList.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBar.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBar.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBar.tsx",
-        "toPath": "src/components/navigation/TabBarItem.tsx",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBar.tsx",
-        "toPath": "src/components/navigation/types.ts",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBarItem.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBarItem.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBarItem.tsx",
-        "toPath": "src/primitives/icon/index.ts",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBarItem.tsx",
-        "toPath": "src/primitives/text/index.ts",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBarItem.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBarItem.tsx",
-        "toPath": "src/components/navigation/helpers.ts",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/TabBarItem.tsx",
-        "toPath": "src/components/navigation/types.ts",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromPath": "src/components/navigation/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromPath": "src/components/navigation/types.ts",
-        "toPath": "src/primitives/icon/index.ts",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
         "fromPath": "src/components/radio/index.ts",
         "toPath": "src/components/radio/Radio.tsx",
         "sourcePath": "src/components/radio/index.ts"
@@ -31505,6 +29367,11 @@
         "fromPath": "src/components/radio/index.ts",
         "toPath": "src/components/radio/types.ts",
         "sourcePath": "src/components/radio/index.ts"
+      },
+      {
+        "fromPath": "src/components/radio/Radio.test.ts",
+        "toPath": "src/components/radio/isRadioTextContent.ts",
+        "sourcePath": "src/components/radio/Radio.test.ts"
       },
       {
         "fromPath": "src/components/radio/Radio.tsx",
@@ -31534,6 +29401,11 @@
       {
         "fromPath": "src/components/radio/Radio.tsx",
         "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/components/radio/Radio.tsx"
+      },
+      {
+        "fromPath": "src/components/radio/Radio.tsx",
+        "toPath": "src/components/radio/isRadioTextContent.ts",
         "sourcePath": "src/components/radio/Radio.tsx"
       },
       {
@@ -32795,12 +30667,6 @@
         "sourcePath": "src/examples/DocsExamples.tsx"
       },
       {
-        "fromSymbol": "src/examples/DocsExamples.tsx",
-        "toSymbol": "setDrawerVisible",
-        "callExpression": "setDrawerVisible",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
         "fromSymbol": "src/internal/resolvePointerEvents.test.ts",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -33683,24 +31549,6 @@
         "sourcePath": "src/utils/deepMerge.ts"
       },
       {
-        "fromSymbol": "src/components/action-sheet/ActionSheet.tsx",
-        "toSymbol": "resolvePointerEvents",
-        "callExpression": "resolvePointerEvents",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromSymbol": "ActionSheet",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromSymbol": "ActionSheet",
-        "toSymbol": "resolveOverlayAnimation",
-        "callExpression": "resolveOverlayAnimation",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
         "fromSymbol": "Badge",
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
@@ -33795,24 +31643,6 @@
         "toSymbol": "resolveSelectionControlColors",
         "callExpression": "resolveSelectionControlColors",
         "sourcePath": "src/components/checkbox/Checkbox.tsx"
-      },
-      {
-        "fromSymbol": "src/components/drawer/Drawer.tsx",
-        "toSymbol": "resolvePointerEvents",
-        "callExpression": "resolvePointerEvents",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromSymbol": "Drawer",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromSymbol": "Drawer",
-        "toSymbol": "resolveOverlayAnimation",
-        "callExpression": "resolveOverlayAnimation",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
       },
       {
         "fromSymbol": "Field",
@@ -34007,136 +31837,22 @@
         "sourcePath": "src/components/modal/Modal.tsx"
       },
       {
-        "fromSymbol": "src/components/navigation/helpers.test.ts",
-        "toSymbol": "describe",
-        "callExpression": "describe",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
+        "fromSymbol": "src/components/radio/Radio.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/components/radio/Radio.test.ts"
       },
       {
-        "fromSymbol": "src/components/navigation/helpers.test.ts",
-        "toSymbol": "it",
-        "callExpression": "it",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/helpers.test.ts",
+        "fromSymbol": "src/components/radio/Radio.test.ts",
         "toSymbol": "expect",
         "callExpression": "expect",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
+        "sourcePath": "src/components/radio/Radio.test.ts"
       },
       {
-        "fromSymbol": "src/components/navigation/helpers.test.ts",
-        "toSymbol": "resolveNavigationAccessibilityState",
-        "callExpression": "resolveNavigationAccessibilityState",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/helpers.test.ts",
-        "toSymbol": "createTheme",
-        "callExpression": "createTheme",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/helpers.test.ts",
-        "toSymbol": "resolveNavigationItemPresentation",
-        "callExpression": "resolveNavigationItemPresentation",
-        "sourcePath": "src/components/navigation/helpers.test.ts"
-      },
-      {
-        "fromSymbol": "NavigationItem",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromSymbol": "NavigationItem",
-        "toSymbol": "resolveNavigationAccessibilityState",
-        "callExpression": "resolveNavigationAccessibilityState",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromSymbol": "src/components/navigation/NavigationItem.tsx",
-        "toSymbol": "resolveNavigationItemPresentation",
-        "callExpression": "resolveNavigationItemPresentation",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "fileURLToPath",
-        "callExpression": "fileURLToPath",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "listNavigationSources",
-        "toSymbol": "readdirSync",
-        "callExpression": "readdirSync",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "extname",
-        "callExpression": "extname",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "join",
-        "callExpression": "join",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "describe",
-        "callExpression": "describe",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "it",
-        "callExpression": "it",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "listNavigationSources",
-        "callExpression": "listNavigationSources",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "readFileSync",
-        "callExpression": "readFileSync",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/navigation/policy.test.ts",
-        "toSymbol": "expect",
-        "callExpression": "expect",
-        "sourcePath": "src/components/navigation/policy.test.ts"
-      },
-      {
-        "fromSymbol": "TabBar",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromSymbol": "TabBarItem",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromSymbol": "TabBarItem",
-        "toSymbol": "resolveNavigationAccessibilityState",
-        "callExpression": "resolveNavigationAccessibilityState",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromSymbol": "src/components/navigation/TabBarItem.tsx",
-        "toSymbol": "resolveNavigationItemPresentation",
-        "callExpression": "resolveNavigationItemPresentation",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
+        "fromSymbol": "src/components/radio/Radio.test.ts",
+        "toSymbol": "isRadioTextContent",
+        "callExpression": "isRadioTextContent",
+        "sourcePath": "src/components/radio/Radio.test.ts"
       },
       {
         "fromSymbol": "Radio",
@@ -34178,6 +31894,12 @@
         "fromSymbol": "src/components/radio/Radio.tsx",
         "toSymbol": "resolveSelectionControlColors",
         "callExpression": "resolveSelectionControlColors",
+        "sourcePath": "src/components/radio/Radio.tsx"
+      },
+      {
+        "fromSymbol": "src/components/radio/Radio.tsx",
+        "toSymbol": "isRadioTextContent",
+        "callExpression": "isRadioTextContent",
         "sourcePath": "src/components/radio/Radio.tsx"
       },
       {
@@ -35701,56 +33423,6 @@
     ],
     "typeReferences": [
       {
-        "fromSymbol": "ActionSheetItemProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
-        "fromSymbol": "ActionSheetItemProps",
-        "toType": "React",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
-        "fromSymbol": "ActionSheetItemProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
-        "fromSymbol": "ActionSheetProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
-        "fromSymbol": "ActionSheetProps",
-        "toType": "React",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
-        "fromSymbol": "ActionSheetProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/action-sheet/types.ts"
-      },
-      {
-        "fromSymbol": "ActionSheet",
-        "toType": "ActionSheetProps",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromSymbol": "ActionSheet",
-        "toType": "React",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromSymbol": "ActionSheetItem",
-        "toType": "ActionSheetItemProps",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromSymbol": "ActionSheetItem",
-        "toType": "React",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
         "fromSymbol": "BadgeProps",
         "toType": "ControlSize",
         "sourcePath": "src/components/badge/types.ts"
@@ -35981,31 +33653,6 @@
         "sourcePath": "src/components/checkbox/Checkbox.tsx"
       },
       {
-        "fromSymbol": "DrawerProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/drawer/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerProps",
-        "toType": "React",
-        "sourcePath": "src/components/drawer/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/drawer/types.ts"
-      },
-      {
-        "fromSymbol": "Drawer",
-        "toType": "DrawerProps",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromSymbol": "Drawer",
-        "toType": "React",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
         "fromSymbol": "FieldProps",
         "toType": "React",
         "sourcePath": "src/components/field/types.ts"
@@ -36224,161 +33871,6 @@
         "fromSymbol": "Modal",
         "toType": "React",
         "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromSymbol": "DrawerNavigationItemProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerNavigationItemProps",
-        "toType": "NavigationItemSpec",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerNavigationProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerNavigationProps",
-        "toType": "NavigationItemSpec",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerNavigationProps",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerNavigationProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationItemProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationItemProps",
-        "toType": "NavigationItemSpec",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationItemSpec",
-        "toType": "AccessibilityRole",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationItemSpec",
-        "toType": "AccessibilityState",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationItemSpec",
-        "toType": "IconSource",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationItemSpec",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationItemSpec",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationListProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "NavigationListProps",
-        "toType": "NavigationItemSpec",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "TabBarItemProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "TabBarItemProps",
-        "toType": "NavigationItemSpec",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "TabBarProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "TabBarProps",
-        "toType": "NavigationItemSpec",
-        "sourcePath": "src/components/navigation/types.ts"
-      },
-      {
-        "fromSymbol": "DrawerNavigation",
-        "toType": "DrawerNavigationProps",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromSymbol": "DrawerNavigation",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromSymbol": "DrawerNavigationItem",
-        "toType": "DrawerNavigationItemProps",
-        "sourcePath": "src/components/navigation/DrawerNavigationItem.tsx"
-      },
-      {
-        "fromSymbol": "DrawerNavigationItem",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/DrawerNavigationItem.tsx"
-      },
-      {
-        "fromSymbol": "NavigationItem",
-        "toType": "NavigationItemProps",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromSymbol": "NavigationItem",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromSymbol": "NavigationList",
-        "toType": "NavigationListProps",
-        "sourcePath": "src/components/navigation/NavigationList.tsx"
-      },
-      {
-        "fromSymbol": "NavigationList",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/NavigationList.tsx"
-      },
-      {
-        "fromSymbol": "TabBar",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromSymbol": "TabBar",
-        "toType": "TabBarProps",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromSymbol": "TabBarItem",
-        "toType": "React",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromSymbol": "TabBarItem",
-        "toType": "TabBarItemProps",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
       },
       {
         "fromSymbol": "RadioProps",
@@ -38423,132 +35915,6 @@
     ],
     "componentComposition": [
       {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Portal",
-        "jsxElement": "<Portal layer=\"modal\" visible={visible}>",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "View",
-        "jsxElement": "<View\n        {...boxNonePointerEvents.props}\n        style={[\n          boxNonePointerEvents.style,\n          {\n            bottom: 0,\n            left: 0,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          },\n        ]}\n      >",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "FocusScope",
-        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={passive ? undefined : onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Box",
-        "jsxElement": "<Box\n            pointerEvents=\"box-none\"\n            style={{\n              flex: 1,\n              justifyContent: 'flex-end',\n            }}\n          >",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "View",
-        "jsxElement": "<View\n              accessible\n              accessibilityViewIsModal\n              style={{\n                alignSelf: 'center',\n                maxWidth: 560,\n                padding: 16,\n                width: '100%',\n              }}\n            >",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Surface",
-        "jsxElement": "<Surface\n                p=\"m\"\n                style={{\n                  borderRadius: 24,\n                  shadowOpacity: 0.16,\n                  shadowRadius: 18,\n                  shadowOffset: { width: 0, height: -8 },\n                }}\n                testID={testID}\n                variant=\"raised\"\n              >",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Stack",
-        "jsxElement": "<Stack gap=\"s\">",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Box",
-        "jsxElement": "<Box px=\"m\" py=\"s\">",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Stack",
-        "jsxElement": "<Stack gap=\"xxs\">",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Text",
-        "jsxElement": "<Text align=\"center\" variant=\"label\" weight=\"semiBold\">",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "Text",
-        "jsxElement": "<Text align=\"center\" emphasis=\"muted\" variant=\"bodySmall\">",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheet",
-        "toComponent": "ActionSheetItem",
-        "jsxElement": "<ActionSheetItem\n                      label={cancelLabel}\n                      interactionPolicy={interactionPolicy}\n                      onPress={onDismiss}\n                      testID={testID ? `${testID}-cancel` : undefined}\n                    />",
-        "sourcePath": "src/components/action-sheet/ActionSheet.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      accessibilityRole=\"button\"\n      accessibilityState={{ disabled, selected }}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={onPress}\n      radius=\"m\"\n      testID={testID}\n    >",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "Box",
-        "jsxElement": "<Box\n          px=\"m\"\n          py=\"m\"\n          radius=\"m\"\n          style={{\n            opacity: state.disabled ? 0.56 : 1,\n          }}\n        >",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "Inline",
-        "jsxElement": "<Inline align=\"center\" gap=\"m\" justify=\"space-between\" wrap=\"nowrap\">",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "Box",
-        "jsxElement": "<Box>",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "Box",
-        "jsxElement": "<Box flex={1}>",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "Stack",
-        "jsxElement": "<Stack gap=\"xxs\">",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "Text",
-        "jsxElement": "<Text color={color} variant=\"body\" weight={selected ? 'semiBold' : 'medium'}>",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
-        "fromComponent": "ActionSheetItem",
-        "toComponent": "Text",
-        "jsxElement": "<Text emphasis=\"muted\" variant=\"bodySmall\">",
-        "sourcePath": "src/components/action-sheet/ActionSheetItem.tsx"
-      },
-      {
         "fromComponent": "AppBar",
         "toComponent": "Box",
         "jsxElement": "<Box {...props} bg={bg ?? theme.semantics.surface.default} style={style}>",
@@ -38739,72 +36105,6 @@
         "toComponent": "Box",
         "jsxElement": "<Box\n      {...props}\n      bg={color}\n      height={orientation === 'horizontal' ? thickness : '100%'}\n      width={orientation === 'vertical' ? thickness : '100%'}\n    />",
         "sourcePath": "src/layout/Divider.tsx"
-      },
-      {
-        "fromComponent": "Drawer",
-        "toComponent": "Portal",
-        "jsxElement": "<Portal layer=\"drawer\" visible={visible}>",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromComponent": "Drawer",
-        "toComponent": "View",
-        "jsxElement": "<View\n        {...boxNonePointerEvents.props}\n        style={[\n          boxNonePointerEvents.style,\n          {\n            bottom: 0,\n            left: 0,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          },\n        ]}\n      >",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromComponent": "Drawer",
-        "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromComponent": "Drawer",
-        "toComponent": "FocusScope",
-        "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={passive ? undefined : onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromComponent": "Drawer",
-        "toComponent": "Box",
-        "jsxElement": "<Box\n            pointerEvents=\"box-none\"\n            style={{\n              flex: 1,\n              justifyContent: 'flex-start',\n            }}\n          >",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromComponent": "Drawer",
-        "toComponent": "View",
-        "jsxElement": "<View\n              accessible\n              accessibilityViewIsModal\n              style={{\n                alignSelf: position === 'left' ? 'flex-start' : 'flex-end',\n                height: '100%',\n                maxWidth: 420,\n                width: '88%',\n              }}\n            >",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromComponent": "Drawer",
-        "toComponent": "Surface",
-        "jsxElement": "<Surface\n                p=\"l\"\n                style={{\n                  height: '100%',\n                  shadowOpacity: 0.14,\n                  shadowRadius: 14,\n                  shadowOffset: { width: position === 'left' ? 4 : -4, height: 0 },\n                }}\n                testID={testID}\n                variant=\"raised\"\n              >",
-        "sourcePath": "src/components/drawer/Drawer.tsx"
-      },
-      {
-        "fromComponent": "DrawerNavigation",
-        "toComponent": "Stack",
-        "jsxElement": "<Stack gap={compact ? 's' : 'm'} testID={testID}>",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromComponent": "DrawerNavigation",
-        "toComponent": "Stack",
-        "jsxElement": "<Stack gap={compact ? 'xs' : 's'}>",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromComponent": "DrawerNavigation",
-        "toComponent": "DrawerNavigationItem",
-        "jsxElement": "<DrawerNavigationItem\n            compact={compact}\n            interactionPolicy={interactionPolicy}\n            item={item}\n            key={item.id}\n            testID={testID}\n          />",
-        "sourcePath": "src/components/navigation/DrawerNavigation.tsx"
-      },
-      {
-        "fromComponent": "DrawerNavigationItem",
-        "toComponent": "NavigationItem",
-        "jsxElement": "<NavigationItem\n      compact={compact}\n      interactionPolicy={interactionPolicy}\n      item={{\n        ...item,\n        accessibilityRole: item.accessibilityRole ?? 'button',\n      }}\n      testID={testID}\n    />",
-        "sourcePath": "src/components/navigation/DrawerNavigationItem.tsx"
       },
       {
         "fromComponent": "Field",
@@ -39041,60 +36341,6 @@
         "sourcePath": "src/components/modal/Modal.tsx"
       },
       {
-        "fromComponent": "NavigationItem",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      accessibilityLabel={item.accessibilityLabel}\n      accessibilityRole={item.accessibilityRole ?? 'button'}\n      accessibilityState={resolvedAccessibilityState}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={item.onPress}\n      testID={resolvedTestID}\n    >",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromComponent": "NavigationItem",
-        "toComponent": "Box",
-        "jsxElement": "<Box\n            px=\"m\"\n            py={compact ? 's' : 'm'}\n            radius=\"m\"\n            style={{\n              backgroundColor: presentation.backgroundColor,\n              flexDirection: 'row',\n              alignItems: 'center',\n              opacity: presentation.opacity,\n            }}\n          >",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromComponent": "NavigationItem",
-        "toComponent": "View",
-        "jsxElement": "<View style={{ marginRight: theme.spacing.s }}>",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromComponent": "NavigationItem",
-        "toComponent": "Icon",
-        "jsxElement": "<Icon {...item.icon} color={presentation.contentColor} size={compact ? 's' : 'm'} />",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromComponent": "NavigationItem",
-        "toComponent": "Box",
-        "jsxElement": "<Box flex={1}>",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromComponent": "NavigationItem",
-        "toComponent": "Text",
-        "jsxElement": "<Text\n                color={active && !disabled ? 'primary' : undefined}\n                emphasis={disabled ? 'muted' : 'default'}\n                numberOfLines={1}\n                variant={compact ? 'bodySmall' : 'body'}\n                weight=\"medium\"\n              >",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromComponent": "NavigationItem",
-        "toComponent": "View",
-        "jsxElement": "<View style={{ marginLeft: theme.spacing.s }}>",
-        "sourcePath": "src/components/navigation/NavigationItem.tsx"
-      },
-      {
-        "fromComponent": "NavigationList",
-        "toComponent": "Stack",
-        "jsxElement": "<Stack\n      direction={orientation === 'horizontal' ? 'row' : 'column'}\n      gap={compact ? 'xs' : 's'}\n      testID={testID}\n    >",
-        "sourcePath": "src/components/navigation/NavigationList.tsx"
-      },
-      {
-        "fromComponent": "NavigationList",
-        "toComponent": "NavigationItem",
-        "jsxElement": "<NavigationItem\n          compact={compact}\n          interactionPolicy={interactionPolicy}\n          item={item}\n          key={item.id}\n          testID={testID}\n        />",
-        "sourcePath": "src/components/navigation/NavigationList.tsx"
-      },
-      {
         "fromComponent": "Radio",
         "toComponent": "ButtonBase",
         "jsxElement": "<ButtonBase\n      {...props}\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole=\"radio\"\n      accessibilityState={{ checked: isChecked }}\n      disabled={disabled}\n      onPress={\n        nextChecked === null\n          ? undefined\n          : () => {\n              setChecked(nextChecked);\n            }\n      }\n      testID={testID}\n    >",
@@ -39121,7 +36367,7 @@
       {
         "fromComponent": "Radio",
         "toComponent": "Box",
-        "jsxElement": "<Box ml=\"s\">",
+        "jsxElement": "<Box flex={1} ml=\"s\">",
         "sourcePath": "src/components/radio/Radio.tsx"
       },
       {
@@ -39225,48 +36471,6 @@
         "toComponent": "Text",
         "jsxElement": "<Text color={selected ? 'primary' : undefined} variant=\"label\" weight=\"medium\">",
         "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromComponent": "TabBar",
-        "toComponent": "Box",
-        "jsxElement": "<Box\n      style={{\n        flexDirection: 'row',\n        borderTopColor: theme.semantics.border.default,\n        borderTopWidth: 1,\n      }}\n      testID={testID}\n    >",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromComponent": "TabBar",
-        "toComponent": "TabBarItem",
-        "jsxElement": "<TabBarItem\n          compact={compact}\n          interactionPolicy={interactionPolicy}\n          item={item}\n          key={item.id}\n          testID={testID}\n        />",
-        "sourcePath": "src/components/navigation/TabBar.tsx"
-      },
-      {
-        "fromComponent": "TabBarItem",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      accessibilityLabel={item.accessibilityLabel}\n      accessibilityRole={item.accessibilityRole ?? 'tab'}\n      accessibilityState={resolvedAccessibilityState}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={item.onPress}\n      style={{ flex: 1 }}\n      testID={resolvedTestID}\n    >",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromComponent": "TabBarItem",
-        "toComponent": "Box",
-        "jsxElement": "<Box\n            px=\"m\"\n            py={compact ? 's' : 'm'}\n            style={{\n              flex: 1,\n              alignItems: 'center',\n              justifyContent: 'center',\n              backgroundColor: presentation.backgroundColor,\n              opacity: presentation.opacity,\n            }}\n          >",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromComponent": "TabBarItem",
-        "toComponent": "View",
-        "jsxElement": "<View style={{ marginBottom: item.label ? theme.spacing.xs : 0 }}>",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromComponent": "TabBarItem",
-        "toComponent": "Icon",
-        "jsxElement": "<Icon {...item.icon} color={contentColor} size={compact ? 's' : 'm'} />",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
-      },
-      {
-        "fromComponent": "TabBarItem",
-        "toComponent": "Text",
-        "jsxElement": "<Text\n                color={active && !disabled ? 'primary' : undefined}\n                emphasis={active && !disabled ? 'default' : 'muted'}\n                numberOfLines={1}\n                variant={compact ? 'bodySmall' : 'label'}\n                weight=\"medium\"\n              >",
-        "sourcePath": "src/components/navigation/TabBarItem.tsx"
       },
       {
         "fromComponent": "TabList",

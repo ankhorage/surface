@@ -3,7 +3,7 @@
 
 # @ankhorage/surface
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v3.4.3](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v3.4.6](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
 
 Cross-platform UI foundation for React Native and React Native Web. Provides theming, layout primitives, and core building blocks for modern apps.
 
@@ -15,14 +15,12 @@ Cross-platform UI foundation for React Native and React Native Web. Provides the
 - [Architecture overview](././paradox/diagrams/architecture-overview.mmd)
 - [Module relationships](././paradox/diagrams/module-relationships.mmd)
 - [Export graph](././paradox/diagrams/export-graph.mmd)
-- [ActionSheet sequence](././paradox/diagrams/sequences/action-sheet.mmd)
 - [AppBar sequence](././paradox/diagrams/sequences/app-bar.mmd)
 - [Badge sequence](././paradox/diagrams/sequences/badge.mmd)
 - [Button sequence](././paradox/diagrams/sequences/button.mmd)
 - [Card sequence](././paradox/diagrams/sequences/card.mmd)
 - [Checkbox sequence](././paradox/diagrams/sequences/checkbox.mmd)
 - [Container sequence](././paradox/diagrams/sequences/container.mmd)
-- [Drawer sequence](././paradox/diagrams/sequences/drawer.mmd)
 - [Field sequence](././paradox/diagrams/sequences/field.mmd)
 - [FontProvider sequence](././paradox/diagrams/sequences/font-provider.mmd)
 - [Grid sequence](././paradox/diagrams/sequences/grid.mmd)
@@ -32,7 +30,6 @@ Cross-platform UI foundation for React Native and React Native Web. Provides the
 - [ListItem sequence](././paradox/diagrams/sequences/list-item.mmd)
 - [Menu sequence](././paradox/diagrams/sequences/menu.mmd)
 - [Modal sequence](././paradox/diagrams/sequences/modal.mmd)
-- [NavigationItem sequence](././paradox/diagrams/sequences/navigation-item.mmd)
 - [Radio sequence](././paradox/diagrams/sequences/radio.mmd)
 - [resolveResponsive sequence](././paradox/diagrams/sequences/resolve-responsive.mmd)
 - [ResponsiveProvider sequence](././paradox/diagrams/sequences/responsive-provider.mmd)
@@ -40,8 +37,6 @@ Cross-platform UI foundation for React Native and React Native Web. Provides the
 - [Stack sequence](././paradox/diagrams/sequences/stack.mmd)
 - [Surface sequence](././paradox/diagrams/sequences/surface.mmd)
 - [Switch sequence](././paradox/diagrams/sequences/switch.mmd)
-- [TabBar sequence](././paradox/diagrams/sequences/tab-bar.mmd)
-- [TabBarItem sequence](././paradox/diagrams/sequences/tab-bar-item.mmd)
 - [TabList sequence](././paradox/diagrams/sequences/tab-list.mmd)
 - [TabPanel sequence](././paradox/diagrams/sequences/tab-panel.mmd)
 - [Tabs sequence](././paradox/diagrams/sequences/tabs.mmd)
