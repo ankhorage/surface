@@ -1,8 +1,4 @@
 graph LR
-  module_src_components_action_sheet_ActionSheet_tsx["src/components/action-sheet/ActionSheet.tsx"]
-  module_src_components_action_sheet_ActionSheetItem_tsx["src/components/action-sheet/ActionSheetItem.tsx"]
-  module_src_components_action_sheet_index_ts["src/components/action-sheet/index.ts"]
-  module_src_components_action_sheet_types_ts["src/components/action-sheet/types.ts"]
   module_src_components_badge_Badge_tsx["src/components/badge/Badge.tsx"]
   module_src_components_badge_index_ts["src/components/badge/index.ts"]
   module_src_components_badge_types_ts["src/components/badge/types.ts"]
@@ -15,9 +11,6 @@ graph LR
   module_src_components_checkbox_Checkbox_tsx["src/components/checkbox/Checkbox.tsx"]
   module_src_components_checkbox_index_ts["src/components/checkbox/index.ts"]
   module_src_components_checkbox_types_ts["src/components/checkbox/types.ts"]
-  module_src_components_drawer_Drawer_tsx["src/components/drawer/Drawer.tsx"]
-  module_src_components_drawer_index_ts["src/components/drawer/index.ts"]
-  module_src_components_drawer_types_ts["src/components/drawer/types.ts"]
   module_src_components_field_Field_tsx["src/components/field/Field.tsx"]
   module_src_components_field_index_ts["src/components/field/index.ts"]
   module_src_components_field_types_ts["src/components/field/types.ts"]
@@ -41,18 +34,9 @@ graph LR
   module_src_components_modal_index_ts["src/components/modal/index.ts"]
   module_src_components_modal_Modal_tsx["src/components/modal/Modal.tsx"]
   module_src_components_modal_types_ts["src/components/modal/types.ts"]
-  module_src_components_navigation_DrawerNavigation_tsx["src/components/navigation/DrawerNavigation.tsx"]
-  module_src_components_navigation_DrawerNavigationItem_tsx["src/components/navigation/DrawerNavigationItem.tsx"]
-  module_src_components_navigation_helpers_test_ts["src/components/navigation/helpers.test.ts"]
-  module_src_components_navigation_helpers_ts["src/components/navigation/helpers.ts"]
-  module_src_components_navigation_index_ts["src/components/navigation/index.ts"]
-  module_src_components_navigation_NavigationItem_tsx["src/components/navigation/NavigationItem.tsx"]
-  module_src_components_navigation_NavigationList_tsx["src/components/navigation/NavigationList.tsx"]
-  module_src_components_navigation_policy_test_ts["src/components/navigation/policy.test.ts"]
-  module_src_components_navigation_TabBar_tsx["src/components/navigation/TabBar.tsx"]
-  module_src_components_navigation_TabBarItem_tsx["src/components/navigation/TabBarItem.tsx"]
-  module_src_components_navigation_types_ts["src/components/navigation/types.ts"]
   module_src_components_radio_index_ts["src/components/radio/index.ts"]
+  module_src_components_radio_isRadioTextContent_ts["src/components/radio/isRadioTextContent.ts"]
+  module_src_components_radio_Radio_test_ts["src/components/radio/Radio.test.ts"]
   module_src_components_radio_Radio_tsx["src/components/radio/Radio.tsx"]
   module_src_components_radio_types_ts["src/components/radio/types.ts"]
   module_src_components_switch_index_ts["src/components/switch/index.ts"]
@@ -202,21 +186,6 @@ graph LR
   module_src_utils_deepMerge_test_ts["src/utils/deepMerge.test.ts"]
   module_src_utils_deepMerge_ts["src/utils/deepMerge.ts"]
   module_src_webAcceptance_test_tsx["src/webAcceptance.test.tsx"]
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_components_action_sheet_ActionSheetItem_tsx
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_components_action_sheet_types_ts
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_focus_FocusScope_tsx
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_overlay_Portal_tsx
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_resolvePointerEvents_ts
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_internal_resolvers_index_ts
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_layout_index_ts
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_primitives_text_index_ts
-  module_src_components_action_sheet_ActionSheet_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_action_sheet_ActionSheetItem_tsx --> module_src_components_action_sheet_types_ts
-  module_src_components_action_sheet_ActionSheetItem_tsx --> module_src_layout_index_ts
-  module_src_components_action_sheet_ActionSheetItem_tsx --> module_src_primitives_button_base_index_ts
-  module_src_components_action_sheet_ActionSheetItem_tsx --> module_src_primitives_text_index_ts
-  module_src_components_action_sheet_types_ts --> module_src_interactionPolicy_ts
-  module_src_components_action_sheet_types_ts --> module_src_surfaceColor_ts
   module_src_components_badge_Badge_tsx --> module_src_components_badge_types_ts
   module_src_components_badge_Badge_tsx --> module_src_internal_resolvers_index_ts
   module_src_components_badge_Badge_tsx --> module_src_layout_index_ts
@@ -252,14 +221,6 @@ graph LR
   module_src_components_checkbox_types_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_components_checkbox_types_ts --> module_src_primitives_button_base_index_ts
   module_src_components_checkbox_types_ts --> module_src_surfaceColor_ts
-  module_src_components_drawer_Drawer_tsx --> module_src_components_drawer_types_ts
-  module_src_components_drawer_Drawer_tsx --> module_src_internal_focus_FocusScope_tsx
-  module_src_components_drawer_Drawer_tsx --> module_src_internal_overlay_Portal_tsx
-  module_src_components_drawer_Drawer_tsx --> module_src_internal_resolvePointerEvents_ts
-  module_src_components_drawer_Drawer_tsx --> module_src_internal_resolvers_index_ts
-  module_src_components_drawer_Drawer_tsx --> module_src_layout_index_ts
-  module_src_components_drawer_Drawer_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_drawer_types_ts --> module_src_interactionPolicy_ts
   module_src_components_field_Field_tsx --> module_src_components_field_types_ts
   module_src_components_field_Field_tsx --> module_src_components_helper_text_index_ts
   module_src_components_field_Field_tsx --> module_src_components_label_index_ts
@@ -308,38 +269,8 @@ graph LR
   module_src_components_modal_Modal_tsx --> module_src_layout_index_ts
   module_src_components_modal_Modal_tsx --> module_src_theme_ThemeContext_tsx
   module_src_components_modal_types_ts --> module_src_interactionPolicy_ts
-  module_src_components_navigation_DrawerNavigation_tsx --> module_src_components_navigation_DrawerNavigationItem_tsx
-  module_src_components_navigation_DrawerNavigation_tsx --> module_src_components_navigation_types_ts
-  module_src_components_navigation_DrawerNavigation_tsx --> module_src_layout_index_ts
-  module_src_components_navigation_DrawerNavigationItem_tsx --> module_src_components_navigation_NavigationItem_tsx
-  module_src_components_navigation_DrawerNavigationItem_tsx --> module_src_components_navigation_types_ts
-  module_src_components_navigation_helpers_test_ts --> module_src_components_navigation_helpers_ts
-  module_src_components_navigation_helpers_test_ts --> module_src_theme_createTheme_ts
-  module_src_components_navigation_helpers_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
-  module_src_components_navigation_helpers_ts --> module_src_theme_types_ts
-  module_src_components_navigation_NavigationItem_tsx --> module_src_components_navigation_helpers_ts
-  module_src_components_navigation_NavigationItem_tsx --> module_src_components_navigation_types_ts
-  module_src_components_navigation_NavigationItem_tsx --> module_src_layout_index_ts
-  module_src_components_navigation_NavigationItem_tsx --> module_src_primitives_button_base_index_ts
-  module_src_components_navigation_NavigationItem_tsx --> module_src_primitives_icon_index_ts
-  module_src_components_navigation_NavigationItem_tsx --> module_src_primitives_text_index_ts
-  module_src_components_navigation_NavigationItem_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_navigation_NavigationList_tsx --> module_src_components_navigation_NavigationItem_tsx
-  module_src_components_navigation_NavigationList_tsx --> module_src_components_navigation_types_ts
-  module_src_components_navigation_NavigationList_tsx --> module_src_layout_index_ts
-  module_src_components_navigation_TabBar_tsx --> module_src_components_navigation_TabBarItem_tsx
-  module_src_components_navigation_TabBar_tsx --> module_src_components_navigation_types_ts
-  module_src_components_navigation_TabBar_tsx --> module_src_layout_index_ts
-  module_src_components_navigation_TabBar_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_navigation_TabBarItem_tsx --> module_src_components_navigation_helpers_ts
-  module_src_components_navigation_TabBarItem_tsx --> module_src_components_navigation_types_ts
-  module_src_components_navigation_TabBarItem_tsx --> module_src_layout_index_ts
-  module_src_components_navigation_TabBarItem_tsx --> module_src_primitives_button_base_index_ts
-  module_src_components_navigation_TabBarItem_tsx --> module_src_primitives_icon_index_ts
-  module_src_components_navigation_TabBarItem_tsx --> module_src_primitives_text_index_ts
-  module_src_components_navigation_TabBarItem_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_navigation_types_ts --> module_src_interactionPolicy_ts
-  module_src_components_navigation_types_ts --> module_src_primitives_icon_index_ts
+  module_src_components_radio_Radio_test_ts --> module_src_components_radio_isRadioTextContent_ts
+  module_src_components_radio_Radio_tsx --> module_src_components_radio_isRadioTextContent_ts
   module_src_components_radio_Radio_tsx --> module_src_components_radio_types_ts
   module_src_components_radio_Radio_tsx --> module_src_internal_resolvers_index_ts
   module_src_components_radio_Radio_tsx --> module_src_internal_useControllableState_ts
@@ -424,7 +355,6 @@ graph LR
   module_src_examples_DocsExamples_tsx --> module_src_components_button_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_components_card_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_components_checkbox_index_ts
-  module_src_examples_DocsExamples_tsx --> module_src_components_drawer_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_components_field_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_components_helper_text_index_ts
   module_src_examples_DocsExamples_tsx --> module_src_components_menu_index_ts
