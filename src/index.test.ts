@@ -43,8 +43,8 @@ const expectedRootExports = [
   "export * from './theme';",
 ] as const;
 
-describe('public package contract', () => {
-  it('keeps the intended package surface on the root barrel', () => {
+describe('public root barrel contract', () => {
+  it('keeps the intended package surface', () => {
     expectedRootExports.forEach((line) => {
       expect(indexSource).toContain(line);
     });
@@ -69,6 +69,17 @@ describe('public package contract', () => {
     expect(indexSource).not.toContain('useFocusManager');
   });
 
+  it('exports the resolved semantic and diagnostic contracts', () => {
+    const theme = createTheme();
+    const selection: SelectionSemantics = theme.semantics.selection;
+    const diagnostics: SurfaceColorDiagnostics = theme.colorDiagnostics;
+
+    expect(selection.background).toBeDefined();
+    expect(diagnostics.generated.swatches).toBe(theme.swatches);
+  });
+});
+
+describe('public package metadata contract', () => {
   it('keeps package metadata aligned with the single-entry public surface', () => {
     expect(packageJson.files).toEqual(['dist', 'src', 'README.md', 'CHANGELOG.md', 'LICENSE']);
     expect(packageJson.exports).toEqual({
@@ -96,14 +107,5 @@ describe('public package contract', () => {
     expect(packageJson.devDependencies['react-native']).toBe('0.86.3');
     expect(packageJson.peerDependencies['react-native-svg']).toBe('15.15.4');
     expect(packageJson.devDependencies['react-native-svg']).toBe('15.15.4');
-  });
-
-  it('exports the resolved semantic and diagnostic contracts from the public root', () => {
-    const theme = createTheme();
-    const selection: SelectionSemantics = theme.semantics.selection;
-    const diagnostics: SurfaceColorDiagnostics = theme.colorDiagnostics;
-
-    expect(selection.background).toBeDefined();
-    expect(diagnostics.generated.swatches).toBe(theme.swatches);
   });
 });
