@@ -4,17 +4,10 @@
 export default [
   {
     files: [
-      'src/components/action-sheet/ActionSheet.tsx',
-      'src/components/action-sheet/ActionSheetItem.tsx',
       'src/components/button/Button.tsx',
       'src/components/checkbox/Checkbox.tsx',
-      'src/components/drawer/Drawer.tsx',
       'src/components/menu/Menu.tsx',
       'src/components/modal/Modal.tsx',
-      'src/components/navigation/NavigationItem.tsx',
-      'src/components/navigation/TabBarItem.tsx',
-      'src/components/navigation/helpers.test.ts',
-      'src/components/navigation/policy.test.ts',
       'src/components/radio/Radio.tsx',
       'src/components/switch/Switch.tsx',
       'src/components/tabs/Tab.tsx',
@@ -40,7 +33,6 @@ export default [
   },
   {
     files: [
-      'src/components/action-sheet/ActionSheet.tsx',
       'src/components/menu/Menu.tsx',
       'src/components/text-input/TextInput.tsx',
       'src/components/tooltip/Tooltip.tsx',
@@ -53,20 +45,14 @@ export default [
   },
   {
     files: [
-      'src/components/action-sheet/ActionSheet.tsx',
-      'src/components/action-sheet/ActionSheetItem.tsx',
       'src/components/badge/Badge.tsx',
       'src/components/button/Button.tsx',
       'src/components/card/Card.tsx',
       'src/components/checkbox/Checkbox.tsx',
-      'src/components/drawer/Drawer.tsx',
       'src/components/icon-button/IconButton.tsx',
       'src/components/list-item/ListItem.tsx',
       'src/components/menu/Menu.tsx',
       'src/components/modal/Modal.tsx',
-      'src/components/navigation/NavigationItem.tsx',
-      'src/components/navigation/TabBar.tsx',
-      'src/components/navigation/TabBarItem.tsx',
       'src/components/radio/Radio.tsx',
       'src/components/switch/Switch.tsx',
       'src/components/tabs/Tab.tsx',
@@ -91,7 +77,6 @@ export default [
     files: [
       'src/components/menu/Menu.tsx',
       'src/components/menu/navigation.ts',
-      'src/components/navigation/policy.test.ts',
       'src/components/tabs/navigation.ts',
       'src/core/responsive/getBreakpointFromWidth.ts',
       'src/core/responsive/resolve.ts',

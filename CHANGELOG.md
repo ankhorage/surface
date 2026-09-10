@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 4.0.0
+
+### Major Changes
+
+- ae190ea: Remove obsolete ActionSheet, Drawer, and navigation-chrome APIs now owned by canonical composition and @ankhorage/navigator.
+
 ## 3.4.6
 
 ### Patch Changes

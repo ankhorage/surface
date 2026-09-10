@@ -14,113 +14,6 @@ Source: `src/theme/types.ts:97:1`
 | neutral | property | `RoleSemantics` | yes      |             |
 | primary | property | `RoleSemantics` | yes      |             |
 
-## ActionSheet
-
-Kind: `function`
-Module: `src/components/action-sheet/ActionSheet.tsx`
-Source: `src/components/action-sheet/ActionSheet.tsx:16:1`
-
-### Signatures
-
-- `({
-visible,
-onDismiss,
-title,
-description,
-children,
-cancelLabel = 'Cancel',
-closeOnBackdrop = true,
-interactionPolicy = 'enabled',
-testID,
-}: ActionSheetProps) => React.JSX.Element | null`
-  - {
-    visible,
-    onDismiss,
-    title,
-    description,
-    children,
-    cancelLabel = 'Cancel',
-    closeOnBackdrop = true,
-    interactionPolicy = 'enabled',
-    testID,
-    }: `ActionSheetProps`
-  - returns: `React.JSX.Element | null`
-
-## ActionSheetItem
-
-Kind: `function`
-Module: `src/components/action-sheet/ActionSheetItem.tsx`
-Source: `src/components/action-sheet/ActionSheetItem.tsx:8:1`
-
-### Signatures
-
-- `({
-label,
-description,
-leading,
-trailing,
-color,
-disabled = false,
-selected = false,
-interactionPolicy = 'enabled',
-onPress,
-testID,
-}: ActionSheetItemProps) => React.JSX.Element`
-  - {
-    label,
-    description,
-    leading,
-    trailing,
-    color,
-    disabled = false,
-    selected = false,
-    interactionPolicy = 'enabled',
-    onPress,
-    testID,
-    }: `ActionSheetItemProps`
-  - returns: `React.JSX.Element`
-
-## ActionSheetItemProps
-
-Kind: `type`
-Module: `src/components/action-sheet/types.ts`
-Source: `src/components/action-sheet/types.ts:18:1`
-
-### Members
-
-| Name              | Kind     | Type                                                                                                                                          | Required | Description |
-| ----------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| color             | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
-| description       | property | `React.ReactNode`                                                                                                                             | no       |             |
-| disabled          | property | `boolean \| undefined`                                                                                                                        | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
-| label             | property | `React.ReactNode`                                                                                                                             | yes      |             |
-| leading           | property | `React.ReactNode`                                                                                                                             | no       |             |
-| onPress           | property | `(() => void) \| undefined`                                                                                                                   | no       |             |
-| selected          | property | `boolean \| undefined`                                                                                                                        | no       |             |
-| testID            | property | `string \| undefined`                                                                                                                         | no       |             |
-| trailing          | property | `React.ReactNode`                                                                                                                             | no       |             |
-
-## ActionSheetProps
-
-Kind: `type`
-Module: `src/components/action-sheet/types.ts`
-Source: `src/components/action-sheet/types.ts:6:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| cancelLabel       | property | `React.ReactNode`                | no       |             |
-| children          | property | `React.ReactNode`                | no       |             |
-| closeOnBackdrop   | property | `boolean \| undefined`           | no       |             |
-| description       | property | `React.ReactNode`                | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| onDismiss         | property | `(() => void) \| undefined`      | no       |             |
-| testID            | property | `string \| undefined`            | no       |             |
-| title             | property | `React.ReactNode`                | no       |             |
-| visible           | property | `boolean`                        | yes      |             |
-
 ## AppBar
 
 Kind: `function`
@@ -690,7 +583,7 @@ Source: `src/layout/Center.tsx:5:1`
 | accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
 | accessible         | property | `boolean \| undefined`                                                    | no       |             |
 | alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| axis               | property | `"vertical" \| "horizontal" \| "both" \| undefined`                       | no       |             |
+| axis               | property | `"horizontal" \| "vertical" \| "both" \| undefined`                       | no       |             |
 | bg                 | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
 | borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
 | borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
@@ -1045,7 +938,7 @@ Source: `src/layout/Divider.tsx:6:1`
 | mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
 | my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
 | opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| orientation        | property | `"vertical" \| "horizontal" \| undefined`                                 | no       |             |
+| orientation        | property | `"horizontal" \| "vertical" \| undefined`                                 | no       |             |
 | overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
 | p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
 | pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
@@ -1063,132 +956,6 @@ Source: `src/layout/Divider.tsx:6:1`
 | thickness          | property | `number \| undefined`                                                     | no       |             |
 | top                | property | `Responsive<number> \| undefined`                                         | no       |             |
 | zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
-
-## Drawer
-
-Kind: `function`
-Module: `src/components/drawer/Drawer.tsx`
-Source: `src/components/drawer/Drawer.tsx:14:1`
-
-### Signatures
-
-- `({
-visible,
-onDismiss,
-position = 'right',
-children,
-closeOnBackdrop = true,
-interactionPolicy = 'enabled',
-testID,
-}: DrawerProps) => React.JSX.Element | null`
-  - {
-    visible,
-    onDismiss,
-    position = 'right',
-    children,
-    closeOnBackdrop = true,
-    interactionPolicy = 'enabled',
-    testID,
-    }: `DrawerProps`
-  - returns: `React.JSX.Element | null`
-
-## DrawerNavigation
-
-Kind: `function`
-Module: `src/components/navigation/DrawerNavigation.tsx`
-Source: `src/components/navigation/DrawerNavigation.tsx:7:1`
-
-### Signatures
-
-- `({
-items,
-header,
-footer,
-compact = false,
-testID,
-interactionPolicy,
-}: DrawerNavigationProps) => React.JSX.Element`
-  - {
-    items,
-    header,
-    footer,
-    compact = false,
-    testID,
-    interactionPolicy,
-    }: `DrawerNavigationProps`
-  - returns: `React.JSX.Element`
-
-## DrawerNavigationItem
-
-Kind: `function`
-Module: `src/components/navigation/DrawerNavigationItem.tsx`
-Source: `src/components/navigation/DrawerNavigationItem.tsx:6:1`
-
-### Signatures
-
-- `({
-item,
-compact = false,
-testID,
-interactionPolicy,
-}: DrawerNavigationItemProps) => React.JSX.Element`
-  - {
-    item,
-    compact = false,
-    testID,
-    interactionPolicy,
-    }: `DrawerNavigationItemProps`
-  - returns: `React.JSX.Element`
-
-## DrawerNavigationItemProps
-
-Kind: `type`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:61:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| compact           | property | `boolean \| undefined`           | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| item              | property | `NavigationItemSpec`             | yes      |             |
-| testID            | property | `string \| undefined`            | no       |             |
-
-## DrawerNavigationProps
-
-Kind: `type`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:52:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| compact           | property | `boolean \| undefined`           | no       |             |
-| footer            | property | `React.ReactNode`                | no       |             |
-| header            | property | `React.ReactNode`                | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| items             | property | `readonly NavigationItemSpec[]`  | yes      |             |
-| testID            | property | `string \| undefined`            | no       |             |
-
-## DrawerProps
-
-Kind: `type`
-Module: `src/components/drawer/types.ts`
-Source: `src/components/drawer/types.ts:5:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| children          | property | `React.ReactNode`                | no       |             |
-| closeOnBackdrop   | property | `boolean \| undefined`           | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| onDismiss         | property | `(() => void) \| undefined`      | no       |             |
-| position          | property | `"left" \| "right" \| undefined` | no       |             |
-| testID            | property | `string \| undefined`            | no       |             |
-| visible           | property | `boolean`                        | yes      |             |
 
 ## Field
 
@@ -1965,111 +1732,6 @@ Source: `src/components/modal/types.ts:5:1`
 | testID            | property | `string \| undefined`            | no       |             |
 | visible           | property | `boolean`                        | yes      |             |
 
-## NavigationItem
-
-Kind: `function`
-Module: `src/components/navigation/NavigationItem.tsx`
-Source: `src/components/navigation/NavigationItem.tsx:12:1`
-
-### Signatures
-
-- `({
-item,
-compact = false,
-testID,
-interactionPolicy,
-}: NavigationItemProps) => React.JSX.Element`
-  - {
-    item,
-    compact = false,
-    testID,
-    interactionPolicy,
-    }: `NavigationItemProps`
-  - returns: `React.JSX.Element`
-
-## NavigationItemIcon
-
-Kind: `unknown`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:7:1`
-
-## NavigationItemProps
-
-Kind: `type`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:23:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| compact           | property | `boolean \| undefined`           | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| item              | property | `NavigationItemSpec`             | yes      |             |
-| testID            | property | `string \| undefined`            | no       |             |
-
-## NavigationItemSpec
-
-Kind: `type`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:9:1`
-
-### Members
-
-| Name               | Kind     | Type                              | Required | Description |
-| ------------------ | -------- | --------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`             | no       |             |
-| accessibilityRole  | property | `AccessibilityRole \| undefined`  | no       |             |
-| accessibilityState | property | `AccessibilityState \| undefined` | no       |             |
-| active             | property | `boolean \| undefined`            | no       |             |
-| badge              | property | `React.ReactNode`                 | no       |             |
-| disabled           | property | `boolean \| undefined`            | no       |             |
-| icon               | property | `IconSource \| undefined`         | no       |             |
-| id                 | property | `string`                          | yes      |             |
-| label              | property | `React.ReactNode`                 | yes      |             |
-| onPress            | property | `(() => void) \| undefined`       | no       |             |
-| testID             | property | `string \| undefined`             | no       |             |
-
-## NavigationList
-
-Kind: `function`
-Module: `src/components/navigation/NavigationList.tsx`
-Source: `src/components/navigation/NavigationList.tsx:7:1`
-
-### Signatures
-
-- `({
-items,
-orientation = 'vertical',
-compact = false,
-testID,
-interactionPolicy,
-}: NavigationListProps) => React.JSX.Element`
-  - {
-    items,
-    orientation = 'vertical',
-    compact = false,
-    testID,
-    interactionPolicy,
-    }: `NavigationListProps`
-  - returns: `React.JSX.Element`
-
-## NavigationListProps
-
-Kind: `type`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:30:1`
-
-### Members
-
-| Name              | Kind     | Type                                      | Required | Description |
-| ----------------- | -------- | ----------------------------------------- | -------- | ----------- |
-| compact           | property | `boolean \| undefined`                    | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined`          | no       |             |
-| items             | property | `readonly NavigationItemSpec[]`           | yes      |             |
-| orientation       | property | `"vertical" \| "horizontal" \| undefined` | no       |             |
-| testID            | property | `string \| undefined`                     | no       |             |
-
 ## NeutralSemantics
 
 Kind: `type`
@@ -2098,7 +1760,9 @@ Source: `src/theme/types.ts:26:1`
 
 Kind: `function`
 Module: `src/components/radio/Radio.tsx`
-Source: `src/components/radio/Radio.tsx:16:1`
+Source: `src/components/radio/Radio.tsx:20:1`
+
+Renders one radio control with either text or structured label content.
 
 ### Signatures
 
@@ -2660,7 +2324,7 @@ Source: `src/layout/Spacer.tsx:6:1`
 
 | Name   | Kind     | Type                                                | Required | Description |
 | ------ | -------- | --------------------------------------------------- | -------- | ----------- |
-| axis   | property | `"vertical" \| "horizontal" \| "both" \| undefined` | no       |             |
+| axis   | property | `"horizontal" \| "vertical" \| "both" \| undefined` | no       |             |
 | size   | property | `SpaceValue \| undefined`                           | no       |             |
 | testID | property | `string \| undefined`                               | no       |             |
 
@@ -3116,60 +2780,6 @@ testID,
     testID,
     }: `TabProps`
   - returns: `React.JSX.Element`
-
-## TabBar
-
-Kind: `function`
-Module: `src/components/navigation/TabBar.tsx`
-Source: `src/components/navigation/TabBar.tsx:8:1`
-
-### Signatures
-
-- `({ items, compact = false, testID, interactionPolicy }: TabBarProps) => React.JSX.Element`
-  - { items, compact = false, testID, interactionPolicy }: `TabBarProps`
-  - returns: `React.JSX.Element`
-
-## TabBarItem
-
-Kind: `function`
-Module: `src/components/navigation/TabBarItem.tsx`
-Source: `src/components/navigation/TabBarItem.tsx:12:1`
-
-### Signatures
-
-- `({ item, compact = false, testID, interactionPolicy }: TabBarItemProps) => React.JSX.Element`
-  - { item, compact = false, testID, interactionPolicy }: `TabBarItemProps`
-  - returns: `React.JSX.Element`
-
-## TabBarItemProps
-
-Kind: `type`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:45:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| compact           | property | `boolean \| undefined`           | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| item              | property | `NavigationItemSpec`             | yes      |             |
-| testID            | property | `string \| undefined`            | no       |             |
-
-## TabBarProps
-
-Kind: `type`
-Module: `src/components/navigation/types.ts`
-Source: `src/components/navigation/types.ts:38:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| compact           | property | `boolean \| undefined`           | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| items             | property | `readonly NavigationItemSpec[]`  | yes      |             |
-| testID            | property | `string \| undefined`            | no       |             |
 
 ## TabList
 
