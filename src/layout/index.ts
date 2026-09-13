@@ -12,6 +12,11 @@ export type { GridProps } from './Grid';
 export { Grid } from './Grid';
 export type { InlineProps } from './Inline';
 export { Inline } from './Inline';
+export type {
+  KeyboardAvoidingViewBehavior,
+  KeyboardAvoidingViewProps,
+} from './KeyboardAvoidingView';
+export { KeyboardAvoidingView } from './KeyboardAvoidingView';
 export type { ScrollAreaProps } from './ScrollArea';
 export { ScrollArea } from './ScrollArea';
 export type { ShowProps } from './Show';

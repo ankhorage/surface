@@ -1550,6 +1550,32 @@ Source: `src/utils/deepEqual.ts:5:14`
   - b: `unknown`
   - returns: `boolean`
 
+## KeyboardAvoidingView
+
+Kind: `function`
+Module: `src/layout/KeyboardAvoidingView.tsx`
+Source: `src/layout/KeyboardAvoidingView.tsx:8:1`
+
+Preserve React Native keyboard avoidance behind the stable Surface layout boundary.
+
+### Signatures
+
+- `(props: ReactNativeKeyboardAvoidingViewProps) => React.JSX.Element`
+  - props: `ReactNativeKeyboardAvoidingViewProps`
+  - returns: `React.JSX.Element`
+
+## KeyboardAvoidingViewBehavior
+
+Kind: `unknown`
+Module: `src/layout/KeyboardAvoidingView.tsx`
+Source: `src/layout/KeyboardAvoidingView.tsx:12:1`
+
+## KeyboardAvoidingViewProps
+
+Kind: `unknown`
+Module: `src/layout/KeyboardAvoidingView.tsx`
+Source: `src/layout/KeyboardAvoidingView.tsx:16:1`
+
 ## Label
 
 Kind: `function`

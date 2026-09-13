@@ -5831,6 +5831,74 @@
     "structuredRows": []
   },
   {
+    "name": "KeyboardAvoidingView",
+    "description": "Preserve React Native keyboard avoidance behind the stable Surface layout boundary.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/layout/KeyboardAvoidingView.tsx",
+    "sourceLocation": {
+      "filePath": "src/layout/KeyboardAvoidingView.tsx",
+      "line": 8,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [
+      {
+        "label": "(props: ReactNativeKeyboardAvoidingViewProps) => React.JSX.Element",
+        "parameters": [
+          {
+            "name": "props",
+            "type": "ReactNativeKeyboardAvoidingViewProps",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "React.JSX.Element",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "KeyboardAvoidingViewBehavior",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/layout/KeyboardAvoidingView.tsx",
+    "sourceLocation": {
+      "filePath": "src/layout/KeyboardAvoidingView.tsx",
+      "line": 12,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "KeyboardAvoidingViewProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/layout/KeyboardAvoidingView.tsx",
+    "sourceLocation": {
+      "filePath": "src/layout/KeyboardAvoidingView.tsx",
+      "line": 16,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
     "name": "Label",
     "description": null,
     "isReadme": false,
