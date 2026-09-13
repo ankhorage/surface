@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 4.2.0
+
+### Minor Changes
+
+- aab8831: Add a stable KeyboardAvoidingView layout primitive backed directly by React Native.
+
 ## 4.1.0
 
 ### Minor Changes
