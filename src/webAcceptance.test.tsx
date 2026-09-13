@@ -10,6 +10,7 @@ const scrollContentStyle = { padding: 4 };
 
 const { Container } = await import('./layout/Container');
 const { Grid } = await import('./layout/Grid');
+const { KeyboardAvoidingView } = await import('./layout/KeyboardAvoidingView');
 const { ScrollArea } = await import('./layout/ScrollArea');
 const { Show } = await import('./layout/Show');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
@@ -93,4 +94,20 @@ test('RN Web 0.21 compiles box-none overlay pointer events into a hit-test-safe 
 
   expect(markup).toContain('data-testid="interactive-content"');
   expect(markup).toContain('r-pointerEvents-');
+});
+
+test('RN Web 0.21 renders keyboard-safe content through the Surface layout boundary', () => {
+  const markup = renderToString(
+    <KeyboardAvoidingView
+      behavior="padding"
+      enabled
+      keyboardVerticalOffset={24}
+      testID="keyboard-safe"
+    >
+      <ReactNativeWeb.Text>Keyboard-safe content</ReactNativeWeb.Text>
+    </KeyboardAvoidingView>,
+  );
+
+  expect(markup).toContain('data-testid="keyboard-safe"');
+  expect(markup).toContain('Keyboard-safe content');
 });

@@ -6,6 +6,7 @@ import type { SelectionSemantics, SurfaceColorDiagnostics } from './index';
 import { createTheme } from './theme/createTheme';
 
 const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8');
+const layoutIndexSource = readFileSync(new URL('./layout/index.ts', import.meta.url), 'utf8');
 const packageJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 ) as {
@@ -77,6 +78,15 @@ describe('public root barrel contract', () => {
 
     expect(selection.background).toBeDefined();
     expect(diagnostics.generated.swatches).toBe(theme.swatches);
+  });
+
+  it('publishes KeyboardAvoidingView through the root layout facade', () => {
+    expect(indexSource).toContain("export * from './layout';");
+    expect(layoutIndexSource).toContain(
+      "export { KeyboardAvoidingView } from './KeyboardAvoidingView';",
+    );
+    expect(layoutIndexSource).toContain('KeyboardAvoidingViewProps');
+    expect(layoutIndexSource).toContain('KeyboardAvoidingViewBehavior');
   });
 });
 
