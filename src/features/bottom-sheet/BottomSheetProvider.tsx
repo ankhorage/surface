@@ -48,7 +48,7 @@ export function BottomSheetProvider({ children }: { children: React.ReactNode })
   );
 
   return (
-    <BottomSheetContext.Provider value={controller}>
+    <BottomSheetContext value={controller}>
       <BottomSheetModalProvider>
         {children}
         <BottomSheetHost
@@ -58,7 +58,7 @@ export function BottomSheetProvider({ children }: { children: React.ReactNode })
           presentedRef={presentedRef}
         />
       </BottomSheetModalProvider>
-    </BottomSheetContext.Provider>
+    </BottomSheetContext>
   );
 }
 
