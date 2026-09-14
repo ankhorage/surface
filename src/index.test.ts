@@ -102,8 +102,9 @@ describe('remaining root barrel contract', () => {
     expect(indexSource).not.toContain("'./components/drawer'");
     expect(indexSource).not.toContain("'./components/navigation'");
     expect(indexSource).not.toContain('DrawerNavigation');
-    expect(indexSource).not.toContain('MenuProps');
-    expect(indexSource).not.toContain('MenuAction');
+    expect(indexSource).not.toMatch(/\bMenuProps\b/u);
+    expect(indexSource).not.toMatch(/\bMenuAction\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{\s*Menu\s*\}/u);
     expect(indexSource).not.toContain('NavigationItem');
     expect(indexSource).not.toContain('NavigationList');
     expect(indexSource).not.toContain('TabBar');
