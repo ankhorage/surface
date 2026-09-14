@@ -114,7 +114,7 @@ function usePopoverMenuKeyboard({
         }
         if (key === 'Enter') {
           event.preventDefault();
-          const action = actions[activeIndex];
+          const action = actions.at(activeIndex);
           if (action) activateAction(action);
           return;
         }
@@ -153,13 +153,11 @@ function PopoverMenuItem({
       testID={testID ? `${testID}-item-${action.id}` : undefined}
     >
       <Box
+        bg={selected ? theme.semantics.action.neutral.softBg : 'transparent'}
+        opacity={action.disabled ? 0.56 : 1}
         px="m"
         py="s"
         radius="s"
-        style={{
-          backgroundColor: selected ? theme.semantics.action.neutral.softBg : 'transparent',
-          opacity: action.disabled ? 0.56 : 1,
-        }}
       >
         <PopoverMenuItemContent action={action} active={active} />
       </Box>
