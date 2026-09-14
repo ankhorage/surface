@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 5.0.1
+
+### Patch Changes
+
+- 14c083f: Move Modal and the accessible Tabs system to canonical feature ownership without changing their public root API.
+
 ## 5.0.0
 
 ### Major Changes
