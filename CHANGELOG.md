@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 4.4.1
+
+### Patch Changes
+
+- 6af42ff: Move documentation examples to the repository-root examples structure and add type-aware lint coverage for them.
+
 ## 4.4.0
 
 ### Minor Changes
