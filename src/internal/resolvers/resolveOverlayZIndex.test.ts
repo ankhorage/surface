@@ -5,7 +5,8 @@ import { resolveOverlayZIndex } from './resolveOverlayZIndex';
 describe('resolveOverlayZIndex', () => {
   it('assigns higher base layers to later overlay types', () => {
     expect(resolveOverlayZIndex('modal')).toBeLessThan(resolveOverlayZIndex('menu'));
-    expect(resolveOverlayZIndex('menu')).toBeLessThan(resolveOverlayZIndex('tooltip'));
+    expect(resolveOverlayZIndex('menu')).toBeLessThan(resolveOverlayZIndex('popover'));
+    expect(resolveOverlayZIndex('popover')).toBeLessThan(resolveOverlayZIndex('tooltip'));
     expect(resolveOverlayZIndex('tooltip')).toBeLessThan(resolveOverlayZIndex('toast'));
   });
 
