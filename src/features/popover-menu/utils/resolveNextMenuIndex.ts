@@ -6,7 +6,7 @@ export function resolveNextMenuIndex(
 ): number {
   const enabledIndexes = items.flatMap((item, index) => (item.disabled ? [] : [index]));
   if (enabledIndexes.length === 0) return -1;
-  if (key === 'Home') return enabledIndexes[0] ?? -1;
+  if (key === 'Home') return enabledIndexes.at(0) ?? -1;
   if (key === 'End') return enabledIndexes.at(-1) ?? -1;
 
   const activeEnabledIndex = enabledIndexes.indexOf(currentIndex);
@@ -17,5 +17,5 @@ export function resolveNextMenuIndex(
         ? (activeEnabledIndex - 1 + enabledIndexes.length) % enabledIndexes.length
         : (activeEnabledIndex + 1) % enabledIndexes.length;
 
-  return enabledIndexes[nextEnabledIndex] ?? -1;
+  return enabledIndexes.at(nextEnabledIndex) ?? -1;
 }
