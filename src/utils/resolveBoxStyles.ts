@@ -55,11 +55,10 @@ export function resolveBoxStyles(
   };
 }
 
+type RadiusValue = number | keyof SurfaceTheme['radii'];
+
 /*** Resolves a Surface radius token or raw number. */
-function resolveRadius(
-  theme: SurfaceTheme,
-  value: BoxStyleProps['radius'] extends infer _T ? number | keyof SurfaceTheme['radii'] | undefined : never,
-): number | undefined {
+function resolveRadius(theme: SurfaceTheme, value: RadiusValue | undefined): number | undefined {
   if (value === undefined) return undefined;
   if (typeof value === 'number') return value;
   return theme.radii[value];

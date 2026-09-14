@@ -1,24 +1,8 @@
-import {
-  FontAwesome,
-  type FontAwesomeIconName,
-} from '@react-native-vector-icons/fontawesome/static';
-import {
-  FontAwesome5,
-  type FontAwesome5BrandIconName,
-  type FontAwesome5RegularIconName,
-  type FontAwesome5SolidIconName,
-} from '@react-native-vector-icons/fontawesome5/static';
-import {
-  FontAwesome6,
-  type FontAwesome6BrandIconName,
-  type FontAwesome6RegularIconName,
-  type FontAwesome6SolidIconName,
-} from '@react-native-vector-icons/fontawesome6/static';
-import { Ionicons, type IoniconsIconName } from '@react-native-vector-icons/ionicons/static';
-import {
-  MaterialDesignIcons,
-  type MaterialDesignIconsIconName,
-} from '@react-native-vector-icons/material-design-icons/static';
+import { FontAwesome } from '@react-native-vector-icons/fontawesome/static';
+import { FontAwesome5 } from '@react-native-vector-icons/fontawesome5/static';
+import { FontAwesome6 } from '@react-native-vector-icons/fontawesome6/static';
+import { Ionicons } from '@react-native-vector-icons/ionicons/static';
+import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons/static';
 import React from 'react';
 import { Image, type StyleProp, StyleSheet, type TextStyle, View, type ViewStyle } from 'react-native';
 import { SvgUri } from 'react-native-svg';
@@ -40,15 +24,15 @@ export function PortableIcon(props: PortableIconProps) {
   switch (props.provider) {
     case undefined:
     case 'Ionicons':
-      return <Ionicons {...sharedProps} name={props.name as IoniconsIconName} />;
+      return <Ionicons {...sharedProps} name={props.name} />;
     case 'FontAwesome':
-      return <FontAwesome {...sharedProps} name={props.name as FontAwesomeIconName} />;
+      return <FontAwesome {...sharedProps} name={props.name} />;
     case 'FontAwesome5':
       return renderFontAwesome5(props, sharedProps);
     case 'FontAwesome6':
       return renderFontAwesome6(props, sharedProps);
     case 'MaterialDesignIcons':
-      return <MaterialDesignIcons {...sharedProps} name={props.name as MaterialDesignIconsIconName} />;
+      return <MaterialDesignIcons {...sharedProps} name={props.name} />;
     default:
       return assertNever(props.provider, 'provider');
   }
@@ -110,11 +94,11 @@ function renderFontAwesome5(
 ) {
   switch (props.variant) {
     case 'brand':
-      return <FontAwesome5 {...sharedProps} iconStyle="brand" name={props.name as FontAwesome5BrandIconName} />;
+      return <FontAwesome5 {...sharedProps} iconStyle="brand" name={props.name} />;
     case 'regular':
-      return <FontAwesome5 {...sharedProps} iconStyle="regular" name={props.name as FontAwesome5RegularIconName} />;
+      return <FontAwesome5 {...sharedProps} iconStyle="regular" name={props.name} />;
     case 'solid':
-      return <FontAwesome5 {...sharedProps} iconStyle="solid" name={props.name as FontAwesome5SolidIconName} />;
+      return <FontAwesome5 {...sharedProps} iconStyle="solid" name={props.name} />;
     default:
       return assertNever(props.variant, 'FontAwesome5 variant');
   }
@@ -127,11 +111,11 @@ function renderFontAwesome6(
 ) {
   switch (props.variant) {
     case 'brand':
-      return <FontAwesome6 {...sharedProps} iconStyle="brand" name={props.name as FontAwesome6BrandIconName} />;
+      return <FontAwesome6 {...sharedProps} iconStyle="brand" name={props.name} />;
     case 'regular':
-      return <FontAwesome6 {...sharedProps} iconStyle="regular" name={props.name as FontAwesome6RegularIconName} />;
+      return <FontAwesome6 {...sharedProps} iconStyle="regular" name={props.name} />;
     case 'solid':
-      return <FontAwesome6 {...sharedProps} iconStyle="solid" name={props.name as FontAwesome6SolidIconName} />;
+      return <FontAwesome6 {...sharedProps} iconStyle="solid" name={props.name} />;
     default:
       return assertNever(props.variant, 'FontAwesome6 variant');
   }
