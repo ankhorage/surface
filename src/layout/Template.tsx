@@ -7,9 +7,10 @@ import {
   type Responsive,
   useResponsiveRuntime,
 } from '../core/responsive';
+import { Box, type BoxProps } from '../features/layout/public';
 import { useTheme } from '../theme/ThemeContext';
-import { Box, type BoxProps } from './Box';
-import { resolveSpacing, type SpaceValue } from './helpers';
+import type { SpaceValue } from '../types/layout';
+import { resolveSpacing } from '../utils/resolveSpacing';
 
 type SlotMap = Record<string, React.ReactNode>;
 type TemplateMap = Partial<Record<Breakpoint, string[][]>>;
@@ -42,7 +43,6 @@ export function Template({
 }: TemplateProps) {
   const { theme } = useTheme();
   const { breakpoint } = useResponsiveRuntime();
-
   const resolvedTemplate = resolveByBreakpointMap(templates, breakpoint) ?? [];
   const resolvedColumns = resolveByBreakpointMap(columns, breakpoint);
   const defaultGap = resolveResponsive(gap, breakpoint) ?? 0;
@@ -58,26 +58,19 @@ export function Template({
       {resolvedTemplate.map((row, rowIndex) => (
         <View
           key={`row-${String(rowIndex)}`}
-          style={{
-            flexDirection: 'row',
-            marginTop: rowIndex === 0 ? 0 : rowSpacing,
-          }}
+          style={{ flexDirection: 'row', marginTop: rowIndex === 0 ? 0 : rowSpacing }}
         >
-          {row.map((slotId, cellIndex) => {
-            const weight = resolvedColumns?.[cellIndex] ?? 1;
-            const node = slots[slotId];
-            return (
-              <View
-                key={`${slotId}-${String(rowIndex)}-${String(cellIndex)}`}
-                style={{
-                  flex: weight,
-                  marginLeft: cellIndex === 0 ? 0 : colSpacing,
-                }}
-              >
-                {node}
-              </View>
-            );
-          })}
+          {row.map((slotId, cellIndex) => (
+            <View
+              key={`${slotId}-${String(rowIndex)}-${String(cellIndex)}`}
+              style={{
+                flex: resolvedColumns?.[cellIndex] ?? 1,
+                marginLeft: cellIndex === 0 ? 0 : colSpacing,
+              }}
+            >
+              {slots[slotId]}
+            </View>
+          ))}
         </View>
       ))}
     </Box>

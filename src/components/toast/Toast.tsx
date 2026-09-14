@@ -1,8 +1,10 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 
-import { Box, Inline, Surface } from '../../layout';
-import { Text } from '../../primitives/text';
+import { Box } from '../../features/layout/public';
+import { Surface } from '../../features/surface/public';
+import { Text } from '../../features/typography/public';
+import { Inline } from '../../layout';
 import type { SurfaceColor } from '../../surfaceColor';
 import { useTheme } from '../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../theme/types';
@@ -10,31 +12,21 @@ import type { ToastProps } from './types';
 
 function resolveToastStatusColor(theme: SurfaceTheme, status: ToastProps['status']) {
   switch (status) {
-    case 'success':
-      return theme.semantics.success.base;
-    case 'warning':
-      return theme.semantics.warning.base;
-    case 'error':
-      return theme.semantics.error.base;
-    case 'info':
-      return theme.semantics.info.base;
-    default:
-      return theme.semantics.action.primary.base;
+    case 'success': return theme.semantics.success.base;
+    case 'warning': return theme.semantics.warning.base;
+    case 'error': return theme.semantics.error.base;
+    case 'info': return theme.semantics.info.base;
+    default: return theme.semantics.action.primary.base;
   }
 }
 
 function resolveToastStatusTextColor(status: ToastProps['status']): SurfaceColor {
   switch (status) {
-    case 'success':
-      return 'success';
-    case 'warning':
-      return 'warning';
-    case 'error':
-      return 'error';
-    case 'info':
-      return 'info';
-    default:
-      return 'primary';
+    case 'success': return 'success';
+    case 'warning': return 'warning';
+    case 'error': return 'error';
+    case 'info': return 'info';
+    default: return 'primary';
   }
 }
 
@@ -67,11 +59,7 @@ export function Toast({
     >
       <Inline align="center" justify="space-between">
         <Box flex={1}>
-          {title ? (
-            <Text variant="label" weight="medium">
-              {title}
-            </Text>
-          ) : null}
+          {title ? <Text variant="label" weight="medium">{title}</Text> : null}
           {description ? <Text emphasis="muted">{description}</Text> : null}
         </Box>
         {onDismiss ? (

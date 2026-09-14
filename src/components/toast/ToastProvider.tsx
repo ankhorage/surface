@@ -1,22 +1,18 @@
 import React from 'react';
 
+import { Stack } from '../../features/layout/public';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Stack } from '../../layout';
 import { Toast } from './Toast';
 import type { ToastOptions } from './types';
 
-interface ToastEntry extends ToastOptions {
-  id: string;
-}
-
+interface ToastEntry extends ToastOptions { id: string; }
 interface ToastContextValue {
   dismissToast: (id: string) => void;
   showToast: (options: ToastOptions) => string;
 }
 
 const ToastContext = React.createContext<ToastContextValue | null>(null);
-
 let toastCounter = 0;
 
 export function ToastProvider({
@@ -38,7 +34,6 @@ export function ToastProvider({
     }
     setToasts((current) => current.filter((toast) => toast.id !== id));
   }, []);
-
   const showToast = React.useCallback((options: ToastOptions) => {
     const id = options.id ?? `toast-${toastCounter++}`;
     setToasts((current) => [...current, { ...options, id }]);
@@ -47,17 +42,10 @@ export function ToastProvider({
 
   React.useEffect(() => {
     toasts.forEach((toast) => {
-      if (timersRef.current.has(toast.id)) {
-        return;
-      }
-
-      const timer = setTimeout(() => {
-        dismissToast(toast.id);
-      }, toast.duration ?? defaultDuration);
-
+      if (timersRef.current.has(toast.id)) return;
+      const timer = setTimeout(() => dismissToast(toast.id), toast.duration ?? defaultDuration);
       timersRef.current.set(toast.id, timer);
     });
-
     const activeToastIds = new Set(toasts.map((toast) => toast.id));
     timersRef.current.forEach((timer, id) => {
       if (!activeToastIds.has(id)) {
@@ -82,11 +70,7 @@ export function ToastProvider({
         <Stack
           gap="s"
           pointerEvents="box-none"
-          style={{
-            alignItems: 'flex-end',
-            padding: 16,
-            paddingTop: 16 + animation.offset,
-          }}
+          style={{ alignItems: 'flex-end', padding: 16, paddingTop: 16 + animation.offset }}
         >
           {toasts.map((toast) => (
             <Toast
@@ -106,10 +90,6 @@ export function ToastProvider({
 
 export function useToast() {
   const context = React.useContext(ToastContext);
-
-  if (!context) {
-    throw new Error('useToast must be used within <ToastProvider>.');
-  }
-
+  if (!context) throw new Error('useToast must be used within <ToastProvider>.');
   return context;
 }

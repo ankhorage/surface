@@ -3,7 +3,7 @@ import type { AccessibilityRole, AccessibilityState, GestureResponderEvent } fro
 
 import type { InteractionPolicyProps } from '../../interactionPolicy';
 import type { InteractionState } from '../../internal/resolvers/resolveInteractiveState';
-import type { BoxProps } from '../../layout';
+import type { BoxProps } from '../../types/layout';
 
 export interface ButtonBaseProps
   extends Omit<BoxProps, 'children' | 'pointerEvents'>, InteractionPolicyProps {

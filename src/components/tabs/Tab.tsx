@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 
-import { Box } from '../../layout';
-import { Text } from '../../primitives/text';
+import { Box } from '../../features/layout/public';
+import { Text } from '../../features/typography/public';
 import { useTheme } from '../../theme/ThemeContext';
 import { useTabsContext } from './context';
 import type { TabProps } from './types';
@@ -34,17 +34,12 @@ export function Tab({
     registerTab({
       disabled,
       focus: () => {
-        const focusable = pressableRef.current as unknown as {
-          focus?: (() => void) | undefined;
-        } | null;
+        const focusable = pressableRef.current as unknown as { focus?: (() => void) | undefined } | null;
         focusable?.focus?.();
       },
       value,
     });
-
-    return () => {
-      unregisterTab(value);
-    };
+    return () => unregisterTab(value);
   }, [disabled, registerTab, unregisterTab, value]);
 
   return (
@@ -57,15 +52,7 @@ export function Tab({
       disabled={disabled}
       onFocus={() => setFocusedValue(value)}
       onBlur={() => setFocusedValue(undefined)}
-      onPress={
-        passive
-          ? undefined
-          : () => {
-              if (!disabled) {
-                setActiveValue(value);
-              }
-            }
-      }
+      onPress={passive ? undefined : () => !disabled && setActiveValue(value)}
       ref={pressableRef}
       testID={testID}
     >

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Box } from '../../features/layout/public';
+import { Text } from '../../features/typography/public';
 import {
   resolveFieldState,
   resolveIndicatorSize,
@@ -7,9 +9,7 @@ import {
   resolveSelectionControlNextChecked,
 } from '../../internal/resolvers';
 import { useControllableState } from '../../internal/useControllableState';
-import { Box } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
-import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { SwitchProps } from './types';
 
@@ -48,13 +48,7 @@ export function Switch({
       accessibilityRole="switch"
       accessibilityState={{ checked: isChecked }}
       disabled={disabled}
-      onPress={
-        nextChecked === null
-          ? undefined
-          : () => {
-              setChecked(nextChecked);
-            }
-      }
+      onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}
       testID={testID}
     >
       {(interactionState) => {
@@ -75,13 +69,7 @@ export function Switch({
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
 
         return (
-          <Box
-            style={{
-              alignItems: 'center',
-              flexDirection: 'row',
-              opacity: colors.opacity,
-            }}
-          >
+          <Box style={{ alignItems: 'center', flexDirection: 'row', opacity: colors.opacity }}>
             <Box
               radius="full"
               style={{

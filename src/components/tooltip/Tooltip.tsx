@@ -1,11 +1,11 @@
 import React from 'react';
 import { type LayoutRectangle, Platform, Pressable, View } from 'react-native';
 
+import { Surface } from '../../features/surface/public';
+import { Text } from '../../features/typography/public';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Surface } from '../../layout';
-import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { TooltipProps } from './types';
 
@@ -19,9 +19,7 @@ interface MeasurableNode {
 
 function measureNode(node: unknown, callback: (layout: LayoutRectangle) => void) {
   const measurableNode = node as MeasurableNode | null;
-  measurableNode?.measureInWindow?.((x, y, width, height) => {
-    callback({ height, width, x, y });
-  });
+  measurableNode?.measureInWindow?.((x, y, width, height) => callback({ height, width, x, y }));
 }
 
 export function Tooltip({
@@ -41,16 +39,12 @@ export function Tooltip({
   const passive = interactionPolicy === 'passive';
 
   const show = React.useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       measureNode(anchorRef.current, setLayout);
       setVisible(true);
     }, delay);
   }, [delay]);
-
   const hide = React.useCallback(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -59,14 +53,9 @@ export function Tooltip({
     setVisible(false);
   }, []);
 
-  React.useEffect(
-    () => () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    },
-    [],
-  );
+  React.useEffect(() => () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  }, []);
 
   const tooltipLeft = layout ? layout.x : 0;
   const tooltipTop =
@@ -91,24 +80,16 @@ export function Tooltip({
           {...noPointerEvents.props}
           style={[
             noPointerEvents.style,
-            {
-              left: tooltipLeft,
-              position: 'absolute',
-              top: tooltipTop,
-            },
+            { left: tooltipLeft, position: 'absolute', top: tooltipTop },
           ]}
         >
           <Surface
             p="s"
-            style={{
-              backgroundColor: theme.semantics.surface.inverse,
-            }}
+            style={{ backgroundColor: theme.semantics.surface.inverse }}
             testID={testID}
             variant="raised"
           >
-            <Text emphasis="inverse" variant="caption">
-              {content}
-            </Text>
+            <Text emphasis="inverse" variant="caption">{content}</Text>
           </Surface>
         </View>
       </Portal>

@@ -1,14 +1,16 @@
 import React from 'react';
 import { type LayoutRectangle, Pressable, View } from 'react-native';
 
+import { Box, Stack } from '../../features/layout/public';
+import { Surface } from '../../features/surface/public';
+import { Text } from '../../features/typography/public';
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { useFocusManager } from '../../internal/focus/useFocusManager';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Box, Inline, Stack, Surface } from '../../layout';
+import { Inline } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
-import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import { resolveNextMenuIndex } from './navigation';
 import type { MenuAction, MenuProps } from './types';
@@ -75,24 +77,14 @@ export function Menu({
 
   const closeMenu = React.useCallback(() => {
     setOpen(false);
-    if (dismiss) {
-      dismiss();
-    }
+    dismiss?.();
   }, [dismiss]);
 
   const activateAction = React.useCallback(
     (action: MenuAction) => {
-      if (action.disabled) {
-        return;
-      }
-
-      if (action.activate) {
-        action.activate();
-      }
-
-      if (closeOnSelect) {
-        closeMenu();
-      }
+      if (action.disabled) return;
+      action.activate?.();
+      if (closeOnSelect) closeMenu();
     },
     [closeMenu, closeOnSelect],
   );
@@ -105,30 +97,20 @@ export function Menu({
   }, [actions]);
 
   React.useEffect(() => {
-    if (!open) {
-      return undefined;
-    }
-
+    if (!open) return undefined;
     return bindKeydown((event) => {
-      if (passive) {
-        return;
-      }
-
+      if (passive) return;
       const { key } = event;
       if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'Home' || key === 'End') {
         event.preventDefault();
         setActiveIndex((current) => resolveNextMenuIndex(actions, current, key));
       }
-
-      if (event.key === 'Enter') {
+      if (key === 'Enter') {
         event.preventDefault();
         const activeAction = actions[activeIndex];
-        if (activeAction) {
-          activateAction(activeAction);
-        }
+        if (activeAction) activateAction(activeAction);
       }
-
-      if (event.key === 'Escape') {
+      if (key === 'Escape') {
         event.preventDefault();
         closeMenu();
       }
@@ -148,24 +130,12 @@ export function Menu({
           {...boxNonePointerEvents.props}
           style={[
             boxNonePointerEvents.style,
-            {
-              bottom: 0,
-              left: 0,
-              position: 'absolute',
-              right: 0,
-              top: 0,
-            },
+            { bottom: 0, left: 0, position: 'absolute', right: 0, top: 0 },
           ]}
         >
           <Pressable
             onPress={passive ? undefined : closeMenu}
-            style={{
-              bottom: 0,
-              left: 0,
-              position: 'absolute',
-              right: 0,
-              top: 0,
-            }}
+            style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0 }}
           />
           <FocusScope active={open} onEscape={passive ? undefined : closeMenu}>
             <View
@@ -190,7 +160,6 @@ export function Menu({
                 {actions.map((action, index) => {
                   const active = index === activeIndex;
                   const selected = action.selected ?? active;
-
                   return (
                     <Pressable
                       accessibilityRole="menuitem"
