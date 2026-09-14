@@ -1,20 +1,27 @@
 import React from 'react';
 
-import { Field } from '../components/field';
-import { HelperText } from '../components/helper-text';
-import { Menu } from '../components/menu';
-import { Modal } from '../components/modal';
-import { Tab, TabList, TabPanel, Tabs } from '../components/tabs';
-import { Tooltip } from '../components/tooltip';
-import { Button } from '../features/button/public';
-import { Card } from '../features/card/public';
-import { Checkbox } from '../features/form/checkbox/public';
-import { TextInput } from '../features/form/text-input/public';
-import { Box, Stack } from '../features/layout/public';
-import { ToastProvider, useToast } from '../features/toast/public';
-import { Text } from '../features/typography/public';
-import { ThemeProvider } from '../theme';
-import type { ThemeConfig } from '../theme/types';
+import {
+  Box,
+  Button,
+  Card,
+  Checkbox,
+  Field,
+  HelperText,
+  Menu,
+  Modal,
+  Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  Tabs,
+  Text,
+  TextInput,
+  ThemeProvider,
+  ToastProvider,
+  Tooltip,
+  type ThemeConfig,
+  useToast,
+} from '@ankhorage/surface';
 
 const docsThemeConfig: ThemeConfig = {
   id: 'docs',

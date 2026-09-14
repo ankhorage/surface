@@ -4,9 +4,10 @@ export default createKnipConfig({
   ignoreFiles: [
     '.prettierrc.js',
     'eslint.config.mjs',
+    'eslint.examples.config.mjs',
     'eslint.local.config.mjs',
-    'prettier.local.config.js',
-    'src/examples/DocsExamples.tsx',
+    'examples/docs/DocsExamples.tsx',
     'paradox.config.ts',
+    'prettier.local.config.js',
   ],
 });
