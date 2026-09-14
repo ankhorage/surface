@@ -60,8 +60,8 @@ export function Tabs({ children, value, defaultValue, onValueChange, testID }: T
   );
 
   return (
-    <TabsContext.Provider value={contextValue}>
+    <TabsContext value={contextValue}>
       <Box testID={testID}>{children}</Box>
-    </TabsContext.Provider>
+    </TabsContext>
   );
 }

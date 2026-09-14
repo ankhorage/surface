@@ -5,7 +5,7 @@ import { BottomSheetContext } from './BottomSheetContext';
 
 /*** Returns the shared bottom-sheet controller installed by BottomSheetProvider. */
 export function useBottomSheet(): BottomSheetController {
-  const controller = React.useContext(BottomSheetContext);
+  const controller = React.use(BottomSheetContext);
 
   if (!controller) {
     throw new Error('useBottomSheet must be used within BottomSheetProvider.');

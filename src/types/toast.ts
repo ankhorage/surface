@@ -1,7 +1,7 @@
 import type React from 'react';
 
-import type { InteractionPolicy } from '../../interactionPolicy';
-import type { SurfaceStatusColor } from '../../surfaceColor';
+import type { InteractionPolicy } from '../interactionPolicy';
+import type { SurfaceStatusColor } from '../surfaceColor';
 
 export type ToastStatus = 'default' | SurfaceStatusColor;
 
@@ -17,4 +17,14 @@ export interface ToastProps {
 export interface ToastOptions extends Omit<ToastProps, 'onDismiss'> {
   duration?: number;
   id?: string;
+}
+
+export interface ToastProviderProps {
+  children: React.ReactNode;
+  defaultDuration?: number;
+}
+
+export interface ToastController {
+  dismissToast: (id: string) => void;
+  showToast: (options: ToastOptions) => string;
 }

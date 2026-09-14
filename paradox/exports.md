@@ -1,5 +1,643 @@
 # Public API
 
+## Accordion
+
+Kind: `function`
+Module: `src/features/accordion/adapters/inbound/Accordion.tsx`
+Source: `src/features/accordion/adapters/inbound/Accordion.tsx:14:1`
+
+Coordinates controlled or uncontrolled accordion expansion state.
+
+### Signatures
+
+- `(props: AccordionProps) => React.JSX.Element`
+  - props: `AccordionProps`
+  - returns: `React.JSX.Element`
+
+## AccordionContent
+
+Kind: `function`
+Module: `src/features/accordion/adapters/inbound/AccordionContent.tsx`
+Source: `src/features/accordion/adapters/inbound/AccordionContent.tsx:8:1`
+
+Renders an accordion item's content when expanded or force-mounted.
+
+### Signatures
+
+- `({
+children,
+forceMount = false,
+style,
+...viewProps
+}: AccordionContentProps) => React.JSX.Element | null`
+  - {
+    children,
+    forceMount = false,
+    style,
+    ...viewProps
+    }: `AccordionContentProps`
+  - returns: `React.JSX.Element | null`
+
+## AccordionContentProps
+
+Kind: `type`
+Module: `src/types/accordion.ts`
+Source: `src/types/accordion.ts:48:1`
+
+### Members
+
+| Name                                   | Kind     | Type                                                                                                          | Required | Description |
+| -------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| accessibilityActions                   | property | `readonly Readonly<{ name: AccessibilityActionName \| string; label?: string \| undefined; }>[] \| undefined` | no       |             |
+| accessibilityElementsHidden            | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityHint                      | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityIgnoresInvertColors       | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityLabel                     | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLabelledBy                | property | `string \| string[] \| undefined`                                                                             | no       |             |
+| accessibilityLanguage                  | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLargeContentTitle         | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLiveRegion                | property | `"none" \| "polite" \| "assertive" \| undefined`                                                              | no       |             |
+| accessibilityRespondsToUserInteraction | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityRole                      | property | `AccessibilityRole \| undefined`                                                                              | no       |             |
+| accessibilityShowsLargeContentViewer   | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityState                     | property | `AccessibilityState \| undefined`                                                                             | no       |             |
+| accessibilityValue                     | property | `AccessibilityValue \| undefined`                                                                             | no       |             |
+| accessibilityViewIsModal               | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessible                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-busy                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-checked                           | property | `boolean \| "mixed" \| undefined`                                                                             | no       |             |
+| aria-disabled                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-expanded                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-hidden                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-label                             | property | `string \| undefined`                                                                                         | no       |             |
+| aria-labelledby                        | property | `string \| undefined`                                                                                         | no       |             |
+| aria-live                              | property | `"off" \| "polite" \| "assertive" \| undefined`                                                               | no       |             |
+| aria-modal                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-selected                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-valuemax                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuemin                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuenow                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuetext                         | property | `string \| undefined`                                                                                         | no       |             |
+| children                               | property | `React.ReactNode`                                                                                             | no       |             |
+| collapsable                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| collapsableChildren                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| focusable                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| forceMount                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| hasTVPreferredFocus                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| hitSlop                                | property | `number \| Insets \| null \| undefined`                                                                       | no       |             |
+| id                                     | property | `string \| undefined`                                                                                         | no       |             |
+| importantForAccessibility              | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined`                                               | no       |             |
+| isTVSelectable                         | property | `boolean \| undefined`                                                                                        | no       |             |
+| nativeID                               | property | `string \| undefined`                                                                                         | no       |             |
+| needsOffscreenAlphaCompositing         | property | `boolean \| undefined`                                                                                        | no       |             |
+| onAccessibilityAction                  | property | `((event: AccessibilityActionEvent) => void) \| undefined`                                                    | no       |             |
+| onAccessibilityEscape                  | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onAccessibilityTap                     | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onBlur                                 | property | `((e: BlurEvent) => void) \| null \| undefined`                                                               | no       |             |
+| onFocus                                | property | `((e: FocusEvent) => void) \| null \| undefined`                                                              | no       |             |
+| onLayout                               | property | `((event: LayoutChangeEvent) => void) \| undefined`                                                           | no       |             |
+| onMagicTap                             | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onMoveShouldSetResponder               | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onMoveShouldSetResponderCapture        | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onPointerCancel                        | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerCancelCapture                 | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDown                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDownCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnter                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnterCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeave                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeaveCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMove                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMoveCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUp                            | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUpCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onResponderEnd                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderGrant                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderMove                        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderReject                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderRelease                     | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderStart                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminate                   | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminationRequest          | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponder              | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponderCapture       | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onTouchCancel                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEnd                             | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEndCapture                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchMove                            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchStart                           | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| pointerEvents                          | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                   | no       |             |
+| removeClippedSubviews                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| renderToHardwareTextureAndroid         | property | `boolean \| undefined`                                                                                        | no       |             |
+| role                                   | property | `Role \| undefined`                                                                                           | no       |             |
+| screenReaderFocusable                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| shouldRasterizeIOS                     | property | `boolean \| undefined`                                                                                        | no       |             |
+| style                                  | property | `StyleProp<ViewStyle>`                                                                                        | no       |             |
+| tabIndex                               | property | `0 \| -1 \| undefined`                                                                                        | no       |             |
+| testID                                 | property | `string \| undefined`                                                                                         | no       |             |
+| tvParallaxMagnification                | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceX               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceY               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxTiltAngle                    | property | `number \| undefined`                                                                                         | no       |             |
+
+## AccordionItem
+
+Kind: `function`
+Module: `src/features/accordion/adapters/inbound/AccordionItem.tsx`
+Source: `src/features/accordion/adapters/inbound/AccordionItem.tsx:9:1`
+
+Provides one accordion item's value, state, and trigger/content identifiers.
+
+### Signatures
+
+- `({
+children,
+disabled = false,
+interactionPolicy,
+value,
+...viewProps
+}: AccordionItemProps) => React.JSX.Element`
+  - {
+    children,
+    disabled = false,
+    interactionPolicy,
+    value,
+    ...viewProps
+    }: `AccordionItemProps`
+  - returns: `React.JSX.Element`
+
+## AccordionItemProps
+
+Kind: `type`
+Module: `src/types/accordion.ts`
+Source: `src/types/accordion.ts:31:1`
+
+### Members
+
+| Name                                   | Kind     | Type                                                                                                          | Required | Description |
+| -------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| accessibilityActions                   | property | `readonly Readonly<{ name: AccessibilityActionName \| string; label?: string \| undefined; }>[] \| undefined` | no       |             |
+| accessibilityElementsHidden            | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityHint                      | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityIgnoresInvertColors       | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityLabel                     | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLabelledBy                | property | `string \| string[] \| undefined`                                                                             | no       |             |
+| accessibilityLanguage                  | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLargeContentTitle         | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLiveRegion                | property | `"none" \| "polite" \| "assertive" \| undefined`                                                              | no       |             |
+| accessibilityRespondsToUserInteraction | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityRole                      | property | `AccessibilityRole \| undefined`                                                                              | no       |             |
+| accessibilityShowsLargeContentViewer   | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityState                     | property | `AccessibilityState \| undefined`                                                                             | no       |             |
+| accessibilityValue                     | property | `AccessibilityValue \| undefined`                                                                             | no       |             |
+| accessibilityViewIsModal               | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessible                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-busy                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-checked                           | property | `boolean \| "mixed" \| undefined`                                                                             | no       |             |
+| aria-disabled                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-expanded                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-hidden                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-label                             | property | `string \| undefined`                                                                                         | no       |             |
+| aria-labelledby                        | property | `string \| undefined`                                                                                         | no       |             |
+| aria-live                              | property | `"off" \| "polite" \| "assertive" \| undefined`                                                               | no       |             |
+| aria-modal                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-selected                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-valuemax                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuemin                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuenow                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuetext                         | property | `string \| undefined`                                                                                         | no       |             |
+| children                               | property | `React.ReactNode`                                                                                             | no       |             |
+| collapsable                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| collapsableChildren                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| disabled                               | property | `boolean \| undefined`                                                                                        | no       |             |
+| focusable                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| hasTVPreferredFocus                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| hitSlop                                | property | `number \| Insets \| null \| undefined`                                                                       | no       |             |
+| id                                     | property | `string \| undefined`                                                                                         | no       |             |
+| importantForAccessibility              | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined`                                               | no       |             |
+| interactionPolicy                      | property | `InteractionPolicy \| undefined`                                                                              | no       |             |
+| isTVSelectable                         | property | `boolean \| undefined`                                                                                        | no       |             |
+| nativeID                               | property | `string \| undefined`                                                                                         | no       |             |
+| needsOffscreenAlphaCompositing         | property | `boolean \| undefined`                                                                                        | no       |             |
+| onAccessibilityAction                  | property | `((event: AccessibilityActionEvent) => void) \| undefined`                                                    | no       |             |
+| onAccessibilityEscape                  | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onAccessibilityTap                     | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onBlur                                 | property | `((e: BlurEvent) => void) \| null \| undefined`                                                               | no       |             |
+| onFocus                                | property | `((e: FocusEvent) => void) \| null \| undefined`                                                              | no       |             |
+| onLayout                               | property | `((event: LayoutChangeEvent) => void) \| undefined`                                                           | no       |             |
+| onMagicTap                             | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onMoveShouldSetResponder               | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onMoveShouldSetResponderCapture        | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onPointerCancel                        | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerCancelCapture                 | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDown                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDownCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnter                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnterCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeave                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeaveCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMove                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMoveCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUp                            | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUpCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onResponderEnd                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderGrant                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderMove                        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderReject                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderRelease                     | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderStart                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminate                   | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminationRequest          | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponder              | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponderCapture       | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onTouchCancel                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEnd                             | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEndCapture                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchMove                            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchStart                           | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| pointerEvents                          | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                   | no       |             |
+| removeClippedSubviews                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| renderToHardwareTextureAndroid         | property | `boolean \| undefined`                                                                                        | no       |             |
+| role                                   | property | `Role \| undefined`                                                                                           | no       |             |
+| screenReaderFocusable                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| shouldRasterizeIOS                     | property | `boolean \| undefined`                                                                                        | no       |             |
+| style                                  | property | `StyleProp<ViewStyle>`                                                                                        | no       |             |
+| tabIndex                               | property | `0 \| -1 \| undefined`                                                                                        | no       |             |
+| testID                                 | property | `string \| undefined`                                                                                         | no       |             |
+| tvParallaxMagnification                | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceX               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceY               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxTiltAngle                    | property | `number \| undefined`                                                                                         | no       |             |
+| value                                  | property | `string`                                                                                                      | yes      |             |
+
+## AccordionMode
+
+Kind: `unknown`
+Module: `src/types/accordion.ts`
+Source: `src/types/accordion.ts:6:1`
+
+## AccordionMultipleProps
+
+Kind: `type`
+Module: `src/types/accordion.ts`
+Source: `src/types/accordion.ts:21:1`
+
+### Members
+
+| Name                                   | Kind     | Type                                                                                                          | Required | Description |
+| -------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| accessibilityActions                   | property | `readonly Readonly<{ name: AccessibilityActionName \| string; label?: string \| undefined; }>[] \| undefined` | no       |             |
+| accessibilityElementsHidden            | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityHint                      | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityIgnoresInvertColors       | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityLabel                     | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLabelledBy                | property | `string \| string[] \| undefined`                                                                             | no       |             |
+| accessibilityLanguage                  | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLargeContentTitle         | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLiveRegion                | property | `"none" \| "polite" \| "assertive" \| undefined`                                                              | no       |             |
+| accessibilityRespondsToUserInteraction | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityRole                      | property | `AccessibilityRole \| undefined`                                                                              | no       |             |
+| accessibilityShowsLargeContentViewer   | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityState                     | property | `AccessibilityState \| undefined`                                                                             | no       |             |
+| accessibilityValue                     | property | `AccessibilityValue \| undefined`                                                                             | no       |             |
+| accessibilityViewIsModal               | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessible                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-busy                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-checked                           | property | `boolean \| "mixed" \| undefined`                                                                             | no       |             |
+| aria-disabled                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-expanded                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-hidden                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-label                             | property | `string \| undefined`                                                                                         | no       |             |
+| aria-labelledby                        | property | `string \| undefined`                                                                                         | no       |             |
+| aria-live                              | property | `"off" \| "polite" \| "assertive" \| undefined`                                                               | no       |             |
+| aria-modal                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-selected                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-valuemax                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuemin                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuenow                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuetext                         | property | `string \| undefined`                                                                                         | no       |             |
+| children                               | property | `React.ReactNode`                                                                                             | no       |             |
+| collapsable                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| collapsableChildren                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| collapsible                            | property | `undefined`                                                                                                   | no       |             |
+| defaultValue                           | property | `readonly string[] \| undefined`                                                                              | no       |             |
+| disabled                               | property | `boolean \| undefined`                                                                                        | no       |             |
+| focusable                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| hasTVPreferredFocus                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| hitSlop                                | property | `number \| Insets \| null \| undefined`                                                                       | no       |             |
+| id                                     | property | `string \| undefined`                                                                                         | no       |             |
+| importantForAccessibility              | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined`                                               | no       |             |
+| interactionPolicy                      | property | `InteractionPolicy \| undefined`                                                                              | no       |             |
+| isTVSelectable                         | property | `boolean \| undefined`                                                                                        | no       |             |
+| nativeID                               | property | `string \| undefined`                                                                                         | no       |             |
+| needsOffscreenAlphaCompositing         | property | `boolean \| undefined`                                                                                        | no       |             |
+| onAccessibilityAction                  | property | `((event: AccessibilityActionEvent) => void) \| undefined`                                                    | no       |             |
+| onAccessibilityEscape                  | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onAccessibilityTap                     | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onBlur                                 | property | `((e: BlurEvent) => void) \| null \| undefined`                                                               | no       |             |
+| onFocus                                | property | `((e: FocusEvent) => void) \| null \| undefined`                                                              | no       |             |
+| onLayout                               | property | `((event: LayoutChangeEvent) => void) \| undefined`                                                           | no       |             |
+| onMagicTap                             | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onMoveShouldSetResponder               | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onMoveShouldSetResponderCapture        | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onPointerCancel                        | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerCancelCapture                 | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDown                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDownCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnter                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnterCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeave                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeaveCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMove                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMoveCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUp                            | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUpCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onResponderEnd                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderGrant                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderMove                        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderReject                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderRelease                     | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderStart                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminate                   | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminationRequest          | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponder              | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponderCapture       | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onTouchCancel                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEnd                             | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEndCapture                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchMove                            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchStart                           | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onValueChange                          | property | `((value: readonly string[]) => void) \| undefined`                                                           | no       |             |
+| pointerEvents                          | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                   | no       |             |
+| removeClippedSubviews                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| renderToHardwareTextureAndroid         | property | `boolean \| undefined`                                                                                        | no       |             |
+| role                                   | property | `Role \| undefined`                                                                                           | no       |             |
+| screenReaderFocusable                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| shouldRasterizeIOS                     | property | `boolean \| undefined`                                                                                        | no       |             |
+| style                                  | property | `StyleProp<ViewStyle>`                                                                                        | no       |             |
+| tabIndex                               | property | `0 \| -1 \| undefined`                                                                                        | no       |             |
+| testID                                 | property | `string \| undefined`                                                                                         | no       |             |
+| tvParallaxMagnification                | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceX               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceY               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxTiltAngle                    | property | `number \| undefined`                                                                                         | no       |             |
+| type                                   | property | `"multiple"`                                                                                                  | yes      |             |
+| value                                  | property | `readonly string[] \| undefined`                                                                              | no       |             |
+
+## AccordionProps
+
+Kind: `unknown`
+Module: `src/types/accordion.ts`
+Source: `src/types/accordion.ts:29:1`
+
+## AccordionSingleProps
+
+Kind: `type`
+Module: `src/types/accordion.ts`
+Source: `src/types/accordion.ts:13:1`
+
+### Members
+
+| Name                                   | Kind     | Type                                                                                                          | Required | Description |
+| -------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| accessibilityActions                   | property | `readonly Readonly<{ name: AccessibilityActionName \| string; label?: string \| undefined; }>[] \| undefined` | no       |             |
+| accessibilityElementsHidden            | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityHint                      | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityIgnoresInvertColors       | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityLabel                     | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLabelledBy                | property | `string \| string[] \| undefined`                                                                             | no       |             |
+| accessibilityLanguage                  | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLargeContentTitle         | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLiveRegion                | property | `"none" \| "polite" \| "assertive" \| undefined`                                                              | no       |             |
+| accessibilityRespondsToUserInteraction | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityRole                      | property | `AccessibilityRole \| undefined`                                                                              | no       |             |
+| accessibilityShowsLargeContentViewer   | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityState                     | property | `AccessibilityState \| undefined`                                                                             | no       |             |
+| accessibilityValue                     | property | `AccessibilityValue \| undefined`                                                                             | no       |             |
+| accessibilityViewIsModal               | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessible                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-busy                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-checked                           | property | `boolean \| "mixed" \| undefined`                                                                             | no       |             |
+| aria-disabled                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-expanded                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-hidden                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-label                             | property | `string \| undefined`                                                                                         | no       |             |
+| aria-labelledby                        | property | `string \| undefined`                                                                                         | no       |             |
+| aria-live                              | property | `"off" \| "polite" \| "assertive" \| undefined`                                                               | no       |             |
+| aria-modal                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-selected                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-valuemax                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuemin                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuenow                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuetext                         | property | `string \| undefined`                                                                                         | no       |             |
+| children                               | property | `React.ReactNode`                                                                                             | no       |             |
+| collapsable                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| collapsableChildren                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| collapsible                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| defaultValue                           | property | `string \| undefined`                                                                                         | no       |             |
+| disabled                               | property | `boolean \| undefined`                                                                                        | no       |             |
+| focusable                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| hasTVPreferredFocus                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| hitSlop                                | property | `number \| Insets \| null \| undefined`                                                                       | no       |             |
+| id                                     | property | `string \| undefined`                                                                                         | no       |             |
+| importantForAccessibility              | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined`                                               | no       |             |
+| interactionPolicy                      | property | `InteractionPolicy \| undefined`                                                                              | no       |             |
+| isTVSelectable                         | property | `boolean \| undefined`                                                                                        | no       |             |
+| nativeID                               | property | `string \| undefined`                                                                                         | no       |             |
+| needsOffscreenAlphaCompositing         | property | `boolean \| undefined`                                                                                        | no       |             |
+| onAccessibilityAction                  | property | `((event: AccessibilityActionEvent) => void) \| undefined`                                                    | no       |             |
+| onAccessibilityEscape                  | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onAccessibilityTap                     | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onBlur                                 | property | `((e: BlurEvent) => void) \| null \| undefined`                                                               | no       |             |
+| onFocus                                | property | `((e: FocusEvent) => void) \| null \| undefined`                                                              | no       |             |
+| onLayout                               | property | `((event: LayoutChangeEvent) => void) \| undefined`                                                           | no       |             |
+| onMagicTap                             | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onMoveShouldSetResponder               | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onMoveShouldSetResponderCapture        | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onPointerCancel                        | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerCancelCapture                 | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDown                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDownCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnter                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnterCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeave                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeaveCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMove                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMoveCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUp                            | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUpCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onResponderEnd                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderGrant                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderMove                        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderReject                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderRelease                     | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderStart                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminate                   | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminationRequest          | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponder              | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponderCapture       | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onTouchCancel                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEnd                             | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEndCapture                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchMove                            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchStart                           | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onValueChange                          | property | `((value: string \| undefined) => void) \| undefined`                                                         | no       |             |
+| pointerEvents                          | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                   | no       |             |
+| removeClippedSubviews                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| renderToHardwareTextureAndroid         | property | `boolean \| undefined`                                                                                        | no       |             |
+| role                                   | property | `Role \| undefined`                                                                                           | no       |             |
+| screenReaderFocusable                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| shouldRasterizeIOS                     | property | `boolean \| undefined`                                                                                        | no       |             |
+| style                                  | property | `StyleProp<ViewStyle>`                                                                                        | no       |             |
+| tabIndex                               | property | `0 \| -1 \| undefined`                                                                                        | no       |             |
+| testID                                 | property | `string \| undefined`                                                                                         | no       |             |
+| tvParallaxMagnification                | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceX               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceY               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxTiltAngle                    | property | `number \| undefined`                                                                                         | no       |             |
+| type                                   | property | `"single" \| undefined`                                                                                       | no       |             |
+| value                                  | property | `string \| undefined`                                                                                         | no       |             |
+
+## AccordionTrigger
+
+Kind: `function`
+Module: `src/features/accordion/adapters/inbound/AccordionTrigger.tsx`
+Source: `src/features/accordion/adapters/inbound/AccordionTrigger.tsx:8:1`
+
+Renders the accessible button that toggles its owning accordion item.
+
+### Signatures
+
+- `({
+children,
+disabled = false,
+interactionPolicy,
+...pressableProps
+}: AccordionTriggerProps) => React.JSX.Element`
+  - {
+    children,
+    disabled = false,
+    interactionPolicy,
+    ...pressableProps
+    }: `AccordionTriggerProps`
+  - returns: `React.JSX.Element`
+
+## AccordionTriggerProps
+
+Kind: `type`
+Module: `src/types/accordion.ts`
+Source: `src/types/accordion.ts:37:1`
+
+### Members
+
+| Name                                   | Kind     | Type                                                                                                          | Required | Description |
+| -------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| accessibilityActions                   | property | `readonly Readonly<{ name: AccessibilityActionName \| string; label?: string \| undefined; }>[] \| undefined` | no       |             |
+| accessibilityElementsHidden            | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityHint                      | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityIgnoresInvertColors       | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityLabel                     | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLabelledBy                | property | `string \| string[] \| undefined`                                                                             | no       |             |
+| accessibilityLanguage                  | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLargeContentTitle         | property | `string \| undefined`                                                                                         | no       |             |
+| accessibilityLiveRegion                | property | `"none" \| "polite" \| "assertive" \| undefined`                                                              | no       |             |
+| accessibilityRespondsToUserInteraction | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityShowsLargeContentViewer   | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessibilityValue                     | property | `AccessibilityValue \| undefined`                                                                             | no       |             |
+| accessibilityViewIsModal               | property | `boolean \| undefined`                                                                                        | no       |             |
+| accessible                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| android_disableSound                   | property | `boolean \| null \| undefined`                                                                                | no       |             |
+| android_ripple                         | property | `PressableAndroidRippleConfig \| null \| undefined`                                                           | no       |             |
+| aria-busy                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-checked                           | property | `boolean \| "mixed" \| undefined`                                                                             | no       |             |
+| aria-disabled                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-expanded                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-hidden                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-label                             | property | `string \| undefined`                                                                                         | no       |             |
+| aria-labelledby                        | property | `string \| undefined`                                                                                         | no       |             |
+| aria-live                              | property | `"off" \| "polite" \| "assertive" \| undefined`                                                               | no       |             |
+| aria-modal                             | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-selected                          | property | `boolean \| undefined`                                                                                        | no       |             |
+| aria-valuemax                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuemin                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuenow                          | property | `number \| undefined`                                                                                         | no       |             |
+| aria-valuetext                         | property | `string \| undefined`                                                                                         | no       |             |
+| cancelable                             | property | `boolean \| null \| undefined`                                                                                | no       |             |
+| children                               | property | `React.ReactNode \| ((state: import("react-native").PressableStateCallbackType) => React.ReactNode)`          | no       |             |
+| collapsable                            | property | `boolean \| undefined`                                                                                        | no       |             |
+| collapsableChildren                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| delayHoverIn                           | property | `number \| null \| undefined`                                                                                 | no       |             |
+| delayHoverOut                          | property | `number \| null \| undefined`                                                                                 | no       |             |
+| delayLongPress                         | property | `number \| null \| undefined`                                                                                 | no       |             |
+| disabled                               | property | `boolean \| undefined`                                                                                        | no       |             |
+| focusable                              | property | `boolean \| undefined`                                                                                        | no       |             |
+| hasTVPreferredFocus                    | property | `boolean \| undefined`                                                                                        | no       |             |
+| hitSlop                                | property | `number \| Insets \| null \| undefined`                                                                       | no       |             |
+| id                                     | property | `string \| undefined`                                                                                         | no       |             |
+| importantForAccessibility              | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined`                                               | no       |             |
+| interactionPolicy                      | property | `InteractionPolicy \| undefined`                                                                              | no       |             |
+| isTVSelectable                         | property | `boolean \| undefined`                                                                                        | no       |             |
+| nativeID                               | property | `string \| undefined`                                                                                         | no       |             |
+| needsOffscreenAlphaCompositing         | property | `boolean \| undefined`                                                                                        | no       |             |
+| onAccessibilityAction                  | property | `((event: AccessibilityActionEvent) => void) \| undefined`                                                    | no       |             |
+| onAccessibilityEscape                  | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onAccessibilityTap                     | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onBlur                                 | property | `((event: NativeSyntheticEvent<TargetedEvent>) => void) \| null \| undefined`                                 | no       |             |
+| onFocus                                | property | `((event: NativeSyntheticEvent<TargetedEvent>) => void) \| null \| undefined`                                 | no       |             |
+| onHoverIn                              | property | `((event: MouseEvent) => void) \| null \| undefined`                                                          | no       |             |
+| onHoverOut                             | property | `((event: MouseEvent) => void) \| null \| undefined`                                                          | no       |             |
+| onLayout                               | property | `((event: LayoutChangeEvent) => void) \| undefined`                                                           | no       |             |
+| onLongPress                            | property | `((event: GestureResponderEvent) => void) \| null \| undefined`                                               | no       |             |
+| onMagicTap                             | property | `(() => void) \| undefined`                                                                                   | no       |             |
+| onMoveShouldSetResponder               | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onMoveShouldSetResponderCapture        | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onPointerCancel                        | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerCancelCapture                 | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDown                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerDownCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnter                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerEnterCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeave                         | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerLeaveCapture                  | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMove                          | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerMoveCapture                   | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUp                            | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPointerUpCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                | no       |             |
+| onPressIn                              | property | `((event: GestureResponderEvent) => void) \| null \| undefined`                                               | no       |             |
+| onPressMove                            | property | `((event: GestureResponderEvent) => void) \| null \| undefined`                                               | no       |             |
+| onPressOut                             | property | `((event: GestureResponderEvent) => void) \| null \| undefined`                                               | no       |             |
+| onResponderEnd                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderGrant                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderMove                        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderReject                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderRelease                     | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderStart                       | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminate                   | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onResponderTerminationRequest          | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponder              | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onStartShouldSetResponderCapture       | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                    | no       |             |
+| onTouchCancel                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEnd                             | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchEndCapture                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchMove                            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| onTouchStart                           | property | `((event: GestureResponderEvent) => void) \| undefined`                                                       | no       |             |
+| pointerEvents                          | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                   | no       |             |
+| pressRetentionOffset                   | property | `number \| Insets \| null \| undefined`                                                                       | no       |             |
+| removeClippedSubviews                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| renderToHardwareTextureAndroid         | property | `boolean \| undefined`                                                                                        | no       |             |
+| role                                   | property | `Role \| undefined`                                                                                           | no       |             |
+| screenReaderFocusable                  | property | `boolean \| undefined`                                                                                        | no       |             |
+| shouldRasterizeIOS                     | property | `boolean \| undefined`                                                                                        | no       |             |
+| style                                  | property | `StyleProp<ViewStyle> \| ((state: PressableStateCallbackType) => StyleProp<ViewStyle>)`                       | no       |             |
+| tabIndex                               | property | `0 \| -1 \| undefined`                                                                                        | no       |             |
+| testID                                 | property | `string \| undefined`                                                                                         | no       |             |
+| testOnly_pressed                       | property | `boolean \| null \| undefined`                                                                                | no       |             |
+| tvParallaxMagnification                | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceX               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxShiftDistanceY               | property | `number \| undefined`                                                                                         | no       |             |
+| tvParallaxTiltAngle                    | property | `number \| undefined`                                                                                         | no       |             |
+| unstable_pressDelay                    | property | `number \| undefined`                                                                                         | no       |             |
+
 ## ActionSemantics
 
 Kind: `type`
@@ -18,7 +656,7 @@ Source: `src/theme/types.ts:97:1`
 
 Kind: `function`
 Module: `src/layout/AppBar.tsx`
-Source: `src/layout/AppBar.tsx:18:1`
+Source: `src/layout/AppBar.tsx:17:1`
 
 ### Signatures
 
@@ -50,7 +688,7 @@ style,
 
 Kind: `type`
 Module: `src/layout/AppBar.tsx`
-Source: `src/layout/AppBar.tsx:9:1`
+Source: `src/layout/AppBar.tsx:8:1`
 
 ### Members
 
@@ -110,8 +748,10 @@ Source: `src/layout/AppBar.tsx:9:1`
 ## Badge
 
 Kind: `function`
-Module: `src/components/badge/Badge.tsx`
-Source: `src/components/badge/Badge.tsx:9:1`
+Module: `src/features/badge/adapters/inbound/Badge.tsx`
+Source: `src/features/badge/adapters/inbound/Badge.tsx:11:1`
+
+Renders compact semantic status or metadata content.
 
 ### Signatures
 
@@ -134,8 +774,8 @@ testID,
 ## BadgeProps
 
 Kind: `type`
-Module: `src/components/badge/types.ts`
-Source: `src/components/badge/types.ts:7:1`
+Module: `src/types/badge.ts`
+Source: `src/types/badge.ts:7:1`
 
 ### Members
 
@@ -166,8 +806,10 @@ Source: `src/theme/types.ts:83:1`
 ## Box
 
 Kind: `function`
-Module: `src/layout/Box.tsx`
-Source: `src/layout/Box.tsx:19:1`
+Module: `src/features/layout/adapters/inbound/Box.tsx`
+Source: `src/features/layout/adapters/inbound/Box.tsx:11:1`
+
+Renders the responsive foundational layout box.
 
 ### Signatures
 
@@ -198,8 +840,8 @@ testID,
 ## BoxProps
 
 Kind: `type`
-Module: `src/layout/Box.tsx`
-Source: `src/layout/Box.tsx:9:1`
+Module: `src/types/layout.ts`
+Source: `src/types/layout.ts:56:1`
 
 ### Members
 
@@ -272,8 +914,10 @@ Source: `src/core/responsive/breakpoints.ts:1:14`
 ## Button
 
 Kind: `function`
-Module: `src/components/button/Button.tsx`
-Source: `src/components/button/Button.tsx:12:1`
+Module: `src/features/button/adapters/inbound/Button.tsx`
+Source: `src/features/button/adapters/inbound/Button.tsx:19:1`
+
+Renders the primary Surface action control with semantic visual states.
 
 ### Signatures
 
@@ -405,14 +1049,14 @@ Source: `src/primitives/button-base/types.ts:8:1`
 ## ButtonIconSpec
 
 Kind: `unknown`
-Module: `src/components/button/types.ts`
-Source: `src/components/button/types.ts:9:1`
+Module: `src/types/button.ts`
+Source: `src/types/button.ts:9:1`
 
 ## ButtonProps
 
 Kind: `type`
-Module: `src/components/button/types.ts`
-Source: `src/components/button/types.ts:11:1`
+Module: `src/types/button.ts`
+Source: `src/types/button.ts:11:1`
 
 ### Members
 
@@ -475,8 +1119,10 @@ Source: `src/components/button/types.ts:11:1`
 ## Card
 
 Kind: `function`
-Module: `src/components/card/Card.tsx`
-Source: `src/components/card/Card.tsx:38:1`
+Module: `src/features/card/adapters/inbound/Card.tsx`
+Source: `src/features/card/adapters/inbound/Card.tsx:11:1`
+
+Renders a themed content card with optional interactive press states.
 
 ### Signatures
 
@@ -503,8 +1149,8 @@ style,
 ## CardProps
 
 Kind: `type`
-Module: `src/components/card/types.ts`
-Source: `src/components/card/types.ts:5:1`
+Module: `src/types/card.ts`
+Source: `src/types/card.ts:5:1`
 
 ### Members
 
@@ -628,46 +1274,48 @@ Source: `src/layout/Center.tsx:5:1`
 ## Checkbox
 
 Kind: `function`
-Module: `src/components/checkbox/Checkbox.tsx`
-Source: `src/components/checkbox/Checkbox.tsx:16:1`
+Module: `src/features/form/checkbox/adapters/inbound/Checkbox.tsx`
+Source: `src/features/form/checkbox/adapters/inbound/Checkbox.tsx:21:1`
+
+Renders a controlled or uncontrolled accessible checkbox.
 
 ### Signatures
 
 - `({
-children,
+accessibilityLabel,
 checked,
-defaultChecked = false,
-onCheckedChange,
+children,
 color = 'primary',
-size = 'm',
+defaultChecked = false,
 disabled = false,
 invalid = false,
+onCheckedChange,
 readOnly = false,
-accessibilityLabel,
+size = 'm',
 testID,
-...props
+...buttonProps
 }: CheckboxProps) => React.JSX.Element`
   - {
-    children,
+    accessibilityLabel,
     checked,
-    defaultChecked = false,
-    onCheckedChange,
+    children,
     color = 'primary',
-    size = 'm',
+    defaultChecked = false,
     disabled = false,
     invalid = false,
+    onCheckedChange,
     readOnly = false,
-    accessibilityLabel,
+    size = 'm',
     testID,
-    ...props
+    ...buttonProps
     }: `CheckboxProps`
   - returns: `React.JSX.Element`
 
 ## CheckboxProps
 
 Kind: `type`
-Module: `src/components/checkbox/types.ts`
-Source: `src/components/checkbox/types.ts:7:1`
+Module: `src/types/checkbox.ts`
+Source: `src/types/checkbox.ts:7:1`
 
 ### Members
 
@@ -746,8 +1394,10 @@ Source: `node_modules/@ankhorage/color-theory/dist/swatches.d.ts:3:1`
 ## Container
 
 Kind: `function`
-Module: `src/layout/Container.tsx`
-Source: `src/layout/Container.tsx:16:1`
+Module: `src/features/layout/adapters/inbound/Container.tsx`
+Source: `src/features/layout/adapters/inbound/Container.tsx:11:1`
+
+Centers responsive content inside a configurable maximum width.
 
 ### Signatures
 
@@ -768,8 +1418,8 @@ px = { base: 16, md: 24, lg: 32 },
 ## ContainerProps
 
 Kind: `type`
-Module: `src/layout/Container.tsx`
-Source: `src/layout/Container.tsx:10:1`
+Module: `src/types/layout.ts`
+Source: `src/types/layout.ts:66:1`
 
 ### Members
 
@@ -882,8 +1532,10 @@ Source: `src/theme/defaultTokens.ts:17:14`
 ## Divider
 
 Kind: `function`
-Module: `src/layout/Divider.tsx`
-Source: `src/layout/Divider.tsx:12:1`
+Module: `src/features/layout/adapters/inbound/Divider.tsx`
+Source: `src/features/layout/adapters/inbound/Divider.tsx:7:1`
+
+Renders a horizontal or vertical separator using layout tokens.
 
 ### Signatures
 
@@ -904,8 +1556,8 @@ thickness = 1,
 ## DividerProps
 
 Kind: `type`
-Module: `src/layout/Divider.tsx`
-Source: `src/layout/Divider.tsx:6:1`
+Module: `src/types/layout.ts`
+Source: `src/types/layout.ts:72:1`
 
 ### Members
 
@@ -1012,8 +1664,8 @@ Source: `src/components/field/types.ts:3:1`
 ## FontIconSource
 
 Kind: `unknown`
-Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:46:1`
+Module: `src/types/icon.ts`
+Source: `src/types/icon.ts:24:1`
 
 ## FontProvider
 
@@ -1111,8 +1763,10 @@ Source: `src/core/responsive/getBreakpointFromWidth.ts:4:1`
 ## Grid
 
 Kind: `function`
-Module: `src/layout/Grid.tsx`
-Source: `src/layout/Grid.tsx:18:1`
+Module: `src/features/layout/adapters/inbound/Grid.tsx`
+Source: `src/features/layout/adapters/inbound/Grid.tsx:11:1`
+
+Lays out children in a responsive wrapping grid.
 
 ### Signatures
 
@@ -1139,8 +1793,8 @@ minItemWidth,
 ## GridProps
 
 Kind: `type`
-Module: `src/layout/Grid.tsx`
-Source: `src/layout/Grid.tsx:9:1`
+Module: `src/types/layout.ts`
+Source: `src/types/layout.ts:78:1`
 
 ### Members
 
@@ -1199,9 +1853,11 @@ Source: `src/layout/Grid.tsx:9:1`
 
 ## Heading
 
-Kind: `value`
-Module: `src/primitives/heading/Heading.tsx`
-Source: `src/primitives/heading/Heading.tsx:37:14`
+Kind: `function`
+Module: `src/features/typography/adapters/inbound/Heading.tsx`
+Source: `src/features/typography/adapters/inbound/Heading.tsx:10:1`
+
+Renders a semantic, translatable heading using Surface typography tokens.
 
 ### Signatures
 
@@ -1232,14 +1888,14 @@ testID,
 ## HeadingLevel
 
 Kind: `unknown`
-Module: `src/primitives/heading/types.ts`
-Source: `src/primitives/heading/types.ts:5:1`
+Module: `src/types/typography.ts`
+Source: `src/types/typography.ts:7:1`
 
 ## HeadingProps
 
 Kind: `type`
-Module: `src/primitives/heading/types.ts`
-Source: `src/primitives/heading/types.ts:7:1`
+Module: `src/types/typography.ts`
+Source: `src/types/typography.ts:9:1`
 
 ### Members
 
@@ -1248,7 +1904,7 @@ Source: `src/primitives/heading/types.ts:7:1`
 | align         | property | `"left" \| "right" \| "auto" \| "center" \| "justify" \| undefined`                                                                           | no       |             |
 | children      | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color         | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
-| emphasis      | property | `"default" \| "subtle" \| "muted" \| "inverse" \| undefined`                                                                                  | no       |             |
+| emphasis      | property | `"default" \| "muted" \| "subtle" \| "inverse" \| undefined`                                                                                  | no       |             |
 | i18nKey       | property | `string \| undefined`                                                                                                                         | no       |             |
 | level         | property | `HeadingLevel \| undefined`                                                                                                                   | no       |             |
 | numberOfLines | property | `number \| undefined`                                                                                                                         | no       |             |
@@ -1305,8 +1961,10 @@ Source: `src/context/TranslationContext.tsx:7:1`
 ## Icon
 
 Kind: `function`
-Module: `src/primitives/icon/Icon.tsx`
-Source: `src/primitives/icon/Icon.tsx:26:1`
+Module: `src/features/icon/adapters/inbound/Icon.tsx`
+Source: `src/features/icon/adapters/inbound/Icon.tsx:7:1`
+
+Renders a theme-aware font or SVG icon through the portable icon adapter.
 
 ### Signatures
 
@@ -1317,8 +1975,10 @@ Source: `src/primitives/icon/Icon.tsx:26:1`
 ## IconButton
 
 Kind: `function`
-Module: `src/components/icon-button/IconButton.tsx`
-Source: `src/components/icon-button/IconButton.tsx:10:1`
+Module: `src/features/button/adapters/inbound/IconButton.tsx`
+Source: `src/features/button/adapters/inbound/IconButton.tsx:16:1`
+
+Renders a compact accessible icon-only action control.
 
 ### Signatures
 
@@ -1349,8 +2009,8 @@ testID,
 ## IconButtonProps
 
 Kind: `type`
-Module: `src/components/icon-button/types.ts`
-Source: `src/components/icon-button/types.ts:7:1`
+Module: `src/types/button.ts`
+Source: `src/types/button.ts:25:1`
 
 ### Members
 
@@ -1410,32 +2070,34 @@ Source: `src/components/icon-button/types.ts:7:1`
 ## IconProps
 
 Kind: `unknown`
-Module: `src/primitives/icon/Icon.tsx`
-Source: `src/primitives/icon/Icon.tsx:22:1`
+Module: `src/types/icon.ts`
+Source: `src/types/icon.ts:50:1`
 
 ## IconProvider
 
 Kind: `unknown`
-Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:43:1`
+Module: `src/types/icon.ts`
+Source: `src/types/icon.ts:19:1`
 
 ## IconSource
 
 Kind: `unknown`
-Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:64:1`
+Module: `src/types/icon.ts`
+Source: `src/types/icon.ts:42:1`
 
 ## IconVariant
 
 Kind: `unknown`
-Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:44:1`
+Module: `src/types/icon.ts`
+Source: `src/types/icon.ts:22:1`
 
 ## Image
 
 Kind: `function`
-Module: `src/primitives/image/Image.tsx`
-Source: `src/primitives/image/Image.tsx:16:1`
+Module: `src/features/image/adapters/inbound/Image.tsx`
+Source: `src/features/image/adapters/inbound/Image.tsx:15:1`
+
+Renders a token-aware accessible image with optional fallback source.
 
 ### Signatures
 
@@ -1474,14 +2136,14 @@ onError,
 ## ImageFit
 
 Kind: `unknown`
-Module: `src/primitives/image/types.ts`
-Source: `src/primitives/image/types.ts:12:1`
+Module: `src/types/image.ts`
+Source: `src/types/image.ts:12:1`
 
 ## ImageProps
 
 Kind: `type`
-Module: `src/primitives/image/types.ts`
-Source: `src/primitives/image/types.ts:14:1`
+Module: `src/types/image.ts`
+Source: `src/types/image.ts:14:1`
 
 ### Members
 
@@ -1553,28 +2215,28 @@ Source: `src/utils/deepEqual.ts:5:14`
 ## KeyboardAvoidingView
 
 Kind: `function`
-Module: `src/layout/KeyboardAvoidingView.tsx`
-Source: `src/layout/KeyboardAvoidingView.tsx:8:1`
+Module: `src/features/keyboard-avoiding-view/adapters/inbound/KeyboardAvoidingView.tsx`
+Source: `src/features/keyboard-avoiding-view/adapters/inbound/KeyboardAvoidingView.tsx:7:1`
 
-Preserve React Native keyboard avoidance behind the stable Surface layout boundary.
+Preserves React Native keyboard avoidance behind the stable Surface feature boundary.
 
 ### Signatures
 
-- `(props: ReactNativeKeyboardAvoidingViewProps) => React.JSX.Element`
-  - props: `ReactNativeKeyboardAvoidingViewProps`
+- `(props: import("react-native").KeyboardAvoidingViewProps) => React.JSX.Element`
+  - props: `import("react-native").KeyboardAvoidingViewProps`
   - returns: `React.JSX.Element`
 
 ## KeyboardAvoidingViewBehavior
 
 Kind: `unknown`
-Module: `src/layout/KeyboardAvoidingView.tsx`
-Source: `src/layout/KeyboardAvoidingView.tsx:12:1`
+Module: `src/types/keyboard-avoiding-view.ts`
+Source: `src/types/keyboard-avoiding-view.ts:3:1`
 
 ## KeyboardAvoidingViewProps
 
 Kind: `unknown`
-Module: `src/layout/KeyboardAvoidingView.tsx`
-Source: `src/layout/KeyboardAvoidingView.tsx:16:1`
+Module: `src/types/keyboard-avoiding-view.ts`
+Source: `src/types/keyboard-avoiding-view.ts:6:1`
 
 ## Label
 
@@ -1650,7 +2312,7 @@ Source: `src/components/list-item/types.ts:3:1`
 
 Kind: `function`
 Module: `src/components/menu/Menu.tsx`
-Source: `src/components/menu/Menu.tsx:59:1`
+Source: `src/components/menu/Menu.tsx:61:1`
 
 ### Signatures
 
@@ -1719,7 +2381,7 @@ Source: `src/components/menu/types.ts:19:1`
 
 Kind: `function`
 Module: `src/components/modal/Modal.tsx`
-Source: `src/components/modal/Modal.tsx:14:1`
+Source: `src/components/modal/Modal.tsx:15:1`
 
 ### Signatures
 
@@ -1782,51 +2444,128 @@ Source: `src/theme/types.ts:26:1`
 | textMuted     | property | `string` | yes      |             |
 | textSubtle    | property | `string` | yes      |             |
 
-## Radio
+## Popover
 
 Kind: `function`
-Module: `src/components/radio/Radio.tsx`
-Source: `src/components/radio/Radio.tsx:20:1`
+Module: `src/features/popover/adapters/inbound/Popover.tsx`
+Source: `src/features/popover/adapters/inbound/Popover.tsx:16:1`
 
-Renders one radio control with either text or structured label content.
+Renders anchored overlay content through the shared Surface overlay stack.
 
 ### Signatures
 
 - `({
+anchor,
 children,
+closeOnOutsidePress = true,
+defaultOpen = false,
+interactionPolicy = 'enabled',
+offset = 8,
+onOpenChange,
+open,
+placement = 'bottom-start',
+testID,
+}: PopoverProps) => React.JSX.Element`
+  - {
+    anchor,
+    children,
+    closeOnOutsidePress = true,
+    defaultOpen = false,
+    interactionPolicy = 'enabled',
+    offset = 8,
+    onOpenChange,
+    open,
+    placement = 'bottom-start',
+    testID,
+    }: `PopoverProps`
+  - returns: `React.JSX.Element`
+
+## PopoverAnchorRenderProps
+
+Kind: `type`
+Module: `src/types/popover.ts`
+Source: `src/types/popover.ts:8:1`
+
+### Members
+
+| Name   | Kind     | Type         | Required | Description |
+| ------ | -------- | ------------ | -------- | ----------- |
+| close  | property | `() => void` | yes      |             |
+| open   | property | `boolean`    | yes      |             |
+| toggle | property | `() => void` | yes      |             |
+
+## PopoverPlacement
+
+Kind: `unknown`
+Module: `src/types/popover.ts`
+Source: `src/types/popover.ts:5:1`
+
+## PopoverProps
+
+Kind: `type`
+Module: `src/types/popover.ts`
+Source: `src/types/popover.ts:14:1`
+
+### Members
+
+| Name                | Kind     | Type                                                      | Required | Description |
+| ------------------- | -------- | --------------------------------------------------------- | -------- | ----------- |
+| anchor              | property | `(controls: PopoverAnchorRenderProps) => React.ReactNode` | yes      |             |
+| children            | property | `React.ReactNode`                                         | no       |             |
+| closeOnOutsidePress | property | `boolean \| undefined`                                    | no       |             |
+| defaultOpen         | property | `boolean \| undefined`                                    | no       |             |
+| interactionPolicy   | property | `InteractionPolicy \| undefined`                          | no       |             |
+| offset              | property | `number \| undefined`                                     | no       |             |
+| onOpenChange        | property | `((open: boolean) => void) \| undefined`                  | no       |             |
+| open                | property | `boolean \| undefined`                                    | no       |             |
+| placement           | property | `PopoverPlacement \| undefined`                           | no       |             |
+| testID              | property | `string \| undefined`                                     | no       |             |
+
+## Radio
+
+Kind: `function`
+Module: `src/features/form/radio/adapters/inbound/Radio.tsx`
+Source: `src/features/form/radio/adapters/inbound/Radio.tsx:22:1`
+
+Renders one accessible radio control with text or structured label content.
+
+### Signatures
+
+- `({
+accessibilityLabel,
 checked,
-defaultChecked = false,
-onCheckedChange,
+children,
 color = 'primary',
-size = 'm',
+defaultChecked = false,
 disabled = false,
 invalid = false,
+onCheckedChange,
 readOnly = false,
-accessibilityLabel,
+size = 'm',
 testID,
-...props
+...buttonProps
 }: RadioProps) => React.JSX.Element`
   - {
-    children,
+    accessibilityLabel,
     checked,
-    defaultChecked = false,
-    onCheckedChange,
+    children,
     color = 'primary',
-    size = 'm',
+    defaultChecked = false,
     disabled = false,
     invalid = false,
+    onCheckedChange,
     readOnly = false,
-    accessibilityLabel,
+    size = 'm',
     testID,
-    ...props
+    ...buttonProps
     }: `RadioProps`
   - returns: `React.JSX.Element`
 
 ## RadioProps
 
 Kind: `type`
-Module: `src/components/radio/types.ts`
-Source: `src/components/radio/types.ts:7:1`
+Module: `src/types/radio.ts`
+Source: `src/types/radio.ts:7:1`
 
 ### Members
 
@@ -1985,7 +2724,7 @@ Source: `src/theme/types.ts:42:1`
 
 Kind: `function`
 Module: `src/layout/ScrollArea.tsx`
-Source: `src/layout/ScrollArea.tsx:21:1`
+Source: `src/layout/ScrollArea.tsx:22:1`
 
 ### Signatures
 
@@ -2081,7 +2820,7 @@ style,
 
 Kind: `type`
 Module: `src/layout/ScrollArea.tsx`
-Source: `src/layout/ScrollArea.tsx:13:1`
+Source: `src/layout/ScrollArea.tsx:14:1`
 
 ### Members
 
@@ -2357,8 +3096,10 @@ Source: `src/layout/Spacer.tsx:6:1`
 ## Stack
 
 Kind: `function`
-Module: `src/layout/Stack.tsx`
-Source: `src/layout/Stack.tsx:19:1`
+Module: `src/features/layout/adapters/inbound/Stack.tsx`
+Source: `src/features/layout/adapters/inbound/Stack.tsx:10:1`
+
+Stacks authored children directly along a responsive flex direction.
 
 ### Signatures
 
@@ -2385,8 +3126,8 @@ wrap,
 ## StackProps
 
 Kind: `type`
-Module: `src/layout/Stack.tsx`
-Source: `src/layout/Stack.tsx:8:1`
+Module: `src/types/layout.ts`
+Source: `src/types/layout.ts:87:1`
 
 ### Members
 
@@ -2440,20 +3181,22 @@ Source: `src/layout/Stack.tsx:8:1`
 | testID             | property | `string \| undefined`                                                                                                    | no       |             |
 | top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 | width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| wrap               | property | `Responsive<"nowrap" \| "wrap"> \| undefined`                                                                            | no       |             |
 | zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## SUPPORTED_ICON_PROVIDERS
 
 Kind: `value`
-Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:35:14`
+Module: `src/features/icon/constants.ts`
+Source: `src/features/icon/constants.ts:3:14`
 
 ## Surface
 
 Kind: `function`
-Module: `src/layout/Surface.tsx`
-Source: `src/layout/Surface.tsx:52:1`
+Module: `src/features/surface/adapters/inbound/Surface.tsx`
+Source: `src/features/surface/adapters/inbound/Surface.tsx:9:1`
+
+Renders a themed container surface with semantic elevation and border variants.
 
 ### Signatures
 
@@ -2548,8 +3291,8 @@ Source: `src/surfaceColor.ts:22:1`
 ## SurfaceImageSource
 
 Kind: `unknown`
-Module: `src/primitives/image/types.ts`
-Source: `src/primitives/image/types.ts:10:1`
+Module: `src/types/image.ts`
+Source: `src/types/image.ts:11:1`
 
 ## SurfacePaletteColor
 
@@ -2560,8 +3303,8 @@ Source: `src/surfaceColor.ts:19:1`
 ## SurfaceProps
 
 Kind: `type`
-Module: `src/layout/Surface.tsx`
-Source: `src/layout/Surface.tsx:9:1`
+Module: `src/types/surface.ts`
+Source: `src/types/surface.ts:5:1`
 
 ### Members
 
@@ -2665,14 +3408,14 @@ Source: `src/theme/types.ts:242:1`
 ## SurfaceVariant
 
 Kind: `unknown`
-Module: `src/layout/Surface.tsx`
-Source: `src/layout/Surface.tsx:7:1`
+Module: `src/types/surface.ts`
+Source: `src/types/surface.ts:3:1`
 
 ## SvgIconSource
 
 Kind: `type`
-Module: `src/primitives/icon/PortableIcon.tsx`
-Source: `src/primitives/icon/PortableIcon.tsx:57:1`
+Module: `src/types/icon.ts`
+Source: `src/types/icon.ts:35:1`
 
 ### Members
 
@@ -2906,7 +3649,7 @@ Source: `src/components/tabs/types.ts:5:1`
 
 Kind: `function`
 Module: `src/layout/Template.tsx`
-Source: `src/layout/Template.tsx:34:1`
+Source: `src/layout/Template.tsx:35:1`
 
 ### Signatures
 
@@ -2934,7 +3677,7 @@ colGap,
 
 Kind: `type`
 Module: `src/layout/Template.tsx`
-Source: `src/layout/Template.tsx:18:1`
+Source: `src/layout/Template.tsx:19:1`
 
 ### Members
 
@@ -2994,8 +3737,10 @@ Source: `src/layout/Template.tsx:18:1`
 ## Text
 
 Kind: `function`
-Module: `src/primitives/text/Text.tsx`
-Source: `src/primitives/text/Text.tsx:31:1`
+Module: `src/features/typography/adapters/inbound/Text.tsx`
+Source: `src/features/typography/adapters/inbound/Text.tsx:10:1`
+
+Renders translatable body text using Surface semantic typography.
 
 ### Signatures
 
@@ -3213,54 +3958,22 @@ Source: `src/components/textarea/types.ts:3:1`
 ## TextInput
 
 Kind: `function`
-Module: `src/components/text-input/TextInput.tsx`
-Source: `src/components/text-input/TextInput.tsx:14:1`
+Module: `src/features/form/text-input/adapters/inbound/TextInput.tsx`
+Source: `src/features/form/text-input/adapters/inbound/TextInput.tsx:10:1`
+
+Renders a token-aware text input with controlled interaction policy.
 
 ### Signatures
 
-- `({
-value,
-defaultValue,
-onChangeText,
-placeholder,
-size = 'm',
-disabled = false,
-readOnly = false,
-invalid = false,
-leadingAccessory,
-trailingAccessory,
-interactionPolicy = 'enabled',
-style,
-testID,
-onFocus,
-onBlur,
-...props
-}: TextInputProps) => React.JSX.Element`
-  - {
-    value,
-    defaultValue,
-    onChangeText,
-    placeholder,
-    size = 'm',
-    disabled = false,
-    readOnly = false,
-    invalid = false,
-    leadingAccessory,
-    trailingAccessory,
-    interactionPolicy = 'enabled',
-    style,
-    testID,
-    onFocus,
-    onBlur,
-    ...props
-    }: `TextInputProps`
+- `(props: TextInputProps) => React.JSX.Element`
+  - props: `TextInputProps`
   - returns: `React.JSX.Element`
 
 ## TextInputProps
 
 Kind: `type`
-Module: `src/components/text-input/types.ts`
-Source: `src/components/text-input/types.ts:11:1`
+Module: `src/types/text-input.ts`
+Source: `src/types/text-input.ts:11:1`
 
 ### Members
 
@@ -3432,8 +4145,8 @@ Source: `src/components/text-input/types.ts:11:1`
 ## TextProps
 
 Kind: `type`
-Module: `src/primitives/text/types.ts`
-Source: `src/primitives/text/types.ts:7:1`
+Module: `src/types/typography.ts`
+Source: `src/types/typography.ts:21:1`
 
 ### Members
 
@@ -3442,7 +4155,7 @@ Source: `src/primitives/text/types.ts:7:1`
 | align         | property | `"left" \| "right" \| "auto" \| "center" \| "justify" \| undefined`                                                                           | no       |             |
 | children      | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color         | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
-| emphasis      | property | `"default" \| "subtle" \| "muted" \| "inverse" \| undefined`                                                                                  | no       |             |
+| emphasis      | property | `"default" \| "muted" \| "subtle" \| "inverse" \| undefined`                                                                                  | no       |             |
 | i18nKey       | property | `string \| undefined`                                                                                                                         | no       |             |
 | italic        | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | numberOfLines | property | `number \| undefined`                                                                                                                         | no       |             |
@@ -3554,8 +4267,10 @@ Source: `src/theme/types.ts:150:1`
 ## Toast
 
 Kind: `function`
-Module: `src/components/toast/Toast.tsx`
-Source: `src/components/toast/Toast.tsx:41:1`
+Module: `src/features/toast/adapters/inbound/Toast.tsx`
+Source: `src/features/toast/adapters/inbound/Toast.tsx:13:1`
+
+Renders one transient toast notification.
 
 ### Signatures
 
@@ -3577,11 +4292,24 @@ testID,
     }: `ToastProps`
   - returns: `React.JSX.Element`
 
+## ToastController
+
+Kind: `type`
+Module: `src/types/toast.ts`
+Source: `src/types/toast.ts:27:1`
+
+### Members
+
+| Name         | Kind     | Type                                | Required | Description |
+| ------------ | -------- | ----------------------------------- | -------- | ----------- |
+| dismissToast | property | `(id: string) => void`              | yes      |             |
+| showToast    | property | `(options: ToastOptions) => string` | yes      |             |
+
 ## ToastOptions
 
 Kind: `type`
-Module: `src/components/toast/types.ts`
-Source: `src/components/toast/types.ts:17:1`
+Module: `src/types/toast.ts`
+Source: `src/types/toast.ts:17:1`
 
 ### Members
 
@@ -3598,8 +4326,8 @@ Source: `src/components/toast/types.ts:17:1`
 ## ToastProps
 
 Kind: `type`
-Module: `src/components/toast/types.ts`
-Source: `src/components/toast/types.ts:8:1`
+Module: `src/types/toast.ts`
+Source: `src/types/toast.ts:8:1`
 
 ### Members
 
@@ -3615,26 +4343,35 @@ Source: `src/components/toast/types.ts:8:1`
 ## ToastProvider
 
 Kind: `function`
-Module: `src/components/toast/ToastProvider.tsx`
-Source: `src/components/toast/ToastProvider.tsx:22:1`
+Module: `src/features/toast/adapters/inbound/ToastProvider.tsx`
+Source: `src/features/toast/adapters/inbound/ToastProvider.tsx:14:1`
+
+Provides toast state, timers, and the shared toast portal host.
 
 ### Signatures
 
-- `({
-children,
-defaultDuration = 4000,
-}: { children: React.ReactNode; defaultDuration?: number; }) => React.JSX.Element`
-  - {
-    children,
-    defaultDuration = 4000,
-    }: `{ children: React.ReactNode; defaultDuration?: number; }`
+- `({ children, defaultDuration = 4000 }: ToastProviderProps) => React.JSX.Element`
+  - { children, defaultDuration = 4000 }: `ToastProviderProps`
   - returns: `React.JSX.Element`
+
+## ToastProviderProps
+
+Kind: `type`
+Module: `src/types/toast.ts`
+Source: `src/types/toast.ts:22:1`
+
+### Members
+
+| Name            | Kind     | Type                  | Required | Description |
+| --------------- | -------- | --------------------- | -------- | ----------- |
+| children        | property | `React.ReactNode`     | yes      |             |
+| defaultDuration | property | `number \| undefined` | no       |             |
 
 ## ToastStatus
 
 Kind: `unknown`
-Module: `src/components/toast/types.ts`
-Source: `src/components/toast/types.ts:6:1`
+Module: `src/types/toast.ts`
+Source: `src/types/toast.ts:6:1`
 
 ## Tooltip
 
@@ -3747,7 +4484,7 @@ Source: `src/core/responsive/ResponsiveProvider.tsx:23:1`
 
 Kind: `value`
 Module: `src/theme/ThemeContext.tsx`
-Source: `src/theme/ThemeContext.tsx:83:14`
+Source: `src/theme/ThemeContext.tsx:82:14`
 
 ### Signatures
 
@@ -3758,7 +4495,7 @@ Source: `src/theme/ThemeContext.tsx:83:14`
 
 Kind: `value`
 Module: `src/theme/ThemeContext.tsx`
-Source: `src/theme/ThemeContext.tsx:87:14`
+Source: `src/theme/ThemeContext.tsx:86:14`
 
 ### Signatures
 
@@ -3769,7 +4506,7 @@ Source: `src/theme/ThemeContext.tsx:87:14`
 
 Kind: `value`
 Module: `src/theme/ThemeContext.tsx`
-Source: `src/theme/ThemeContext.tsx:92:14`
+Source: `src/theme/ThemeContext.tsx:91:14`
 
 ### Signatures
 
@@ -3779,19 +4516,21 @@ Source: `src/theme/ThemeContext.tsx:92:14`
 ## useToast
 
 Kind: `function`
-Module: `src/components/toast/ToastProvider.tsx`
-Source: `src/components/toast/ToastProvider.tsx:107:1`
+Module: `src/features/toast/adapters/inbound/useToast.ts`
+Source: `src/features/toast/adapters/inbound/useToast.ts:7:1`
+
+Returns the toast controller installed by ToastProvider.
 
 ### Signatures
 
-- `() => ToastContextValue`
-  - returns: `ToastContextValue`
+- `() => ToastController`
+  - returns: `ToastController`
 
 ## useTranslationContext
 
 Kind: `function`
 Module: `src/context/TranslationContext.tsx`
-Source: `src/context/TranslationContext.tsx:49:1`
+Source: `src/context/TranslationContext.tsx:48:1`
 
 ### Signatures
 

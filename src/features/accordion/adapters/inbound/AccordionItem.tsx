@@ -13,7 +13,7 @@ export function AccordionItem({
   value,
   ...viewProps
 }: AccordionItemProps) {
-  const accordion = React.useContext(AccordionContext);
+  const accordion = React.use(AccordionContext);
   if (!accordion) throw new Error('AccordionItem must be rendered inside Accordion.');
 
   const reactId = React.useId();
@@ -35,8 +35,8 @@ export function AccordionItem({
   );
 
   return (
-    <AccordionItemContext.Provider value={contextValue}>
+    <AccordionItemContext value={contextValue}>
       <View {...viewProps}>{children}</View>
-    </AccordionItemContext.Provider>
+    </AccordionItemContext>
   );
 }

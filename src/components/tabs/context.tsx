@@ -21,7 +21,7 @@ export interface TabsContextValue {
 export const TabsContext = React.createContext<TabsContextValue | null>(null);
 
 export function useTabsContext(): TabsContextValue {
-  const value = React.useContext(TabsContext);
+  const value = React.use(TabsContext);
 
   if (!value) {
     throw new Error('Tabs components must be used within <Tabs>.');

@@ -11,7 +11,7 @@ export function AccordionTrigger({
   interactionPolicy,
   ...pressableProps
 }: AccordionTriggerProps) {
-  const item = React.useContext(AccordionItemContext);
+  const item = React.use(AccordionItemContext);
   if (!item) throw new Error('AccordionTrigger must be rendered inside AccordionItem.');
 
   const resolvedDisabled = item.disabled || disabled;

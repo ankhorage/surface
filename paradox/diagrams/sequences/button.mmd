@@ -1,11 +1,14 @@
 sequenceDiagram
   participant participant_Button as Button
+  participant participant_resolveButtonBaseStyle as resolveButtonBaseStyle
   participant participant_resolveControlSize as resolveControlSize
-  participant participant_useContext as useContext
+  participant participant_use as use
   participant participant_useTheme as useTheme
   participant_Button->>participant_useTheme: useTheme()
-  participant_useTheme->>participant_useContext: useContext()
-  participant_useContext-->>participant_useTheme: return
+  participant_useTheme->>participant_use: use()
+  participant_use-->>participant_useTheme: return
   participant_useTheme-->>participant_Button: return
   participant_Button->>participant_resolveControlSize: resolveControlSize()
   participant_resolveControlSize-->>participant_Button: return
+  participant_Button->>participant_resolveButtonBaseStyle: resolveButtonBaseStyle()
+  participant_resolveButtonBaseStyle-->>participant_Button: return

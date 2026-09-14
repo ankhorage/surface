@@ -22,10 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function overlayZIndex(zIndex: number): ViewStyle {
-  return { zIndex };
-}
-
+/*** Installs the shared overlay stack used by portal-based Surface features. */
 export function OverlayProvider({ children }: { children: React.ReactNode }) {
   const orderRef = React.useRef(0);
   const [overlays, setOverlays] = React.useState<OverlayEntry[]>([]);
@@ -65,8 +62,8 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <OverlayStackActionsContext.Provider value={actions}>
-      <OverlayStackContext.Provider value={value}>
+    <OverlayStackActionsContext value={actions}>
+      <OverlayStackContext value={value}>
         {children}
         <View {...boxNonePointerEvents.props} style={[boxNonePointerEvents.style, styles.fill]}>
           {overlays.map((overlay) => (
@@ -79,7 +76,12 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
             </View>
           ))}
         </View>
-      </OverlayStackContext.Provider>
-    </OverlayStackActionsContext.Provider>
+      </OverlayStackContext>
+    </OverlayStackActionsContext>
   );
+}
+
+/*** Resolves a per-entry z-index style for the overlay host. */
+function overlayZIndex(zIndex: number): ViewStyle {
+  return { zIndex };
 }

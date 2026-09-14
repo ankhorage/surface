@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo } from 'react';
+import React, { createContext, use, useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 
 import { getBreakpointFromWidth } from './getBreakpointFromWidth';
@@ -17,11 +17,11 @@ export function ResponsiveProvider({ children }: { children: React.ReactNode }) 
     [width],
   );
 
-  return <ResponsiveContext.Provider value={value}>{children}</ResponsiveContext.Provider>;
+  return <ResponsiveContext value={value}>{children}</ResponsiveContext>;
 }
 
 export function useResponsiveRuntime(): ResponsiveRuntime {
-  const runtime = useContext(ResponsiveContext);
+  const runtime = use(ResponsiveContext);
 
   if (!runtime) {
     throw new Error('useResponsiveRuntime must be used within a ResponsiveProvider');

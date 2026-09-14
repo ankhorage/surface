@@ -1,11 +1,11 @@
 sequenceDiagram
   participant participant_Icon as Icon
   participant participant_resolveToken as resolveToken
-  participant participant_useContext as useContext
+  participant participant_use as use
   participant participant_useTheme as useTheme
   participant_Icon->>participant_useTheme: useTheme()
-  participant_useTheme->>participant_useContext: useContext()
-  participant_useContext-->>participant_useTheme: return
+  participant_useTheme->>participant_use: use()
+  participant_use-->>participant_useTheme: return
   participant_useTheme-->>participant_Icon: return
   participant_Icon->>participant_resolveToken: resolveToken()
   participant_resolveToken-->>participant_Icon: return

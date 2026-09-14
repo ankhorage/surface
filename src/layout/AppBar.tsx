@@ -26,7 +26,7 @@ export function AppBar({
   ...props
 }: AppBarProps) {
   const { theme } = useTheme();
-  const insets = React.useContext(SafeAreaInsetsContext);
+  const insets = React.use(SafeAreaInsetsContext);
   const topInset = safeAreaTop ? (insets?.top ?? 0) : 0;
   const safeAreaStyle: ViewStyle | undefined =
     topInset === 0 ? undefined : { paddingTop: topInset };

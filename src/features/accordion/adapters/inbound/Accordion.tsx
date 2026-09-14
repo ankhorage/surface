@@ -52,9 +52,9 @@ export function Accordion(props: AccordionProps) {
   );
 
   return (
-    <AccordionContext.Provider value={contextValue}>
+    <AccordionContext value={contextValue}>
       <View {...viewProps}>{children}</View>
-    </AccordionContext.Provider>
+    </AccordionContext>
   );
 }
 

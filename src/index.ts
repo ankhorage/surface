@@ -16,8 +16,6 @@ export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './compone
 export { Tab, TabList, TabPanel, Tabs } from './components/tabs';
 export type { TextareaProps } from './components/textarea';
 export { Textarea } from './components/textarea';
-export type { ToastOptions, ToastProps, ToastStatus } from './components/toast';
-export { Toast, ToastProvider, useToast } from './components/toast';
 export type { TooltipProps } from './components/tooltip';
 export { Tooltip } from './components/tooltip';
 export type { FontRuntime } from './context/FontContext';
@@ -76,8 +74,22 @@ export type {
   StackProps,
 } from './features/layout/public';
 export { Box, Container, Divider, Grid, Stack } from './features/layout/public';
+export type {
+  PopoverAnchorRenderProps,
+  PopoverPlacement,
+  PopoverProps,
+} from './features/popover/public';
+export { Popover } from './features/popover/public';
 export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
+export type {
+  ToastController,
+  ToastOptions,
+  ToastProps,
+  ToastProviderProps,
+  ToastStatus,
+} from './features/toast/public';
+export { Toast, ToastProvider, useToast } from './features/toast/public';
 export type { HeadingLevel, HeadingProps, TextProps } from './features/typography/public';
 export { Heading, Text } from './features/typography/public';
 export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';
