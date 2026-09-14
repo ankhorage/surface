@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, use } from 'react';
 
 /**
  * Minimal translation runtime surface.
@@ -35,7 +35,6 @@ export function TranslationProvider(props: {
     t: (key: string, options?: Record<string, unknown>) => {
       if (i18n?.t) {
         const result = i18n.t(key, options);
-        // If translation returns the key, it's missing in the current dictionary
         if (result !== key) return result;
       }
       return t(key, options);
@@ -43,9 +42,9 @@ export function TranslationProvider(props: {
     i18n: i18n ?? null,
   };
 
-  return <TranslationContext.Provider value={value}>{children}</TranslationContext.Provider>;
+  return <TranslationContext value={value}>{children}</TranslationContext>;
 }
 
 export function useTranslationContext(): TranslationRuntime {
-  return useContext(TranslationContext);
+  return use(TranslationContext);
 }
