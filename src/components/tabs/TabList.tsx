@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { Box } from '../../features/layout/public';
 import { useFocusManager } from '../../internal/focus/useFocusManager';
-import { Box } from '../../layout';
 import { useTabsContext } from './context';
 import { resolveNextTabValue } from './navigation';
 import type { TabListProps } from './types';

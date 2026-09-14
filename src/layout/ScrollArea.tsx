@@ -8,7 +8,8 @@ import {
 
 import { useResponsiveRuntime } from '../core/responsive';
 import { useTheme } from '../theme/ThemeContext';
-import { type BoxStyleProps, resolveBoxStyles } from './helpers';
+import type { BoxStyleProps } from '../types/layout';
+import { resolveBoxStyles } from '../utils/resolveBoxStyles';
 
 export interface ScrollAreaProps
   extends

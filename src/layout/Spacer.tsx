@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Box } from './Box';
-import type { SpaceValue } from './helpers';
+import { Box } from '../features/layout/public';
+import type { SpaceValue } from '../types/layout';
 
 export interface SpacerProps {
   size?: SpaceValue;

@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { Stack } from '../../features/layout/public';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Stack } from '../../layout';
 import { Toast } from './Toast';
 import type { ToastOptions } from './types';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { Box } from '../../features/layout/public';
 import { useControllableState } from '../../internal/useControllableState';
-import { Box } from '../../layout';
 import { getTabId as resolveTabId, getTabPanelId as resolveTabPanelId } from './a11y';
 import { type TabRegistration, TabsContext } from './context';
 import type { TabsProps } from './types';

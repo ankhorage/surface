@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Box } from '../../layout';
+import { Box } from '../../features/layout/public';
+import { Text } from '../../features/typography/public';
 import { ButtonBase } from '../../primitives/button-base';
-import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { ListItemProps } from './types';
 

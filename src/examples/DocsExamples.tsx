@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { Button } from '../components/button';
-import { Card } from '../components/card';
-import { Checkbox } from '../components/checkbox';
 import { Field } from '../components/field';
 import { HelperText } from '../components/helper-text';
 import { Menu } from '../components/menu';
 import { Modal } from '../components/modal';
 import { Tab, TabList, TabPanel, Tabs } from '../components/tabs';
-import { TextInput } from '../components/text-input';
 import { ToastProvider, useToast } from '../components/toast';
 import { Tooltip } from '../components/tooltip';
-import { Box, Stack } from '../layout';
-import { Text } from '../primitives/text';
+import { Button } from '../features/button/public';
+import { Card } from '../features/card/public';
+import { Checkbox } from '../features/form/checkbox/public';
+import { TextInput } from '../features/form/text-input/public';
+import { Box, Stack } from '../features/layout/public';
+import { Text } from '../features/typography/public';
 import { ThemeProvider } from '../theme';
 import type { ThemeConfig } from '../theme/types';
 

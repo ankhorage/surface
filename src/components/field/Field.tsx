@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { Box, Stack } from '../../features/layout/public';
 import { resolveFieldPresentation, resolveFieldState } from '../../internal/resolvers';
-import { Box, Stack } from '../../layout';
 import { HelperText } from '../helper-text';
 import { Label } from '../label';
 import type { FieldProps } from './types';

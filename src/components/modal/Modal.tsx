@@ -1,11 +1,12 @@
 import React from 'react';
 import { Pressable, View } from 'react-native';
 
+import { Surface } from '../../features/surface/public';
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Center, Surface } from '../../layout';
+import { Center } from '../../layout';
 import { useTheme } from '../../theme/ThemeContext';
 import type { ModalProps } from './types';
 

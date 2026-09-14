@@ -2,9 +2,8 @@ import React from 'react';
 import { type StyleProp, View, type ViewStyle } from 'react-native';
 import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
+import { Box, type BoxProps, Divider } from '../features/layout/public';
 import { useTheme } from '../theme/ThemeContext';
-import { Box, type BoxProps } from './Box';
-import { Divider } from './Divider';
 
 export interface AppBarProps extends Omit<BoxProps, 'children'> {
   leading?: React.ReactNode;

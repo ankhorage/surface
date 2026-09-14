@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, type BoxProps } from './Box';
+import { Box, type BoxProps } from '../features/layout/public';
 
 export interface CenterProps extends BoxProps {
   axis?: 'horizontal' | 'vertical' | 'both';

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Box } from '../../features/layout/public';
+import { Text } from '../../features/typography/public';
 import {
   resolveFieldState,
   resolveIndicatorSize,
@@ -7,9 +9,7 @@ import {
   resolveSelectionControlNextChecked,
 } from '../../internal/resolvers';
 import { useControllableState } from '../../internal/useControllableState';
-import { Box } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
-import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { SwitchProps } from './types';
 

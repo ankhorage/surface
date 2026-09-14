@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Stack, type StackProps } from './Stack';
+import { Stack, type StackProps } from '../features/layout/public';
 
 export type InlineProps = Omit<StackProps, 'direction'>;
 

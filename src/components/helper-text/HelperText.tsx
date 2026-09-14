@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text } from '../../primitives/text';
+import { Text } from '../../features/typography/public';
 import type { HelperTextProps } from './types';
 
 export function HelperText({ children, emphasis = 'muted', color, testID }: HelperTextProps) {

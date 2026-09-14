@@ -7,9 +7,10 @@ import {
   type Responsive,
   useResponsiveRuntime,
 } from '../core/responsive';
+import { Box, type BoxProps } from '../features/layout/public';
 import { useTheme } from '../theme/ThemeContext';
-import { Box, type BoxProps } from './Box';
-import { resolveSpacing, type SpaceValue } from './helpers';
+import type { SpaceValue } from '../types/layout';
+import { resolveSpacing } from '../utils/resolveSpacing';
 
 type SlotMap = Record<string, React.ReactNode>;
 type TemplateMap = Partial<Record<Breakpoint, string[][]>>;

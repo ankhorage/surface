@@ -17,39 +17,79 @@ const packageJson = JSON.parse(
   peerDependencies: Record<string, string>;
 };
 
-const expectedRootExports = [
-  "export { Badge } from './components/badge';",
-  "export { Button } from './components/button';",
-  "export { Card } from './components/card';",
-  "export { Checkbox } from './components/checkbox';",
+const expectedFeatureRootExports = [
+  "export { Badge } from './features/badge/public';",
+  "export { Button, IconButton } from './features/button/public';",
+  "export { Card } from './features/card/public';",
+  "export { Checkbox } from './features/form/checkbox/public';",
+  "export { Radio } from './features/form/radio/public';",
+  "export { TextInput } from './features/form/text-input/public';",
+  "export { Icon, SUPPORTED_ICON_PROVIDERS } from './features/icon/public';",
+  "export { Image } from './features/image/public';",
+  "export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';",
+  "export { Box, Container, Divider, Grid, Stack } from './features/layout/public';",
+  "export { Surface } from './features/surface/public';",
+  "export { Heading, Text } from './features/typography/public';",
+] as const;
+
+const expectedLegacyRootExports = [
   "export { Field } from './components/field';",
   "export { HelperText } from './components/helper-text';",
-  "export { IconButton } from './components/icon-button';",
-  "export { Icon, SUPPORTED_ICON_PROVIDERS } from './primitives/icon';",
-  "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export { Label } from './components/label';",
   "export { ListItem } from './components/list-item';",
   "export { Menu } from './components/menu';",
   "export { Modal } from './components/modal';",
-  "export { Radio } from './components/radio';",
   "export { Switch } from './components/switch';",
   "export { Tab, TabList, TabPanel, Tabs } from './components/tabs';",
-  "export { TextInput } from './components/text-input';",
   "export { Textarea } from './components/textarea';",
   "export { Toast, ToastProvider, useToast } from './components/toast';",
   "export { Tooltip } from './components/tooltip';",
+  "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export * from './core/responsive';",
   "export * from './layout';",
-  "export { Image } from './primitives/image';",
-  "export {\n  SURFACE_COLORS,\n  SURFACE_EMPHASES,\n  SURFACE_PALETTE_COLORS,\n  SURFACE_STATUS_COLORS,\n} from './surfaceColor';",
-  "export * from './theme';",
 ] as const;
 
-describe('public root barrel contract', () => {
-  it('keeps the intended package surface', () => {
-    expectedRootExports.forEach((line) => {
-      expect(indexSource).toContain(line);
-    });
+describe('feature-owned root barrel contract', () => {
+  it('routes migrated UI through feature-owned public facades', () => {
+    expectedFeatureRootExports.forEach((line) => expect(indexSource).toContain(line));
+  });
+
+  it('does not retain migrated UI exports from legacy component or primitive paths', () => {
+    for (const legacyPath of [
+      './components/badge',
+      './components/button',
+      './components/card',
+      './components/checkbox',
+      './components/icon-button',
+      './components/radio',
+      './components/text-input',
+      './primitives/heading',
+      './primitives/icon',
+      './primitives/image',
+      './primitives/text',
+    ]) {
+      expect(indexSource).not.toContain(legacyPath);
+    }
+  });
+
+  it('removes migrated elements from the legacy layout facade', () => {
+    for (const name of [
+      'Box',
+      'Container',
+      'Divider',
+      'Grid',
+      'KeyboardAvoidingView',
+      'Stack',
+      'Surface',
+    ]) {
+      expect(layoutIndexSource).not.toContain(`./${name}`);
+    }
+  });
+});
+
+describe('remaining root barrel contract', () => {
+  it('keeps still-unmigrated UI on its current public API until its feature migration', () => {
+    expectedLegacyRootExports.forEach((line) => expect(indexSource).toContain(line));
   });
 
   it('does not retain obsolete action-sheet, drawer, or navigation chrome', () => {
@@ -75,18 +115,8 @@ describe('public root barrel contract', () => {
     const theme = createTheme();
     const selection: SelectionSemantics = theme.semantics.selection;
     const diagnostics: SurfaceColorDiagnostics = theme.colorDiagnostics;
-
     expect(selection.background).toBeDefined();
     expect(diagnostics.generated.swatches).toBe(theme.swatches);
-  });
-
-  it('publishes KeyboardAvoidingView through the root layout facade', () => {
-    expect(indexSource).toContain("export * from './layout';");
-    expect(layoutIndexSource).toContain(
-      "export { KeyboardAvoidingView } from './KeyboardAvoidingView';",
-    );
-    expect(layoutIndexSource).toContain('KeyboardAvoidingViewProps');
-    expect(layoutIndexSource).toContain('KeyboardAvoidingViewBehavior');
   });
 });
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 
-import { Box } from '../../layout';
-import { Text } from '../../primitives/text';
+import { Box } from '../../features/layout/public';
+import { Text } from '../../features/typography/public';
 import { useTheme } from '../../theme/ThemeContext';
 import { useTabsContext } from './context';
 import type { TabProps } from './types';

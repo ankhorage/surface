@@ -1,8 +1,10 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 
-import { Box, Inline, Surface } from '../../layout';
-import { Text } from '../../primitives/text';
+import { Box } from '../../features/layout/public';
+import { Surface } from '../../features/surface/public';
+import { Text } from '../../features/typography/public';
+import { Inline } from '../../layout';
 import type { SurfaceColor } from '../../surfaceColor';
 import { useTheme } from '../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../theme/types';

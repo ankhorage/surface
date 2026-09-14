@@ -1,0 +1,72 @@
+import React from 'react';
+import { Platform, TextInput as ReactNativeTextInput, View, type ViewStyle } from 'react-native';
+
+import { resolveFocusRingStyles } from '../../../../../internal/resolvers';
+import { useTheme } from '../../../../../theme/ThemeContext';
+import type { TextInputProps } from '../../../../../types/text-input';
+import { resolveTextInputPresentation } from '../../utils/resolveTextInputPresentation';
+
+/*** Renders a token-aware text input with controlled interaction policy. */
+export function TextInput(props: TextInputProps) {
+  const { theme } = useTheme();
+  const [focused, setFocused] = React.useState(false);
+  const {
+    disabled: _disabled,
+    interactionPolicy = 'enabled',
+    invalid: _invalid,
+    leadingAccessory,
+    readOnly = false,
+    size: _size,
+    trailingAccessory,
+    ...nativeProps
+  } = props;
+  const presentation = resolveTextInputPresentation(theme, props, focused);
+
+  return (
+    <View
+      style={[
+        presentation.containerStyle,
+        resolveFocusRingStyles(theme.semantics.border.focus, focused, Platform.OS === 'web'),
+      ]}
+    >
+      {renderAccessory(leadingAccessory, presentation.accessorySpacing, 'leading')}
+      <ReactNativeTextInput
+        {...nativeProps}
+        editable={presentation.editable}
+        numberOfLines={presentation.numberOfLines}
+        onBlur={(event) => {
+          setFocused(false);
+          nativeProps.onBlur?.(event);
+        }}
+        onChangeText={(nextValue) => {
+          if (interactionPolicy !== 'passive') {
+            nativeProps.onChangeText?.(nextValue);
+          }
+        }}
+        onFocus={(event) => {
+          setFocused(true);
+          nativeProps.onFocus?.(event);
+        }}
+        placeholderTextColor={presentation.placeholderColor}
+        readOnly={readOnly}
+        style={[presentation.inputStyle, nativeProps.style]}
+      />
+      {renderAccessory(trailingAccessory, presentation.accessorySpacing, 'trailing')}
+    </View>
+  );
+}
+
+/*** Renders one optional TextInput accessory with directional spacing. */
+function renderAccessory(
+  accessory: React.ReactNode,
+  spacing: number,
+  position: 'leading' | 'trailing',
+) {
+  if (!accessory) return null;
+  return <View style={resolveAccessoryStyle(spacing, position)}>{accessory}</View>;
+}
+
+/*** Resolves spacing around a leading or trailing TextInput accessory. */
+function resolveAccessoryStyle(spacing: number, position: 'leading' | 'trailing'): ViewStyle {
+  return position === 'leading' ? { marginRight: spacing } : { marginLeft: spacing };
+}

@@ -1,14 +1,16 @@
 import React from 'react';
 import { type LayoutRectangle, Pressable, View } from 'react-native';
 
+import { Box, Stack } from '../../features/layout/public';
+import { Surface } from '../../features/surface/public';
+import { Text } from '../../features/typography/public';
 import { FocusScope } from '../../internal/focus/FocusScope';
 import { useFocusManager } from '../../internal/focus/useFocusManager';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Box, Inline, Stack, Surface } from '../../layout';
+import { Inline } from '../../layout';
 import { ButtonBase } from '../../primitives/button-base';
-import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import { resolveNextMenuIndex } from './navigation';
 import type { MenuAction, MenuProps } from './types';

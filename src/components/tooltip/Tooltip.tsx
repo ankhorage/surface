@@ -1,11 +1,11 @@
 import React from 'react';
 import { type LayoutRectangle, Platform, Pressable, View } from 'react-native';
 
+import { Surface } from '../../features/surface/public';
+import { Text } from '../../features/typography/public';
 import { Portal } from '../../internal/overlay/Portal';
 import { resolvePointerEvents } from '../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../internal/resolvers';
-import { Surface } from '../../layout';
-import { Text } from '../../primitives/text';
 import { useTheme } from '../../theme/ThemeContext';
 import type { TooltipProps } from './types';
 

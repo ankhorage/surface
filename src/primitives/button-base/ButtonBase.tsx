@@ -7,8 +7,8 @@ import {
   resolveFocusRingStyles,
   resolveInteractiveState,
 } from '../../internal/resolvers';
-import { resolveBoxStyles } from '../../layout/helpers';
 import { useTheme } from '../../theme/ThemeContext';
+import { resolveBoxStyles } from '../../utils/resolveBoxStyles';
 import type { ButtonBaseProps } from './types';
 
 function getInteractionState(
