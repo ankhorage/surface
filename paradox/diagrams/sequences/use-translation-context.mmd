@@ -1,5 +1,5 @@
 sequenceDiagram
-  participant participant_useContext as useContext
+  participant participant_use as use
   participant participant_useTranslationContext as useTranslationContext
-  participant_useTranslationContext->>participant_useContext: useContext()
-  participant_useContext-->>participant_useTranslationContext: return
+  participant_useTranslationContext->>participant_use: use()
+  participant_use-->>participant_useTranslationContext: return
