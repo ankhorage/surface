@@ -1,0 +1,110 @@
+import React from 'react';
+
+import {
+  resolveFieldState,
+  resolveIndicatorSize,
+  resolveSelectionControlColors,
+  resolveSelectionControlNextChecked,
+} from '../../../../../internal/resolvers';
+import { useControllableState } from '../../../../../internal/useControllableState';
+import { ButtonBase } from '../../../../../primitives/button-base';
+import { useTheme } from '../../../../../theme/ThemeContext';
+import type { RadioProps } from '../../../../../types/radio';
+import { Box } from '../../../../layout/public';
+import { Text } from '../../../../typography/public';
+import { isRadioTextContent } from '../../utils/isRadioTextContent';
+
+/*** Renders one accessible radio control with text or structured label content. */
+export function Radio({
+  children,
+  checked,
+  defaultChecked = false,
+  onCheckedChange,
+  color = 'primary',
+  size = 'm',
+  disabled = false,
+  invalid = false,
+  readOnly = false,
+  accessibilityLabel,
+  testID,
+  ...props
+}: RadioProps) {
+  const { theme } = useTheme();
+  const [isChecked, setChecked] = useControllableState<boolean>({
+    value: checked,
+    defaultValue: defaultChecked,
+    onChange: onCheckedChange,
+  });
+  const indicatorSize = resolveIndicatorSize(size);
+  const nextChecked = resolveSelectionControlNextChecked({
+    checked: isChecked,
+    disabled,
+    kind: 'radio',
+    readOnly,
+  });
+  const hasContent = children !== undefined && children !== null && children !== false;
+
+  return (
+    <ButtonBase
+      {...props}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityRole="radio"
+      accessibilityState={{ checked: isChecked }}
+      disabled={disabled}
+      onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}
+      testID={testID}
+    >
+      {(interactionState) => {
+        const fieldState = resolveFieldState({
+          disabled,
+          focused: interactionState.focused,
+          invalid,
+          readOnly,
+        });
+        const colors = resolveSelectionControlColors(theme, {
+          checked: isChecked,
+          fieldState,
+          hovered: interactionState.hovered,
+          pressed: interactionState.pressed,
+          color,
+        });
+        const labelEmphasis =
+          colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+        const isTextContent = isRadioTextContent(children);
+
+        return (
+          <Box style={{ alignItems: 'center', flexDirection: 'row', opacity: colors.opacity }}>
+            <Box
+              radius="full"
+              style={{
+                alignItems: 'center',
+                backgroundColor: colors.backgroundColor,
+                borderColor: colors.borderColor,
+                borderWidth: 1.5,
+                height: indicatorSize.radio,
+                justifyContent: 'center',
+                width: indicatorSize.radio,
+              }}
+            >
+              {isChecked ? (
+                <Box
+                  radius="full"
+                  style={{
+                    backgroundColor: colors.indicatorColor,
+                    height: indicatorSize.radioDot,
+                    width: indicatorSize.radioDot,
+                  }}
+                />
+              ) : null}
+            </Box>
+            {hasContent ? (
+              <Box flex={1} ml="s">
+                {isTextContent ? <Text emphasis={labelEmphasis}>{children}</Text> : children}
+              </Box>
+            ) : null}
+          </Box>
+        );
+      }}
+    </ButtonBase>
+  );
+}

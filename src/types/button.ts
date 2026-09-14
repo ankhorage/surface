@@ -1,0 +1,34 @@
+import type React from 'react';
+
+import type { ControlSize } from '../internal/resolvers/resolveControlSize';
+import type { ButtonVariant } from '../internal/resolvers/resolveInteractiveColors';
+import type { ButtonBaseProps } from '../primitives/button-base';
+import type { SurfaceColor } from '../surfaceColor';
+import type { IconSource } from './icon';
+
+export type ButtonIconSpec = IconSource;
+
+export interface ButtonProps extends Omit<
+  ButtonBaseProps,
+  'accessibilityLabel' | 'children' | 'style'
+> {
+  children?: React.ReactNode;
+  variant?: ButtonVariant;
+  color?: SurfaceColor;
+  size?: ControlSize;
+  loading?: boolean;
+  leadingIcon?: ButtonIconSpec;
+  trailingIcon?: ButtonIconSpec;
+  fullWidth?: boolean;
+}
+
+export interface IconButtonProps extends Omit<
+  ButtonBaseProps,
+  'children' | 'style' | 'accessibilityLabel'
+> {
+  icon: IconSource;
+  accessibilityLabel: string;
+  variant?: ButtonVariant;
+  color?: SurfaceColor;
+  size?: ControlSize;
+}
