@@ -34,12 +34,17 @@ export function Tab({
     registerTab({
       disabled,
       focus: () => {
-        const focusable = pressableRef.current as unknown as { focus?: (() => void) | undefined } | null;
+        const focusable = pressableRef.current as unknown as {
+          focus?: (() => void) | undefined;
+        } | null;
         focusable?.focus?.();
       },
       value,
     });
-    return () => unregisterTab(value);
+
+    return () => {
+      unregisterTab(value);
+    };
   }, [disabled, registerTab, unregisterTab, value]);
 
   return (
@@ -52,7 +57,15 @@ export function Tab({
       disabled={disabled}
       onFocus={() => setFocusedValue(value)}
       onBlur={() => setFocusedValue(undefined)}
-      onPress={passive ? undefined : () => !disabled && setActiveValue(value)}
+      onPress={
+        passive
+          ? undefined
+          : () => {
+              if (!disabled) {
+                setActiveValue(value);
+              }
+            }
+      }
       ref={pressableRef}
       testID={testID}
     >

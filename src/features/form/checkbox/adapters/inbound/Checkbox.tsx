@@ -68,6 +68,8 @@ export function Checkbox({
         });
         const labelEmphasis =
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+        const indicatorColor = fieldState.invalid ? 'error' : color;
+        const indicatorEmphasis = disabled ? 'muted' : 'inverse';
 
         return (
           <Box style={{ alignItems: 'center', flexDirection: 'row', opacity: colors.opacity }}>
@@ -85,8 +87,8 @@ export function Checkbox({
             >
               {isChecked ? (
                 <Text
-                  color={disabled ? undefined : invalid ? 'error' : color}
-                  emphasis={disabled ? 'muted' : 'inverse'}
+                  color={disabled ? undefined : indicatorColor}
+                  emphasis={indicatorEmphasis}
                   variant="caption"
                   weight="bold"
                 >

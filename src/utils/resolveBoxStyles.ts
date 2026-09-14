@@ -67,10 +67,7 @@ function resolveRadius(theme: SurfaceTheme, value: RadiusValue | undefined): num
 /*** Resolves a Surface color token while preserving arbitrary color strings. */
 function resolveColor(theme: SurfaceTheme, value: ColorValue | undefined): string | undefined {
   if (value === undefined) return undefined;
-  if (Object.prototype.hasOwnProperty.call(theme.colors, value)) {
-    return theme.colors[value as keyof SurfaceTheme['colors']];
-  }
-  return value;
+  return Object.entries(theme.colors).find(([token]) => token === value)?.[1] ?? value;
 }
 
 /*** Resolves spacing-token dimensions while preserving raw dimension strings. */

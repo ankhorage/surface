@@ -53,16 +53,7 @@ export type {
   KeyboardAvoidingViewProps,
 } from './features/keyboard-avoiding-view/public';
 export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';
-export type {
-  BoxProps,
-  BoxStyleProps,
-  ColorValue,
-  ContainerProps,
-  DividerProps,
-  GridProps,
-  SpaceValue,
-  StackProps,
-} from './features/layout/public';
+export type { BoxProps, ContainerProps, DividerProps, GridProps, StackProps } from './features/layout/public';
 export { Box, Container, Divider, Grid, Stack } from './features/layout/public';
 export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
