@@ -11,7 +11,7 @@ export function AccordionContent({
   style,
   ...viewProps
 }: AccordionContentProps) {
-  const item = React.useContext(AccordionItemContext);
+  const item = React.use(AccordionItemContext);
   if (!item) throw new Error('AccordionContent must be rendered inside AccordionItem.');
   if (!item.open && !forceMount) return null;
 
