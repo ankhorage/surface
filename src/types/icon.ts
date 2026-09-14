@@ -16,7 +16,12 @@ import type { StyleProp, TextStyle, ViewStyle } from 'react-native';
 import type { SurfaceTheme } from '../theme/types';
 import type { SurfaceImageSource } from './image';
 
-export type IconProvider = 'Ionicons' | 'FontAwesome' | 'FontAwesome5' | 'FontAwesome6' | 'MaterialDesignIcons';
+export type IconProvider =
+  | 'Ionicons'
+  | 'FontAwesome'
+  | 'FontAwesome5'
+  | 'FontAwesome6'
+  | 'MaterialDesignIcons';
 
 export type IconVariant = 'regular' | 'solid' | 'brand';
 

@@ -1,12 +1,11 @@
 import React from 'react';
-import { ActivityIndicator, type ViewStyle, View } from 'react-native';
+import { ActivityIndicator, View, type ViewStyle } from 'react-native';
 
 import {
   type InteractionState,
   resolveButtonColors,
   resolveControlSize,
   resolveIconSize,
-  type ResolvedControlSize,
 } from '../../../../internal/resolvers';
 import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
@@ -122,7 +121,7 @@ function resolveButtonBaseStyle(fullWidth: boolean): ViewStyle {
 
 /*** Resolves the themed Button content container style. */
 function resolveButtonContentStyle(
-  controlSize: ResolvedControlSize,
+  controlSize: ReturnType<typeof resolveControlSize>,
   colors: ReturnType<typeof resolveButtonColors>,
   fullWidth: boolean,
   variant: NonNullable<ButtonProps['variant']>,
@@ -148,7 +147,7 @@ function resolveAccessoryStyle(spacing: number, position: 'leading' | 'trailing'
 interface ButtonContentProps {
   children: ButtonProps['children'];
   color: NonNullable<ButtonProps['color']>;
-  controlSize: ResolvedControlSize;
+  controlSize: ReturnType<typeof resolveControlSize>;
   fullWidth: boolean;
   leadingIcon: ButtonProps['leadingIcon'];
   loading: boolean;

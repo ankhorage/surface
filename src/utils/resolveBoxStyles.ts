@@ -15,6 +15,20 @@ export function resolveBoxStyles(
 ): ViewStyle {
   return {
     elevation: 0,
+    ...resolveSpacingStyles(theme, breakpoint, props),
+    ...resolveVisualStyles(theme, breakpoint, props),
+    ...resolveDimensionStyles(theme, breakpoint, props),
+    ...resolveLayoutStyles(breakpoint, props),
+  };
+}
+
+/*** Resolves padding and margin styles from responsive spacing props. */
+function resolveSpacingStyles(
+  theme: SurfaceTheme,
+  breakpoint: Breakpoint,
+  props: BoxStyleProps,
+): ViewStyle {
+  return {
     padding: resolveSpacing(theme, resolveResponsive(props.p, breakpoint)),
     paddingHorizontal: resolveSpacing(theme, resolveResponsive(props.px, breakpoint)),
     paddingVertical: resolveSpacing(theme, resolveResponsive(props.py, breakpoint)),
@@ -29,34 +43,42 @@ export function resolveBoxStyles(
     marginBottom: resolveSpacing(theme, resolveResponsive(props.mb, breakpoint)),
     marginLeft: resolveSpacing(theme, resolveResponsive(props.ml, breakpoint)),
     marginRight: resolveSpacing(theme, resolveResponsive(props.mr, breakpoint)),
+  };
+}
+
+/*** Resolves background, radius, and border styles. */
+function resolveVisualStyles(
+  theme: SurfaceTheme,
+  breakpoint: Breakpoint,
+  props: BoxStyleProps,
+): ViewStyle {
+  return {
     backgroundColor: resolveColor(theme, resolveResponsive(props.bg, breakpoint)),
     borderRadius: resolveRadius(theme, resolveResponsive(props.radius, breakpoint)),
     borderWidth: resolveResponsive(props.borderWidth, breakpoint),
     borderColor: resolveColor(theme, resolveResponsive(props.borderColor, breakpoint)),
-    width: resolveDimension(
-      theme,
-      resolveResponsive(props.width, breakpoint),
-    ) as ViewStyle['width'],
-    height: resolveDimension(
-      theme,
-      resolveResponsive(props.height, breakpoint),
-    ) as ViewStyle['height'],
-    minWidth: resolveDimension(
-      theme,
-      resolveResponsive(props.minWidth, breakpoint),
-    ) as ViewStyle['minWidth'],
-    maxWidth: resolveDimension(
-      theme,
-      resolveResponsive(props.maxWidth, breakpoint),
-    ) as ViewStyle['maxWidth'],
-    minHeight: resolveDimension(
-      theme,
-      resolveResponsive(props.minHeight, breakpoint),
-    ) as ViewStyle['minHeight'],
-    maxHeight: resolveDimension(
-      theme,
-      resolveResponsive(props.maxHeight, breakpoint),
-    ) as ViewStyle['maxHeight'],
+  };
+}
+
+/*** Resolves responsive dimension props through spacing tokens. */
+function resolveDimensionStyles(
+  theme: SurfaceTheme,
+  breakpoint: Breakpoint,
+  props: BoxStyleProps,
+): ViewStyle {
+  return {
+    width: resolveDimension(theme, resolveResponsive(props.width, breakpoint)) as ViewStyle['width'],
+    height: resolveDimension(theme, resolveResponsive(props.height, breakpoint)) as ViewStyle['height'],
+    minWidth: resolveDimension(theme, resolveResponsive(props.minWidth, breakpoint)) as ViewStyle['minWidth'],
+    maxWidth: resolveDimension(theme, resolveResponsive(props.maxWidth, breakpoint)) as ViewStyle['maxWidth'],
+    minHeight: resolveDimension(theme, resolveResponsive(props.minHeight, breakpoint)) as ViewStyle['minHeight'],
+    maxHeight: resolveDimension(theme, resolveResponsive(props.maxHeight, breakpoint)) as ViewStyle['maxHeight'],
+  };
+}
+
+/*** Resolves responsive flex, positioning, and visibility styles. */
+function resolveLayoutStyles(breakpoint: Breakpoint, props: BoxStyleProps): ViewStyle {
+  return {
     flex: resolveResponsive(props.flex, breakpoint),
     flexGrow: resolveResponsive(props.flexGrow, breakpoint),
     flexShrink: resolveResponsive(props.flexShrink, breakpoint),

@@ -10,6 +10,7 @@ import {
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
 import { ButtonBase } from '../../../../../primitives/button-base';
+import type { ButtonBaseProps } from '../../../../../primitives/button-base/types';
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../../theme/types';
 import type { RadioProps } from '../../../../../types/radio';
@@ -30,7 +31,7 @@ export function Radio({
   readOnly = false,
   size = 'm',
   testID,
-  ...props
+  ...buttonProps
 }: RadioProps) {
   const { theme } = useTheme();
   const [isChecked, setChecked] = useControllableState<boolean>({
@@ -38,6 +39,41 @@ export function Radio({
     defaultValue: defaultChecked,
     onChange: onCheckedChange,
   });
+
+  return (
+    <RadioControl
+      accessibilityLabel={accessibilityLabel}
+      buttonProps={buttonProps}
+      color={color}
+      disabled={disabled}
+      invalid={invalid}
+      isChecked={isChecked}
+      readOnly={readOnly}
+      setChecked={setChecked}
+      size={size}
+      testID={testID}
+      theme={theme}
+    >
+      {children}
+    </RadioControl>
+  );
+}
+
+/*** Owns the radio interaction boundary around resolved selection content. */
+function RadioControl({
+  accessibilityLabel,
+  buttonProps,
+  children,
+  color,
+  disabled,
+  invalid,
+  isChecked,
+  readOnly,
+  setChecked,
+  size,
+  testID,
+  theme,
+}: RadioControlProps) {
   const nextChecked = resolveSelectionControlNextChecked({
     checked: isChecked,
     disabled,
@@ -47,7 +83,7 @@ export function Radio({
 
   return (
     <ButtonBase
-      {...props}
+      {...buttonProps}
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="radio"
       accessibilityState={{ checked: isChecked }}
@@ -74,25 +110,24 @@ export function Radio({
 
 /*** Renders the radio indicator and optional content for one interaction state. */
 function renderRadioContent(input: RadioContentInput) {
-  const { children, color, disabled, interactionState, invalid, isChecked, readOnly, size, theme } =
-    input;
+  const { interactionState, theme } = input;
   const fieldState = resolveFieldState({
-    disabled,
+    disabled: input.disabled,
     focused: interactionState.focused,
-    invalid,
-    readOnly,
+    invalid: input.invalid,
+    readOnly: input.readOnly,
   });
   const colors = resolveSelectionControlColors(theme, {
-    checked: isChecked,
+    checked: input.isChecked,
     fieldState,
     hovered: interactionState.hovered,
     pressed: interactionState.pressed,
-    color,
+    color: input.color,
   });
-  const indicatorSize = resolveIndicatorSize(size);
+  const indicatorSize = resolveIndicatorSize(input.size);
   const labelEmphasis =
     colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
-  const hasContent = children !== undefined && children !== null && children !== false;
+  const hasContent = input.children !== undefined && input.children !== null && input.children !== false;
 
   return (
     <Box style={resolveSelectionRowStyle(colors.opacity)}>
@@ -104,7 +139,7 @@ function renderRadioContent(input: RadioContentInput) {
           indicatorSize.radio,
         )}
       >
-        {isChecked ? (
+        {input.isChecked ? (
           <Box
             radius="full"
             style={resolveRadioDotStyle(colors.indicatorColor, indicatorSize.radioDot)}
@@ -113,10 +148,10 @@ function renderRadioContent(input: RadioContentInput) {
       </Box>
       {hasContent ? (
         <Box flex={1} ml="s">
-          {isRadioTextContent(children) ? (
-            <Text emphasis={labelEmphasis}>{children}</Text>
+          {isRadioTextContent(input.children) ? (
+            <Text emphasis={labelEmphasis}>{input.children}</Text>
           ) : (
-            children
+            input.children
           )}
         </Box>
       ) : null}
@@ -149,6 +184,21 @@ function resolveRadioIndicatorStyle(
 /*** Resolves the checked radio dot style. */
 function resolveRadioDotStyle(backgroundColor: string, size: number): ViewStyle {
   return { backgroundColor, height: size, width: size };
+}
+
+interface RadioControlProps {
+  accessibilityLabel: RadioProps['accessibilityLabel'];
+  buttonProps: ButtonBaseProps;
+  children: RadioProps['children'];
+  color: NonNullable<RadioProps['color']>;
+  disabled: boolean;
+  invalid: boolean;
+  isChecked: boolean;
+  readOnly: boolean;
+  setChecked: (checked: boolean) => void;
+  size: NonNullable<RadioProps['size']>;
+  testID: RadioProps['testID'];
+  theme: SurfaceTheme;
 }
 
 interface RadioContentInput {

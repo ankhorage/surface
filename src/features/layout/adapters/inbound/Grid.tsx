@@ -1,5 +1,5 @@
 import React from 'react';
-import { type ViewStyle, View } from 'react-native';
+import { View, type ViewStyle } from 'react-native';
 
 import { resolveResponsive, useResponsiveRuntime } from '../../../../core/responsive';
 import { useTheme } from '../../../../theme/ThemeContext';
@@ -36,12 +36,7 @@ export function Grid({
         {React.Children.toArray(children).map((node, index) => (
           <View
             key={String(index)}
-            style={resolveGridItemStyle(
-              activeMinItemWidth,
-              basisPercent,
-              rowSpacing,
-              colSpacing,
-            )}
+            style={resolveGridItemStyle(activeMinItemWidth, basisPercent, rowSpacing, colSpacing)}
           >
             {node}
           </View>

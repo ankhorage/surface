@@ -10,6 +10,7 @@ import {
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
 import { ButtonBase } from '../../../../../primitives/button-base';
+import type { ButtonBaseProps } from '../../../../../primitives/button-base/types';
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../../theme/types';
 import type { CheckboxProps } from '../../../../../types/checkbox';
@@ -29,7 +30,7 @@ export function Checkbox({
   readOnly = false,
   size = 'm',
   testID,
-  ...props
+  ...buttonProps
 }: CheckboxProps) {
   const { theme } = useTheme();
   const [isChecked, setChecked] = useControllableState<boolean>({
@@ -37,6 +38,41 @@ export function Checkbox({
     defaultValue: defaultChecked,
     onChange: onCheckedChange,
   });
+
+  return (
+    <CheckboxControl
+      accessibilityLabel={accessibilityLabel}
+      buttonProps={buttonProps}
+      color={color}
+      disabled={disabled}
+      invalid={invalid}
+      isChecked={isChecked}
+      readOnly={readOnly}
+      setChecked={setChecked}
+      size={size}
+      testID={testID}
+      theme={theme}
+    >
+      {children}
+    </CheckboxControl>
+  );
+}
+
+/*** Owns the checkbox interaction boundary around resolved selection content. */
+function CheckboxControl({
+  accessibilityLabel,
+  buttonProps,
+  children,
+  color,
+  disabled,
+  invalid,
+  isChecked,
+  readOnly,
+  setChecked,
+  size,
+  testID,
+  theme,
+}: CheckboxControlProps) {
   const nextChecked = resolveSelectionControlNextChecked({
     checked: isChecked,
     disabled,
@@ -46,7 +82,7 @@ export function Checkbox({
 
   return (
     <ButtonBase
-      {...props}
+      {...buttonProps}
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="checkbox"
       accessibilityState={{ checked: isChecked }}
@@ -73,25 +109,24 @@ export function Checkbox({
 
 /*** Renders the checkbox indicator and optional label for one interaction state. */
 function renderCheckboxContent(input: CheckboxContentInput) {
-  const { children, color, disabled, interactionState, invalid, isChecked, readOnly, size, theme } =
-    input;
+  const { interactionState, theme } = input;
   const fieldState = resolveFieldState({
-    disabled,
+    disabled: input.disabled,
     focused: interactionState.focused,
-    invalid,
-    readOnly,
+    invalid: input.invalid,
+    readOnly: input.readOnly,
   });
   const colors = resolveSelectionControlColors(theme, {
-    checked: isChecked,
+    checked: input.isChecked,
     fieldState,
     hovered: interactionState.hovered,
     pressed: interactionState.pressed,
-    color,
+    color: input.color,
   });
-  const indicatorSize = resolveIndicatorSize(size);
+  const indicatorSize = resolveIndicatorSize(input.size);
   const labelEmphasis =
     colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
-  const indicatorColor = fieldState.invalid ? 'error' : color;
+  const indicatorColor = fieldState.invalid ? 'error' : input.color;
 
   return (
     <Box style={resolveSelectionRowStyle(colors.opacity)}>
@@ -103,10 +138,10 @@ function renderCheckboxContent(input: CheckboxContentInput) {
           indicatorSize.checkbox,
         )}
       >
-        {isChecked ? (
+        {input.isChecked ? (
           <Text
-            color={disabled ? undefined : indicatorColor}
-            emphasis={disabled ? 'muted' : 'inverse'}
+            color={input.disabled ? undefined : indicatorColor}
+            emphasis={input.disabled ? 'muted' : 'inverse'}
             variant="caption"
             weight="bold"
           >
@@ -114,9 +149,9 @@ function renderCheckboxContent(input: CheckboxContentInput) {
           </Text>
         ) : null}
       </Box>
-      {children ? (
+      {input.children ? (
         <Box ml="s">
-          <Text emphasis={labelEmphasis}>{children}</Text>
+          <Text emphasis={labelEmphasis}>{input.children}</Text>
         </Box>
       ) : null}
     </Box>
@@ -143,6 +178,21 @@ function resolveCheckboxIndicatorStyle(
     justifyContent: 'center',
     width: size,
   };
+}
+
+interface CheckboxControlProps {
+  accessibilityLabel: CheckboxProps['accessibilityLabel'];
+  buttonProps: ButtonBaseProps;
+  children: CheckboxProps['children'];
+  color: NonNullable<CheckboxProps['color']>;
+  disabled: boolean;
+  invalid: boolean;
+  isChecked: boolean;
+  readOnly: boolean;
+  setChecked: (checked: boolean) => void;
+  size: NonNullable<CheckboxProps['size']>;
+  testID: CheckboxProps['testID'];
+  theme: SurfaceTheme;
 }
 
 interface CheckboxContentInput {

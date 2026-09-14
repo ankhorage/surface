@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Platform,
-  TextInput as ReactNativeTextInput,
-  type ViewStyle,
-  View,
-} from 'react-native';
+import { Platform, TextInput as ReactNativeTextInput, View, type ViewStyle } from 'react-native';
 
 import { resolveFocusRingStyles } from '../../../../../internal/resolvers';
 import { useTheme } from '../../../../../theme/ThemeContext';
@@ -34,11 +29,7 @@ export function TextInput(props: TextInputProps) {
         resolveFocusRingStyles(theme.semantics.border.focus, focused, Platform.OS === 'web'),
       ]}
     >
-      {leadingAccessory ? (
-        <View style={resolveAccessoryStyle(presentation.accessorySpacing, 'leading')}>
-          {leadingAccessory}
-        </View>
-      ) : null}
+      {renderAccessory(leadingAccessory, presentation.accessorySpacing, 'leading')}
       <ReactNativeTextInput
         {...nativeProps}
         editable={presentation.editable}
@@ -60,13 +51,19 @@ export function TextInput(props: TextInputProps) {
         readOnly={readOnly}
         style={[presentation.inputStyle, nativeProps.style]}
       />
-      {trailingAccessory ? (
-        <View style={resolveAccessoryStyle(presentation.accessorySpacing, 'trailing')}>
-          {trailingAccessory}
-        </View>
-      ) : null}
+      {renderAccessory(trailingAccessory, presentation.accessorySpacing, 'trailing')}
     </View>
   );
+}
+
+/*** Renders one optional TextInput accessory with directional spacing. */
+function renderAccessory(
+  accessory: React.ReactNode,
+  spacing: number,
+  position: 'leading' | 'trailing',
+) {
+  if (!accessory) return null;
+  return <View style={resolveAccessoryStyle(spacing, position)}>{accessory}</View>;
 }
 
 /*** Resolves spacing around a leading or trailing TextInput accessory. */

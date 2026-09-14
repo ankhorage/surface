@@ -15,10 +15,9 @@ export function resolveTextInputPresentation(
   props: TextInputProps,
   focused: boolean,
 ): TextInputPresentation {
-  const size = props.size ?? 'm';
+  const controlSize = resolveControlSize(theme, props.size ?? 'm');
   const disabled = props.disabled ?? false;
   const readOnly = props.readOnly ?? false;
-  const controlSize = resolveControlSize(theme, size);
   const fieldState = resolveFieldState({
     disabled,
     focused,
@@ -27,17 +26,12 @@ export function resolveTextInputPresentation(
   });
   const colors = resolveInputColors(theme, fieldState);
   const textStyle = resolveTextStyles(theme, { variant: controlSize.textVariant });
-  const resolvedLineHeight =
-    typeof textStyle.lineHeight === 'number'
-      ? textStyle.lineHeight
-      : controlSize.minHeight - controlSize.paddingVertical * 2;
-  const lineCount = Math.max(props.numberOfLines ?? 1, 1);
-  const inputMinHeight = props.multiline
-    ? resolvedLineHeight * lineCount
-    : controlSize.minHeight - controlSize.paddingVertical * 2;
-  const containerMinHeight = props.multiline
-    ? inputMinHeight + controlSize.paddingVertical * 2
-    : controlSize.minHeight;
+  const heights = resolveTextInputHeights(
+    controlSize,
+    props.multiline,
+    props.numberOfLines,
+    textStyle.lineHeight,
+  );
 
   return {
     accessorySpacing: theme.spacing.s,
@@ -48,7 +42,7 @@ export function resolveTextInputPresentation(
       borderRadius: controlSize.borderRadius,
       borderWidth: 1,
       flexDirection: 'row',
-      minHeight: containerMinHeight,
+      minHeight: heights.container,
       opacity: colors.opacity,
       paddingHorizontal: controlSize.paddingHorizontal,
       paddingVertical: controlSize.paddingVertical,
@@ -57,12 +51,33 @@ export function resolveTextInputPresentation(
     inputStyle: {
       color: colors.contentColor,
       flex: 1,
-      minHeight: inputMinHeight,
+      minHeight: heights.input,
       padding: 0,
       textAlignVertical: props.multiline ? 'top' : 'center',
     },
     numberOfLines: props.multiline ? props.numberOfLines : 1,
     placeholderColor: colors.placeholderColor,
+  };
+}
+
+/*** Resolves input and container heights from control typography and multiline state. */
+function resolveTextInputHeights(
+  controlSize: ReturnType<typeof resolveControlSize>,
+  multiline: boolean | undefined,
+  numberOfLines: number | undefined,
+  lineHeight: TextStyle['lineHeight'],
+) {
+  const resolvedLineHeight =
+    typeof lineHeight === 'number'
+      ? lineHeight
+      : controlSize.minHeight - controlSize.paddingVertical * 2;
+  const lineCount = Math.max(numberOfLines ?? 1, 1);
+  const input = multiline
+    ? resolvedLineHeight * lineCount
+    : controlSize.minHeight - controlSize.paddingVertical * 2;
+  return {
+    input,
+    container: multiline ? input + controlSize.paddingVertical * 2 : controlSize.minHeight,
   };
 }
 

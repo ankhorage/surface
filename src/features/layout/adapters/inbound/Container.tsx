@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, type ViewStyle, View } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { resolveResponsive, useResponsiveRuntime } from '../../../../core/responsive';
 import { useTheme } from '../../../../theme/ThemeContext';

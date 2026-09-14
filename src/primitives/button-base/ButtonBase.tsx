@@ -54,7 +54,9 @@ export function ButtonBase({
       disabled={disabled}
       onBlur={() => setFocused(false)}
       onFocus={() => {
-        if (isWeb) setFocused(true);
+        if (isWeb) {
+          setFocused(true);
+        }
       }}
       onHoverIn={isWeb ? () => setHovered(true) : undefined}
       onHoverOut={isWeb ? () => setHovered(false) : undefined}
@@ -62,6 +64,7 @@ export function ButtonBase({
       onPress={passive ? undefined : onPress}
       style={(pressableState) => {
         const state = getInteractionState(pressableState, hovered, focused, disabled);
+
         return [
           resolvedBoxStyles,
           resolveFocusRingStyles(theme.semantics.border.focus, state.focused, isWeb),
@@ -72,6 +75,7 @@ export function ButtonBase({
     >
       {(pressableState) => {
         const state = getInteractionState(pressableState, hovered, focused, disabled);
+
         return typeof children === 'function' ? children(state) : children;
       }}
     </Pressable>

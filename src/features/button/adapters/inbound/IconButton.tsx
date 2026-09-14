@@ -1,12 +1,7 @@
 import React from 'react';
 import type { ViewStyle } from 'react-native';
 
-import {
-  resolveButtonColors,
-  resolveControlSize,
-  resolveIconSize,
-  type ResolvedControlSize,
-} from '../../../../internal/resolvers';
+import { resolveButtonColors, resolveControlSize, resolveIconSize } from '../../../../internal/resolvers';
 import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { IconButtonProps } from '../../../../types/button';
@@ -53,7 +48,7 @@ export function IconButton({
 
 /*** Resolves the visual container style for an IconButton interaction state. */
 function resolveIconButtonStyle(
-  controlSize: ResolvedControlSize,
+  controlSize: ReturnType<typeof resolveControlSize>,
   colors: ReturnType<typeof resolveButtonColors>,
   variant: NonNullable<IconButtonProps['variant']>,
 ): ViewStyle {
