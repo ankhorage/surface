@@ -18,6 +18,7 @@ export function AccordionContent({
   return (
     <View
       {...viewProps}
+      accessibilityLabelledBy={item.triggerId}
       nativeID={item.contentId}
       style={[!item.open ? { display: 'none' } : undefined, style]}
     >
