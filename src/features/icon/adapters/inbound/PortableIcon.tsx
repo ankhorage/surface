@@ -14,6 +14,7 @@ import type { FontIconSource, IconSource, SvgIconSource } from '../../../../type
 export function PortableIcon(props: PortableIconProps) {
   if ('source' in props) return renderSvgIcon(props);
 
+  const { provider } = props;
   const sharedProps = {
     color: props.color,
     size: props.size,
@@ -21,7 +22,7 @@ export function PortableIcon(props: PortableIconProps) {
     testID: props.testID,
   };
 
-  switch (props.provider) {
+  switch (provider) {
     case undefined:
     case 'Ionicons':
       return <Ionicons {...sharedProps} name={props.name} />;
@@ -34,7 +35,7 @@ export function PortableIcon(props: PortableIconProps) {
     case 'MaterialDesignIcons':
       return <MaterialDesignIcons {...sharedProps} name={props.name} />;
     default:
-      return assertNever(props.provider, 'provider');
+      return assertNever(provider, 'provider');
   }
 }
 
@@ -92,7 +93,9 @@ function renderFontAwesome5(
   props: Extract<IconSource, { provider: 'FontAwesome5' }>,
   sharedProps: SharedIconProps,
 ) {
-  switch (props.variant) {
+  const { variant } = props;
+
+  switch (variant) {
     case 'brand':
       return <FontAwesome5 {...sharedProps} iconStyle="brand" name={props.name} />;
     case 'regular':
@@ -100,7 +103,7 @@ function renderFontAwesome5(
     case 'solid':
       return <FontAwesome5 {...sharedProps} iconStyle="solid" name={props.name} />;
     default:
-      return assertNever(props.variant, 'FontAwesome5 variant');
+      return assertNever(variant, 'FontAwesome5 variant');
   }
 }
 
@@ -109,7 +112,9 @@ function renderFontAwesome6(
   props: Extract<IconSource, { provider: 'FontAwesome6' }>,
   sharedProps: SharedIconProps,
 ) {
-  switch (props.variant) {
+  const { variant } = props;
+
+  switch (variant) {
     case 'brand':
       return <FontAwesome6 {...sharedProps} iconStyle="brand" name={props.name} />;
     case 'regular':
@@ -117,6 +122,6 @@ function renderFontAwesome6(
     case 'solid':
       return <FontAwesome6 {...sharedProps} iconStyle="solid" name={props.name} />;
     default:
-      return assertNever(props.variant, 'FontAwesome6 variant');
+      return assertNever(variant, 'FontAwesome6 variant');
   }
 }
