@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, type ViewStyle, View } from 'react-native';
+import { Pressable, StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { Portal } from '../../../../internal/overlay/Portal';
 import type { PopoverPlacement } from '../../../../types/popover';

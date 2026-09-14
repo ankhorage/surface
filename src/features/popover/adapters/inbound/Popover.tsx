@@ -24,7 +24,11 @@ export function Popover(props: PopoverProps) {
 
   return (
     <>
-      <View collapsable={false} ref={anchorRef} testID={props.testID ? `${props.testID}-anchor` : undefined}>
+      <View
+        collapsable={false}
+        ref={anchorRef}
+        testID={props.testID ? `${props.testID}-anchor` : undefined}
+      >
         {props.anchor({ close, open: resolvedOpen, toggle })}
       </View>
       {resolvedOpen ? (
