@@ -1,10 +1,10 @@
 import React from 'react';
 import { Pressable, type ViewStyle } from 'react-native';
 
-import { Box } from '../../../layout/public';
-import { Text } from '../../../typography/public';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { TabProps } from '../../../../types/tabs';
+import { Box } from '../../../layout/public';
+import { Text } from '../../../typography/public';
 import { useTabRegistration } from '../../composition/useTabRegistration';
 import { useTabsContext } from '../../composition/useTabsContext';
 

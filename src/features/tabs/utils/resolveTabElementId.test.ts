@@ -14,8 +14,6 @@ describe('resolveTabElementId', () => {
 
   it('namespaces ids by tabs testID when provided', () => {
     expect(resolveTabElementId('tab', 'settings', 'billing')).toBe('settings-tabs-tab-billing');
-    expect(resolveTabElementId('panel', 'settings', 'billing')).toBe(
-      'settings-tabs-panel-billing',
-    );
+    expect(resolveTabElementId('panel', 'settings', 'billing')).toBe('settings-tabs-panel-billing');
   });
 });

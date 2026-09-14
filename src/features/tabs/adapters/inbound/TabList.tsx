@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Box } from '../../../layout/public';
 import { useFocusManager } from '../../../../internal/focus/useFocusManager';
 import type { TabListProps, TabNavigationKey } from '../../../../types/tabs';
+import { Box } from '../../../layout/public';
 import { useTabsContext } from '../../composition/useTabsContext';
 import { resolveNextTabValue } from '../../utils/resolveNextTabValue';
 

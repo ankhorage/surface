@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Box } from '../../../layout/public';
 import type { TabsProps } from '../../../../types/tabs';
+import { Box } from '../../../layout/public';
 import { TabsContext } from '../../composition/TabsContext';
 import { useTabsController } from '../../composition/useTabsController';
 

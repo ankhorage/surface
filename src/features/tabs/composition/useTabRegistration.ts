@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable } from 'react-native';
+import type { Pressable } from 'react-native';
 
 import { useTabsContext } from './useTabsContext';
 
