@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 4.2.1
+
+### Patch Changes
+
+- 69d014d: Migrate ZORA-aligned Surface UI elements to canonical feature-owned source architecture while preserving the public root API.
+
 ## 4.2.0
 
 ### Minor Changes
