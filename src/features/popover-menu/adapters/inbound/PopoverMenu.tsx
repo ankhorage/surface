@@ -1,19 +1,19 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 
+import { FocusScope } from '../../../../internal/focus/FocusScope';
+import { useFocusManager } from '../../../../internal/focus/useFocusManager';
+import { Inline } from '../../../../layout';
+import { useTheme } from '../../../../theme/ThemeContext';
+import type { PopoverMenuAction, PopoverMenuProps } from '../../../../types/popoverMenu';
 import { Box, Stack } from '../../../layout/public';
 import { Popover } from '../../../popover/public';
 import { Surface } from '../../../surface/public';
 import { Text } from '../../../typography/public';
-import { FocusScope } from '../../../../internal/focus/FocusScope';
-import { useFocusManager } from '../../../../internal/focus/useFocusManager';
-import { Inline } from '../../../../layout';
-import { ButtonBase } from '../../../../primitives/button-base';
-import { useTheme } from '../../../../theme/ThemeContext';
-import type { PopoverMenuAction, PopoverMenuProps } from '../../../../types/popoverMenu';
+import { usePopoverMenuController } from '../../composition/usePopoverMenuController';
 import { resolveNextMenuIndex } from '../../utils/resolveNextMenuIndex';
 
-/*** Presents an anchored action menu using the shared Popover foundation. */
+/*** Presents an anchored action menu using the shared Popover capability. */
 export function PopoverMenu({
   trigger,
   actions,
@@ -22,48 +22,26 @@ export function PopoverMenu({
   interactionPolicy = 'enabled',
   testID,
 }: PopoverMenuProps) {
-  const [open, setOpen] = React.useState(false);
-  const [activeIndex, setActiveIndex] = React.useState(0);
   const passive = interactionPolicy === 'passive';
-  const handleOpenChange = React.useCallback(
-    (nextOpen: boolean) => {
-      if (nextOpen) setActiveIndex(resolveInitialIndex(actions));
-      setOpen(nextOpen);
-      if (!nextOpen) dismiss?.();
-    },
-    [actions, dismiss],
-  );
-  const activateAction = React.useCallback(
-    (action: PopoverMenuAction) => {
-      if (action.disabled || passive) return;
-      action.activate?.();
-      if (closeOnSelect) handleOpenChange(false);
-    },
-    [closeOnSelect, handleOpenChange, passive],
-  );
+  const controller = usePopoverMenuController({ actions, closeOnSelect, dismiss, passive });
 
   return (
     <Popover
+      anchor={trigger}
       closeOnOutsidePress
       interactionPolicy={interactionPolicy}
-      onOpenChange={handleOpenChange}
-      open={open}
+      onOpenChange={controller.handleOpenChange}
+      open={controller.open}
       placement="bottom-start"
       testID={testID}
-      anchor={({ toggle }) => (
-        <ButtonBase onPress={passive ? undefined : toggle} testID={testID ? `${testID}-trigger` : undefined}>
-          {trigger}
-        </ButtonBase>
-      )}
     >
       <PopoverMenuContent
         actions={actions}
-        activeIndex={activeIndex}
-        activateAction={activateAction}
-        close={() => handleOpenChange(false)}
-        open={open}
+        activeIndex={controller.activeIndex}
+        activateAction={controller.activateAction}
+        close={controller.close}
         passive={passive}
-        setActiveIndex={setActiveIndex}
+        setActiveIndex={controller.setActiveIndex}
         testID={testID}
       />
     </Popover>
@@ -75,7 +53,6 @@ interface PopoverMenuContentProps {
   activeIndex: number;
   activateAction: (action: PopoverMenuAction) => void;
   close: () => void;
-  open: boolean;
   passive: boolean;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
   testID?: string;
@@ -87,15 +64,14 @@ function PopoverMenuContent({
   activeIndex,
   activateAction,
   close,
-  open,
   passive,
   setActiveIndex,
   testID,
 }: PopoverMenuContentProps) {
-  usePopoverMenuKeyboard({ actions, activeIndex, activateAction, close, open, passive, setActiveIndex });
+  usePopoverMenuKeyboard({ actions, activeIndex, activateAction, close, passive, setActiveIndex });
 
   return (
-    <FocusScope active={open} onEscape={passive ? undefined : close}>
+    <FocusScope active onEscape={passive ? undefined : close}>
       <Surface accessibilityRole="menu" p="xs" testID={testID} variant="raised">
         {actions.map((action, index) => (
           <PopoverMenuItem
@@ -118,29 +94,33 @@ function usePopoverMenuKeyboard({
   activeIndex,
   activateAction,
   close,
-  open,
   passive,
   setActiveIndex,
 }: Omit<PopoverMenuContentProps, 'testID'>) {
   const { bindKeydown } = useFocusManager();
 
-  React.useEffect(() => {
-    if (!open) return undefined;
-    return bindKeydown((event) => {
-      if (passive) return;
-      if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
-        event.preventDefault();
-        setActiveIndex((current) => resolveNextMenuIndex(actions, current, event.key));
-      } else if (event.key === 'Enter') {
-        event.preventDefault();
-        const action = actions[activeIndex];
-        if (action) activateAction(action);
-      } else if (event.key === 'Escape') {
-        event.preventDefault();
-        close();
-      }
-    });
-  }, [actions, activeIndex, activateAction, bindKeydown, close, open, passive, setActiveIndex]);
+  React.useEffect(
+    () =>
+      bindKeydown((event) => {
+        if (passive) return;
+        if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+          event.preventDefault();
+          setActiveIndex((current) => resolveNextMenuIndex(actions, current, event.key));
+          return;
+        }
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          const action = actions[activeIndex];
+          if (action) activateAction(action);
+          return;
+        }
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          close();
+        }
+      }),
+    [actions, activeIndex, activateAction, bindKeydown, close, passive, setActiveIndex],
+  );
 }
 
 /*** Renders one accessible PopoverMenu action row. */
@@ -183,7 +163,7 @@ function PopoverMenuItem({
   );
 }
 
-/*** Renders the leading, textual and trailing content of one menu action. */
+/*** Renders the leading, textual, and trailing content of one menu action. */
 function PopoverMenuItemContent({ action, active }: { action: PopoverMenuAction; active: boolean }) {
   const titleColor =
     action.intent === 'danger' ? 'danger' : active || action.selected ? 'neutral' : undefined;
@@ -193,19 +173,21 @@ function PopoverMenuItemContent({ action, active }: { action: PopoverMenuAction;
       {action.leading ? <Box>{action.leading}</Box> : null}
       <Box flex={1}>
         <Stack gap="xxs">
-          <Text color={titleColor} variant="bodySmall" weight={action.selected ? 'semiBold' : 'medium'}>
+          <Text
+            color={titleColor}
+            variant="bodySmall"
+            weight={action.selected ? 'semiBold' : 'medium'}
+          >
             {action.title}
           </Text>
-          {action.description ? <Text emphasis="muted" variant="caption">{action.description}</Text> : null}
+          {action.description ? (
+            <Text emphasis="muted" variant="caption">
+              {action.description}
+            </Text>
+          ) : null}
         </Stack>
       </Box>
       {action.trailing ? <Box>{action.trailing}</Box> : null}
     </Inline>
   );
-}
-
-/*** Returns the first enabled action index for a newly opened menu. */
-function resolveInitialIndex(actions: readonly PopoverMenuAction[]): number {
-  const index = actions.findIndex((action) => !action.disabled);
-  return index === -1 ? 0 : index;
 }
