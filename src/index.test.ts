@@ -49,13 +49,9 @@ const expectedLegacyRootExports = [
   "export * from './layout';",
 ] as const;
 
-describe('public root barrel contract', () => {
+describe('feature-owned root barrel contract', () => {
   it('routes migrated UI through feature-owned public facades', () => {
     expectedFeatureRootExports.forEach((line) => expect(indexSource).toContain(line));
-  });
-
-  it('keeps still-unmigrated UI on its current public API until its feature migration', () => {
-    expectedLegacyRootExports.forEach((line) => expect(indexSource).toContain(line));
   });
 
   it('does not retain migrated UI exports from legacy component or primitive paths', () => {
@@ -74,6 +70,26 @@ describe('public root barrel contract', () => {
     ]) {
       expect(indexSource).not.toContain(legacyPath);
     }
+  });
+
+  it('removes migrated elements from the legacy layout facade', () => {
+    for (const name of [
+      'Box',
+      'Container',
+      'Divider',
+      'Grid',
+      'KeyboardAvoidingView',
+      'Stack',
+      'Surface',
+    ]) {
+      expect(layoutIndexSource).not.toContain(`./${name}`);
+    }
+  });
+});
+
+describe('remaining root barrel contract', () => {
+  it('keeps still-unmigrated UI on its current public API until its feature migration', () => {
+    expectedLegacyRootExports.forEach((line) => expect(indexSource).toContain(line));
   });
 
   it('does not retain obsolete action-sheet, drawer, or navigation chrome', () => {
@@ -101,20 +117,6 @@ describe('public root barrel contract', () => {
     const diagnostics: SurfaceColorDiagnostics = theme.colorDiagnostics;
     expect(selection.background).toBeDefined();
     expect(diagnostics.generated.swatches).toBe(theme.swatches);
-  });
-
-  it('removes migrated elements from the legacy layout facade', () => {
-    for (const name of [
-      'Box',
-      'Container',
-      'Divider',
-      'Grid',
-      'KeyboardAvoidingView',
-      'Stack',
-      'Surface',
-    ]) {
-      expect(layoutIndexSource).not.toContain(`./${name}`);
-    }
   });
 });
 

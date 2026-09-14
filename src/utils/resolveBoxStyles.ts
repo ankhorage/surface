@@ -33,12 +33,30 @@ export function resolveBoxStyles(
     borderRadius: resolveRadius(theme, resolveResponsive(props.radius, breakpoint)),
     borderWidth: resolveResponsive(props.borderWidth, breakpoint),
     borderColor: resolveColor(theme, resolveResponsive(props.borderColor, breakpoint)),
-    width: resolveDimension(theme, resolveResponsive(props.width, breakpoint)) as ViewStyle['width'],
-    height: resolveDimension(theme, resolveResponsive(props.height, breakpoint)) as ViewStyle['height'],
-    minWidth: resolveDimension(theme, resolveResponsive(props.minWidth, breakpoint)) as ViewStyle['minWidth'],
-    maxWidth: resolveDimension(theme, resolveResponsive(props.maxWidth, breakpoint)) as ViewStyle['maxWidth'],
-    minHeight: resolveDimension(theme, resolveResponsive(props.minHeight, breakpoint)) as ViewStyle['minHeight'],
-    maxHeight: resolveDimension(theme, resolveResponsive(props.maxHeight, breakpoint)) as ViewStyle['maxHeight'],
+    width: resolveDimension(
+      theme,
+      resolveResponsive(props.width, breakpoint),
+    ) as ViewStyle['width'],
+    height: resolveDimension(
+      theme,
+      resolveResponsive(props.height, breakpoint),
+    ) as ViewStyle['height'],
+    minWidth: resolveDimension(
+      theme,
+      resolveResponsive(props.minWidth, breakpoint),
+    ) as ViewStyle['minWidth'],
+    maxWidth: resolveDimension(
+      theme,
+      resolveResponsive(props.maxWidth, breakpoint),
+    ) as ViewStyle['maxWidth'],
+    minHeight: resolveDimension(
+      theme,
+      resolveResponsive(props.minHeight, breakpoint),
+    ) as ViewStyle['minHeight'],
+    maxHeight: resolveDimension(
+      theme,
+      resolveResponsive(props.maxHeight, breakpoint),
+    ) as ViewStyle['maxHeight'],
     flex: resolveResponsive(props.flex, breakpoint),
     flexGrow: resolveResponsive(props.flexGrow, breakpoint),
     flexShrink: resolveResponsive(props.flexShrink, breakpoint),
@@ -55,22 +73,17 @@ export function resolveBoxStyles(
   };
 }
 
-type RadiusValue = number | keyof SurfaceTheme['radii'];
-
 /*** Resolves a Surface radius token or raw number. */
-function resolveRadius(theme: SurfaceTheme, value: RadiusValue | undefined): number | undefined {
-  if (value === undefined) return undefined;
-  if (typeof value === 'number') return value;
-  return theme.radii[value];
+function resolveRadius(
+  theme: SurfaceTheme,
+  value: number | keyof SurfaceTheme['radii'] | undefined,
+): number | undefined {
+  return resolveToken(theme.radii, value);
 }
 
 /*** Resolves a Surface color token while preserving arbitrary color strings. */
 function resolveColor(theme: SurfaceTheme, value: ColorValue | undefined): string | undefined {
-  if (value === undefined) return undefined;
-  if (Object.prototype.hasOwnProperty.call(theme.colors, value)) {
-    return theme.colors[value];
-  }
-  return value as string;
+  return resolveToken(theme.colors, value);
 }
 
 /*** Resolves spacing-token dimensions while preserving raw dimension strings. */
@@ -78,6 +91,5 @@ function resolveDimension(
   theme: SurfaceTheme,
   value: number | string | undefined,
 ): number | string | undefined {
-  if (value === undefined || typeof value === 'number') return value;
   return resolveToken(theme.spacing, value);
 }

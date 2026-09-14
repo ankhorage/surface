@@ -8,9 +8,8 @@ await mock.module('react-native', () => ReactNativeWeb);
 
 const scrollContentStyle = { padding: 4 };
 
-const { Container } = await import('./layout/Container');
-const { Grid } = await import('./layout/Grid');
-const { KeyboardAvoidingView } = await import('./layout/KeyboardAvoidingView');
+const { Container, Grid } = await import('./features/layout/public');
+const { KeyboardAvoidingView } = await import('./features/keyboard-avoiding-view/public');
 const { ScrollArea } = await import('./layout/ScrollArea');
 const { Show } = await import('./layout/Show');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');

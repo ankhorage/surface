@@ -1,4 +1,5 @@
 import React from 'react';
+import type { ViewStyle } from 'react-native';
 
 import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
@@ -32,15 +33,12 @@ export function Card({
         <Surface
           {...props}
           style={[
-            {
-              backgroundColor: resolveCardStateBackground(variant, state.pressed, state.hovered, {
-                active: theme.semantics.neutral.surfaceActive,
-                base: theme.semantics.surface.default,
-                hover: theme.semantics.neutral.surfaceHover,
-                subtle: theme.semantics.surface.subtle,
-              }),
-              opacity: state.disabled ? 0.72 : 1,
-            },
+            resolveInteractiveCardStyle(variant, state.pressed, state.hovered, state.disabled, {
+              active: theme.semantics.neutral.surfaceActive,
+              base: theme.semantics.surface.default,
+              hover: theme.semantics.neutral.surfaceHover,
+              subtle: theme.semantics.surface.subtle,
+            }),
             style,
           ]}
           variant={variant}
@@ -52,12 +50,26 @@ export function Card({
   );
 }
 
+/*** Resolves the complete interactive style for one Card state. */
+function resolveInteractiveCardStyle(
+  variant: SurfaceVariant,
+  pressed: boolean,
+  hovered: boolean,
+  disabled: boolean,
+  backgrounds: CardBackgrounds,
+): ViewStyle {
+  return {
+    backgroundColor: resolveCardStateBackground(variant, pressed, hovered, backgrounds),
+    opacity: disabled ? 0.72 : 1,
+  };
+}
+
 /*** Resolves the interactive background for one Card variant and state. */
 function resolveCardStateBackground(
   variant: SurfaceVariant,
   pressed: boolean,
   hovered: boolean,
-  backgrounds: { base: string; subtle: string; hover: string; active: string },
+  backgrounds: CardBackgrounds,
 ) {
   if (variant === 'outline') {
     return pressed ? backgrounds.active : hovered ? backgrounds.hover : 'transparent';
@@ -66,4 +78,11 @@ function resolveCardStateBackground(
     return pressed ? backgrounds.active : hovered ? backgrounds.hover : backgrounds.subtle;
   }
   return pressed ? backgrounds.active : hovered ? backgrounds.hover : backgrounds.base;
+}
+
+interface CardBackgrounds {
+  active: string;
+  base: string;
+  hover: string;
+  subtle: string;
 }

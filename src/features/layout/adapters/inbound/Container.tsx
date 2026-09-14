@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, type ViewStyle, View } from 'react-native';
 
 import { resolveResponsive, useResponsiveRuntime } from '../../../../core/responsive';
 import { useTheme } from '../../../../theme/ThemeContext';
@@ -20,18 +20,24 @@ export function Container({
   const activePx = resolveSpacing(theme, resolveResponsive(px, breakpoint));
 
   return (
-    <Box {...props} width="100%" style={[{ width: '100%' }, props.style]}>
-      <View
-        style={{
-          width: '100%',
-          maxWidth: activeMaxWidth,
-          alignSelf: 'center',
-          paddingLeft: activePx,
-          paddingRight: activePx,
-        }}
-      >
-        {children}
-      </View>
+    <Box {...props} width="100%" style={[styles.fullWidth, props.style]}>
+      <View style={resolveContainerStyle(activeMaxWidth, activePx)}>{children}</View>
     </Box>
   );
 }
+
+/*** Resolves centered responsive Container dimensions and padding. */
+function resolveContainerStyle(
+  maxWidth: number | undefined,
+  horizontalPadding: number | undefined,
+): ViewStyle {
+  return {
+    alignSelf: 'center',
+    maxWidth,
+    paddingLeft: horizontalPadding,
+    paddingRight: horizontalPadding,
+    width: '100%',
+  };
+}
+
+const styles = StyleSheet.create({ fullWidth: { width: '100%' } });

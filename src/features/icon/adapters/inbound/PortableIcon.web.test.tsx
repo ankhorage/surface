@@ -155,7 +155,10 @@ describe('portable icon runtime rejection', () => {
 
 describe('portable icon dependency boundary', () => {
   test('has no Expo icon dependency or resolver path', () => {
-    const packageSource = readFileSync(new URL('../../../../../package.json', import.meta.url), 'utf8');
+    const packageSource = readFileSync(
+      new URL('../../../../../package.json', import.meta.url),
+      'utf8',
+    );
     const iconSource = readFileSync(new URL('./PortableIcon.tsx', import.meta.url), 'utf8');
 
     expect(packageSource).not.toContain('@expo/vector-icons');

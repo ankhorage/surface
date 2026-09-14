@@ -16,12 +16,7 @@ import type { StyleProp, TextStyle, ViewStyle } from 'react-native';
 import type { SurfaceTheme } from '../theme/types';
 import type { SurfaceImageSource } from './image';
 
-export type IconProvider =
-  | 'Ionicons'
-  | 'FontAwesome'
-  | 'FontAwesome5'
-  | 'FontAwesome6'
-  | 'MaterialDesignIcons';
+export type IconProvider = 'Ionicons' | 'FontAwesome' | 'FontAwesome5' | 'FontAwesome6' | 'MaterialDesignIcons';
 
 export type IconVariant = 'regular' | 'solid' | 'brand';
 
@@ -45,11 +40,11 @@ export interface SvgIconSource {
 
 export type IconSource = FontIconSource | SvgIconSource;
 
-type IconPresentationProps = {
+interface IconPresentationProps {
   size?: keyof SurfaceTheme['spacing'] | number;
   color?: keyof SurfaceTheme['colors'] | string;
   testID?: string;
-};
+}
 
 export type IconProps =
   | (FontIconSource & IconPresentationProps & { style?: StyleProp<TextStyle> })

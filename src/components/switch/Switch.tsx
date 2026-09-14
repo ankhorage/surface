@@ -48,7 +48,13 @@ export function Switch({
       accessibilityRole="switch"
       accessibilityState={{ checked: isChecked }}
       disabled={disabled}
-      onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}
+      onPress={
+        nextChecked === null
+          ? undefined
+          : () => {
+              setChecked(nextChecked);
+            }
+      }
       testID={testID}
     >
       {(interactionState) => {
@@ -69,7 +75,13 @@ export function Switch({
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
 
         return (
-          <Box style={{ alignItems: 'center', flexDirection: 'row', opacity: colors.opacity }}>
+          <Box
+            style={{
+              alignItems: 'center',
+              flexDirection: 'row',
+              opacity: colors.opacity,
+            }}
+          >
             <Box
               radius="full"
               style={{

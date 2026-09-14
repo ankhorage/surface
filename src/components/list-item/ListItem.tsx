@@ -21,7 +21,10 @@ function ListItemContent({
       px="m"
       py="m"
       testID={testID}
-      style={{ flexDirection: 'row', alignItems: 'center' }}
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}
     >
       {leading ? <View style={{ marginRight: theme.spacing.m }}>{leading}</View> : null}
       <Box flex={1}>
@@ -43,7 +46,10 @@ function ListItemContent({
 
 export function ListItem({ onPress, disabled = false, testID, ...content }: ListItemProps) {
   const { theme } = useTheme();
-  if (!onPress) return <ListItemContent {...content} testID={testID} />;
+
+  if (!onPress) {
+    return <ListItemContent {...content} testID={testID} />;
+  }
 
   return (
     <ButtonBase accessibilityRole="button" disabled={disabled} onPress={onPress} testID={testID}>

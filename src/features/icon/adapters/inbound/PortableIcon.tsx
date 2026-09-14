@@ -4,11 +4,18 @@ import { FontAwesome6 } from '@react-native-vector-icons/fontawesome6/static';
 import { Ionicons } from '@react-native-vector-icons/ionicons/static';
 import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons/static';
 import React from 'react';
-import { Image, type StyleProp, StyleSheet, type TextStyle, View, type ViewStyle } from 'react-native';
+import {
+  Image,
+  type StyleProp,
+  StyleSheet,
+  type TextStyle,
+  View,
+  type ViewStyle,
+} from 'react-native';
 import { SvgUri } from 'react-native-svg';
 
-import type { SurfaceImageSource } from '../../../../types/image';
 import type { FontIconSource, IconSource, SvgIconSource } from '../../../../types/icon';
+import type { SurfaceImageSource } from '../../../../types/image';
 
 /*** Renders a resolved portable icon using the configured font or SVG runtime. */
 export function PortableIcon(props: PortableIconProps) {
@@ -39,7 +46,12 @@ export function PortableIcon(props: PortableIconProps) {
   }
 }
 
-type PortableIconPresentationProps = { color: string; size: number; testID?: string };
+interface PortableIconPresentationProps {
+  color: string;
+  size: number;
+  testID?: string;
+}
+
 type FontPortableIconProps = FontIconSource &
   PortableIconPresentationProps & { style?: StyleProp<TextStyle> };
 type SvgPortableIconProps = SvgIconSource &

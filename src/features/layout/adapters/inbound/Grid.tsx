@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, type ViewStyle } from 'react-native';
+import { type ViewStyle, View } from 'react-native';
 
 import { resolveResponsive, useResponsiveRuntime } from '../../../../core/responsive';
 import { useTheme } from '../../../../theme/ThemeContext';
@@ -21,35 +21,27 @@ export function Grid({
   const { breakpoint } = useResponsiveRuntime();
   const activeCols = Math.max(1, Math.floor(resolveResponsive(cols, breakpoint) ?? 1));
   const defaultGap = resolveResponsive(gap, breakpoint) ?? 0;
-  const activeRowGap = resolveResponsive(rowGap, breakpoint) ?? defaultGap;
-  const activeColGap = resolveResponsive(colGap, breakpoint) ?? defaultGap;
-  const rowSpacing = Number(resolveSpacing(theme, activeRowGap) ?? 0);
-  const colSpacing = Number(resolveSpacing(theme, activeColGap) ?? 0);
+  const rowSpacing = Number(
+    resolveSpacing(theme, resolveResponsive(rowGap, breakpoint) ?? defaultGap) ?? 0,
+  );
+  const colSpacing = Number(
+    resolveSpacing(theme, resolveResponsive(colGap, breakpoint) ?? defaultGap) ?? 0,
+  );
   const activeMinItemWidth = resolveResponsive(minItemWidth, breakpoint);
   const basisPercent: `${number}%` = `${100 / activeCols}%`;
-  const nodes = React.Children.toArray(children);
 
   return (
     <Box {...props}>
-      <View
-        style={{
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          marginTop: -rowSpacing / 2,
-          marginLeft: -colSpacing / 2,
-          marginRight: -colSpacing / 2,
-        }}
-      >
-        {nodes.map((node, index) => (
+      <View style={resolveGridStyle(rowSpacing, colSpacing)}>
+        {React.Children.toArray(children).map((node, index) => (
           <View
             key={String(index)}
-            style={{
-              paddingTop: rowSpacing / 2,
-              paddingBottom: rowSpacing / 2,
-              paddingLeft: colSpacing / 2,
-              paddingRight: colSpacing / 2,
-              ...resolveGridItemStyle(activeMinItemWidth, basisPercent),
-            }}
+            style={resolveGridItemStyle(
+              activeMinItemWidth,
+              basisPercent,
+              rowSpacing,
+              colSpacing,
+            )}
           >
             {node}
           </View>
@@ -59,12 +51,33 @@ export function Grid({
   );
 }
 
+/*** Resolves the wrapping Grid container style. */
+function resolveGridStyle(rowSpacing: number, colSpacing: number): ViewStyle {
+  return {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginLeft: -colSpacing / 2,
+    marginRight: -colSpacing / 2,
+    marginTop: -rowSpacing / 2,
+  };
+}
+
 /*** Resolves a fixed-column or minimum-width grid item style. */
 function resolveGridItemStyle(
   minItemWidth: number | undefined,
   basisPercent: `${number}%`,
+  rowSpacing: number,
+  colSpacing: number,
 ): ViewStyle {
-  return minItemWidth === undefined
-    ? { width: basisPercent, flexBasis: basisPercent }
-    : { minWidth: minItemWidth, flexBasis: minItemWidth, flexGrow: 1 };
+  const sizing =
+    minItemWidth === undefined
+      ? { width: basisPercent, flexBasis: basisPercent }
+      : { minWidth: minItemWidth, flexBasis: minItemWidth, flexGrow: 1 };
+  return {
+    ...sizing,
+    paddingBottom: rowSpacing / 2,
+    paddingLeft: colSpacing / 2,
+    paddingRight: colSpacing / 2,
+    paddingTop: rowSpacing / 2,
+  };
 }

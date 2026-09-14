@@ -1,110 +1,75 @@
 import React from 'react';
-import { Platform, TextInput as ReactNativeTextInput, View } from 'react-native';
-
 import {
-  resolveControlSize,
-  resolveFieldState,
-  resolveFocusRingStyles,
-  resolveInputColors,
-  resolveTextStyles,
-} from '../../../../../internal/resolvers';
+  Platform,
+  TextInput as ReactNativeTextInput,
+  type ViewStyle,
+  View,
+} from 'react-native';
+
+import { resolveFocusRingStyles } from '../../../../../internal/resolvers';
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { TextInputProps } from '../../../../../types/text-input';
+import { resolveTextInputPresentation } from '../../utils/resolveTextInputPresentation';
 
 /*** Renders a token-aware text input with controlled interaction policy. */
-export function TextInput({
-  value,
-  defaultValue,
-  onChangeText,
-  placeholder,
-  size = 'm',
-  disabled = false,
-  readOnly = false,
-  invalid = false,
-  leadingAccessory,
-  trailingAccessory,
-  interactionPolicy = 'enabled',
-  style,
-  testID,
-  onFocus,
-  onBlur,
-  ...props
-}: TextInputProps) {
+export function TextInput(props: TextInputProps) {
   const { theme } = useTheme();
-  const controlSize = resolveControlSize(theme, size);
   const [focused, setFocused] = React.useState(false);
-  const fieldState = resolveFieldState({ disabled, focused, invalid, readOnly });
-  const colors = resolveInputColors(theme, fieldState);
-  const resolvedTextStyle = resolveTextStyles(theme, { variant: controlSize.textVariant });
-  const resolvedLineHeight =
-    typeof resolvedTextStyle.lineHeight === 'number'
-      ? resolvedTextStyle.lineHeight
-      : controlSize.minHeight - controlSize.paddingVertical * 2;
-  const lineCount = Math.max(props.numberOfLines ?? 1, 1);
-  const inputMinHeight = props.multiline
-    ? resolvedLineHeight * lineCount
-    : controlSize.minHeight - controlSize.paddingVertical * 2;
-  const containerMinHeight = props.multiline
-    ? inputMinHeight + controlSize.paddingVertical * 2
-    : controlSize.minHeight;
-  const passive = interactionPolicy === 'passive';
+  const {
+    disabled: _disabled,
+    interactionPolicy = 'enabled',
+    invalid: _invalid,
+    leadingAccessory,
+    readOnly = false,
+    size: _size,
+    trailingAccessory,
+    ...nativeProps
+  } = props;
+  const presentation = resolveTextInputPresentation(theme, props, focused);
 
   return (
     <View
       style={[
-        {
-          minHeight: containerMinHeight,
-          paddingHorizontal: controlSize.paddingHorizontal,
-          paddingVertical: controlSize.paddingVertical,
-          borderRadius: controlSize.borderRadius,
-          borderWidth: 1,
-          borderColor: colors.borderColor,
-          backgroundColor: colors.backgroundColor,
-          flexDirection: 'row',
-          alignItems: props.multiline ? 'flex-start' : 'center',
-          opacity: colors.opacity,
-        },
+        presentation.containerStyle,
         resolveFocusRingStyles(theme.semantics.border.focus, focused, Platform.OS === 'web'),
       ]}
     >
       {leadingAccessory ? (
-        <View style={{ marginRight: theme.spacing.s }}>{leadingAccessory}</View>
+        <View style={resolveAccessoryStyle(presentation.accessorySpacing, 'leading')}>
+          {leadingAccessory}
+        </View>
       ) : null}
       <ReactNativeTextInput
-        {...props}
-        defaultValue={defaultValue}
-        editable={passive ? false : !disabled && !readOnly}
-        numberOfLines={props.multiline ? props.numberOfLines : 1}
+        {...nativeProps}
+        editable={presentation.editable}
+        numberOfLines={presentation.numberOfLines}
         onBlur={(event) => {
           setFocused(false);
-          onBlur?.(event);
+          nativeProps.onBlur?.(event);
         }}
         onChangeText={(nextValue) => {
-          if (!passive) onChangeText?.(nextValue);
+          if (interactionPolicy !== 'passive') {
+            nativeProps.onChangeText?.(nextValue);
+          }
         }}
         onFocus={(event) => {
           setFocused(true);
-          onFocus?.(event);
+          nativeProps.onFocus?.(event);
         }}
-        placeholder={placeholder}
-        placeholderTextColor={colors.placeholderColor}
+        placeholderTextColor={presentation.placeholderColor}
         readOnly={readOnly}
-        style={[
-          {
-            flex: 1,
-            minHeight: inputMinHeight,
-            padding: 0,
-            color: colors.contentColor,
-            textAlignVertical: props.multiline ? 'top' : 'center',
-          },
-          style,
-        ]}
-        testID={testID}
-        value={value}
+        style={[presentation.inputStyle, nativeProps.style]}
       />
       {trailingAccessory ? (
-        <View style={{ marginLeft: theme.spacing.s }}>{trailingAccessory}</View>
+        <View style={resolveAccessoryStyle(presentation.accessorySpacing, 'trailing')}>
+          {trailingAccessory}
+        </View>
       ) : null}
     </View>
   );
+}
+
+/*** Resolves spacing around a leading or trailing TextInput accessory. */
+function resolveAccessoryStyle(spacing: number, position: 'leading' | 'trailing'): ViewStyle {
+  return position === 'leading' ? { marginRight: spacing } : { marginLeft: spacing };
 }

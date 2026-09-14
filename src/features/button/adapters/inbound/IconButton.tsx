@@ -1,6 +1,12 @@
 import React from 'react';
+import type { ViewStyle } from 'react-native';
 
-import { resolveButtonColors, resolveControlSize, resolveIconSize } from '../../../../internal/resolvers';
+import {
+  resolveButtonColors,
+  resolveControlSize,
+  resolveIconSize,
+  type ResolvedControlSize,
+} from '../../../../internal/resolvers';
 import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { IconButtonProps } from '../../../../types/button';
@@ -35,16 +41,7 @@ export function IconButton({
         return (
           <Box
             radius={controlSize.borderRadius}
-            style={{
-              minHeight: controlSize.minHeight,
-              minWidth: controlSize.minHeight,
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: colors.backgroundColor,
-              borderColor: colors.borderColor,
-              borderWidth: variant === 'solid' ? 0 : 1,
-              opacity: colors.opacity,
-            }}
+            style={resolveIconButtonStyle(controlSize, colors, variant)}
           >
             <Icon {...icon} color={colors.contentColor} size={resolveIconSize(theme, size)} />
           </Box>
@@ -52,4 +49,22 @@ export function IconButton({
       }}
     </ButtonBase>
   );
+}
+
+/*** Resolves the visual container style for an IconButton interaction state. */
+function resolveIconButtonStyle(
+  controlSize: ResolvedControlSize,
+  colors: ReturnType<typeof resolveButtonColors>,
+  variant: NonNullable<IconButtonProps['variant']>,
+): ViewStyle {
+  return {
+    alignItems: 'center',
+    backgroundColor: colors.backgroundColor,
+    borderColor: colors.borderColor,
+    borderWidth: variant === 'solid' ? 0 : 1,
+    justifyContent: 'center',
+    minHeight: controlSize.minHeight,
+    minWidth: controlSize.minHeight,
+    opacity: colors.opacity,
+  };
 }

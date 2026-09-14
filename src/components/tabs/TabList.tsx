@@ -11,7 +11,10 @@ export function TabList({ children, testID }: TabListProps) {
   const { focusedValue, setActiveValue, tabs } = useTabsContext();
 
   React.useEffect(() => {
-    if (!focusedValue) return undefined;
+    if (!focusedValue) {
+      return undefined;
+    }
+
     return bindKeydown((event) => {
       const nextValue =
         event.key === 'ArrowLeft' ||
@@ -22,15 +25,26 @@ export function TabList({ children, testID }: TabListProps) {
         event.key === 'End'
           ? resolveNextTabValue(tabs, focusedValue, event.key)
           : undefined;
-      if (!nextValue) return;
+
+      if (!nextValue) {
+        return;
+      }
+
       event.preventDefault();
-      tabs.find((tab) => tab.value === nextValue)?.focus();
+      const nextTab = tabs.find((tab) => tab.value === nextValue);
+      nextTab?.focus();
       setActiveValue(nextValue);
     });
   }, [bindKeydown, focusedValue, setActiveValue, tabs]);
 
   return (
-    <Box accessibilityRole="tablist" style={{ flexDirection: 'row' }} testID={testID}>
+    <Box
+      accessibilityRole="tablist"
+      style={{
+        flexDirection: 'row',
+      }}
+      testID={testID}
+    >
       {children}
     </Box>
   );

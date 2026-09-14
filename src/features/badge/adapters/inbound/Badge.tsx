@@ -1,4 +1,5 @@
 import React from 'react';
+import type { ViewStyle } from 'react-native';
 
 import { resolveButtonColors, resolveControlSize } from '../../../../internal/resolvers';
 import { useTheme } from '../../../../theme/ThemeContext';
@@ -19,12 +20,7 @@ export function Badge({
   const colors = resolveButtonColors(theme, {
     variant,
     color,
-    state: {
-      disabled: false,
-      focused: false,
-      hovered: false,
-      pressed: false,
-    },
+    state: { disabled: false, focused: false, hovered: false, pressed: false },
   });
 
   return (
@@ -32,12 +28,7 @@ export function Badge({
       px={Math.max(theme.spacing.xs, controlSize.paddingHorizontal - 4)}
       py={Math.max(4, controlSize.paddingVertical - 2)}
       radius={controlSize.borderRadius}
-      style={{
-        alignSelf: 'flex-start',
-        backgroundColor: colors.backgroundColor,
-        borderColor: colors.borderColor,
-        borderWidth: variant === 'solid' ? 0 : 1,
-      }}
+      style={resolveBadgeStyle(colors.backgroundColor, colors.borderColor, variant)}
       testID={testID}
     >
       <Text
@@ -50,4 +41,18 @@ export function Badge({
       </Text>
     </Box>
   );
+}
+
+/*** Resolves the visual container style for one badge variant. */
+function resolveBadgeStyle(
+  backgroundColor: string,
+  borderColor: string,
+  variant: NonNullable<BadgeProps['variant']>,
+): ViewStyle {
+  return {
+    alignSelf: 'flex-start',
+    backgroundColor,
+    borderColor,
+    borderWidth: variant === 'solid' ? 0 : 1,
+  };
 }
