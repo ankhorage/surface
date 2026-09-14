@@ -21,6 +21,7 @@ export function Tab({
   const pressableRef = useTabRegistration({ disabled, value });
   const selected = activeValue === value;
   const passive = interactionPolicy === 'passive';
+  const onPress = passive || disabled ? undefined : () => setActiveValue(value);
 
   return (
     <Pressable
@@ -32,7 +33,7 @@ export function Tab({
       nativeID={getTabId(value)}
       onBlur={() => setFocusedValue(undefined)}
       onFocus={() => setFocusedValue(value)}
-      onPress={passive ? undefined : () => !disabled && setActiveValue(value)}
+      onPress={onPress}
       ref={pressableRef}
       testID={testID}
     >
