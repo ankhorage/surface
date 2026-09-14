@@ -35,10 +35,11 @@ export interface AccordionItemProps extends Omit<ViewProps, 'children'>, Interac
 }
 
 export interface AccordionTriggerProps
-  extends Omit<
-    PressableProps,
-    'accessibilityRole' | 'accessibilityState' | 'children' | 'disabled' | 'onPress'
-  >,
+  extends
+    Omit<
+      PressableProps,
+      'accessibilityRole' | 'accessibilityState' | 'children' | 'disabled' | 'onPress'
+    >,
     InteractionPolicyProps {
   children?: PressableProps['children'];
   disabled?: boolean;
