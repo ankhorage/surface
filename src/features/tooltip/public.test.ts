@@ -6,6 +6,6 @@ test('Tooltip delegates anchored positioning and portal ownership to Popover', a
   expect(source).toContain("import { Popover } from '../../../popover/public';");
   expect(source).toContain('<Popover');
   expect(source).not.toContain('measureInWindow');
-  expect(source).not.toContain("internal/overlay");
+  expect(source).not.toContain('internal/overlay');
   expect(source).not.toContain('<Portal');
 });

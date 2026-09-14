@@ -1,11 +1,3 @@
-export {
-  BottomSheetFlatList,
-  BottomSheetScrollView,
-  BottomSheetSectionList,
-  BottomSheetView,
-  BottomSheetVirtualizedList,
-} from '@gorhom/bottom-sheet';
-
 export type {
   BottomSheetContentMode,
   BottomSheetController,
@@ -13,3 +5,10 @@ export type {
 } from '../../types/bottomSheet';
 export { BottomSheetProvider } from './BottomSheetProvider';
 export { useBottomSheet } from './useBottomSheet';
+export {
+  BottomSheetFlatList,
+  BottomSheetScrollView,
+  BottomSheetSectionList,
+  BottomSheetView,
+  BottomSheetVirtualizedList,
+} from '@gorhom/bottom-sheet';

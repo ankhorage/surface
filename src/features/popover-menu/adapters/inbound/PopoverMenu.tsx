@@ -104,7 +104,7 @@ function usePopoverMenuKeyboard({
       bindKeydown((event) => {
         if (passive) return;
 
-        const key = event.key;
+        const { key } = event;
         if (key === undefined) return;
 
         if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(key)) {
@@ -168,7 +168,13 @@ function PopoverMenuItem({
 }
 
 /*** Renders the leading, textual, and trailing content of one menu action. */
-function PopoverMenuItemContent({ action, active }: { action: PopoverMenuAction; active: boolean }) {
+function PopoverMenuItemContent({
+  action,
+  active,
+}: {
+  action: PopoverMenuAction;
+  active: boolean;
+}) {
   const titleColor =
     action.intent === 'danger' ? 'danger' : active || action.selected ? 'neutral' : undefined;
 

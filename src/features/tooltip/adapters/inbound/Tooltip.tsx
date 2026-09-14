@@ -1,11 +1,11 @@
 import React from 'react';
 import { Platform, Pressable, View } from 'react-native';
 
+import { useTheme } from '../../../../theme/ThemeContext';
+import type { TooltipProps } from '../../../../types/tooltip';
 import { Popover } from '../../../popover/public';
 import { Surface } from '../../../surface/public';
 import { Text } from '../../../typography/public';
-import { useTheme } from '../../../../theme/ThemeContext';
-import type { TooltipProps } from '../../../../types/tooltip';
 import { useTooltipVisibility } from '../../composition/useTooltipVisibility';
 
 /*** Presents delayed hover/focus help through the shared Popover foundation. */
@@ -41,7 +41,11 @@ export function Tooltip({
       )}
     >
       <View pointerEvents="none">
-        <Surface p="s" style={{ backgroundColor: theme.semantics.surface.inverse }} variant="raised">
+        <Surface
+          p="s"
+          style={{ backgroundColor: theme.semantics.surface.inverse }}
+          variant="raised"
+        >
           <Text emphasis="inverse" variant="caption">
             {content}
           </Text>

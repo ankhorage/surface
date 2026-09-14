@@ -71,21 +71,19 @@ export type {
 } from './features/layout/public';
 export { Box, Container, Divider, Grid, Stack } from './features/layout/public';
 export type {
-  PopoverMenuAction,
-  PopoverMenuActionIntent,
-  PopoverMenuProps,
-} from './features/popover-menu/public';
-export { PopoverMenu } from './features/popover-menu/public';
-export type {
   PopoverAnchorRenderProps,
   PopoverPlacement,
   PopoverProps,
 } from './features/popover/public';
 export { Popover } from './features/popover/public';
+export type {
+  PopoverMenuAction,
+  PopoverMenuActionIntent,
+  PopoverMenuProps,
+} from './features/popover-menu/public';
+export { PopoverMenu } from './features/popover-menu/public';
 export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
-export type { TooltipProps } from './features/tooltip/public';
-export { Tooltip } from './features/tooltip/public';
 export type {
   ToastController,
   ToastOptions,
@@ -94,6 +92,8 @@ export type {
   ToastStatus,
 } from './features/toast/public';
 export { Toast, ToastProvider, useToast } from './features/toast/public';
+export type { TooltipProps } from './features/tooltip/public';
+export { Tooltip } from './features/tooltip/public';
 export type { HeadingLevel, HeadingProps, TextProps } from './features/typography/public';
 export { Heading, Text } from './features/typography/public';
 export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';
