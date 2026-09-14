@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo } from 'react';
+import React, { createContext, use, useMemo } from 'react';
 
 import { useFontContext } from '../context/FontContext';
 import { ResponsiveProvider } from '../core/responsive/ResponsiveProvider';
@@ -43,7 +43,6 @@ export const ThemeProvider = ({
   const [mode, setMode] = React.useState<'light' | 'dark'>(initialMode);
   const { activeFontId } = useFontContext();
 
-  // Keep state in sync with prop for real-time Studio updates
   React.useEffect(() => {
     if (initialConfig) {
       setConfig((prev) => {
@@ -73,15 +72,15 @@ export const ThemeProvider = ({
 
   return (
     <ResponsiveProvider>
-      <ThemeContext.Provider value={value}>
+      <ThemeContext value={value}>
         <OverlayProvider>{children}</OverlayProvider>
-      </ThemeContext.Provider>
+      </ThemeContext>
     </ResponsiveProvider>
   );
 };
 
 export const useTheme = () => {
-  return useContext(ThemeContext);
+  return use(ThemeContext);
 };
 
 export const useThemeConfig = () => {
