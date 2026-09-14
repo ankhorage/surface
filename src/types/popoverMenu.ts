@@ -1,6 +1,7 @@
 import type React from 'react';
 
 import type { InteractionPolicy } from '../interactionPolicy';
+import type { PopoverAnchorRenderProps } from './popover';
 
 export type PopoverMenuActionIntent = 'default' | 'danger';
 
@@ -17,7 +18,7 @@ export interface PopoverMenuAction {
 }
 
 export interface PopoverMenuProps {
-  trigger?: React.ReactNode;
+  trigger: (controls: PopoverAnchorRenderProps) => React.ReactNode;
   actions: readonly PopoverMenuAction[];
   dismiss?: () => void;
   closeOnSelect?: boolean;
