@@ -5,9 +5,9 @@ import {
   resolveFieldState,
   resolveInputColors,
   resolveTextStyles,
-} from '../../../../../internal/resolvers';
-import type { SurfaceTheme } from '../../../../../theme/types';
-import type { TextInputProps } from '../../../../../types/text-input';
+} from '../../../../internal/resolvers';
+import type { SurfaceTheme } from '../../../../theme/types';
+import type { TextInputProps } from '../../../../types/text-input';
 
 /*** Resolves layout, colors, and editability for one TextInput state. */
 export function resolveTextInputPresentation(
