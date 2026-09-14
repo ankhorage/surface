@@ -63,7 +63,10 @@ function normalizeAccordionValues(
   mode: AccordionMode,
   value: string | readonly string[] | undefined,
 ): readonly string[] {
-  if (mode === 'multiple') return Array.isArray(value) ? value : [];
+  if (mode === 'multiple') {
+    return typeof value === 'string' || value === undefined ? [] : value;
+  }
+
   return typeof value === 'string' ? [value] : [];
 }
 
