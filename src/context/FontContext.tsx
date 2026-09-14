@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import React, { createContext, use, useMemo, useState } from 'react';
 
 /**
  * Runtime font state consumed by theme and text primitives.
@@ -51,9 +51,9 @@ export function FontProvider(props: {
     [fontsLoaded, activeFontId, onActiveFontChange],
   );
 
-  return <FontContext.Provider value={value}>{children}</FontContext.Provider>;
+  return <FontContext value={value}>{children}</FontContext>;
 }
 
 export function useFontContext(): FontRuntime {
-  return useContext(FontContext);
+  return use(FontContext);
 }
