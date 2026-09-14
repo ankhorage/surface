@@ -2,18 +2,27 @@ import React from 'react';
 import { Pressable, StyleSheet, type ViewStyle, View } from 'react-native';
 
 import { Portal } from '../../../../internal/overlay/Portal';
+import type { PopoverPlacement } from '../../../../types/popover';
+import { usePopoverLayout } from './usePopoverLayout';
 
-/*** Renders the anchored popover portal, backdrop, and positioned content. */
+/*** Renders and positions one mounted popover overlay for an open anchor. */
 export function PopoverOverlay({
+  anchorRef,
   children,
   closeOnOutsidePress,
+  offset,
   onClose,
-  onContentLayout,
   passive,
-  position,
-  ready,
+  placement,
   testID,
 }: PopoverOverlayProps) {
+  const { onContentLayout, position, ready } = usePopoverLayout({
+    anchorRef,
+    offset,
+    open: true,
+    placement,
+  });
+
   return (
     <Portal layer="popover" visible={ready}>
       <View pointerEvents="box-none" style={styles.overlay}>
@@ -38,13 +47,13 @@ export function PopoverOverlay({
 }
 
 interface PopoverOverlayProps {
+  anchorRef: React.RefObject<View | null>;
   children?: React.ReactNode;
   closeOnOutsidePress: boolean;
+  offset: number;
   onClose: () => void;
-  onContentLayout: React.ComponentProps<typeof View>['onLayout'];
   passive: boolean;
-  position: ViewStyle | undefined;
-  ready: boolean;
+  placement: PopoverPlacement;
   testID?: string;
 }
 
@@ -58,8 +67,6 @@ const absoluteFill: ViewStyle = {
 
 const styles = StyleSheet.create({
   backdrop: absoluteFill,
-  content: {
-    position: 'absolute',
-  },
+  content: { position: 'absolute' },
   overlay: absoluteFill,
 });
