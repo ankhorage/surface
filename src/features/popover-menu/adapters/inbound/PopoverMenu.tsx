@@ -103,18 +103,22 @@ function usePopoverMenuKeyboard({
     () =>
       bindKeydown((event) => {
         if (passive) return;
-        if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+
+        const key = event.key;
+        if (key === undefined) return;
+
+        if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(key)) {
           event.preventDefault();
-          setActiveIndex((current) => resolveNextMenuIndex(actions, current, event.key));
+          setActiveIndex((current) => resolveNextMenuIndex(actions, current, key));
           return;
         }
-        if (event.key === 'Enter') {
+        if (key === 'Enter') {
           event.preventDefault();
           const action = actions[activeIndex];
           if (action) activateAction(action);
           return;
         }
-        if (event.key === 'Escape') {
+        if (key === 'Escape') {
           event.preventDefault();
           close();
         }
