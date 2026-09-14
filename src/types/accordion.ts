@@ -28,8 +28,7 @@ export interface AccordionMultipleProps extends AccordionBaseProps {
 
 export type AccordionProps = AccordionSingleProps | AccordionMultipleProps;
 
-export interface AccordionItemProps
-  extends Omit<ViewProps, 'children'>, InteractionPolicyProps {
+export interface AccordionItemProps extends Omit<ViewProps, 'children'>, InteractionPolicyProps {
   value: string;
   children?: React.ReactNode;
   disabled?: boolean;
@@ -37,9 +36,9 @@ export interface AccordionItemProps
 
 export interface AccordionTriggerProps
   extends Omit<
-      PressableProps,
-      'accessibilityRole' | 'accessibilityState' | 'children' | 'disabled' | 'onPress'
-    >,
+    PressableProps,
+    'accessibilityRole' | 'accessibilityState' | 'children' | 'disabled' | 'onPress'
+  >,
     InteractionPolicyProps {
   children?: PressableProps['children'];
   disabled?: boolean;
