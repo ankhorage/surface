@@ -77,10 +77,7 @@ function BottomSheetHost({
   presentedRef,
 }: BottomSheetHostProps) {
   React.useEffect(() => {
-    if (!activeRequest || presentedRef.current) {
-      return;
-    }
-
+    if (!activeRequest || presentedRef.current) return;
     presentedRef.current = true;
     modalRef.current?.present();
   }, [activeRequest, modalRef, presentedRef]);
@@ -91,9 +88,7 @@ function BottomSheetHost({
     [activeRequest?.snapPoints],
   );
 
-  if (!activeRequest) {
-    return null;
-  }
+  if (!activeRequest) return null;
 
   return (
     <BottomSheetModal
@@ -104,12 +99,22 @@ function BottomSheetHost({
       index={activeRequest.initialIndex ?? 0}
       keyboardBehavior={activeRequest.keyboardBehavior ?? 'interactive'}
       keyboardBlurBehavior={activeRequest.keyboardBlurBehavior ?? 'restore'}
+      maxDynamicContentSize={activeRequest.maxDynamicContentSize}
       onChange={activeRequest.onIndexChange}
       onDismiss={handleDismiss}
       snapPoints={snapPoints}
     >
-      <BottomSheetView>{activeRequest.content}</BottomSheetView>
+      {renderBottomSheetContent(activeRequest)}
     </BottomSheetModal>
+  );
+}
+
+/*** Renders static requests in BottomSheetView and integrated scrollables directly. */
+function renderBottomSheetContent(activeRequest: BottomSheetPresentOptions): React.ReactNode {
+  return activeRequest.contentMode === 'scrollable' ? (
+    activeRequest.content
+  ) : (
+    <BottomSheetView>{activeRequest.content}</BottomSheetView>
   );
 }
 
