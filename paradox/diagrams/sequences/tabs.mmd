@@ -1,5 +1,8 @@
 sequenceDiagram
   participant participant_Tabs as Tabs
   participant participant_useControllableState as useControllableState
-  participant_Tabs->>participant_useControllableState: useControllableState()
-  participant_useControllableState-->>participant_Tabs: return
+  participant participant_useTabsController as useTabsController
+  participant_Tabs->>participant_useTabsController: useTabsController()
+  participant_useTabsController->>participant_useControllableState: useControllableState()
+  participant_useControllableState-->>participant_useTabsController: return
+  participant_useTabsController-->>participant_Tabs: return

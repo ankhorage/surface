@@ -9725,208 +9725,15 @@
     "structuredRows": []
   },
   {
-    "name": "Menu",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/components/menu/Menu.tsx",
-    "sourceLocation": {
-      "filePath": "src/components/menu/Menu.tsx",
-      "line": 61,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["MenuProps"],
-    "signatures": [
-      {
-        "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: MenuProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
-            "type": "MenuProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "MenuAction",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/components/menu/types.ts",
-    "sourceLocation": {
-      "filePath": "src/components/menu/types.ts",
-      "line": 7,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["MenuActionIntent"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "activate",
-        "kind": "property",
-        "type": "(() => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "description",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "disabled",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "id",
-        "kind": "property",
-        "type": "string",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "intent",
-        "kind": "property",
-        "type": "MenuActionIntent | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "leading",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "selected",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "title",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "trailing",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "MenuActionIntent",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "src/components/menu/types.ts",
-    "sourceLocation": {
-      "filePath": "src/components/menu/types.ts",
-      "line": 5,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "MenuProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/components/menu/types.ts",
-    "sourceLocation": {
-      "filePath": "src/components/menu/types.ts",
-      "line": 19,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "MenuAction"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "actions",
-        "kind": "property",
-        "type": "readonly MenuAction[]",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "closeOnSelect",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "dismiss",
-        "kind": "property",
-        "type": "(() => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "interactionPolicy",
-        "kind": "property",
-        "type": "InteractionPolicy | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "trigger",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
     "name": "Modal",
-    "description": null,
+    "description": "Renders the generic Surface modal overlay and focus boundary.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/modal/Modal.tsx",
+    "modulePath": "src/features/modal/adapters/inbound/Modal.tsx",
     "sourceLocation": {
-      "filePath": "src/components/modal/Modal.tsx",
-      "line": 15,
+      "filePath": "src/features/modal/adapters/inbound/Modal.tsx",
+      "line": 16,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -9955,9 +9762,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/modal/types.ts",
+    "modulePath": "src/types/modal.ts",
     "sourceLocation": {
-      "filePath": "src/components/modal/types.ts",
+      "filePath": "src/types/modal.ts",
       "line": 5,
       "column": 1
     },
@@ -10129,17 +9936,17 @@
     "modulePath": "src/features/popover/adapters/inbound/Popover.tsx",
     "sourceLocation": {
       "filePath": "src/features/popover/adapters/inbound/Popover.tsx",
-      "line": 16,
+      "line": 9,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
     "relatedSymbols": ["PopoverProps"],
     "signatures": [
       {
-        "label": "({\n  anchor,\n  children,\n  closeOnOutsidePress = true,\n  defaultOpen = false,\n  interactionPolicy = 'enabled',\n  offset = 8,\n  onOpenChange,\n  open,\n  placement = 'bottom-start',\n  testID,\n}: PopoverProps) => React.JSX.Element",
+        "label": "(props: PopoverProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  anchor,\n  children,\n  closeOnOutsidePress = true,\n  defaultOpen = false,\n  interactionPolicy = 'enabled',\n  offset = 8,\n  onOpenChange,\n  open,\n  placement = 'bottom-start',\n  testID,\n}",
+            "name": "props",
             "type": "PopoverProps",
             "required": true,
             "description": null
@@ -10186,6 +9993,199 @@
         "name": "toggle",
         "kind": "property",
         "type": "() => void",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "PopoverMenu",
+    "description": "Presents an anchored action menu using the shared Popover capability.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+    "sourceLocation": {
+      "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+      "line": 17,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["PopoverMenuProps"],
+    "signatures": [
+      {
+        "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: PopoverMenuProps) => React.JSX.Element",
+        "parameters": [
+          {
+            "name": "{\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
+            "type": "PopoverMenuProps",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "React.JSX.Element",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "PopoverMenuAction",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/popoverMenu.ts",
+    "sourceLocation": {
+      "filePath": "src/types/popoverMenu.ts",
+      "line": 8,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["PopoverMenuActionIntent"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "activate",
+        "kind": "property",
+        "type": "(() => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "description",
+        "kind": "property",
+        "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "disabled",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "id",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "intent",
+        "kind": "property",
+        "type": "PopoverMenuActionIntent | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "leading",
+        "kind": "property",
+        "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "selected",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "title",
+        "kind": "property",
+        "type": "React.ReactNode",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "trailing",
+        "kind": "property",
+        "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "PopoverMenuActionIntent",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/types/popoverMenu.ts",
+    "sourceLocation": {
+      "filePath": "src/types/popoverMenu.ts",
+      "line": 6,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "PopoverMenuProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/popoverMenu.ts",
+    "sourceLocation": {
+      "filePath": "src/types/popoverMenu.ts",
+      "line": 20,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["InteractionPolicy", "PopoverAnchorRenderProps", "PopoverMenuAction"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "actions",
+        "kind": "property",
+        "type": "readonly PopoverMenuAction[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "closeOnSelect",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "dismiss",
+        "kind": "property",
+        "type": "(() => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "testID",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "trigger",
+        "kind": "property",
+        "type": "(controls: PopoverAnchorRenderProps) => React.ReactNode",
         "required": true,
         "description": null
       }
@@ -14381,14 +14381,14 @@
   },
   {
     "name": "Tab",
-    "description": null,
+    "description": "Renders one accessible selectable tab inside a Tabs context.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/tabs/Tab.tsx",
+    "modulePath": "src/features/tabs/adapters/inbound/Tab.tsx",
     "sourceLocation": {
-      "filePath": "src/components/tabs/Tab.tsx",
-      "line": 10,
+      "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
+      "line": 12,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14413,14 +14413,14 @@
   },
   {
     "name": "TabList",
-    "description": null,
+    "description": "Renders the accessible tab list and owns keyboard focus navigation.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/tabs/TabList.tsx",
+    "modulePath": "src/features/tabs/adapters/inbound/TabList.tsx",
     "sourceLocation": {
-      "filePath": "src/components/tabs/TabList.tsx",
-      "line": 9,
+      "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
+      "line": 20,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14449,9 +14449,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/tabs/types.ts",
+    "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
-      "filePath": "src/components/tabs/types.ts",
+      "filePath": "src/types/tabs.ts",
       "line": 13,
       "column": 1
     },
@@ -14478,14 +14478,14 @@
   },
   {
     "name": "TabPanel",
-    "description": null,
+    "description": "Renders the content panel associated with the active tab value.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/tabs/TabPanel.tsx",
+    "modulePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
     "sourceLocation": {
-      "filePath": "src/components/tabs/TabPanel.tsx",
-      "line": 9,
+      "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+      "line": 10,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14514,9 +14514,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/tabs/types.ts",
+    "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
-      "filePath": "src/components/tabs/types.ts",
+      "filePath": "src/types/tabs.ts",
       "line": 26,
       "column": 1
     },
@@ -14554,9 +14554,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/tabs/types.ts",
+    "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
-      "filePath": "src/components/tabs/types.ts",
+      "filePath": "src/types/tabs.ts",
       "line": 18,
       "column": 1
     },
@@ -14604,13 +14604,13 @@
   },
   {
     "name": "Tabs",
-    "description": null,
+    "description": "Provides accessible tab selection state to TabList, Tab, and TabPanel children.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/tabs/Tabs.tsx",
+    "modulePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
     "sourceLocation": {
-      "filePath": "src/components/tabs/Tabs.tsx",
+      "filePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
       "line": 9,
       "column": 1
     },
@@ -14618,10 +14618,10 @@
     "relatedSymbols": ["TabsProps"],
     "signatures": [
       {
-        "label": "({ children, value, defaultValue, onValueChange, testID }: TabsProps) => React.JSX.Element",
+        "label": "({ children, ...props }: TabsProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ children, value, defaultValue, onValueChange, testID }",
+            "name": "{ children, ...props }",
             "type": "TabsProps",
             "required": true,
             "description": null
@@ -14640,9 +14640,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/tabs/types.ts",
+    "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
-      "filePath": "src/components/tabs/types.ts",
+      "filePath": "src/types/tabs.ts",
       "line": 5,
       "column": 1
     },
@@ -18132,14 +18132,14 @@
   },
   {
     "name": "ToastProvider",
-    "description": "Provides toast state, timers, and the shared toast portal host.",
+    "description": "Provides the toast runtime context and renders its shared portal host.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
     "modulePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
     "sourceLocation": {
       "filePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
-      "line": 14,
+      "line": 13,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -18215,14 +18215,14 @@
   },
   {
     "name": "Tooltip",
-    "description": null,
+    "description": "Presents delayed hover/focus help through the shared Popover foundation.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/tooltip/Tooltip.tsx",
+    "modulePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
     "sourceLocation": {
-      "filePath": "src/components/tooltip/Tooltip.tsx",
-      "line": 27,
+      "filePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+      "line": 12,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -18251,9 +18251,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/tooltip/types.ts",
+    "modulePath": "src/types/tooltip.ts",
     "sourceLocation": {
-      "filePath": "src/components/tooltip/types.ts",
+      "filePath": "src/types/tooltip.ts",
       "line": 5,
       "column": 1
     },

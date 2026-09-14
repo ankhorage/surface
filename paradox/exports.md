@@ -2308,80 +2308,13 @@ Source: `src/components/list-item/types.ts:3:1`
 | title       | property | `React.ReactNode`           | no       |             |
 | trailing    | property | `React.ReactNode`           | no       |             |
 
-## Menu
-
-Kind: `function`
-Module: `src/components/menu/Menu.tsx`
-Source: `src/components/menu/Menu.tsx:61:1`
-
-### Signatures
-
-- `({
-trigger,
-actions,
-dismiss,
-closeOnSelect = true,
-interactionPolicy = 'enabled',
-testID,
-}: MenuProps) => React.JSX.Element`
-  - {
-    trigger,
-    actions,
-    dismiss,
-    closeOnSelect = true,
-    interactionPolicy = 'enabled',
-    testID,
-    }: `MenuProps`
-  - returns: `React.JSX.Element`
-
-## MenuAction
-
-Kind: `type`
-Module: `src/components/menu/types.ts`
-Source: `src/components/menu/types.ts:7:1`
-
-### Members
-
-| Name        | Kind     | Type                            | Required | Description |
-| ----------- | -------- | ------------------------------- | -------- | ----------- |
-| activate    | property | `(() => void) \| undefined`     | no       |             |
-| description | property | `React.ReactNode`               | no       |             |
-| disabled    | property | `boolean \| undefined`          | no       |             |
-| id          | property | `string`                        | yes      |             |
-| intent      | property | `MenuActionIntent \| undefined` | no       |             |
-| leading     | property | `React.ReactNode`               | no       |             |
-| selected    | property | `boolean \| undefined`          | no       |             |
-| title       | property | `React.ReactNode`               | yes      |             |
-| trailing    | property | `React.ReactNode`               | no       |             |
-
-## MenuActionIntent
-
-Kind: `unknown`
-Module: `src/components/menu/types.ts`
-Source: `src/components/menu/types.ts:5:1`
-
-## MenuProps
-
-Kind: `type`
-Module: `src/components/menu/types.ts`
-Source: `src/components/menu/types.ts:19:1`
-
-### Members
-
-| Name              | Kind     | Type                             | Required | Description |
-| ----------------- | -------- | -------------------------------- | -------- | ----------- |
-| actions           | property | `readonly MenuAction[]`          | yes      |             |
-| closeOnSelect     | property | `boolean \| undefined`           | no       |             |
-| dismiss           | property | `(() => void) \| undefined`      | no       |             |
-| interactionPolicy | property | `InteractionPolicy \| undefined` | no       |             |
-| testID            | property | `string \| undefined`            | no       |             |
-| trigger           | property | `React.ReactNode`                | no       |             |
-
 ## Modal
 
 Kind: `function`
-Module: `src/components/modal/Modal.tsx`
-Source: `src/components/modal/Modal.tsx:15:1`
+Module: `src/features/modal/adapters/inbound/Modal.tsx`
+Source: `src/features/modal/adapters/inbound/Modal.tsx:16:1`
+
+Renders the generic Surface modal overlay and focus boundary.
 
 ### Signatures
 
@@ -2406,8 +2339,8 @@ testID,
 ## ModalProps
 
 Kind: `type`
-Module: `src/components/modal/types.ts`
-Source: `src/components/modal/types.ts:5:1`
+Module: `src/types/modal.ts`
+Source: `src/types/modal.ts:5:1`
 
 ### Members
 
@@ -2448,36 +2381,14 @@ Source: `src/theme/types.ts:26:1`
 
 Kind: `function`
 Module: `src/features/popover/adapters/inbound/Popover.tsx`
-Source: `src/features/popover/adapters/inbound/Popover.tsx:16:1`
+Source: `src/features/popover/adapters/inbound/Popover.tsx:9:1`
 
 Renders anchored overlay content through the shared Surface overlay stack.
 
 ### Signatures
 
-- `({
-anchor,
-children,
-closeOnOutsidePress = true,
-defaultOpen = false,
-interactionPolicy = 'enabled',
-offset = 8,
-onOpenChange,
-open,
-placement = 'bottom-start',
-testID,
-}: PopoverProps) => React.JSX.Element`
-  - {
-    anchor,
-    children,
-    closeOnOutsidePress = true,
-    defaultOpen = false,
-    interactionPolicy = 'enabled',
-    offset = 8,
-    onOpenChange,
-    open,
-    placement = 'bottom-start',
-    testID,
-    }: `PopoverProps`
+- `(props: PopoverProps) => React.JSX.Element`
+  - props: `PopoverProps`
   - returns: `React.JSX.Element`
 
 ## PopoverAnchorRenderProps
@@ -2493,6 +2404,77 @@ Source: `src/types/popover.ts:8:1`
 | close  | property | `() => void` | yes      |             |
 | open   | property | `boolean`    | yes      |             |
 | toggle | property | `() => void` | yes      |             |
+
+## PopoverMenu
+
+Kind: `function`
+Module: `src/features/popover-menu/adapters/inbound/PopoverMenu.tsx`
+Source: `src/features/popover-menu/adapters/inbound/PopoverMenu.tsx:17:1`
+
+Presents an anchored action menu using the shared Popover capability.
+
+### Signatures
+
+- `({
+trigger,
+actions,
+dismiss,
+closeOnSelect = true,
+interactionPolicy = 'enabled',
+testID,
+}: PopoverMenuProps) => React.JSX.Element`
+  - {
+    trigger,
+    actions,
+    dismiss,
+    closeOnSelect = true,
+    interactionPolicy = 'enabled',
+    testID,
+    }: `PopoverMenuProps`
+  - returns: `React.JSX.Element`
+
+## PopoverMenuAction
+
+Kind: `type`
+Module: `src/types/popoverMenu.ts`
+Source: `src/types/popoverMenu.ts:8:1`
+
+### Members
+
+| Name        | Kind     | Type                                   | Required | Description |
+| ----------- | -------- | -------------------------------------- | -------- | ----------- |
+| activate    | property | `(() => void) \| undefined`            | no       |             |
+| description | property | `React.ReactNode`                      | no       |             |
+| disabled    | property | `boolean \| undefined`                 | no       |             |
+| id          | property | `string`                               | yes      |             |
+| intent      | property | `PopoverMenuActionIntent \| undefined` | no       |             |
+| leading     | property | `React.ReactNode`                      | no       |             |
+| selected    | property | `boolean \| undefined`                 | no       |             |
+| title       | property | `React.ReactNode`                      | yes      |             |
+| trailing    | property | `React.ReactNode`                      | no       |             |
+
+## PopoverMenuActionIntent
+
+Kind: `unknown`
+Module: `src/types/popoverMenu.ts`
+Source: `src/types/popoverMenu.ts:6:1`
+
+## PopoverMenuProps
+
+Kind: `type`
+Module: `src/types/popoverMenu.ts`
+Source: `src/types/popoverMenu.ts:20:1`
+
+### Members
+
+| Name              | Kind     | Type                                                      | Required | Description |
+| ----------------- | -------- | --------------------------------------------------------- | -------- | ----------- |
+| actions           | property | `readonly PopoverMenuAction[]`                            | yes      |             |
+| closeOnSelect     | property | `boolean \| undefined`                                    | no       |             |
+| dismiss           | property | `(() => void) \| undefined`                               | no       |             |
+| interactionPolicy | property | `InteractionPolicy \| undefined`                          | no       |             |
+| testID            | property | `string \| undefined`                                     | no       |             |
+| trigger           | property | `(controls: PopoverAnchorRenderProps) => React.ReactNode` | yes      |             |
 
 ## PopoverPlacement
 
@@ -3529,8 +3511,10 @@ Source: `src/components/switch/types.ts:7:1`
 ## Tab
 
 Kind: `function`
-Module: `src/components/tabs/Tab.tsx`
-Source: `src/components/tabs/Tab.tsx:10:1`
+Module: `src/features/tabs/adapters/inbound/Tab.tsx`
+Source: `src/features/tabs/adapters/inbound/Tab.tsx:12:1`
+
+Renders one accessible selectable tab inside a Tabs context.
 
 ### Signatures
 
@@ -3553,8 +3537,10 @@ testID,
 ## TabList
 
 Kind: `function`
-Module: `src/components/tabs/TabList.tsx`
-Source: `src/components/tabs/TabList.tsx:9:1`
+Module: `src/features/tabs/adapters/inbound/TabList.tsx`
+Source: `src/features/tabs/adapters/inbound/TabList.tsx:20:1`
+
+Renders the accessible tab list and owns keyboard focus navigation.
 
 ### Signatures
 
@@ -3565,8 +3551,8 @@ Source: `src/components/tabs/TabList.tsx:9:1`
 ## TabListProps
 
 Kind: `type`
-Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:13:1`
+Module: `src/types/tabs.ts`
+Source: `src/types/tabs.ts:13:1`
 
 ### Members
 
@@ -3578,8 +3564,10 @@ Source: `src/components/tabs/types.ts:13:1`
 ## TabPanel
 
 Kind: `function`
-Module: `src/components/tabs/TabPanel.tsx`
-Source: `src/components/tabs/TabPanel.tsx:9:1`
+Module: `src/features/tabs/adapters/inbound/TabPanel.tsx`
+Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:10:1`
+
+Renders the content panel associated with the active tab value.
 
 ### Signatures
 
@@ -3590,8 +3578,8 @@ Source: `src/components/tabs/TabPanel.tsx:9:1`
 ## TabPanelProps
 
 Kind: `type`
-Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:26:1`
+Module: `src/types/tabs.ts`
+Source: `src/types/tabs.ts:26:1`
 
 ### Members
 
@@ -3604,8 +3592,8 @@ Source: `src/components/tabs/types.ts:26:1`
 ## TabProps
 
 Kind: `type`
-Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:18:1`
+Module: `src/types/tabs.ts`
+Source: `src/types/tabs.ts:18:1`
 
 ### Members
 
@@ -3620,20 +3608,22 @@ Source: `src/components/tabs/types.ts:18:1`
 ## Tabs
 
 Kind: `function`
-Module: `src/components/tabs/Tabs.tsx`
-Source: `src/components/tabs/Tabs.tsx:9:1`
+Module: `src/features/tabs/adapters/inbound/Tabs.tsx`
+Source: `src/features/tabs/adapters/inbound/Tabs.tsx:9:1`
+
+Provides accessible tab selection state to TabList, Tab, and TabPanel children.
 
 ### Signatures
 
-- `({ children, value, defaultValue, onValueChange, testID }: TabsProps) => React.JSX.Element`
-  - { children, value, defaultValue, onValueChange, testID }: `TabsProps`
+- `({ children, ...props }: TabsProps) => React.JSX.Element`
+  - { children, ...props }: `TabsProps`
   - returns: `React.JSX.Element`
 
 ## TabsProps
 
 Kind: `type`
-Module: `src/components/tabs/types.ts`
-Source: `src/components/tabs/types.ts:5:1`
+Module: `src/types/tabs.ts`
+Source: `src/types/tabs.ts:5:1`
 
 ### Members
 
@@ -4344,9 +4334,9 @@ Source: `src/types/toast.ts:8:1`
 
 Kind: `function`
 Module: `src/features/toast/adapters/inbound/ToastProvider.tsx`
-Source: `src/features/toast/adapters/inbound/ToastProvider.tsx:14:1`
+Source: `src/features/toast/adapters/inbound/ToastProvider.tsx:13:1`
 
-Provides toast state, timers, and the shared toast portal host.
+Provides the toast runtime context and renders its shared portal host.
 
 ### Signatures
 
@@ -4376,8 +4366,10 @@ Source: `src/types/toast.ts:6:1`
 ## Tooltip
 
 Kind: `function`
-Module: `src/components/tooltip/Tooltip.tsx`
-Source: `src/components/tooltip/Tooltip.tsx:27:1`
+Module: `src/features/tooltip/adapters/inbound/Tooltip.tsx`
+Source: `src/features/tooltip/adapters/inbound/Tooltip.tsx:12:1`
+
+Presents delayed hover/focus help through the shared Popover foundation.
 
 ### Signatures
 
@@ -4402,8 +4394,8 @@ testID,
 ## TooltipProps
 
 Kind: `type`
-Module: `src/components/tooltip/types.ts`
-Source: `src/components/tooltip/types.ts:5:1`
+Module: `src/types/tooltip.ts`
+Source: `src/types/tooltip.ts:5:1`
 
 ### Members
 

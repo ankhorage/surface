@@ -1,5 +1,11 @@
 sequenceDiagram
   participant participant_resolveOverlayAnimation as resolveOverlayAnimation
   participant participant_ToastProvider as ToastProvider
+  participant participant_useToastRuntime as useToastRuntime
+  participant participant_useToastTimers as useToastTimers
   participant_ToastProvider->>participant_resolveOverlayAnimation: resolveOverlayAnimation()
   participant_resolveOverlayAnimation-->>participant_ToastProvider: return
+  participant_ToastProvider->>participant_useToastRuntime: useToastRuntime()
+  participant_useToastRuntime->>participant_useToastTimers: useToastTimers()
+  participant_useToastTimers-->>participant_useToastRuntime: return
+  participant_useToastRuntime-->>participant_ToastProvider: return
