@@ -109,9 +109,9 @@ function BottomSheetHost({
   );
 }
 
-/*** Renders static requests in BottomSheetView and integrated scrollables directly. */
+/*** Renders default content in BottomSheetView and direct content without an extra wrapper. */
 function renderBottomSheetContent(activeRequest: BottomSheetPresentOptions): React.ReactNode {
-  return activeRequest.contentMode === 'scrollable' ? (
+  return activeRequest.contentMode === 'direct' ? (
     activeRequest.content
   ) : (
     <BottomSheetView>{activeRequest.content}</BottomSheetView>
