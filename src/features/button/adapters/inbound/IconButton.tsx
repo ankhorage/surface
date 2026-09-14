@@ -1,7 +1,11 @@
 import React from 'react';
 import type { ViewStyle } from 'react-native';
 
-import { resolveButtonColors, resolveControlSize, resolveIconSize } from '../../../../internal/resolvers';
+import {
+  resolveButtonColors,
+  resolveControlSize,
+  resolveIconSize,
+} from '../../../../internal/resolvers';
 import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { IconButtonProps } from '../../../../types/button';

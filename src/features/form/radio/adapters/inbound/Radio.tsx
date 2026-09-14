@@ -125,9 +125,9 @@ function renderRadioContent(input: RadioContentInput) {
     color: input.color,
   });
   const indicatorSize = resolveIndicatorSize(input.size);
-  const labelEmphasis =
-    colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
-  const hasContent = input.children !== undefined && input.children !== null && input.children !== false;
+  const labelEmphasis = colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+  const hasContent =
+    input.children !== undefined && input.children !== null && input.children !== false;
 
   return (
     <Box style={resolveSelectionRowStyle(colors.opacity)}>

@@ -67,12 +67,30 @@ function resolveDimensionStyles(
   props: BoxStyleProps,
 ): ViewStyle {
   return {
-    width: resolveDimension(theme, resolveResponsive(props.width, breakpoint)) as ViewStyle['width'],
-    height: resolveDimension(theme, resolveResponsive(props.height, breakpoint)) as ViewStyle['height'],
-    minWidth: resolveDimension(theme, resolveResponsive(props.minWidth, breakpoint)) as ViewStyle['minWidth'],
-    maxWidth: resolveDimension(theme, resolveResponsive(props.maxWidth, breakpoint)) as ViewStyle['maxWidth'],
-    minHeight: resolveDimension(theme, resolveResponsive(props.minHeight, breakpoint)) as ViewStyle['minHeight'],
-    maxHeight: resolveDimension(theme, resolveResponsive(props.maxHeight, breakpoint)) as ViewStyle['maxHeight'],
+    width: resolveDimension(
+      theme,
+      resolveResponsive(props.width, breakpoint),
+    ) as ViewStyle['width'],
+    height: resolveDimension(
+      theme,
+      resolveResponsive(props.height, breakpoint),
+    ) as ViewStyle['height'],
+    minWidth: resolveDimension(
+      theme,
+      resolveResponsive(props.minWidth, breakpoint),
+    ) as ViewStyle['minWidth'],
+    maxWidth: resolveDimension(
+      theme,
+      resolveResponsive(props.maxWidth, breakpoint),
+    ) as ViewStyle['maxWidth'],
+    minHeight: resolveDimension(
+      theme,
+      resolveResponsive(props.minHeight, breakpoint),
+    ) as ViewStyle['minHeight'],
+    maxHeight: resolveDimension(
+      theme,
+      resolveResponsive(props.maxHeight, breakpoint),
+    ) as ViewStyle['maxHeight'],
   };
 }
 

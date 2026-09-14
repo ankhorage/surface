@@ -124,8 +124,7 @@ function renderCheckboxContent(input: CheckboxContentInput) {
     color: input.color,
   });
   const indicatorSize = resolveIndicatorSize(input.size);
-  const labelEmphasis =
-    colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+  const labelEmphasis = colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
   const indicatorColor = fieldState.invalid ? 'error' : input.color;
 
   return (
