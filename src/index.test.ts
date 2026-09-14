@@ -28,7 +28,9 @@ const expectedFeatureRootExports = [
   "export { Image } from './features/image/public';",
   "export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';",
   "export { Box, Container, Divider, Grid, Stack } from './features/layout/public';",
+  "export { Popover } from './features/popover/public';",
   "export { Surface } from './features/surface/public';",
+  "export { Toast, ToastProvider, useToast } from './features/toast/public';",
   "export { Heading, Text } from './features/typography/public';",
 ] as const;
 
@@ -42,7 +44,6 @@ const expectedLegacyRootExports = [
   "export { Switch } from './components/switch';",
   "export { Tab, TabList, TabPanel, Tabs } from './components/tabs';",
   "export { Textarea } from './components/textarea';",
-  "export { Toast, ToastProvider, useToast } from './components/toast';",
   "export { Tooltip } from './components/tooltip';",
   "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export * from './core/responsive';",
@@ -63,6 +64,7 @@ describe('feature-owned root barrel contract', () => {
       './components/icon-button',
       './components/radio',
       './components/text-input',
+      './components/toast',
       './primitives/heading',
       './primitives/icon',
       './primitives/image',
