@@ -14,6 +14,7 @@ test('Radio preserves one radio interaction boundary and renders structured cont
   const source = await Bun.file(new URL('./Radio.tsx', import.meta.url)).text();
   expect(source).toContain('accessibilityRole="radio"');
   expect(source).toContain('accessibilityState={{ checked: isChecked }}');
-  expect(source).toContain('const isTextContent = isRadioTextContent(children);');
-  expect(source).toMatch(/isTextContent \? <Text[^>]*>\{children\}<\/Text> : children/);
+  expect(source).toContain('isRadioTextContent(input.children)');
+  expect(source).toContain('<Text emphasis={labelEmphasis}>{input.children}</Text>');
+  expect(source).toMatch(/:\s*\(\s*input\.children\s*\)/);
 });
