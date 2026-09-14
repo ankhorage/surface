@@ -17,7 +17,7 @@ test('bottom-sheet boundary exposes Gorhom integrated scrollables and direct con
     expect(publicSource).toContain(name);
   }
 
-  expect(typeSource).toContain("export type BottomSheetContentMode = 'static' | 'scrollable';");
-  expect(providerSource).toContain("activeRequest.contentMode === 'scrollable'");
+  expect(typeSource).toContain("export type BottomSheetContentMode = 'view' | 'direct';");
+  expect(providerSource).toContain("activeRequest.contentMode === 'direct'");
   expect(providerSource).toContain('maxDynamicContentSize={activeRequest.maxDynamicContentSize}');
 });
