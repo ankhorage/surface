@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 4.3.0
+
+### Minor Changes
+
+- 00ffbe0: Add a feature-owned accordion foundation with single/multiple state, controlled and uncontrolled values, accessible trigger/content semantics, and passive interaction support.
+
 ## 4.2.1
 
 ### Patch Changes
