@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 4.4.0
+
+### Minor Changes
+
+- ee44bc6: Add a feature-owned toast runtime and anchored popover foundation, and modernize Surface-owned React contexts to the React 19 context API.
+
 ## 4.3.0
 
 ### Minor Changes
