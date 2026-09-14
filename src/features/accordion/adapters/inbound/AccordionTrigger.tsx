@@ -21,7 +21,6 @@ export function AccordionTrigger({
     <View accessibilityRole="header">
       <Pressable
         {...pressableProps}
-        accessibilityControls={item.contentId}
         accessibilityRole="button"
         accessibilityState={{ disabled: resolvedDisabled, expanded: item.open }}
         disabled={resolvedDisabled}
