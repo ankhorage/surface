@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 5.0.0
+
+### Major Changes
+
+- 33ee8c2: Replace the ambiguous `Menu` API with feature-owned `PopoverMenu`, migrate Tooltip onto the shared Popover capability, and expose Gorhom-integrated bottom-sheet scrollables with direct scrollable content hosting.
+
 ## 4.4.1
 
 ### Patch Changes
