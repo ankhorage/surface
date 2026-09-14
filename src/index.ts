@@ -25,6 +25,21 @@ export { FontProvider, useFontContext } from './context/FontContext';
 export type { I18nInstance, TranslationRuntime, Translator } from './context/TranslationContext';
 export { TranslationProvider, useTranslationContext } from './context/TranslationContext';
 export * from './core/responsive';
+export type {
+  AccordionContentProps,
+  AccordionItemProps,
+  AccordionMode,
+  AccordionMultipleProps,
+  AccordionProps,
+  AccordionSingleProps,
+  AccordionTriggerProps,
+} from './features/accordion/public';
+export {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from './features/accordion/public';
 export type { BadgeProps } from './features/badge/public';
 export { Badge } from './features/badge/public';
 export type { ButtonIconSpec, ButtonProps, IconButtonProps } from './features/button/public';
