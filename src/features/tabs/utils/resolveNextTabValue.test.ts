@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'bun:test';
 
-import { resolveNextTabValue } from './navigation';
+import { resolveNextTabValue } from './resolveNextTabValue';
 
 const tabs = [
   { disabled: false, focus: () => undefined, value: 'overview' },
   { disabled: true, focus: () => undefined, value: 'disabled' },
   { disabled: false, focus: () => undefined, value: 'details' },
-];
+] as const;
 
 describe('resolveNextTabValue', () => {
   it('skips disabled tabs when cycling', () => {
