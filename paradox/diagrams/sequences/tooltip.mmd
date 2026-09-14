@@ -1,11 +1,11 @@
 sequenceDiagram
-  participant participant_resolveOverlayAnimation as resolveOverlayAnimation
   participant participant_Tooltip as Tooltip
   participant participant_use as use
   participant participant_useTheme as useTheme
+  participant participant_useTooltipVisibility as useTooltipVisibility
   participant_Tooltip->>participant_useTheme: useTheme()
   participant_useTheme->>participant_use: use()
   participant_use-->>participant_useTheme: return
   participant_useTheme-->>participant_Tooltip: return
-  participant_Tooltip->>participant_resolveOverlayAnimation: resolveOverlayAnimation()
-  participant_resolveOverlayAnimation-->>participant_Tooltip: return
+  participant_Tooltip->>participant_useTooltipVisibility: useTooltipVisibility()
+  participant_useTooltipVisibility-->>participant_Tooltip: return

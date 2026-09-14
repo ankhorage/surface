@@ -1443,24 +1443,11 @@ Export paths: `src/index.ts`
 | title       | `React.ReactNode \| undefined` | no       | —       |             |
 | trailing    | `React.ReactNode \| undefined` | no       | —       |             |
 
-## Menu
-
-Source: `src/components/menu/Menu.tsx:61:1`
-
-Export paths: `src/index.ts`
-
-| Prop              | Type                             | Required | Default     | Description |
-| ----------------- | -------------------------------- | -------- | ----------- | ----------- |
-| actions           | `readonly MenuAction[]`          | yes      | —           |             |
-| closeOnSelect     | `boolean \| undefined`           | no       | `true`      |             |
-| dismiss           | `() => void \| undefined`        | no       | —           |             |
-| interactionPolicy | `InteractionPolicy \| undefined` | no       | `'enabled'` |             |
-| testID            | `string \| undefined`            | no       | —           |             |
-| trigger           | `React.ReactNode \| undefined`   | no       | —           |             |
-
 ## Modal
 
-Source: `src/components/modal/Modal.tsx:15:1`
+Source: `src/features/modal/adapters/inbound/Modal.tsx:16:1`
+
+Renders the generic Surface modal overlay and focus boundary.
 
 Export paths: `src/index.ts`
 
@@ -1475,24 +1462,41 @@ Export paths: `src/index.ts`
 
 ## Popover
 
-Source: `src/features/popover/adapters/inbound/Popover.tsx:16:1`
+Source: `src/features/popover/adapters/inbound/Popover.tsx:9:1`
 
 Renders anchored overlay content through the shared Surface overlay stack.
 
 Export paths: `src/index.ts`
 
-| Prop                | Type                                                      | Required | Default          | Description |
-| ------------------- | --------------------------------------------------------- | -------- | ---------------- | ----------- |
-| anchor              | `(controls: PopoverAnchorRenderProps) => React.ReactNode` | yes      | —                |             |
-| children            | `React.ReactNode \| undefined`                            | no       | —                |             |
-| closeOnOutsidePress | `boolean \| undefined`                                    | no       | `true`           |             |
-| defaultOpen         | `boolean \| undefined`                                    | no       | `false`          |             |
-| interactionPolicy   | `InteractionPolicy \| undefined`                          | no       | `'enabled'`      |             |
-| offset              | `number \| undefined`                                     | no       | `8`              |             |
-| onOpenChange        | `((open: boolean) => void) \| undefined`                  | no       | —                |             |
-| open                | `boolean \| undefined`                                    | no       | —                |             |
-| placement           | `PopoverPlacement \| undefined`                           | no       | `'bottom-start'` |             |
-| testID              | `string \| undefined`                                     | no       | —                |             |
+| Prop                | Type                                                      | Required | Default | Description |
+| ------------------- | --------------------------------------------------------- | -------- | ------- | ----------- |
+| anchor              | `(controls: PopoverAnchorRenderProps) => React.ReactNode` | yes      | —       |             |
+| children            | `React.ReactNode \| undefined`                            | no       | —       |             |
+| closeOnOutsidePress | `boolean \| undefined`                                    | no       | —       |             |
+| defaultOpen         | `boolean \| undefined`                                    | no       | —       |             |
+| interactionPolicy   | `InteractionPolicy \| undefined`                          | no       | —       |             |
+| offset              | `number \| undefined`                                     | no       | —       |             |
+| onOpenChange        | `((open: boolean) => void) \| undefined`                  | no       | —       |             |
+| open                | `boolean \| undefined`                                    | no       | —       |             |
+| placement           | `PopoverPlacement \| undefined`                           | no       | —       |             |
+| testID              | `string \| undefined`                                     | no       | —       |             |
+
+## PopoverMenu
+
+Source: `src/features/popover-menu/adapters/inbound/PopoverMenu.tsx:17:1`
+
+Presents an anchored action menu using the shared Popover capability.
+
+Export paths: `src/index.ts`
+
+| Prop              | Type                                                      | Required | Default     | Description |
+| ----------------- | --------------------------------------------------------- | -------- | ----------- | ----------- |
+| actions           | `readonly PopoverMenuAction[]`                            | yes      | —           |             |
+| closeOnSelect     | `boolean \| undefined`                                    | no       | `true`      |             |
+| dismiss           | `() => void \| undefined`                                 | no       | —           |             |
+| interactionPolicy | `InteractionPolicy \| undefined`                          | no       | `'enabled'` |             |
+| testID            | `string \| undefined`                                     | no       | —           |             |
+| trigger           | `(controls: PopoverAnchorRenderProps) => React.ReactNode` | yes      | —           |             |
 
 ## Radio
 
@@ -1997,7 +2001,9 @@ Export paths: `src/index.ts`
 
 ## Tab
 
-Source: `src/components/tabs/Tab.tsx:10:1`
+Source: `src/features/tabs/adapters/inbound/Tab.tsx:12:1`
+
+Renders one accessible selectable tab inside a Tabs context.
 
 Export paths: `src/index.ts`
 
@@ -2011,7 +2017,9 @@ Export paths: `src/index.ts`
 
 ## TabList
 
-Source: `src/components/tabs/TabList.tsx:9:1`
+Source: `src/features/tabs/adapters/inbound/TabList.tsx:20:1`
+
+Renders the accessible tab list and owns keyboard focus navigation.
 
 Export paths: `src/index.ts`
 
@@ -2022,7 +2030,9 @@ Export paths: `src/index.ts`
 
 ## TabPanel
 
-Source: `src/components/tabs/TabPanel.tsx:9:1`
+Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:10:1`
+
+Renders the content panel associated with the active tab value.
 
 Export paths: `src/index.ts`
 
@@ -2034,7 +2044,9 @@ Export paths: `src/index.ts`
 
 ## Tabs
 
-Source: `src/components/tabs/Tabs.tsx:9:1`
+Source: `src/features/tabs/adapters/inbound/Tabs.tsx:9:1`
+
+Provides accessible tab selection state to TabList, Tab, and TabPanel children.
 
 Export paths: `src/index.ts`
 
@@ -2802,9 +2814,9 @@ Export paths: `src/index.ts`
 
 ## ToastProvider
 
-Source: `src/features/toast/adapters/inbound/ToastProvider.tsx:14:1`
+Source: `src/features/toast/adapters/inbound/ToastProvider.tsx:13:1`
 
-Provides toast state, timers, and the shared toast portal host.
+Provides the toast runtime context and renders its shared portal host.
 
 Export paths: `src/index.ts`
 
@@ -2815,7 +2827,9 @@ Export paths: `src/index.ts`
 
 ## Tooltip
 
-Source: `src/components/tooltip/Tooltip.tsx:27:1`
+Source: `src/features/tooltip/adapters/inbound/Tooltip.tsx:12:1`
+
+Presents delayed hover/focus help through the shared Popover foundation.
 
 Export paths: `src/index.ts`
 

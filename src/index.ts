@@ -6,12 +6,8 @@ export type { LabelProps } from './components/label';
 export { Label } from './components/label';
 export type { ListItemProps } from './components/list-item';
 export { ListItem } from './components/list-item';
-export type { ModalProps } from './components/modal';
-export { Modal } from './components/modal';
 export type { SwitchProps } from './components/switch';
 export { Switch } from './components/switch';
-export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './components/tabs';
-export { Tab, TabList, TabPanel, Tabs } from './components/tabs';
 export type { TextareaProps } from './components/textarea';
 export { Textarea } from './components/textarea';
 export type { FontRuntime } from './context/FontContext';
@@ -70,6 +66,8 @@ export type {
   StackProps,
 } from './features/layout/public';
 export { Box, Container, Divider, Grid, Stack } from './features/layout/public';
+export type { ModalProps } from './features/modal/public';
+export { Modal } from './features/modal/public';
 export type {
   PopoverAnchorRenderProps,
   PopoverPlacement,
@@ -84,6 +82,8 @@ export type {
 export { PopoverMenu } from './features/popover-menu/public';
 export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
+export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './features/tabs/public';
+export { Tab, TabList, TabPanel, Tabs } from './features/tabs/public';
 export type {
   ToastController,
   ToastOptions,

@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v4.3.0",
+      "value": "v5.0.0",
       "color": "cb3837"
     },
     {
@@ -153,77 +153,6 @@
       "exports": ["ListItemProps"]
     },
     {
-      "path": "src/components/menu/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Menu", "MenuAction", "MenuActionIntent", "MenuItem", "MenuProps"]
-    },
-    {
-      "path": "src/components/menu/Menu.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/menu/navigation.ts",
-        "src/components/menu/types.ts",
-        "src/features/layout/public.ts",
-        "src/features/surface/public.ts",
-        "src/features/typography/public.ts",
-        "src/internal/focus/FocusScope.tsx",
-        "src/internal/focus/useFocusManager.ts",
-        "src/internal/overlay/Portal.tsx",
-        "src/internal/resolvePointerEvents.ts",
-        "src/internal/resolvers/index.ts",
-        "src/layout/index.ts",
-        "src/primitives/button-base/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["Menu"]
-    },
-    {
-      "path": "src/components/menu/navigation.test.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/menu/navigation.ts"],
-      "exports": []
-    },
-    {
-      "path": "src/components/menu/navigation.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["resolveNextMenuIndex"]
-    },
-    {
-      "path": "src/components/menu/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["MenuAction", "MenuActionIntent", "MenuProps"]
-    },
-    {
-      "path": "src/components/modal/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Modal", "ModalProps"]
-    },
-    {
-      "path": "src/components/modal/Modal.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/modal/types.ts",
-        "src/features/surface/public.ts",
-        "src/internal/focus/FocusScope.tsx",
-        "src/internal/overlay/Portal.tsx",
-        "src/internal/resolvePointerEvents.ts",
-        "src/internal/resolvers/index.ts",
-        "src/layout/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["Modal"]
-    },
-    {
-      "path": "src/components/modal/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["ModalProps"]
-    },
-    {
       "path": "src/components/switch/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -254,99 +183,6 @@
       "exports": ["SwitchProps"]
     },
     {
-      "path": "src/components/tabs/a11y.test.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/tabs/a11y.ts"],
-      "exports": []
-    },
-    {
-      "path": "src/components/tabs/a11y.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["getTabId", "getTabPanelId"]
-    },
-    {
-      "path": "src/components/tabs/context.tsx",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["TabRegistration", "TabsContext", "TabsContextValue", "useTabsContext"]
-    },
-    {
-      "path": "src/components/tabs/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": [
-        "Tab",
-        "TabList",
-        "TabListProps",
-        "TabPanel",
-        "TabPanelProps",
-        "TabProps",
-        "Tabs",
-        "TabsProps"
-      ]
-    },
-    {
-      "path": "src/components/tabs/navigation.test.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/tabs/navigation.ts"],
-      "exports": []
-    },
-    {
-      "path": "src/components/tabs/navigation.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/tabs/context.tsx"],
-      "exports": ["resolveNextTabValue"]
-    },
-    {
-      "path": "src/components/tabs/Tab.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/tabs/context.tsx",
-        "src/components/tabs/types.ts",
-        "src/features/layout/public.ts",
-        "src/features/typography/public.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["Tab"]
-    },
-    {
-      "path": "src/components/tabs/TabList.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/tabs/context.tsx",
-        "src/components/tabs/navigation.ts",
-        "src/components/tabs/types.ts",
-        "src/features/layout/public.ts",
-        "src/internal/focus/useFocusManager.ts"
-      ],
-      "exports": ["TabList"]
-    },
-    {
-      "path": "src/components/tabs/TabPanel.tsx",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/tabs/context.tsx", "src/components/tabs/types.ts"],
-      "exports": ["TabPanel"]
-    },
-    {
-      "path": "src/components/tabs/Tabs.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/tabs/a11y.ts",
-        "src/components/tabs/context.tsx",
-        "src/components/tabs/types.ts",
-        "src/features/layout/public.ts",
-        "src/internal/useControllableState.ts"
-      ],
-      "exports": ["Tabs"]
-    },
-    {
-      "path": "src/components/tabs/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["TabListProps", "TabPanelProps", "TabProps", "TabsProps"]
-    },
-    {
       "path": "src/components/textarea/index.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -366,32 +202,6 @@
       "isEntrypoint": false,
       "dependencies": ["src/types/text-input.ts"],
       "exports": ["TextareaProps"]
-    },
-    {
-      "path": "src/components/tooltip/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Tooltip", "TooltipProps"]
-    },
-    {
-      "path": "src/components/tooltip/Tooltip.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/tooltip/types.ts",
-        "src/features/surface/public.ts",
-        "src/features/typography/public.ts",
-        "src/internal/overlay/Portal.tsx",
-        "src/internal/resolvePointerEvents.ts",
-        "src/internal/resolvers/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["Tooltip"]
-    },
-    {
-      "path": "src/components/tooltip/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/interactionPolicy.ts"],
-      "exports": ["TooltipProps"]
     },
     {
       "path": "src/context/FontContext.tsx",
@@ -481,28 +291,6 @@
         "src/core/responsive/types.ts"
       ],
       "exports": ["useBreakpoint"]
-    },
-    {
-      "path": "src/examples/DocsExamples.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/field/index.ts",
-        "src/components/helper-text/index.ts",
-        "src/components/menu/index.ts",
-        "src/components/modal/index.ts",
-        "src/components/tabs/index.ts",
-        "src/components/tooltip/index.ts",
-        "src/features/button/public.ts",
-        "src/features/card/public.ts",
-        "src/features/form/checkbox/public.ts",
-        "src/features/form/text-input/public.ts",
-        "src/features/layout/public.ts",
-        "src/features/toast/public.ts",
-        "src/features/typography/public.ts",
-        "src/theme/index.ts",
-        "src/theme/types.ts"
-      ],
-      "exports": ["FeedbackExample", "FormExample", "NavigationExample", "OverlayExample"]
     },
     {
       "path": "src/features/accordion/adapters/inbound/Accordion.tsx",
@@ -618,13 +406,25 @@
       "exports": ["BottomSheetProvider"]
     },
     {
+      "path": "src/features/bottom-sheet/public.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    },
+    {
       "path": "src/features/bottom-sheet/public.ts",
       "isEntrypoint": false,
       "dependencies": [],
       "exports": [
+        "BottomSheetContentMode",
         "BottomSheetController",
+        "BottomSheetFlatList",
         "BottomSheetPresentOptions",
         "BottomSheetProvider",
+        "BottomSheetScrollView",
+        "BottomSheetSectionList",
+        "BottomSheetView",
+        "BottomSheetVirtualizedList",
         "useBottomSheet"
       ]
     },
@@ -994,15 +794,102 @@
       ]
     },
     {
+      "path": "src/features/modal/adapters/inbound/Modal.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/surface/public.ts",
+        "src/internal/focus/FocusScope.tsx",
+        "src/internal/overlay/Portal.tsx",
+        "src/internal/resolvePointerEvents.ts",
+        "src/internal/resolvers/index.ts",
+        "src/layout/index.ts",
+        "src/theme/ThemeContext.tsx",
+        "src/types/modal.ts"
+      ],
+      "exports": ["Modal"]
+    },
+    {
+      "path": "src/features/modal/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["Modal", "ModalProps"]
+    },
+    {
+      "path": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts",
+        "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "src/features/popover-menu/utils/resolveNextMenuIndex.ts",
+        "src/features/popover/public.ts",
+        "src/features/surface/public.ts",
+        "src/features/typography/public.ts",
+        "src/internal/focus/FocusScope.tsx",
+        "src/internal/focus/useFocusManager.ts",
+        "src/layout/index.ts",
+        "src/theme/ThemeContext.tsx",
+        "src/types/popoverMenu.ts"
+      ],
+      "exports": ["PopoverMenu"]
+    },
+    {
+      "path": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/popoverMenu.ts"],
+      "exports": ["usePopoverMenuController"]
+    },
+    {
+      "path": "src/features/popover-menu/public.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    },
+    {
+      "path": "src/features/popover-menu/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["PopoverMenu", "PopoverMenuAction", "PopoverMenuActionIntent", "PopoverMenuProps"]
+    },
+    {
+      "path": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/popover-menu/utils/resolveNextMenuIndex.ts"],
+      "exports": []
+    },
+    {
+      "path": "src/features/popover-menu/utils/resolveNextMenuIndex.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["resolveNextMenuIndex"]
+    },
+    {
       "path": "src/features/popover/adapters/inbound/Popover.tsx",
       "isEntrypoint": false,
       "dependencies": [
-        "src/features/popover/utils/resolvePopoverPosition.ts",
-        "src/internal/overlay/Portal.tsx",
+        "src/features/popover/adapters/inbound/PopoverOverlay.tsx",
         "src/internal/useControllableState.ts",
         "src/types/popover.ts"
       ],
       "exports": ["Popover"]
+    },
+    {
+      "path": "src/features/popover/adapters/inbound/PopoverOverlay.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+        "src/internal/overlay/Portal.tsx",
+        "src/types/popover.ts"
+      ],
+      "exports": ["PopoverOverlay"]
+    },
+    {
+      "path": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/popover/utils/resolvePopoverPosition.ts",
+        "src/types/popover.ts"
+      ],
+      "exports": ["usePopoverLayout"]
     },
     {
       "path": "src/features/popover/public.ts",
@@ -1039,6 +926,115 @@
       "exports": ["Surface", "SurfaceProps", "SurfaceVariant"]
     },
     {
+      "path": "src/features/tabs/adapters/inbound/Tab.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts",
+        "src/features/tabs/composition/useTabRegistration.ts",
+        "src/features/tabs/composition/useTabsContext.ts",
+        "src/features/typography/public.ts",
+        "src/theme/ThemeContext.tsx",
+        "src/types/tabs.ts"
+      ],
+      "exports": ["Tab"]
+    },
+    {
+      "path": "src/features/tabs/adapters/inbound/TabList.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts",
+        "src/features/tabs/composition/useTabsContext.ts",
+        "src/features/tabs/utils/resolveNextTabValue.ts",
+        "src/internal/focus/useFocusManager.ts",
+        "src/types/tabs.ts"
+      ],
+      "exports": ["TabList"]
+    },
+    {
+      "path": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/tabs/composition/useTabsContext.ts", "src/types/tabs.ts"],
+      "exports": ["TabPanel"]
+    },
+    {
+      "path": "src/features/tabs/adapters/inbound/Tabs.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts",
+        "src/features/tabs/composition/TabsContext.tsx",
+        "src/features/tabs/composition/useTabsController.ts",
+        "src/types/tabs.ts"
+      ],
+      "exports": ["Tabs"]
+    },
+    {
+      "path": "src/features/tabs/composition/TabsContext.tsx",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/tabs.ts"],
+      "exports": ["TabsContext"]
+    },
+    {
+      "path": "src/features/tabs/composition/useTabRegistration.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/tabs/composition/useTabsContext.ts"],
+      "exports": ["useTabRegistration"]
+    },
+    {
+      "path": "src/features/tabs/composition/useTabsContext.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/tabs/composition/TabsContext.tsx", "src/types/tabs.ts"],
+      "exports": ["useTabsContext"]
+    },
+    {
+      "path": "src/features/tabs/composition/useTabsController.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/tabs/utils/resolveTabElementId.ts",
+        "src/internal/useControllableState.ts",
+        "src/types/tabs.ts"
+      ],
+      "exports": ["useTabsController"]
+    },
+    {
+      "path": "src/features/tabs/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "Tab",
+        "TabList",
+        "TabListProps",
+        "TabPanel",
+        "TabPanelProps",
+        "TabProps",
+        "Tabs",
+        "TabsProps"
+      ]
+    },
+    {
+      "path": "src/features/tabs/utils/resolveNextTabValue.test.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/tabs/utils/resolveNextTabValue.ts"],
+      "exports": []
+    },
+    {
+      "path": "src/features/tabs/utils/resolveNextTabValue.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/tabs.ts"],
+      "exports": ["resolveNextTabValue"]
+    },
+    {
+      "path": "src/features/tabs/utils/resolveTabElementId.test.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/tabs/utils/resolveTabElementId.ts"],
+      "exports": []
+    },
+    {
+      "path": "src/features/tabs/utils/resolveTabElementId.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["resolveTabElementId"]
+    },
+    {
       "path": "src/features/toast/adapters/inbound/Toast.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -1059,6 +1055,7 @@
         "src/features/layout/public.ts",
         "src/features/toast/adapters/inbound/Toast.tsx",
         "src/features/toast/composition/ToastContext.ts",
+        "src/features/toast/composition/useToastRuntime.ts",
         "src/internal/overlay/Portal.tsx",
         "src/internal/resolvers/index.ts",
         "src/types/toast.ts"
@@ -1084,6 +1081,12 @@
       "exports": ["ToastContext"]
     },
     {
+      "path": "src/features/toast/composition/useToastRuntime.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/toast.ts"],
+      "exports": ["useToastRuntime"]
+    },
+    {
       "path": "src/features/toast/public.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -1097,6 +1100,37 @@
         "ToastStatus",
         "useToast"
       ]
+    },
+    {
+      "path": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/popover/public.ts",
+        "src/features/surface/public.ts",
+        "src/features/tooltip/composition/useTooltipVisibility.ts",
+        "src/features/typography/public.ts",
+        "src/theme/ThemeContext.tsx",
+        "src/types/tooltip.ts"
+      ],
+      "exports": ["Tooltip"]
+    },
+    {
+      "path": "src/features/tooltip/composition/useTooltipVisibility.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["useTooltipVisibility"]
+    },
+    {
+      "path": "src/features/tooltip/public.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    },
+    {
+      "path": "src/features/tooltip/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["Tooltip", "TooltipProps"]
     },
     {
       "path": "src/features/typography/adapters/inbound/Heading.tsx",
@@ -1245,16 +1279,15 @@
         "LabelProps",
         "ListItem",
         "ListItemProps",
-        "Menu",
-        "MenuAction",
-        "MenuActionIntent",
-        "MenuItem",
-        "MenuProps",
         "Modal",
         "ModalProps",
         "NeutralSemantics",
         "Popover",
         "PopoverAnchorRenderProps",
+        "PopoverMenu",
+        "PopoverMenuAction",
+        "PopoverMenuActionIntent",
+        "PopoverMenuProps",
         "PopoverPlacement",
         "PopoverProps",
         "Radio",
@@ -2073,7 +2106,7 @@
       "path": "src/types/bottomSheet.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["BottomSheetController", "BottomSheetPresentOptions"]
+      "exports": ["BottomSheetContentMode", "BottomSheetController", "BottomSheetPresentOptions"]
     },
     {
       "path": "src/types/button.ts",
@@ -2144,10 +2177,22 @@
       ]
     },
     {
+      "path": "src/types/modal.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/interactionPolicy.ts"],
+      "exports": ["ModalProps"]
+    },
+    {
       "path": "src/types/popover.ts",
       "isEntrypoint": false,
       "dependencies": ["src/interactionPolicy.ts"],
       "exports": ["PopoverAnchorRenderProps", "PopoverPlacement", "PopoverProps"]
+    },
+    {
+      "path": "src/types/popoverMenu.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/interactionPolicy.ts", "src/types/popover.ts"],
+      "exports": ["PopoverMenuAction", "PopoverMenuActionIntent", "PopoverMenuProps"]
     },
     {
       "path": "src/types/radio.ts",
@@ -2166,6 +2211,20 @@
       "exports": ["SurfaceProps", "SurfaceVariant"]
     },
     {
+      "path": "src/types/tabs.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/interactionPolicy.ts"],
+      "exports": [
+        "TabListProps",
+        "TabNavigationKey",
+        "TabPanelProps",
+        "TabProps",
+        "TabRegistration",
+        "TabsContextValue",
+        "TabsProps"
+      ]
+    },
+    {
       "path": "src/types/text-input.ts",
       "isEntrypoint": false,
       "dependencies": ["src/interactionPolicy.ts", "src/internal/resolvers/resolveControlSize.ts"],
@@ -2182,6 +2241,12 @@
         "ToastProviderProps",
         "ToastStatus"
       ]
+    },
+    {
+      "path": "src/types/tooltip.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/interactionPolicy.ts"],
+      "exports": ["TooltipProps"]
     },
     {
       "path": "src/types/typography.ts",
@@ -11966,208 +12031,15 @@
       "structuredRows": []
     },
     {
-      "name": "Menu",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/menu/Menu.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/menu/Menu.tsx",
-        "line": 61,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["MenuProps"],
-      "signatures": [
-        {
-          "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: MenuProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
-              "type": "MenuProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "MenuAction",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/menu/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/menu/types.ts",
-        "line": 7,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["MenuActionIntent"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "activate",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "description",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "id",
-          "kind": "property",
-          "type": "string",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "intent",
-          "kind": "property",
-          "type": "MenuActionIntent | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "leading",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selected",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "title",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "trailing",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "MenuActionIntent",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "unknown",
-      "modulePath": "src/components/menu/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/menu/types.ts",
-        "line": 5,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
-      "signatures": [],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "MenuProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/menu/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/menu/types.ts",
-        "line": 19,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "MenuAction"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "actions",
-          "kind": "property",
-          "type": "readonly MenuAction[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "closeOnSelect",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "dismiss",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "trigger",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
       "name": "Modal",
-      "description": null,
+      "description": "Renders the generic Surface modal overlay and focus boundary.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/modal/Modal.tsx",
+      "modulePath": "src/features/modal/adapters/inbound/Modal.tsx",
       "sourceLocation": {
-        "filePath": "src/components/modal/Modal.tsx",
-        "line": 15,
+        "filePath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "line": 16,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -12196,9 +12068,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/modal/types.ts",
+      "modulePath": "src/types/modal.ts",
       "sourceLocation": {
-        "filePath": "src/components/modal/types.ts",
+        "filePath": "src/types/modal.ts",
         "line": 5,
         "column": 1
       },
@@ -12370,17 +12242,17 @@
       "modulePath": "src/features/popover/adapters/inbound/Popover.tsx",
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/Popover.tsx",
-        "line": 16,
+        "line": 9,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
       "relatedSymbols": ["PopoverProps"],
       "signatures": [
         {
-          "label": "({\n  anchor,\n  children,\n  closeOnOutsidePress = true,\n  defaultOpen = false,\n  interactionPolicy = 'enabled',\n  offset = 8,\n  onOpenChange,\n  open,\n  placement = 'bottom-start',\n  testID,\n}: PopoverProps) => React.JSX.Element",
+          "label": "(props: PopoverProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  anchor,\n  children,\n  closeOnOutsidePress = true,\n  defaultOpen = false,\n  interactionPolicy = 'enabled',\n  offset = 8,\n  onOpenChange,\n  open,\n  placement = 'bottom-start',\n  testID,\n}",
+              "name": "props",
               "type": "PopoverProps",
               "required": true,
               "description": null
@@ -12427,6 +12299,199 @@
           "name": "toggle",
           "kind": "property",
           "type": "() => void",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "PopoverMenu",
+      "description": "Presents an anchored action menu using the shared Popover capability.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "line": 17,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["PopoverMenuProps"],
+      "signatures": [
+        {
+          "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: PopoverMenuProps) => React.JSX.Element",
+          "parameters": [
+            {
+              "name": "{\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}",
+              "type": "PopoverMenuProps",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "React.JSX.Element",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "PopoverMenuAction",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/popoverMenu.ts",
+      "sourceLocation": {
+        "filePath": "src/types/popoverMenu.ts",
+        "line": 8,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["PopoverMenuActionIntent"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "activate",
+          "kind": "property",
+          "type": "(() => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "description",
+          "kind": "property",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "disabled",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "id",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "intent",
+          "kind": "property",
+          "type": "PopoverMenuActionIntent | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "leading",
+          "kind": "property",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "selected",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "title",
+          "kind": "property",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "trailing",
+          "kind": "property",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "PopoverMenuActionIntent",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "unknown",
+      "modulePath": "src/types/popoverMenu.ts",
+      "sourceLocation": {
+        "filePath": "src/types/popoverMenu.ts",
+        "line": 6,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "PopoverMenuProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/popoverMenu.ts",
+      "sourceLocation": {
+        "filePath": "src/types/popoverMenu.ts",
+        "line": 20,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["InteractionPolicy", "PopoverAnchorRenderProps", "PopoverMenuAction"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "actions",
+          "kind": "property",
+          "type": "readonly PopoverMenuAction[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "closeOnSelect",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "dismiss",
+          "kind": "property",
+          "type": "(() => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "testID",
+          "kind": "property",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "trigger",
+          "kind": "property",
+          "type": "(controls: PopoverAnchorRenderProps) => React.ReactNode",
           "required": true,
           "description": null
         }
@@ -16622,14 +16687,14 @@
     },
     {
       "name": "Tab",
-      "description": null,
+      "description": "Renders one accessible selectable tab inside a Tabs context.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/tabs/Tab.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/Tab.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/Tab.tsx",
-        "line": 10,
+        "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "line": 12,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16654,14 +16719,14 @@
     },
     {
       "name": "TabList",
-      "description": null,
+      "description": "Renders the accessible tab list and owns keyboard focus navigation.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/tabs/TabList.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/TabList.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/TabList.tsx",
-        "line": 9,
+        "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "line": 20,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16690,9 +16755,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/tabs/types.ts",
+      "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
-        "filePath": "src/components/tabs/types.ts",
+        "filePath": "src/types/tabs.ts",
         "line": 13,
         "column": 1
       },
@@ -16719,14 +16784,14 @@
     },
     {
       "name": "TabPanel",
-      "description": null,
+      "description": "Renders the content panel associated with the active tab value.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/tabs/TabPanel.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/TabPanel.tsx",
-        "line": 9,
+        "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+        "line": 10,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -16755,9 +16820,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/tabs/types.ts",
+      "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
-        "filePath": "src/components/tabs/types.ts",
+        "filePath": "src/types/tabs.ts",
         "line": 26,
         "column": 1
       },
@@ -16795,9 +16860,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/tabs/types.ts",
+      "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
-        "filePath": "src/components/tabs/types.ts",
+        "filePath": "src/types/tabs.ts",
         "line": 18,
         "column": 1
       },
@@ -16845,13 +16910,13 @@
     },
     {
       "name": "Tabs",
-      "description": null,
+      "description": "Provides accessible tab selection state to TabList, Tab, and TabPanel children.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/tabs/Tabs.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/Tabs.tsx",
+        "filePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
         "line": 9,
         "column": 1
       },
@@ -16859,10 +16924,10 @@
       "relatedSymbols": ["TabsProps"],
       "signatures": [
         {
-          "label": "({ children, value, defaultValue, onValueChange, testID }: TabsProps) => React.JSX.Element",
+          "label": "({ children, ...props }: TabsProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ children, value, defaultValue, onValueChange, testID }",
+              "name": "{ children, ...props }",
               "type": "TabsProps",
               "required": true,
               "description": null
@@ -16881,9 +16946,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/tabs/types.ts",
+      "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
-        "filePath": "src/components/tabs/types.ts",
+        "filePath": "src/types/tabs.ts",
         "line": 5,
         "column": 1
       },
@@ -20373,14 +20438,14 @@
     },
     {
       "name": "ToastProvider",
-      "description": "Provides toast state, timers, and the shared toast portal host.",
+      "description": "Provides the toast runtime context and renders its shared portal host.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
       "modulePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
       "sourceLocation": {
         "filePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
-        "line": 14,
+        "line": 13,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -20456,14 +20521,14 @@
     },
     {
       "name": "Tooltip",
-      "description": null,
+      "description": "Presents delayed hover/focus help through the shared Popover foundation.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/tooltip/Tooltip.tsx",
+      "modulePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tooltip/Tooltip.tsx",
-        "line": 27,
+        "filePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "line": 12,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -20492,9 +20557,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/tooltip/types.ts",
+      "modulePath": "src/types/tooltip.ts",
       "sourceLocation": {
-        "filePath": "src/components/tooltip/types.ts",
+        "filePath": "src/types/tooltip.ts",
         "line": 5,
         "column": 1
       },
@@ -27991,67 +28056,14 @@
       ]
     },
     {
-      "name": "Menu",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/menu/Menu.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/menu/Menu.tsx",
-        "line": 61,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "actions",
-          "type": "readonly MenuAction[]",
-          "required": true,
-          "description": null
-        },
-        {
-          "name": "closeOnSelect",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "true",
-          "description": null
-        },
-        {
-          "name": "dismiss",
-          "type": "() => void | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "defaultValue": "'enabled'",
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "trigger",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
       "name": "Modal",
-      "description": null,
+      "description": "Renders the generic Surface modal overlay and focus boundary.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/modal/Modal.tsx",
+      "modulePath": "src/features/modal/adapters/inbound/Modal.tsx",
       "sourceLocation": {
-        "filePath": "src/components/modal/Modal.tsx",
-        "line": 15,
+        "filePath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "line": 16,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -28104,7 +28116,7 @@
       "modulePath": "src/features/popover/adapters/inbound/Popover.tsx",
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/Popover.tsx",
-        "line": 16,
+        "line": 9,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -28125,28 +28137,24 @@
           "name": "closeOnOutsidePress",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "true",
           "description": null
         },
         {
           "name": "defaultOpen",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
           "name": "interactionPolicy",
           "type": "InteractionPolicy | undefined",
           "required": false,
-          "defaultValue": "'enabled'",
           "description": null
         },
         {
           "name": "offset",
           "type": "number | undefined",
           "required": false,
-          "defaultValue": "8",
           "description": null
         },
         {
@@ -28165,13 +28173,65 @@
           "name": "placement",
           "type": "PopoverPlacement | undefined",
           "required": false,
-          "defaultValue": "'bottom-start'",
           "description": null
         },
         {
           "name": "testID",
           "type": "string | undefined",
           "required": false,
+          "description": null
+        }
+      ]
+    },
+    {
+      "name": "PopoverMenu",
+      "description": "Presents an anchored action menu using the shared Popover capability.",
+      "isReadme": false,
+      "examples": [],
+      "modulePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "line": 17,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "props": [
+        {
+          "name": "actions",
+          "type": "readonly PopoverMenuAction[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "closeOnSelect",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "true",
+          "description": null
+        },
+        {
+          "name": "dismiss",
+          "type": "() => void | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
+          "name": "testID",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "trigger",
+          "type": "(controls: PopoverAnchorRenderProps) => React.ReactNode",
+          "required": true,
           "description": null
         }
       ]
@@ -30657,13 +30717,13 @@
     },
     {
       "name": "Tab",
-      "description": null,
+      "description": "Renders one accessible selectable tab inside a Tabs context.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/tabs/Tab.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/Tab.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/Tab.tsx",
-        "line": 10,
+        "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "line": 12,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -30704,13 +30764,13 @@
     },
     {
       "name": "TabList",
-      "description": null,
+      "description": "Renders the accessible tab list and owns keyboard focus navigation.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/tabs/TabList.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/TabList.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/TabList.tsx",
-        "line": 9,
+        "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "line": 20,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -30731,13 +30791,13 @@
     },
     {
       "name": "TabPanel",
-      "description": null,
+      "description": "Renders the content panel associated with the active tab value.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/tabs/TabPanel.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/TabPanel.tsx",
-        "line": 9,
+        "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+        "line": 10,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -30764,12 +30824,12 @@
     },
     {
       "name": "Tabs",
-      "description": null,
+      "description": "Provides accessible tab selection state to TabList, Tab, and TabPanel children.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/tabs/Tabs.tsx",
+      "modulePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tabs/Tabs.tsx",
+        "filePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
         "line": 9,
         "column": 1
       },
@@ -33292,13 +33352,13 @@
     },
     {
       "name": "ToastProvider",
-      "description": "Provides toast state, timers, and the shared toast portal host.",
+      "description": "Provides the toast runtime context and renders its shared portal host.",
       "isReadme": false,
       "examples": [],
       "modulePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
       "sourceLocation": {
         "filePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
-        "line": 14,
+        "line": 13,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -33320,13 +33380,13 @@
     },
     {
       "name": "Tooltip",
-      "description": null,
+      "description": "Presents delayed hover/focus help through the shared Popover foundation.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/tooltip/Tooltip.tsx",
+      "modulePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
       "sourceLocation": {
-        "filePath": "src/components/tooltip/Tooltip.tsx",
-        "line": 27,
+        "filePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "line": 12,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -33453,51 +33513,6 @@
       }
     },
     {
-      "name": "measureNode",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/menu/Menu.tsx",
-        "line": 26,
-        "column": 1
-      }
-    },
-    {
-      "name": "renderActionContent",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/menu/Menu.tsx",
-        "line": 33,
-        "column": 1
-      }
-    },
-    {
-      "name": "Menu",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/menu/Menu.tsx",
-        "line": 61,
-        "column": 1
-      }
-    },
-    {
-      "name": "resolveNextMenuIndex",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/menu/navigation.ts",
-        "line": 1,
-        "column": 1
-      }
-    },
-    {
-      "name": "Modal",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/modal/Modal.tsx",
-        "line": 15,
-        "column": 1
-      }
-    },
-    {
       "name": "Switch",
       "description": null,
       "sourceLocation": {
@@ -33507,119 +33522,11 @@
       }
     },
     {
-      "name": "sanitizeTabValue",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/a11y.ts",
-        "line": 1,
-        "column": 1
-      }
-    },
-    {
-      "name": "createTabsIdBase",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/a11y.ts",
-        "line": 5,
-        "column": 1
-      }
-    },
-    {
-      "name": "getTabId",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/a11y.ts",
-        "line": 9,
-        "column": 1
-      }
-    },
-    {
-      "name": "getTabPanelId",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/a11y.ts",
-        "line": 13,
-        "column": 1
-      }
-    },
-    {
-      "name": "useTabsContext",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/context.tsx",
-        "line": 23,
-        "column": 1
-      }
-    },
-    {
-      "name": "resolveNextTabValue",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/navigation.ts",
-        "line": 3,
-        "column": 1
-      }
-    },
-    {
-      "name": "Tab",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/Tab.tsx",
-        "line": 10,
-        "column": 1
-      }
-    },
-    {
-      "name": "TabList",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/TabList.tsx",
-        "line": 9,
-        "column": 1
-      }
-    },
-    {
-      "name": "TabPanel",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/TabPanel.tsx",
-        "line": 9,
-        "column": 1
-      }
-    },
-    {
-      "name": "Tabs",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tabs/Tabs.tsx",
-        "line": 9,
-        "column": 1
-      }
-    },
-    {
       "name": "Textarea",
       "description": null,
       "sourceLocation": {
         "filePath": "src/components/textarea/Textarea.tsx",
         "line": 6,
-        "column": 1
-      }
-    },
-    {
-      "name": "measureNode",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tooltip/Tooltip.tsx",
-        "line": 20,
-        "column": 1
-      }
-    },
-    {
-      "name": "Tooltip",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/tooltip/Tooltip.tsx",
-        "line": 27,
         "column": 1
       }
     },
@@ -33710,51 +33617,6 @@
       "sourceLocation": {
         "filePath": "src/core/responsive/useBreakpoint.ts",
         "line": 6,
-        "column": 1
-      }
-    },
-    {
-      "name": "FormExample",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/examples/DocsExamples.tsx",
-        "line": 26,
-        "column": 1
-      }
-    },
-    {
-      "name": "ToastButton",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/examples/DocsExamples.tsx",
-        "line": 40,
-        "column": 1
-      }
-    },
-    {
-      "name": "FeedbackExample",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/examples/DocsExamples.tsx",
-        "line": 53,
-        "column": 1
-      }
-    },
-    {
-      "name": "OverlayExample",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/examples/DocsExamples.tsx",
-        "line": 68,
-        "column": 1
-      }
-    },
-    {
-      "name": "NavigationExample",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/examples/DocsExamples.tsx",
-        "line": 90,
         "column": 1
       }
     },
@@ -33858,11 +33720,20 @@
       }
     },
     {
+      "name": "renderBottomSheetContent",
+      "description": "Renders default content in BottomSheetView and direct content without an extra wrapper.",
+      "sourceLocation": {
+        "filePath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
+        "line": 113,
+        "column": 1
+      }
+    },
+    {
       "name": "useBottomSheetBackdrop",
       "description": "Creates the backdrop renderer for the active bottom-sheet request.",
       "sourceLocation": {
         "filePath": "src/features/bottom-sheet/BottomSheetProvider.tsx",
-        "line": 117,
+        "line": 122,
         "column": 1
       }
     },
@@ -34362,11 +34233,119 @@
       }
     },
     {
+      "name": "Modal",
+      "description": "Renders the generic Surface modal overlay and focus boundary.",
+      "sourceLocation": {
+        "filePath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "line": 16,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveBackdropStyle",
+      "description": "Resolves the runtime backdrop color and opacity without inline JSX styles.",
+      "sourceLocation": {
+        "filePath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "line": 61,
+        "column": 1
+      }
+    },
+    {
+      "name": "PopoverMenu",
+      "description": "Presents an anchored action menu using the shared Popover capability.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "line": 17,
+        "column": 1
+      }
+    },
+    {
+      "name": "PopoverMenuContent",
+      "description": "Renders menu semantics and keyboard navigation inside an open Popover.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "line": 62,
+        "column": 1
+      }
+    },
+    {
+      "name": "usePopoverMenuKeyboard",
+      "description": "Subscribes an open PopoverMenu to standard menu keyboard controls.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "line": 92,
+        "column": 1
+      }
+    },
+    {
+      "name": "PopoverMenuItem",
+      "description": "Renders one accessible PopoverMenu action row.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "line": 131,
+        "column": 1
+      }
+    },
+    {
+      "name": "PopoverMenuItemContent",
+      "description": "Renders the leading, textual, and trailing content of one menu action.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "line": 169,
+        "column": 1
+      }
+    },
+    {
+      "name": "usePopoverMenuController",
+      "description": "Owns PopoverMenu visibility, active action state, and selection behavior.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "line": 13,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInitialIndex",
+      "description": "Returns the first enabled action index for a newly opened menu.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "line": 52,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveNextMenuIndex",
+      "description": "Resolves the next enabled action index for standard menu keyboard navigation.",
+      "sourceLocation": {
+        "filePath": "src/features/popover-menu/utils/resolveNextMenuIndex.ts",
+        "line": 2,
+        "column": 1
+      }
+    },
+    {
       "name": "Popover",
       "description": "Renders anchored overlay content through the shared Surface overlay stack.",
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/Popover.tsx",
-        "line": 16,
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "PopoverOverlay",
+      "description": "Renders and positions one mounted popover overlay for an open anchor.",
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "usePopoverLayout",
+      "description": "Measures the anchor and resolves the current viewport-safe popover position.",
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+        "line": 13,
         "column": 1
       }
     },
@@ -34407,6 +34386,114 @@
       }
     },
     {
+      "name": "Tab",
+      "description": "Renders one accessible selectable tab inside a Tabs context.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveTabStyle",
+      "description": "Resolves active and disabled visual state without inline JSX styles.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "line": 59,
+        "column": 1
+      }
+    },
+    {
+      "name": "TabList",
+      "description": "Renders the accessible tab list and owns keyboard focus navigation.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "line": 20,
+        "column": 1
+      }
+    },
+    {
+      "name": "isTabNavigationKey",
+      "description": "Narrows keyboard event keys to the tab navigation key contract.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "line": 46,
+        "column": 1
+      }
+    },
+    {
+      "name": "TabPanel",
+      "description": "Renders the content panel associated with the active tab value.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+        "line": 10,
+        "column": 1
+      }
+    },
+    {
+      "name": "Tabs",
+      "description": "Provides accessible tab selection state to TabList, Tab, and TabPanel children.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "useTabRegistration",
+      "description": "Registers one focusable tab with the owning Tabs context.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/composition/useTabRegistration.ts",
+        "line": 7,
+        "column": 1
+      }
+    },
+    {
+      "name": "useTabsContext",
+      "description": "Returns the active Tabs feature context.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/composition/useTabsContext.ts",
+        "line": 7,
+        "column": 1
+      }
+    },
+    {
+      "name": "useTabsController",
+      "description": "Owns controlled state, registration, focus state, and ids for one Tabs instance.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/composition/useTabsController.ts",
+        "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveNextTabValue",
+      "description": "Resolves the next enabled tab for keyboard focus navigation.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/utils/resolveNextTabValue.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveTabElementId",
+      "description": "Creates a stable tab or tab-panel id from a Tabs test id and tab value.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/utils/resolveTabElementId.ts",
+        "line": 2,
+        "column": 1
+      }
+    },
+    {
+      "name": "sanitizeTabValue",
+      "description": "Normalizes a tab value for use inside an accessibility id.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/utils/resolveTabElementId.ts",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
       "name": "Toast",
       "description": "Renders one transient toast notification.",
       "sourceLocation": {
@@ -34435,10 +34522,10 @@
     },
     {
       "name": "ToastProvider",
-      "description": "Provides toast state, timers, and the shared toast portal host.",
+      "description": "Provides the toast runtime context and renders its shared portal host.",
       "sourceLocation": {
         "filePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
-        "line": 14,
+        "line": 13,
         "column": 1
       }
     },
@@ -34457,6 +34544,42 @@
       "sourceLocation": {
         "filePath": "src/features/toast/adapters/inbound/useToast.ts",
         "line": 7,
+        "column": 1
+      }
+    },
+    {
+      "name": "useToastRuntime",
+      "description": "Owns the toast queue, dismissal timers, and imperative controller state.",
+      "sourceLocation": {
+        "filePath": "src/features/toast/composition/useToastRuntime.ts",
+        "line": 6,
+        "column": 1
+      }
+    },
+    {
+      "name": "useToastTimers",
+      "description": "Synchronizes toast lifetimes with timer side effects and cleans them up on unmount.",
+      "sourceLocation": {
+        "filePath": "src/features/toast/composition/useToastRuntime.ts",
+        "line": 48,
+        "column": 1
+      }
+    },
+    {
+      "name": "Tooltip",
+      "description": "Presents delayed hover/focus help through the shared Popover foundation.",
+      "sourceLocation": {
+        "filePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "useTooltipVisibility",
+      "description": "Manages delayed tooltip visibility and timer cleanup.",
+      "sourceLocation": {
+        "filePath": "src/features/tooltip/composition/useTooltipVisibility.ts",
+        "line": 4,
         "column": 1
       }
     },
@@ -35540,18 +35663,10 @@
     },
     {
       "kind": "export",
-      "name": "Menu",
-      "sourcePath": "src/components/menu/Menu.tsx",
-      "symbolName": "Menu",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
       "name": "Modal",
-      "sourcePath": "src/components/modal/Modal.tsx",
+      "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx",
       "symbolName": "Modal",
-      "description": null,
+      "description": "Renders the generic Surface modal overlay and focus boundary.",
       "isReadme": false
     },
     {
@@ -35560,6 +35675,14 @@
       "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx",
       "symbolName": "Popover",
       "description": "Renders anchored overlay content through the shared Surface overlay stack.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "PopoverMenu",
+      "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+      "symbolName": "PopoverMenu",
+      "description": "Presents an anchored action menu using the shared Popover capability.",
       "isReadme": false
     },
     {
@@ -35653,33 +35776,33 @@
     {
       "kind": "export",
       "name": "Tab",
-      "sourcePath": "src/components/tabs/Tab.tsx",
+      "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx",
       "symbolName": "Tab",
-      "description": null,
+      "description": "Renders one accessible selectable tab inside a Tabs context.",
       "isReadme": false
     },
     {
       "kind": "export",
       "name": "TabList",
-      "sourcePath": "src/components/tabs/TabList.tsx",
+      "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx",
       "symbolName": "TabList",
-      "description": null,
+      "description": "Renders the accessible tab list and owns keyboard focus navigation.",
       "isReadme": false
     },
     {
       "kind": "export",
       "name": "TabPanel",
-      "sourcePath": "src/components/tabs/TabPanel.tsx",
+      "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
       "symbolName": "TabPanel",
-      "description": null,
+      "description": "Renders the content panel associated with the active tab value.",
       "isReadme": false
     },
     {
       "kind": "export",
       "name": "Tabs",
-      "sourcePath": "src/components/tabs/Tabs.tsx",
+      "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx",
       "symbolName": "Tabs",
-      "description": null,
+      "description": "Provides accessible tab selection state to TabList, Tab, and TabPanel children.",
       "isReadme": false
     },
     {
@@ -35735,15 +35858,15 @@
       "name": "ToastProvider",
       "sourcePath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
       "symbolName": "ToastProvider",
-      "description": "Provides toast state, timers, and the shared toast portal host.",
+      "description": "Provides the toast runtime context and renders its shared portal host.",
       "isReadme": false
     },
     {
       "kind": "export",
       "name": "Tooltip",
-      "sourcePath": "src/components/tooltip/Tooltip.tsx",
+      "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
       "symbolName": "Tooltip",
-      "description": null,
+      "description": "Presents delayed hover/focus help through the shared Popover foundation.",
       "isReadme": false
     },
     {
@@ -35853,32 +35976,12 @@
       },
       {
         "fromPath": "src/index.ts",
-        "toPath": "src/components/menu/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/modal/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
         "toPath": "src/components/switch/index.ts",
         "sourcePath": "src/index.ts"
       },
       {
         "fromPath": "src/index.ts",
-        "toPath": "src/components/tabs/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
         "toPath": "src/components/textarea/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/tooltip/index.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -35953,7 +36056,17 @@
       },
       {
         "fromPath": "src/index.ts",
+        "toPath": "src/features/modal/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
         "toPath": "src/features/popover/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/popover-menu/public.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -35963,7 +36076,17 @@
       },
       {
         "fromPath": "src/index.ts",
+        "toPath": "src/features/tabs/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
         "toPath": "src/features/toast/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/tooltip/public.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -36015,81 +36138,6 @@
         "fromPath": "src/surfaceColor.test.ts",
         "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/surfaceColor.test.ts"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/components/field/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/components/helper-text/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/components/menu/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/components/modal/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/components/tabs/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/components/tooltip/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/features/button/public.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/features/card/public.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/features/form/checkbox/public.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/features/form/text-input/public.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/features/toast/public.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/theme/index.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromPath": "src/examples/DocsExamples.tsx",
-        "toPath": "src/theme/types.ts",
-        "sourcePath": "src/examples/DocsExamples.tsx"
       },
       {
         "fromPath": "src/internal/resolvePointerEvents.test.ts",
@@ -36512,9 +36560,24 @@
         "sourcePath": "src/types/layout.ts"
       },
       {
+        "fromPath": "src/types/modal.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/types/modal.ts"
+      },
+      {
         "fromPath": "src/types/popover.ts",
         "toPath": "src/interactionPolicy.ts",
         "sourcePath": "src/types/popover.ts"
+      },
+      {
+        "fromPath": "src/types/popoverMenu.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromPath": "src/types/popoverMenu.ts",
+        "toPath": "src/types/popover.ts",
+        "sourcePath": "src/types/popoverMenu.ts"
       },
       {
         "fromPath": "src/types/radio.ts",
@@ -36537,6 +36600,11 @@
         "sourcePath": "src/types/surface.ts"
       },
       {
+        "fromPath": "src/types/tabs.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
         "fromPath": "src/types/text-input.ts",
         "toPath": "src/interactionPolicy.ts",
         "sourcePath": "src/types/text-input.ts"
@@ -36555,6 +36623,11 @@
         "fromPath": "src/types/toast.ts",
         "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/types/toast.ts"
+      },
+      {
+        "fromPath": "src/types/tooltip.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/types/tooltip.ts"
       },
       {
         "fromPath": "src/types/typography.ts",
@@ -36747,146 +36820,6 @@
         "sourcePath": "src/components/list-item/ListItem.tsx"
       },
       {
-        "fromPath": "src/components/menu/index.ts",
-        "toPath": "src/components/menu/Menu.tsx",
-        "sourcePath": "src/components/menu/index.ts"
-      },
-      {
-        "fromPath": "src/components/menu/index.ts",
-        "toPath": "src/components/menu/types.ts",
-        "sourcePath": "src/components/menu/index.ts"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/features/surface/public.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/internal/focus/FocusScope.tsx",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/internal/focus/useFocusManager.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/internal/overlay/Portal.tsx",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/internal/resolvePointerEvents.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/components/menu/navigation.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/Menu.tsx",
-        "toPath": "src/components/menu/types.ts",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromPath": "src/components/menu/navigation.test.ts",
-        "toPath": "src/components/menu/navigation.ts",
-        "sourcePath": "src/components/menu/navigation.test.ts"
-      },
-      {
-        "fromPath": "src/components/menu/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromPath": "src/components/modal/index.ts",
-        "toPath": "src/components/modal/Modal.tsx",
-        "sourcePath": "src/components/modal/index.ts"
-      },
-      {
-        "fromPath": "src/components/modal/index.ts",
-        "toPath": "src/components/modal/types.ts",
-        "sourcePath": "src/components/modal/index.ts"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/features/surface/public.ts",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/internal/focus/FocusScope.tsx",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/internal/overlay/Portal.tsx",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/internal/resolvePointerEvents.ts",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/layout/index.ts",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/Modal.tsx",
-        "toPath": "src/components/modal/types.ts",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromPath": "src/components/modal/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/components/modal/types.ts"
-      },
-      {
         "fromPath": "src/components/switch/index.ts",
         "toPath": "src/components/switch/Switch.tsx",
         "sourcePath": "src/components/switch/index.ts"
@@ -36947,136 +36880,6 @@
         "sourcePath": "src/components/switch/types.ts"
       },
       {
-        "fromPath": "src/components/tabs/a11y.test.ts",
-        "toPath": "src/components/tabs/a11y.ts",
-        "sourcePath": "src/components/tabs/a11y.test.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/index.ts",
-        "toPath": "src/components/tabs/Tab.tsx",
-        "sourcePath": "src/components/tabs/index.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/index.ts",
-        "toPath": "src/components/tabs/TabList.tsx",
-        "sourcePath": "src/components/tabs/index.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/index.ts",
-        "toPath": "src/components/tabs/TabPanel.tsx",
-        "sourcePath": "src/components/tabs/index.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/index.ts",
-        "toPath": "src/components/tabs/Tabs.tsx",
-        "sourcePath": "src/components/tabs/index.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/index.ts",
-        "toPath": "src/components/tabs/types.ts",
-        "sourcePath": "src/components/tabs/index.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/navigation.test.ts",
-        "toPath": "src/components/tabs/navigation.ts",
-        "sourcePath": "src/components/tabs/navigation.test.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/navigation.ts",
-        "toPath": "src/components/tabs/context.tsx",
-        "sourcePath": "src/components/tabs/navigation.ts"
-      },
-      {
-        "fromPath": "src/components/tabs/Tab.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tab.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tab.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tab.tsx",
-        "toPath": "src/components/tabs/context.tsx",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tab.tsx",
-        "toPath": "src/components/tabs/types.ts",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/TabList.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/TabList.tsx",
-        "toPath": "src/internal/focus/useFocusManager.ts",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/TabList.tsx",
-        "toPath": "src/components/tabs/context.tsx",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/TabList.tsx",
-        "toPath": "src/components/tabs/navigation.ts",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/TabList.tsx",
-        "toPath": "src/components/tabs/types.ts",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/TabPanel.tsx",
-        "toPath": "src/components/tabs/context.tsx",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/TabPanel.tsx",
-        "toPath": "src/components/tabs/types.ts",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tabs.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tabs.tsx",
-        "toPath": "src/internal/useControllableState.ts",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tabs.tsx",
-        "toPath": "src/components/tabs/a11y.ts",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tabs.tsx",
-        "toPath": "src/components/tabs/context.tsx",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/Tabs.tsx",
-        "toPath": "src/components/tabs/types.ts",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromPath": "src/components/tabs/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
         "fromPath": "src/components/textarea/index.ts",
         "toPath": "src/components/textarea/Textarea.tsx",
         "sourcePath": "src/components/textarea/index.ts"
@@ -37100,56 +36903,6 @@
         "fromPath": "src/components/textarea/types.ts",
         "toPath": "src/types/text-input.ts",
         "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromPath": "src/components/tooltip/index.ts",
-        "toPath": "src/components/tooltip/Tooltip.tsx",
-        "sourcePath": "src/components/tooltip/index.ts"
-      },
-      {
-        "fromPath": "src/components/tooltip/index.ts",
-        "toPath": "src/components/tooltip/types.ts",
-        "sourcePath": "src/components/tooltip/index.ts"
-      },
-      {
-        "fromPath": "src/components/tooltip/Tooltip.tsx",
-        "toPath": "src/features/surface/public.ts",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromPath": "src/components/tooltip/Tooltip.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromPath": "src/components/tooltip/Tooltip.tsx",
-        "toPath": "src/internal/overlay/Portal.tsx",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromPath": "src/components/tooltip/Tooltip.tsx",
-        "toPath": "src/internal/resolvePointerEvents.ts",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromPath": "src/components/tooltip/Tooltip.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromPath": "src/components/tooltip/Tooltip.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromPath": "src/components/tooltip/Tooltip.tsx",
-        "toPath": "src/components/tooltip/types.ts",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromPath": "src/components/tooltip/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/components/tooltip/types.ts"
       },
       {
         "fromPath": "src/core/responsive/getBreakpointFromWidth.test.ts",
@@ -37412,6 +37165,16 @@
         "sourcePath": "src/features/layout/public.ts"
       },
       {
+        "fromPath": "src/features/modal/public.ts",
+        "toPath": "src/types/modal.ts",
+        "sourcePath": "src/features/modal/public.ts"
+      },
+      {
+        "fromPath": "src/features/modal/public.ts",
+        "toPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "sourcePath": "src/features/modal/public.ts"
+      },
+      {
         "fromPath": "src/features/popover/public.ts",
         "toPath": "src/types/popover.ts",
         "sourcePath": "src/features/popover/public.ts"
@@ -37422,6 +37185,16 @@
         "sourcePath": "src/features/popover/public.ts"
       },
       {
+        "fromPath": "src/features/popover-menu/public.ts",
+        "toPath": "src/types/popoverMenu.ts",
+        "sourcePath": "src/features/popover-menu/public.ts"
+      },
+      {
+        "fromPath": "src/features/popover-menu/public.ts",
+        "toPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "sourcePath": "src/features/popover-menu/public.ts"
+      },
+      {
         "fromPath": "src/features/surface/public.ts",
         "toPath": "src/types/surface.ts",
         "sourcePath": "src/features/surface/public.ts"
@@ -37430,6 +37203,31 @@
         "fromPath": "src/features/surface/public.ts",
         "toPath": "src/features/surface/adapters/inbound/Surface.tsx",
         "sourcePath": "src/features/surface/public.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/public.ts",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/public.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/public.ts",
+        "toPath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "sourcePath": "src/features/tabs/public.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/public.ts",
+        "toPath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "sourcePath": "src/features/tabs/public.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/public.ts",
+        "toPath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+        "sourcePath": "src/features/tabs/public.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/public.ts",
+        "toPath": "src/features/tabs/adapters/inbound/Tabs.tsx",
+        "sourcePath": "src/features/tabs/public.ts"
       },
       {
         "fromPath": "src/features/toast/public.ts",
@@ -37450,6 +37248,16 @@
         "fromPath": "src/features/toast/public.ts",
         "toPath": "src/features/toast/adapters/inbound/useToast.ts",
         "sourcePath": "src/features/toast/public.ts"
+      },
+      {
+        "fromPath": "src/features/tooltip/public.ts",
+        "toPath": "src/types/tooltip.ts",
+        "sourcePath": "src/features/tooltip/public.ts"
+      },
+      {
+        "fromPath": "src/features/tooltip/public.ts",
+        "toPath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "sourcePath": "src/features/tooltip/public.ts"
       },
       {
         "fromPath": "src/features/typography/public.ts",
@@ -37972,9 +37780,74 @@
         "sourcePath": "src/features/popover/utils/resolvePopoverPosition.ts"
       },
       {
+        "fromPath": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toPath": "src/types/popoverMenu.ts",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromPath": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts",
+        "toPath": "src/features/popover-menu/utils/resolveNextMenuIndex.ts",
+        "sourcePath": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/composition/TabsContext.tsx",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/composition/TabsContext.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/composition/useTabRegistration.ts",
+        "toPath": "src/features/tabs/composition/useTabsContext.ts",
+        "sourcePath": "src/features/tabs/composition/useTabRegistration.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/composition/useTabsContext.ts",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/composition/useTabsContext.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/composition/useTabsContext.ts",
+        "toPath": "src/features/tabs/composition/TabsContext.tsx",
+        "sourcePath": "src/features/tabs/composition/useTabsContext.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/composition/useTabsController.ts",
+        "toPath": "src/internal/useControllableState.ts",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/composition/useTabsController.ts",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/composition/useTabsController.ts",
+        "toPath": "src/features/tabs/utils/resolveTabElementId.ts",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/utils/resolveNextTabValue.test.ts",
+        "toPath": "src/features/tabs/utils/resolveNextTabValue.ts",
+        "sourcePath": "src/features/tabs/utils/resolveNextTabValue.test.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/utils/resolveNextTabValue.ts",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/utils/resolveNextTabValue.ts"
+      },
+      {
+        "fromPath": "src/features/tabs/utils/resolveTabElementId.test.ts",
+        "toPath": "src/features/tabs/utils/resolveTabElementId.ts",
+        "sourcePath": "src/features/tabs/utils/resolveTabElementId.test.ts"
+      },
+      {
         "fromPath": "src/features/toast/composition/ToastContext.ts",
         "toPath": "src/types/toast.ts",
         "sourcePath": "src/features/toast/composition/ToastContext.ts"
+      },
+      {
+        "fromPath": "src/features/toast/composition/useToastRuntime.ts",
+        "toPath": "src/types/toast.ts",
+        "sourcePath": "src/features/toast/composition/useToastRuntime.ts"
       },
       {
         "fromPath": "src/features/typography/utils/resolveHeadingTextStyle.test.ts",
@@ -38397,9 +38270,44 @@
         "sourcePath": "src/features/layout/adapters/inbound/Stack.tsx"
       },
       {
-        "fromPath": "src/features/popover/adapters/inbound/Popover.tsx",
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toPath": "src/internal/focus/FocusScope.tsx",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
         "toPath": "src/internal/overlay/Portal.tsx",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toPath": "src/internal/resolvePointerEvents.ts",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toPath": "src/internal/resolvers/index.ts",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toPath": "src/layout/index.ts",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toPath": "src/types/modal.ts",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toPath": "src/features/surface/public.ts",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromPath": "src/features/popover/adapters/inbound/Popover.tsx",
@@ -38413,8 +38321,88 @@
       },
       {
         "fromPath": "src/features/popover/adapters/inbound/Popover.tsx",
-        "toPath": "src/features/popover/utils/resolvePopoverPosition.ts",
+        "toPath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx",
         "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx",
+        "toPath": "src/internal/overlay/Portal.tsx",
+        "sourcePath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx",
+        "toPath": "src/types/popover.ts",
+        "sourcePath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx",
+        "toPath": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+        "sourcePath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+        "toPath": "src/types/popover.ts",
+        "sourcePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+        "toPath": "src/features/popover/utils/resolvePopoverPosition.ts",
+        "sourcePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/internal/focus/FocusScope.tsx",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/internal/focus/useFocusManager.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/layout/index.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/types/popoverMenu.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/features/popover/public.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/features/surface/public.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toPath": "src/features/popover-menu/utils/resolveNextMenuIndex.ts",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
       },
       {
         "fromPath": "src/features/surface/adapters/inbound/Surface.tsx",
@@ -38430,6 +38418,91 @@
         "fromPath": "src/features/surface/adapters/inbound/Surface.tsx",
         "toPath": "src/features/layout/public.ts",
         "sourcePath": "src/features/surface/adapters/inbound/Surface.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toPath": "src/features/tabs/composition/useTabRegistration.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toPath": "src/features/tabs/composition/useTabsContext.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toPath": "src/internal/focus/useFocusManager.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toPath": "src/features/tabs/composition/useTabsContext.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toPath": "src/features/tabs/utils/resolveNextTabValue.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+        "toPath": "src/features/tabs/composition/useTabsContext.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tabs.tsx",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tabs.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tabs.tsx",
+        "toPath": "src/features/tabs/composition/TabsContext.tsx",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/Tabs.tsx",
+        "toPath": "src/features/tabs/composition/useTabsController.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
       },
       {
         "fromPath": "src/features/toast/adapters/inbound/Toast.tsx",
@@ -38493,6 +38566,11 @@
       },
       {
         "fromPath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
+        "toPath": "src/features/toast/composition/useToastRuntime.ts",
+        "sourcePath": "src/features/toast/adapters/inbound/ToastProvider.tsx"
+      },
+      {
+        "fromPath": "src/features/toast/adapters/inbound/ToastProvider.tsx",
         "toPath": "src/features/toast/adapters/inbound/Toast.tsx",
         "sourcePath": "src/features/toast/adapters/inbound/ToastProvider.tsx"
       },
@@ -38510,6 +38588,36 @@
         "fromPath": "src/features/toast/adapters/inbound/useToast.ts",
         "toPath": "src/features/toast/composition/ToastContext.ts",
         "sourcePath": "src/features/toast/adapters/inbound/useToast.ts"
+      },
+      {
+        "fromPath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
+      },
+      {
+        "fromPath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "toPath": "src/types/tooltip.ts",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
+      },
+      {
+        "fromPath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "toPath": "src/features/popover/public.ts",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
+      },
+      {
+        "fromPath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "toPath": "src/features/surface/public.ts",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
+      },
+      {
+        "fromPath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
+      },
+      {
+        "fromPath": "src/features/tooltip/adapters/inbound/Tooltip.tsx",
+        "toPath": "src/features/tooltip/composition/useTooltipVisibility.ts",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromPath": "src/features/typography/adapters/inbound/Heading.tsx",
@@ -38840,24 +38948,6 @@
         "toSymbol": "use",
         "callExpression": "use",
         "sourcePath": "src/context/TranslationContext.tsx"
-      },
-      {
-        "fromSymbol": "ToastButton",
-        "toSymbol": "useToast",
-        "callExpression": "useToast",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromSymbol": "src/examples/DocsExamples.tsx",
-        "toSymbol": "showToast",
-        "callExpression": "showToast",
-        "sourcePath": "src/examples/DocsExamples.tsx"
-      },
-      {
-        "fromSymbol": "src/examples/DocsExamples.tsx",
-        "toSymbol": "setModalVisible",
-        "callExpression": "setModalVisible",
-        "sourcePath": "src/examples/DocsExamples.tsx"
       },
       {
         "fromSymbol": "src/internal/resolvePointerEvents.test.ts",
@@ -39688,150 +39778,6 @@
         "sourcePath": "src/components/list-item/ListItem.tsx"
       },
       {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "resolvePointerEvents",
-        "callExpression": "resolvePointerEvents",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "measureNode",
-        "toSymbol": "measureInWindow",
-        "callExpression": "measurableNode?.measureInWindow",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "callback",
-        "callExpression": "callback",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "Menu",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "Menu",
-        "toSymbol": "useFocusManager",
-        "callExpression": "useFocusManager",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "Menu",
-        "toSymbol": "resolveOverlayAnimation",
-        "callExpression": "resolveOverlayAnimation",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "setOpen",
-        "callExpression": "setOpen",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "dismiss",
-        "callExpression": "dismiss",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "activate",
-        "callExpression": "action.activate",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "closeMenu",
-        "callExpression": "closeMenu",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "measureNode",
-        "callExpression": "measureNode",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "setActiveIndex",
-        "callExpression": "setActiveIndex",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "bindKeydown",
-        "callExpression": "bindKeydown",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "preventDefault",
-        "callExpression": "event.preventDefault",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "resolveNextMenuIndex",
-        "callExpression": "resolveNextMenuIndex",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "activateAction",
-        "callExpression": "activateAction",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/Menu.tsx",
-        "toSymbol": "renderActionContent",
-        "callExpression": "renderActionContent",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "src/components/menu/navigation.test.ts",
-        "toSymbol": "describe",
-        "callExpression": "describe",
-        "sourcePath": "src/components/menu/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/menu/navigation.test.ts",
-        "toSymbol": "it",
-        "callExpression": "it",
-        "sourcePath": "src/components/menu/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/menu/navigation.test.ts",
-        "toSymbol": "expect",
-        "callExpression": "expect",
-        "sourcePath": "src/components/menu/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/menu/navigation.test.ts",
-        "toSymbol": "resolveNextMenuIndex",
-        "callExpression": "resolveNextMenuIndex",
-        "sourcePath": "src/components/menu/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/modal/Modal.tsx",
-        "toSymbol": "resolvePointerEvents",
-        "callExpression": "resolvePointerEvents",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromSymbol": "Modal",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromSymbol": "Modal",
-        "toSymbol": "resolveOverlayAnimation",
-        "callExpression": "resolveOverlayAnimation",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
         "fromSymbol": "Switch",
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
@@ -39872,282 +39818,6 @@
         "toSymbol": "resolveSelectionControlColors",
         "callExpression": "resolveSelectionControlColors",
         "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/a11y.test.ts",
-        "toSymbol": "describe",
-        "callExpression": "describe",
-        "sourcePath": "src/components/tabs/a11y.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/a11y.test.ts",
-        "toSymbol": "it",
-        "callExpression": "it",
-        "sourcePath": "src/components/tabs/a11y.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/a11y.test.ts",
-        "toSymbol": "expect",
-        "callExpression": "expect",
-        "sourcePath": "src/components/tabs/a11y.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/a11y.test.ts",
-        "toSymbol": "getTabId",
-        "callExpression": "getTabId",
-        "sourcePath": "src/components/tabs/a11y.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/a11y.test.ts",
-        "toSymbol": "getTabPanelId",
-        "callExpression": "getTabPanelId",
-        "sourcePath": "src/components/tabs/a11y.test.ts"
-      },
-      {
-        "fromSymbol": "getTabId",
-        "toSymbol": "createTabsIdBase",
-        "callExpression": "createTabsIdBase",
-        "sourcePath": "src/components/tabs/a11y.ts"
-      },
-      {
-        "fromSymbol": "getTabId",
-        "toSymbol": "sanitizeTabValue",
-        "callExpression": "sanitizeTabValue",
-        "sourcePath": "src/components/tabs/a11y.ts"
-      },
-      {
-        "fromSymbol": "getTabPanelId",
-        "toSymbol": "createTabsIdBase",
-        "callExpression": "createTabsIdBase",
-        "sourcePath": "src/components/tabs/a11y.ts"
-      },
-      {
-        "fromSymbol": "getTabPanelId",
-        "toSymbol": "sanitizeTabValue",
-        "callExpression": "sanitizeTabValue",
-        "sourcePath": "src/components/tabs/a11y.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/navigation.test.ts",
-        "toSymbol": "describe",
-        "callExpression": "describe",
-        "sourcePath": "src/components/tabs/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/navigation.test.ts",
-        "toSymbol": "it",
-        "callExpression": "it",
-        "sourcePath": "src/components/tabs/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/navigation.test.ts",
-        "toSymbol": "expect",
-        "callExpression": "expect",
-        "sourcePath": "src/components/tabs/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "src/components/tabs/navigation.test.ts",
-        "toSymbol": "resolveNextTabValue",
-        "callExpression": "resolveNextTabValue",
-        "sourcePath": "src/components/tabs/navigation.test.ts"
-      },
-      {
-        "fromSymbol": "Tab",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "Tab",
-        "toSymbol": "useTabsContext",
-        "callExpression": "useTabsContext",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "Tab",
-        "toSymbol": "getTabId",
-        "callExpression": "getTabId",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "Tab",
-        "toSymbol": "getPanelId",
-        "callExpression": "getPanelId",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/Tab.tsx",
-        "toSymbol": "registerTab",
-        "callExpression": "registerTab",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "focus",
-        "toSymbol": "focus",
-        "callExpression": "focusable?.focus",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/Tab.tsx",
-        "toSymbol": "unregisterTab",
-        "callExpression": "unregisterTab",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/Tab.tsx",
-        "toSymbol": "setFocusedValue",
-        "callExpression": "setFocusedValue",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/Tab.tsx",
-        "toSymbol": "setActiveValue",
-        "callExpression": "setActiveValue",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "TabList",
-        "toSymbol": "useFocusManager",
-        "callExpression": "useFocusManager",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "TabList",
-        "toSymbol": "useTabsContext",
-        "callExpression": "useTabsContext",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/TabList.tsx",
-        "toSymbol": "bindKeydown",
-        "callExpression": "bindKeydown",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/TabList.tsx",
-        "toSymbol": "resolveNextTabValue",
-        "callExpression": "resolveNextTabValue",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/TabList.tsx",
-        "toSymbol": "preventDefault",
-        "callExpression": "event.preventDefault",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/TabList.tsx",
-        "toSymbol": "focus",
-        "callExpression": "nextTab?.focus",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/TabList.tsx",
-        "toSymbol": "setActiveValue",
-        "callExpression": "setActiveValue",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "TabPanel",
-        "toSymbol": "useTabsContext",
-        "callExpression": "useTabsContext",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
-      },
-      {
-        "fromSymbol": "TabPanel",
-        "toSymbol": "getTabId",
-        "callExpression": "getTabId",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
-      },
-      {
-        "fromSymbol": "TabPanel",
-        "toSymbol": "getPanelId",
-        "callExpression": "getPanelId",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
-      },
-      {
-        "fromSymbol": "Tabs",
-        "toSymbol": "useControllableState",
-        "callExpression": "useControllableState",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "onChange",
-        "toSymbol": "onValueChange",
-        "callExpression": "onValueChange",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/Tabs.tsx",
-        "toSymbol": "setTabs",
-        "callExpression": "setTabs",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tabs/Tabs.tsx",
-        "toSymbol": "setActiveValue",
-        "callExpression": "setActiveValue",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "getPanelId",
-        "toSymbol": "resolveTabPanelId",
-        "callExpression": "resolveTabPanelId",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "getTabId",
-        "toSymbol": "resolveTabId",
-        "callExpression": "resolveTabId",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "setActiveValue",
-        "toSymbol": "setActiveValue",
-        "callExpression": "setActiveValue",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tooltip/Tooltip.tsx",
-        "toSymbol": "resolvePointerEvents",
-        "callExpression": "resolvePointerEvents",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromSymbol": "measureNode",
-        "toSymbol": "measureInWindow",
-        "callExpression": "measurableNode?.measureInWindow",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tooltip/Tooltip.tsx",
-        "toSymbol": "callback",
-        "callExpression": "callback",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromSymbol": "Tooltip",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromSymbol": "Tooltip",
-        "toSymbol": "resolveOverlayAnimation",
-        "callExpression": "resolveOverlayAnimation",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tooltip/Tooltip.tsx",
-        "toSymbol": "measureNode",
-        "callExpression": "measureNode",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromSymbol": "src/components/tooltip/Tooltip.tsx",
-        "toSymbol": "setVisible",
-        "callExpression": "setVisible",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
       },
       {
         "fromSymbol": "src/core/responsive/getBreakpointFromWidth.test.ts",
@@ -40264,6 +39934,24 @@
         "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.tsx"
       },
       {
+        "fromSymbol": "BottomSheetHost",
+        "toSymbol": "renderBottomSheetContent",
+        "callExpression": "renderBottomSheetContent",
+        "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.tsx"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/public.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/bottom-sheet/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/bottom-sheet/public.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/bottom-sheet/public.test.ts"
+      },
+      {
         "fromSymbol": "src/features/bottom-sheet/useBottomSheet.test.tsx",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -40292,6 +39980,30 @@
         "toSymbol": "renderToStaticMarkup",
         "callExpression": "renderToStaticMarkup",
         "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/public.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/popover-menu/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/public.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/popover-menu/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tooltip/public.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/tooltip/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tooltip/public.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/tooltip/public.test.ts"
       },
       {
         "fromSymbol": "FocusScope",
@@ -41098,10 +40810,226 @@
         "sourcePath": "src/features/popover/utils/resolvePopoverPosition.ts"
       },
       {
+        "fromSymbol": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toSymbol": "setActiveIndex",
+        "callExpression": "setActiveIndex",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toSymbol": "resolveInitialIndex",
+        "callExpression": "resolveInitialIndex",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toSymbol": "dismiss",
+        "callExpression": "dismiss",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toSymbol": "setOpen",
+        "callExpression": "setOpen",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toSymbol": "handleOpenChange",
+        "callExpression": "handleOpenChange",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toSymbol": "activate",
+        "callExpression": "action.activate",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/composition/usePopoverMenuController.ts",
+        "toSymbol": "close",
+        "callExpression": "close",
+        "sourcePath": "src/features/popover-menu/composition/usePopoverMenuController.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts",
+        "toSymbol": "it",
+        "callExpression": "it",
+        "sourcePath": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts",
+        "toSymbol": "resolveNextMenuIndex",
+        "callExpression": "resolveNextMenuIndex",
+        "sourcePath": "src/features/popover-menu/utils/resolveNextMenuIndex.test.ts"
+      },
+      {
+        "fromSymbol": "useTabRegistration",
+        "toSymbol": "useTabsContext",
+        "callExpression": "useTabsContext",
+        "sourcePath": "src/features/tabs/composition/useTabRegistration.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/composition/useTabRegistration.ts",
+        "toSymbol": "registerTab",
+        "callExpression": "registerTab",
+        "sourcePath": "src/features/tabs/composition/useTabRegistration.ts"
+      },
+      {
+        "fromSymbol": "focus",
+        "toSymbol": "focus",
+        "callExpression": "focusable?.focus",
+        "sourcePath": "src/features/tabs/composition/useTabRegistration.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/composition/useTabRegistration.ts",
+        "toSymbol": "unregisterTab",
+        "callExpression": "unregisterTab",
+        "sourcePath": "src/features/tabs/composition/useTabRegistration.ts"
+      },
+      {
+        "fromSymbol": "useTabsController",
+        "toSymbol": "useControllableState",
+        "callExpression": "useControllableState",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromSymbol": "onChange",
+        "toSymbol": "onValueChange",
+        "callExpression": "onValueChange",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/composition/useTabsController.ts",
+        "toSymbol": "setTabs",
+        "callExpression": "setTabs",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/composition/useTabsController.ts",
+        "toSymbol": "setActiveValue",
+        "callExpression": "setActiveValue",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromSymbol": "getPanelId",
+        "toSymbol": "resolveTabElementId",
+        "callExpression": "resolveTabElementId",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromSymbol": "getTabId",
+        "toSymbol": "resolveTabElementId",
+        "callExpression": "resolveTabElementId",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromSymbol": "setActiveValue",
+        "toSymbol": "setActiveValue",
+        "callExpression": "setActiveValue",
+        "sourcePath": "src/features/tabs/composition/useTabsController.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveNextTabValue.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/tabs/utils/resolveNextTabValue.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveNextTabValue.test.ts",
+        "toSymbol": "it",
+        "callExpression": "it",
+        "sourcePath": "src/features/tabs/utils/resolveNextTabValue.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveNextTabValue.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/tabs/utils/resolveNextTabValue.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveNextTabValue.test.ts",
+        "toSymbol": "resolveNextTabValue",
+        "callExpression": "resolveNextTabValue",
+        "sourcePath": "src/features/tabs/utils/resolveNextTabValue.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveTabElementId.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/tabs/utils/resolveTabElementId.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveTabElementId.test.ts",
+        "toSymbol": "it",
+        "callExpression": "it",
+        "sourcePath": "src/features/tabs/utils/resolveTabElementId.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveTabElementId.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/tabs/utils/resolveTabElementId.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/resolveTabElementId.test.ts",
+        "toSymbol": "resolveTabElementId",
+        "callExpression": "resolveTabElementId",
+        "sourcePath": "src/features/tabs/utils/resolveTabElementId.test.ts"
+      },
+      {
+        "fromSymbol": "resolveTabElementId",
+        "toSymbol": "sanitizeTabValue",
+        "callExpression": "sanitizeTabValue",
+        "sourcePath": "src/features/tabs/utils/resolveTabElementId.ts"
+      },
+      {
         "fromSymbol": "src/features/toast/composition/ToastContext.ts",
         "toSymbol": "createContext",
         "callExpression": "createContext",
         "sourcePath": "src/features/toast/composition/ToastContext.ts"
+      },
+      {
+        "fromSymbol": "src/features/toast/composition/useToastRuntime.ts",
+        "toSymbol": "setToasts",
+        "callExpression": "setToasts",
+        "sourcePath": "src/features/toast/composition/useToastRuntime.ts"
+      },
+      {
+        "fromSymbol": "useToastRuntime",
+        "toSymbol": "useToastTimers",
+        "callExpression": "useToastTimers",
+        "sourcePath": "src/features/toast/composition/useToastRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/toast/composition/useToastRuntime.ts",
+        "toSymbol": "dismissToast",
+        "callExpression": "dismissToast",
+        "sourcePath": "src/features/toast/composition/useToastRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/tooltip/composition/useTooltipVisibility.ts",
+        "toSymbol": "clearTimer",
+        "callExpression": "clearTimer",
+        "sourcePath": "src/features/tooltip/composition/useTooltipVisibility.ts"
+      },
+      {
+        "fromSymbol": "src/features/tooltip/composition/useTooltipVisibility.ts",
+        "toSymbol": "setVisible",
+        "callExpression": "setVisible",
+        "sourcePath": "src/features/tooltip/composition/useTooltipVisibility.ts"
       },
       {
         "fromSymbol": "src/features/typography/utils/resolveHeadingTextStyle.test.ts",
@@ -41620,10 +41548,28 @@
         "sourcePath": "src/features/layout/adapters/inbound/Stack.tsx"
       },
       {
-        "fromSymbol": "Popover",
-        "toSymbol": "useWindowDimensions",
-        "callExpression": "useWindowDimensions",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
+        "fromSymbol": "src/features/modal/adapters/inbound/Modal.tsx",
+        "toSymbol": "resolvePointerEvents",
+        "callExpression": "resolvePointerEvents",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromSymbol": "Modal",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromSymbol": "Modal",
+        "toSymbol": "resolveOverlayAnimation",
+        "callExpression": "resolveOverlayAnimation",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromSymbol": "Modal",
+        "toSymbol": "resolveBackdropStyle",
+        "callExpression": "resolveBackdropStyle",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromSymbol": "Popover",
@@ -41638,34 +41584,106 @@
         "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
       },
       {
-        "fromSymbol": "src/features/popover/adapters/inbound/Popover.tsx",
-        "toSymbol": "setAnchorLayout",
-        "callExpression": "setAnchorLayout",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
-      },
-      {
-        "fromSymbol": "src/features/popover/adapters/inbound/Popover.tsx",
-        "toSymbol": "measureAnchor",
-        "callExpression": "measureAnchor",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
-      },
-      {
-        "fromSymbol": "Popover",
-        "toSymbol": "resolvePopoverPosition",
-        "callExpression": "resolvePopoverPosition",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
-      },
-      {
         "fromSymbol": "Popover",
         "toSymbol": "anchor",
-        "callExpression": "anchor",
+        "callExpression": "props.anchor",
         "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
       },
       {
-        "fromSymbol": "src/features/popover/adapters/inbound/Popover.tsx",
+        "fromSymbol": "PopoverOverlay",
+        "toSymbol": "usePopoverLayout",
+        "callExpression": "usePopoverLayout",
+        "sourcePath": "src/features/popover/adapters/inbound/PopoverOverlay.tsx"
+      },
+      {
+        "fromSymbol": "usePopoverLayout",
+        "toSymbol": "useWindowDimensions",
+        "callExpression": "useWindowDimensions",
+        "sourcePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+        "toSymbol": "setAnchorLayout",
+        "callExpression": "setAnchorLayout",
+        "sourcePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
+        "toSymbol": "measureAnchor",
+        "callExpression": "measureAnchor",
+        "sourcePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/usePopoverLayout.ts",
         "toSymbol": "setContentSize",
         "callExpression": "setContentSize",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
+        "sourcePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts"
+      },
+      {
+        "fromSymbol": "usePopoverLayout",
+        "toSymbol": "resolvePopoverPosition",
+        "callExpression": "resolvePopoverPosition",
+        "sourcePath": "src/features/popover/adapters/inbound/usePopoverLayout.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenu",
+        "toSymbol": "usePopoverMenuController",
+        "callExpression": "usePopoverMenuController",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "PopoverMenuContent",
+        "toSymbol": "usePopoverMenuKeyboard",
+        "callExpression": "usePopoverMenuKeyboard",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "usePopoverMenuKeyboard",
+        "toSymbol": "useFocusManager",
+        "callExpression": "useFocusManager",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toSymbol": "bindKeydown",
+        "callExpression": "bindKeydown",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toSymbol": "preventDefault",
+        "callExpression": "event.preventDefault",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toSymbol": "setActiveIndex",
+        "callExpression": "setActiveIndex",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toSymbol": "resolveNextMenuIndex",
+        "callExpression": "resolveNextMenuIndex",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toSymbol": "activateAction",
+        "callExpression": "activateAction",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
+        "toSymbol": "close",
+        "callExpression": "close",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "PopoverMenuItem",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
       },
       {
         "fromSymbol": "Surface",
@@ -41678,6 +41696,126 @@
         "toSymbol": "resolveSurfaceVariantStyles",
         "callExpression": "resolveSurfaceVariantStyles",
         "sourcePath": "src/features/surface/adapters/inbound/Surface.tsx"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toSymbol": "useTabsContext",
+        "callExpression": "useTabsContext",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toSymbol": "useTabRegistration",
+        "callExpression": "useTabRegistration",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toSymbol": "setActiveValue",
+        "callExpression": "setActiveValue",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toSymbol": "getPanelId",
+        "callExpression": "getPanelId",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toSymbol": "getTabId",
+        "callExpression": "getTabId",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "toSymbol": "setFocusedValue",
+        "callExpression": "setFocusedValue",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toSymbol": "resolveTabStyle",
+        "callExpression": "resolveTabStyle",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "TabList",
+        "toSymbol": "useFocusManager",
+        "callExpression": "useFocusManager",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "TabList",
+        "toSymbol": "useTabsContext",
+        "callExpression": "useTabsContext",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toSymbol": "bindKeydown",
+        "callExpression": "bindKeydown",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toSymbol": "isTabNavigationKey",
+        "callExpression": "isTabNavigationKey",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toSymbol": "resolveNextTabValue",
+        "callExpression": "resolveNextTabValue",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toSymbol": "preventDefault",
+        "callExpression": "event.preventDefault",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toSymbol": "focus",
+        "callExpression": "tabs.find((tab) => tab.value === nextValue)?.focus",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toSymbol": "setActiveValue",
+        "callExpression": "setActiveValue",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "TabPanel",
+        "toSymbol": "useTabsContext",
+        "callExpression": "useTabsContext",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromSymbol": "TabPanel",
+        "toSymbol": "getTabId",
+        "callExpression": "getTabId",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromSymbol": "TabPanel",
+        "toSymbol": "getPanelId",
+        "callExpression": "getPanelId",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromSymbol": "Tabs",
+        "toSymbol": "useTabsController",
+        "callExpression": "useTabsController",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
       },
       {
         "fromSymbol": "Toast",
@@ -41704,15 +41842,15 @@
         "sourcePath": "src/features/toast/adapters/inbound/ToastProvider.tsx"
       },
       {
-        "fromSymbol": "src/features/toast/adapters/inbound/ToastProvider.tsx",
-        "toSymbol": "setToasts",
-        "callExpression": "setToasts",
+        "fromSymbol": "ToastProvider",
+        "toSymbol": "useToastRuntime",
+        "callExpression": "useToastRuntime",
         "sourcePath": "src/features/toast/adapters/inbound/ToastProvider.tsx"
       },
       {
         "fromSymbol": "src/features/toast/adapters/inbound/ToastProvider.tsx",
         "toSymbol": "dismissToast",
-        "callExpression": "dismissToast",
+        "callExpression": "controller.dismissToast",
         "sourcePath": "src/features/toast/adapters/inbound/ToastProvider.tsx"
       },
       {
@@ -41750,6 +41888,18 @@
         "toSymbol": "use",
         "callExpression": "use",
         "sourcePath": "src/features/toast/adapters/inbound/useToast.ts"
+      },
+      {
+        "fromSymbol": "Tooltip",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
+      },
+      {
+        "fromSymbol": "Tooltip",
+        "toSymbol": "useTooltipVisibility",
+        "callExpression": "useTooltipVisibility",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromSymbol": "Heading",
@@ -42092,76 +42242,6 @@
         "sourcePath": "src/components/list-item/ListItem.tsx"
       },
       {
-        "fromSymbol": "MenuAction",
-        "toType": "MenuActionIntent",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromSymbol": "MenuAction",
-        "toType": "React",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromSymbol": "MenuAction",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromSymbol": "MenuProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromSymbol": "MenuProps",
-        "toType": "MenuAction",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromSymbol": "MenuProps",
-        "toType": "React",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromSymbol": "MenuProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/menu/types.ts"
-      },
-      {
-        "fromSymbol": "Menu",
-        "toType": "MenuProps",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "Menu",
-        "toType": "React",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromSymbol": "ModalProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/modal/types.ts"
-      },
-      {
-        "fromSymbol": "ModalProps",
-        "toType": "React",
-        "sourcePath": "src/components/modal/types.ts"
-      },
-      {
-        "fromSymbol": "ModalProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/modal/types.ts"
-      },
-      {
-        "fromSymbol": "Modal",
-        "toType": "ModalProps",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
-        "fromSymbol": "Modal",
-        "toType": "React",
-        "sourcePath": "src/components/modal/Modal.tsx"
-      },
-      {
         "fromSymbol": "SwitchProps",
         "toType": "ColorValue",
         "sourcePath": "src/components/switch/types.ts"
@@ -42220,91 +42300,6 @@
         "fromSymbol": "Switch",
         "toType": "SwitchProps",
         "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "TabListProps",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabListProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabPanelProps",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabPanelProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabProps",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabsProps",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "TabsProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/tabs/types.ts"
-      },
-      {
-        "fromSymbol": "Tab",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "Tab",
-        "toType": "TabProps",
-        "sourcePath": "src/components/tabs/Tab.tsx"
-      },
-      {
-        "fromSymbol": "TabList",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "TabList",
-        "toType": "TabListProps",
-        "sourcePath": "src/components/tabs/TabList.tsx"
-      },
-      {
-        "fromSymbol": "TabPanel",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
-      },
-      {
-        "fromSymbol": "TabPanel",
-        "toType": "TabPanelProps",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
-      },
-      {
-        "fromSymbol": "Tabs",
-        "toType": "React",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
-      },
-      {
-        "fromSymbol": "Tabs",
-        "toType": "TabsProps",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
       },
       {
         "fromSymbol": "TextareaProps",
@@ -42500,31 +42495,6 @@
         "fromSymbol": "Textarea",
         "toType": "TextareaProps",
         "sourcePath": "src/components/textarea/Textarea.tsx"
-      },
-      {
-        "fromSymbol": "TooltipProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/tooltip/types.ts"
-      },
-      {
-        "fromSymbol": "TooltipProps",
-        "toType": "React",
-        "sourcePath": "src/components/tooltip/types.ts"
-      },
-      {
-        "fromSymbol": "TooltipProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/tooltip/types.ts"
-      },
-      {
-        "fromSymbol": "Tooltip",
-        "toType": "React",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromSymbol": "Tooltip",
-        "toType": "TooltipProps",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
       },
       {
         "fromSymbol": "FontProvider",
@@ -44007,6 +43977,31 @@
         "sourcePath": "src/features/layout/adapters/inbound/Stack.tsx"
       },
       {
+        "fromSymbol": "ModalProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/types/modal.ts"
+      },
+      {
+        "fromSymbol": "ModalProps",
+        "toType": "React",
+        "sourcePath": "src/types/modal.ts"
+      },
+      {
+        "fromSymbol": "ModalProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/modal.ts"
+      },
+      {
+        "fromSymbol": "Modal",
+        "toType": "ModalProps",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
+        "fromSymbol": "Modal",
+        "toType": "React",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
+      },
+      {
         "fromSymbol": "PopoverProps",
         "toType": "InteractionPolicy",
         "sourcePath": "src/types/popover.ts"
@@ -44040,6 +44035,56 @@
         "fromSymbol": "Popover",
         "toType": "React",
         "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
+      },
+      {
+        "fromSymbol": "PopoverMenuAction",
+        "toType": "PopoverMenuActionIntent",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenuAction",
+        "toType": "React",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenuAction",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenuProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenuProps",
+        "toType": "PopoverAnchorRenderProps",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenuProps",
+        "toType": "PopoverMenuAction",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenuProps",
+        "toType": "React",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenuProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/popoverMenu.ts"
+      },
+      {
+        "fromSymbol": "PopoverMenu",
+        "toType": "PopoverMenuProps",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "PopoverMenu",
+        "toType": "React",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
       },
       {
         "fromSymbol": "SurfaceProps",
@@ -44105,6 +44150,91 @@
         "fromSymbol": "Surface",
         "toType": "SurfaceProps",
         "sourcePath": "src/features/surface/adapters/inbound/Surface.tsx"
+      },
+      {
+        "fromSymbol": "TabListProps",
+        "toType": "React",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabListProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabPanelProps",
+        "toType": "React",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabPanelProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabProps",
+        "toType": "React",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabsProps",
+        "toType": "React",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "TabsProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toType": "React",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "Tab",
+        "toType": "TabProps",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
+        "fromSymbol": "TabList",
+        "toType": "React",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "TabList",
+        "toType": "TabListProps",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "TabPanel",
+        "toType": "React",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromSymbol": "TabPanel",
+        "toType": "TabPanelProps",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromSymbol": "Tabs",
+        "toType": "React",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
+      },
+      {
+        "fromSymbol": "Tabs",
+        "toType": "TabsProps",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
       },
       {
         "fromSymbol": "ToastController",
@@ -44185,6 +44315,31 @@
         "fromSymbol": "useToast",
         "toType": "ToastController",
         "sourcePath": "src/features/toast/adapters/inbound/useToast.ts"
+      },
+      {
+        "fromSymbol": "TooltipProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/types/tooltip.ts"
+      },
+      {
+        "fromSymbol": "TooltipProps",
+        "toType": "React",
+        "sourcePath": "src/types/tooltip.ts"
+      },
+      {
+        "fromSymbol": "TooltipProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/tooltip.ts"
+      },
+      {
+        "fromSymbol": "Tooltip",
+        "toType": "React",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
+      },
+      {
+        "fromSymbol": "Tooltip",
+        "toType": "TooltipProps",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromSymbol": "HeadingProps",
@@ -45360,136 +45515,70 @@
         "sourcePath": "src/components/list-item/ListItem.tsx"
       },
       {
-        "fromComponent": "Menu",
-        "toComponent": "View",
-        "jsxElement": "<View collapsable={false} ref={anchorRef}>",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n        onPress={passive ? undefined : open ? closeMenu : openMenu}\n        testID={testID ? `${testID}-trigger` : undefined}\n      >",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "Portal",
-        "jsxElement": "<Portal layer=\"menu\" visible={open && Boolean(layout)}>",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "View",
-        "jsxElement": "<View\n          {...boxNonePointerEvents.props}\n          style={[\n            boxNonePointerEvents.style,\n            {\n              bottom: 0,\n              left: 0,\n              position: 'absolute',\n              right: 0,\n              top: 0,\n            },\n          ]}\n        >",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n            onPress={passive ? undefined : closeMenu}\n            style={{\n              bottom: 0,\n              left: 0,\n              position: 'absolute',\n              right: 0,\n              top: 0,\n            }}\n          />",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "FocusScope",
-        "jsxElement": "<FocusScope active={open} onEscape={passive ? undefined : closeMenu}>",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "View",
-        "jsxElement": "<View\n              style={{\n                left: layout?.x ?? 0,\n                position: 'absolute',\n                top: (layout?.y ?? 0) + (layout?.height ?? 0) + animation.offset,\n              }}\n            >",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "Surface",
-        "jsxElement": "<Surface\n                accessibilityRole=\"menu\"\n                p=\"xs\"\n                style={{\n                  minWidth: Math.max(layout?.width ?? 0, 220),\n                  shadowOpacity: 0.12,\n                  shadowRadius: 12,\n                  shadowOffset: { width: 0, height: 6 },\n                }}\n                testID={testID}\n                variant=\"raised\"\n              >",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n                      accessibilityRole=\"menuitem\"\n                      accessibilityState={{ disabled: action.disabled, selected }}\n                      disabled={action.disabled}\n                      key={action.id}\n                      onPress={passive ? undefined : () => activateAction(action)}\n                    >",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
-        "fromComponent": "Menu",
-        "toComponent": "Box",
-        "jsxElement": "<Box\n                        px=\"m\"\n                        py=\"s\"\n                        radius=\"s\"\n                        style={{\n                          backgroundColor: selected\n                            ? theme.semantics.action.neutral.softBg\n                            : 'transparent',\n                          opacity: action.disabled ? 0.56 : 1,\n                        }}\n                        testID={testID ? `${testID}-item-${action.id}` : undefined}\n                      >",
-        "sourcePath": "src/components/menu/Menu.tsx"
-      },
-      {
         "fromComponent": "Modal",
         "toComponent": "Portal",
         "jsxElement": "<Portal layer=\"modal\" visible={visible}>",
-        "sourcePath": "src/components/modal/Modal.tsx"
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromComponent": "Modal",
         "toComponent": "View",
-        "jsxElement": "<View\n        {...boxNonePointerEvents.props}\n        style={[\n          boxNonePointerEvents.style,\n          {\n            bottom: 0,\n            left: 0,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          },\n        ]}\n      >",
-        "sourcePath": "src/components/modal/Modal.tsx"
+        "jsxElement": "<View {...boxNonePointerEvents.props} style={[boxNonePointerEvents.style, styles.fill]}>",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromComponent": "Modal",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}\n          style={{\n            backgroundColor: theme.semantics.neutral.text,\n            bottom: 0,\n            left: 0,\n            opacity: animation.backdropOpacity,\n            position: 'absolute',\n            right: 0,\n            top: 0,\n          }}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
-        "sourcePath": "src/components/modal/Modal.tsx"
+        "jsxElement": "<Pressable\n          onPress={backdropPress}\n          style={[\n            styles.fill,\n            resolveBackdropStyle(theme.semantics.neutral.text, animation.backdropOpacity),\n          ]}\n          testID={testID ? `${testID}-backdrop` : undefined}\n        />",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromComponent": "Modal",
         "toComponent": "FocusScope",
         "jsxElement": "<FocusScope\n          active={visible}\n          onEscape={passive ? undefined : onDismiss}\n          testID={testID ? `${testID}-focus` : undefined}\n        >",
-        "sourcePath": "src/components/modal/Modal.tsx"
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromComponent": "Modal",
         "toComponent": "Center",
-        "jsxElement": "<Center\n            p=\"l\"\n            style={{\n              flex: 1,\n            }}\n          >",
-        "sourcePath": "src/components/modal/Modal.tsx"
+        "jsxElement": "<Center p=\"l\" style={styles.center}>",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromComponent": "Modal",
         "toComponent": "View",
-        "jsxElement": "<View\n              accessible\n              accessibilityViewIsModal\n              style={{\n                maxWidth: 560,\n                width: '100%',\n              }}\n            >",
-        "sourcePath": "src/components/modal/Modal.tsx"
+        "jsxElement": "<View accessible accessibilityViewIsModal style={styles.content}>",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromComponent": "Modal",
         "toComponent": "Surface",
-        "jsxElement": "<Surface\n                p=\"l\"\n                style={{\n                  shadowOpacity: 0.14,\n                  shadowRadius: 18,\n                  shadowOffset: { width: 0, height: 8 },\n                }}\n                testID={testID}\n                variant=\"raised\"\n              >",
-        "sourcePath": "src/components/modal/Modal.tsx"
+        "jsxElement": "<Surface p=\"l\" style={styles.surface} testID={testID} variant=\"raised\">",
+        "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
       },
       {
         "fromComponent": "Popover",
         "toComponent": "View",
-        "jsxElement": "<View\n        collapsable={false}\n        ref={anchorRef}\n        onLayout={resolvedOpen ? measureAnchor : undefined}\n        testID={testID ? `${testID}-anchor` : undefined}\n      >",
+        "jsxElement": "<View\n        collapsable={false}\n        ref={anchorRef}\n        testID={props.testID ? `${props.testID}-anchor` : undefined}\n      >",
         "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
       },
       {
         "fromComponent": "Popover",
-        "toComponent": "Portal",
-        "jsxElement": "<Portal layer=\"popover\" visible={resolvedOpen && Boolean(anchorLayout)}>",
+        "toComponent": "PopoverOverlay",
+        "jsxElement": "<PopoverOverlay\n          anchorRef={anchorRef}\n          closeOnOutsidePress={props.closeOnOutsidePress ?? true}\n          offset={props.offset ?? 8}\n          onClose={close}\n          passive={passive}\n          placement={props.placement ?? 'bottom-start'}\n          testID={props.testID}\n        >",
         "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
       },
       {
-        "fromComponent": "Popover",
-        "toComponent": "View",
-        "jsxElement": "<View pointerEvents=\"box-none\" style={styles.overlay}>",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
+        "fromComponent": "PopoverMenu",
+        "toComponent": "Popover",
+        "jsxElement": "<Popover\n      anchor={trigger}\n      closeOnOutsidePress\n      interactionPolicy={interactionPolicy}\n      onOpenChange={controller.handleOpenChange}\n      open={controller.open}\n      placement=\"bottom-start\"\n      testID={testID}\n    >",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
       },
       {
-        "fromComponent": "Popover",
-        "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n              accessibilityLabel=\"Close popover\"\n              onPress={passive ? undefined : close}\n              style={styles.backdrop}\n              testID={testID ? `${testID}-backdrop` : undefined}\n            />",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
-      },
-      {
-        "fromComponent": "Popover",
-        "toComponent": "View",
-        "jsxElement": "<View\n            onLayout={(event) => setContentSize(event.nativeEvent.layout)}\n            style={[styles.content, position]}\n            testID={testID ? `${testID}-content` : undefined}\n          >",
-        "sourcePath": "src/features/popover/adapters/inbound/Popover.tsx"
+        "fromComponent": "PopoverMenu",
+        "toComponent": "PopoverMenuContent",
+        "jsxElement": "<PopoverMenuContent\n        actions={actions}\n        activeIndex={controller.activeIndex}\n        activateAction={controller.activateAction}\n        close={controller.close}\n        passive={passive}\n        setActiveIndex={controller.setActiveIndex}\n        testID={testID}\n      />",
+        "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
       },
       {
         "fromComponent": "Radio",
@@ -45578,44 +45667,44 @@
       {
         "fromComponent": "Tab",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n      accessibilityLabel={undefined}\n      accessibilityRole=\"tab\"\n      accessibilityState={{ disabled, selected }}\n      nativeID={tabId}\n      aria-controls={panelId}\n      disabled={disabled}\n      onFocus={() => setFocusedValue(value)}\n      onBlur={() => setFocusedValue(undefined)}\n      onPress={\n        passive\n          ? undefined\n          : () => {\n              if (!disabled) {\n                setActiveValue(value);\n              }\n            }\n      }\n      ref={pressableRef}\n      testID={testID}\n    >",
-        "sourcePath": "src/components/tabs/Tab.tsx"
+        "jsxElement": "<Pressable\n      accessibilityLabel={undefined}\n      accessibilityRole=\"tab\"\n      accessibilityState={{ disabled, selected }}\n      aria-controls={getPanelId(value)}\n      disabled={disabled}\n      nativeID={getTabId(value)}\n      onBlur={() => setFocusedValue(undefined)}\n      onFocus={() => setFocusedValue(value)}\n      onPress={onPress}\n      ref={pressableRef}\n      testID={testID}\n    >",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
       },
       {
         "fromComponent": "Tab",
         "toComponent": "Box",
-        "jsxElement": "<Box\n        px=\"m\"\n        py=\"s\"\n        style={{\n          borderBottomColor: selected\n            ? theme.semantics.action.primary.base\n            : theme.semantics.border.default,\n          borderBottomWidth: 2,\n          opacity: disabled ? 0.64 : 1,\n        }}\n      >",
-        "sourcePath": "src/components/tabs/Tab.tsx"
+        "jsxElement": "<Box\n        px=\"m\"\n        py=\"s\"\n        style={resolveTabStyle({\n          borderColor: selected\n            ? theme.semantics.action.primary.base\n            : theme.semantics.border.default,\n          disabled,\n        })}\n      >",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
       },
       {
         "fromComponent": "Tab",
         "toComponent": "Text",
         "jsxElement": "<Text color={selected ? 'primary' : undefined} variant=\"label\" weight=\"medium\">",
-        "sourcePath": "src/components/tabs/Tab.tsx"
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
       },
       {
         "fromComponent": "TabList",
         "toComponent": "Box",
-        "jsxElement": "<Box\n      accessibilityRole=\"tablist\"\n      style={{\n        flexDirection: 'row',\n      }}\n      testID={testID}\n    >",
-        "sourcePath": "src/components/tabs/TabList.tsx"
+        "jsxElement": "<Box accessibilityRole=\"tablist\" style={styles.list} testID={testID}>",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
       },
       {
         "fromComponent": "TabPanel",
         "toComponent": "View",
-        "jsxElement": "<View\n      accessibilityLabelledBy={tabId}\n      accessibilityRole={TAB_PANEL_ROLE}\n      nativeID={panelId}\n      testID={testID}\n    >",
-        "sourcePath": "src/components/tabs/TabPanel.tsx"
+        "jsxElement": "<View\n      accessibilityLabelledBy={getTabId(value)}\n      accessibilityRole={TAB_PANEL_ROLE}\n      nativeID={getPanelId(value)}\n      testID={testID}\n    >",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
       },
       {
         "fromComponent": "Tabs",
         "toComponent": "TabsContext",
         "jsxElement": "<TabsContext value={contextValue}>",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
       },
       {
         "fromComponent": "Tabs",
         "toComponent": "Box",
-        "jsxElement": "<Box testID={testID}>",
-        "sourcePath": "src/components/tabs/Tabs.tsx"
+        "jsxElement": "<Box testID={props.testID}>",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.tsx"
       },
       {
         "fromComponent": "Template",
@@ -45740,44 +45829,38 @@
       {
         "fromComponent": "ToastProvider",
         "toComponent": "Toast",
-        "jsxElement": "<Toast\n              description={toast.description}\n              key={toast.id}\n              onDismiss={() => dismissToast(toast.id)}\n              status={toast.status}\n              testID={toast.testID}\n              title={toast.title}\n            />",
+        "jsxElement": "<Toast\n              description={toast.description}\n              key={toast.id}\n              onDismiss={() => controller.dismissToast(toast.id)}\n              status={toast.status}\n              testID={toast.testID}\n              title={toast.title}\n            />",
         "sourcePath": "src/features/toast/adapters/inbound/ToastProvider.tsx"
       },
       {
         "fromComponent": "Tooltip",
-        "toComponent": "View",
-        "jsxElement": "<View collapsable={false} ref={anchorRef} testID={testID ? `${testID}-anchor` : undefined}>",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
+        "toComponent": "Popover",
+        "jsxElement": "<Popover\n      closeOnOutsidePress={false}\n      interactionPolicy={interactionPolicy}\n      onOpenChange={setVisible}\n      open={visible}\n      placement={placement}\n      testID={testID}\n      anchor={() => (\n        <Pressable\n          onBlur={passive ? undefined : hide}\n          onFocus={passive ? undefined : show}\n          onHoverIn={Platform.OS === 'web' && !passive ? show : undefined}\n          onHoverOut={Platform.OS === 'web' && !passive ? hide : undefined}\n        >\n          {children}\n        </Pressable>\n      )}\n    >",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromComponent": "Tooltip",
         "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n        onBlur={passive ? undefined : hide}\n        onFocus={passive ? undefined : show}\n        onHoverIn={Platform.OS === 'web' && !passive ? show : undefined}\n        onHoverOut={Platform.OS === 'web' && !passive ? hide : undefined}\n      >",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
-      },
-      {
-        "fromComponent": "Tooltip",
-        "toComponent": "Portal",
-        "jsxElement": "<Portal layer=\"tooltip\" visible={visible && Boolean(layout)}>",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
+        "jsxElement": "<Pressable\n          onBlur={passive ? undefined : hide}\n          onFocus={passive ? undefined : show}\n          onHoverIn={Platform.OS === 'web' && !passive ? show : undefined}\n          onHoverOut={Platform.OS === 'web' && !passive ? hide : undefined}\n        >",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromComponent": "Tooltip",
         "toComponent": "View",
-        "jsxElement": "<View\n          {...noPointerEvents.props}\n          style={[\n            noPointerEvents.style,\n            {\n              left: tooltipLeft,\n              position: 'absolute',\n              top: tooltipTop,\n            },\n          ]}\n        >",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
+        "jsxElement": "<View pointerEvents=\"none\">",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromComponent": "Tooltip",
         "toComponent": "Surface",
-        "jsxElement": "<Surface\n            p=\"s\"\n            style={{\n              backgroundColor: theme.semantics.surface.inverse,\n            }}\n            testID={testID}\n            variant=\"raised\"\n          >",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
+        "jsxElement": "<Surface\n          p=\"s\"\n          style={{ backgroundColor: theme.semantics.surface.inverse }}\n          variant=\"raised\"\n        >",
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromComponent": "Tooltip",
         "toComponent": "Text",
         "jsxElement": "<Text emphasis=\"inverse\" variant=\"caption\">",
-        "sourcePath": "src/components/tooltip/Tooltip.tsx"
+        "sourcePath": "src/features/tooltip/adapters/inbound/Tooltip.tsx"
       },
       {
         "fromComponent": "TranslationProvider",

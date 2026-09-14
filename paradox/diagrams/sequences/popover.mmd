@@ -1,17 +1,8 @@
 sequenceDiagram
   participant participant_anchor as anchor
-  participant participant_clamp as clamp
   participant participant_Popover as Popover
-  participant participant_resolvePopoverPosition as resolvePopoverPosition
   participant participant_useControllableState as useControllableState
-  participant participant_useWindowDimensions as useWindowDimensions
-  participant_Popover->>participant_useWindowDimensions: useWindowDimensions()
-  participant_useWindowDimensions-->>participant_Popover: return
   participant_Popover->>participant_useControllableState: useControllableState()
   participant_useControllableState-->>participant_Popover: return
-  participant_Popover->>participant_resolvePopoverPosition: resolvePopoverPosition()
-  participant_resolvePopoverPosition->>participant_clamp: clamp()
-  participant_clamp-->>participant_resolvePopoverPosition: return
-  participant_resolvePopoverPosition-->>participant_Popover: return
-  participant_Popover->>participant_anchor: anchor()
+  participant_Popover->>participant_anchor: props.anchor()
   participant_anchor-->>participant_Popover: return
