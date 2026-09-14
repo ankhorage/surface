@@ -24,6 +24,7 @@ export function Modal({
   const { theme } = useTheme();
   const animation = resolveOverlayAnimation('modal');
   const passive = interactionPolicy === 'passive';
+  const backdropPress = passive || !closeOnBackdrop ? undefined : onDismiss;
 
   if (!visible) return null;
 
@@ -31,7 +32,7 @@ export function Modal({
     <Portal layer="modal" visible={visible}>
       <View {...boxNonePointerEvents.props} style={[boxNonePointerEvents.style, styles.fill]}>
         <Pressable
-          onPress={passive ? undefined : closeOnBackdrop ? onDismiss : undefined}
+          onPress={backdropPress}
           style={[
             styles.fill,
             resolveBackdropStyle(theme.semantics.neutral.text, animation.backdropOpacity),
