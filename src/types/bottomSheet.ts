@@ -1,6 +1,6 @@
 import type React from 'react';
 
-export type BottomSheetContentMode = 'static' | 'scrollable';
+export type BottomSheetContentMode = 'view' | 'direct';
 
 export interface BottomSheetPresentOptions {
   content: React.ReactNode;
