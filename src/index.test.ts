@@ -28,8 +28,10 @@ const expectedFeatureRootExports = [
   "export { Image } from './features/image/public';",
   "export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';",
   "export { Box, Container, Divider, Grid, Stack } from './features/layout/public';",
+  "export { PopoverMenu } from './features/popover-menu/public';",
   "export { Popover } from './features/popover/public';",
   "export { Surface } from './features/surface/public';",
+  "export { Tooltip } from './features/tooltip/public';",
   "export { Toast, ToastProvider, useToast } from './features/toast/public';",
   "export { Heading, Text } from './features/typography/public';",
 ] as const;
@@ -39,12 +41,10 @@ const expectedLegacyRootExports = [
   "export { HelperText } from './components/helper-text';",
   "export { Label } from './components/label';",
   "export { ListItem } from './components/list-item';",
-  "export { Menu } from './components/menu';",
   "export { Modal } from './components/modal';",
   "export { Switch } from './components/switch';",
   "export { Tab, TabList, TabPanel, Tabs } from './components/tabs';",
   "export { Textarea } from './components/textarea';",
-  "export { Tooltip } from './components/tooltip';",
   "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export * from './core/responsive';",
   "export * from './layout';",
@@ -62,9 +62,11 @@ describe('feature-owned root barrel contract', () => {
       './components/card',
       './components/checkbox',
       './components/icon-button',
+      './components/menu',
       './components/radio',
       './components/text-input',
       './components/toast',
+      './components/tooltip',
       './primitives/heading',
       './primitives/icon',
       './primitives/image',
@@ -94,12 +96,15 @@ describe('remaining root barrel contract', () => {
     expectedLegacyRootExports.forEach((line) => expect(indexSource).toContain(line));
   });
 
-  it('does not retain obsolete action-sheet, drawer, or navigation chrome', () => {
+  it('does not retain obsolete action-sheet, drawer, menu aliases, or navigation chrome', () => {
     expect(indexSource).not.toContain('ActionSheet');
     expect(indexSource).not.toContain("'./components/action-sheet'");
     expect(indexSource).not.toContain("'./components/drawer'");
     expect(indexSource).not.toContain("'./components/navigation'");
     expect(indexSource).not.toContain('DrawerNavigation');
+    expect(indexSource).not.toMatch(/\bMenuProps\b/u);
+    expect(indexSource).not.toMatch(/\bMenuAction\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{\s*Menu\s*\}/u);
     expect(indexSource).not.toContain('NavigationItem');
     expect(indexSource).not.toContain('NavigationList');
     expect(indexSource).not.toContain('TabBar');

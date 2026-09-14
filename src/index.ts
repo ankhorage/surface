@@ -6,8 +6,6 @@ export type { LabelProps } from './components/label';
 export { Label } from './components/label';
 export type { ListItemProps } from './components/list-item';
 export { ListItem } from './components/list-item';
-export type { MenuAction, MenuActionIntent, MenuItem, MenuProps } from './components/menu';
-export { Menu } from './components/menu';
 export type { ModalProps } from './components/modal';
 export { Modal } from './components/modal';
 export type { SwitchProps } from './components/switch';
@@ -16,8 +14,6 @@ export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './compone
 export { Tab, TabList, TabPanel, Tabs } from './components/tabs';
 export type { TextareaProps } from './components/textarea';
 export { Textarea } from './components/textarea';
-export type { TooltipProps } from './components/tooltip';
-export { Tooltip } from './components/tooltip';
 export type { FontRuntime } from './context/FontContext';
 export { FontProvider, useFontContext } from './context/FontContext';
 export type { I18nInstance, TranslationRuntime, Translator } from './context/TranslationContext';
@@ -80,6 +76,12 @@ export type {
   PopoverProps,
 } from './features/popover/public';
 export { Popover } from './features/popover/public';
+export type {
+  PopoverMenuAction,
+  PopoverMenuActionIntent,
+  PopoverMenuProps,
+} from './features/popover-menu/public';
+export { PopoverMenu } from './features/popover-menu/public';
 export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
 export type {
@@ -90,6 +92,8 @@ export type {
   ToastStatus,
 } from './features/toast/public';
 export { Toast, ToastProvider, useToast } from './features/toast/public';
+export type { TooltipProps } from './features/tooltip/public';
+export { Tooltip } from './features/tooltip/public';
 export type { HeadingLevel, HeadingProps, TextProps } from './features/typography/public';
 export { Heading, Text } from './features/typography/public';
 export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';

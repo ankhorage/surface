@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'bun:test';
 
-import { resolveNextMenuIndex } from './navigation';
+import { resolveNextMenuIndex } from './resolveNextMenuIndex';
 
 describe('resolveNextMenuIndex', () => {
-  const items = [{}, { disabled: true }, {}, {}];
+  const items = [{}, { disabled: true }, {}, {}] as const;
 
-  it('cycles down and up through the menu items', () => {
+  it('cycles down and up through enabled actions', () => {
     expect(resolveNextMenuIndex(items, 0, 'ArrowDown')).toBe(2);
     expect(resolveNextMenuIndex(items, 0, 'ArrowUp')).toBe(3);
   });
@@ -15,7 +15,7 @@ describe('resolveNextMenuIndex', () => {
     expect(resolveNextMenuIndex(items, 0, 'End')).toBe(3);
   });
 
-  it('returns -1 when all items are disabled', () => {
+  it('returns -1 when all actions are disabled', () => {
     expect(resolveNextMenuIndex([{ disabled: true }], 0, 'ArrowDown')).toBe(-1);
   });
 });
