@@ -31,6 +31,8 @@ jobs:
         run: bun scripts/migrateThemeOwnership.ts
       - name: Normalize migrated ownership imports
         run: bun scripts/normalizeThemeOwnership.ts
+      - name: Canonicalize font root export
+        run: sed -i "/export type { FontRuntime } from '.\/features\/font\/public';/d" src/index.ts
       - name: Install released dependencies
         run: bun install
       - name: Format
