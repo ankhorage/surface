@@ -109,10 +109,11 @@ export function Pressable({
   const [focused, setFocused] = React.useState(false);
   const isWeb = Platform.OS === 'web';
   const resolvedViewStyles = resolveViewStyles(theme, breakpoint, props);
-  const passive = interactionPolicy === 'passive';
+  const pressHandlers = resolvePressHandlers(interactionPolicy, onPress, onLongPress);
 
   return (
     <ReactNativePressable
+      {...pressHandlers}
       accessibilityLabel={accessibilityLabel}
       accessibilityRole={accessibilityRole}
       accessibilityState={{ ...accessibilityState, disabled }}
@@ -123,8 +124,6 @@ export function Pressable({
       }}
       onHoverIn={isWeb ? () => setHovered(true) : undefined}
       onHoverOut={isWeb ? () => setHovered(false) : undefined}
-      onLongPress={passive ? undefined : onLongPress}
-      onPress={passive ? undefined : onPress}
       style={(pressableState) => {
         const state = resolveInteractionState(pressableState, hovered, focused, disabled);
         return [
@@ -141,6 +140,17 @@ export function Pressable({
       }}
     </ReactNativePressable>
   );
+}
+
+/*** Resolves press handlers according to the shared interaction policy. */
+function resolvePressHandlers(
+  interactionPolicy: PressableProps['interactionPolicy'],
+  onPress: PressableProps['onPress'],
+  onLongPress: PressableProps['onLongPress'],
+) {
+  return interactionPolicy === 'passive'
+    ? { onLongPress: undefined, onPress: undefined }
+    : { onLongPress, onPress };
 }
 
 /*** Resolves one native Pressable state into the canonical Surface interaction state. */
