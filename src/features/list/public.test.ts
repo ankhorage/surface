@@ -6,7 +6,7 @@ test('list capability owns List and ListItem under one feature boundary', async 
 
   expect(listSource).toContain('export function List');
   expect(listItemSource).toContain('export function ListItem');
-  expect(listItemSource).toContain('interactionPolicy={interactionPolicy}');
+  expect(listItemSource).toContain('interactionPolicy={props.interactionPolicy}');
   expect(listItemSource).toContain('selected');
   expect(listItemSource).toContain('compact');
   expect(listItemSource).not.toContain('components/list-item');
