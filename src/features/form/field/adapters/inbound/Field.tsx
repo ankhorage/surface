@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { resolveFieldPresentation, resolveFieldState } from '../../../../../internal/resolvers';
+import type { FieldProps } from '../../../../../types/field';
 import { View } from '../../../../layout/public';
 import { Text } from '../../../../typography/public';
-import type { FieldProps } from '../../../../../types/field';
 
 /*** Composes a control with its label and helper or error message. */
 export function Field({

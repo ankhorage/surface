@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { resolveFieldState, resolveIndicatorSize, resolveSelectionControlColors, resolveSelectionControlNextChecked } from '../../../../../internal/resolvers';
+import {
+  resolveFieldState,
+  resolveIndicatorSize,
+  resolveSelectionControlColors,
+  resolveSelectionControlNextChecked,
+} from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
 import { ButtonBase } from '../../../../../primitives/button-base';
 import { useTheme } from '../../../../../theme/ThemeContext';
