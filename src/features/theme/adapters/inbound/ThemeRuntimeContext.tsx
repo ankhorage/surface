@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import type { ThemeRuntime } from '../../../../types/theme-runtime';
+import type { ThemeRuntime } from '../../../../types/theme';
 import { createTheme } from '../../application/use-cases/createTheme';
 
 const defaultTheme = createTheme();
