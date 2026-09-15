@@ -1,10 +1,9 @@
-import { deepMerge } from '@ankhorage/utility/object';
-import { useMemo, useState } from 'react';
+import { deepMerge, isDeepEqual } from '@ankhorage/utility/object';
+import { useEffect, useMemo, useState } from 'react';
 
 import { ResponsiveProvider } from '../../../../core/responsive/ResponsiveProvider';
 import { OverlayProvider } from '../../../../internal/overlay/OverlayProvider';
-import type { ThemeConfig } from '../../../../types/theme';
-import type { ThemeProviderProps, ThemeRuntime } from '../../../../types/theme-runtime';
+import type { ThemeConfig, ThemeProviderProps, ThemeRuntime } from '../../../../types/theme';
 import { useFontRuntime } from '../../../font/adapters/inbound/useFontRuntime';
 import { createTheme } from '../../application/use-cases/createTheme';
 import { ThemeRuntimeContext } from './ThemeRuntimeContext';
@@ -21,6 +20,15 @@ export function ThemeProvider({
   );
   const [mode, setMode] = useState(initialMode);
   const { activeFontId } = useFontRuntime();
+
+  useEffect(() => {
+    if (initialConfig === undefined) return;
+    setConfig((previous) => {
+      const merged = deepMerge(previous, initialConfig);
+      return isDeepEqual(previous, merged) ? previous : merged;
+    });
+  }, [initialConfig]);
+
   const theme = useMemo(
     () => createTheme(config, mode, activeFontId),
     [activeFontId, config, mode],
