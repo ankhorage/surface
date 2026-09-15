@@ -40,6 +40,9 @@ jobs:
       - name: Remove temporary migration tooling
         run: rm scripts/migrate-pressable-feature.ts .github/workflows/pressable-feature-migrate.yml
 
+      - name: Autofix lint
+        run: bun run lint:fix
+
       - name: Format
         run: bun run format
 
