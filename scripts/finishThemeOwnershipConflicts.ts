@@ -11,7 +11,7 @@ paletteTest = paletteTest
     "import { isRecord, readOwnProperty } from '@ankhorage/utility/object';",
   )
   .replace(
-    /function expectCompleteSemanticValues[\s\S]*?function visitSemanticValues[\s\S]*?\n}\n\n/u,
+    /function expectCompleteSemanticValues[\s\S]*?function visitSemanticValues[\s\S]*?\n\}\n\n/u,
     `function expectCompleteSemanticValues(value: unknown): void {\n  if (typeof value === 'string') {\n    expect(value.length).toBeGreaterThan(0);\n    return;\n  }\n  if (!isRecord(value)) return;\n  Object.values(value).forEach(expectCompleteSemanticValues);\n}\n\n`,
   );
 write('src/features/theme/domain/generatePalette.test.ts', paletteTest);
