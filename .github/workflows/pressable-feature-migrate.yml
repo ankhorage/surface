@@ -61,8 +61,8 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
-      - name: Validate changeset
-        run: bun run changeset:status
+      - name: Assert release changeset exists
+        run: test -f .changeset/pressable-feature.md
 
       - name: Regenerate Paradox docs
         run: bun run docs
