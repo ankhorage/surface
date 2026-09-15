@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { resolveFieldPresentation, resolveFieldState } from '../../../../../internal/resolvers';
+import {
+  resolveFieldPresentation,
+  resolveFieldState,
+  type ResolvedFieldPresentation,
+} from '../../../../../internal/resolvers';
 import type { FieldProps } from '../../../../../types/field';
 import { View } from '../../../../layout/public';
 import { Text } from '../../../../typography/public';
@@ -17,54 +21,69 @@ export function Field({
   readOnly = false,
   testID,
 }: FieldProps) {
-  const hasErrorText = errorText !== undefined && errorText !== null && errorText !== '';
-  const fieldState = resolveFieldState({
-    disabled,
-    invalid: invalid || hasErrorText,
-    readOnly,
-  });
-  const presentation = resolveFieldPresentation(fieldState);
+  const hasErrorText = Boolean(errorText);
+  const presentation = resolveFieldPresentation(
+    resolveFieldState({ disabled, invalid: invalid || hasErrorText, readOnly }),
+  );
   const message = hasErrorText ? errorText : helperText;
 
   return (
     <View gap="xs" testID={testID}>
-      {label !== undefined && label !== null ? (
-        <View direction="row" align="center" gap="xs">
-          <View flex={1}>
-            {typeof label === 'string' || typeof label === 'number' ? (
-              <Text
-                color={presentation.labelColor}
-                emphasis={presentation.labelEmphasis}
-                variant="label"
-                weight="medium"
-              >
-                {label}
-              </Text>
-            ) : (
-              label
-            )}
-          </View>
-          {required ? (
-            <Text color="error" variant="label" weight="medium">
-              *
-            </Text>
-          ) : null}
-        </View>
-      ) : null}
+      {renderFieldLabel(label, required, presentation)}
       <View>{children}</View>
-      {message !== undefined && message !== null && message !== '' ? (
-        typeof message === 'string' || typeof message === 'number' ? (
-          <Text
-            color={presentation.helperColor}
-            emphasis={presentation.helperEmphasis}
-            variant="caption"
-          >
-            {message}
-          </Text>
-        ) : (
-          message
-        )
+      {renderFieldMessage(message, presentation)}
+    </View>
+  );
+}
+
+/*** Renders an optional field label and required indicator. */
+function renderFieldLabel(
+  label: React.ReactNode,
+  required: boolean,
+  presentation: ResolvedFieldPresentation,
+) {
+  if (label === undefined || label === null) return null;
+  const labelContent =
+    typeof label === 'string' || typeof label === 'number' ? (
+      <Text
+        color={presentation.labelColor}
+        emphasis={presentation.labelEmphasis}
+        variant="label"
+        weight="medium"
+      >
+        {label}
+      </Text>
+    ) : (
+      label
+    );
+
+  return (
+    <View align="center" direction="row" gap="xs">
+      <View flex={1}>{labelContent}</View>
+      {required ? (
+        <Text color="error" variant="label" weight="medium">
+          *
+        </Text>
       ) : null}
     </View>
+  );
+}
+
+/*** Renders an optional helper or error message using field presentation semantics. */
+function renderFieldMessage(
+  message: React.ReactNode,
+  presentation: ResolvedFieldPresentation,
+) {
+  if (message === undefined || message === null || message === '') return null;
+  if (typeof message !== 'string' && typeof message !== 'number') return message;
+
+  return (
+    <Text
+      color={presentation.helperColor}
+      emphasis={presentation.helperEmphasis}
+      variant="caption"
+    >
+      {message}
+    </Text>
   );
 }

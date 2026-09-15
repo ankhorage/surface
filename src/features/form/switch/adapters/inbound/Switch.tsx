@@ -5,6 +5,7 @@ import {
   resolveIndicatorSize,
   resolveSelectionControlColors,
   resolveSelectionControlNextChecked,
+  type InteractionState,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
 import { ButtonBase } from '../../../../../primitives/button-base';
@@ -34,7 +35,6 @@ export function Switch({
     defaultValue: defaultChecked,
     onChange: onCheckedChange,
   });
-  const indicatorSize = resolveIndicatorSize(size);
   const nextChecked = resolveSelectionControlNextChecked({
     checked: isChecked,
     disabled,
@@ -52,62 +52,72 @@ export function Switch({
       onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}
       testID={testID}
     >
-      {(interactionState) => {
-        const fieldState = resolveFieldState({
-          disabled,
-          focused: interactionState.focused,
-          invalid,
-          readOnly,
-        });
-        const colors = resolveSelectionControlColors(theme, {
-          checked: isChecked,
-          fieldState,
-          hovered: interactionState.hovered,
-          pressed: interactionState.pressed,
-          color,
-        });
-        const labelEmphasis =
-          colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
-
-        return (
-          <View
-            style={{
-              alignItems: 'center',
-              flexDirection: 'row',
-              opacity: colors.opacity,
-            }}
-          >
-            <View
-              radius="full"
-              style={{
-                backgroundColor: colors.trackColor,
-                borderColor: colors.borderColor,
-                borderWidth: 1,
-                justifyContent: 'center',
-                minWidth: indicatorSize.switchWidth,
-                paddingHorizontal: 2,
-                width: indicatorSize.switchWidth,
-                height: indicatorSize.switchHeight,
-              }}
-            >
-              <View
-                radius="full"
-                style={{
-                  alignSelf: isChecked ? 'flex-end' : 'flex-start',
-                  backgroundColor: colors.thumbColor,
-                  height: indicatorSize.switchThumb,
-                  width: indicatorSize.switchThumb,
-                }}
-              />
-            </View>
-            {children ? (
-              <View ml="s">
-                <Text emphasis={labelEmphasis}>{children}</Text>
-              </View>
-            ) : null}
-          </View>
-        );
-      }}
+      {(interactionState) =>
+        renderSwitchContent(
+          { children, color, disabled, invalid, isChecked, readOnly, size, theme },
+          interactionState,
+        )
+      }
     </ButtonBase>
+  );
+}
+
+type SwitchContentInput = {
+  children: React.ReactNode;
+  color: NonNullable<SwitchProps['color']>;
+  disabled: boolean;
+  invalid: boolean;
+  isChecked: boolean;
+  readOnly: boolean;
+  size: NonNullable<SwitchProps['size']>;
+  theme: ReturnType<typeof useTheme>['theme'];
+};
+
+/*** Resolves switch presentation for one interaction state and renders the visual control. */
+function renderSwitchContent(input: SwitchContentInput, interactionState: InteractionState) {
+  const fieldState = resolveFieldState({
+    disabled: input.disabled,
+    focused: interactionState.focused,
+    invalid: input.invalid,
+    readOnly: input.readOnly,
+  });
+  const colors = resolveSelectionControlColors(input.theme, {
+    checked: input.isChecked,
+    fieldState,
+    hovered: interactionState.hovered,
+    pressed: interactionState.pressed,
+    color: input.color,
+  });
+  const indicatorSize = resolveIndicatorSize(input.size);
+  const labelEmphasis =
+    colors.labelColor === input.theme.semantics.content.muted ? 'muted' : 'default';
+
+  return (
+    <View align="center" direction="row" opacity={colors.opacity}>
+      <View
+        bg={colors.trackColor}
+        borderColor={colors.borderColor}
+        borderWidth={1}
+        height={indicatorSize.switchHeight}
+        justify="center"
+        minWidth={indicatorSize.switchWidth}
+        px={2}
+        radius="full"
+        width={indicatorSize.switchWidth}
+      >
+        <View
+          alignSelf={input.isChecked ? 'flex-end' : 'flex-start'}
+          bg={colors.thumbColor}
+          height={indicatorSize.switchThumb}
+          radius="full"
+          width={indicatorSize.switchThumb}
+        />
+      </View>
+      {input.children ? (
+        <View ml="s">
+          <Text emphasis={labelEmphasis}>{input.children}</Text>
+        </View>
+      ) : null}
+    </View>
   );
 }
