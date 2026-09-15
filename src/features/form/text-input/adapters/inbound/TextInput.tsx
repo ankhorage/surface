@@ -49,7 +49,11 @@ export function TextInput(props: TextInputProps) {
         }}
         placeholderTextColor={presentation.placeholderColor}
         readOnly={readOnly}
-        style={[presentation.inputStyle, nativeProps.style]}
+        style={[
+          presentation.inputStyle,
+          nativeProps.multiline ? { textAlignVertical: 'top' } : undefined,
+          nativeProps.style,
+        ]}
       />
       {renderAccessory(trailingAccessory, presentation.accessorySpacing, 'trailing')}
     </View>

@@ -1,17 +1,12 @@
 import React from 'react';
 
-import { View } from '../../features/layout/public';
-import { Text } from '../../features/typography/public';
-import {
-  resolveFieldState,
-  resolveIndicatorSize,
-  resolveSelectionControlColors,
-  resolveSelectionControlNextChecked,
-} from '../../internal/resolvers';
-import { useControllableState } from '../../internal/useControllableState';
-import { ButtonBase } from '../../primitives/button-base';
-import { useTheme } from '../../theme/ThemeContext';
-import type { SwitchProps } from './types';
+import { resolveFieldState, resolveIndicatorSize, resolveSelectionControlColors, resolveSelectionControlNextChecked } from '../../../../../internal/resolvers';
+import { useControllableState } from '../../../../../internal/useControllableState';
+import { ButtonBase } from '../../../../../primitives/button-base';
+import { useTheme } from '../../../../../theme/ThemeContext';
+import type { SwitchProps } from '../../../../../types/switch';
+import { View } from '../../../../layout/public';
+import { Text } from '../../../../typography/public';
 
 /*** Renders a controlled or uncontrolled accessible switch. */
 export function Switch({

@@ -5,7 +5,6 @@ import {
   Card,
   Checkbox,
   Field,
-  HelperText,
   Menu,
   Modal,
   Tab,
@@ -37,7 +36,9 @@ export function FormExample() {
           <TextInput placeholder="you@example.com" />
         </Field>
         <Checkbox checked>Accept terms</Checkbox>
-        <HelperText emphasis="muted">Looks good.</HelperText>
+        <Text emphasis="muted" variant="caption">
+          Looks good.
+        </Text>
       </View>
     </ThemeProvider>
   );

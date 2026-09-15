@@ -1,8 +1,8 @@
 import type React from 'react';
 
-import type { ControlSize } from '../../internal/resolvers/resolveControlSize';
-import type { ButtonBaseProps } from '../../primitives/button-base';
-import type { SurfaceColor } from '../../surfaceColor';
+import type { ControlSize } from '../internal/resolvers/resolveControlSize';
+import type { ButtonBaseProps } from '../primitives/button-base';
+import type { SurfaceColor } from '../surfaceColor';
 
 export interface SwitchProps extends Omit<
   ButtonBaseProps,
