@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, type ViewStyle } from 'react-native';
+import { View as ReactNativeView, type ViewStyle } from 'react-native';
 
 import { resolveResponsive, useResponsiveRuntime } from '../../../../core/responsive';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { GridProps } from '../../../../types/layout';
 import { resolveSpacing } from '../../../../utils/resolveSpacing';
-import { Box } from './Box';
+import { View } from './View';
 
 /*** Lays out children in a responsive wrapping grid. */
 export function Grid({
@@ -31,18 +31,16 @@ export function Grid({
   const basisPercent: `${number}%` = `${100 / activeCols}%`;
 
   return (
-    <Box {...props}>
-      <View style={resolveGridStyle(rowSpacing, colSpacing)}>
-        {React.Children.toArray(children).map((node, index) => (
-          <View
-            key={String(index)}
-            style={resolveGridItemStyle(activeMinItemWidth, basisPercent, rowSpacing, colSpacing)}
-          >
-            {node}
-          </View>
-        ))}
-      </View>
-    </Box>
+    <View {...props} style={[resolveGridStyle(rowSpacing, colSpacing), props.style]}>
+      {React.Children.toArray(children).map((node, index) => (
+        <ReactNativeView
+          key={React.isValidElement(node) && node.key !== null ? String(node.key) : String(index)}
+          style={resolveGridItemStyle(activeMinItemWidth, basisPercent, rowSpacing, colSpacing)}
+        >
+          {node}
+        </ReactNativeView>
+      ))}
+    </View>
   );
 }
 

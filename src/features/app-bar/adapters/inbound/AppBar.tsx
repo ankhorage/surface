@@ -1,19 +1,12 @@
 import React from 'react';
-import { type StyleProp, View, type ViewStyle } from 'react-native';
+import { View as ReactNativeView, type ViewStyle } from 'react-native';
 import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
-import { Box, type BoxProps, Divider } from '../features/layout/public';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../../../../theme/ThemeContext';
+import type { AppBarProps } from '../../../../types/app-bar';
+import { Divider, View } from '../../../layout/public';
 
-export interface AppBarProps extends Omit<BoxProps, 'children'> {
-  leading?: React.ReactNode;
-  trailing?: React.ReactNode;
-  children?: React.ReactNode;
-  safeAreaTop?: boolean;
-  divider?: boolean;
-  contentStyle?: StyleProp<ViewStyle>;
-}
-
+/*** Renders application chrome with optional safe-area padding and leading/trailing slots. */
 export function AppBar({
   leading,
   trailing,
@@ -32,9 +25,9 @@ export function AppBar({
     topInset === 0 ? undefined : { paddingTop: topInset };
 
   return (
-    <Box {...props} bg={bg ?? theme.semantics.surface.default} style={style}>
-      <View style={safeAreaStyle}>
-        <View
+    <View {...props} bg={bg ?? theme.semantics.surface.default} style={style}>
+      <ReactNativeView style={safeAreaStyle}>
+        <ReactNativeView
           style={[
             {
               minHeight: 56,
@@ -46,15 +39,19 @@ export function AppBar({
           ]}
         >
           {leading ? (
-            <View style={{ marginRight: theme.spacing.s, flexShrink: 0 }}>{leading}</View>
+            <ReactNativeView style={{ marginRight: theme.spacing.s, flexShrink: 0 }}>
+              {leading}
+            </ReactNativeView>
           ) : null}
-          <View style={{ flex: 1, minWidth: 0 }}>{children}</View>
+          <ReactNativeView style={{ flex: 1, minWidth: 0 }}>{children}</ReactNativeView>
           {trailing ? (
-            <View style={{ marginLeft: theme.spacing.s, flexShrink: 0 }}>{trailing}</View>
+            <ReactNativeView style={{ marginLeft: theme.spacing.s, flexShrink: 0 }}>
+              {trailing}
+            </ReactNativeView>
           ) : null}
-        </View>
+        </ReactNativeView>
         {divider ? <Divider color={theme.semantics.neutral.divider} thickness={1} /> : null}
-      </View>
-    </Box>
+      </ReactNativeView>
+    </View>
   );
 }

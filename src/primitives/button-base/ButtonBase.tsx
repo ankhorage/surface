@@ -8,9 +8,10 @@ import {
   resolveInteractiveState,
 } from '../../internal/resolvers';
 import { useTheme } from '../../theme/ThemeContext';
-import { resolveBoxStyles } from '../../utils/resolveBoxStyles';
+import { resolveViewStyles } from '../../utils/resolveViewStyles';
 import type { ButtonBaseProps } from './types';
 
+/*** Resolves one Pressable state into the canonical Surface interaction state. */
 function getInteractionState(
   pressableState: PressableStateCallbackType,
   hovered: boolean,
@@ -25,6 +26,7 @@ function getInteractionState(
   });
 }
 
+/*** Renders the low-level token-aware Pressable boundary shared by Surface controls. */
 export function ButtonBase({
   children,
   disabled = false,
@@ -43,7 +45,7 @@ export function ButtonBase({
   const [hovered, setHovered] = React.useState(false);
   const [focused, setFocused] = React.useState(false);
   const isWeb = Platform.OS === 'web';
-  const resolvedBoxStyles = resolveBoxStyles(theme, breakpoint, props);
+  const resolvedViewStyles = resolveViewStyles(theme, breakpoint, props);
   const passive = interactionPolicy === 'passive';
 
   return (
@@ -54,9 +56,7 @@ export function ButtonBase({
       disabled={disabled}
       onBlur={() => setFocused(false)}
       onFocus={() => {
-        if (isWeb) {
-          setFocused(true);
-        }
+        if (isWeb) setFocused(true);
       }}
       onHoverIn={isWeb ? () => setHovered(true) : undefined}
       onHoverOut={isWeb ? () => setHovered(false) : undefined}
@@ -64,9 +64,8 @@ export function ButtonBase({
       onPress={passive ? undefined : onPress}
       style={(pressableState) => {
         const state = getInteractionState(pressableState, hovered, focused, disabled);
-
         return [
-          resolvedBoxStyles,
+          resolvedViewStyles,
           resolveFocusRingStyles(theme.semantics.border.focus, state.focused, isWeb),
           style,
         ];
@@ -75,7 +74,6 @@ export function ButtonBase({
     >
       {(pressableState) => {
         const state = getInteractionState(pressableState, hovered, focused, disabled);
-
         return typeof children === 'function' ? children(state) : children;
       }}
     </Pressable>

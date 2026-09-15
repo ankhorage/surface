@@ -1,25 +1,13 @@
 import React from 'react';
-import {
-  ScrollView,
-  type ScrollViewProps as ReactNativeScrollViewProps,
-  type StyleProp,
-  type ViewStyle,
-} from 'react-native';
+import { ScrollView as ReactNativeScrollView } from 'react-native';
 
-import { useResponsiveRuntime } from '../core/responsive';
-import { useTheme } from '../theme/ThemeContext';
-import type { BoxStyleProps } from '../types/layout';
-import { resolveBoxStyles } from '../utils/resolveBoxStyles';
+import { useResponsiveRuntime } from '../../../../core/responsive';
+import { useTheme } from '../../../../theme/ThemeContext';
+import type { ScrollViewProps } from '../../../../types/layout';
+import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
 
-export interface ScrollAreaProps
-  extends
-    BoxStyleProps,
-    Omit<ReactNativeScrollViewProps, 'children' | 'contentContainerStyle' | 'style'> {
-  children?: React.ReactNode;
-  contentContainerStyle?: StyleProp<ViewStyle>;
-}
-
-export function ScrollArea({
+/*** Renders the token-aware responsive Surface adapter for React Native ScrollView. */
+export function ScrollView({
   children,
   contentContainerStyle,
   p,
@@ -36,6 +24,9 @@ export function ScrollArea({
   mb,
   ml,
   mr,
+  gap,
+  rowGap,
+  columnGap,
   bg,
   radius,
   borderWidth,
@@ -50,6 +41,10 @@ export function ScrollArea({
   flexGrow,
   flexShrink,
   flexBasis,
+  direction,
+  align,
+  justify,
+  wrap,
   alignSelf,
   position,
   top,
@@ -61,10 +56,10 @@ export function ScrollArea({
   opacity,
   style,
   ...scrollProps
-}: ScrollAreaProps) {
+}: ScrollViewProps) {
   const { theme } = useTheme();
   const { breakpoint } = useResponsiveRuntime();
-  const resolved = resolveBoxStyles(theme, breakpoint, {
+  const resolved = resolveViewStyles(theme, breakpoint, {
     p,
     px,
     py,
@@ -79,6 +74,9 @@ export function ScrollArea({
     mb,
     ml,
     mr,
+    gap,
+    rowGap,
+    columnGap,
     bg,
     radius,
     borderWidth,
@@ -93,6 +91,10 @@ export function ScrollArea({
     flexGrow,
     flexShrink,
     flexBasis,
+    direction,
+    align,
+    justify,
+    wrap,
     alignSelf,
     position,
     top,
@@ -105,12 +107,12 @@ export function ScrollArea({
   });
 
   return (
-    <ScrollView
+    <ReactNativeScrollView
       {...scrollProps}
       contentContainerStyle={contentContainerStyle}
       style={[resolved, style]}
     >
       {children}
-    </ScrollView>
+    </ReactNativeScrollView>
   );
 }

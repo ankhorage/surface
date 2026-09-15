@@ -4,14 +4,14 @@ import { resolveResponsive } from '../core/responsive/resolve';
 import type { Breakpoint } from '../core/responsive/types';
 import { resolveToken } from '../theme/resolveToken';
 import type { SurfaceTheme } from '../theme/types';
-import type { BoxStyleProps, ColorValue } from '../types/layout';
+import type { ColorValue, ViewStyleProps } from '../types/layout';
 import { resolveSpacing } from './resolveSpacing';
 
-/*** Resolves responsive Box style props into one React Native view style. */
-export function resolveBoxStyles(
+/*** Resolves responsive Surface View style props into one React Native view style. */
+export function resolveViewStyles(
   theme: SurfaceTheme,
   breakpoint: Breakpoint,
-  props: BoxStyleProps,
+  props: ViewStyleProps,
 ): ViewStyle {
   return {
     elevation: 0,
@@ -22,11 +22,11 @@ export function resolveBoxStyles(
   };
 }
 
-/*** Resolves padding and margin styles from responsive spacing props. */
+/*** Resolves padding, margin, and gap styles from responsive spacing props. */
 function resolveSpacingStyles(
   theme: SurfaceTheme,
   breakpoint: Breakpoint,
-  props: BoxStyleProps,
+  props: ViewStyleProps,
 ): ViewStyle {
   return {
     padding: resolveSpacing(theme, resolveResponsive(props.p, breakpoint)),
@@ -43,6 +43,9 @@ function resolveSpacingStyles(
     marginBottom: resolveSpacing(theme, resolveResponsive(props.mb, breakpoint)),
     marginLeft: resolveSpacing(theme, resolveResponsive(props.ml, breakpoint)),
     marginRight: resolveSpacing(theme, resolveResponsive(props.mr, breakpoint)),
+    gap: resolveSpacing(theme, resolveResponsive(props.gap, breakpoint)),
+    rowGap: resolveSpacing(theme, resolveResponsive(props.rowGap, breakpoint)),
+    columnGap: resolveSpacing(theme, resolveResponsive(props.columnGap, breakpoint)),
   };
 }
 
@@ -50,7 +53,7 @@ function resolveSpacingStyles(
 function resolveVisualStyles(
   theme: SurfaceTheme,
   breakpoint: Breakpoint,
-  props: BoxStyleProps,
+  props: ViewStyleProps,
 ): ViewStyle {
   return {
     backgroundColor: resolveColor(theme, resolveResponsive(props.bg, breakpoint)),
@@ -64,7 +67,7 @@ function resolveVisualStyles(
 function resolveDimensionStyles(
   theme: SurfaceTheme,
   breakpoint: Breakpoint,
-  props: BoxStyleProps,
+  props: ViewStyleProps,
 ): ViewStyle {
   return {
     width: resolveDimension(
@@ -95,12 +98,16 @@ function resolveDimensionStyles(
 }
 
 /*** Resolves responsive flex, positioning, and visibility styles. */
-function resolveLayoutStyles(breakpoint: Breakpoint, props: BoxStyleProps): ViewStyle {
+function resolveLayoutStyles(breakpoint: Breakpoint, props: ViewStyleProps): ViewStyle {
   return {
     flex: resolveResponsive(props.flex, breakpoint),
     flexGrow: resolveResponsive(props.flexGrow, breakpoint),
     flexShrink: resolveResponsive(props.flexShrink, breakpoint),
     flexBasis: resolveResponsive(props.flexBasis, breakpoint) as ViewStyle['flexBasis'],
+    flexDirection: resolveResponsive(props.direction, breakpoint),
+    alignItems: resolveResponsive(props.align, breakpoint),
+    justifyContent: resolveResponsive(props.justify, breakpoint),
+    flexWrap: resolveResponsive(props.wrap, breakpoint),
     alignSelf: resolveResponsive(props.alignSelf, breakpoint),
     position: resolveResponsive(props.position, breakpoint),
     top: resolveResponsive(props.top, breakpoint),

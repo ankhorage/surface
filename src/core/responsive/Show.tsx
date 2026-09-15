@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { resolveResponsive, type Responsive, useResponsiveRuntime } from '../core/responsive';
+import { resolveResponsive } from './resolve';
+import type { Responsive } from './types';
+import { useResponsiveRuntime } from './ResponsiveProvider';
 
 export interface ShowProps {
   when: Responsive<boolean>;
@@ -8,6 +10,7 @@ export interface ShowProps {
   fallback?: React.ReactNode;
 }
 
+/*** Conditionally renders one responsive subtree or its fallback. */
 export function Show({ when, children, fallback = null }: ShowProps) {
   const { breakpoint } = useResponsiveRuntime();
   const visible = resolveResponsive(when, breakpoint) ?? false;

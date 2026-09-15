@@ -3,10 +3,10 @@ import type { AccessibilityRole, AccessibilityState, GestureResponderEvent } fro
 
 import type { InteractionPolicyProps } from '../../interactionPolicy';
 import type { InteractionState } from '../../internal/resolvers/resolveInteractiveState';
-import type { BoxProps } from '../../types/layout';
+import type { ViewProps } from '../../types/layout';
 
 export interface ButtonBaseProps
-  extends Omit<BoxProps, 'children' | 'pointerEvents'>, InteractionPolicyProps {
+  extends Omit<ViewProps, 'children' | 'pointerEvents'>, InteractionPolicyProps {
   children?: React.ReactNode | ((state: InteractionState) => React.ReactNode);
   disabled?: boolean;
   onPress?: ((event: GestureResponderEvent) => void) | undefined;

@@ -1,5 +1,10 @@
 import type React from 'react';
-import type { StyleProp, ViewProps as ReactNativeViewProps, ViewStyle } from 'react-native';
+import type {
+  ScrollViewProps as ReactNativeScrollViewProps,
+  StyleProp,
+  ViewProps as ReactNativeViewProps,
+  ViewStyle,
+} from 'react-native';
 
 import type { Responsive } from '../core/responsive';
 import type { SurfaceTheme } from '../theme/types';
@@ -12,7 +17,7 @@ type RadiusValue = number | RadiusToken;
 export type SpaceValue = number | SpaceToken;
 export type ColorValue = string | ColorToken;
 
-export interface BoxStyleProps {
+export interface ViewStyleProps {
   p?: Responsive<SpaceValue>;
   px?: Responsive<SpaceValue>;
   py?: Responsive<SpaceValue>;
@@ -27,6 +32,9 @@ export interface BoxStyleProps {
   mb?: Responsive<SpaceValue>;
   ml?: Responsive<SpaceValue>;
   mr?: Responsive<SpaceValue>;
+  gap?: Responsive<SpaceValue>;
+  rowGap?: Responsive<SpaceValue>;
+  columnGap?: Responsive<SpaceValue>;
   bg?: Responsive<ColorValue>;
   radius?: Responsive<RadiusValue>;
   borderWidth?: Responsive<number>;
@@ -41,6 +49,12 @@ export interface BoxStyleProps {
   flexGrow?: Responsive<number>;
   flexShrink?: Responsive<number>;
   flexBasis?: Responsive<number | string>;
+  direction?: Responsive<'row' | 'column'>;
+  align?: Responsive<'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'>;
+  justify?: Responsive<
+    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
+  >;
+  wrap?: Responsive<'nowrap' | 'wrap'>;
   alignSelf?: Responsive<ViewStyle['alignSelf']>;
   position?: Responsive<ViewStyle['position']>;
   top?: Responsive<number>;
@@ -53,7 +67,7 @@ export interface BoxStyleProps {
   style?: StyleProp<ViewStyle>;
 }
 
-export interface BoxProps extends BoxStyleProps {
+export interface ViewProps extends ViewStyleProps {
   accessibilityLabel?: ReactNativeViewProps['accessibilityLabel'];
   accessibilityRole?: ReactNativeViewProps['accessibilityRole'];
   accessibilityState?: ReactNativeViewProps['accessibilityState'];
@@ -63,34 +77,25 @@ export interface BoxProps extends BoxStyleProps {
   testID?: string;
 }
 
-export interface ContainerProps extends Omit<BoxProps, 'children'> {
-  children?: React.ReactNode;
-  maxWidth?: Responsive<number>;
-  px?: Responsive<number | keyof SurfaceTheme['spacing']>;
-}
-
-export interface DividerProps extends Omit<BoxProps, 'bg' | 'height' | 'width'> {
+export interface DividerProps extends Omit<ViewProps, 'bg' | 'height' | 'width'> {
   orientation?: 'horizontal' | 'vertical';
   color?: ColorValue;
   thickness?: number;
 }
 
-export interface GridProps extends Omit<BoxProps, 'children'> {
+export interface GridProps extends Omit<ViewProps, 'children'> {
   children?: React.ReactNode;
-  cols: Responsive<number>;
+  cols?: Responsive<number>;
   gap?: Responsive<SpaceValue>;
   rowGap?: Responsive<SpaceValue>;
   colGap?: Responsive<SpaceValue>;
   minItemWidth?: Responsive<number>;
 }
 
-export interface StackProps extends Omit<BoxProps, 'children'> {
+export interface ScrollViewProps
+  extends
+    ViewStyleProps,
+    Omit<ReactNativeScrollViewProps, 'children' | 'contentContainerStyle' | 'style'> {
   children?: React.ReactNode;
-  direction?: Responsive<'row' | 'column'>;
-  gap?: Responsive<SpaceValue>;
-  align?: Responsive<'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'>;
-  justify?: Responsive<
-    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
-  >;
-  wrap?: Responsive<'nowrap' | 'wrap'>;
+  contentContainerStyle?: StyleProp<ViewStyle>;
 }
