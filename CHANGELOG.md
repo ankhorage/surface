@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.0.1
+
+### Patch Changes
+
+- 43bfcf9: Expose the canonical Surface color and emphasis catalogs through the React-free `@ankhorage/surface/color` subpath.
+
 ## 9.0.0
 
 ### Major Changes
