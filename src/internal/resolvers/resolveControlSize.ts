@@ -1,4 +1,4 @@
-import type { SurfaceTheme } from '../../theme/types';
+import type { SurfaceTheme } from '../../types/theme';
 
 export type ControlSize = 's' | 'm' | 'l';
 

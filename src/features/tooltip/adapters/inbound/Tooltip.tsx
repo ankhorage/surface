@@ -1,10 +1,10 @@
 import React from 'react';
 import { Platform, Pressable, View } from 'react-native';
 
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { TooltipProps } from '../../../../types/tooltip';
 import { Popover } from '../../../popover/public';
 import { Surface } from '../../../surface/public';
+import { useTheme } from '../../../theme/runtime';
 import { Text } from '../../../typography/public';
 import { useTooltipVisibility } from '../../composition/useTooltipVisibility';
 

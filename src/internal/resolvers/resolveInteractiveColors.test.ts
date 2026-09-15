@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test';
 
-import { createTheme } from '../../theme/createTheme';
+import { createTheme } from '../../features/theme/application/use-cases/createTheme';
 import { resolveFieldState } from './resolveFieldState';
 import { resolveButtonColors, resolveInputColors } from './resolveInteractiveColors';
 

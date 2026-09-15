@@ -13,8 +13,8 @@ import type { IoniconsIconName } from '@react-native-vector-icons/ionicons/stati
 import type { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons/static';
 import type { StyleProp, TextStyle, ViewStyle } from 'react-native';
 
-import type { SurfaceTheme } from '../theme/types';
 import type { SurfaceImageSource } from './image';
+import type { SurfaceTheme } from './theme';
 
 export type IconProvider =
   'Ionicons' | 'FontAwesome' | 'FontAwesome5' | 'FontAwesome6' | 'MaterialDesignIcons';

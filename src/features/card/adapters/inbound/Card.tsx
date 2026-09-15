@@ -1,11 +1,11 @@
 import React from 'react';
 import type { ViewStyle } from 'react-native';
 
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { CardProps } from '../../../../types/card';
 import type { SurfaceVariant } from '../../../../types/surface';
 import { Pressable } from '../../../pressable/public';
 import { Surface } from '../../../surface/public';
+import { useTheme } from '../../../theme/runtime';
 
 /*** Renders a themed content card with optional interactive press states. */
 export function Card({

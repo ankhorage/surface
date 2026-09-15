@@ -6,8 +6,8 @@ import {
   resolveInputColors,
   resolveTextStyles,
 } from '../../../../internal/resolvers';
-import type { SurfaceTheme } from '../../../../theme/types';
 import type { TextInputProps } from '../../../../types/text-input';
+import type { SurfaceTheme } from '../../../../types/theme';
 
 /*** Resolves layout, colors, and editability for one TextInput state. */
 export function resolveTextInputPresentation(

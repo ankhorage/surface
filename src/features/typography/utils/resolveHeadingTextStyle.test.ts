@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test';
 
-import { createTheme } from '../../../theme/createTheme';
+import { createTheme } from '../../theme/application/use-cases/createTheme';
 import { resolveHeadingTextStyle } from './resolveHeadingTextStyle';
 
 describe('resolveHeadingTextStyle', () => {

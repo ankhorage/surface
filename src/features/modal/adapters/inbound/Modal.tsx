@@ -5,10 +5,10 @@ import { FocusScope } from '../../../../internal/focus/FocusScope';
 import { Portal } from '../../../../internal/overlay/Portal';
 import { resolvePointerEvents } from '../../../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../../../internal/resolvers';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { ModalProps } from '../../../../types/modal';
 import { View } from '../../../layout/public';
 import { Surface } from '../../../surface/public';
+import { useTheme } from '../../../theme/runtime';
 
 const boxNonePointerEvents = resolvePointerEvents('box-none');
 

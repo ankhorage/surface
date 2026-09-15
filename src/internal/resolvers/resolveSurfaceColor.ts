@@ -1,5 +1,5 @@
-import type { SurfaceColor } from '../../surfaceColor';
-import type { RoleSemantics, SurfaceTheme } from '../../theme/types';
+import type { SurfaceColor } from '../../types/surfaceColor';
+import type { RoleSemantics, SurfaceTheme } from '../../types/theme';
 
 export function resolveSurfaceColor(
   theme: SurfaceTheme,

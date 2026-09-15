@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 
 import { resolveFocusRingStyles } from '../../../../../internal/resolvers';
-import { useTheme } from '../../../../../theme/ThemeContext';
 import type { TextInputProps } from '../../../../../types/text-input';
+import { useTheme } from '../../../../theme/runtime';
 import { resolveTextInputPresentation } from '../../utils/resolveTextInputPresentation';
 
 /*** Renders a token-aware text input with controlled interaction policy. */

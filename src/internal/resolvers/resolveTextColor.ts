@@ -1,5 +1,5 @@
-import type { SurfaceColor, SurfaceEmphasis } from '../../surfaceColor';
-import type { SurfaceTheme } from '../../theme/types';
+import type { SurfaceColor, SurfaceEmphasis } from '../../types/surfaceColor';
+import type { SurfaceTheme } from '../../types/theme';
 import { resolveSurfaceColor } from './resolveSurfaceColor';
 
 export function resolveTextColor(

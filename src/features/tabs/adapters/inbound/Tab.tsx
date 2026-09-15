@@ -1,9 +1,9 @@
 import React from 'react';
 import { Pressable, type ViewStyle } from 'react-native';
 
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { TabProps } from '../../../../types/tabs';
 import { View } from '../../../layout/public';
+import { useTheme } from '../../../theme/runtime';
 import { Text } from '../../../typography/public';
 import { useTabRegistration } from '../../composition/useTabRegistration';
 import { useTabsContext } from '../../composition/useTabsContext';

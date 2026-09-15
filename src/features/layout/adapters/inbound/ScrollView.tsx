@@ -2,9 +2,9 @@ import React from 'react';
 import { ScrollView as ReactNativeScrollView } from 'react-native';
 
 import { useResponsiveRuntime } from '../../../../core/responsive';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { ScrollViewProps } from '../../../../types/layout';
 import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
+import { useTheme } from '../../../theme/runtime';
 
 /*** Renders the token-aware responsive Surface adapter for React Native ScrollView. */
 export function ScrollView(props: ScrollViewProps) {

@@ -12,7 +12,7 @@ const { Grid, ScrollView, View } = await import('./features/layout/public');
 const { KeyboardAvoidingView } = await import('./features/keyboard-avoiding-view/public');
 const { Show } = await import('./core/responsive/Show');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
-const { ThemeProvider } = await import('./theme/ThemeContext');
+const { ThemeProvider } = await import('./features/theme/runtime');
 
 function ResponsiveAcceptanceTree() {
   return (

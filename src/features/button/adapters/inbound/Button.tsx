@@ -7,12 +7,12 @@ import {
   resolveControlSize,
   resolveIconSize,
 } from '../../../../internal/resolvers';
-import { useTheme } from '../../../../theme/ThemeContext';
-import type { SurfaceTheme } from '../../../../theme/types';
 import type { ButtonProps } from '../../../../types/button';
+import type { SurfaceTheme } from '../../../../types/theme';
 import { Icon } from '../../../icon/public';
 import { View } from '../../../layout/public';
 import { Pressable } from '../../../pressable/public';
+import { useTheme } from '../../../theme/runtime';
 import { Text } from '../../../typography/public';
 
 /*** Renders the primary Surface action control with semantic visual states. */

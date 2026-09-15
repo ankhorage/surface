@@ -11,9 +11,9 @@ import {
   resolveFocusRingStyles,
   resolveInteractiveState,
 } from '../../../../internal/resolvers';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { PressableProps } from '../../../../types/pressable';
 import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
+import { useTheme } from '../../../theme/runtime';
 
 /*** Renders the token-aware Surface adapter for React Native Pressable. */
 export function Pressable({

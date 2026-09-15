@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 
-import type { SurfaceTheme } from '../theme/types';
+import type { SurfaceTheme } from '../types/theme';
 import { resolveViewStyles } from './resolveViewStyles';
 
 const mockTheme = {

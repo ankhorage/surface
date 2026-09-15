@@ -1,7 +1,7 @@
 import type React from 'react';
 import type { PressableProps, ViewProps } from 'react-native';
 
-import type { InteractionPolicy, InteractionPolicyProps } from '../interactionPolicy';
+import type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';
 
 export type AccordionMode = 'single' | 'multiple';
 

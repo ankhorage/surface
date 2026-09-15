@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, View as ReactNativeView, type ViewStyle } from 'react-native';
 import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { AppBarProps } from '../../../../types/app-bar';
 import { Divider, View } from '../../../layout/public';
+import { useTheme } from '../../../theme/runtime';
 
 /*** Renders application chrome with optional safe-area padding and leading/trailing slots. */
 export function AppBar({

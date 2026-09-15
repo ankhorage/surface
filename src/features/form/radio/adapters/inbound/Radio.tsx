@@ -9,12 +9,12 @@ import {
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
-import { useTheme } from '../../../../../theme/ThemeContext';
-import type { SurfaceTheme } from '../../../../../theme/types';
 import type { RadioProps } from '../../../../../types/radio';
+import type { SurfaceTheme } from '../../../../../types/theme';
 import { View } from '../../../../layout/public';
 import type { PressableProps } from '../../../../pressable/public';
 import { Pressable } from '../../../../pressable/public';
+import { useTheme } from '../../../../theme/runtime';
 import { Text } from '../../../../typography/public';
 import { isRadioTextContent } from '../../utils/isRadioTextContent';
 
