@@ -1,0 +1,75 @@
+name: Theme ownership migration
+
+on:
+  push:
+    branches:
+      - refactor/theme-runtime-ownership
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.2'
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Apply canonical ownership migration
+        run: bun scripts/migrateThemeOwnership.ts
+      - name: Install released dependencies
+        run: bun install
+      - name: Format
+        run: bun run format
+      - name: Build
+        run: bun run build
+      - name: Autofix lint
+        run: bun run lint:fix
+      - name: Lint
+        run: bun run lint
+      - name: Knip
+        run: bun run knip:check
+      - name: Tests
+        run: bun run test
+      - name: Typecheck
+        run: bun run typecheck
+      - name: Assert major changeset
+        run: test -f .changeset/theme-runtime-ownership.md
+      - name: Regenerate Paradox docs
+        run: bun run docs
+      - name: Reformat generated docs
+        run: bun run format
+      - name: Revalidate after docs
+        run: |
+          bun run build
+          bun run lint
+          bun run knip:check
+          bun run test
+          bun run typecheck
+      - name: Assert canonical ownership
+        run: |
+          test ! -e src/theme
+          test ! -e src/context
+          test ! -e src/interactionPolicy.ts
+          test ! -e src/surfaceColor.ts
+          test ! -e src/utils/deepEqual.ts
+          test ! -e src/utils/deepMerge.ts
+          ! grep -R "ThemeContext\|_hasProvider\|TranslationProvider\|useTranslationContext\|useFontContext" src --include='*.ts' --include='*.tsx'
+          ! grep -R "from ['\"]\./theme\|from ['\"]\.\./theme" src --include='*.ts' --include='*.tsx'
+      - name: Commit validated migration
+        run: |
+          git config user.name artiphishle
+          git config user.email 137318798+artiphishle@users.noreply.github.com
+          git add -A
+          git commit -m "refactor(theme): normalize runtime ownership"
+          git push origin HEAD:refactor/theme-runtime-ownership
