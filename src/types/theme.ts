@@ -9,6 +9,7 @@ import type {
   ThemeColorMode,
 } from '@ankhorage/color-theory';
 import type { ThemeConfig as ContractsThemeConfig } from '@ankhorage/contracts';
+import type { ReactNode } from 'react';
 
 export type {
   ColorHarmony,
@@ -145,7 +146,17 @@ export interface SurfaceColorDiagnostics {
 }
 
 export type FontWeight =
-  '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'bold' | 'normal';
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900'
+  | 'bold'
+  | 'normal';
 
 export interface ThemeTokens {
   colors: {
@@ -244,3 +255,22 @@ export interface SurfaceTheme extends ThemeTokens {
 }
 
 export type ThemeMode = 'light' | 'dark';
+
+export interface ThemeRuntime {
+  theme: SurfaceTheme;
+  mode: ThemeMode;
+  setThemeConfig: (config: Partial<ContractsThemeConfig>) => void;
+  setMode: (mode: ThemeMode) => void;
+}
+
+export interface ThemeProviderProps {
+  children: ReactNode;
+  initialConfig?: Partial<ContractsThemeConfig>;
+  initialMode?: ThemeMode;
+}
+
+export interface ThemeScopeProps {
+  children: ReactNode;
+  themeConfig?: Partial<ContractsThemeConfig>;
+  mode?: ThemeMode;
+}
