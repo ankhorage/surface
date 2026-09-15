@@ -80,6 +80,24 @@ export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
 export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './features/tabs/public';
 export { Tab, TabList, TabPanel, Tabs } from './features/tabs/public';
+export type {
+  ActionSemantics,
+  BorderSemantics,
+  ContentSemantics,
+  FontWeight,
+  NeutralSemantics,
+  RoleSemantics,
+  SelectionSemantics,
+  SurfaceColorDiagnostics,
+  SurfaceColorSelectionDiagnostic,
+  SurfaceContrastDiagnostic,
+  SurfaceSemantics,
+  SurfaceTheme,
+  ThemeMode,
+  ThemeSemantics,
+  ThemeTokens,
+} from './features/theme/public';
+export { createTheme } from './features/theme/public';
 export type { ThemeProviderProps, ThemeRuntime, ThemeScopeProps } from './features/theme/runtime';
 export { ThemeProvider, ThemeScope, useTheme } from './features/theme/runtime';
 export type {
