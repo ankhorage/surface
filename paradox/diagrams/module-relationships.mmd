@@ -1,22 +1,4 @@
 graph LR
-  module_src_components_field_Field_tsx["src/components/field/Field.tsx"]
-  module_src_components_field_index_ts["src/components/field/index.ts"]
-  module_src_components_field_types_ts["src/components/field/types.ts"]
-  module_src_components_helper_text_HelperText_tsx["src/components/helper-text/HelperText.tsx"]
-  module_src_components_helper_text_index_ts["src/components/helper-text/index.ts"]
-  module_src_components_helper_text_types_ts["src/components/helper-text/types.ts"]
-  module_src_components_label_index_ts["src/components/label/index.ts"]
-  module_src_components_label_Label_tsx["src/components/label/Label.tsx"]
-  module_src_components_label_types_ts["src/components/label/types.ts"]
-  module_src_components_list_item_index_ts["src/components/list-item/index.ts"]
-  module_src_components_list_item_ListItem_tsx["src/components/list-item/ListItem.tsx"]
-  module_src_components_list_item_types_ts["src/components/list-item/types.ts"]
-  module_src_components_switch_index_ts["src/components/switch/index.ts"]
-  module_src_components_switch_Switch_tsx["src/components/switch/Switch.tsx"]
-  module_src_components_switch_types_ts["src/components/switch/types.ts"]
-  module_src_components_textarea_index_ts["src/components/textarea/index.ts"]
-  module_src_components_textarea_Textarea_tsx["src/components/textarea/Textarea.tsx"]
-  module_src_components_textarea_types_ts["src/components/textarea/types.ts"]
   module_src_context_FontContext_tsx["src/context/FontContext.tsx"]
   module_src_context_TranslationContext_tsx["src/context/TranslationContext.tsx"]
   module_src_core_responsive_breakpoints_ts["src/core/responsive/breakpoints.ts"]
@@ -55,10 +37,14 @@ graph LR
   module_src_features_card_public_ts["src/features/card/public.ts"]
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx["src/features/form/checkbox/adapters/inbound/Checkbox.tsx"]
   module_src_features_form_checkbox_public_ts["src/features/form/checkbox/public.ts"]
+  module_src_features_form_field_adapters_inbound_Field_tsx["src/features/form/field/adapters/inbound/Field.tsx"]
+  module_src_features_form_field_public_ts["src/features/form/field/public.ts"]
   module_src_features_form_radio_adapters_inbound_Radio_test_ts["src/features/form/radio/adapters/inbound/Radio.test.ts"]
   module_src_features_form_radio_adapters_inbound_Radio_tsx["src/features/form/radio/adapters/inbound/Radio.tsx"]
   module_src_features_form_radio_public_ts["src/features/form/radio/public.ts"]
   module_src_features_form_radio_utils_isRadioTextContent_ts["src/features/form/radio/utils/isRadioTextContent.ts"]
+  module_src_features_form_switch_adapters_inbound_Switch_tsx["src/features/form/switch/adapters/inbound/Switch.tsx"]
+  module_src_features_form_switch_public_ts["src/features/form/switch/public.ts"]
   module_src_features_form_text_input_adapters_inbound_TextInput_tsx["src/features/form/text-input/adapters/inbound/TextInput.tsx"]
   module_src_features_form_text_input_public_ts["src/features/form/text-input/public.ts"]
   module_src_features_form_text_input_utils_resolveTextInputPresentation_ts["src/features/form/text-input/utils/resolveTextInputPresentation.ts"]
@@ -84,6 +70,10 @@ graph LR
   module_src_features_layout_adapters_inbound_ScrollView_tsx["src/features/layout/adapters/inbound/ScrollView.tsx"]
   module_src_features_layout_adapters_inbound_View_tsx["src/features/layout/adapters/inbound/View.tsx"]
   module_src_features_layout_public_ts["src/features/layout/public.ts"]
+  module_src_features_list_adapters_inbound_List_tsx["src/features/list/adapters/inbound/List.tsx"]
+  module_src_features_list_adapters_inbound_ListItem_tsx["src/features/list/adapters/inbound/ListItem.tsx"]
+  module_src_features_list_public_test_ts["src/features/list/public.test.ts"]
+  module_src_features_list_public_ts["src/features/list/public.ts"]
   module_src_features_modal_adapters_inbound_Modal_tsx["src/features/modal/adapters/inbound/Modal.tsx"]
   module_src_features_modal_public_ts["src/features/modal/public.ts"]
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx["src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"]
@@ -206,15 +196,18 @@ graph LR
   module_src_types_button_ts["src/types/button.ts"]
   module_src_types_card_ts["src/types/card.ts"]
   module_src_types_checkbox_ts["src/types/checkbox.ts"]
+  module_src_types_field_ts["src/types/field.ts"]
   module_src_types_icon_ts["src/types/icon.ts"]
   module_src_types_image_ts["src/types/image.ts"]
   module_src_types_keyboard_avoiding_view_ts["src/types/keyboard-avoiding-view.ts"]
   module_src_types_layout_ts["src/types/layout.ts"]
+  module_src_types_list_ts["src/types/list.ts"]
   module_src_types_modal_ts["src/types/modal.ts"]
   module_src_types_popover_ts["src/types/popover.ts"]
   module_src_types_popoverMenu_ts["src/types/popoverMenu.ts"]
   module_src_types_radio_ts["src/types/radio.ts"]
   module_src_types_surface_ts["src/types/surface.ts"]
+  module_src_types_switch_ts["src/types/switch.ts"]
   module_src_types_tabs_ts["src/types/tabs.ts"]
   module_src_types_text_input_ts["src/types/text-input.ts"]
   module_src_types_toast_ts["src/types/toast.ts"]
@@ -227,35 +220,6 @@ graph LR
   module_src_utils_resolveViewStyles_test_ts["src/utils/resolveViewStyles.test.ts"]
   module_src_utils_resolveViewStyles_ts["src/utils/resolveViewStyles.ts"]
   module_src_webAcceptance_test_tsx["src/webAcceptance.test.tsx"]
-  module_src_components_field_Field_tsx --> module_src_components_field_types_ts
-  module_src_components_field_Field_tsx --> module_src_components_helper_text_index_ts
-  module_src_components_field_Field_tsx --> module_src_components_label_index_ts
-  module_src_components_field_Field_tsx --> module_src_features_layout_public_ts
-  module_src_components_field_Field_tsx --> module_src_internal_resolvers_index_ts
-  module_src_components_helper_text_HelperText_tsx --> module_src_components_helper_text_types_ts
-  module_src_components_helper_text_HelperText_tsx --> module_src_features_typography_public_ts
-  module_src_components_helper_text_types_ts --> module_src_surfaceColor_ts
-  module_src_components_label_Label_tsx --> module_src_components_label_types_ts
-  module_src_components_label_Label_tsx --> module_src_features_typography_public_ts
-  module_src_components_label_types_ts --> module_src_surfaceColor_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_components_list_item_types_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_features_layout_public_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_features_typography_public_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_primitives_button_base_index_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_switch_Switch_tsx --> module_src_components_switch_types_ts
-  module_src_components_switch_Switch_tsx --> module_src_features_layout_public_ts
-  module_src_components_switch_Switch_tsx --> module_src_features_typography_public_ts
-  module_src_components_switch_Switch_tsx --> module_src_internal_resolvers_index_ts
-  module_src_components_switch_Switch_tsx --> module_src_internal_useControllableState_ts
-  module_src_components_switch_Switch_tsx --> module_src_primitives_button_base_index_ts
-  module_src_components_switch_Switch_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_switch_types_ts --> module_src_internal_resolvers_resolveControlSize_ts
-  module_src_components_switch_types_ts --> module_src_primitives_button_base_index_ts
-  module_src_components_switch_types_ts --> module_src_surfaceColor_ts
-  module_src_components_textarea_Textarea_tsx --> module_src_components_textarea_types_ts
-  module_src_components_textarea_Textarea_tsx --> module_src_features_form_text_input_public_ts
-  module_src_components_textarea_types_ts --> module_src_types_text_input_ts
   module_src_core_responsive_getBreakpointFromWidth_test_ts --> module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_getBreakpointFromWidth_ts --> module_src_core_responsive_breakpoints_ts
   module_src_core_responsive_getBreakpointFromWidth_ts --> module_src_core_responsive_types_ts
@@ -326,6 +290,10 @@ graph LR
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_theme_types_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_types_checkbox_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_features_layout_public_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_features_typography_public_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_internal_resolvers_index_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_types_field_ts
   module_src_features_form_radio_adapters_inbound_Radio_test_ts --> module_src_features_form_radio_utils_isRadioTextContent_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_features_form_radio_utils_isRadioTextContent_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_features_layout_public_ts
@@ -337,6 +305,13 @@ graph LR
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_theme_types_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_types_radio_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_layout_public_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_typography_public_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_resolvers_index_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_useControllableState_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_primitives_button_base_index_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_types_switch_ts
   module_src_features_form_text_input_adapters_inbound_TextInput_tsx --> module_src_features_form_text_input_utils_resolveTextInputPresentation_ts
   module_src_features_form_text_input_adapters_inbound_TextInput_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_form_text_input_adapters_inbound_TextInput_tsx --> module_src_theme_ThemeContext_tsx
@@ -391,6 +366,13 @@ graph LR
   module_src_features_layout_adapters_inbound_View_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_layout_adapters_inbound_View_tsx --> module_src_types_layout_ts
   module_src_features_layout_adapters_inbound_View_tsx --> module_src_utils_resolveViewStyles_ts
+  module_src_features_list_adapters_inbound_List_tsx --> module_src_features_layout_public_ts
+  module_src_features_list_adapters_inbound_List_tsx --> module_src_types_list_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_features_layout_public_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_features_typography_public_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_primitives_button_base_index_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_types_list_ts
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_features_layout_public_ts
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_features_surface_public_ts
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_internal_focus_FocusScope_tsx
@@ -610,6 +592,7 @@ graph LR
   module_src_types_image_ts --> module_src_theme_types_ts
   module_src_types_layout_ts --> module_src_core_responsive_index_ts
   module_src_types_layout_ts --> module_src_theme_types_ts
+  module_src_types_list_ts --> module_src_interactionPolicy_ts
   module_src_types_modal_ts --> module_src_interactionPolicy_ts
   module_src_types_popover_ts --> module_src_interactionPolicy_ts
   module_src_types_popoverMenu_ts --> module_src_interactionPolicy_ts
@@ -618,6 +601,9 @@ graph LR
   module_src_types_radio_ts --> module_src_primitives_button_base_index_ts
   module_src_types_radio_ts --> module_src_surfaceColor_ts
   module_src_types_surface_ts --> module_src_types_layout_ts
+  module_src_types_switch_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_types_switch_ts --> module_src_primitives_button_base_index_ts
+  module_src_types_switch_ts --> module_src_surfaceColor_ts
   module_src_types_tabs_ts --> module_src_interactionPolicy_ts
   module_src_types_text_input_ts --> module_src_interactionPolicy_ts
   module_src_types_text_input_ts --> module_src_internal_resolvers_resolveControlSize_ts

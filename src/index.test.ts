@@ -22,12 +22,15 @@ const expectedFeatureRootExports = [
   "export { Button, IconButton } from './features/button/public';",
   "export { Card } from './features/card/public';",
   "export { Checkbox } from './features/form/checkbox/public';",
+  "export { Field } from './features/form/field/public';",
   "export { Radio } from './features/form/radio/public';",
+  "export { Switch } from './features/form/switch/public';",
   "export { TextInput } from './features/form/text-input/public';",
   "export { Icon, SUPPORTED_ICON_PROVIDERS } from './features/icon/public';",
   "export { Image } from './features/image/public';",
   "export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';",
   "export { Divider, Grid, ScrollView, View } from './features/layout/public';",
+  "export { List, ListItem } from './features/list/public';",
   "export { Modal } from './features/modal/public';",
   "export { PopoverMenu } from './features/popover-menu/public';",
   "export { Popover } from './features/popover/public';",
@@ -38,38 +41,39 @@ const expectedFeatureRootExports = [
   "export { Heading, Text } from './features/typography/public';",
 ] as const;
 
-const expectedLegacyRootExports = [
-  "export { Field } from './components/field';",
-  "export { HelperText } from './components/helper-text';",
-  "export { Label } from './components/label';",
-  "export { ListItem } from './components/list-item';",
-  "export { Switch } from './components/switch';",
-  "export { Textarea } from './components/textarea';",
+const expectedCrossCuttingRootExports = [
   "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export * from './core/responsive';",
 ] as const;
 
 describe('feature-owned root barrel contract', () => {
-  it('routes migrated UI through feature-owned public facades', () => {
+  it('routes UI through feature-owned public facades', () => {
     expectedFeatureRootExports.forEach((line) => expect(indexSource).toContain(line));
   });
 
-  it('does not retain removed layout aliases or a legacy layout facade', () => {
+  it('does not retain removed component or layout facades and aliases', () => {
+    expect(indexSource).not.toContain("'./components/");
     expect(indexSource).not.toContain("'./layout");
     expect(indexSource).not.toMatch(/\bBoxProps\b/u);
     expect(indexSource).not.toMatch(/\bContainerProps\b/u);
     expect(indexSource).not.toMatch(/\bStackProps\b/u);
     expect(indexSource).not.toMatch(/\bScrollAreaProps\b/u);
+    expect(indexSource).not.toMatch(/\bTextareaProps\b/u);
+    expect(indexSource).not.toMatch(/\bHelperTextProps\b/u);
+    expect(indexSource).not.toMatch(/\bLabelProps\b/u);
     expect(indexSource).not.toMatch(/export\s*\{[^}]*\bBox\b/u);
     expect(indexSource).not.toMatch(/export\s*\{[^}]*\bContainer\b/u);
     expect(indexSource).not.toMatch(/export\s*\{[^}]*\bStack\b/u);
     expect(indexSource).not.toMatch(/export\s*\{[^}]*\bScrollArea\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{[^}]*\bTextarea\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{[^}]*\bHelperText\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{[^}]*\bLabel\b/u);
   });
 });
 
 describe('remaining root barrel contract', () => {
-  it('keeps still-unmigrated UI on its current public API until its feature migration', () => {
-    expectedLegacyRootExports.forEach((line) => expect(indexSource).toContain(line));
+  it('keeps deliberate cross-cutting public APIs', () => {
+    expectedCrossCuttingRootExports.forEach((line) => expect(indexSource).toContain(line));
   });
 
   it('does not retain obsolete action-sheet, drawer, menu aliases, or navigation chrome', () => {

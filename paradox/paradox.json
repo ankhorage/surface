@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v5.0.1",
+      "value": "v6.0.0",
       "color": "cb3837"
     },
     {
@@ -68,141 +68,6 @@
   "config": null,
   "entrypoints": ["src/index.ts"],
   "modules": [
-    {
-      "path": "src/components/field/Field.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/field/types.ts",
-        "src/components/helper-text/index.ts",
-        "src/components/label/index.ts",
-        "src/features/layout/public.ts",
-        "src/internal/resolvers/index.ts"
-      ],
-      "exports": ["Field"]
-    },
-    {
-      "path": "src/components/field/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Field", "FieldProps"]
-    },
-    {
-      "path": "src/components/field/types.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["FieldProps"]
-    },
-    {
-      "path": "src/components/helper-text/HelperText.tsx",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/helper-text/types.ts", "src/features/typography/public.ts"],
-      "exports": ["HelperText"]
-    },
-    {
-      "path": "src/components/helper-text/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["HelperText", "HelperTextProps"]
-    },
-    {
-      "path": "src/components/helper-text/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts"],
-      "exports": ["HelperTextProps"]
-    },
-    {
-      "path": "src/components/label/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Label", "LabelProps"]
-    },
-    {
-      "path": "src/components/label/Label.tsx",
-      "isEntrypoint": false,
-      "dependencies": ["src/components/label/types.ts", "src/features/typography/public.ts"],
-      "exports": ["Label"]
-    },
-    {
-      "path": "src/components/label/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/surfaceColor.ts"],
-      "exports": ["LabelProps"]
-    },
-    {
-      "path": "src/components/list-item/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["ListItem", "ListItemProps"]
-    },
-    {
-      "path": "src/components/list-item/ListItem.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/list-item/types.ts",
-        "src/features/layout/public.ts",
-        "src/features/typography/public.ts",
-        "src/primitives/button-base/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["ListItem"]
-    },
-    {
-      "path": "src/components/list-item/types.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["ListItemProps"]
-    },
-    {
-      "path": "src/components/switch/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Switch", "SwitchProps"]
-    },
-    {
-      "path": "src/components/switch/Switch.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/switch/types.ts",
-        "src/features/layout/public.ts",
-        "src/features/typography/public.ts",
-        "src/internal/resolvers/index.ts",
-        "src/internal/useControllableState.ts",
-        "src/primitives/button-base/index.ts",
-        "src/theme/ThemeContext.tsx"
-      ],
-      "exports": ["Switch"]
-    },
-    {
-      "path": "src/components/switch/types.ts",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts",
-        "src/primitives/button-base/index.ts",
-        "src/surfaceColor.ts"
-      ],
-      "exports": ["SwitchProps"]
-    },
-    {
-      "path": "src/components/textarea/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["Textarea", "TextareaProps"]
-    },
-    {
-      "path": "src/components/textarea/Textarea.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/components/textarea/types.ts",
-        "src/features/form/text-input/public.ts"
-      ],
-      "exports": ["Textarea"]
-    },
-    {
-      "path": "src/components/textarea/types.ts",
-      "isEntrypoint": false,
-      "dependencies": ["src/types/text-input.ts"],
-      "exports": ["TextareaProps"]
-    },
     {
       "path": "src/context/FontContext.tsx",
       "isEntrypoint": false,
@@ -546,6 +411,23 @@
       "exports": ["Checkbox", "CheckboxProps"]
     },
     {
+      "path": "src/features/form/field/adapters/inbound/Field.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts",
+        "src/features/typography/public.ts",
+        "src/internal/resolvers/index.ts",
+        "src/types/field.ts"
+      ],
+      "exports": ["Field"]
+    },
+    {
+      "path": "src/features/form/field/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["Field", "FieldProps"]
+    },
+    {
       "path": "src/features/form/radio/adapters/inbound/Radio.test.ts",
       "isEntrypoint": false,
       "dependencies": ["src/features/form/radio/utils/isRadioTextContent.ts"],
@@ -579,6 +461,26 @@
       "isEntrypoint": false,
       "dependencies": [],
       "exports": ["isRadioTextContent"]
+    },
+    {
+      "path": "src/features/form/switch/adapters/inbound/Switch.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts",
+        "src/features/typography/public.ts",
+        "src/internal/resolvers/index.ts",
+        "src/internal/useControllableState.ts",
+        "src/primitives/button-base/index.ts",
+        "src/theme/ThemeContext.tsx",
+        "src/types/switch.ts"
+      ],
+      "exports": ["Switch"]
+    },
+    {
+      "path": "src/features/form/switch/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["Switch", "SwitchProps"]
     },
     {
       "path": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
@@ -799,6 +701,36 @@
         "View",
         "ViewProps"
       ]
+    },
+    {
+      "path": "src/features/list/adapters/inbound/List.tsx",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/layout/public.ts", "src/types/list.ts"],
+      "exports": ["List"]
+    },
+    {
+      "path": "src/features/list/adapters/inbound/ListItem.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts",
+        "src/features/typography/public.ts",
+        "src/primitives/button-base/index.ts",
+        "src/theme/ThemeContext.tsx",
+        "src/types/list.ts"
+      ],
+      "exports": ["ListItem"]
+    },
+    {
+      "path": "src/features/list/public.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    },
+    {
+      "path": "src/features/list/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["List", "ListItem", "ListItemProps", "ListProps"]
     },
     {
       "path": "src/features/modal/adapters/inbound/Modal.tsx",
@@ -1253,8 +1185,6 @@
         "Heading",
         "HeadingLevel",
         "HeadingProps",
-        "HelperText",
-        "HelperTextProps",
         "HexColor",
         "I18nInstance",
         "Icon",
@@ -1273,10 +1203,10 @@
         "KeyboardAvoidingView",
         "KeyboardAvoidingViewBehavior",
         "KeyboardAvoidingViewProps",
-        "Label",
-        "LabelProps",
+        "List",
         "ListItem",
         "ListItemProps",
+        "ListProps",
         "Modal",
         "ModalProps",
         "NeutralSemantics",
@@ -1335,8 +1265,6 @@
         "Tabs",
         "TabsProps",
         "Text",
-        "Textarea",
-        "TextareaProps",
         "TextInput",
         "TextInputProps",
         "TextProps",
@@ -2063,6 +1991,12 @@
       "exports": ["CheckboxProps"]
     },
     {
+      "path": "src/types/field.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["FieldProps"]
+    },
+    {
       "path": "src/types/icon.ts",
       "isEntrypoint": false,
       "dependencies": ["src/theme/types.ts", "src/types/image.ts"],
@@ -2102,6 +2036,12 @@
       ]
     },
     {
+      "path": "src/types/list.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/interactionPolicy.ts"],
+      "exports": ["ListItemProps", "ListProps"]
+    },
+    {
       "path": "src/types/modal.ts",
       "isEntrypoint": false,
       "dependencies": ["src/interactionPolicy.ts"],
@@ -2134,6 +2074,16 @@
       "isEntrypoint": false,
       "dependencies": ["src/types/layout.ts"],
       "exports": ["SurfaceProps", "SurfaceVariant"]
+    },
+    {
+      "path": "src/types/switch.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/internal/resolvers/resolveControlSize.ts",
+        "src/primitives/button-base/index.ts",
+        "src/surfaceColor.ts"
+      ],
+      "exports": ["SwitchProps"]
     },
     {
       "path": "src/types/tabs.ts",
@@ -2474,7 +2424,7 @@
         {
           "name": "aria-live",
           "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+          "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -2859,7 +2809,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -3162,7 +3112,7 @@
         {
           "name": "aria-live",
           "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+          "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -3554,7 +3504,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -3850,7 +3800,7 @@
         {
           "name": "aria-live",
           "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+          "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -4263,7 +4213,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -4566,7 +4516,7 @@
         {
           "name": "aria-live",
           "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+          "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -4979,7 +4929,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -5296,7 +5246,7 @@
         {
           "name": "aria-live",
           "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+          "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -5758,7 +5708,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -6241,7 +6191,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -6411,7 +6361,7 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
@@ -7129,7 +7079,7 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
@@ -7782,7 +7732,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -8015,7 +7965,7 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
@@ -8908,7 +8858,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -9015,14 +8965,14 @@
     },
     {
       "name": "Field",
-      "description": "Composes a label, control, and helper or error message into one field.",
+      "description": "Composes a control with its label and helper or error message.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/field/Field.tsx",
+      "modulePath": "src/features/form/field/adapters/inbound/Field.tsx",
       "sourceLocation": {
-        "filePath": "src/components/field/Field.tsx",
-        "line": 10,
+        "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "line": 9,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -9051,9 +9001,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/field/types.ts",
+      "modulePath": "src/types/field.ts",
       "sourceLocation": {
-        "filePath": "src/components/field/types.ts",
+        "filePath": "src/types/field.ts",
         "line": 3,
         "column": 1
       },
@@ -9754,7 +9704,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -9928,7 +9878,7 @@
         {
           "name": "align",
           "kind": "property",
-          "type": "\"justify\" | \"left\" | \"right\" | \"center\" | \"auto\" | undefined",
+          "type": "\"auto\" | \"justify\" | \"left\" | \"right\" | \"center\" | undefined",
           "required": false,
           "description": null
         },
@@ -9942,14 +9892,14 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "emphasis",
           "kind": "property",
-          "type": "\"default\" | \"muted\" | \"subtle\" | \"inverse\" | undefined",
+          "type": "\"default\" | \"subtle\" | \"muted\" | \"inverse\" | undefined",
           "required": false,
           "description": null
         },
@@ -9983,85 +9933,6 @@
         },
         {
           "name": "text",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
-      "name": "HelperText",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/helper-text/HelperText.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/helper-text/HelperText.tsx",
-        "line": 6,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["HelperTextProps"],
-      "signatures": [
-        {
-          "label": "({ children, emphasis = 'muted', color, testID }: HelperTextProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{ children, emphasis = 'muted', color, testID }",
-              "type": "HelperTextProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "HelperTextProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/helper-text/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/helper-text/types.ts",
-        "line": 5,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
-      "signatures": [],
-      "members": [
-        {
-          "name": "children",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "color",
-          "kind": "property",
-          "type": "\"error\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "emphasis",
-          "kind": "property",
-          "type": "\"default\" | \"muted\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
           "kind": "property",
           "type": "string | undefined",
           "required": false,
@@ -10281,7 +10152,7 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
@@ -10993,26 +10864,26 @@
       "structuredRows": []
     },
     {
-      "name": "Label",
-      "description": null,
+      "name": "List",
+      "description": "Groups list items under one neutral Surface list boundary.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/label/Label.tsx",
+      "modulePath": "src/features/list/adapters/inbound/List.tsx",
       "sourceLocation": {
-        "filePath": "src/components/label/Label.tsx",
-        "line": 6,
+        "filePath": "src/features/list/adapters/inbound/List.tsx",
+        "line": 7,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["LabelProps"],
+      "relatedSymbols": ["ListProps"],
       "signatures": [
         {
-          "label": "({\n  children,\n  required = false,\n  emphasis = 'default',\n  color,\n  testID,\n}: LabelProps) => React.JSX.Element",
+          "label": "({ children, testID }: ListProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  required = false,\n  emphasis = 'default',\n  color,\n  testID,\n}",
-              "type": "LabelProps",
+              "name": "{ children, testID }",
+              "type": "ListProps",
               "required": true,
               "description": null
             }
@@ -11025,79 +10896,25 @@
       "structuredRows": []
     },
     {
-      "name": "LabelProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/label/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/label/types.ts",
-        "line": 5,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
-      "signatures": [],
-      "members": [
-        {
-          "name": "children",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "color",
-          "kind": "property",
-          "type": "\"error\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "emphasis",
-          "kind": "property",
-          "type": "\"default\" | \"muted\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "required",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
       "name": "ListItem",
-      "description": "Renders a static or pressable list item.",
+      "description": "Renders a static or interactive list item with shared row geometry and interaction states.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/list-item/ListItem.tsx",
+      "modulePath": "src/features/list/adapters/inbound/ListItem.tsx",
       "sourceLocation": {
-        "filePath": "src/components/list-item/ListItem.tsx",
-        "line": 53,
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 10,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
       "relatedSymbols": ["ListItemProps"],
       "signatures": [
         {
-          "label": "({ onPress, disabled = false, testID, ...content }: ListItemProps) => React.JSX.Element",
+          "label": "({\n  children,\n  title,\n  description,\n  leading,\n  trailing,\n  onPress,\n  disabled = false,\n  selected = false,\n  compact = false,\n  interactionPolicy,\n  accessibilityLabel,\n  testID,\n}: ListItemProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ onPress, disabled = false, testID, ...content }",
+              "name": "{\n  children,\n  title,\n  description,\n  leading,\n  trailing,\n  onPress,\n  disabled = false,\n  selected = false,\n  compact = false,\n  interactionPolicy,\n  accessibilityLabel,\n  testID,\n}",
               "type": "ListItemProps",
               "required": true,
               "description": null
@@ -11116,16 +10933,37 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/list-item/types.ts",
+      "modulePath": "src/types/list.ts",
       "sourceLocation": {
-        "filePath": "src/components/list-item/types.ts",
-        "line": 3,
+        "filePath": "src/types/list.ts",
+        "line": 10,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["InteractionPolicy"],
       "signatures": [],
       "members": [
+        {
+          "name": "accessibilityLabel",
+          "kind": "property",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "children",
+          "kind": "property",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "compact",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
         {
           "name": "description",
           "kind": "property",
@@ -11141,6 +10979,13 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "leading",
           "kind": "property",
           "type": "React.ReactNode",
@@ -11151,6 +10996,13 @@
           "name": "onPress",
           "kind": "property",
           "type": "(() => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "selected",
+          "kind": "property",
+          "type": "boolean | undefined",
           "required": false,
           "description": null
         },
@@ -11172,6 +11024,39 @@
           "name": "trailing",
           "kind": "property",
           "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "ListProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/list.ts",
+      "sourceLocation": {
+        "filePath": "src/types/list.ts",
+        "line": 5,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "children",
+          "kind": "property",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "testID",
+          "kind": "property",
+          "type": "string | undefined",
           "required": false,
           "description": null
         }
@@ -11874,7 +11759,7 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
@@ -12782,7 +12667,7 @@
         {
           "name": "aria-live",
           "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+          "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -13643,7 +13528,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -14724,7 +14609,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -15105,9 +14990,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "function",
-      "modulePath": "src/components/switch/Switch.tsx",
+      "modulePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
       "sourceLocation": {
-        "filePath": "src/components/switch/Switch.tsx",
+        "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
         "line": 17,
         "column": 1
       },
@@ -15137,9 +15022,9 @@
       "isReadme": false,
       "examples": [],
       "kind": "type",
-      "modulePath": "src/components/switch/types.ts",
+      "modulePath": "src/types/switch.ts",
       "sourceLocation": {
-        "filePath": "src/components/switch/types.ts",
+        "filePath": "src/types/switch.ts",
         "line": 7,
         "column": 1
       },
@@ -15220,7 +15105,7 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
@@ -15898,1191 +15783,6 @@
       "structuredRows": []
     },
     {
-      "name": "Textarea",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/components/textarea/Textarea.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/textarea/Textarea.tsx",
-        "line": 6,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["TextareaProps"],
-      "signatures": [
-        {
-          "label": "({ rows = 4, numberOfLines, style, ...props }: TextareaProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{ rows = 4, numberOfLines, style, ...props }",
-              "type": "TextareaProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "TextareaProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/components/textarea/types.ts",
-      "sourceLocation": {
-        "filePath": "src/components/textarea/types.ts",
-        "line": 3,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "accessibilityActions",
-          "kind": "property",
-          "type": "readonly Readonly<{ name: AccessibilityActionName | string; label?: string | undefined; }>[] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityElementsHidden",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityHint",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityIgnoresInvertColors",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLabel",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLabelledBy",
-          "kind": "property",
-          "type": "string | string[] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLanguage",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLargeContentTitle",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLiveRegion",
-          "kind": "property",
-          "type": "\"none\" | \"polite\" | \"assertive\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityRespondsToUserInteraction",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityRole",
-          "kind": "property",
-          "type": "AccessibilityRole | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityShowsLargeContentViewer",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityState",
-          "kind": "property",
-          "type": "AccessibilityState | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityValue",
-          "kind": "property",
-          "type": "AccessibilityValue | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityViewIsModal",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessible",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "allowFontScaling",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-busy",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-checked",
-          "kind": "property",
-          "type": "boolean | \"mixed\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-disabled",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-expanded",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-hidden",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-label",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-labelledby",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-live",
-          "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-modal",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-selected",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuemax",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuemin",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuenow",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuetext",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoCapitalize",
-          "kind": "property",
-          "type": "\"none\" | \"sentences\" | \"words\" | \"characters\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoComplete",
-          "kind": "property",
-          "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoCorrect",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoFocus",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "blurOnSubmit",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "caretHidden",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "children",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "clearButtonMode",
-          "kind": "property",
-          "type": "\"never\" | \"while-editing\" | \"unless-editing\" | \"always\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "clearTextOnFocus",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "collapsable",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "collapsableChildren",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "contextMenuHidden",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "cursorColor",
-          "kind": "property",
-          "type": "ColorValue | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "dataDetectorTypes",
-          "kind": "property",
-          "type": "DataDetectorTypes | DataDetectorTypes[] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "defaultValue",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disableFullscreenUI",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disableKeyboardShortcuts",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "enablesReturnKeyAutomatically",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "enterKeyHint",
-          "kind": "property",
-          "type": "EnterKeyHintTypeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "focusable",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "hasTVPreferredFocus",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "hitSlop",
-          "kind": "property",
-          "type": "number | Insets | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "id",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "importantForAccessibility",
-          "kind": "property",
-          "type": "\"auto\" | \"yes\" | \"no\" | \"no-hide-descendants\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "importantForAutofill",
-          "kind": "property",
-          "type": "\"auto\" | \"yes\" | \"no\" | \"noExcludeDescendants\" | \"yesExcludeDescendants\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inlineImageLeft",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inlineImagePadding",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inputAccessoryViewButtonLabel",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inputAccessoryViewID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inputMode",
-          "kind": "property",
-          "type": "InputModeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "invalid",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "isTVSelectable",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "keyboardAppearance",
-          "kind": "property",
-          "type": "\"default\" | \"light\" | \"dark\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "keyboardType",
-          "kind": "property",
-          "type": "KeyboardTypeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "leadingAccessory",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "lineBreakModeIOS",
-          "kind": "property",
-          "type": "\"wordWrapping\" | \"char\" | \"clip\" | \"head\" | \"middle\" | \"tail\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "lineBreakStrategyIOS",
-          "kind": "property",
-          "type": "\"none\" | \"standard\" | \"hangul-word\" | \"push-out\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxFontSizeMultiplier",
-          "kind": "property",
-          "type": "number | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxLength",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "nativeID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "needsOffscreenAlphaCompositing",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "numberOfLines",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onAccessibilityAction",
-          "kind": "property",
-          "type": "((event: AccessibilityActionEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onAccessibilityEscape",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onAccessibilityTap",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onBlur",
-          "kind": "property",
-          "type": "((e: BlurEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onChange",
-          "kind": "property",
-          "type": "((e: TextInputChangeEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onChangeText",
-          "kind": "property",
-          "type": "((text: string) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onContentSizeChange",
-          "kind": "property",
-          "type": "((e: TextInputContentSizeChangeEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onEndEditing",
-          "kind": "property",
-          "type": "((e: TextInputEndEditingEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onFocus",
-          "kind": "property",
-          "type": "((e: FocusEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onKeyPress",
-          "kind": "property",
-          "type": "((e: TextInputKeyPressEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onLayout",
-          "kind": "property",
-          "type": "((event: LayoutChangeEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onMagicTap",
-          "kind": "property",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onMoveShouldSetResponder",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => boolean) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onMoveShouldSetResponderCapture",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => boolean) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerCancel",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerCancelCapture",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerDown",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerDownCapture",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerEnter",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerEnterCapture",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerLeave",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerLeaveCapture",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerMove",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerMoveCapture",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerUp",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerUpCapture",
-          "kind": "property",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPress",
-          "kind": "property",
-          "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPressIn",
-          "kind": "property",
-          "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPressOut",
-          "kind": "property",
-          "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderEnd",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderGrant",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderMove",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderReject",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderRelease",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderStart",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderTerminate",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderTerminationRequest",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => boolean) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onScroll",
-          "kind": "property",
-          "type": "((e: TextInputScrollEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onSelectionChange",
-          "kind": "property",
-          "type": "((e: TextInputSelectionChangeEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onStartShouldSetResponder",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => boolean) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onStartShouldSetResponderCapture",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => boolean) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onSubmitEditing",
-          "kind": "property",
-          "type": "((e: TextInputSubmitEditingEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchCancel",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchEnd",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchEndCapture",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchMove",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchStart",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "passwordRules",
-          "kind": "property",
-          "type": "string | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "placeholder",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pointerEvents",
-          "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "readOnly",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "rejectResponderTermination",
-          "kind": "property",
-          "type": "boolean | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "removeClippedSubviews",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "renderToHardwareTextureAndroid",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "returnKeyLabel",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "returnKeyType",
-          "kind": "property",
-          "type": "ReturnKeyTypeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "role",
-          "kind": "property",
-          "type": "Role | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "rows",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "screenReaderFocusable",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "scrollEnabled",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "secureTextEntry",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selection",
-          "kind": "property",
-          "type": "{ start: number; end?: number | undefined; } | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectionColor",
-          "kind": "property",
-          "type": "ColorValue | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectionHandleColor",
-          "kind": "property",
-          "type": "ColorValue | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectionState",
-          "kind": "property",
-          "type": "DocumentSelectionState | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectTextOnFocus",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "shouldRasterizeIOS",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "showSoftInputOnFocus",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "size",
-          "kind": "property",
-          "type": "ControlSize | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "smartInsertDelete",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "spellCheck",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "style",
-          "kind": "property",
-          "type": "StyleProp<TextStyle>",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "submitBehavior",
-          "kind": "property",
-          "type": "SubmitBehavior | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tabIndex",
-          "kind": "property",
-          "type": "0 | -1 | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textAlign",
-          "kind": "property",
-          "type": "\"left\" | \"right\" | \"center\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textAlignVertical",
-          "kind": "property",
-          "type": "\"top\" | \"bottom\" | \"center\" | \"auto\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textBreakStrategy",
-          "kind": "property",
-          "type": "\"simple\" | \"highQuality\" | \"balanced\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textContentType",
-          "kind": "property",
-          "type": "\"none\" | \"name\" | \"nickname\" | \"password\" | \"username\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"location\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "trailingAccessory",
-          "kind": "property",
-          "type": "React.ReactNode",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxMagnification",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxShiftDistanceX",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxShiftDistanceY",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxTiltAngle",
-          "kind": "property",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "underlineColorAndroid",
-          "kind": "property",
-          "type": "ColorValue | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "value",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "verticalAlign",
-          "kind": "property",
-          "type": "\"top\" | \"bottom\" | \"auto\" | \"middle\" | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
       "name": "TextInput",
       "description": "Renders a token-aware text input with controlled interaction policy.",
       "isReadme": false,
@@ -17301,7 +16001,7 @@
         {
           "name": "aria-live",
           "kind": "property",
-          "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+          "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
           "required": false,
           "description": null
         },
@@ -17357,7 +16057,7 @@
         {
           "name": "autoComplete",
           "kind": "property",
-          "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
+          "type": "\"off\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | undefined",
           "required": false,
           "description": null
         },
@@ -18008,7 +16708,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -18190,7 +16890,7 @@
         {
           "name": "textAlignVertical",
           "kind": "property",
-          "type": "\"top\" | \"bottom\" | \"center\" | \"auto\" | undefined",
+          "type": "\"auto\" | \"top\" | \"bottom\" | \"center\" | undefined",
           "required": false,
           "description": null
         },
@@ -18260,7 +16960,7 @@
         {
           "name": "verticalAlign",
           "kind": "property",
-          "type": "\"top\" | \"bottom\" | \"auto\" | \"middle\" | undefined",
+          "type": "\"auto\" | \"top\" | \"bottom\" | \"middle\" | undefined",
           "required": false,
           "description": null
         }
@@ -18286,7 +16986,7 @@
         {
           "name": "align",
           "kind": "property",
-          "type": "\"justify\" | \"left\" | \"right\" | \"center\" | \"auto\" | undefined",
+          "type": "\"auto\" | \"justify\" | \"left\" | \"right\" | \"center\" | undefined",
           "required": false,
           "description": null
         },
@@ -18300,14 +17000,14 @@
         {
           "name": "color",
           "kind": "property",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
           "required": false,
           "description": null
         },
         {
           "name": "emphasis",
           "kind": "property",
-          "type": "\"default\" | \"muted\" | \"subtle\" | \"inverse\" | undefined",
+          "type": "\"default\" | \"subtle\" | \"muted\" | \"inverse\" | undefined",
           "required": false,
           "description": null
         },
@@ -19675,7 +18375,7 @@
         {
           "name": "pointerEvents",
           "kind": "property",
-          "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+          "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
           "required": false,
           "description": null
         },
@@ -24327,13 +23027,13 @@
     },
     {
       "name": "Field",
-      "description": "Composes a label, control, and helper or error message into one field.",
+      "description": "Composes a control with its label and helper or error message.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/field/Field.tsx",
+      "modulePath": "src/features/form/field/adapters/inbound/Field.tsx",
       "sourceLocation": {
-        "filePath": "src/components/field/Field.tsx",
-        "line": 10,
+        "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "line": 9,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -24848,46 +23548,6 @@
         },
         {
           "name": "text",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "HelperText",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/helper-text/HelperText.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/helper-text/HelperText.tsx",
-        "line": 6,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "children",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "color",
-          "type": "Extract<SurfaceColor, 'error'> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "emphasis",
-          "type": "Extract<SurfaceEmphasis, 'default' | 'muted'> | undefined",
-          "required": false,
-          "defaultValue": "'muted'",
-          "description": null
-        },
-        {
-          "name": "testID",
           "type": "string | undefined",
           "required": false,
           "description": null
@@ -25985,14 +24645,14 @@
       ]
     },
     {
-      "name": "Label",
-      "description": null,
+      "name": "List",
+      "description": "Groups list items under one neutral Surface list boundary.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/label/Label.tsx",
+      "modulePath": "src/features/list/adapters/inbound/List.tsx",
       "sourceLocation": {
-        "filePath": "src/components/label/Label.tsx",
-        "line": 6,
+        "filePath": "src/features/list/adapters/inbound/List.tsx",
+        "line": 7,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -26001,26 +24661,6 @@
           "name": "children",
           "type": "React.ReactNode | undefined",
           "required": false,
-          "description": null
-        },
-        {
-          "name": "color",
-          "type": "Extract<SurfaceColor, 'error'> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "emphasis",
-          "type": "Extract<SurfaceEmphasis, 'default' | 'muted'> | undefined",
-          "required": false,
-          "defaultValue": "'default'",
-          "description": null
-        },
-        {
-          "name": "required",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -26033,17 +24673,36 @@
     },
     {
       "name": "ListItem",
-      "description": "Renders a static or pressable list item.",
+      "description": "Renders a static or interactive list item with shared row geometry and interaction states.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/list-item/ListItem.tsx",
+      "modulePath": "src/features/list/adapters/inbound/ListItem.tsx",
       "sourceLocation": {
-        "filePath": "src/components/list-item/ListItem.tsx",
-        "line": 53,
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 10,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
       "props": [
+        {
+          "name": "accessibilityLabel",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "compact",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "false",
+          "description": null
+        },
         {
           "name": "description",
           "type": "React.ReactNode | undefined",
@@ -26058,6 +24717,12 @@
           "description": null
         },
         {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "leading",
           "type": "React.ReactNode | undefined",
           "required": false,
@@ -26067,6 +24732,13 @@
           "name": "onPress",
           "type": "(() => void) | undefined",
           "required": false,
+          "description": null
+        },
+        {
+          "name": "selected",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "false",
           "description": null
         },
         {
@@ -28201,9 +26873,9 @@
       "description": "Renders a controlled or uncontrolled accessible switch.",
       "isReadme": false,
       "examples": [],
-      "modulePath": "src/components/switch/Switch.tsx",
+      "modulePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
       "sourceLocation": {
-        "filePath": "src/components/switch/Switch.tsx",
+        "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
         "line": 17,
         "column": 1
       },
@@ -28790,994 +27462,6 @@
         {
           "name": "weight",
           "type": "TextWeight | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
-      "name": "Textarea",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/components/textarea/Textarea.tsx",
-      "sourceLocation": {
-        "filePath": "src/components/textarea/Textarea.tsx",
-        "line": 6,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "accessibilityActions",
-          "type": "ReadonlyArray<AccessibilityActionInfo> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityElementsHidden",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityHint",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityIgnoresInvertColors",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLabel",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLabelledBy",
-          "type": "string | string[] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLanguage",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLargeContentTitle",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityLiveRegion",
-          "type": "'none' | 'polite' | 'assertive' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityRespondsToUserInteraction",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityRole",
-          "type": "AccessibilityRole | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityShowsLargeContentViewer",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityState",
-          "type": "AccessibilityState | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityValue",
-          "type": "AccessibilityValue | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityViewIsModal",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessible",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "allowFontScaling",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-busy",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-checked",
-          "type": "boolean | 'mixed' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-disabled",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-expanded",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-hidden",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-label",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-labelledby",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-live",
-          "type": "('polite' | 'assertive' | 'off') | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-modal",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-selected",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuemax",
-          "type": "AccessibilityValue['max'] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuemin",
-          "type": "AccessibilityValue['min'] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuenow",
-          "type": "AccessibilityValue['now'] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "aria-valuetext",
-          "type": "AccessibilityValue['text'] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoCapitalize",
-          "type": "'none' | 'sentences' | 'words' | 'characters' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoComplete",
-          "type": "| '2fa-app-otp'\n    | 'additional-name'\n    | 'address-line1'\n    | 'address-line2'\n    | 'birthdate-day'\n    | 'birthdate-full'\n    | 'birthdate-month'\n    | 'birthdate-year'\n    | 'cc-csc'\n    | 'cc-exp'\n    | 'cc-exp-day'\n    | 'cc-exp-month'\n    | 'cc-exp-year'\n    | 'cc-number'\n    | 'cc-name'\n    | 'cc-given-name'\n    | 'cc-middle-name'\n    | 'cc-family-name'\n    | 'cc-type'\n    | 'country'\n    | 'current-password'\n    | 'email'\n    | 'email-otp'\n    | 'flight-confirmation-code'\n    | 'flight-number'\n    | 'family-name'\n    | 'gender'\n    | 'gift-card-number'\n    | 'gift-card-pin'\n    | 'given-name'\n    | 'honorific-prefix'\n    | 'honorific-suffix'\n    | 'loyalty-account-number'\n    | 'name'\n    | 'name-family'\n    | 'name-given'\n    | 'name-middle'\n    | 'name-middle-initial'\n    | 'name-prefix'\n    | 'name-suffix'\n    | 'new-password'\n    | 'nickname'\n    | 'one-time-code'\n    | 'organization'\n    | 'organization-title'\n    | 'password'\n    | 'password-new'\n    | 'postal-address'\n    | 'postal-address-country'\n    | 'postal-address-dependent-locality'\n    | 'postal-address-extended'\n    | 'postal-address-extended-postal-code'\n    | 'postal-address-locality'\n    | 'postal-address-region'\n    | 'postal-address-unit'\n    | 'postal-code'\n    | 'promo-code'\n    | 'street-address'\n    | 'sms-otp'\n    | 'tel'\n    | 'tel-country-code'\n    | 'tel-national'\n    | 'tel-device'\n    | 'upi-vpa'\n    | 'url'\n    | 'wifi-password'\n    | 'username'\n    | 'username-new'\n    | 'off'\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoCorrect",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "autoFocus",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "blurOnSubmit",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "caretHidden",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "children",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "clearButtonMode",
-          "type": "| 'never'\n    | 'while-editing'\n    | 'unless-editing'\n    | 'always'\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "clearTextOnFocus",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "collapsable",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "collapsableChildren",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "contextMenuHidden",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "cursorColor",
-          "type": "ColorValue | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "dataDetectorTypes",
-          "type": "DataDetectorTypes | DataDetectorTypes[] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "defaultValue",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disableFullscreenUI",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disableKeyboardShortcuts",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "enablesReturnKeyAutomatically",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "enterKeyHint",
-          "type": "EnterKeyHintTypeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "focusable",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "hasTVPreferredFocus",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "hitSlop",
-          "type": "null | Insets | number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "id",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "importantForAccessibility",
-          "type": "| ('auto' | 'yes' | 'no' | 'no-hide-descendants')\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "importantForAutofill",
-          "type": "| 'auto'\n    | 'no'\n    | 'noExcludeDescendants'\n    | 'yes'\n    | 'yesExcludeDescendants'\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inlineImageLeft",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inlineImagePadding",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inputAccessoryViewButtonLabel",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inputAccessoryViewID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "inputMode",
-          "type": "InputModeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "invalid",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "isTVSelectable",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "keyboardAppearance",
-          "type": "'default' | 'light' | 'dark' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "keyboardType",
-          "type": "KeyboardTypeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "leadingAccessory",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "lineBreakModeIOS",
-          "type": "| 'wordWrapping'\n    | 'char'\n    | 'clip'\n    | 'head'\n    | 'middle'\n    | 'tail'\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "lineBreakStrategyIOS",
-          "type": "| 'none'\n    | 'standard'\n    | 'hangul-word'\n    | 'push-out'\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxFontSizeMultiplier",
-          "type": "number | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxLength",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "nativeID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "needsOffscreenAlphaCompositing",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "numberOfLines",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onAccessibilityAction",
-          "type": "| ((event: AccessibilityActionEvent) => void)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onAccessibilityEscape",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onAccessibilityTap",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onBlur",
-          "type": "((e: BlurEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onChange",
-          "type": "((e: TextInputChangeEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onChangeText",
-          "type": "((text: string) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onContentSizeChange",
-          "type": "| ((e: TextInputContentSizeChangeEvent) => void)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onEndEditing",
-          "type": "((e: TextInputEndEditingEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onFocus",
-          "type": "((e: FocusEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onKeyPress",
-          "type": "((e: TextInputKeyPressEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onLayout",
-          "type": "((event: LayoutChangeEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onMagicTap",
-          "type": "(() => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onMoveShouldSetResponder",
-          "type": "| ((event: GestureResponderEvent) => boolean)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onMoveShouldSetResponderCapture",
-          "type": "| ((event: GestureResponderEvent) => boolean)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerCancel",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerCancelCapture",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerDown",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerDownCapture",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerEnter",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerEnterCapture",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerLeave",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerLeaveCapture",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerMove",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerMoveCapture",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerUp",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPointerUpCapture",
-          "type": "((event: PointerEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPress",
-          "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPressIn",
-          "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPressOut",
-          "type": "| ((e: NativeSyntheticEvent<NativeTouchEvent>) => void)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderEnd",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderGrant",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderMove",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderReject",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderRelease",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderStart",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderTerminate",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onResponderTerminationRequest",
-          "type": "| ((event: GestureResponderEvent) => boolean)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onScroll",
-          "type": "((e: TextInputScrollEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onSelectionChange",
-          "type": "((e: TextInputSelectionChangeEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onStartShouldSetResponder",
-          "type": "| ((event: GestureResponderEvent) => boolean)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onStartShouldSetResponderCapture",
-          "type": "| ((event: GestureResponderEvent) => boolean)\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onSubmitEditing",
-          "type": "((e: TextInputSubmitEditingEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchCancel",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchEnd",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchEndCapture",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchMove",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onTouchStart",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "passwordRules",
-          "type": "string | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "placeholder",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pointerEvents",
-          "type": "'box-none' | 'none' | 'box-only' | 'auto' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "readOnly",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "rejectResponderTermination",
-          "type": "boolean | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "removeClippedSubviews",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "renderToHardwareTextureAndroid",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "returnKeyLabel",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "returnKeyType",
-          "type": "ReturnKeyTypeOptions | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "role",
-          "type": "Role | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "rows",
-          "type": "number | undefined",
-          "required": false,
-          "defaultValue": "4",
-          "description": null
-        },
-        {
-          "name": "screenReaderFocusable",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "scrollEnabled",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "secureTextEntry",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selection",
-          "type": "{start: number; end?: number | undefined} | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectionColor",
-          "type": "ColorValue | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectionHandleColor",
-          "type": "ColorValue | null | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectionState",
-          "type": "DocumentSelectionState | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "selectTextOnFocus",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "shouldRasterizeIOS",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "showSoftInputOnFocus",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "size",
-          "type": "ControlSize | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "smartInsertDelete",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "spellCheck",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "style",
-          "type": "StyleProp<TextStyle> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "submitBehavior",
-          "type": "SubmitBehavior | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tabIndex",
-          "type": "0 | -1 | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textAlign",
-          "type": "'left' | 'center' | 'right' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textAlignVertical",
-          "type": "'auto' | 'top' | 'bottom' | 'center' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textBreakStrategy",
-          "type": "'simple' | 'highQuality' | 'balanced' | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "textContentType",
-          "type": "| 'none'\n    | 'URL'\n    | 'addressCity'\n    | 'addressCityAndState'\n    | 'addressState'\n    | 'countryName'\n    | 'creditCardNumber'\n    | 'creditCardExpiration'\n    | 'creditCardExpirationMonth'\n    | 'creditCardExpirationYear'\n    | 'creditCardSecurityCode'\n    | 'creditCardType'\n    | 'creditCardName'\n    | 'creditCardGivenName'\n    | 'creditCardMiddleName'\n    | 'creditCardFamilyName'\n    | 'emailAddress'\n    | 'familyName'\n    | 'fullStreetAddress'\n    | 'givenName'\n    | 'jobTitle'\n    | 'location'\n    | 'middleName'\n    | 'name'\n    | 'namePrefix'\n    | 'nameSuffix'\n    | 'nickname'\n    | 'organizationName'\n    | 'postalCode'\n    | 'streetAddressLine1'\n    | 'streetAddressLine2'\n    | 'sublocality'\n    | 'telephoneNumber'\n    | 'username'\n    | 'password'\n    | 'newPassword'\n    | 'oneTimeCode'\n    | 'birthdate'\n    | 'birthdateDay'\n    | 'birthdateMonth'\n    | 'birthdateYear'\n    | 'cellularEID'\n    | 'cellularIMEI'\n    | 'dateTime'\n    | 'flightNumber'\n    | 'shipmentTrackingNumber'\n    | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "trailingAccessory",
-          "type": "React.ReactNode | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxMagnification",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxShiftDistanceX",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxShiftDistanceY",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "tvParallaxTiltAngle",
-          "type": "number | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "underlineColorAndroid",
-          "type": "ColorValue | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "value",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "verticalAlign",
-          "type": "'auto' | 'top' | 'bottom' | 'middle' | undefined",
           "required": false,
           "description": null
         }
@@ -31329,69 +29013,6 @@
   ],
   "sourceFunctions": [
     {
-      "name": "Field",
-      "description": "Composes a label, control, and helper or error message into one field.",
-      "sourceLocation": {
-        "filePath": "src/components/field/Field.tsx",
-        "line": 10,
-        "column": 1
-      }
-    },
-    {
-      "name": "HelperText",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/helper-text/HelperText.tsx",
-        "line": 6,
-        "column": 1
-      }
-    },
-    {
-      "name": "Label",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/label/Label.tsx",
-        "line": 6,
-        "column": 1
-      }
-    },
-    {
-      "name": "ListItemContent",
-      "description": "Renders the content row shared by static and interactive ListItem variants.",
-      "sourceLocation": {
-        "filePath": "src/components/list-item/ListItem.tsx",
-        "line": 11,
-        "column": 1
-      }
-    },
-    {
-      "name": "ListItem",
-      "description": "Renders a static or pressable list item.",
-      "sourceLocation": {
-        "filePath": "src/components/list-item/ListItem.tsx",
-        "line": 53,
-        "column": 1
-      }
-    },
-    {
-      "name": "Switch",
-      "description": "Renders a controlled or uncontrolled accessible switch.",
-      "sourceLocation": {
-        "filePath": "src/components/switch/Switch.tsx",
-        "line": 17,
-        "column": 1
-      }
-    },
-    {
-      "name": "Textarea",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/components/textarea/Textarea.tsx",
-        "line": 6,
-        "column": 1
-      }
-    },
-    {
       "name": "FontProvider",
       "description": null,
       "sourceLocation": {
@@ -31788,6 +29409,15 @@
       }
     },
     {
+      "name": "Field",
+      "description": "Composes a control with its label and helper or error message.",
+      "sourceLocation": {
+        "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
       "name": "Radio",
       "description": "Renders one accessible radio control with text or structured label content.",
       "sourceLocation": {
@@ -31851,6 +29481,15 @@
       }
     },
     {
+      "name": "Switch",
+      "description": "Renders a controlled or uncontrolled accessible switch.",
+      "sourceLocation": {
+        "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "line": 17,
+        "column": 1
+      }
+    },
+    {
       "name": "TextInput",
       "description": "Renders a token-aware text input with controlled interaction policy.",
       "sourceLocation": {
@@ -31864,7 +29503,7 @@
       "description": "Renders one optional TextInput accessory with directional spacing.",
       "sourceLocation": {
         "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
-        "line": 60,
+        "line": 64,
         "column": 1
       }
     },
@@ -31873,7 +29512,7 @@
       "description": "Resolves spacing around a leading or trailing TextInput accessory.",
       "sourceLocation": {
         "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
-        "line": 70,
+        "line": 74,
         "column": 1
       }
     },
@@ -32144,6 +29783,33 @@
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/View.tsx",
         "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "List",
+      "description": "Groups list items under one neutral Surface list boundary.",
+      "sourceLocation": {
+        "filePath": "src/features/list/adapters/inbound/List.tsx",
+        "line": 7,
+        "column": 1
+      }
+    },
+    {
+      "name": "ListItem",
+      "description": "Renders a static or interactive list item with shared row geometry and interaction states.",
+      "sourceLocation": {
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 10,
+        "column": 1
+      }
+    },
+    {
+      "name": "ListItemContent",
+      "description": "Renders the shared visual row content for static and interactive list items.",
+      "sourceLocation": {
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 79,
         "column": 1
       }
     },
@@ -33363,9 +31029,9 @@
     {
       "kind": "export",
       "name": "Field",
-      "sourcePath": "src/components/field/Field.tsx",
+      "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx",
       "symbolName": "Field",
-      "description": "Composes a label, control, and helper or error message into one field.",
+      "description": "Composes a control with its label and helper or error message.",
       "isReadme": false
     },
     {
@@ -33410,14 +31076,6 @@
     },
     {
       "kind": "export",
-      "name": "HelperText",
-      "sourcePath": "src/components/helper-text/HelperText.tsx",
-      "symbolName": "HelperText",
-      "description": null,
-      "isReadme": false
-    },
-    {
-      "kind": "export",
       "name": "Icon",
       "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx",
       "symbolName": "Icon",
@@ -33458,18 +31116,18 @@
     },
     {
       "kind": "export",
-      "name": "Label",
-      "sourcePath": "src/components/label/Label.tsx",
-      "symbolName": "Label",
-      "description": null,
+      "name": "List",
+      "sourcePath": "src/features/list/adapters/inbound/List.tsx",
+      "symbolName": "List",
+      "description": "Groups list items under one neutral Surface list boundary.",
       "isReadme": false
     },
     {
       "kind": "export",
       "name": "ListItem",
-      "sourcePath": "src/components/list-item/ListItem.tsx",
+      "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx",
       "symbolName": "ListItem",
-      "description": "Renders a static or pressable list item.",
+      "description": "Renders a static or interactive list item with shared row geometry and interaction states.",
       "isReadme": false
     },
     {
@@ -33563,7 +31221,7 @@
     {
       "kind": "export",
       "name": "Switch",
-      "sourcePath": "src/components/switch/Switch.tsx",
+      "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
       "symbolName": "Switch",
       "description": "Renders a controlled or uncontrolled accessible switch.",
       "isReadme": false
@@ -33606,14 +31264,6 @@
       "sourcePath": "src/features/typography/adapters/inbound/Text.tsx",
       "symbolName": "Text",
       "description": "Renders translatable body text using Surface semantic typography.",
-      "isReadme": false
-    },
-    {
-      "kind": "export",
-      "name": "Textarea",
-      "sourcePath": "src/components/textarea/Textarea.tsx",
-      "symbolName": "Textarea",
-      "description": null,
       "isReadme": false
     },
     {
@@ -33751,36 +31401,6 @@
       },
       {
         "fromPath": "src/index.ts",
-        "toPath": "src/components/field/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/helper-text/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/label/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/list-item/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/switch/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/components/textarea/index.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
         "toPath": "src/context/FontContext.tsx",
         "sourcePath": "src/index.ts"
       },
@@ -33826,7 +31446,17 @@
       },
       {
         "fromPath": "src/index.ts",
+        "toPath": "src/features/form/field/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
         "toPath": "src/features/form/radio/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/form/switch/public.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -33852,6 +31482,11 @@
       {
         "fromPath": "src/index.ts",
         "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/list/public.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -34245,6 +31880,11 @@
         "sourcePath": "src/types/layout.ts"
       },
       {
+        "fromPath": "src/types/list.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/types/list.ts"
+      },
+      {
         "fromPath": "src/types/modal.ts",
         "toPath": "src/interactionPolicy.ts",
         "sourcePath": "src/types/modal.ts"
@@ -34283,6 +31923,21 @@
         "fromPath": "src/types/surface.ts",
         "toPath": "src/types/layout.ts",
         "sourcePath": "src/types/surface.ts"
+      },
+      {
+        "fromPath": "src/types/switch.ts",
+        "toPath": "src/internal/resolvers/resolveControlSize.ts",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromPath": "src/types/switch.ts",
+        "toPath": "src/primitives/button-base/index.ts",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromPath": "src/types/switch.ts",
+        "toPath": "src/surfaceColor.ts",
+        "sourcePath": "src/types/switch.ts"
       },
       {
         "fromPath": "src/types/tabs.ts",
@@ -34383,211 +32038,6 @@
         "fromPath": "src/utils/resolveViewStyles.ts",
         "toPath": "src/utils/resolveSpacing.ts",
         "sourcePath": "src/utils/resolveViewStyles.ts"
-      },
-      {
-        "fromPath": "src/components/field/Field.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromPath": "src/components/field/Field.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromPath": "src/components/field/Field.tsx",
-        "toPath": "src/components/helper-text/index.ts",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromPath": "src/components/field/Field.tsx",
-        "toPath": "src/components/label/index.ts",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromPath": "src/components/field/Field.tsx",
-        "toPath": "src/components/field/types.ts",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromPath": "src/components/field/index.ts",
-        "toPath": "src/components/field/Field.tsx",
-        "sourcePath": "src/components/field/index.ts"
-      },
-      {
-        "fromPath": "src/components/field/index.ts",
-        "toPath": "src/components/field/types.ts",
-        "sourcePath": "src/components/field/index.ts"
-      },
-      {
-        "fromPath": "src/components/helper-text/HelperText.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/components/helper-text/HelperText.tsx"
-      },
-      {
-        "fromPath": "src/components/helper-text/HelperText.tsx",
-        "toPath": "src/components/helper-text/types.ts",
-        "sourcePath": "src/components/helper-text/HelperText.tsx"
-      },
-      {
-        "fromPath": "src/components/helper-text/index.ts",
-        "toPath": "src/components/helper-text/HelperText.tsx",
-        "sourcePath": "src/components/helper-text/index.ts"
-      },
-      {
-        "fromPath": "src/components/helper-text/index.ts",
-        "toPath": "src/components/helper-text/types.ts",
-        "sourcePath": "src/components/helper-text/index.ts"
-      },
-      {
-        "fromPath": "src/components/helper-text/types.ts",
-        "toPath": "src/surfaceColor.ts",
-        "sourcePath": "src/components/helper-text/types.ts"
-      },
-      {
-        "fromPath": "src/components/label/index.ts",
-        "toPath": "src/components/label/Label.tsx",
-        "sourcePath": "src/components/label/index.ts"
-      },
-      {
-        "fromPath": "src/components/label/index.ts",
-        "toPath": "src/components/label/types.ts",
-        "sourcePath": "src/components/label/index.ts"
-      },
-      {
-        "fromPath": "src/components/label/Label.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/components/label/Label.tsx"
-      },
-      {
-        "fromPath": "src/components/label/Label.tsx",
-        "toPath": "src/components/label/types.ts",
-        "sourcePath": "src/components/label/Label.tsx"
-      },
-      {
-        "fromPath": "src/components/label/types.ts",
-        "toPath": "src/surfaceColor.ts",
-        "sourcePath": "src/components/label/types.ts"
-      },
-      {
-        "fromPath": "src/components/list-item/index.ts",
-        "toPath": "src/components/list-item/ListItem.tsx",
-        "sourcePath": "src/components/list-item/index.ts"
-      },
-      {
-        "fromPath": "src/components/list-item/index.ts",
-        "toPath": "src/components/list-item/types.ts",
-        "sourcePath": "src/components/list-item/index.ts"
-      },
-      {
-        "fromPath": "src/components/list-item/ListItem.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromPath": "src/components/list-item/ListItem.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromPath": "src/components/list-item/ListItem.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromPath": "src/components/list-item/ListItem.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromPath": "src/components/list-item/ListItem.tsx",
-        "toPath": "src/components/list-item/types.ts",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/index.ts",
-        "toPath": "src/components/switch/Switch.tsx",
-        "sourcePath": "src/components/switch/index.ts"
-      },
-      {
-        "fromPath": "src/components/switch/index.ts",
-        "toPath": "src/components/switch/types.ts",
-        "sourcePath": "src/components/switch/index.ts"
-      },
-      {
-        "fromPath": "src/components/switch/Switch.tsx",
-        "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/Switch.tsx",
-        "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/Switch.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/Switch.tsx",
-        "toPath": "src/internal/useControllableState.ts",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/Switch.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/Switch.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/Switch.tsx",
-        "toPath": "src/components/switch/types.ts",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromPath": "src/components/switch/types.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromPath": "src/components/switch/types.ts",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromPath": "src/components/switch/types.ts",
-        "toPath": "src/surfaceColor.ts",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromPath": "src/components/textarea/index.ts",
-        "toPath": "src/components/textarea/Textarea.tsx",
-        "sourcePath": "src/components/textarea/index.ts"
-      },
-      {
-        "fromPath": "src/components/textarea/index.ts",
-        "toPath": "src/components/textarea/types.ts",
-        "sourcePath": "src/components/textarea/index.ts"
-      },
-      {
-        "fromPath": "src/components/textarea/Textarea.tsx",
-        "toPath": "src/features/form/text-input/public.ts",
-        "sourcePath": "src/components/textarea/Textarea.tsx"
-      },
-      {
-        "fromPath": "src/components/textarea/Textarea.tsx",
-        "toPath": "src/components/textarea/types.ts",
-        "sourcePath": "src/components/textarea/Textarea.tsx"
-      },
-      {
-        "fromPath": "src/components/textarea/types.ts",
-        "toPath": "src/types/text-input.ts",
-        "sourcePath": "src/components/textarea/types.ts"
       },
       {
         "fromPath": "src/core/responsive/getBreakpointFromWidth.test.ts",
@@ -34873,6 +32323,21 @@
         "fromPath": "src/features/layout/public.ts",
         "toPath": "src/features/layout/adapters/inbound/View.tsx",
         "sourcePath": "src/features/layout/public.ts"
+      },
+      {
+        "fromPath": "src/features/list/public.ts",
+        "toPath": "src/types/list.ts",
+        "sourcePath": "src/features/list/public.ts"
+      },
+      {
+        "fromPath": "src/features/list/public.ts",
+        "toPath": "src/features/list/adapters/inbound/List.tsx",
+        "sourcePath": "src/features/list/public.ts"
+      },
+      {
+        "fromPath": "src/features/list/public.ts",
+        "toPath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "sourcePath": "src/features/list/public.ts"
       },
       {
         "fromPath": "src/features/modal/public.ts",
@@ -35390,6 +32855,16 @@
         "sourcePath": "src/features/form/checkbox/public.ts"
       },
       {
+        "fromPath": "src/features/form/field/public.ts",
+        "toPath": "src/types/field.ts",
+        "sourcePath": "src/features/form/field/public.ts"
+      },
+      {
+        "fromPath": "src/features/form/field/public.ts",
+        "toPath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "sourcePath": "src/features/form/field/public.ts"
+      },
+      {
         "fromPath": "src/features/form/radio/public.ts",
         "toPath": "src/types/radio.ts",
         "sourcePath": "src/features/form/radio/public.ts"
@@ -35398,6 +32873,16 @@
         "fromPath": "src/features/form/radio/public.ts",
         "toPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
         "sourcePath": "src/features/form/radio/public.ts"
+      },
+      {
+        "fromPath": "src/features/form/switch/public.ts",
+        "toPath": "src/types/switch.ts",
+        "sourcePath": "src/features/form/switch/public.ts"
+      },
+      {
+        "fromPath": "src/features/form/switch/public.ts",
+        "toPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "sourcePath": "src/features/form/switch/public.ts"
       },
       {
         "fromPath": "src/features/form/text-input/public.ts",
@@ -35965,6 +33450,41 @@
         "sourcePath": "src/features/layout/adapters/inbound/View.tsx"
       },
       {
+        "fromPath": "src/features/list/adapters/inbound/List.tsx",
+        "toPath": "src/types/list.ts",
+        "sourcePath": "src/features/list/adapters/inbound/List.tsx"
+      },
+      {
+        "fromPath": "src/features/list/adapters/inbound/List.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/list/adapters/inbound/List.tsx"
+      },
+      {
+        "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "toPath": "src/primitives/button-base/index.ts",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "toPath": "src/types/list.ts",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
         "fromPath": "src/features/modal/adapters/inbound/Modal.tsx",
         "toPath": "src/internal/focus/FocusScope.tsx",
         "sourcePath": "src/features/modal/adapters/inbound/Modal.tsx"
@@ -36395,6 +33915,26 @@
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
       {
+        "fromPath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "toPath": "src/internal/resolvers/index.ts",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromPath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "toPath": "src/types/field.ts",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromPath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromPath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
         "fromPath": "src/features/form/radio/adapters/inbound/Radio.test.ts",
         "toPath": "src/features/form/radio/utils/isRadioTextContent.ts",
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.test.ts"
@@ -36448,6 +33988,41 @@
         "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
         "toPath": "src/features/form/radio/utils/isRadioTextContent.ts",
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/internal/resolvers/index.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/internal/useControllableState.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/primitives/button-base/index.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/types/switch.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromPath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
@@ -37372,72 +34947,6 @@
         "sourcePath": "src/utils/resolveViewStyles.ts"
       },
       {
-        "fromSymbol": "Field",
-        "toSymbol": "resolveFieldState",
-        "callExpression": "resolveFieldState",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromSymbol": "Field",
-        "toSymbol": "resolveFieldPresentation",
-        "callExpression": "resolveFieldPresentation",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromSymbol": "ListItemContent",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromSymbol": "ListItem",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromSymbol": "Switch",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "Switch",
-        "toSymbol": "useControllableState",
-        "callExpression": "useControllableState",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "Switch",
-        "toSymbol": "resolveIndicatorSize",
-        "callExpression": "resolveIndicatorSize",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "Switch",
-        "toSymbol": "resolveSelectionControlNextChecked",
-        "callExpression": "resolveSelectionControlNextChecked",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "src/components/switch/Switch.tsx",
-        "toSymbol": "setChecked",
-        "callExpression": "setChecked",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "src/components/switch/Switch.tsx",
-        "toSymbol": "resolveFieldState",
-        "callExpression": "resolveFieldState",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "src/components/switch/Switch.tsx",
-        "toSymbol": "resolveSelectionControlColors",
-        "callExpression": "resolveSelectionControlColors",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
         "fromSymbol": "src/core/responsive/getBreakpointFromWidth.test.ts",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -37610,6 +35119,18 @@
         "toSymbol": "renderToStaticMarkup",
         "callExpression": "renderToStaticMarkup",
         "sourcePath": "src/features/bottom-sheet/useBottomSheet.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/list/public.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/list/public.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/list/public.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/list/public.test.ts"
       },
       {
         "fromSymbol": "src/features/popover-menu/public.test.ts",
@@ -39160,6 +36681,12 @@
         "sourcePath": "src/features/layout/adapters/inbound/View.tsx"
       },
       {
+        "fromSymbol": "ListItem",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
         "fromSymbol": "src/features/modal/adapters/inbound/Modal.tsx",
         "toSymbol": "resolvePointerEvents",
         "callExpression": "resolvePointerEvents",
@@ -39640,6 +37167,18 @@
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
       {
+        "fromSymbol": "Field",
+        "toSymbol": "resolveFieldState",
+        "callExpression": "resolveFieldState",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromSymbol": "Field",
+        "toSymbol": "resolveFieldPresentation",
+        "callExpression": "resolveFieldPresentation",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
         "fromSymbol": "src/features/form/radio/adapters/inbound/Radio.test.ts",
         "toSymbol": "test",
         "callExpression": "test",
@@ -39730,6 +37269,48 @@
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
       },
       {
+        "fromSymbol": "Switch",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "Switch",
+        "toSymbol": "useControllableState",
+        "callExpression": "useControllableState",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "Switch",
+        "toSymbol": "resolveIndicatorSize",
+        "callExpression": "resolveIndicatorSize",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "Switch",
+        "toSymbol": "resolveSelectionControlNextChecked",
+        "callExpression": "resolveSelectionControlNextChecked",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toSymbol": "setChecked",
+        "callExpression": "setChecked",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toSymbol": "resolveFieldState",
+        "callExpression": "resolveFieldState",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toSymbol": "resolveSelectionControlColors",
+        "callExpression": "resolveSelectionControlColors",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
         "fromSymbol": "TextInput",
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
@@ -39773,341 +37354,6 @@
       }
     ],
     "typeReferences": [
-      {
-        "fromSymbol": "FieldProps",
-        "toType": "React",
-        "sourcePath": "src/components/field/types.ts"
-      },
-      {
-        "fromSymbol": "FieldProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/field/types.ts"
-      },
-      {
-        "fromSymbol": "Field",
-        "toType": "FieldProps",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromSymbol": "Field",
-        "toType": "React",
-        "sourcePath": "src/components/field/Field.tsx"
-      },
-      {
-        "fromSymbol": "HelperTextProps",
-        "toType": "React",
-        "sourcePath": "src/components/helper-text/types.ts"
-      },
-      {
-        "fromSymbol": "HelperTextProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/helper-text/types.ts"
-      },
-      {
-        "fromSymbol": "HelperText",
-        "toType": "HelperTextProps",
-        "sourcePath": "src/components/helper-text/HelperText.tsx"
-      },
-      {
-        "fromSymbol": "HelperText",
-        "toType": "React",
-        "sourcePath": "src/components/helper-text/HelperText.tsx"
-      },
-      {
-        "fromSymbol": "LabelProps",
-        "toType": "React",
-        "sourcePath": "src/components/label/types.ts"
-      },
-      {
-        "fromSymbol": "LabelProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/label/types.ts"
-      },
-      {
-        "fromSymbol": "Label",
-        "toType": "LabelProps",
-        "sourcePath": "src/components/label/Label.tsx"
-      },
-      {
-        "fromSymbol": "Label",
-        "toType": "React",
-        "sourcePath": "src/components/label/Label.tsx"
-      },
-      {
-        "fromSymbol": "ListItemProps",
-        "toType": "React",
-        "sourcePath": "src/components/list-item/types.ts"
-      },
-      {
-        "fromSymbol": "ListItemProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/list-item/types.ts"
-      },
-      {
-        "fromSymbol": "ListItem",
-        "toType": "ListItemProps",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromSymbol": "ListItem",
-        "toType": "React",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "ColorValue",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "ControlSize",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "FlexAlignType",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "GestureResponderEvent",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "RadiusValue",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "React",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "Responsive",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "SwitchProps",
-        "toType": "SpaceValue",
-        "sourcePath": "src/components/switch/types.ts"
-      },
-      {
-        "fromSymbol": "Switch",
-        "toType": "React",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "Switch",
-        "toType": "SwitchProps",
-        "sourcePath": "src/components/switch/Switch.tsx"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "AccessibilityActionEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "AccessibilityActionName",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "AccessibilityRole",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "AccessibilityState",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "AccessibilityValue",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "BlurEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "ColorValue",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "ControlSize",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "DataDetectorTypes",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "DocumentSelectionState",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "EnterKeyHintTypeOptions",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "FocusEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "GestureResponderEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "InputModeOptions",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "Insets",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "KeyboardTypeOptions",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "LayoutChangeEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "NativeSyntheticEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "NativeTouchEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "PointerEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "React",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "Readonly",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "ReturnKeyTypeOptions",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "Role",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "StyleProp",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "SubmitBehavior",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextInputChangeEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextInputContentSizeChangeEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextInputEndEditingEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextInputKeyPressEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextInputScrollEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextInputSelectionChangeEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextInputSubmitEditingEvent",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "TextStyle",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "TextareaProps",
-        "toType": "URL",
-        "sourcePath": "src/components/textarea/types.ts"
-      },
-      {
-        "fromSymbol": "Textarea",
-        "toType": "React",
-        "sourcePath": "src/components/textarea/Textarea.tsx"
-      },
-      {
-        "fromSymbol": "Textarea",
-        "toType": "TextareaProps",
-        "sourcePath": "src/components/textarea/Textarea.tsx"
-      },
       {
         "fromSymbol": "FontProvider",
         "toType": "React",
@@ -41019,6 +38265,26 @@
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
       {
+        "fromSymbol": "FieldProps",
+        "toType": "React",
+        "sourcePath": "src/types/field.ts"
+      },
+      {
+        "fromSymbol": "FieldProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/field.ts"
+      },
+      {
+        "fromSymbol": "Field",
+        "toType": "FieldProps",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromSymbol": "Field",
+        "toType": "React",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
         "fromSymbol": "RadioProps",
         "toType": "ColorValue",
         "sourcePath": "src/types/radio.ts"
@@ -41077,6 +38343,66 @@
         "fromSymbol": "Radio",
         "toType": "React",
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "ColorValue",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "ControlSize",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "FlexAlignType",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "GestureResponderEvent",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "RadiusValue",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "React",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "Responsive",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "SwitchProps",
+        "toType": "SpaceValue",
+        "sourcePath": "src/types/switch.ts"
+      },
+      {
+        "fromSymbol": "Switch",
+        "toType": "React",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "Switch",
+        "toType": "SwitchProps",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromSymbol": "TextInputProps",
@@ -41692,6 +39018,51 @@
         "fromSymbol": "View",
         "toType": "ViewProps",
         "sourcePath": "src/features/layout/adapters/inbound/View.tsx"
+      },
+      {
+        "fromSymbol": "ListItemProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/types/list.ts"
+      },
+      {
+        "fromSymbol": "ListItemProps",
+        "toType": "React",
+        "sourcePath": "src/types/list.ts"
+      },
+      {
+        "fromSymbol": "ListItemProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/list.ts"
+      },
+      {
+        "fromSymbol": "ListProps",
+        "toType": "React",
+        "sourcePath": "src/types/list.ts"
+      },
+      {
+        "fromSymbol": "ListProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/list.ts"
+      },
+      {
+        "fromSymbol": "List",
+        "toType": "ListProps",
+        "sourcePath": "src/features/list/adapters/inbound/List.tsx"
+      },
+      {
+        "fromSymbol": "List",
+        "toType": "React",
+        "sourcePath": "src/features/list/adapters/inbound/List.tsx"
+      },
+      {
+        "fromSymbol": "ListItem",
+        "toType": "ListItemProps",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromSymbol": "ListItem",
+        "toType": "React",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
         "fromSymbol": "ModalProps",
@@ -42683,25 +40054,43 @@
         "fromComponent": "Field",
         "toComponent": "View",
         "jsxElement": "<View gap=\"xs\" testID={testID}>",
-        "sourcePath": "src/components/field/Field.tsx"
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
       },
       {
         "fromComponent": "Field",
-        "toComponent": "Label",
-        "jsxElement": "<Label\n          color={presentation.labelColor}\n          emphasis={presentation.labelEmphasis}\n          required={required}\n        >",
-        "sourcePath": "src/components/field/Field.tsx"
+        "toComponent": "View",
+        "jsxElement": "<View direction=\"row\" align=\"center\" gap=\"xs\">",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromComponent": "Field",
+        "toComponent": "View",
+        "jsxElement": "<View flex={1}>",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromComponent": "Field",
+        "toComponent": "Text",
+        "jsxElement": "<Text\n                color={presentation.labelColor}\n                emphasis={presentation.labelEmphasis}\n                variant=\"label\"\n                weight=\"medium\"\n              >",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromComponent": "Field",
+        "toComponent": "Text",
+        "jsxElement": "<Text color=\"error\" variant=\"label\" weight=\"medium\">",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
       },
       {
         "fromComponent": "Field",
         "toComponent": "View",
         "jsxElement": "<View>",
-        "sourcePath": "src/components/field/Field.tsx"
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
       },
       {
         "fromComponent": "Field",
-        "toComponent": "HelperText",
-        "jsxElement": "<HelperText color={presentation.helperColor} emphasis={presentation.helperEmphasis}>",
-        "sourcePath": "src/components/field/Field.tsx"
+        "toComponent": "Text",
+        "jsxElement": "<Text\n            color={presentation.helperColor}\n            emphasis={presentation.helperEmphasis}\n            variant=\"caption\"\n          >",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
       },
       {
         "fromComponent": "FontProvider",
@@ -42726,12 +40115,6 @@
         "toComponent": "ReactNativeText",
         "jsxElement": "<ReactNativeText\n      accessibilityRole=\"header\"\n      testID={testID}\n      numberOfLines={numberOfLines}\n      style={resolveHeadingTextStyle(theme, level, align, emphasis, color)}\n    >",
         "sourcePath": "src/features/typography/adapters/inbound/Heading.tsx"
-      },
-      {
-        "fromComponent": "HelperText",
-        "toComponent": "Text",
-        "jsxElement": "<Text color={color} emphasis={emphasis} testID={testID} variant=\"caption\">",
-        "sourcePath": "src/components/helper-text/HelperText.tsx"
       },
       {
         "fromComponent": "Icon",
@@ -42770,40 +40153,28 @@
         "sourcePath": "src/features/keyboard-avoiding-view/adapters/inbound/KeyboardAvoidingView.tsx"
       },
       {
-        "fromComponent": "Label",
-        "toComponent": "Text",
-        "jsxElement": "<Text color={color} emphasis={emphasis} testID={testID} variant=\"label\" weight=\"medium\">",
-        "sourcePath": "src/components/label/Label.tsx"
-      },
-      {
-        "fromComponent": "Label",
-        "toComponent": "Text",
-        "jsxElement": "<Text color=\"error\" variant=\"label\" weight=\"medium\">",
-        "sourcePath": "src/components/label/Label.tsx"
+        "fromComponent": "List",
+        "toComponent": "View",
+        "jsxElement": "<View testID={testID}>",
+        "sourcePath": "src/features/list/adapters/inbound/List.tsx"
       },
       {
         "fromComponent": "ListItem",
         "toComponent": "ListItemContent",
-        "jsxElement": "<ListItemContent {...content} testID={testID} />",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
+        "jsxElement": "<ListItemContent\n        backgroundColor={selected ? theme.semantics.selection.background : 'transparent'}\n        compact={compact}\n        description={description}\n        disabled={disabled}\n        leading={leading}\n        testID={testID}\n        title={title}\n        trailing={trailing}\n      >",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
         "fromComponent": "ListItem",
         "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase accessibilityRole=\"button\" disabled={disabled} onPress={onPress} testID={testID}>",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
-      },
-      {
-        "fromComponent": "ListItem",
-        "toComponent": "View",
-        "jsxElement": "<View\n          style={{\n            backgroundColor: state.pressed\n              ? theme.semantics.neutral.surfaceActive\n              : state.hovered\n                ? theme.semantics.neutral.surfaceHover\n                : 'transparent',\n            opacity: state.disabled ? 0.72 : 1,\n          }}\n        >",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
+        "jsxElement": "<ButtonBase\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole=\"button\"\n      accessibilityState={{ disabled, selected }}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={onPress}\n      testID={testID}\n    >",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
         "fromComponent": "ListItem",
         "toComponent": "ListItemContent",
-        "jsxElement": "<ListItemContent {...content} />",
-        "sourcePath": "src/components/list-item/ListItem.tsx"
+        "jsxElement": "<ListItemContent\n          backgroundColor={\n            state.pressed\n              ? theme.semantics.neutral.surfaceActive\n              : state.hovered\n                ? theme.semantics.neutral.surfaceHover\n                : selected\n                  ? theme.semantics.selection.background\n                  : 'transparent'\n          }\n          compact={compact}\n          description={description}\n          disabled={state.disabled}\n          leading={leading}\n          title={title}\n          trailing={trailing}\n        >",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
         "fromComponent": "Modal",
@@ -42899,37 +40270,37 @@
         "fromComponent": "Switch",
         "toComponent": "ButtonBase",
         "jsxElement": "<ButtonBase\n      {...props}\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole=\"switch\"\n      accessibilityState={{ checked: isChecked }}\n      disabled={disabled}\n      onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}\n      testID={testID}\n    >",
-        "sourcePath": "src/components/switch/Switch.tsx"
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromComponent": "Switch",
         "toComponent": "View",
         "jsxElement": "<View\n            style={{\n              alignItems: 'center',\n              flexDirection: 'row',\n              opacity: colors.opacity,\n            }}\n          >",
-        "sourcePath": "src/components/switch/Switch.tsx"
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromComponent": "Switch",
         "toComponent": "View",
         "jsxElement": "<View\n              radius=\"full\"\n              style={{\n                backgroundColor: colors.trackColor,\n                borderColor: colors.borderColor,\n                borderWidth: 1,\n                justifyContent: 'center',\n                minWidth: indicatorSize.switchWidth,\n                paddingHorizontal: 2,\n                width: indicatorSize.switchWidth,\n                height: indicatorSize.switchHeight,\n              }}\n            >",
-        "sourcePath": "src/components/switch/Switch.tsx"
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromComponent": "Switch",
         "toComponent": "View",
         "jsxElement": "<View\n                radius=\"full\"\n                style={{\n                  alignSelf: isChecked ? 'flex-end' : 'flex-start',\n                  backgroundColor: colors.thumbColor,\n                  height: indicatorSize.switchThumb,\n                  width: indicatorSize.switchThumb,\n                }}\n              />",
-        "sourcePath": "src/components/switch/Switch.tsx"
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromComponent": "Switch",
         "toComponent": "View",
         "jsxElement": "<View ml=\"s\">",
-        "sourcePath": "src/components/switch/Switch.tsx"
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromComponent": "Switch",
         "toComponent": "Text",
         "jsxElement": "<Text emphasis={labelEmphasis}>",
-        "sourcePath": "src/components/switch/Switch.tsx"
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
         "fromComponent": "Tab",
@@ -42980,12 +40351,6 @@
         "sourcePath": "src/features/typography/adapters/inbound/Text.tsx"
       },
       {
-        "fromComponent": "Textarea",
-        "toComponent": "TextInput",
-        "jsxElement": "<TextInput\n      {...props}\n      multiline\n      numberOfLines={numberOfLines ?? rows}\n      style={[{ textAlignVertical: 'top' }, style]}\n    />",
-        "sourcePath": "src/components/textarea/Textarea.tsx"
-      },
-      {
         "fromComponent": "TextInput",
         "toComponent": "View",
         "jsxElement": "<View\n      style={[\n        presentation.containerStyle,\n        resolveFocusRingStyles(theme.semantics.border.focus, focused, Platform.OS === 'web'),\n      ]}\n    >",
@@ -42994,7 +40359,7 @@
       {
         "fromComponent": "TextInput",
         "toComponent": "ReactNativeTextInput",
-        "jsxElement": "<ReactNativeTextInput\n        {...nativeProps}\n        editable={presentation.editable}\n        numberOfLines={presentation.numberOfLines}\n        onBlur={(event) => {\n          setFocused(false);\n          nativeProps.onBlur?.(event);\n        }}\n        onChangeText={(nextValue) => {\n          if (interactionPolicy !== 'passive') {\n            nativeProps.onChangeText?.(nextValue);\n          }\n        }}\n        onFocus={(event) => {\n          setFocused(true);\n          nativeProps.onFocus?.(event);\n        }}\n        placeholderTextColor={presentation.placeholderColor}\n        readOnly={readOnly}\n        style={[presentation.inputStyle, nativeProps.style]}\n      />",
+        "jsxElement": "<ReactNativeTextInput\n        {...nativeProps}\n        editable={presentation.editable}\n        numberOfLines={presentation.numberOfLines}\n        onBlur={(event) => {\n          setFocused(false);\n          nativeProps.onBlur?.(event);\n        }}\n        onChangeText={(nextValue) => {\n          if (interactionPolicy !== 'passive') {\n            nativeProps.onChangeText?.(nextValue);\n          }\n        }}\n        onFocus={(event) => {\n          setFocused(true);\n          nativeProps.onFocus?.(event);\n        }}\n        placeholderTextColor={presentation.placeholderColor}\n        readOnly={readOnly}\n        style={[\n          presentation.inputStyle,\n          nativeProps.multiline ? { textAlignVertical: 'top' } : undefined,\n          nativeProps.style,\n        ]}\n      />",
         "sourcePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx"
       },
       {

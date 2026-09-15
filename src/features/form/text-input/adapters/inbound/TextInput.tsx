@@ -1,5 +1,12 @@
 import React from 'react';
-import { Platform, TextInput as ReactNativeTextInput, View, type ViewStyle } from 'react-native';
+import {
+  Platform,
+  type StyleProp,
+  TextInput as ReactNativeTextInput,
+  type TextStyle,
+  View,
+  type ViewStyle,
+} from 'react-native';
 
 import { resolveFocusRingStyles } from '../../../../../internal/resolvers';
 import { useTheme } from '../../../../../theme/ThemeContext';
@@ -39,9 +46,7 @@ export function TextInput(props: TextInputProps) {
           nativeProps.onBlur?.(event);
         }}
         onChangeText={(nextValue) => {
-          if (interactionPolicy !== 'passive') {
-            nativeProps.onChangeText?.(nextValue);
-          }
+          if (interactionPolicy !== 'passive') nativeProps.onChangeText?.(nextValue);
         }}
         onFocus={(event) => {
           setFocused(true);
@@ -49,11 +54,22 @@ export function TextInput(props: TextInputProps) {
         }}
         placeholderTextColor={presentation.placeholderColor}
         readOnly={readOnly}
-        style={[presentation.inputStyle, nativeProps.style]}
+        style={resolveInputStyle(presentation.inputStyle, nativeProps.multiline, nativeProps.style)}
       />
       {renderAccessory(trailingAccessory, presentation.accessorySpacing, 'trailing')}
     </View>
   );
+}
+
+const multilineInputStyle: TextStyle = { textAlignVertical: 'top' };
+
+/*** Resolves TextInput style composition including canonical multiline alignment. */
+function resolveInputStyle(
+  presentationStyle: StyleProp<TextStyle>,
+  multiline: boolean | undefined,
+  style: StyleProp<TextStyle>,
+): StyleProp<TextStyle> {
+  return [presentationStyle, multiline ? multilineInputStyle : undefined, style];
 }
 
 /*** Renders one optional TextInput accessory with directional spacing. */

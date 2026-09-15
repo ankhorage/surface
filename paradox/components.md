@@ -914,9 +914,9 @@ Export paths: `src/index.ts`
 
 ## Field
 
-Source: `src/components/field/Field.tsx:10:1`
+Source: `src/features/form/field/adapters/inbound/Field.tsx:9:1`
 
-Composes a label, control, and helper or error message into one field.
+Composes a control with its label and helper or error message.
 
 Export paths: `src/index.ts`
 
@@ -1034,19 +1034,6 @@ Export paths: `src/index.ts`
 | numberOfLines | `number \| undefined`                                               | no       | —           |             |
 | testID        | `string \| undefined`                                               | no       | —           |             |
 | text          | `string \| undefined`                                               | no       | —           |             |
-
-## HelperText
-
-Source: `src/components/helper-text/HelperText.tsx:6:1`
-
-Export paths: `src/index.ts`
-
-| Prop     | Type                                                          | Required | Default   | Description |
-| -------- | ------------------------------------------------------------- | -------- | --------- | ----------- |
-| children | `React.ReactNode \| undefined`                                | no       | —         |             |
-| color    | `Extract<SurfaceColor, 'error'> \| undefined`                 | no       | —         |             |
-| emphasis | `Extract<SurfaceEmphasis, 'default' \| 'muted'> \| undefined` | no       | `'muted'` |             |
-| testID   | `string \| undefined`                                         | no       | —         |             |
 
 ## Icon
 
@@ -1276,37 +1263,41 @@ Export paths: `src/index.ts`
 | tvParallaxShiftDistanceY | `number \| undefined` | no | — | |
 | tvParallaxTiltAngle | `number \| undefined` | no | — | |
 
-## Label
+## List
 
-Source: `src/components/label/Label.tsx:6:1`
+Source: `src/features/list/adapters/inbound/List.tsx:7:1`
+
+Groups list items under one neutral Surface list boundary.
 
 Export paths: `src/index.ts`
 
-| Prop     | Type                                                          | Required | Default     | Description |
-| -------- | ------------------------------------------------------------- | -------- | ----------- | ----------- |
-| children | `React.ReactNode \| undefined`                                | no       | —           |             |
-| color    | `Extract<SurfaceColor, 'error'> \| undefined`                 | no       | —           |             |
-| emphasis | `Extract<SurfaceEmphasis, 'default' \| 'muted'> \| undefined` | no       | `'default'` |             |
-| required | `boolean \| undefined`                                        | no       | `false`     |             |
-| testID   | `string \| undefined`                                         | no       | —           |             |
+| Prop     | Type                           | Required | Default | Description |
+| -------- | ------------------------------ | -------- | ------- | ----------- |
+| children | `React.ReactNode \| undefined` | no       | —       |             |
+| testID   | `string \| undefined`          | no       | —       |             |
 
 ## ListItem
 
-Source: `src/components/list-item/ListItem.tsx:53:1`
+Source: `src/features/list/adapters/inbound/ListItem.tsx:10:1`
 
-Renders a static or pressable list item.
+Renders a static or interactive list item with shared row geometry and interaction states.
 
 Export paths: `src/index.ts`
 
-| Prop        | Type                           | Required | Default | Description |
-| ----------- | ------------------------------ | -------- | ------- | ----------- |
-| description | `React.ReactNode \| undefined` | no       | —       |             |
-| disabled    | `boolean \| undefined`         | no       | `false` |             |
-| leading     | `React.ReactNode \| undefined` | no       | —       |             |
-| onPress     | `(() => void) \| undefined`    | no       | —       |             |
-| testID      | `string \| undefined`          | no       | —       |             |
-| title       | `React.ReactNode \| undefined` | no       | —       |             |
-| trailing    | `React.ReactNode \| undefined` | no       | —       |             |
+| Prop               | Type                             | Required | Default | Description |
+| ------------------ | -------------------------------- | -------- | ------- | ----------- |
+| accessibilityLabel | `string \| undefined`            | no       | —       |             |
+| children           | `React.ReactNode \| undefined`   | no       | —       |             |
+| compact            | `boolean \| undefined`           | no       | `false` |             |
+| description        | `React.ReactNode \| undefined`   | no       | —       |             |
+| disabled           | `boolean \| undefined`           | no       | `false` |             |
+| interactionPolicy  | `InteractionPolicy \| undefined` | no       | —       |             |
+| leading            | `React.ReactNode \| undefined`   | no       | —       |             |
+| onPress            | `(() => void) \| undefined`      | no       | —       |             |
+| selected           | `boolean \| undefined`           | no       | `false` |             |
+| testID             | `string \| undefined`            | no       | —       |             |
+| title              | `React.ReactNode \| undefined`   | no       | —       |             |
+| trailing           | `React.ReactNode \| undefined`   | no       | —       |             |
 
 ## Modal
 
@@ -1765,7 +1756,7 @@ Export paths: `src/index.ts`
 
 ## Switch
 
-Source: `src/components/switch/Switch.tsx:17:1`
+Source: `src/features/form/switch/adapters/inbound/Switch.tsx:17:1`
 
 Renders a controlled or uncontrolled accessible switch.
 
@@ -1915,322 +1906,6 @@ Export paths: `src/index.ts`
 | testID        | `string \| undefined`                 | no       | —           |             |
 | variant       | `TextVariant \| undefined`            | no       | `'body'`    |             |
 | weight        | `TextWeight \| undefined`             | no       | —           |             |
-
-## Textarea
-
-Source: `src/components/textarea/Textarea.tsx:6:1`
-
-Export paths: `src/index.ts`
-
-| Prop                                   | Type                                                            | Required | Default | Description |
-| -------------------------------------- | --------------------------------------------------------------- | -------- | ------- | ----------- |
-| accessibilityActions                   | `ReadonlyArray<AccessibilityActionInfo> \| undefined`           | no       | —       |             |
-| accessibilityElementsHidden            | `boolean \| undefined`                                          | no       | —       |             |
-| accessibilityHint                      | `string \| undefined`                                           | no       | —       |             |
-| accessibilityIgnoresInvertColors       | `boolean \| undefined`                                          | no       | —       |             |
-| accessibilityLabel                     | `string \| undefined`                                           | no       | —       |             |
-| accessibilityLabelledBy                | `string \| string[] \| undefined`                               | no       | —       |             |
-| accessibilityLanguage                  | `string \| undefined`                                           | no       | —       |             |
-| accessibilityLargeContentTitle         | `string \| undefined`                                           | no       | —       |             |
-| accessibilityLiveRegion                | `'none' \| 'polite' \| 'assertive' \| undefined`                | no       | —       |             |
-| accessibilityRespondsToUserInteraction | `boolean \| undefined`                                          | no       | —       |             |
-| accessibilityRole                      | `AccessibilityRole \| undefined`                                | no       | —       |             |
-| accessibilityShowsLargeContentViewer   | `boolean \| undefined`                                          | no       | —       |             |
-| accessibilityState                     | `AccessibilityState \| undefined`                               | no       | —       |             |
-| accessibilityValue                     | `AccessibilityValue \| undefined`                               | no       | —       |             |
-| accessibilityViewIsModal               | `boolean \| undefined`                                          | no       | —       |             |
-| accessible                             | `boolean \| undefined`                                          | no       | —       |             |
-| allowFontScaling                       | `boolean \| undefined`                                          | no       | —       |             |
-| aria-busy                              | `boolean \| undefined`                                          | no       | —       |             |
-| aria-checked                           | `boolean \| 'mixed' \| undefined`                               | no       | —       |             |
-| aria-disabled                          | `boolean \| undefined`                                          | no       | —       |             |
-| aria-expanded                          | `boolean \| undefined`                                          | no       | —       |             |
-| aria-hidden                            | `boolean \| undefined`                                          | no       | —       |             |
-| aria-label                             | `string \| undefined`                                           | no       | —       |             |
-| aria-labelledby                        | `string \| undefined`                                           | no       | —       |             |
-| aria-live                              | `('polite' \| 'assertive' \| 'off') \| undefined`               | no       | —       |             |
-| aria-modal                             | `boolean \| undefined`                                          | no       | —       |             |
-| aria-selected                          | `boolean \| undefined`                                          | no       | —       |             |
-| aria-valuemax                          | `AccessibilityValue['max'] \| undefined`                        | no       | —       |             |
-| aria-valuemin                          | `AccessibilityValue['min'] \| undefined`                        | no       | —       |             |
-| aria-valuenow                          | `AccessibilityValue['now'] \| undefined`                        | no       | —       |             |
-| aria-valuetext                         | `AccessibilityValue['text'] \| undefined`                       | no       | —       |             |
-| autoCapitalize                         | `'none' \| 'sentences' \| 'words' \| 'characters' \| undefined` | no       | —       |             |
-| autoComplete                           | `\| '2fa-app-otp'                                               |
-
-    \| 'additional-name'
-    \| 'address-line1'
-    \| 'address-line2'
-    \| 'birthdate-day'
-    \| 'birthdate-full'
-    \| 'birthdate-month'
-    \| 'birthdate-year'
-    \| 'cc-csc'
-    \| 'cc-exp'
-    \| 'cc-exp-day'
-    \| 'cc-exp-month'
-    \| 'cc-exp-year'
-    \| 'cc-number'
-    \| 'cc-name'
-    \| 'cc-given-name'
-    \| 'cc-middle-name'
-    \| 'cc-family-name'
-    \| 'cc-type'
-    \| 'country'
-    \| 'current-password'
-    \| 'email'
-    \| 'email-otp'
-    \| 'flight-confirmation-code'
-    \| 'flight-number'
-    \| 'family-name'
-    \| 'gender'
-    \| 'gift-card-number'
-    \| 'gift-card-pin'
-    \| 'given-name'
-    \| 'honorific-prefix'
-    \| 'honorific-suffix'
-    \| 'loyalty-account-number'
-    \| 'name'
-    \| 'name-family'
-    \| 'name-given'
-    \| 'name-middle'
-    \| 'name-middle-initial'
-    \| 'name-prefix'
-    \| 'name-suffix'
-    \| 'new-password'
-    \| 'nickname'
-    \| 'one-time-code'
-    \| 'organization'
-    \| 'organization-title'
-    \| 'password'
-    \| 'password-new'
-    \| 'postal-address'
-    \| 'postal-address-country'
-    \| 'postal-address-dependent-locality'
-    \| 'postal-address-extended'
-    \| 'postal-address-extended-postal-code'
-    \| 'postal-address-locality'
-    \| 'postal-address-region'
-    \| 'postal-address-unit'
-    \| 'postal-code'
-    \| 'promo-code'
-    \| 'street-address'
-    \| 'sms-otp'
-    \| 'tel'
-    \| 'tel-country-code'
-    \| 'tel-national'
-    \| 'tel-device'
-    \| 'upi-vpa'
-    \| 'url'
-    \| 'wifi-password'
-    \| 'username'
-    \| 'username-new'
-    \| 'off'
-    \| undefined` | no | — |  |
-
-| autoCorrect | `boolean \| undefined` | no | — | |
-| autoFocus | `boolean \| undefined` | no | — | |
-| blurOnSubmit | `boolean \| undefined` | no | — | |
-| caretHidden | `boolean \| undefined` | no | — | |
-| children | `React.ReactNode \| undefined` | no | — | |
-| clearButtonMode | `\| 'never'
-    \| 'while-editing'
-    \| 'unless-editing'
-    \| 'always'
-    \| undefined` | no | — | |
-| clearTextOnFocus | `boolean \| undefined` | no | — | |
-| collapsable | `boolean \| undefined` | no | — | |
-| collapsableChildren | `boolean \| undefined` | no | — | |
-| contextMenuHidden | `boolean \| undefined` | no | — | |
-| cursorColor | `ColorValue \| null \| undefined` | no | — | |
-| dataDetectorTypes | `DataDetectorTypes \| DataDetectorTypes[] \| undefined` | no | — | |
-| defaultValue | `string \| undefined` | no | — | |
-| disabled | `boolean \| undefined` | no | — | |
-| disableFullscreenUI | `boolean \| undefined` | no | — | |
-| disableKeyboardShortcuts | `boolean \| undefined` | no | — | |
-| enablesReturnKeyAutomatically | `boolean \| undefined` | no | — | |
-| enterKeyHint | `EnterKeyHintTypeOptions \| undefined` | no | — | |
-| focusable | `boolean \| undefined` | no | — | |
-| hasTVPreferredFocus | `boolean \| undefined` | no | — | |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — | |
-| id | `string \| undefined` | no | — | |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — | |
-| importantForAutofill | `\| 'auto'
-    \| 'no'
-    \| 'noExcludeDescendants'
-    \| 'yes'
-    \| 'yesExcludeDescendants'
-    \| undefined` | no | — | |
-| inlineImageLeft | `string \| undefined` | no | — | |
-| inlineImagePadding | `number \| undefined` | no | — | |
-| inputAccessoryViewButtonLabel | `string \| undefined` | no | — | |
-| inputAccessoryViewID | `string \| undefined` | no | — | |
-| inputMode | `InputModeOptions \| undefined` | no | — | |
-| interactionPolicy | `InteractionPolicy \| undefined` | no | — | |
-| invalid | `boolean \| undefined` | no | — | |
-| isTVSelectable | `boolean \| undefined` | no | — | |
-| keyboardAppearance | `'default' \| 'light' \| 'dark' \| undefined` | no | — | |
-| keyboardType | `KeyboardTypeOptions \| undefined` | no | — | |
-| leadingAccessory | `React.ReactNode \| undefined` | no | — | |
-| lineBreakModeIOS | `\| 'wordWrapping'
-    \| 'char'
-    \| 'clip'
-    \| 'head'
-    \| 'middle'
-    \| 'tail'
-    \| undefined` | no | — | |
-| lineBreakStrategyIOS | `\| 'none'
-    \| 'standard'
-    \| 'hangul-word'
-    \| 'push-out'
-    \| undefined` | no | — | |
-| maxFontSizeMultiplier | `number \| null \| undefined` | no | — | |
-| maxLength | `number \| undefined` | no | — | |
-| nativeID | `string \| undefined` | no | — | |
-| needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — | |
-| numberOfLines | `number \| undefined` | no | — | |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — | |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — | |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — | |
-| onBlur | `((e: BlurEvent) => void) \| undefined` | no | — | |
-| onChange | `((e: TextInputChangeEvent) => void) \| undefined` | no | — | |
-| onChangeText | `((text: string) => void) \| undefined` | no | — | |
-| onContentSizeChange | `\| ((e: TextInputContentSizeChangeEvent) => void)
-    \| undefined` | no | — | |
-| onEndEditing | `((e: TextInputEndEditingEvent) => void) \| undefined` | no | — | |
-| onFocus | `((e: FocusEvent) => void) \| undefined` | no | — | |
-| onKeyPress | `((e: TextInputKeyPressEvent) => void) \| undefined` | no | — | |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — | |
-| onMagicTap | `(() => void) \| undefined` | no | — | |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — | |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — | |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — | |
-| onPress | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no | — | |
-| onPressIn | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no | — | |
-| onPressOut | `\| ((e: NativeSyntheticEvent<NativeTouchEvent>) => void)
-    \| undefined` | no | — | |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — | |
-| onScroll | `((e: TextInputScrollEvent) => void) \| undefined` | no | — | |
-| onSelectionChange | `((e: TextInputSelectionChangeEvent) => void) \| undefined` | no | — | |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — | |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — | |
-| onSubmitEditing | `((e: TextInputSubmitEditingEvent) => void) \| undefined` | no | — | |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — | |
-| passwordRules | `string \| null \| undefined` | no | — | |
-| placeholder | `string \| undefined` | no | — | |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — | |
-| readOnly | `boolean \| undefined` | no | — | |
-| rejectResponderTermination | `boolean \| null \| undefined` | no | — | |
-| removeClippedSubviews | `boolean \| undefined` | no | — | |
-| renderToHardwareTextureAndroid | `boolean \| undefined` | no | — | |
-| returnKeyLabel | `string \| undefined` | no | — | |
-| returnKeyType | `ReturnKeyTypeOptions \| undefined` | no | — | |
-| role | `Role \| undefined` | no | — | |
-| rows | `number \| undefined` | no | `4` | |
-| screenReaderFocusable | `boolean \| undefined` | no | — | |
-| scrollEnabled | `boolean \| undefined` | no | — | |
-| secureTextEntry | `boolean \| undefined` | no | — | |
-| selection | `{start: number; end?: number \| undefined} \| undefined` | no | — | |
-| selectionColor | `ColorValue \| undefined` | no | — | |
-| selectionHandleColor | `ColorValue \| null \| undefined` | no | — | |
-| selectionState | `DocumentSelectionState \| undefined` | no | — | |
-| selectTextOnFocus | `boolean \| undefined` | no | — | |
-| shouldRasterizeIOS | `boolean \| undefined` | no | — | |
-| showSoftInputOnFocus | `boolean \| undefined` | no | — | |
-| size | `ControlSize \| undefined` | no | — | |
-| smartInsertDelete | `boolean \| undefined` | no | — | |
-| spellCheck | `boolean \| undefined` | no | — | |
-| style | `StyleProp<TextStyle> \| undefined` | no | — | |
-| submitBehavior | `SubmitBehavior \| undefined` | no | — | |
-| tabIndex | `0 \| -1 \| undefined` | no | — | |
-| testID | `string \| undefined` | no | — | |
-| textAlign | `'left' \| 'center' \| 'right' \| undefined` | no | — | |
-| textAlignVertical | `'auto' \| 'top' \| 'bottom' \| 'center' \| undefined` | no | — | |
-| textBreakStrategy | `'simple' \| 'highQuality' \| 'balanced' \| undefined` | no | — | |
-| textContentType | `\| 'none'
-    \| 'URL'
-    \| 'addressCity'
-    \| 'addressCityAndState'
-    \| 'addressState'
-    \| 'countryName'
-    \| 'creditCardNumber'
-    \| 'creditCardExpiration'
-    \| 'creditCardExpirationMonth'
-    \| 'creditCardExpirationYear'
-    \| 'creditCardSecurityCode'
-    \| 'creditCardType'
-    \| 'creditCardName'
-    \| 'creditCardGivenName'
-    \| 'creditCardMiddleName'
-    \| 'creditCardFamilyName'
-    \| 'emailAddress'
-    \| 'familyName'
-    \| 'fullStreetAddress'
-    \| 'givenName'
-    \| 'jobTitle'
-    \| 'location'
-    \| 'middleName'
-    \| 'name'
-    \| 'namePrefix'
-    \| 'nameSuffix'
-    \| 'nickname'
-    \| 'organizationName'
-    \| 'postalCode'
-    \| 'streetAddressLine1'
-    \| 'streetAddressLine2'
-    \| 'sublocality'
-    \| 'telephoneNumber'
-    \| 'username'
-    \| 'password'
-    \| 'newPassword'
-    \| 'oneTimeCode'
-    \| 'birthdate'
-    \| 'birthdateDay'
-    \| 'birthdateMonth'
-    \| 'birthdateYear'
-    \| 'cellularEID'
-    \| 'cellularIMEI'
-    \| 'dateTime'
-    \| 'flightNumber'
-    \| 'shipmentTrackingNumber'
-    \| undefined` | no | — | |
-| trailingAccessory | `React.ReactNode \| undefined` | no | — | |
-| tvParallaxMagnification | `number \| undefined` | no | — | |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — | |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — | |
-| tvParallaxTiltAngle | `number \| undefined` | no | — | |
-| underlineColorAndroid | `ColorValue \| undefined` | no | — | |
-| value | `string \| undefined` | no | — | |
-| verticalAlign | `'auto' \| 'top' \| 'bottom' \| 'middle' \| undefined` | no | — | |
 
 ## TextInput
 

@@ -1,15 +1,3 @@
-export type { FieldProps } from './components/field';
-export { Field } from './components/field';
-export type { HelperTextProps } from './components/helper-text';
-export { HelperText } from './components/helper-text';
-export type { LabelProps } from './components/label';
-export { Label } from './components/label';
-export type { ListItemProps } from './components/list-item';
-export { ListItem } from './components/list-item';
-export type { SwitchProps } from './components/switch';
-export { Switch } from './components/switch';
-export type { TextareaProps } from './components/textarea';
-export { Textarea } from './components/textarea';
 export type { FontRuntime } from './context/FontContext';
 export { FontProvider, useFontContext } from './context/FontContext';
 export type { I18nInstance, TranslationRuntime, Translator } from './context/TranslationContext';
@@ -40,8 +28,12 @@ export type { CardProps } from './features/card/public';
 export { Card } from './features/card/public';
 export type { CheckboxProps } from './features/form/checkbox/public';
 export { Checkbox } from './features/form/checkbox/public';
+export type { FieldProps } from './features/form/field/public';
+export { Field } from './features/form/field/public';
 export type { RadioProps } from './features/form/radio/public';
 export { Radio } from './features/form/radio/public';
+export type { SwitchProps } from './features/form/switch/public';
+export { Switch } from './features/form/switch/public';
 export type { TextInputProps } from './features/form/text-input/public';
 export { TextInput } from './features/form/text-input/public';
 export type {
@@ -62,6 +54,8 @@ export type {
 export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';
 export type { DividerProps, GridProps, ScrollViewProps, ViewProps } from './features/layout/public';
 export { Divider, Grid, ScrollView, View } from './features/layout/public';
+export type { ListItemProps, ListProps } from './features/list/public';
+export { List, ListItem } from './features/list/public';
 export type { ModalProps } from './features/modal/public';
 export { Modal } from './features/modal/public';
 export type {
