@@ -1,0 +1,346 @@
+$ rm -rf dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo && bun x tsc -p tsconfig.build.json
+$ ankhorage-eslint . --max-warnings=0
+$ ankhorage-prettier --check .
+Checking formatting...
+All matched files use Prettier code style!
+$ ankhorage-knip
+$ bun test src
+bun test v1.4.2 (744846f84)
+
+::group::src/webAcceptance.test.tsx:
+(pass) RN Web 0.21 statically renders and hydrates representative responsive primitives [48.83ms]
+(pass) RN Web 0.21 compiles box-none overlay pointer events into a hit-test-safe class [0.43ms]
+(pass) RN Web 0.21 renders keyboard-safe content through the Surface layout boundary [0.43ms]
+
+::endgroup::
+
+::group::src/structureOwnership.test.ts:
+(pass) canonical Surface ownership > does not retain superseded technical roots or local generic deep utilities [0.14ms]
+
+::endgroup::
+
+::group::src/index.test.ts:
+(pass) feature-owned root barrel contract > routes UI through feature-owned public facades [0.04ms]
+(pass) feature-owned root barrel contract > does not retain removed component or layout facades and aliases [0.20ms]
+(pass) remaining root barrel contract > keeps deliberate cross-cutting public APIs [0.02ms]
+(pass) remaining root barrel contract > does not retain obsolete action-sheet, drawer, menu aliases, or navigation chrome [0.05ms]
+(pass) remaining root barrel contract > keeps internal infrastructure off the public barrel [0.02ms]
+(pass) remaining root barrel contract > exports the resolved semantic and diagnostic contracts [2.18ms]
+(pass) public package metadata contract > keeps package metadata aligned with deliberate public entrypoints [0.08ms]
+(pass) public package metadata contract > supports RN 0.86 patches while validating the canonical RN 0.86.3 baseline [0.03ms]
+(pass) bottom-sheet package contract > keeps the implementation and Expo 57 runtime boundary explicit [0.06ms]
+
+::endgroup::
+
+::group::src/internal/resolvePointerEvents.test.ts:
+(pass) resolvePointerEvents > moves React Native Web pointer events into style [0.03ms]
+(pass) resolvePointerEvents > preserves the native pointer-events prop [0.01ms]
+
+::endgroup::
+
+::group::src/constants/surfaceColor.test.ts:
+(pass) surface color constants > keeps canonical color and emphasis catalogs unique and aligned [0.07ms]
+
+::endgroup::
+
+::group::src/utils/resolveViewStyles.test.ts:
+(pass) resolveViewStyles spacing and responsive layout > resolves padding and margins correctly [0.11ms]
+(pass) resolveViewStyles spacing and responsive layout > resolves responsive properties [0.10ms]
+(pass) resolveViewStyles spacing and responsive layout > resolves gap tokens with native flex layout props [0.07ms]
+(pass) resolveViewStyles visual and dimension styles > resolves colors and border styles [0.04ms]
+(pass) resolveViewStyles visual and dimension styles > resolves spacing tokens for dimension props and preserves raw strings [0.04ms]
+(pass) resolveViewStyles visual and dimension styles > handles undefined props gracefully [0.02ms]
+
+::endgroup::
+
+::group::src/types/surfaceColor.test.ts:
+(pass) surface color type ownership > derives public types from runtime constants and exports both deliberately [0.06ms]
+
+::endgroup::
+
+::group::src/types/interactionPolicy.test.ts:
+(pass) InteractionPolicy ownership > exports the policy types from the public root [0.01ms]
+(pass) InteractionPolicy ownership > keeps the allowed policy values explicit [0.01ms]
+(pass) InteractionPolicy ownership > shares the owned policy contract with PressableProps [0.01ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveTextStyles.test.ts:
+(pass) resolveTextStyles > maps body and label variants to theme-driven typography [2.75ms]
+(pass) resolveTextStyles > resolves heading levels through the shared text resolver [2.52ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveTextColor.test.ts:
+(pass) resolveTextColor > maps semantic text emphases through content aliases [2.42ms]
+(pass) resolveTextColor > supports semantic colors for shared field and messaging copy [2.50ms]
+(pass) resolveTextColor > maps inverse emphasis with a semantic color to role foreground text [2.29ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveSelectionControlBehavior.test.ts:
+(pass) resolveSelectionControlNextChecked > toggles checkbox and switch values when interactive [0.05ms]
+(pass) resolveSelectionControlNextChecked > allows radio selection once but not repeat activation [0.01ms]
+(pass) resolveSelectionControlNextChecked > keeps read-only and disabled controls focusable but non-mutating [0.02ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveControlSize.test.ts:
+(pass) resolveControlSize > returns a fixed control shape for each size [3.03ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveInteractiveState.test.ts:
+(pass) resolveInteractiveState > freezes the interaction state shape to booleans [0.03ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveOverlayAnimation.test.ts:
+(pass) resolveOverlayAnimation > returns stable transition values for each overlay layer [0.05ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveSelectionControlColors.test.ts:
+(pass) resolveSelectionControlColors > maps checked controls through the selected color semantics [2.47ms]
+(pass) resolveSelectionControlColors > maps invalid unchecked controls through error/border semantics [5.40ms]
+(pass) resolveSelectionControlColors > mutes disabled controls regardless of color [1.64ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveFieldState.test.ts:
+(pass) resolveFieldState > applies field-state precedence consistently [0.04ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveFieldPresentation.test.ts:
+(pass) resolveFieldPresentation > keeps label and helper text presentation aligned for default fields [0.03ms]
+(pass) resolveFieldPresentation > mutes both label and helper text for disabled and read-only fields [0.02ms]
+(pass) resolveFieldPresentation > elevates invalid fields to the error color [0.01ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveSurfaceColor.test.ts:
+(pass) resolveSurfaceColor > maps every public surface color to a semantic role [1.91ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveIndicatorSize.test.ts:
+(pass) resolveIndicatorSize > returns a stable size map for each control size [0.11ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveInteractiveColors.test.ts:
+(pass) resolveInteractiveColors > maps button variant, color, and state through semantic slots [2.21ms]
+(pass) resolveInteractiveColors > derives input colors from interaction and validation state [2.20ms]
+
+::endgroup::
+
+::group::src/internal/resolvers/resolveOverlayZIndex.test.ts:
+(pass) resolveOverlayZIndex > assigns higher base layers to later overlay types [0.05ms]
+(pass) resolveOverlayZIndex > increments the z-index within the same layer stack [0.01ms]
+
+::endgroup::
+
+::group::src/internal/focus/useFocusManager.test.ts:
+(pass) getFocusableElements > filters disabled, hidden, and aria-hidden nodes from focus traps [0.14ms]
+(pass) getFocusableElements > returns an empty list when no DOM-like query API is available [0.02ms]
+
+::endgroup::
+
+::group::src/internal/overlay/useOverlayStack.test.ts:
+(pass) sortOverlayEntries > sorts overlays by z-index then registration order [0.17ms]
+(pass) sortOverlayEntries > recomputes per-layer stack indices to avoid z-index collisions after removals [0.04ms]
+
+::endgroup::
+
+::group::src/features/popover-menu/public.test.ts:
+(pass) PopoverMenu composes Popover instead of owning anchor and portal mechanics [0.19ms]
+
+::endgroup::
+
+::group::src/features/bottom-sheet/useBottomSheet.test.tsx:
+(pass) useBottomSheet > requires BottomSheetProvider [0.54ms]
+
+::endgroup::
+
+::group::src/features/bottom-sheet/public.test.ts:
+(pass) bottom-sheet boundary exposes Gorhom integrated scrollables and direct content mode [1.91ms]
+
+::endgroup::
+
+::group::src/features/list/public.test.ts:
+(pass) list capability owns List and ListItem under one feature boundary [0.21ms]
+
+::endgroup::
+
+::group::src/features/theme/public.test.ts:
+(pass) public theme subpath > resolves a complete theme through the pure owner entrypoint [2.41ms]
+(pass) public theme subpath > keeps React and React Native outside the public module graph root [0.14ms]
+(pass) public theme subpath > imports and executes through the package subpath in plain Bun [53.85ms]
+
+::endgroup::
+
+::group::src/features/theme/runtime.test.ts:
+(pass) theme runtime ownership > keeps nested scopes on the Surface runtime boundary without exposing raw context [0.05ms]
+
+::endgroup::
+
+::group::src/features/tooltip/public.test.ts:
+(pass) Tooltip delegates anchored positioning and portal ownership to Popover [0.15ms]
+
+::endgroup::
+
+::group::src/core/responsive/resolve.test.ts:
+(pass) resolveResponsive > returns plain value when non-responsive [0.01ms]
+(pass) resolveResponsive > resolves value at current breakpoint [0.02ms]
+(pass) resolveResponsive > falls back to nearest lower breakpoint [0.01ms]
+(pass) resolveResponsive > falls back to base when no lower explicit value exists [0.01ms]
+(pass) resolveResponsive > returns undefined when value is undefined
+
+::endgroup::
+
+::group::src/core/responsive/getBreakpointFromWidth.test.ts:
+(pass) getBreakpointFromWidth > resolves expected breakpoints [0.03ms]
+
+::endgroup::
+
+::group::src/features/image/utils/resolveImageProps.test.ts:
+(pass) normalizeSource > normalizes string sources into uri objects [0.03ms]
+(pass) normalizeSource > passes through react-native image sources
+(pass) normalizeSource > returns undefined for nullish sources [0.01ms]
+(pass) resolveResizeMode > prefers fit over resizeMode [0.02ms]
+(pass) resolveResizeMode > defaults to cover when both are absent
+(pass) resolveRenderedSource > renders fallback when the primary source is absent [0.02ms]
+(pass) getSourceKey > derives stable keys for string and uri sources [0.08ms]
+(pass) getSourceKey > derives stable keys for asset sources
+(pass) getSourceKey > derives stable keys for uri sets [0.03ms]
+(pass) resolveImageStyle > resolves spacing tokens for dimensions and preserves raw strings [1.56ms]
+(pass) resolveImageStyle > resolves radius tokens for borderRadius [1.43ms]
+
+::endgroup::
+
+::group::src/features/tabs/utils/resolveTabElementId.test.ts:
+(pass) resolveTabElementId > creates stable ids from tab values [0.06ms]
+(pass) resolveTabElementId > namespaces ids by tabs testID when provided [0.02ms]
+
+::endgroup::
+
+::group::src/features/tabs/utils/resolveNextTabValue.test.ts:
+(pass) resolveNextTabValue > skips disabled tabs when cycling [0.12ms]
+(pass) resolveNextTabValue > supports home and end navigation [0.01ms]
+
+::endgroup::
+
+::group::src/features/popover-menu/utils/resolveNextMenuIndex.test.ts:
+(pass) resolveNextMenuIndex > cycles down and up through enabled actions [0.08ms]
+(pass) resolveNextMenuIndex > supports home and end navigation [0.01ms]
+(pass) resolveNextMenuIndex > returns -1 when all actions are disabled
+
+::endgroup::
+
+::group::src/features/theme/domain/inverseSemantics.test.ts:
+(pass) inverse semantics > provides a paired inverse surface and content color in light mode [1.17ms]
+(pass) inverse semantics > provides a paired inverse surface and content color in dark mode [3.17ms]
+(pass) inverse semantics > resolves global inverse content from neutral semantics instead of brand foreground [2.08ms]
+
+::endgroup::
+
+::group::src/features/theme/domain/generatePalette.test.ts:
+(pass) generates a valid palette for light mode [2.56ms]
+(pass) generates a valid palette for dark mode [2.41ms]
+(pass) uses the Color Theory status owner independently from brand harmony [4.13ms]
+(pass) uses mode-aware role semantics for dark mode soft states [4.74ms]
+(pass) preserves the primary color at swatch step 500 in light mode [2.27ms]
+(pass) preserves the primary color at swatch step 500 in dark mode [3.36ms]
+(pass) provides a neutral swatch with neutralKeyColor at step 500 [2.30ms]
+(pass) throws deterministically on invalid primary color [0.13ms]
+(pass) throws deterministically on invalid primary color in dark mode [0.07ms]
+(pass) emits required semantic roles for all harmonies [33.31ms]
+(pass) resolves canonical semantic references and returns their selected steps [7.31ms]
+(pass) returns measured selections and contrast diagnostics for both modes [4.46ms]
+(pass) reports neutral and surface-separation evidence without hiding failed separation [2.28ms]
+(pass) preserves owner diagnostics for achromatic and low-chroma inputs [2.04ms]
+(pass) generates ordinal chromatic role swatches (no accent/highlight as swatch keys) [2.19ms]
+(pass) semantic resolver maps all SemanticColorToken entries for light mode [2.20ms]
+(pass) semantic resolver maps all SemanticColorToken entries for dark mode [2.24ms]
+(pass) neutral semantics power backgrounds, borders, text in light mode [2.24ms]
+(pass) readable foregrounds are generated for brand base in both modes [5.47ms]
+
+::endgroup::
+
+::group::src/features/accordion/utils/resolveAccordionToggle.test.ts:
+(pass) resolveAccordionToggle > opens one value in single mode [0.08ms]
+(pass) resolveAccordionToggle > keeps the active value open when single mode is not collapsible [0.02ms]
+(pass) resolveAccordionToggle > closes the active value when single mode is collapsible [0.01ms]
+(pass) resolveAccordionToggle > adds and removes values independently in multiple mode [0.04ms]
+
+::endgroup::
+
+::group::src/features/typography/utils/resolveHeadingTextStyle.test.ts:
+(pass) resolveHeadingTextStyle > maps heading levels to theme-driven typography tokens [1.93ms]
+(pass) resolveHeadingTextStyle > uses the themed font family when one is configured [1.88ms]
+(pass) resolveHeadingTextStyle > shares the default content emphasis with Text [1.88ms]
+
+::endgroup::
+
+::group::src/features/popover/utils/resolvePopoverPosition.test.ts:
+(pass) resolvePopoverPosition > places bottom-start content below the anchor [0.12ms]
+(pass) resolvePopoverPosition > clamps content to the available viewport [0.03ms]
+
+::endgroup::
+
+::group::src/features/icon/adapters/inbound/PortableIcon.web.test.tsx:
+(pass) portable icon rendering > renders Ionicons through the public Icon API [1.36ms]
+(pass) portable icon rendering > renders FontAwesome through the public Icon API [0.45ms]
+(pass) portable icon rendering > renders a FontAwesome5 brand icon through its brand font [0.66ms]
+(pass) portable icon rendering > renders a FontAwesome5 solid icon through its solid font [0.39ms]
+(pass) portable icon rendering > renders a FontAwesome6 brand icon through its brand font [0.55ms]
+(pass) portable icon rendering > renders Material Design Icons through the public Icon API [0.37ms]
+(pass) portable icon rendering > renders an SVG URI through the same public Icon API [0.38ms]
+(pass) portable icon web assets > renders a bundled SVG asset through React Native Web Image [0.41ms]
+(pass) portable icon contract > publishes the intentional provider inventory [0.04ms]
+(pass) portable icon runtime rejection > throws for an invalid runtime provider instead of falling back to Ionicons [0.19ms]
+(pass) portable icon runtime rejection > throws for an invalid runtime FontAwesome5 variant [0.14ms]
+(pass) portable icon runtime rejection > throws for an invalid runtime FontAwesome6 variant [0.10ms]
+(pass) portable icon dependency boundary > has no Expo icon dependency or resolver path [0.08ms]
+
+::endgroup::
+
+::group::src/features/theme/adapters/inbound/ThemeScope.test.tsx:
+(pass) overrides mode without mutating the parent theme runtime [2.40ms]
+(pass) deep-merges a nested config override while preserving the parent config [2.35ms]
+
+::endgroup::
+
+::group::src/features/theme/application/use-cases/createThemeValidation.test.ts:
+(pass) createTheme token validation > rejects negative or non-finite numeric tokens [7.63ms]
+(pass) createTheme token validation > keeps reserved zero tokens canonical [3.26ms]
+(pass) createTheme token validation > requires positive typography dimensions [2.65ms]
+(pass) createTheme token validation > rejects unknown heading and weight slots [2.43ms]
+(pass) createTheme token validation > rejects unsupported heading and font-weight values [3.34ms]
+
+::endgroup::
+
+::group::src/features/theme/application/use-cases/createThemeOverrides.test.ts:
+(pass) createTheme authored global tokens > preserves defaults when no authored overrides exist [1.12ms]
+(pass) createTheme authored global tokens > merges authored global tokens without copying omitted defaults into config [1.21ms]
+(pass) createTheme authored global tokens > keeps module-derived font families isolated per resolved theme [2.47ms]
+
+::endgroup::
+
+::group::src/features/toast/adapters/inbound/useToast.test.tsx:
+(pass) useToast > requires ToastProvider [0.12ms]
+
+::endgroup::
+
+::group::src/features/form/radio/adapters/inbound/Radio.test.ts:
+(pass) classifies only primitive labels for the built-in text presentation [0.06ms]
+(pass) Radio preserves one radio interaction boundary and renders structured content directly [0.17ms]
+
+::endgroup::
+
+ 144 pass
+ 0 fail
+ 3698 expect() calls
+Ran 144 tests across 47 files. [573.00ms]
+$ bun x tsc --noEmit -p tsconfig.json

@@ -1,8 +1,8 @@
 import type React from 'react';
 
 import type { ControlSize } from '../internal/resolvers/resolveControlSize';
-import type { SurfaceColor } from '../surfaceColor';
 import type { PressableProps } from './pressable';
+import type { SurfaceColor } from './surfaceColor';
 
 export interface RadioProps extends Omit<
   PressableProps,

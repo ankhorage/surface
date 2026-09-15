@@ -1,0 +1,34 @@
+name: Theme migration diagnostics
+
+on:
+  push:
+    branches:
+      - refactor/theme-runtime-ownership
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.2'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: bun install --frozen-lockfile
+      - name: Capture validation output
+        run: |
+          mkdir -p .diagnostics
+          (bun run build; bun run lint; bun run format:check; bun run knip:check; bun run test; bun run typecheck) > .diagnostics/theme-validation.log 2>&1 || true
+      - name: Persist diagnostics
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -f .diagnostics/theme-validation.log
+          git commit -m "chore: persist theme validation diagnostics"
+          git push origin HEAD:refactor/theme-runtime-ownership

@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import type { InteractionPolicyProps } from '../interactionPolicy';
+import type { InteractionPolicyProps } from './interactionPolicy';
 
 export interface ListProps {
   children?: React.ReactNode;

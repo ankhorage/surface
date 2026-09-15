@@ -44,6 +44,7 @@
   "dependencies": {
     "@ankhorage/color-theory": "^0.3.0",
     "@ankhorage/contracts": "^12.0.1",
+    "@ankhorage/utility": "^1.2.0",
     "@gorhom/bottom-sheet": "^5.2.13"
   },
   "files": [
@@ -69,12 +70,12 @@
       "default": "./dist/features/bottom-sheet/public.js"
     },
     "./theme": {
-      "bun": "./src/theme/public.ts",
-      "react-native": "./src/theme/public.ts",
-      "browser": "./src/theme/public.ts",
-      "types": "./dist/theme/public.d.ts",
-      "import": "./dist/theme/public.js",
-      "default": "./dist/theme/public.js"
+      "bun": "./src/features/theme/public.ts",
+      "react-native": "./src/features/theme/public.ts",
+      "browser": "./src/features/theme/public.ts",
+      "types": "./dist/features/theme/public.d.ts",
+      "import": "./dist/features/theme/public.js",
+      "default": "./dist/features/theme/public.js"
     },
     "./package.json": "./package.json"
   },

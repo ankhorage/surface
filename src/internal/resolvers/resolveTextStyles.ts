@@ -1,6 +1,6 @@
 import type { TextStyle } from 'react-native';
 
-import type { FontWeight, SurfaceTheme } from '../../theme/types';
+import type { FontWeight, SurfaceTheme } from '../../types/theme';
 
 export type TextVariant = 'body' | 'bodySmall' | 'caption' | 'label' | 'mono';
 export type TextWeight = keyof SurfaceTheme['typography']['weights'] | FontWeight;

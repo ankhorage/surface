@@ -7,6 +7,7 @@
       "dependencies": {
         "@ankhorage/color-theory": "^0.3.0",
         "@ankhorage/contracts": "^12.0.1",
+        "@ankhorage/utility": "^1.2.0",
         "@gorhom/bottom-sheet": "^5.2.13",
       },
       "devDependencies": {
@@ -60,7 +61,7 @@
 
     "@ankhorage/paradox": ["@ankhorage/paradox@0.1.24", "", { "dependencies": { "ts-morph": "^28.0.0" }, "bin": { "paradox": "dist/cli/standalone.js" } }, "sha512-4fZOo8QFZuzQEVH+f2ekb8vEWUuiWxs45lwMBgR3yNgJ2lZdyr98sdN60Rn7bsKE9LUhr56gqaO2p1xtrI6Kyg=="],
 
-    "@ankhorage/utility": ["@ankhorage/utility@0.5.0", "", { "dependencies": { "@ankhorage/contracts": "^12.0.1" }, "peerDependencies": { "@techstark/opencv-js": "^5.0.0-release.1", "pixelmatch": "^7.2.0", "sharp": "^0.35.4", "tesseract.js": "^7.0.0" }, "optionalPeers": ["@techstark/opencv-js", "pixelmatch", "sharp", "tesseract.js"] }, "sha512-XXQuf6+rl6FaOCR7vDoJ60FuSGQSOAtWOM3oEv59e8x9bDyQvAlD/cch6jKQ4G1oCg2DsyhFL/HO26QFXxYRpQ=="],
+    "@ankhorage/utility": ["@ankhorage/utility@1.2.0", "", {}, "sha512-0Z5ucUJe9WIqWk5RFHxY9qhb0S8ijZHVQ5zFhw9u9mOqLq5R8IKVIDQZCe0t3/P85LsUUKRhVpk9nK7UgDe5zw=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.29.0", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.28.5", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw=="],
 
@@ -1359,6 +1360,8 @@
     "zod": ["zod@4.4.3", "", {}, "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ=="],
 
     "zod-validation-error": ["zod-validation-error@4.0.2", "", { "peerDependencies": { "zod": "^3.25.0 || ^4.0.0" } }, "sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ=="],
+
+    "@ankhorage/devtools/@ankhorage/utility": ["@ankhorage/utility@0.5.0", "", { "dependencies": { "@ankhorage/contracts": "^12.0.1" }, "peerDependencies": { "@techstark/opencv-js": "^5.0.0-release.1", "pixelmatch": "^7.2.0", "sharp": "^0.35.4", "tesseract.js": "^7.0.0" }, "optionalPeers": ["@techstark/opencv-js", "pixelmatch", "sharp", "tesseract.js"] }, "sha512-XXQuf6+rl6FaOCR7vDoJ60FuSGQSOAtWOM3oEv59e8x9bDyQvAlD/cch6jKQ4G1oCg2DsyhFL/HO26QFXxYRpQ=="],
 
     "@babel/core/@babel/helper-compilation-targets": ["@babel/helper-compilation-targets@7.28.6", "", { "dependencies": { "@babel/compat-data": "^7.28.6", "@babel/helper-validator-option": "^7.27.1", "browserslist": "^4.24.0", "lru-cache": "^5.1.1", "semver": "^6.3.1" } }, "sha512-JYtls3hqi15fcx5GaSNL7SCTJ2MNmjrkHXg4FSpOA/grxK8KwyZ5bubHsCq8FXCkua6xhuaaBit+3b7+VZRfcA=="],
 

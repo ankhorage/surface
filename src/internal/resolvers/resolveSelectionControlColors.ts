@@ -1,5 +1,5 @@
-import type { SurfaceColor } from '../../surfaceColor';
-import type { SurfaceTheme } from '../../theme/types';
+import type { SurfaceColor } from '../../types/surfaceColor';
+import type { SurfaceTheme } from '../../types/theme';
 import type { FieldState } from './resolveFieldState';
 import { resolveSurfaceColor } from './resolveSurfaceColor';
 

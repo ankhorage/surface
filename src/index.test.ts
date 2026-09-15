@@ -2,8 +2,8 @@ import { readFileSync } from 'node:fs';
 
 import { describe, expect, it } from 'bun:test';
 
-import type { SelectionSemantics, SurfaceColorDiagnostics } from './index';
-import { createTheme } from './theme/createTheme';
+import type { SelectionSemantics, SurfaceColorDiagnostics } from './features/theme/public';
+import { createTheme } from './features/theme/public';
 
 const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8');
 const packageJson = JSON.parse(
@@ -43,8 +43,10 @@ const expectedFeatureRootExports = [
 ] as const;
 
 const expectedCrossCuttingRootExports = [
-  "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
+  "export type { InteractionPolicy, InteractionPolicyProps } from './types/interactionPolicy';",
   "export * from './core/responsive';",
+  "export { FontProvider } from './features/font/public';",
+  "export { ThemeProvider, ThemeScope, useTheme } from './features/theme/runtime';",
 ] as const;
 
 describe('feature-owned root barrel contract', () => {
@@ -128,12 +130,12 @@ describe('public package metadata contract', () => {
         types: './dist/features/bottom-sheet/public.d.ts',
       },
       './theme': {
-        bun: './src/theme/public.ts',
-        'react-native': './src/theme/public.ts',
-        browser: './src/theme/public.ts',
-        default: './dist/theme/public.js',
-        import: './dist/theme/public.js',
-        types: './dist/theme/public.d.ts',
+        bun: './src/features/theme/public.ts',
+        'react-native': './src/features/theme/public.ts',
+        browser: './src/features/theme/public.ts',
+        default: './dist/features/theme/public.js',
+        import: './dist/features/theme/public.js',
+        types: './dist/features/theme/public.d.ts',
       },
       './package.json': './package.json',
     });

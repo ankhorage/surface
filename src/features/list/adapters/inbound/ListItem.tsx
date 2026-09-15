@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useTheme } from '../../../../theme/ThemeContext';
-import type { SurfaceTheme } from '../../../../theme/types';
 import type { ListItemProps } from '../../../../types/list';
+import type { SurfaceTheme } from '../../../../types/theme';
 import { View } from '../../../layout/public';
 import { Pressable } from '../../../pressable/public';
+import { useTheme } from '../../../theme/runtime';
 import { Text } from '../../../typography/public';
 
 /*** Renders a static or interactive list item with shared row geometry and interaction states. */

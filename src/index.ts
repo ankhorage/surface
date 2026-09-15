@@ -1,7 +1,9 @@
-export type { FontRuntime } from './context/FontContext';
-export { FontProvider, useFontContext } from './context/FontContext';
-export type { I18nInstance, TranslationRuntime, Translator } from './context/TranslationContext';
-export { TranslationProvider, useTranslationContext } from './context/TranslationContext';
+export {
+  SURFACE_COLORS,
+  SURFACE_EMPHASES,
+  SURFACE_PALETTE_COLORS,
+  SURFACE_STATUS_COLORS,
+} from './constants/surfaceColor';
 export * from './core/responsive';
 export type {
   AccordionContentProps,
@@ -26,6 +28,8 @@ export type { ButtonIconSpec, ButtonProps, IconButtonProps } from './features/bu
 export { Button, IconButton } from './features/button/public';
 export type { CardProps } from './features/card/public';
 export { Card } from './features/card/public';
+export type { FontProviderProps, FontRuntime } from './features/font/public';
+export { FontProvider } from './features/font/public';
 export type { CheckboxProps } from './features/form/checkbox/public';
 export { Checkbox } from './features/form/checkbox/public';
 export type { FieldProps } from './features/form/field/public';
@@ -77,6 +81,26 @@ export { Surface } from './features/surface/public';
 export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './features/tabs/public';
 export { Tab, TabList, TabPanel, Tabs } from './features/tabs/public';
 export type {
+  ActionSemantics,
+  BorderSemantics,
+  ContentSemantics,
+  FontWeight,
+  NeutralSemantics,
+  RoleSemantics,
+  SelectionSemantics,
+  SurfaceColorDiagnostics,
+  SurfaceColorSelectionDiagnostic,
+  SurfaceContrastDiagnostic,
+  SurfaceSemantics,
+  SurfaceTheme,
+  ThemeMode,
+  ThemeSemantics,
+  ThemeTokens,
+} from './features/theme/public';
+export { createTheme } from './features/theme/public';
+export type { ThemeProviderProps, ThemeRuntime, ThemeScopeProps } from './features/theme/runtime';
+export { ThemeProvider, ThemeScope, useTheme } from './features/theme/runtime';
+export type {
   ToastController,
   ToastOptions,
   ToastProps,
@@ -88,19 +112,10 @@ export type { TooltipProps } from './features/tooltip/public';
 export { Tooltip } from './features/tooltip/public';
 export type { HeadingLevel, HeadingProps, TextProps } from './features/typography/public';
 export { Heading, Text } from './features/typography/public';
-export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';
+export type { InteractionPolicy, InteractionPolicyProps } from './types/interactionPolicy';
 export type {
   SurfaceColor,
   SurfaceEmphasis,
   SurfacePaletteColor,
   SurfaceStatusColor,
-} from './surfaceColor';
-export {
-  SURFACE_COLORS,
-  SURFACE_EMPHASES,
-  SURFACE_PALETTE_COLORS,
-  SURFACE_STATUS_COLORS,
-} from './surfaceColor';
-export * from './theme';
-export { isDeepEqual } from './utils/deepEqual';
-export { deepMerge } from './utils/deepMerge';
+} from './types/surfaceColor';

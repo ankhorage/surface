@@ -2,9 +2,9 @@ import type { ViewStyle } from 'react-native';
 
 import { resolveResponsive } from '../core/responsive/resolve';
 import type { Breakpoint } from '../core/responsive/types';
-import { resolveToken } from '../theme/resolveToken';
-import type { SurfaceTheme } from '../theme/types';
+import { resolveToken } from '../features/theme/utils/resolveToken';
 import type { ColorValue, ViewStyleProps } from '../types/layout';
+import type { SurfaceTheme } from '../types/theme';
 import { resolveSpacing } from './resolveSpacing';
 
 /*** Resolves responsive Surface View style props into one React Native view style. */

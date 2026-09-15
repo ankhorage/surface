@@ -2,7 +2,7 @@ import type React from 'react';
 import type { TextStyle } from 'react-native';
 
 import type { TextVariant, TextWeight } from '../internal/resolvers/resolveTextStyles';
-import type { SurfaceColor, SurfaceEmphasis } from '../surfaceColor';
+import type { SurfaceColor, SurfaceEmphasis } from './surfaceColor';
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 

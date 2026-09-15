@@ -3,9 +3,9 @@ import { View as ReactNativeView } from 'react-native';
 
 import { useResponsiveRuntime } from '../../../../core/responsive';
 import { resolvePointerEvents } from '../../../../internal/resolvePointerEvents';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { ViewProps } from '../../../../types/layout';
 import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
+import { useTheme } from '../../../theme/runtime';
 
 /*** Renders the token-aware responsive Surface adapter for React Native View. */
 export function View({

@@ -1,6 +1,6 @@
-import { resolveToken } from '../../../../theme/resolveToken';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { IconProps } from '../../../../types/icon';
+import { useTheme } from '../../../theme/runtime';
+import { resolveToken } from '../../../theme/utils/resolveToken';
 import { PortableIcon } from './PortableIcon';
 
 /*** Renders a theme-aware font or SVG icon through the portable icon adapter. */

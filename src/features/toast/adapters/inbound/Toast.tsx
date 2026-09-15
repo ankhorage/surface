@@ -1,12 +1,12 @@
 import React from 'react';
 import { Pressable, StyleSheet, type ViewStyle } from 'react-native';
 
-import type { SurfaceColor } from '../../../../surfaceColor';
-import { useTheme } from '../../../../theme/ThemeContext';
-import type { SurfaceTheme } from '../../../../theme/types';
+import type { SurfaceColor } from '../../../../types/surfaceColor';
+import type { SurfaceTheme } from '../../../../types/theme';
 import type { ToastProps } from '../../../../types/toast';
 import { View } from '../../../layout/public';
 import { Surface } from '../../../surface/public';
+import { useTheme } from '../../../theme/runtime';
 import { Text } from '../../../typography/public';
 
 /*** Renders one transient toast notification. */

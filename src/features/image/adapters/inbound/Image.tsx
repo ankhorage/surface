@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image as ReactNativeImage } from 'react-native';
 
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { ImageProps } from '../../../../types/image';
+import { useTheme } from '../../../theme/runtime';
 import { getSourceKey } from '../../utils/getSourceKey';
 import { normalizeSource } from '../../utils/normalizeSource';
 import { resolveAccessibilityLabel } from '../../utils/resolveAccessibilityLabel';

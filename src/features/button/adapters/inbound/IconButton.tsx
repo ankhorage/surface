@@ -6,11 +6,11 @@ import {
   resolveControlSize,
   resolveIconSize,
 } from '../../../../internal/resolvers';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { IconButtonProps } from '../../../../types/button';
 import { Icon } from '../../../icon/public';
 import { View } from '../../../layout/public';
 import { Pressable } from '../../../pressable/public';
+import { useTheme } from '../../../theme/runtime';
 
 /*** Renders a compact accessible icon-only action control. */
 export function IconButton({

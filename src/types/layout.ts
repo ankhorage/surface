@@ -7,7 +7,7 @@ import type {
 } from 'react-native';
 
 import type { Responsive } from '../core/responsive';
-import type { SurfaceTheme } from '../theme/types';
+import type { SurfaceTheme } from './theme';
 
 type SpaceToken = keyof SurfaceTheme['spacing'];
 type RadiusToken = keyof SurfaceTheme['radii'];

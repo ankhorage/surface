@@ -1,12 +1,11 @@
 import React from 'react';
 import { Text as ReactNativeText } from 'react-native';
 
-import { useTranslationContext } from '../../../../context/TranslationContext';
 import { resolveTextColor, resolveTextStyles } from '../../../../internal/resolvers';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { TextProps } from '../../../../types/typography';
+import { useTheme } from '../../../theme/runtime';
 
-/*** Renders translatable body text using Surface semantic typography. */
+/*** Renders body text using Surface semantic typography. */
 export function Text({
   children,
   i18nKey,
@@ -20,8 +19,7 @@ export function Text({
   testID,
 }: TextProps) {
   const { theme } = useTheme();
-  const { t } = useTranslationContext();
-  const content = resolveTextContent(children, i18nKey, t);
+  const content = children ?? i18nKey ?? null;
 
   return (
     <ReactNativeText
@@ -35,22 +33,4 @@ export function Text({
       {content}
     </ReactNativeText>
   );
-}
-
-/*** Resolves authored or translated Text content with a stable fallback. */
-function resolveTextContent(
-  children: TextProps['children'],
-  i18nKey: TextProps['i18nKey'],
-  translate: (key: string) => string,
-) {
-  if (children !== undefined) return children;
-  if (!i18nKey) return null;
-
-  try {
-    const translated = translate(i18nKey);
-    return translated && translated !== i18nKey ? translated : i18nKey;
-  } catch (error) {
-    console.warn('[Text] Translation error:', error);
-    return i18nKey;
-  }
 }

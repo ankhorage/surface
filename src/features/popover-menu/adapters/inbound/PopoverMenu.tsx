@@ -3,11 +3,11 @@ import { Pressable } from 'react-native';
 
 import { FocusScope } from '../../../../internal/focus/FocusScope';
 import { useFocusManager } from '../../../../internal/focus/useFocusManager';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { PopoverMenuAction, PopoverMenuProps } from '../../../../types/popoverMenu';
 import { View } from '../../../layout/public';
 import { Popover } from '../../../popover/public';
 import { Surface } from '../../../surface/public';
+import { useTheme } from '../../../theme/runtime';
 import { Text } from '../../../typography/public';
 import { usePopoverMenuController } from '../../composition/usePopoverMenuController';
 import { resolveNextMenuIndex } from '../../utils/resolveNextMenuIndex';

@@ -2,9 +2,9 @@ import React from 'react';
 import type { ViewStyle } from 'react-native';
 
 import { resolveButtonColors, resolveControlSize } from '../../../../internal/resolvers';
-import { useTheme } from '../../../../theme/ThemeContext';
 import type { BadgeProps } from '../../../../types/badge';
 import { View } from '../../../layout/public';
+import { useTheme } from '../../../theme/runtime';
 import { Text } from '../../../typography/public';
 
 /*** Renders compact semantic status or metadata content. */

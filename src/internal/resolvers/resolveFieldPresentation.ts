@@ -1,4 +1,4 @@
-import type { SurfaceColor, SurfaceEmphasis } from '../../surfaceColor';
+import type { SurfaceColor, SurfaceEmphasis } from '../../types/surfaceColor';
 import type { FieldState } from './resolveFieldState';
 
 export interface ResolvedFieldPresentation {
