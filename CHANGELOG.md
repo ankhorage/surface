@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.0.0
+
+### Major Changes
+
+- c514433: Normalize theme, font, interaction-policy, and surface-color ownership. Add a nested ThemeScope boundary, remove raw theme/context internals and translation runtime from the public API, and consume deep object operations from @ankhorage/utility.
+
 ## 8.0.0
 
 ### Major Changes
