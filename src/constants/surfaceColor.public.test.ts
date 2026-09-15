@@ -29,10 +29,6 @@ describe('public color subpath', () => {
   });
 
   test('keeps the package subpath aligned with the canonical catalogs', () => {
-    expect(SURFACE_COLORS).toEqual([
-      ...SURFACE_PALETTE_COLORS,
-      ...SURFACE_STATUS_COLORS,
-      'danger',
-    ]);
+    expect(SURFACE_COLORS).toEqual([...SURFACE_PALETTE_COLORS, ...SURFACE_STATUS_COLORS, 'danger']);
   });
 });
