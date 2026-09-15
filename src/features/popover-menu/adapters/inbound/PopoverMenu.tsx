@@ -3,10 +3,9 @@ import { Pressable } from 'react-native';
 
 import { FocusScope } from '../../../../internal/focus/FocusScope';
 import { useFocusManager } from '../../../../internal/focus/useFocusManager';
-import { Inline } from '../../../../layout';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { PopoverMenuAction, PopoverMenuProps } from '../../../../types/popoverMenu';
-import { Box, Stack } from '../../../layout/public';
+import { View } from '../../../layout/public';
 import { Popover } from '../../../popover/public';
 import { Surface } from '../../../surface/public';
 import { Text } from '../../../typography/public';
@@ -103,10 +102,8 @@ function usePopoverMenuKeyboard({
     () =>
       bindKeydown((event) => {
         if (passive) return;
-
         const { key } = event;
         if (key === undefined) return;
-
         if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(key)) {
           event.preventDefault();
           setActiveIndex((current) => resolveNextMenuIndex(actions, current, key));
@@ -152,7 +149,7 @@ function PopoverMenuItem({
       onPress={passive ? undefined : () => activateAction(action)}
       testID={testID ? `${testID}-item-${action.id}` : undefined}
     >
-      <Box
+      <View
         bg={selected ? theme.semantics.action.neutral.softBg : 'transparent'}
         opacity={action.disabled ? 0.56 : 1}
         px="m"
@@ -160,7 +157,7 @@ function PopoverMenuItem({
         radius="s"
       >
         <PopoverMenuItemContent action={action} active={active} />
-      </Box>
+      </View>
     </Pressable>
   );
 }
@@ -177,10 +174,10 @@ function PopoverMenuItemContent({
     action.intent === 'danger' ? 'danger' : active || action.selected ? 'neutral' : undefined;
 
   return (
-    <Inline align="center" gap="s" justify="space-between" wrap="nowrap">
-      {action.leading ? <Box>{action.leading}</Box> : null}
-      <Box flex={1}>
-        <Stack gap="xxs">
+    <View align="center" direction="row" gap="s" justify="space-between" wrap="nowrap">
+      {action.leading ? <View>{action.leading}</View> : null}
+      <View flex={1}>
+        <View gap="xxs">
           <Text
             color={titleColor}
             variant="bodySmall"
@@ -193,9 +190,9 @@ function PopoverMenuItemContent({
               {action.description}
             </Text>
           ) : null}
-        </Stack>
-      </Box>
-      {action.trailing ? <Box>{action.trailing}</Box> : null}
-    </Inline>
+        </View>
+      </View>
+      {action.trailing ? <View>{action.trailing}</View> : null}
+    </View>
   );
 }

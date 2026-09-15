@@ -4,7 +4,7 @@ import type { ViewStyle } from 'react-native';
 import { resolveButtonColors, resolveControlSize } from '../../../../internal/resolvers';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { BadgeProps } from '../../../../types/badge';
-import { Box } from '../../../layout/public';
+import { View } from '../../../layout/public';
 import { Text } from '../../../typography/public';
 
 /*** Renders compact semantic status or metadata content. */
@@ -24,7 +24,7 @@ export function Badge({
   });
 
   return (
-    <Box
+    <View
       px={Math.max(theme.spacing.xs, controlSize.paddingHorizontal - 4)}
       py={Math.max(4, controlSize.paddingVertical - 2)}
       radius={controlSize.borderRadius}
@@ -39,7 +39,7 @@ export function Badge({
       >
         {content}
       </Text>
-    </Box>
+    </View>
   );
 }
 

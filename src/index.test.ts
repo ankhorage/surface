@@ -6,7 +6,6 @@ import type { SelectionSemantics, SurfaceColorDiagnostics } from './index';
 import { createTheme } from './theme/createTheme';
 
 const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8');
-const layoutIndexSource = readFileSync(new URL('./layout/index.ts', import.meta.url), 'utf8');
 const packageJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 ) as {
@@ -18,6 +17,7 @@ const packageJson = JSON.parse(
 };
 
 const expectedFeatureRootExports = [
+  "export { AppBar } from './features/app-bar/public';",
   "export { Badge } from './features/badge/public';",
   "export { Button, IconButton } from './features/button/public';",
   "export { Card } from './features/card/public';",
@@ -27,7 +27,7 @@ const expectedFeatureRootExports = [
   "export { Icon, SUPPORTED_ICON_PROVIDERS } from './features/icon/public';",
   "export { Image } from './features/image/public';",
   "export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';",
-  "export { Box, Container, Divider, Grid, Stack } from './features/layout/public';",
+  "export { Divider, Grid, ScrollView, View } from './features/layout/public';",
   "export { Modal } from './features/modal/public';",
   "export { PopoverMenu } from './features/popover-menu/public';",
   "export { Popover } from './features/popover/public';",
@@ -47,7 +47,6 @@ const expectedLegacyRootExports = [
   "export { Textarea } from './components/textarea';",
   "export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';",
   "export * from './core/responsive';",
-  "export * from './layout';",
 ] as const;
 
 describe('feature-owned root barrel contract', () => {
@@ -55,41 +54,16 @@ describe('feature-owned root barrel contract', () => {
     expectedFeatureRootExports.forEach((line) => expect(indexSource).toContain(line));
   });
 
-  it('does not retain migrated UI exports from legacy component or primitive paths', () => {
-    for (const legacyPath of [
-      './components/badge',
-      './components/button',
-      './components/card',
-      './components/checkbox',
-      './components/icon-button',
-      './components/menu',
-      './components/modal',
-      './components/radio',
-      './components/tabs',
-      './components/text-input',
-      './components/toast',
-      './components/tooltip',
-      './primitives/heading',
-      './primitives/icon',
-      './primitives/image',
-      './primitives/text',
-    ]) {
-      expect(indexSource).not.toContain(legacyPath);
-    }
-  });
-
-  it('removes migrated elements from the legacy layout facade', () => {
-    for (const name of [
-      'Box',
-      'Container',
-      'Divider',
-      'Grid',
-      'KeyboardAvoidingView',
-      'Stack',
-      'Surface',
-    ]) {
-      expect(layoutIndexSource).not.toContain(`./${name}`);
-    }
+  it('does not retain removed layout aliases or a legacy layout facade', () => {
+    expect(indexSource).not.toContain("'./layout");
+    expect(indexSource).not.toMatch(/\bBoxProps\b/u);
+    expect(indexSource).not.toMatch(/\bContainerProps\b/u);
+    expect(indexSource).not.toMatch(/\bStackProps\b/u);
+    expect(indexSource).not.toMatch(/\bScrollAreaProps\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{[^}]*\bBox\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{[^}]*\bContainer\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{[^}]*\bStack\b/u);
+    expect(indexSource).not.toMatch(/export\s*\{[^}]*\bScrollArea\b/u);
   });
 });
 

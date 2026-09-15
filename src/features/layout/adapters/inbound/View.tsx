@@ -1,14 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View as ReactNativeView } from 'react-native';
 
 import { useResponsiveRuntime } from '../../../../core/responsive';
 import { resolvePointerEvents } from '../../../../internal/resolvePointerEvents';
 import { useTheme } from '../../../../theme/ThemeContext';
-import type { BoxProps } from '../../../../types/layout';
-import { resolveBoxStyles } from '../../../../utils/resolveBoxStyles';
+import type { ViewProps } from '../../../../types/layout';
+import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
 
-/*** Renders the responsive foundational layout box. */
-export function Box({
+/*** Renders the token-aware responsive Surface adapter for React Native View. */
+export function View({
   accessible,
   accessibilityLabel,
   accessibilityRole,
@@ -18,14 +18,14 @@ export function Box({
   style,
   testID,
   ...props
-}: BoxProps) {
+}: ViewProps) {
   const { theme } = useTheme();
   const { breakpoint } = useResponsiveRuntime();
-  const resolved = resolveBoxStyles(theme, breakpoint, props);
+  const resolved = resolveViewStyles(theme, breakpoint, props);
   const resolvedPointerEvents = pointerEvents ? resolvePointerEvents(pointerEvents) : null;
 
   return (
-    <View
+    <ReactNativeView
       {...resolvedPointerEvents?.props}
       accessible={accessible}
       accessibilityLabel={accessibilityLabel}
@@ -35,6 +35,6 @@ export function Box({
       style={[resolved, resolvedPointerEvents?.style, style]}
     >
       {children}
-    </View>
+    </ReactNativeView>
   );
 }

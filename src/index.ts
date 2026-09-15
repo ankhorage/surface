@@ -30,6 +30,8 @@ export {
   AccordionItem,
   AccordionTrigger,
 } from './features/accordion/public';
+export type { AppBarProps } from './features/app-bar/public';
+export { AppBar } from './features/app-bar/public';
 export type { BadgeProps } from './features/badge/public';
 export { Badge } from './features/badge/public';
 export type { ButtonIconSpec, ButtonProps, IconButtonProps } from './features/button/public';
@@ -58,14 +60,8 @@ export type {
   KeyboardAvoidingViewProps,
 } from './features/keyboard-avoiding-view/public';
 export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';
-export type {
-  BoxProps,
-  ContainerProps,
-  DividerProps,
-  GridProps,
-  StackProps,
-} from './features/layout/public';
-export { Box, Container, Divider, Grid, Stack } from './features/layout/public';
+export type { DividerProps, GridProps, ScrollViewProps, ViewProps } from './features/layout/public';
+export { Divider, Grid, ScrollView, View } from './features/layout/public';
 export type { ModalProps } from './features/modal/public';
 export { Modal } from './features/modal/public';
 export type {
@@ -97,7 +93,6 @@ export { Tooltip } from './features/tooltip/public';
 export type { HeadingLevel, HeadingProps, TextProps } from './features/typography/public';
 export { Heading, Text } from './features/typography/public';
 export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';
-export * from './layout';
 export type { ButtonBaseProps } from './primitives/button-base';
 export { ButtonBase } from './primitives/button-base';
 export type {

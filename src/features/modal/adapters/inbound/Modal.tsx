@@ -1,13 +1,13 @@
 import React from 'react';
-import { Pressable, StyleSheet, View, type ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, View as ReactNativeView, type ViewStyle } from 'react-native';
 
 import { FocusScope } from '../../../../internal/focus/FocusScope';
 import { Portal } from '../../../../internal/overlay/Portal';
 import { resolvePointerEvents } from '../../../../internal/resolvePointerEvents';
 import { resolveOverlayAnimation } from '../../../../internal/resolvers';
-import { Center } from '../../../../layout';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { ModalProps } from '../../../../types/modal';
+import { View } from '../../../layout/public';
 import { Surface } from '../../../surface/public';
 
 const boxNonePointerEvents = resolvePointerEvents('box-none');
@@ -30,7 +30,10 @@ export function Modal({
 
   return (
     <Portal layer="modal" visible={visible}>
-      <View {...boxNonePointerEvents.props} style={[boxNonePointerEvents.style, styles.fill]}>
+      <ReactNativeView
+        {...boxNonePointerEvents.props}
+        style={[boxNonePointerEvents.style, styles.fill]}
+      >
         <Pressable
           onPress={backdropPress}
           style={[
@@ -44,15 +47,15 @@ export function Modal({
           onEscape={passive ? undefined : onDismiss}
           testID={testID ? `${testID}-focus` : undefined}
         >
-          <Center p="l" style={styles.center}>
-            <View accessible accessibilityViewIsModal style={styles.content}>
+          <View align="center" justify="center" p="l" style={styles.center}>
+            <ReactNativeView accessible accessibilityViewIsModal style={styles.content}>
               <Surface p="l" style={styles.surface} testID={testID} variant="raised">
                 {children}
               </Surface>
-            </View>
-          </Center>
+            </ReactNativeView>
+          </View>
         </FocusScope>
-      </View>
+      </ReactNativeView>
     </Portal>
   );
 }

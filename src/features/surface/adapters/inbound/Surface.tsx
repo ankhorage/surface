@@ -3,9 +3,9 @@ import type { ViewStyle } from 'react-native';
 
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { SurfaceProps, SurfaceVariant } from '../../../../types/surface';
-import { Box } from '../../../layout/public';
+import { View } from '../../../layout/public';
 
-/*** Renders a themed container surface with semantic elevation and border variants. */
+/*** Renders a themed content surface with semantic elevation and border variants. */
 export function Surface({ variant = 'default', radius = 'm', style, ...props }: SurfaceProps) {
   const { theme } = useTheme();
   const backgroundColor =
@@ -17,7 +17,7 @@ export function Surface({ variant = 'default', radius = 'm', style, ...props }: 
   const borderColor = theme.semantics.border.default;
 
   return (
-    <Box
+    <View
       {...props}
       radius={radius}
       style={[resolveSurfaceVariantStyles(variant, borderColor, backgroundColor), style]}

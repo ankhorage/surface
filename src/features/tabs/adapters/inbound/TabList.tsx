@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
 import { useFocusManager } from '../../../../internal/focus/useFocusManager';
 import type { TabListProps, TabNavigationKey } from '../../../../types/tabs';
-import { Box } from '../../../layout/public';
+import { View } from '../../../layout/public';
 import { useTabsContext } from '../../composition/useTabsContext';
 import { resolveNextTabValue } from '../../utils/resolveNextTabValue';
 
@@ -36,9 +35,9 @@ export function TabList({ children, testID }: TabListProps) {
   }, [bindKeydown, focusedValue, setActiveValue, tabs]);
 
   return (
-    <Box accessibilityRole="tablist" style={styles.list} testID={testID}>
+    <View accessibilityRole="tablist" direction="row" testID={testID}>
       {children}
-    </Box>
+    </View>
   );
 }
 
@@ -46,5 +45,3 @@ export function TabList({ children, testID }: TabListProps) {
 function isTabNavigationKey(key: string | undefined): key is TabNavigationKey {
   return key !== undefined && navigationKeys.includes(key);
 }
-
-const styles = StyleSheet.create({ list: { flexDirection: 'row' } });

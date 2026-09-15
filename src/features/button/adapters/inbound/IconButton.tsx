@@ -10,7 +10,7 @@ import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { IconButtonProps } from '../../../../types/button';
 import { Icon } from '../../../icon/public';
-import { Box } from '../../../layout/public';
+import { View } from '../../../layout/public';
 
 /*** Renders a compact accessible icon-only action control. */
 export function IconButton({
@@ -38,12 +38,12 @@ export function IconButton({
       {(state) => {
         const colors = resolveButtonColors(theme, { color, state, variant });
         return (
-          <Box
+          <View
             radius={controlSize.borderRadius}
             style={resolveIconButtonStyle(controlSize, colors, variant)}
           >
             <Icon {...icon} color={colors.contentColor} size={resolveIconSize(theme, size)} />
-          </Box>
+          </View>
         );
       }}
     </ButtonBase>

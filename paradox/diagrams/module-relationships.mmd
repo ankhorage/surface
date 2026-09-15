@@ -26,6 +26,7 @@ graph LR
   module_src_core_responsive_resolve_test_ts["src/core/responsive/resolve.test.ts"]
   module_src_core_responsive_resolve_ts["src/core/responsive/resolve.ts"]
   module_src_core_responsive_ResponsiveProvider_tsx["src/core/responsive/ResponsiveProvider.tsx"]
+  module_src_core_responsive_Show_tsx["src/core/responsive/Show.tsx"]
   module_src_core_responsive_types_ts["src/core/responsive/types.ts"]
   module_src_core_responsive_useBreakpoint_ts["src/core/responsive/useBreakpoint.ts"]
   module_src_features_accordion_adapters_inbound_Accordion_tsx["src/features/accordion/adapters/inbound/Accordion.tsx"]
@@ -37,6 +38,8 @@ graph LR
   module_src_features_accordion_public_ts["src/features/accordion/public.ts"]
   module_src_features_accordion_utils_resolveAccordionToggle_test_ts["src/features/accordion/utils/resolveAccordionToggle.test.ts"]
   module_src_features_accordion_utils_resolveAccordionToggle_ts["src/features/accordion/utils/resolveAccordionToggle.ts"]
+  module_src_features_app_bar_adapters_inbound_AppBar_tsx["src/features/app-bar/adapters/inbound/AppBar.tsx"]
+  module_src_features_app_bar_public_ts["src/features/app-bar/public.ts"]
   module_src_features_badge_adapters_inbound_Badge_tsx["src/features/badge/adapters/inbound/Badge.tsx"]
   module_src_features_badge_public_ts["src/features/badge/public.ts"]
   module_src_features_bottom_sheet_BottomSheetContext_ts["src/features/bottom-sheet/BottomSheetContext.ts"]
@@ -76,12 +79,10 @@ graph LR
   module_src_features_image_utils_resolveResizeMode_ts["src/features/image/utils/resolveResizeMode.ts"]
   module_src_features_keyboard_avoiding_view_adapters_inbound_KeyboardAvoidingView_tsx["src/features/keyboard-avoiding-view/adapters/inbound/KeyboardAvoidingView.tsx"]
   module_src_features_keyboard_avoiding_view_public_ts["src/features/keyboard-avoiding-view/public.ts"]
-  module_src_features_layout_adapters_inbound_Box_tsx["src/features/layout/adapters/inbound/Box.tsx"]
-  module_src_features_layout_adapters_inbound_Container_tsx["src/features/layout/adapters/inbound/Container.tsx"]
   module_src_features_layout_adapters_inbound_Divider_tsx["src/features/layout/adapters/inbound/Divider.tsx"]
   module_src_features_layout_adapters_inbound_Grid_tsx["src/features/layout/adapters/inbound/Grid.tsx"]
-  module_src_features_layout_adapters_inbound_Stack_test_ts["src/features/layout/adapters/inbound/Stack.test.ts"]
-  module_src_features_layout_adapters_inbound_Stack_tsx["src/features/layout/adapters/inbound/Stack.tsx"]
+  module_src_features_layout_adapters_inbound_ScrollView_tsx["src/features/layout/adapters/inbound/ScrollView.tsx"]
+  module_src_features_layout_adapters_inbound_View_tsx["src/features/layout/adapters/inbound/View.tsx"]
   module_src_features_layout_public_ts["src/features/layout/public.ts"]
   module_src_features_modal_adapters_inbound_Modal_tsx["src/features/modal/adapters/inbound/Modal.tsx"]
   module_src_features_modal_public_ts["src/features/modal/public.ts"]
@@ -171,14 +172,6 @@ graph LR
   module_src_internal_resolvers_resolveTextStyles_test_ts["src/internal/resolvers/resolveTextStyles.test.ts"]
   module_src_internal_resolvers_resolveTextStyles_ts["src/internal/resolvers/resolveTextStyles.ts"]
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
-  module_src_layout_AppBar_tsx["src/layout/AppBar.tsx"]
-  module_src_layout_Center_tsx["src/layout/Center.tsx"]
-  module_src_layout_index_ts["src/layout/index.ts"]
-  module_src_layout_Inline_tsx["src/layout/Inline.tsx"]
-  module_src_layout_ScrollArea_tsx["src/layout/ScrollArea.tsx"]
-  module_src_layout_Show_tsx["src/layout/Show.tsx"]
-  module_src_layout_Spacer_tsx["src/layout/Spacer.tsx"]
-  module_src_layout_Template_tsx["src/layout/Template.tsx"]
   module_src_primitives_button_base_ButtonBase_tsx["src/primitives/button-base/ButtonBase.tsx"]
   module_src_primitives_button_base_index_ts["src/primitives/button-base/index.ts"]
   module_src_primitives_button_base_types_ts["src/primitives/button-base/types.ts"]
@@ -207,6 +200,7 @@ graph LR
   module_src_theme_ThemeContext_tsx["src/theme/ThemeContext.tsx"]
   module_src_theme_types_ts["src/theme/types.ts"]
   module_src_types_accordion_ts["src/types/accordion.ts"]
+  module_src_types_app_bar_ts["src/types/app-bar.ts"]
   module_src_types_badge_ts["src/types/badge.ts"]
   module_src_types_bottomSheet_ts["src/types/bottomSheet.ts"]
   module_src_types_button_ts["src/types/button.ts"]
@@ -229,9 +223,9 @@ graph LR
   module_src_utils_deepEqual_ts["src/utils/deepEqual.ts"]
   module_src_utils_deepMerge_test_ts["src/utils/deepMerge.test.ts"]
   module_src_utils_deepMerge_ts["src/utils/deepMerge.ts"]
-  module_src_utils_resolveBoxStyles_test_ts["src/utils/resolveBoxStyles.test.ts"]
-  module_src_utils_resolveBoxStyles_ts["src/utils/resolveBoxStyles.ts"]
   module_src_utils_resolveSpacing_ts["src/utils/resolveSpacing.ts"]
+  module_src_utils_resolveViewStyles_test_ts["src/utils/resolveViewStyles.test.ts"]
+  module_src_utils_resolveViewStyles_ts["src/utils/resolveViewStyles.ts"]
   module_src_webAcceptance_test_tsx["src/webAcceptance.test.tsx"]
   module_src_components_field_Field_tsx --> module_src_components_field_types_ts
   module_src_components_field_Field_tsx --> module_src_components_helper_text_index_ts
@@ -270,6 +264,9 @@ graph LR
   module_src_core_responsive_resolve_ts --> module_src_core_responsive_types_ts
   module_src_core_responsive_ResponsiveProvider_tsx --> module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_ResponsiveProvider_tsx --> module_src_core_responsive_types_ts
+  module_src_core_responsive_Show_tsx --> module_src_core_responsive_resolve_ts
+  module_src_core_responsive_Show_tsx --> module_src_core_responsive_ResponsiveProvider_tsx
+  module_src_core_responsive_Show_tsx --> module_src_core_responsive_types_ts
   module_src_core_responsive_types_ts --> module_src_core_responsive_breakpoints_ts
   module_src_core_responsive_useBreakpoint_ts --> module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_useBreakpoint_ts --> module_src_core_responsive_types_ts
@@ -287,6 +284,9 @@ graph LR
   module_src_features_accordion_adapters_inbound_AccordionTrigger_tsx --> module_src_types_accordion_ts
   module_src_features_accordion_utils_resolveAccordionToggle_test_ts --> module_src_features_accordion_utils_resolveAccordionToggle_ts
   module_src_features_accordion_utils_resolveAccordionToggle_ts --> module_src_types_accordion_ts
+  module_src_features_app_bar_adapters_inbound_AppBar_tsx --> module_src_features_layout_public_ts
+  module_src_features_app_bar_adapters_inbound_AppBar_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_app_bar_adapters_inbound_AppBar_tsx --> module_src_types_app_bar_ts
   module_src_features_badge_adapters_inbound_Badge_tsx --> module_src_features_layout_public_ts
   module_src_features_badge_adapters_inbound_Badge_tsx --> module_src_features_typography_public_ts
   module_src_features_badge_adapters_inbound_Badge_tsx --> module_src_internal_resolvers_index_ts
@@ -375,34 +375,28 @@ graph LR
   module_src_features_image_utils_resolveImageStyle_ts --> module_src_types_image_ts
   module_src_features_image_utils_resolveResizeMode_ts --> module_src_types_image_ts
   module_src_features_keyboard_avoiding_view_adapters_inbound_KeyboardAvoidingView_tsx --> module_src_types_keyboard_avoiding_view_ts
-  module_src_features_layout_adapters_inbound_Box_tsx --> module_src_core_responsive_index_ts
-  module_src_features_layout_adapters_inbound_Box_tsx --> module_src_internal_resolvePointerEvents_ts
-  module_src_features_layout_adapters_inbound_Box_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_features_layout_adapters_inbound_Box_tsx --> module_src_types_layout_ts
-  module_src_features_layout_adapters_inbound_Box_tsx --> module_src_utils_resolveBoxStyles_ts
-  module_src_features_layout_adapters_inbound_Container_tsx --> module_src_core_responsive_index_ts
-  module_src_features_layout_adapters_inbound_Container_tsx --> module_src_features_layout_adapters_inbound_Box_tsx
-  module_src_features_layout_adapters_inbound_Container_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_features_layout_adapters_inbound_Container_tsx --> module_src_types_layout_ts
-  module_src_features_layout_adapters_inbound_Container_tsx --> module_src_utils_resolveSpacing_ts
-  module_src_features_layout_adapters_inbound_Divider_tsx --> module_src_features_layout_adapters_inbound_Box_tsx
+  module_src_features_layout_adapters_inbound_Divider_tsx --> module_src_features_layout_adapters_inbound_View_tsx
   module_src_features_layout_adapters_inbound_Divider_tsx --> module_src_types_layout_ts
   module_src_features_layout_adapters_inbound_Grid_tsx --> module_src_core_responsive_index_ts
-  module_src_features_layout_adapters_inbound_Grid_tsx --> module_src_features_layout_adapters_inbound_Box_tsx
+  module_src_features_layout_adapters_inbound_Grid_tsx --> module_src_features_layout_adapters_inbound_View_tsx
   module_src_features_layout_adapters_inbound_Grid_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_layout_adapters_inbound_Grid_tsx --> module_src_types_layout_ts
   module_src_features_layout_adapters_inbound_Grid_tsx --> module_src_utils_resolveSpacing_ts
-  module_src_features_layout_adapters_inbound_Stack_tsx --> module_src_core_responsive_index_ts
-  module_src_features_layout_adapters_inbound_Stack_tsx --> module_src_features_layout_adapters_inbound_Box_tsx
-  module_src_features_layout_adapters_inbound_Stack_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_features_layout_adapters_inbound_Stack_tsx --> module_src_types_layout_ts
-  module_src_features_layout_adapters_inbound_Stack_tsx --> module_src_utils_resolveSpacing_ts
+  module_src_features_layout_adapters_inbound_ScrollView_tsx --> module_src_core_responsive_index_ts
+  module_src_features_layout_adapters_inbound_ScrollView_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_layout_adapters_inbound_ScrollView_tsx --> module_src_types_layout_ts
+  module_src_features_layout_adapters_inbound_ScrollView_tsx --> module_src_utils_resolveViewStyles_ts
+  module_src_features_layout_adapters_inbound_View_tsx --> module_src_core_responsive_index_ts
+  module_src_features_layout_adapters_inbound_View_tsx --> module_src_internal_resolvePointerEvents_ts
+  module_src_features_layout_adapters_inbound_View_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_layout_adapters_inbound_View_tsx --> module_src_types_layout_ts
+  module_src_features_layout_adapters_inbound_View_tsx --> module_src_utils_resolveViewStyles_ts
+  module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_features_layout_public_ts
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_features_surface_public_ts
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_internal_focus_FocusScope_tsx
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_internal_overlay_Portal_tsx
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_internal_resolvePointerEvents_ts
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_internal_resolvers_index_ts
-  module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_layout_index_ts
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_types_modal_ts
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --> module_src_features_layout_public_ts
@@ -413,7 +407,6 @@ graph LR
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --> module_src_features_typography_public_ts
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --> module_src_internal_focus_FocusScope_tsx
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --> module_src_internal_focus_useFocusManager_ts
-  module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --> module_src_layout_index_ts
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --> module_src_types_popoverMenu_ts
   module_src_features_popover_menu_composition_usePopoverMenuController_ts --> module_src_types_popoverMenu_ts
@@ -553,27 +546,11 @@ graph LR
   module_src_internal_resolvers_resolveTextStyles_test_ts --> module_src_internal_resolvers_resolveTextStyles_ts
   module_src_internal_resolvers_resolveTextStyles_test_ts --> module_src_theme_createTheme_ts
   module_src_internal_resolvers_resolveTextStyles_ts --> module_src_theme_types_ts
-  module_src_layout_AppBar_tsx --> module_src_features_layout_public_ts
-  module_src_layout_AppBar_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_layout_Center_tsx --> module_src_features_layout_public_ts
-  module_src_layout_Inline_tsx --> module_src_features_layout_public_ts
-  module_src_layout_ScrollArea_tsx --> module_src_core_responsive_index_ts
-  module_src_layout_ScrollArea_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_layout_ScrollArea_tsx --> module_src_types_layout_ts
-  module_src_layout_ScrollArea_tsx --> module_src_utils_resolveBoxStyles_ts
-  module_src_layout_Show_tsx --> module_src_core_responsive_index_ts
-  module_src_layout_Spacer_tsx --> module_src_features_layout_public_ts
-  module_src_layout_Spacer_tsx --> module_src_types_layout_ts
-  module_src_layout_Template_tsx --> module_src_core_responsive_index_ts
-  module_src_layout_Template_tsx --> module_src_features_layout_public_ts
-  module_src_layout_Template_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_layout_Template_tsx --> module_src_types_layout_ts
-  module_src_layout_Template_tsx --> module_src_utils_resolveSpacing_ts
   module_src_primitives_button_base_ButtonBase_tsx --> module_src_core_responsive_index_ts
   module_src_primitives_button_base_ButtonBase_tsx --> module_src_internal_resolvers_index_ts
   module_src_primitives_button_base_ButtonBase_tsx --> module_src_primitives_button_base_types_ts
   module_src_primitives_button_base_ButtonBase_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_primitives_button_base_ButtonBase_tsx --> module_src_utils_resolveBoxStyles_ts
+  module_src_primitives_button_base_ButtonBase_tsx --> module_src_utils_resolveViewStyles_ts
   module_src_primitives_button_base_types_ts --> module_src_interactionPolicy_ts
   module_src_primitives_button_base_types_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
   module_src_primitives_button_base_types_ts --> module_src_types_layout_ts
@@ -615,6 +592,7 @@ graph LR
   module_src_theme_ThemeContext_tsx --> module_src_utils_deepEqual_ts
   module_src_theme_ThemeContext_tsx --> module_src_utils_deepMerge_ts
   module_src_types_accordion_ts --> module_src_interactionPolicy_ts
+  module_src_types_app_bar_ts --> module_src_types_layout_ts
   module_src_types_badge_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_types_badge_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
   module_src_types_badge_ts --> module_src_surfaceColor_ts
@@ -649,14 +627,14 @@ graph LR
   module_src_types_typography_ts --> module_src_internal_resolvers_resolveTextStyles_ts
   module_src_types_typography_ts --> module_src_surfaceColor_ts
   module_src_utils_deepMerge_test_ts --> module_src_utils_deepMerge_ts
-  module_src_utils_resolveBoxStyles_test_ts --> module_src_theme_types_ts
-  module_src_utils_resolveBoxStyles_test_ts --> module_src_utils_resolveBoxStyles_ts
-  module_src_utils_resolveBoxStyles_ts --> module_src_core_responsive_resolve_ts
-  module_src_utils_resolveBoxStyles_ts --> module_src_core_responsive_types_ts
-  module_src_utils_resolveBoxStyles_ts --> module_src_theme_resolveToken_ts
-  module_src_utils_resolveBoxStyles_ts --> module_src_theme_types_ts
-  module_src_utils_resolveBoxStyles_ts --> module_src_types_layout_ts
-  module_src_utils_resolveBoxStyles_ts --> module_src_utils_resolveSpacing_ts
   module_src_utils_resolveSpacing_ts --> module_src_theme_resolveToken_ts
   module_src_utils_resolveSpacing_ts --> module_src_theme_types_ts
   module_src_utils_resolveSpacing_ts --> module_src_types_layout_ts
+  module_src_utils_resolveViewStyles_test_ts --> module_src_theme_types_ts
+  module_src_utils_resolveViewStyles_test_ts --> module_src_utils_resolveViewStyles_ts
+  module_src_utils_resolveViewStyles_ts --> module_src_core_responsive_resolve_ts
+  module_src_utils_resolveViewStyles_ts --> module_src_core_responsive_types_ts
+  module_src_utils_resolveViewStyles_ts --> module_src_theme_resolveToken_ts
+  module_src_utils_resolveViewStyles_ts --> module_src_theme_types_ts
+  module_src_utils_resolveViewStyles_ts --> module_src_types_layout_ts
+  module_src_utils_resolveViewStyles_ts --> module_src_utils_resolveSpacing_ts

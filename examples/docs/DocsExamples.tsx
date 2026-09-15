@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  Box,
   Button,
   Card,
   Checkbox,
@@ -9,7 +8,6 @@ import {
   HelperText,
   Menu,
   Modal,
-  Stack,
   Tab,
   TabList,
   TabPanel,
@@ -21,6 +19,7 @@ import {
   Tooltip,
   type ThemeConfig,
   useToast,
+  View,
 } from '@ankhorage/surface';
 
 const docsThemeConfig: ThemeConfig = {
@@ -33,13 +32,13 @@ const docsThemeConfig: ThemeConfig = {
 export function FormExample() {
   return (
     <ThemeProvider initialConfig={docsThemeConfig}>
-      <Stack gap="m" p="l">
+      <View gap="m" p="l">
         <Field helperText="Use your work email." label="Email" required>
           <TextInput placeholder="you@example.com" />
         </Field>
         <Checkbox checked>Accept terms</Checkbox>
         <HelperText emphasis="muted">Looks good.</HelperText>
-      </Stack>
+      </View>
     </ThemeProvider>
   );
 }
@@ -61,12 +60,12 @@ export function FeedbackExample() {
   return (
     <ThemeProvider initialConfig={docsThemeConfig}>
       <ToastProvider>
-        <Stack gap="m" p="l">
+        <View gap="m" p="l">
           <Tooltip content="Helpful contextual information">
             <Text>Hover for tooltip</Text>
           </Tooltip>
           <ToastButton />
-        </Stack>
+        </View>
       </ToastProvider>
     </ThemeProvider>
   );
@@ -77,19 +76,19 @@ export function OverlayExample() {
 
   return (
     <ThemeProvider initialConfig={docsThemeConfig}>
-      <Stack gap="m" p="l">
+      <View gap="m" p="l">
         <Button onPress={() => setModalVisible(true)}>Open modal</Button>
         <Modal onDismiss={() => setModalVisible(false)} visible={modalVisible}>
           <Card>
-            <Stack gap="s">
+            <View gap="s">
               <Text variant="label" weight="semiBold">
                 Modal title
               </Text>
               <Text>Modal content</Text>
-            </Stack>
+            </View>
           </Card>
         </Modal>
-      </Stack>
+      </View>
     </ThemeProvider>
   );
 }
@@ -97,7 +96,7 @@ export function OverlayExample() {
 export function NavigationExample() {
   return (
     <ThemeProvider initialConfig={docsThemeConfig}>
-      <Stack gap="m" p="l">
+      <View gap="m" p="l">
         <Tabs defaultValue="account">
           <TabList>
             <Tab value="account">Account</Tab>
@@ -120,10 +119,10 @@ export function NavigationExample() {
           ]}
           trigger={<Text>Open menu</Text>}
         />
-        <Box>
+        <View>
           <Text color="success">Theme overrides can stay semantic.</Text>
-        </Box>
-      </Stack>
+        </View>
+      </View>
     </ThemeProvider>
   );
 }

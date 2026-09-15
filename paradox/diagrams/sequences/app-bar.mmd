@@ -1,8 +1,14 @@
 sequenceDiagram
   participant participant_AppBar as AppBar
+  participant participant_resolveAccessoryMargin as resolveAccessoryMargin
+  participant participant_resolveHorizontalPadding as resolveHorizontalPadding
   participant participant_use as use
   participant participant_useTheme as useTheme
   participant_AppBar->>participant_useTheme: useTheme()
   participant_useTheme->>participant_use: use()
   participant_use-->>participant_useTheme: return
   participant_useTheme-->>participant_AppBar: return
+  participant_AppBar->>participant_resolveHorizontalPadding: resolveHorizontalPadding()
+  participant_resolveHorizontalPadding-->>participant_AppBar: return
+  participant_AppBar->>participant_resolveAccessoryMargin: resolveAccessoryMargin()
+  participant_resolveAccessoryMargin-->>participant_AppBar: return

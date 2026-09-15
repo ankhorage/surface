@@ -14,7 +14,7 @@ import type { ButtonBaseProps } from '../../../../../primitives/button-base/type
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../../theme/types';
 import type { CheckboxProps } from '../../../../../types/checkbox';
-import { Box } from '../../../../layout/public';
+import { View } from '../../../../layout/public';
 import { Text } from '../../../../typography/public';
 
 /*** Renders a controlled or uncontrolled accessible checkbox. */
@@ -128,8 +128,8 @@ function renderCheckboxContent(input: CheckboxContentInput) {
   const indicatorColor = fieldState.invalid ? 'error' : input.color;
 
   return (
-    <Box style={resolveSelectionRowStyle(colors.opacity)}>
-      <Box
+    <View style={resolveSelectionRowStyle(colors.opacity)}>
+      <View
         radius="s"
         style={resolveCheckboxIndicatorStyle(
           colors.backgroundColor,
@@ -147,13 +147,13 @@ function renderCheckboxContent(input: CheckboxContentInput) {
             ✓
           </Text>
         ) : null}
-      </Box>
+      </View>
       {input.children ? (
-        <Box ml="s">
+        <View ml="s">
           <Text emphasis={labelEmphasis}>{input.children}</Text>
-        </Box>
+        </View>
       ) : null}
-    </Box>
+    </View>
   );
 }
 

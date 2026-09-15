@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Box, Stack } from '../../features/layout/public';
+import { View } from '../../features/layout/public';
 import { resolveFieldPresentation, resolveFieldState } from '../../internal/resolvers';
 import { HelperText } from '../helper-text';
 import { Label } from '../label';
 import type { FieldProps } from './types';
 
+/*** Composes a label, control, and helper or error message into one field. */
 export function Field({
   children,
   label,
@@ -26,7 +27,7 @@ export function Field({
   const presentation = resolveFieldPresentation(fieldState);
 
   return (
-    <Stack gap="xs" testID={testID}>
+    <View gap="xs" testID={testID}>
       {label ? (
         <Label
           color={presentation.labelColor}
@@ -36,7 +37,7 @@ export function Field({
           {label}
         </Label>
       ) : null}
-      <Box>{children}</Box>
+      <View>{children}</View>
       {hasErrorText ? (
         <HelperText color={presentation.helperColor} emphasis={presentation.helperEmphasis}>
           {errorText}
@@ -46,6 +47,6 @@ export function Field({
           {helperText}
         </HelperText>
       ) : null}
-    </Stack>
+    </View>
   );
 }

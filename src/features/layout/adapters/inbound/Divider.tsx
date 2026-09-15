@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { DividerProps } from '../../../../types/layout';
-import { Box } from './Box';
+import { View } from './View';
 
 /*** Renders a horizontal or vertical separator using layout tokens. */
 export function Divider({
@@ -11,7 +11,7 @@ export function Divider({
   ...props
 }: DividerProps) {
   return (
-    <Box
+    <View
       {...props}
       bg={color}
       height={orientation === 'horizontal' ? thickness : '100%'}

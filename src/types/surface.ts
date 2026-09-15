@@ -1,7 +1,7 @@
-import type { BoxProps } from './layout';
+import type { ViewProps } from './layout';
 
 export type SurfaceVariant = 'default' | 'subtle' | 'raised' | 'outline';
 
-export interface SurfaceProps extends Omit<BoxProps, 'bg' | 'borderColor' | 'borderWidth'> {
+export interface SurfaceProps extends Omit<ViewProps, 'bg' | 'borderColor' | 'borderWidth'> {
   variant?: SurfaceVariant;
 }

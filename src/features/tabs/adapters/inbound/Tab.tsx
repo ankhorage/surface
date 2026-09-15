@@ -3,7 +3,7 @@ import { Pressable, type ViewStyle } from 'react-native';
 
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { TabProps } from '../../../../types/tabs';
-import { Box } from '../../../layout/public';
+import { View } from '../../../layout/public';
 import { Text } from '../../../typography/public';
 import { useTabRegistration } from '../../composition/useTabRegistration';
 import { useTabsContext } from '../../composition/useTabsContext';
@@ -37,7 +37,7 @@ export function Tab({
       ref={pressableRef}
       testID={testID}
     >
-      <Box
+      <View
         px="m"
         py="s"
         style={resolveTabStyle({
@@ -50,7 +50,7 @@ export function Tab({
         <Text color={selected ? 'primary' : undefined} variant="label" weight="medium">
           {children}
         </Text>
-      </Box>
+      </View>
     </Pressable>
   );
 }
