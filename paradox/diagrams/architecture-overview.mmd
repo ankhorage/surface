@@ -2,71 +2,6 @@ graph TD
   package__ankhorage_surface["@ankhorage/surface"]
   entrypoint_src_index_ts["src/index.ts"]
   package__ankhorage_surface --> entrypoint_src_index_ts
-  module_src_components_field_Field_tsx["src/components/field/Field.tsx"]
-  package__ankhorage_surface -.-> module_src_components_field_Field_tsx
-  module_src_components_field_Field_tsx --> module_src_components_field_types_ts
-  module_src_components_field_Field_tsx --> module_src_components_helper_text_index_ts
-  module_src_components_field_Field_tsx --> module_src_components_label_index_ts
-  module_src_components_field_Field_tsx --> module_src_features_layout_public_ts
-  module_src_components_field_Field_tsx --> module_src_internal_resolvers_index_ts
-  module_src_components_field_index_ts["src/components/field/index.ts"]
-  package__ankhorage_surface -.-> module_src_components_field_index_ts
-  module_src_components_field_types_ts["src/components/field/types.ts"]
-  package__ankhorage_surface -.-> module_src_components_field_types_ts
-  module_src_components_helper_text_HelperText_tsx["src/components/helper-text/HelperText.tsx"]
-  package__ankhorage_surface -.-> module_src_components_helper_text_HelperText_tsx
-  module_src_components_helper_text_HelperText_tsx --> module_src_components_helper_text_types_ts
-  module_src_components_helper_text_HelperText_tsx --> module_src_features_typography_public_ts
-  module_src_components_helper_text_index_ts["src/components/helper-text/index.ts"]
-  package__ankhorage_surface -.-> module_src_components_helper_text_index_ts
-  module_src_components_helper_text_types_ts["src/components/helper-text/types.ts"]
-  package__ankhorage_surface -.-> module_src_components_helper_text_types_ts
-  module_src_components_helper_text_types_ts --> module_src_surfaceColor_ts
-  module_src_components_label_index_ts["src/components/label/index.ts"]
-  package__ankhorage_surface -.-> module_src_components_label_index_ts
-  module_src_components_label_Label_tsx["src/components/label/Label.tsx"]
-  package__ankhorage_surface -.-> module_src_components_label_Label_tsx
-  module_src_components_label_Label_tsx --> module_src_components_label_types_ts
-  module_src_components_label_Label_tsx --> module_src_features_typography_public_ts
-  module_src_components_label_types_ts["src/components/label/types.ts"]
-  package__ankhorage_surface -.-> module_src_components_label_types_ts
-  module_src_components_label_types_ts --> module_src_surfaceColor_ts
-  module_src_components_list_item_index_ts["src/components/list-item/index.ts"]
-  package__ankhorage_surface -.-> module_src_components_list_item_index_ts
-  module_src_components_list_item_ListItem_tsx["src/components/list-item/ListItem.tsx"]
-  package__ankhorage_surface -.-> module_src_components_list_item_ListItem_tsx
-  module_src_components_list_item_ListItem_tsx --> module_src_components_list_item_types_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_features_layout_public_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_features_typography_public_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_primitives_button_base_index_ts
-  module_src_components_list_item_ListItem_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_list_item_types_ts["src/components/list-item/types.ts"]
-  package__ankhorage_surface -.-> module_src_components_list_item_types_ts
-  module_src_components_switch_index_ts["src/components/switch/index.ts"]
-  package__ankhorage_surface -.-> module_src_components_switch_index_ts
-  module_src_components_switch_Switch_tsx["src/components/switch/Switch.tsx"]
-  package__ankhorage_surface -.-> module_src_components_switch_Switch_tsx
-  module_src_components_switch_Switch_tsx --> module_src_components_switch_types_ts
-  module_src_components_switch_Switch_tsx --> module_src_features_layout_public_ts
-  module_src_components_switch_Switch_tsx --> module_src_features_typography_public_ts
-  module_src_components_switch_Switch_tsx --> module_src_internal_resolvers_index_ts
-  module_src_components_switch_Switch_tsx --> module_src_internal_useControllableState_ts
-  module_src_components_switch_Switch_tsx --> module_src_primitives_button_base_index_ts
-  module_src_components_switch_Switch_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_components_switch_types_ts["src/components/switch/types.ts"]
-  package__ankhorage_surface -.-> module_src_components_switch_types_ts
-  module_src_components_switch_types_ts --> module_src_internal_resolvers_resolveControlSize_ts
-  module_src_components_switch_types_ts --> module_src_primitives_button_base_index_ts
-  module_src_components_switch_types_ts --> module_src_surfaceColor_ts
-  module_src_components_textarea_index_ts["src/components/textarea/index.ts"]
-  package__ankhorage_surface -.-> module_src_components_textarea_index_ts
-  module_src_components_textarea_Textarea_tsx["src/components/textarea/Textarea.tsx"]
-  package__ankhorage_surface -.-> module_src_components_textarea_Textarea_tsx
-  module_src_components_textarea_Textarea_tsx --> module_src_components_textarea_types_ts
-  module_src_components_textarea_Textarea_tsx --> module_src_features_form_text_input_public_ts
-  module_src_components_textarea_types_ts["src/components/textarea/types.ts"]
-  package__ankhorage_surface -.-> module_src_components_textarea_types_ts
-  module_src_components_textarea_types_ts --> module_src_types_text_input_ts
   module_src_context_FontContext_tsx["src/context/FontContext.tsx"]
   package__ankhorage_surface -.-> module_src_context_FontContext_tsx
   module_src_context_TranslationContext_tsx["src/context/TranslationContext.tsx"]
@@ -213,6 +148,14 @@ graph TD
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_types_checkbox_ts
   module_src_features_form_checkbox_public_ts["src/features/form/checkbox/public.ts"]
   package__ankhorage_surface -.-> module_src_features_form_checkbox_public_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx["src/features/form/field/adapters/inbound/Field.tsx"]
+  package__ankhorage_surface -.-> module_src_features_form_field_adapters_inbound_Field_tsx
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_features_layout_public_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_features_typography_public_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_internal_resolvers_index_ts
+  module_src_features_form_field_adapters_inbound_Field_tsx --> module_src_types_field_ts
+  module_src_features_form_field_public_ts["src/features/form/field/public.ts"]
+  package__ankhorage_surface -.-> module_src_features_form_field_public_ts
   module_src_features_form_radio_adapters_inbound_Radio_test_ts["src/features/form/radio/adapters/inbound/Radio.test.ts"]
   package__ankhorage_surface -.-> module_src_features_form_radio_adapters_inbound_Radio_test_ts
   module_src_features_form_radio_adapters_inbound_Radio_test_ts --> module_src_features_form_radio_utils_isRadioTextContent_ts
@@ -232,6 +175,17 @@ graph TD
   package__ankhorage_surface -.-> module_src_features_form_radio_public_ts
   module_src_features_form_radio_utils_isRadioTextContent_ts["src/features/form/radio/utils/isRadioTextContent.ts"]
   package__ankhorage_surface -.-> module_src_features_form_radio_utils_isRadioTextContent_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx["src/features/form/switch/adapters/inbound/Switch.tsx"]
+  package__ankhorage_surface -.-> module_src_features_form_switch_adapters_inbound_Switch_tsx
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_layout_public_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_typography_public_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_resolvers_index_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_useControllableState_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_primitives_button_base_index_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_types_switch_ts
+  module_src_features_form_switch_public_ts["src/features/form/switch/public.ts"]
+  package__ankhorage_surface -.-> module_src_features_form_switch_public_ts
   module_src_features_form_text_input_adapters_inbound_TextInput_tsx["src/features/form/text-input/adapters/inbound/TextInput.tsx"]
   package__ankhorage_surface -.-> module_src_features_form_text_input_adapters_inbound_TextInput_tsx
   module_src_features_form_text_input_adapters_inbound_TextInput_tsx --> module_src_features_form_text_input_utils_resolveTextInputPresentation_ts
@@ -336,6 +290,21 @@ graph TD
   module_src_features_layout_adapters_inbound_View_tsx --> module_src_utils_resolveViewStyles_ts
   module_src_features_layout_public_ts["src/features/layout/public.ts"]
   package__ankhorage_surface -.-> module_src_features_layout_public_ts
+  module_src_features_list_adapters_inbound_List_tsx["src/features/list/adapters/inbound/List.tsx"]
+  package__ankhorage_surface -.-> module_src_features_list_adapters_inbound_List_tsx
+  module_src_features_list_adapters_inbound_List_tsx --> module_src_features_layout_public_ts
+  module_src_features_list_adapters_inbound_List_tsx --> module_src_types_list_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx["src/features/list/adapters/inbound/ListItem.tsx"]
+  package__ankhorage_surface -.-> module_src_features_list_adapters_inbound_ListItem_tsx
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_features_layout_public_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_features_typography_public_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_primitives_button_base_index_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_types_list_ts
+  module_src_features_list_public_test_ts["src/features/list/public.test.ts"]
+  package__ankhorage_surface -.-> module_src_features_list_public_test_ts
+  module_src_features_list_public_ts["src/features/list/public.ts"]
+  package__ankhorage_surface -.-> module_src_features_list_public_ts
   module_src_features_modal_adapters_inbound_Modal_tsx["src/features/modal/adapters/inbound/Modal.tsx"]
   package__ankhorage_surface -.-> module_src_features_modal_adapters_inbound_Modal_tsx
   module_src_features_modal_adapters_inbound_Modal_tsx --> module_src_features_layout_public_ts
@@ -793,6 +762,8 @@ graph TD
   module_src_types_checkbox_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_types_checkbox_ts --> module_src_primitives_button_base_index_ts
   module_src_types_checkbox_ts --> module_src_surfaceColor_ts
+  module_src_types_field_ts["src/types/field.ts"]
+  package__ankhorage_surface -.-> module_src_types_field_ts
   module_src_types_icon_ts["src/types/icon.ts"]
   package__ankhorage_surface -.-> module_src_types_icon_ts
   module_src_types_icon_ts --> module_src_theme_types_ts
@@ -806,6 +777,9 @@ graph TD
   package__ankhorage_surface -.-> module_src_types_layout_ts
   module_src_types_layout_ts --> module_src_core_responsive_index_ts
   module_src_types_layout_ts --> module_src_theme_types_ts
+  module_src_types_list_ts["src/types/list.ts"]
+  package__ankhorage_surface -.-> module_src_types_list_ts
+  module_src_types_list_ts --> module_src_interactionPolicy_ts
   module_src_types_modal_ts["src/types/modal.ts"]
   package__ankhorage_surface -.-> module_src_types_modal_ts
   module_src_types_modal_ts --> module_src_interactionPolicy_ts
@@ -824,6 +798,11 @@ graph TD
   module_src_types_surface_ts["src/types/surface.ts"]
   package__ankhorage_surface -.-> module_src_types_surface_ts
   module_src_types_surface_ts --> module_src_types_layout_ts
+  module_src_types_switch_ts["src/types/switch.ts"]
+  package__ankhorage_surface -.-> module_src_types_switch_ts
+  module_src_types_switch_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_types_switch_ts --> module_src_primitives_button_base_index_ts
+  module_src_types_switch_ts --> module_src_surfaceColor_ts
   module_src_types_tabs_ts["src/types/tabs.ts"]
   package__ankhorage_surface -.-> module_src_types_tabs_ts
   module_src_types_tabs_ts --> module_src_interactionPolicy_ts

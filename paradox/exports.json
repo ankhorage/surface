@@ -243,7 +243,7 @@
       {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -628,7 +628,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -931,7 +931,7 @@
       {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -1323,7 +1323,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -1619,7 +1619,7 @@
       {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -2032,7 +2032,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -2335,7 +2335,7 @@
       {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -2748,7 +2748,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -3065,7 +3065,7 @@
       {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -3527,7 +3527,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -4010,7 +4010,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -4180,7 +4180,7 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
@@ -4898,7 +4898,7 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
@@ -5551,7 +5551,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -5784,7 +5784,7 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
@@ -6677,7 +6677,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -6784,14 +6784,14 @@
   },
   {
     "name": "Field",
-    "description": "Composes a label, control, and helper or error message into one field.",
+    "description": "Composes a control with its label and helper or error message.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/field/Field.tsx",
+    "modulePath": "src/features/form/field/adapters/inbound/Field.tsx",
     "sourceLocation": {
-      "filePath": "src/components/field/Field.tsx",
-      "line": 10,
+      "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
+      "line": 9,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -6820,9 +6820,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/field/types.ts",
+    "modulePath": "src/types/field.ts",
     "sourceLocation": {
-      "filePath": "src/components/field/types.ts",
+      "filePath": "src/types/field.ts",
       "line": 3,
       "column": 1
     },
@@ -7523,7 +7523,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -7697,7 +7697,7 @@
       {
         "name": "align",
         "kind": "property",
-        "type": "\"justify\" | \"left\" | \"right\" | \"center\" | \"auto\" | undefined",
+        "type": "\"auto\" | \"justify\" | \"left\" | \"right\" | \"center\" | undefined",
         "required": false,
         "description": null
       },
@@ -7711,14 +7711,14 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "emphasis",
         "kind": "property",
-        "type": "\"default\" | \"muted\" | \"subtle\" | \"inverse\" | undefined",
+        "type": "\"default\" | \"subtle\" | \"muted\" | \"inverse\" | undefined",
         "required": false,
         "description": null
       },
@@ -7752,85 +7752,6 @@
       },
       {
         "name": "text",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "HelperText",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/components/helper-text/HelperText.tsx",
-    "sourceLocation": {
-      "filePath": "src/components/helper-text/HelperText.tsx",
-      "line": 6,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["HelperTextProps"],
-    "signatures": [
-      {
-        "label": "({ children, emphasis = 'muted', color, testID }: HelperTextProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{ children, emphasis = 'muted', color, testID }",
-            "type": "HelperTextProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "HelperTextProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/components/helper-text/types.ts",
-    "sourceLocation": {
-      "filePath": "src/components/helper-text/types.ts",
-      "line": 5,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [
-      {
-        "name": "children",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "color",
-        "kind": "property",
-        "type": "\"error\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "emphasis",
-        "kind": "property",
-        "type": "\"default\" | \"muted\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
         "kind": "property",
         "type": "string | undefined",
         "required": false,
@@ -8050,7 +7971,7 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
@@ -8762,26 +8683,26 @@
     "structuredRows": []
   },
   {
-    "name": "Label",
-    "description": null,
+    "name": "List",
+    "description": "Groups list items under one neutral Surface list boundary.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/label/Label.tsx",
+    "modulePath": "src/features/list/adapters/inbound/List.tsx",
     "sourceLocation": {
-      "filePath": "src/components/label/Label.tsx",
-      "line": 6,
+      "filePath": "src/features/list/adapters/inbound/List.tsx",
+      "line": 7,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["LabelProps"],
+    "relatedSymbols": ["ListProps"],
     "signatures": [
       {
-        "label": "({\n  children,\n  required = false,\n  emphasis = 'default',\n  color,\n  testID,\n}: LabelProps) => React.JSX.Element",
+        "label": "({ children, testID }: ListProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  required = false,\n  emphasis = 'default',\n  color,\n  testID,\n}",
-            "type": "LabelProps",
+            "name": "{ children, testID }",
+            "type": "ListProps",
             "required": true,
             "description": null
           }
@@ -8794,79 +8715,25 @@
     "structuredRows": []
   },
   {
-    "name": "LabelProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/components/label/types.ts",
-    "sourceLocation": {
-      "filePath": "src/components/label/types.ts",
-      "line": 5,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [
-      {
-        "name": "children",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "color",
-        "kind": "property",
-        "type": "\"error\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "emphasis",
-        "kind": "property",
-        "type": "\"default\" | \"muted\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "required",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
     "name": "ListItem",
-    "description": "Renders a static or pressable list item.",
+    "description": "Renders a static or interactive list item with shared row geometry and interaction states.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/list-item/ListItem.tsx",
+    "modulePath": "src/features/list/adapters/inbound/ListItem.tsx",
     "sourceLocation": {
-      "filePath": "src/components/list-item/ListItem.tsx",
-      "line": 53,
+      "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+      "line": 10,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
     "relatedSymbols": ["ListItemProps"],
     "signatures": [
       {
-        "label": "({ onPress, disabled = false, testID, ...content }: ListItemProps) => React.JSX.Element",
+        "label": "({\n  children,\n  title,\n  description,\n  leading,\n  trailing,\n  onPress,\n  disabled = false,\n  selected = false,\n  compact = false,\n  interactionPolicy,\n  accessibilityLabel,\n  testID,\n}: ListItemProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ onPress, disabled = false, testID, ...content }",
+            "name": "{\n  children,\n  title,\n  description,\n  leading,\n  trailing,\n  onPress,\n  disabled = false,\n  selected = false,\n  compact = false,\n  interactionPolicy,\n  accessibilityLabel,\n  testID,\n}",
             "type": "ListItemProps",
             "required": true,
             "description": null
@@ -8885,16 +8752,37 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/list-item/types.ts",
+    "modulePath": "src/types/list.ts",
     "sourceLocation": {
-      "filePath": "src/components/list-item/types.ts",
-      "line": 3,
+      "filePath": "src/types/list.ts",
+      "line": 10,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["InteractionPolicy"],
     "signatures": [],
     "members": [
+      {
+        "name": "accessibilityLabel",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "children",
+        "kind": "property",
+        "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "compact",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
       {
         "name": "description",
         "kind": "property",
@@ -8910,6 +8798,13 @@
         "description": null
       },
       {
+        "name": "interactionPolicy",
+        "kind": "property",
+        "type": "InteractionPolicy | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "leading",
         "kind": "property",
         "type": "React.ReactNode",
@@ -8920,6 +8815,13 @@
         "name": "onPress",
         "kind": "property",
         "type": "(() => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "selected",
+        "kind": "property",
+        "type": "boolean | undefined",
         "required": false,
         "description": null
       },
@@ -8941,6 +8843,39 @@
         "name": "trailing",
         "kind": "property",
         "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "ListProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/list.ts",
+    "sourceLocation": {
+      "filePath": "src/types/list.ts",
+      "line": 5,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "children",
+        "kind": "property",
+        "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "testID",
+        "kind": "property",
+        "type": "string | undefined",
         "required": false,
         "description": null
       }
@@ -9643,7 +9578,7 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
@@ -10551,7 +10486,7 @@
       {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -11412,7 +11347,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -12493,7 +12428,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -12874,9 +12809,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/components/switch/Switch.tsx",
+    "modulePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
     "sourceLocation": {
-      "filePath": "src/components/switch/Switch.tsx",
+      "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
       "line": 17,
       "column": 1
     },
@@ -12906,9 +12841,9 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/components/switch/types.ts",
+    "modulePath": "src/types/switch.ts",
     "sourceLocation": {
-      "filePath": "src/components/switch/types.ts",
+      "filePath": "src/types/switch.ts",
       "line": 7,
       "column": 1
     },
@@ -12989,7 +12924,7 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
@@ -13667,1191 +13602,6 @@
     "structuredRows": []
   },
   {
-    "name": "Textarea",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/components/textarea/Textarea.tsx",
-    "sourceLocation": {
-      "filePath": "src/components/textarea/Textarea.tsx",
-      "line": 6,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TextareaProps"],
-    "signatures": [
-      {
-        "label": "({ rows = 4, numberOfLines, style, ...props }: TextareaProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{ rows = 4, numberOfLines, style, ...props }",
-            "type": "TextareaProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "TextareaProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/components/textarea/types.ts",
-    "sourceLocation": {
-      "filePath": "src/components/textarea/types.ts",
-      "line": 3,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "accessibilityActions",
-        "kind": "property",
-        "type": "readonly Readonly<{ name: AccessibilityActionName | string; label?: string | undefined; }>[] | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityElementsHidden",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityHint",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityIgnoresInvertColors",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityLabelledBy",
-        "kind": "property",
-        "type": "string | string[] | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityLanguage",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityLargeContentTitle",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityLiveRegion",
-        "kind": "property",
-        "type": "\"none\" | \"polite\" | \"assertive\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityRespondsToUserInteraction",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityRole",
-        "kind": "property",
-        "type": "AccessibilityRole | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityShowsLargeContentViewer",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityState",
-        "kind": "property",
-        "type": "AccessibilityState | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityValue",
-        "kind": "property",
-        "type": "AccessibilityValue | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityViewIsModal",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessible",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "allowFontScaling",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-busy",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-checked",
-        "kind": "property",
-        "type": "boolean | \"mixed\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-disabled",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-expanded",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-hidden",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-label",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-labelledby",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-live",
-        "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-modal",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-selected",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-valuemax",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-valuemin",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-valuenow",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "aria-valuetext",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "autoCapitalize",
-        "kind": "property",
-        "type": "\"none\" | \"sentences\" | \"words\" | \"characters\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "autoComplete",
-        "kind": "property",
-        "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "autoCorrect",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "autoFocus",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "blurOnSubmit",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "caretHidden",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "children",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "clearButtonMode",
-        "kind": "property",
-        "type": "\"never\" | \"while-editing\" | \"unless-editing\" | \"always\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "clearTextOnFocus",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "collapsable",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "collapsableChildren",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "contextMenuHidden",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "cursorColor",
-        "kind": "property",
-        "type": "ColorValue | null | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "dataDetectorTypes",
-        "kind": "property",
-        "type": "DataDetectorTypes | DataDetectorTypes[] | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "defaultValue",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "disabled",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "disableFullscreenUI",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "disableKeyboardShortcuts",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "enablesReturnKeyAutomatically",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "enterKeyHint",
-        "kind": "property",
-        "type": "EnterKeyHintTypeOptions | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "focusable",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "hasTVPreferredFocus",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "hitSlop",
-        "kind": "property",
-        "type": "number | Insets | null | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "id",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "importantForAccessibility",
-        "kind": "property",
-        "type": "\"auto\" | \"yes\" | \"no\" | \"no-hide-descendants\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "importantForAutofill",
-        "kind": "property",
-        "type": "\"auto\" | \"yes\" | \"no\" | \"noExcludeDescendants\" | \"yesExcludeDescendants\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "inlineImageLeft",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "inlineImagePadding",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "inputAccessoryViewButtonLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "inputAccessoryViewID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "inputMode",
-        "kind": "property",
-        "type": "InputModeOptions | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "interactionPolicy",
-        "kind": "property",
-        "type": "InteractionPolicy | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "invalid",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "isTVSelectable",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "keyboardAppearance",
-        "kind": "property",
-        "type": "\"default\" | \"light\" | \"dark\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "keyboardType",
-        "kind": "property",
-        "type": "KeyboardTypeOptions | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "leadingAccessory",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "lineBreakModeIOS",
-        "kind": "property",
-        "type": "\"wordWrapping\" | \"char\" | \"clip\" | \"head\" | \"middle\" | \"tail\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "lineBreakStrategyIOS",
-        "kind": "property",
-        "type": "\"none\" | \"standard\" | \"hangul-word\" | \"push-out\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxFontSizeMultiplier",
-        "kind": "property",
-        "type": "number | null | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxLength",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "nativeID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "needsOffscreenAlphaCompositing",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "numberOfLines",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onAccessibilityAction",
-        "kind": "property",
-        "type": "((event: AccessibilityActionEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onAccessibilityEscape",
-        "kind": "property",
-        "type": "(() => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onAccessibilityTap",
-        "kind": "property",
-        "type": "(() => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onBlur",
-        "kind": "property",
-        "type": "((e: BlurEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onChange",
-        "kind": "property",
-        "type": "((e: TextInputChangeEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onChangeText",
-        "kind": "property",
-        "type": "((text: string) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onContentSizeChange",
-        "kind": "property",
-        "type": "((e: TextInputContentSizeChangeEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onEndEditing",
-        "kind": "property",
-        "type": "((e: TextInputEndEditingEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onFocus",
-        "kind": "property",
-        "type": "((e: FocusEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onKeyPress",
-        "kind": "property",
-        "type": "((e: TextInputKeyPressEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onLayout",
-        "kind": "property",
-        "type": "((event: LayoutChangeEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onMagicTap",
-        "kind": "property",
-        "type": "(() => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onMoveShouldSetResponder",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => boolean) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onMoveShouldSetResponderCapture",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => boolean) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerCancel",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerCancelCapture",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerDown",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerDownCapture",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerEnter",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerEnterCapture",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerLeave",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerLeaveCapture",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerMove",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerMoveCapture",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerUp",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPointerUpCapture",
-        "kind": "property",
-        "type": "((event: PointerEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPress",
-        "kind": "property",
-        "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPressIn",
-        "kind": "property",
-        "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onPressOut",
-        "kind": "property",
-        "type": "((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderEnd",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderGrant",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderMove",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderReject",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderRelease",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderStart",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderTerminate",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onResponderTerminationRequest",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => boolean) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onScroll",
-        "kind": "property",
-        "type": "((e: TextInputScrollEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onSelectionChange",
-        "kind": "property",
-        "type": "((e: TextInputSelectionChangeEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onStartShouldSetResponder",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => boolean) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onStartShouldSetResponderCapture",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => boolean) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onSubmitEditing",
-        "kind": "property",
-        "type": "((e: TextInputSubmitEditingEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onTouchCancel",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onTouchEnd",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onTouchEndCapture",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onTouchMove",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "onTouchStart",
-        "kind": "property",
-        "type": "((event: GestureResponderEvent) => void) | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "passwordRules",
-        "kind": "property",
-        "type": "string | null | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "placeholder",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pointerEvents",
-        "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "readOnly",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "rejectResponderTermination",
-        "kind": "property",
-        "type": "boolean | null | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "removeClippedSubviews",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "renderToHardwareTextureAndroid",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "returnKeyLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "returnKeyType",
-        "kind": "property",
-        "type": "ReturnKeyTypeOptions | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "role",
-        "kind": "property",
-        "type": "Role | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "rows",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "screenReaderFocusable",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "scrollEnabled",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "secureTextEntry",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "selection",
-        "kind": "property",
-        "type": "{ start: number; end?: number | undefined; } | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "selectionColor",
-        "kind": "property",
-        "type": "ColorValue | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "selectionHandleColor",
-        "kind": "property",
-        "type": "ColorValue | null | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "selectionState",
-        "kind": "property",
-        "type": "DocumentSelectionState | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "selectTextOnFocus",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "shouldRasterizeIOS",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "showSoftInputOnFocus",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "size",
-        "kind": "property",
-        "type": "ControlSize | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "smartInsertDelete",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "spellCheck",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "style",
-        "kind": "property",
-        "type": "StyleProp<TextStyle>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "submitBehavior",
-        "kind": "property",
-        "type": "SubmitBehavior | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "tabIndex",
-        "kind": "property",
-        "type": "0 | -1 | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "textAlign",
-        "kind": "property",
-        "type": "\"left\" | \"right\" | \"center\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "textAlignVertical",
-        "kind": "property",
-        "type": "\"top\" | \"bottom\" | \"center\" | \"auto\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "textBreakStrategy",
-        "kind": "property",
-        "type": "\"simple\" | \"highQuality\" | \"balanced\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "textContentType",
-        "kind": "property",
-        "type": "\"none\" | \"name\" | \"nickname\" | \"password\" | \"username\" | \"flightNumber\" | \"URL\" | \"addressCity\" | \"addressCityAndState\" | \"addressState\" | \"countryName\" | \"creditCardNumber\" | \"creditCardExpiration\" | \"creditCardExpirationMonth\" | \"creditCardExpirationYear\" | \"creditCardSecurityCode\" | \"creditCardType\" | \"creditCardName\" | \"creditCardGivenName\" | \"creditCardMiddleName\" | \"creditCardFamilyName\" | \"emailAddress\" | \"familyName\" | \"fullStreetAddress\" | \"givenName\" | \"jobTitle\" | \"location\" | \"middleName\" | \"namePrefix\" | \"nameSuffix\" | \"organizationName\" | \"postalCode\" | \"streetAddressLine1\" | \"streetAddressLine2\" | \"sublocality\" | \"telephoneNumber\" | \"newPassword\" | \"oneTimeCode\" | \"birthdate\" | \"birthdateDay\" | \"birthdateMonth\" | \"birthdateYear\" | \"cellularEID\" | \"cellularIMEI\" | \"dateTime\" | \"shipmentTrackingNumber\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "trailingAccessory",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "tvParallaxMagnification",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "tvParallaxShiftDistanceX",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "tvParallaxShiftDistanceY",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "tvParallaxTiltAngle",
-        "kind": "property",
-        "type": "number | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "underlineColorAndroid",
-        "kind": "property",
-        "type": "ColorValue | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "value",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "verticalAlign",
-        "kind": "property",
-        "type": "\"top\" | \"bottom\" | \"auto\" | \"middle\" | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
     "name": "TextInput",
     "description": "Renders a token-aware text input with controlled interaction policy.",
     "isReadme": false,
@@ -15070,7 +13820,7 @@
       {
         "name": "aria-live",
         "kind": "property",
-        "type": "\"off\" | \"polite\" | \"assertive\" | undefined",
+        "type": "\"polite\" | \"assertive\" | \"off\" | undefined",
         "required": false,
         "description": null
       },
@@ -15126,7 +13876,7 @@
       {
         "name": "autoComplete",
         "kind": "property",
-        "type": "\"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | \"off\" | undefined",
+        "type": "\"off\" | \"2fa-app-otp\" | \"additional-name\" | \"address-line1\" | \"address-line2\" | \"birthdate-day\" | \"birthdate-full\" | \"birthdate-month\" | \"birthdate-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-day\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-number\" | \"cc-name\" | \"cc-given-name\" | \"cc-middle-name\" | \"cc-family-name\" | \"cc-type\" | \"country\" | \"current-password\" | \"email\" | \"email-otp\" | \"flight-confirmation-code\" | \"flight-number\" | \"family-name\" | \"gender\" | \"gift-card-number\" | \"gift-card-pin\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"loyalty-account-number\" | \"name\" | \"name-family\" | \"name-given\" | \"name-middle\" | \"name-middle-initial\" | \"name-prefix\" | \"name-suffix\" | \"new-password\" | \"nickname\" | \"one-time-code\" | \"organization\" | \"organization-title\" | \"password\" | \"password-new\" | \"postal-address\" | \"postal-address-country\" | \"postal-address-dependent-locality\" | \"postal-address-extended\" | \"postal-address-extended-postal-code\" | \"postal-address-locality\" | \"postal-address-region\" | \"postal-address-unit\" | \"postal-code\" | \"promo-code\" | \"street-address\" | \"sms-otp\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-device\" | \"upi-vpa\" | \"url\" | \"wifi-password\" | \"username\" | \"username-new\" | undefined",
         "required": false,
         "description": null
       },
@@ -15777,7 +14527,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -15959,7 +14709,7 @@
       {
         "name": "textAlignVertical",
         "kind": "property",
-        "type": "\"top\" | \"bottom\" | \"center\" | \"auto\" | undefined",
+        "type": "\"auto\" | \"top\" | \"bottom\" | \"center\" | undefined",
         "required": false,
         "description": null
       },
@@ -16029,7 +14779,7 @@
       {
         "name": "verticalAlign",
         "kind": "property",
-        "type": "\"top\" | \"bottom\" | \"auto\" | \"middle\" | undefined",
+        "type": "\"auto\" | \"top\" | \"bottom\" | \"middle\" | undefined",
         "required": false,
         "description": null
       }
@@ -16055,7 +14805,7 @@
       {
         "name": "align",
         "kind": "property",
-        "type": "\"justify\" | \"left\" | \"right\" | \"center\" | \"auto\" | undefined",
+        "type": "\"auto\" | \"justify\" | \"left\" | \"right\" | \"center\" | undefined",
         "required": false,
         "description": null
       },
@@ -16069,14 +14819,14 @@
       {
         "name": "color",
         "kind": "property",
-        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"neutral\" | \"success\" | \"warning\" | \"error\" | \"info\" | \"danger\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"quaternary\" | \"error\" | \"success\" | \"warning\" | \"info\" | \"neutral\" | \"danger\" | undefined",
         "required": false,
         "description": null
       },
       {
         "name": "emphasis",
         "kind": "property",
-        "type": "\"default\" | \"muted\" | \"subtle\" | \"inverse\" | undefined",
+        "type": "\"default\" | \"subtle\" | \"muted\" | \"inverse\" | undefined",
         "required": false,
         "description": null
       },
@@ -17444,7 +16194,7 @@
       {
         "name": "pointerEvents",
         "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
