@@ -13,11 +13,13 @@ describe('public theme subpath', () => {
   });
 
   test('keeps React and React Native outside the public module graph root', () => {
-    const source = readFileSync(new URL('./public', import.meta.url), 'utf8');
+    const source = readFileSync(new URL('./public.ts', import.meta.url), 'utf8');
 
     expect(source).not.toContain('ThemeContext');
     expect(source).not.toMatch(/from ['"]react(?:-native)?['"]/);
-    expect(source).toContain("export * from './createTheme';");
+    expect(source).toContain(
+      "export { createTheme } from './application/use-cases/createTheme';",
+    );
   });
 
   test('imports and executes through the package subpath in plain Bun', async () => {
