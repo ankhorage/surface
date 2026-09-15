@@ -35,26 +35,8 @@ export function ScrollView(props: ScrollViewProps) {
 
 /*** Splits spacing-aware Surface props from native ScrollView props. */
 function splitSpacingProps(props: ScrollViewProps) {
-  const {
-    p,
-    px,
-    py,
-    pt,
-    pb,
-    pl,
-    pr,
-    m,
-    mx,
-    my,
-    mt,
-    mb,
-    ml,
-    mr,
-    gap,
-    rowGap,
-    columnGap,
-    ...rest
-  } = props;
+  const { p, px, py, pt, pb, pl, pr, m, mx, my, mt, mb, ml, mr, gap, rowGap, columnGap, ...rest } =
+    props;
   return {
     rest,
     styleProps: { p, px, py, pt, pb, pl, pr, m, mx, my, mt, mb, ml, mr, gap, rowGap, columnGap },

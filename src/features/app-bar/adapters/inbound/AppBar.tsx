@@ -58,10 +58,7 @@ function resolveHorizontalPadding(paddingHorizontal: number): ViewStyle {
 }
 
 /*** Resolves directional spacing for one AppBar accessory. */
-function resolveAccessoryMargin(
-  spacing: number,
-  position: 'leading' | 'trailing',
-): ViewStyle {
+function resolveAccessoryMargin(spacing: number, position: 'leading' | 'trailing'): ViewStyle {
   return position === 'leading' ? { marginRight: spacing } : { marginLeft: spacing };
 }
 
