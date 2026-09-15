@@ -129,6 +129,14 @@ describe('public package metadata contract', () => {
         import: './dist/features/bottom-sheet/public.js',
         types: './dist/features/bottom-sheet/public.d.ts',
       },
+      './color': {
+        bun: './src/constants/surfaceColor.ts',
+        'react-native': './src/constants/surfaceColor.ts',
+        browser: './src/constants/surfaceColor.ts',
+        default: './dist/constants/surfaceColor.js',
+        import: './dist/constants/surfaceColor.js',
+        types: './dist/constants/surfaceColor.d.ts',
+      },
       './theme': {
         bun: './src/features/theme/public.ts',
         'react-native': './src/features/theme/public.ts',

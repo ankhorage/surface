@@ -69,6 +69,14 @@
       "import": "./dist/features/bottom-sheet/public.js",
       "default": "./dist/features/bottom-sheet/public.js"
     },
+    "./color": {
+      "bun": "./src/constants/surfaceColor.ts",
+      "react-native": "./src/constants/surfaceColor.ts",
+      "browser": "./src/constants/surfaceColor.ts",
+      "types": "./dist/constants/surfaceColor.d.ts",
+      "import": "./dist/constants/surfaceColor.js",
+      "default": "./dist/constants/surfaceColor.js"
+    },
     "./theme": {
       "bun": "./src/features/theme/public.ts",
       "react-native": "./src/features/theme/public.ts",
