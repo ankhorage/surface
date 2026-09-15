@@ -3,7 +3,7 @@ export {
   SURFACE_EMPHASES,
   SURFACE_PALETTE_COLORS,
   SURFACE_STATUS_COLORS,
-} from './contracts/surfaceColor';
+} from './constants/surfaceColor';
 export * from './core/responsive';
 export type {
   AccordionContentProps,
