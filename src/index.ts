@@ -70,6 +70,8 @@ export type {
   PopoverMenuProps,
 } from './features/popover-menu/public';
 export { PopoverMenu } from './features/popover-menu/public';
+export type { PressableProps } from './features/pressable/public';
+export { Pressable } from './features/pressable/public';
 export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
 export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './features/tabs/public';
@@ -87,8 +89,6 @@ export { Tooltip } from './features/tooltip/public';
 export type { HeadingLevel, HeadingProps, TextProps } from './features/typography/public';
 export { Heading, Text } from './features/typography/public';
 export type { InteractionPolicy, InteractionPolicyProps } from './interactionPolicy';
-export type { ButtonBaseProps } from './primitives/button-base';
-export { ButtonBase } from './primitives/button-base';
 export type {
   SurfaceColor,
   SurfaceEmphasis,

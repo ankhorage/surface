@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../theme/types';
 import type { ListItemProps } from '../../../../types/list';
 import { View } from '../../../layout/public';
+import { Pressable } from '../../../pressable/public';
 import { Text } from '../../../typography/public';
 
 /*** Renders a static or interactive list item with shared row geometry and interaction states. */
@@ -30,7 +30,7 @@ function renderInteractiveListItem(
   theme: SurfaceTheme,
 ) {
   return (
-    <ButtonBase
+    <Pressable
       accessibilityLabel={props.accessibilityLabel}
       accessibilityRole="button"
       accessibilityState={{ disabled: props.disabled ?? false, selected: props.selected ?? false }}
@@ -51,7 +51,7 @@ function renderInteractiveListItem(
           testID={undefined}
         />
       )}
-    </ButtonBase>
+    </Pressable>
   );
 }
 

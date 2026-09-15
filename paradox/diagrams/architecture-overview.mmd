@@ -110,9 +110,9 @@ graph TD
   package__ankhorage_surface -.-> module_src_features_button_adapters_inbound_Button_tsx
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_icon_public_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_layout_public_ts
+  module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_pressable_public_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_typography_public_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_internal_resolvers_index_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_primitives_button_base_index_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_theme_types_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_types_button_ts
@@ -120,16 +120,16 @@ graph TD
   package__ankhorage_surface -.-> module_src_features_button_adapters_inbound_IconButton_tsx
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_features_icon_public_ts
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_features_layout_public_ts
+  module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_features_pressable_public_ts
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_internal_resolvers_index_ts
-  module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_primitives_button_base_index_ts
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_types_button_ts
   module_src_features_button_public_ts["src/features/button/public.ts"]
   package__ankhorage_surface -.-> module_src_features_button_public_ts
   module_src_features_card_adapters_inbound_Card_tsx["src/features/card/adapters/inbound/Card.tsx"]
   package__ankhorage_surface -.-> module_src_features_card_adapters_inbound_Card_tsx
+  module_src_features_card_adapters_inbound_Card_tsx --> module_src_features_pressable_public_ts
   module_src_features_card_adapters_inbound_Card_tsx --> module_src_features_surface_public_ts
-  module_src_features_card_adapters_inbound_Card_tsx --> module_src_primitives_button_base_index_ts
   module_src_features_card_adapters_inbound_Card_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_card_adapters_inbound_Card_tsx --> module_src_types_card_ts
   module_src_features_card_adapters_inbound_Card_tsx --> module_src_types_surface_ts
@@ -138,11 +138,10 @@ graph TD
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx["src/features/form/checkbox/adapters/inbound/Checkbox.tsx"]
   package__ankhorage_surface -.-> module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_features_layout_public_ts
+  module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_features_pressable_public_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_features_typography_public_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_internal_useControllableState_ts
-  module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_primitives_button_base_index_ts
-  module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_primitives_button_base_types_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_theme_types_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_types_checkbox_ts
@@ -163,11 +162,10 @@ graph TD
   package__ankhorage_surface -.-> module_src_features_form_radio_adapters_inbound_Radio_tsx
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_features_form_radio_utils_isRadioTextContent_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_features_layout_public_ts
+  module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_features_pressable_public_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_features_typography_public_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_internal_useControllableState_ts
-  module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_primitives_button_base_index_ts
-  module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_primitives_button_base_types_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_theme_types_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_types_radio_ts
@@ -178,10 +176,10 @@ graph TD
   module_src_features_form_switch_adapters_inbound_Switch_tsx["src/features/form/switch/adapters/inbound/Switch.tsx"]
   package__ankhorage_surface -.-> module_src_features_form_switch_adapters_inbound_Switch_tsx
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_layout_public_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_pressable_public_ts
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_typography_public_ts
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_useControllableState_ts
-  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_primitives_button_base_index_ts
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_theme_ThemeContext_tsx
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_types_switch_ts
   module_src_features_form_switch_public_ts["src/features/form/switch/public.ts"]
@@ -297,9 +295,10 @@ graph TD
   module_src_features_list_adapters_inbound_ListItem_tsx["src/features/list/adapters/inbound/ListItem.tsx"]
   package__ankhorage_surface -.-> module_src_features_list_adapters_inbound_ListItem_tsx
   module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_features_layout_public_ts
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_features_pressable_public_ts
   module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_features_typography_public_ts
-  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_primitives_button_base_index_ts
   module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_theme_types_ts
   module_src_features_list_adapters_inbound_ListItem_tsx --> module_src_types_list_ts
   module_src_features_list_public_test_ts["src/features/list/public.test.ts"]
   package__ankhorage_surface -.-> module_src_features_list_public_test_ts
@@ -363,6 +362,15 @@ graph TD
   module_src_features_popover_utils_resolvePopoverPosition_ts["src/features/popover/utils/resolvePopoverPosition.ts"]
   package__ankhorage_surface -.-> module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_utils_resolvePopoverPosition_ts --> module_src_types_popover_ts
+  module_src_features_pressable_adapters_inbound_Pressable_tsx["src/features/pressable/adapters/inbound/Pressable.tsx"]
+  package__ankhorage_surface -.-> module_src_features_pressable_adapters_inbound_Pressable_tsx
+  module_src_features_pressable_adapters_inbound_Pressable_tsx --> module_src_core_responsive_index_ts
+  module_src_features_pressable_adapters_inbound_Pressable_tsx --> module_src_internal_resolvers_index_ts
+  module_src_features_pressable_adapters_inbound_Pressable_tsx --> module_src_theme_ThemeContext_tsx
+  module_src_features_pressable_adapters_inbound_Pressable_tsx --> module_src_types_pressable_ts
+  module_src_features_pressable_adapters_inbound_Pressable_tsx --> module_src_utils_resolveViewStyles_ts
+  module_src_features_pressable_public_ts["src/features/pressable/public.ts"]
+  package__ankhorage_surface -.-> module_src_features_pressable_public_ts
   module_src_features_surface_adapters_inbound_Surface_tsx["src/features/surface/adapters/inbound/Surface.tsx"]
   package__ankhorage_surface -.-> module_src_features_surface_adapters_inbound_Surface_tsx
   module_src_features_surface_adapters_inbound_Surface_tsx --> module_src_features_layout_public_ts
@@ -635,20 +643,6 @@ graph TD
   module_src_internal_resolvers_resolveTextStyles_ts --> module_src_theme_types_ts
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
   package__ankhorage_surface -.-> module_src_internal_useControllableState_ts
-  module_src_primitives_button_base_ButtonBase_tsx["src/primitives/button-base/ButtonBase.tsx"]
-  package__ankhorage_surface -.-> module_src_primitives_button_base_ButtonBase_tsx
-  module_src_primitives_button_base_ButtonBase_tsx --> module_src_core_responsive_index_ts
-  module_src_primitives_button_base_ButtonBase_tsx --> module_src_internal_resolvers_index_ts
-  module_src_primitives_button_base_ButtonBase_tsx --> module_src_primitives_button_base_types_ts
-  module_src_primitives_button_base_ButtonBase_tsx --> module_src_theme_ThemeContext_tsx
-  module_src_primitives_button_base_ButtonBase_tsx --> module_src_utils_resolveViewStyles_ts
-  module_src_primitives_button_base_index_ts["src/primitives/button-base/index.ts"]
-  package__ankhorage_surface -.-> module_src_primitives_button_base_index_ts
-  module_src_primitives_button_base_types_ts["src/primitives/button-base/types.ts"]
-  package__ankhorage_surface -.-> module_src_primitives_button_base_types_ts
-  module_src_primitives_button_base_types_ts --> module_src_interactionPolicy_ts
-  module_src_primitives_button_base_types_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
-  module_src_primitives_button_base_types_ts --> module_src_types_layout_ts
   module_src_surfaceColor_test_ts["src/surfaceColor.test.ts"]
   package__ankhorage_surface -.-> module_src_surfaceColor_test_ts
   module_src_surfaceColor_test_ts --> module_src_index_ts
@@ -751,17 +745,17 @@ graph TD
   package__ankhorage_surface -.-> module_src_types_button_ts
   module_src_types_button_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_types_button_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
-  module_src_types_button_ts --> module_src_primitives_button_base_index_ts
   module_src_types_button_ts --> module_src_surfaceColor_ts
   module_src_types_button_ts --> module_src_types_icon_ts
+  module_src_types_button_ts --> module_src_types_pressable_ts
   module_src_types_card_ts["src/types/card.ts"]
   package__ankhorage_surface -.-> module_src_types_card_ts
   module_src_types_card_ts --> module_src_types_surface_ts
   module_src_types_checkbox_ts["src/types/checkbox.ts"]
   package__ankhorage_surface -.-> module_src_types_checkbox_ts
   module_src_types_checkbox_ts --> module_src_internal_resolvers_resolveControlSize_ts
-  module_src_types_checkbox_ts --> module_src_primitives_button_base_index_ts
   module_src_types_checkbox_ts --> module_src_surfaceColor_ts
+  module_src_types_checkbox_ts --> module_src_types_pressable_ts
   module_src_types_field_ts["src/types/field.ts"]
   package__ankhorage_surface -.-> module_src_types_field_ts
   module_src_types_icon_ts["src/types/icon.ts"]
@@ -790,19 +784,24 @@ graph TD
   package__ankhorage_surface -.-> module_src_types_popoverMenu_ts
   module_src_types_popoverMenu_ts --> module_src_interactionPolicy_ts
   module_src_types_popoverMenu_ts --> module_src_types_popover_ts
+  module_src_types_pressable_ts["src/types/pressable.ts"]
+  package__ankhorage_surface -.-> module_src_types_pressable_ts
+  module_src_types_pressable_ts --> module_src_interactionPolicy_ts
+  module_src_types_pressable_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
+  module_src_types_pressable_ts --> module_src_types_layout_ts
   module_src_types_radio_ts["src/types/radio.ts"]
   package__ankhorage_surface -.-> module_src_types_radio_ts
   module_src_types_radio_ts --> module_src_internal_resolvers_resolveControlSize_ts
-  module_src_types_radio_ts --> module_src_primitives_button_base_index_ts
   module_src_types_radio_ts --> module_src_surfaceColor_ts
+  module_src_types_radio_ts --> module_src_types_pressable_ts
   module_src_types_surface_ts["src/types/surface.ts"]
   package__ankhorage_surface -.-> module_src_types_surface_ts
   module_src_types_surface_ts --> module_src_types_layout_ts
   module_src_types_switch_ts["src/types/switch.ts"]
   package__ankhorage_surface -.-> module_src_types_switch_ts
   module_src_types_switch_ts --> module_src_internal_resolvers_resolveControlSize_ts
-  module_src_types_switch_ts --> module_src_primitives_button_base_index_ts
   module_src_types_switch_ts --> module_src_surfaceColor_ts
+  module_src_types_switch_ts --> module_src_types_pressable_ts
   module_src_types_tabs_ts["src/types/tabs.ts"]
   package__ankhorage_surface -.-> module_src_types_tabs_ts
   module_src_types_tabs_ts --> module_src_interactionPolicy_ts

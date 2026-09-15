@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v6.0.0",
+      "value": "v7.0.0",
       "color": "cb3837"
     },
     {
@@ -342,9 +342,9 @@
       "dependencies": [
         "src/features/icon/public.ts",
         "src/features/layout/public.ts",
+        "src/features/pressable/public.ts",
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
-        "src/primitives/button-base/index.ts",
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts",
         "src/types/button.ts"
@@ -357,8 +357,8 @@
       "dependencies": [
         "src/features/icon/public.ts",
         "src/features/layout/public.ts",
+        "src/features/pressable/public.ts",
         "src/internal/resolvers/index.ts",
-        "src/primitives/button-base/index.ts",
         "src/theme/ThemeContext.tsx",
         "src/types/button.ts"
       ],
@@ -374,8 +374,8 @@
       "path": "src/features/card/adapters/inbound/Card.tsx",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/pressable/public.ts",
         "src/features/surface/public.ts",
-        "src/primitives/button-base/index.ts",
         "src/theme/ThemeContext.tsx",
         "src/types/card.ts",
         "src/types/surface.ts"
@@ -393,11 +393,10 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/features/layout/public.ts",
+        "src/features/pressable/public.ts",
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
         "src/internal/useControllableState.ts",
-        "src/primitives/button-base/index.ts",
-        "src/primitives/button-base/types.ts",
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts",
         "src/types/checkbox.ts"
@@ -439,11 +438,10 @@
       "dependencies": [
         "src/features/form/radio/utils/isRadioTextContent.ts",
         "src/features/layout/public.ts",
+        "src/features/pressable/public.ts",
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
         "src/internal/useControllableState.ts",
-        "src/primitives/button-base/index.ts",
-        "src/primitives/button-base/types.ts",
         "src/theme/ThemeContext.tsx",
         "src/theme/types.ts",
         "src/types/radio.ts"
@@ -467,10 +465,10 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/features/layout/public.ts",
+        "src/features/pressable/public.ts",
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
         "src/internal/useControllableState.ts",
-        "src/primitives/button-base/index.ts",
         "src/theme/ThemeContext.tsx",
         "src/types/switch.ts"
       ],
@@ -713,9 +711,10 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/features/layout/public.ts",
+        "src/features/pressable/public.ts",
         "src/features/typography/public.ts",
-        "src/primitives/button-base/index.ts",
         "src/theme/ThemeContext.tsx",
+        "src/theme/types.ts",
         "src/types/list.ts"
       ],
       "exports": ["ListItem"]
@@ -846,6 +845,24 @@
       "isEntrypoint": false,
       "dependencies": ["src/types/popover.ts"],
       "exports": ["resolvePopoverPosition"]
+    },
+    {
+      "path": "src/features/pressable/adapters/inbound/Pressable.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/core/responsive/index.ts",
+        "src/internal/resolvers/index.ts",
+        "src/theme/ThemeContext.tsx",
+        "src/types/pressable.ts",
+        "src/utils/resolveViewStyles.ts"
+      ],
+      "exports": ["Pressable"]
+    },
+    {
+      "path": "src/features/pressable/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["Pressable", "PressableProps"]
     },
     {
       "path": "src/features/surface/adapters/inbound/Surface.tsx",
@@ -1151,8 +1168,6 @@
         "BREAKPOINT_ORDER",
         "BREAKPOINTS",
         "Button",
-        "ButtonBase",
-        "ButtonBaseProps",
         "ButtonIconSpec",
         "ButtonProps",
         "Card",
@@ -1218,6 +1233,8 @@
         "PopoverMenuProps",
         "PopoverPlacement",
         "PopoverProps",
+        "Pressable",
+        "PressableProps",
         "Radio",
         "RadioProps",
         "resolveResponsive",
@@ -1624,34 +1641,6 @@
       "exports": ["useControllableState"]
     },
     {
-      "path": "src/primitives/button-base/ButtonBase.tsx",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/core/responsive/index.ts",
-        "src/internal/resolvers/index.ts",
-        "src/primitives/button-base/types.ts",
-        "src/theme/ThemeContext.tsx",
-        "src/utils/resolveViewStyles.ts"
-      ],
-      "exports": ["ButtonBase"]
-    },
-    {
-      "path": "src/primitives/button-base/index.ts",
-      "isEntrypoint": false,
-      "dependencies": [],
-      "exports": ["ButtonBase", "ButtonBaseProps"]
-    },
-    {
-      "path": "src/primitives/button-base/types.ts",
-      "isEntrypoint": false,
-      "dependencies": [
-        "src/interactionPolicy.ts",
-        "src/internal/resolvers/resolveInteractiveState.ts",
-        "src/types/layout.ts"
-      ],
-      "exports": ["ButtonBaseProps"]
-    },
-    {
       "path": "src/surfaceColor.test.ts",
       "isEntrypoint": false,
       "dependencies": ["src/index.ts", "src/surfaceColor.ts"],
@@ -1968,9 +1957,9 @@
       "dependencies": [
         "src/internal/resolvers/resolveControlSize.ts",
         "src/internal/resolvers/resolveInteractiveColors.ts",
-        "src/primitives/button-base/index.ts",
         "src/surfaceColor.ts",
-        "src/types/icon.ts"
+        "src/types/icon.ts",
+        "src/types/pressable.ts"
       ],
       "exports": ["ButtonIconSpec", "ButtonProps", "IconButtonProps"]
     },
@@ -1985,8 +1974,8 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/internal/resolvers/resolveControlSize.ts",
-        "src/primitives/button-base/index.ts",
-        "src/surfaceColor.ts"
+        "src/surfaceColor.ts",
+        "src/types/pressable.ts"
       ],
       "exports": ["CheckboxProps"]
     },
@@ -2060,12 +2049,22 @@
       "exports": ["PopoverMenuAction", "PopoverMenuActionIntent", "PopoverMenuProps"]
     },
     {
+      "path": "src/types/pressable.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/interactionPolicy.ts",
+        "src/internal/resolvers/resolveInteractiveState.ts",
+        "src/types/layout.ts"
+      ],
+      "exports": ["PressableProps"]
+    },
+    {
       "path": "src/types/radio.ts",
       "isEntrypoint": false,
       "dependencies": [
         "src/internal/resolvers/resolveControlSize.ts",
-        "src/primitives/button-base/index.ts",
-        "src/surfaceColor.ts"
+        "src/surfaceColor.ts",
+        "src/types/pressable.ts"
       ],
       "exports": ["RadioProps"]
     },
@@ -2080,8 +2079,8 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/internal/resolvers/resolveControlSize.ts",
-        "src/primitives/button-base/index.ts",
-        "src/surfaceColor.ts"
+        "src/surfaceColor.ts",
+        "src/types/pressable.ts"
       ],
       "exports": ["SwitchProps"]
     },
@@ -6537,442 +6536,6 @@
       "structuredRows": []
     },
     {
-      "name": "ButtonBase",
-      "description": "Renders the low-level token-aware Pressable boundary shared by Surface controls.",
-      "isReadme": false,
-      "examples": [],
-      "kind": "function",
-      "modulePath": "src/primitives/button-base/ButtonBase.tsx",
-      "sourceLocation": {
-        "filePath": "src/primitives/button-base/ButtonBase.tsx",
-        "line": 30,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["ButtonBaseProps"],
-      "signatures": [
-        {
-          "label": "({\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: ButtonBaseProps) => React.JSX.Element",
-          "parameters": [
-            {
-              "name": "{\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}",
-              "type": "ButtonBaseProps",
-              "required": true,
-              "description": null
-            }
-          ],
-          "returnType": "React.JSX.Element",
-          "returnDescription": null
-        }
-      ],
-      "members": [],
-      "structuredRows": []
-    },
-    {
-      "name": "ButtonBaseProps",
-      "description": null,
-      "isReadme": false,
-      "examples": [],
-      "kind": "type",
-      "modulePath": "src/primitives/button-base/types.ts",
-      "sourceLocation": {
-        "filePath": "src/primitives/button-base/types.ts",
-        "line": 8,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["InteractionPolicy", "Responsive"],
-      "signatures": [],
-      "members": [
-        {
-          "name": "accessibilityLabel",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityRole",
-          "kind": "property",
-          "type": "AccessibilityRole | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityState",
-          "kind": "property",
-          "type": "AccessibilityState | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessible",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "align",
-          "kind": "property",
-          "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "alignSelf",
-          "kind": "property",
-          "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "bg",
-          "kind": "property",
-          "type": "Responsive<ColorValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "borderColor",
-          "kind": "property",
-          "type": "Responsive<ColorValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "borderWidth",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "bottom",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "children",
-          "kind": "property",
-          "type": "React.ReactNode | ((state: InteractionState) => React.ReactNode)",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "columnGap",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "direction",
-          "kind": "property",
-          "type": "Responsive<\"row\" | \"column\"> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "kind": "property",
-          "type": "boolean | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "flex",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "flexBasis",
-          "kind": "property",
-          "type": "Responsive<string | number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "flexGrow",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "flexShrink",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "gap",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "height",
-          "kind": "property",
-          "type": "Responsive<string | number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "kind": "property",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "justify",
-          "kind": "property",
-          "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "left",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "m",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxHeight",
-          "kind": "property",
-          "type": "Responsive<string | number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxWidth",
-          "kind": "property",
-          "type": "Responsive<string | number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mb",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "minHeight",
-          "kind": "property",
-          "type": "Responsive<string | number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "minWidth",
-          "kind": "property",
-          "type": "Responsive<string | number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "ml",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mr",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mt",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mx",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "my",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onLongPress",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPress",
-          "kind": "property",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "opacity",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "overflow",
-          "kind": "property",
-          "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "p",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pb",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pl",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "position",
-          "kind": "property",
-          "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pr",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pt",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "px",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "py",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "radius",
-          "kind": "property",
-          "type": "Responsive<RadiusValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "right",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "rowGap",
-          "kind": "property",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "style",
-          "kind": "property",
-          "type": "StyleProp<ViewStyle>",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "kind": "property",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "top",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "width",
-          "kind": "property",
-          "type": "Responsive<string | number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "wrap",
-          "kind": "property",
-          "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "zIndex",
-          "kind": "property",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        }
-      ],
-      "structuredRows": []
-    },
-    {
       "name": "ButtonIconSpec",
       "description": null,
       "isReadme": false,
@@ -8972,7 +8535,7 @@
       "modulePath": "src/features/form/field/adapters/inbound/Field.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
-        "line": 9,
+        "line": 13,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -10904,17 +10467,17 @@
       "modulePath": "src/features/list/adapters/inbound/ListItem.tsx",
       "sourceLocation": {
         "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
-        "line": 10,
+        "line": 11,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
       "relatedSymbols": ["ListItemProps"],
       "signatures": [
         {
-          "label": "({\n  children,\n  title,\n  description,\n  leading,\n  trailing,\n  onPress,\n  disabled = false,\n  selected = false,\n  compact = false,\n  interactionPolicy,\n  accessibilityLabel,\n  testID,\n}: ListItemProps) => React.JSX.Element",
+          "label": "(props: ListItemProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  title,\n  description,\n  leading,\n  trailing,\n  onPress,\n  disabled = false,\n  selected = false,\n  compact = false,\n  interactionPolicy,\n  accessibilityLabel,\n  testID,\n}",
+              "name": "props",
               "type": "ListItemProps",
               "required": true,
               "description": null
@@ -11632,6 +11195,442 @@
           "name": "testID",
           "kind": "property",
           "type": "string | undefined",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "Pressable",
+      "description": "Renders the token-aware Surface adapter for React Native Pressable.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 19,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["PressableProps"],
+      "signatures": [
+        {
+          "label": "({\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: PressableProps) => React.JSX.Element",
+          "parameters": [
+            {
+              "name": "{\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}",
+              "type": "PressableProps",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "React.JSX.Element",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "PressableProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/pressable.ts",
+      "sourceLocation": {
+        "filePath": "src/types/pressable.ts",
+        "line": 8,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["InteractionPolicy", "Responsive"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "accessibilityLabel",
+          "kind": "property",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "accessibilityRole",
+          "kind": "property",
+          "type": "AccessibilityRole | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "accessibilityState",
+          "kind": "property",
+          "type": "AccessibilityState | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "accessible",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "align",
+          "kind": "property",
+          "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "alignSelf",
+          "kind": "property",
+          "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "bg",
+          "kind": "property",
+          "type": "Responsive<ColorValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "borderColor",
+          "kind": "property",
+          "type": "Responsive<ColorValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "borderWidth",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "bottom",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "children",
+          "kind": "property",
+          "type": "React.ReactNode | ((state: InteractionState) => React.ReactNode)",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "columnGap",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "direction",
+          "kind": "property",
+          "type": "Responsive<\"row\" | \"column\"> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "disabled",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "flex",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "flexBasis",
+          "kind": "property",
+          "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "flexGrow",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "flexShrink",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "gap",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "height",
+          "kind": "property",
+          "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "kind": "property",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "justify",
+          "kind": "property",
+          "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "left",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "m",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "maxHeight",
+          "kind": "property",
+          "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "maxWidth",
+          "kind": "property",
+          "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mb",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "minHeight",
+          "kind": "property",
+          "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "minWidth",
+          "kind": "property",
+          "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "ml",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mr",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mt",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mx",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "my",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onLongPress",
+          "kind": "property",
+          "type": "((event: GestureResponderEvent) => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onPress",
+          "kind": "property",
+          "type": "((event: GestureResponderEvent) => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "opacity",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "overflow",
+          "kind": "property",
+          "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "p",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pb",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pl",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "position",
+          "kind": "property",
+          "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pr",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pt",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "px",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "py",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "radius",
+          "kind": "property",
+          "type": "Responsive<RadiusValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "right",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "rowGap",
+          "kind": "property",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "style",
+          "kind": "property",
+          "type": "StyleProp<ViewStyle>",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "testID",
+          "kind": "property",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "top",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "width",
+          "kind": "property",
+          "type": "Responsive<string | number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "wrap",
+          "kind": "property",
+          "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "zIndex",
+          "kind": "property",
+          "type": "Responsive<number> | undefined",
           "required": false,
           "description": null
         }
@@ -14993,7 +14992,7 @@
       "modulePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
-        "line": 17,
+        "line": 18,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -15791,7 +15790,7 @@
       "modulePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
-        "line": 10,
+        "line": 17,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -21650,354 +21649,6 @@
       ]
     },
     {
-      "name": "ButtonBase",
-      "description": "Renders the low-level token-aware Pressable boundary shared by Surface controls.",
-      "isReadme": false,
-      "examples": [],
-      "modulePath": "src/primitives/button-base/ButtonBase.tsx",
-      "sourceLocation": {
-        "filePath": "src/primitives/button-base/ButtonBase.tsx",
-        "line": 30,
-        "column": 1
-      },
-      "exportPaths": ["src/index.ts"],
-      "props": [
-        {
-          "name": "accessibilityLabel",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessibilityRole",
-          "type": "AccessibilityRole | undefined",
-          "required": false,
-          "defaultValue": "'button'",
-          "description": null
-        },
-        {
-          "name": "accessibilityState",
-          "type": "AccessibilityState | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "accessible",
-          "type": "ReactNativeViewProps['accessible'] | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "align",
-          "type": "Responsive<'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "alignSelf",
-          "type": "Responsive<ViewStyle['alignSelf']> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "bg",
-          "type": "Responsive<ColorValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "borderColor",
-          "type": "Responsive<ColorValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "borderWidth",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "bottom",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "children",
-          "type": "React.ReactNode | ((state: InteractionState) => React.ReactNode) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "columnGap",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "direction",
-          "type": "Responsive<'row' | 'column'> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "disabled",
-          "type": "boolean | undefined",
-          "required": false,
-          "defaultValue": "false",
-          "description": null
-        },
-        {
-          "name": "flex",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "flexBasis",
-          "type": "Responsive<number | string> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "flexGrow",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "flexShrink",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "gap",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "height",
-          "type": "Responsive<number | string> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "interactionPolicy",
-          "type": "InteractionPolicy | undefined",
-          "required": false,
-          "defaultValue": "'enabled'",
-          "description": null
-        },
-        {
-          "name": "justify",
-          "type": "Responsive<\n    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'\n  > | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "left",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "m",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxHeight",
-          "type": "Responsive<number | string> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "maxWidth",
-          "type": "Responsive<number | string> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mb",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "minHeight",
-          "type": "Responsive<number | string> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "minWidth",
-          "type": "Responsive<number | string> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "ml",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mr",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mt",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "mx",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "my",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onLongPress",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "onPress",
-          "type": "((event: GestureResponderEvent) => void) | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "opacity",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "overflow",
-          "type": "Responsive<ViewStyle['overflow']> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "p",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pb",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pl",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "position",
-          "type": "Responsive<ViewStyle['position']> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pr",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "pt",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "px",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "py",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "radius",
-          "type": "Responsive<RadiusValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "right",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "rowGap",
-          "type": "Responsive<SpaceValue> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "style",
-          "type": "StyleProp<ViewStyle> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "testID",
-          "type": "string | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "top",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "width",
-          "type": "Responsive<number | string> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "wrap",
-          "type": "Responsive<'nowrap' | 'wrap'> | undefined",
-          "required": false,
-          "description": null
-        },
-        {
-          "name": "zIndex",
-          "type": "Responsive<number> | undefined",
-          "required": false,
-          "description": null
-        }
-      ]
-    },
-    {
       "name": "Card",
       "description": "Renders a themed content card with optional interactive press states.",
       "isReadme": false,
@@ -23033,7 +22684,7 @@
       "modulePath": "src/features/form/field/adapters/inbound/Field.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
-        "line": 9,
+        "line": 13,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -24679,7 +24330,7 @@
       "modulePath": "src/features/list/adapters/inbound/ListItem.tsx",
       "sourceLocation": {
         "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
-        "line": 10,
+        "line": 11,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -24700,7 +24351,6 @@
           "name": "compact",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -24713,7 +24363,6 @@
           "name": "disabled",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -24738,7 +24387,6 @@
           "name": "selected",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -24938,6 +24586,354 @@
           "name": "trigger",
           "type": "(controls: PopoverAnchorRenderProps) => React.ReactNode",
           "required": true,
+          "description": null
+        }
+      ]
+    },
+    {
+      "name": "Pressable",
+      "description": "Renders the token-aware Surface adapter for React Native Pressable.",
+      "isReadme": false,
+      "examples": [],
+      "modulePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 19,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "props": [
+        {
+          "name": "accessibilityLabel",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "accessibilityRole",
+          "type": "AccessibilityRole | undefined",
+          "required": false,
+          "defaultValue": "'button'",
+          "description": null
+        },
+        {
+          "name": "accessibilityState",
+          "type": "AccessibilityState | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "accessible",
+          "type": "ReactNativeViewProps['accessible'] | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "align",
+          "type": "Responsive<'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "alignSelf",
+          "type": "Responsive<ViewStyle['alignSelf']> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "bg",
+          "type": "Responsive<ColorValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "borderColor",
+          "type": "Responsive<ColorValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "borderWidth",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "bottom",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode | ((state: InteractionState) => React.ReactNode) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "columnGap",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "direction",
+          "type": "Responsive<'row' | 'column'> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "disabled",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "false",
+          "description": null
+        },
+        {
+          "name": "flex",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "flexBasis",
+          "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "flexGrow",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "flexShrink",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "gap",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "height",
+          "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "interactionPolicy",
+          "type": "InteractionPolicy | undefined",
+          "required": false,
+          "defaultValue": "'enabled'",
+          "description": null
+        },
+        {
+          "name": "justify",
+          "type": "Responsive<\n    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'\n  > | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "left",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "m",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "maxHeight",
+          "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "maxWidth",
+          "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mb",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "minHeight",
+          "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "minWidth",
+          "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "ml",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mr",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mt",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "mx",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "my",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onLongPress",
+          "type": "((event: GestureResponderEvent) => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onPress",
+          "type": "((event: GestureResponderEvent) => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "opacity",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "overflow",
+          "type": "Responsive<ViewStyle['overflow']> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "p",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pb",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pl",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "position",
+          "type": "Responsive<ViewStyle['position']> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pr",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "pt",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "px",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "py",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "radius",
+          "type": "Responsive<RadiusValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "right",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "rowGap",
+          "type": "Responsive<SpaceValue> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "style",
+          "type": "StyleProp<ViewStyle> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "testID",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "top",
+          "type": "Responsive<number> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "width",
+          "type": "Responsive<number | string> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "wrap",
+          "type": "Responsive<'nowrap' | 'wrap'> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "zIndex",
+          "type": "Responsive<number> | undefined",
+          "required": false,
           "description": null
         }
       ]
@@ -26876,7 +26872,7 @@
       "modulePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
-        "line": 17,
+        "line": 18,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -27475,7 +27471,7 @@
       "modulePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
-        "line": 10,
+        "line": 17,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -29292,8 +29288,8 @@
       }
     },
     {
-      "name": "resolveButtonBaseStyle",
-      "description": "Resolves the outer ButtonBase layout style.",
+      "name": "resolvePressableStyle",
+      "description": "Resolves the outer Pressable layout style.",
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/Button.tsx",
         "line": 118,
@@ -29413,7 +29409,25 @@
       "description": "Composes a control with its label and helper or error message.",
       "sourceLocation": {
         "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
-        "line": 9,
+        "line": 13,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderFieldLabel",
+      "description": "Renders an optional field label and required indicator.",
+      "sourceLocation": {
+        "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "line": 40,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderFieldMessage",
+      "description": "Renders an optional helper or error message using field presentation semantics.",
+      "sourceLocation": {
+        "filePath": "src/features/form/field/adapters/inbound/Field.tsx",
+        "line": 73,
         "column": 1
       }
     },
@@ -29485,7 +29499,16 @@
       "description": "Renders a controlled or uncontrolled accessible switch.",
       "sourceLocation": {
         "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
-        "line": 17,
+        "line": 18,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderSwitchContent",
+      "description": "Resolves switch presentation for one interaction state and renders the visual control.",
+      "sourceLocation": {
+        "filePath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "line": 77,
         "column": 1
       }
     },
@@ -29494,7 +29517,16 @@
       "description": "Renders a token-aware text input with controlled interaction policy.",
       "sourceLocation": {
         "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
-        "line": 10,
+        "line": 17,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInputStyle",
+      "description": "Resolves TextInput style composition including canonical multiline alignment.",
+      "sourceLocation": {
+        "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
+        "line": 67,
         "column": 1
       }
     },
@@ -29503,7 +29535,7 @@
       "description": "Renders one optional TextInput accessory with directional spacing.",
       "sourceLocation": {
         "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
-        "line": 64,
+        "line": 76,
         "column": 1
       }
     },
@@ -29512,7 +29544,7 @@
       "description": "Resolves spacing around a leading or trailing TextInput accessory.",
       "sourceLocation": {
         "filePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
-        "line": 74,
+        "line": 86,
         "column": 1
       }
     },
@@ -29800,7 +29832,34 @@
       "description": "Renders a static or interactive list item with shared row geometry and interaction states.",
       "sourceLocation": {
         "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
-        "line": 10,
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderStaticListItem",
+      "description": "Renders a non-pressable list item.",
+      "sourceLocation": {
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 18,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderInteractiveListItem",
+      "description": "Renders a pressable list item with shared interaction-state presentation.",
+      "sourceLocation": {
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 28,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveListItemBackground",
+      "description": "Resolves the neutral list-item background for one interaction state.",
+      "sourceLocation": {
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 72,
         "column": 1
       }
     },
@@ -29809,7 +29868,16 @@
       "description": "Renders the shared visual row content for static and interactive list items.",
       "sourceLocation": {
         "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
-        "line": 79,
+        "line": 80,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderDefaultContent",
+      "description": "Renders the default title and description content when custom children are absent.",
+      "sourceLocation": {
+        "filePath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "line": 112,
         "column": 1
       }
     },
@@ -29945,6 +30013,33 @@
       "sourceLocation": {
         "filePath": "src/features/popover/utils/resolvePopoverPosition.ts",
         "line": 38,
+        "column": 1
+      }
+    },
+    {
+      "name": "Pressable",
+      "description": "Renders the token-aware Surface adapter for React Native Pressable.",
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 19,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolvePressHandlers",
+      "description": "Resolves press handlers according to the shared interaction policy.",
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 72,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInteractionState",
+      "description": "Resolves one native Pressable state into the canonical Surface interaction state.",
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 83,
         "column": 1
       }
     },
@@ -30507,24 +30602,6 @@
       }
     },
     {
-      "name": "getInteractionState",
-      "description": "Resolves one Pressable state into the canonical Surface interaction state.",
-      "sourceLocation": {
-        "filePath": "src/primitives/button-base/ButtonBase.tsx",
-        "line": 15,
-        "column": 1
-      }
-    },
-    {
-      "name": "ButtonBase",
-      "description": "Renders the low-level token-aware Pressable boundary shared by Surface controls.",
-      "sourceLocation": {
-        "filePath": "src/primitives/button-base/ButtonBase.tsx",
-        "line": 30,
-        "column": 1
-      }
-    },
-    {
       "name": "expectCompleteSemanticValues",
       "description": null,
       "sourceLocation": {
@@ -30980,14 +31057,6 @@
     },
     {
       "kind": "export",
-      "name": "ButtonBase",
-      "sourcePath": "src/primitives/button-base/ButtonBase.tsx",
-      "symbolName": "ButtonBase",
-      "description": "Renders the low-level token-aware Pressable boundary shared by Surface controls.",
-      "isReadme": false
-    },
-    {
-      "kind": "export",
       "name": "Card",
       "sourcePath": "src/features/card/adapters/inbound/Card.tsx",
       "symbolName": "Card",
@@ -31152,6 +31221,14 @@
       "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
       "symbolName": "PopoverMenu",
       "description": "Presents an anchored action menu using the shared Popover capability.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "Pressable",
+      "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+      "symbolName": "Pressable",
+      "description": "Renders the token-aware Surface adapter for React Native Pressable.",
       "isReadme": false
     },
     {
@@ -31506,6 +31583,11 @@
       },
       {
         "fromPath": "src/index.ts",
+        "toPath": "src/features/pressable/public.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
         "toPath": "src/features/surface/public.ts",
         "sourcePath": "src/index.ts"
       },
@@ -31532,11 +31614,6 @@
       {
         "fromPath": "src/index.ts",
         "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/index.ts"
-      },
-      {
-        "fromPath": "src/index.ts",
-        "toPath": "src/primitives/button-base/index.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -31821,17 +31898,17 @@
       },
       {
         "fromPath": "src/types/button.ts",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/types/button.ts"
-      },
-      {
-        "fromPath": "src/types/button.ts",
         "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/types/button.ts"
       },
       {
         "fromPath": "src/types/button.ts",
         "toPath": "src/types/icon.ts",
+        "sourcePath": "src/types/button.ts"
+      },
+      {
+        "fromPath": "src/types/button.ts",
+        "toPath": "src/types/pressable.ts",
         "sourcePath": "src/types/button.ts"
       },
       {
@@ -31846,12 +31923,12 @@
       },
       {
         "fromPath": "src/types/checkbox.ts",
-        "toPath": "src/primitives/button-base/index.ts",
+        "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/types/checkbox.ts"
       },
       {
         "fromPath": "src/types/checkbox.ts",
-        "toPath": "src/surfaceColor.ts",
+        "toPath": "src/types/pressable.ts",
         "sourcePath": "src/types/checkbox.ts"
       },
       {
@@ -31905,18 +31982,33 @@
         "sourcePath": "src/types/popoverMenu.ts"
       },
       {
+        "fromPath": "src/types/pressable.ts",
+        "toPath": "src/interactionPolicy.ts",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromPath": "src/types/pressable.ts",
+        "toPath": "src/internal/resolvers/resolveInteractiveState.ts",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromPath": "src/types/pressable.ts",
+        "toPath": "src/types/layout.ts",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
         "fromPath": "src/types/radio.ts",
         "toPath": "src/internal/resolvers/resolveControlSize.ts",
         "sourcePath": "src/types/radio.ts"
       },
       {
         "fromPath": "src/types/radio.ts",
-        "toPath": "src/primitives/button-base/index.ts",
+        "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/types/radio.ts"
       },
       {
         "fromPath": "src/types/radio.ts",
-        "toPath": "src/surfaceColor.ts",
+        "toPath": "src/types/pressable.ts",
         "sourcePath": "src/types/radio.ts"
       },
       {
@@ -31931,12 +32023,12 @@
       },
       {
         "fromPath": "src/types/switch.ts",
-        "toPath": "src/primitives/button-base/index.ts",
+        "toPath": "src/surfaceColor.ts",
         "sourcePath": "src/types/switch.ts"
       },
       {
         "fromPath": "src/types/switch.ts",
-        "toPath": "src/surfaceColor.ts",
+        "toPath": "src/types/pressable.ts",
         "sourcePath": "src/types/switch.ts"
       },
       {
@@ -32370,6 +32462,16 @@
         "sourcePath": "src/features/popover-menu/public.ts"
       },
       {
+        "fromPath": "src/features/pressable/public.ts",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/features/pressable/public.ts"
+      },
+      {
+        "fromPath": "src/features/pressable/public.ts",
+        "toPath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "sourcePath": "src/features/pressable/public.ts"
+      },
+      {
         "fromPath": "src/features/surface/public.ts",
         "toPath": "src/types/surface.ts",
         "sourcePath": "src/features/surface/public.ts"
@@ -32785,56 +32887,6 @@
         "sourcePath": "src/internal/resolvers/resolveTextStyles.ts"
       },
       {
-        "fromPath": "src/primitives/button-base/ButtonBase.tsx",
-        "toPath": "src/core/responsive/index.ts",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromPath": "src/primitives/button-base/ButtonBase.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromPath": "src/primitives/button-base/ButtonBase.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromPath": "src/primitives/button-base/ButtonBase.tsx",
-        "toPath": "src/utils/resolveViewStyles.ts",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromPath": "src/primitives/button-base/ButtonBase.tsx",
-        "toPath": "src/primitives/button-base/types.ts",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromPath": "src/primitives/button-base/index.ts",
-        "toPath": "src/primitives/button-base/ButtonBase.tsx",
-        "sourcePath": "src/primitives/button-base/index.ts"
-      },
-      {
-        "fromPath": "src/primitives/button-base/index.ts",
-        "toPath": "src/primitives/button-base/types.ts",
-        "sourcePath": "src/primitives/button-base/index.ts"
-      },
-      {
-        "fromPath": "src/primitives/button-base/types.ts",
-        "toPath": "src/interactionPolicy.ts",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromPath": "src/primitives/button-base/types.ts",
-        "toPath": "src/internal/resolvers/resolveInteractiveState.ts",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromPath": "src/primitives/button-base/types.ts",
-        "toPath": "src/types/layout.ts",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
         "fromPath": "src/features/accordion/utils/resolveAccordionToggle.test.ts",
         "toPath": "src/features/accordion/utils/resolveAccordionToggle.ts",
         "sourcePath": "src/features/accordion/utils/resolveAccordionToggle.test.ts"
@@ -33186,11 +33238,6 @@
       },
       {
         "fromPath": "src/features/button/adapters/inbound/Button.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
-      },
-      {
-        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
         "toPath": "src/theme/ThemeContext.tsx",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
@@ -33216,17 +33263,17 @@
       },
       {
         "fromPath": "src/features/button/adapters/inbound/Button.tsx",
+        "toPath": "src/features/pressable/public.ts",
+        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
         "toPath": "src/features/typography/public.ts",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {
         "fromPath": "src/features/button/adapters/inbound/IconButton.tsx",
         "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/features/button/adapters/inbound/IconButton.tsx"
-      },
-      {
-        "fromPath": "src/features/button/adapters/inbound/IconButton.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
         "sourcePath": "src/features/button/adapters/inbound/IconButton.tsx"
       },
       {
@@ -33250,9 +33297,9 @@
         "sourcePath": "src/features/button/adapters/inbound/IconButton.tsx"
       },
       {
-        "fromPath": "src/features/card/adapters/inbound/Card.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/features/card/adapters/inbound/Card.tsx"
+        "fromPath": "src/features/button/adapters/inbound/IconButton.tsx",
+        "toPath": "src/features/pressable/public.ts",
+        "sourcePath": "src/features/button/adapters/inbound/IconButton.tsx"
       },
       {
         "fromPath": "src/features/card/adapters/inbound/Card.tsx",
@@ -33267,6 +33314,11 @@
       {
         "fromPath": "src/features/card/adapters/inbound/Card.tsx",
         "toPath": "src/types/surface.ts",
+        "sourcePath": "src/features/card/adapters/inbound/Card.tsx"
+      },
+      {
+        "fromPath": "src/features/card/adapters/inbound/Card.tsx",
+        "toPath": "src/features/pressable/public.ts",
         "sourcePath": "src/features/card/adapters/inbound/Card.tsx"
       },
       {
@@ -33461,12 +33513,12 @@
       },
       {
         "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
+        "toPath": "src/theme/ThemeContext.tsx",
         "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
         "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
-        "toPath": "src/theme/ThemeContext.tsx",
+        "toPath": "src/theme/types.ts",
         "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
@@ -33477,6 +33529,11 @@
       {
         "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
         "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromPath": "src/features/list/adapters/inbound/ListItem.tsx",
+        "toPath": "src/features/pressable/public.ts",
         "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
@@ -33613,6 +33670,31 @@
         "fromPath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
         "toPath": "src/features/popover-menu/utils/resolveNextMenuIndex.ts",
         "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromPath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toPath": "src/core/responsive/index.ts",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromPath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toPath": "src/internal/resolvers/index.ts",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromPath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toPath": "src/theme/ThemeContext.tsx",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromPath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromPath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toPath": "src/utils/resolveViewStyles.ts",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {
         "fromPath": "src/features/surface/adapters/inbound/Surface.tsx",
@@ -33881,16 +33963,6 @@
       },
       {
         "fromPath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
-      },
-      {
-        "fromPath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "toPath": "src/primitives/button-base/types.ts",
-        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
-      },
-      {
-        "fromPath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
         "toPath": "src/theme/ThemeContext.tsx",
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
@@ -33907,6 +33979,11 @@
       {
         "fromPath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
         "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
+      },
+      {
+        "fromPath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
+        "toPath": "src/features/pressable/public.ts",
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
       {
@@ -33951,16 +34028,6 @@
       },
       {
         "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
-      },
-      {
-        "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "toPath": "src/primitives/button-base/types.ts",
-        "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
-      },
-      {
-        "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
         "toPath": "src/theme/ThemeContext.tsx",
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
       },
@@ -33977,6 +34044,11 @@
       {
         "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
         "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
+      },
+      {
+        "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
+        "toPath": "src/features/pressable/public.ts",
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
       },
       {
@@ -34001,11 +34073,6 @@
       },
       {
         "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
-        "toPath": "src/primitives/button-base/index.ts",
-        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
-      },
-      {
-        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
         "toPath": "src/theme/ThemeContext.tsx",
         "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
@@ -34017,6 +34084,11 @@
       {
         "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
         "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/features/pressable/public.ts",
         "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
@@ -35787,60 +35859,6 @@
         "sourcePath": "src/internal/resolvers/resolveTextStyles.ts"
       },
       {
-        "fromSymbol": "getInteractionState",
-        "toSymbol": "resolveInteractiveState",
-        "callExpression": "resolveInteractiveState",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "ButtonBase",
-        "toSymbol": "useTheme",
-        "callExpression": "useTheme",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "ButtonBase",
-        "toSymbol": "useResponsiveRuntime",
-        "callExpression": "useResponsiveRuntime",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "ButtonBase",
-        "toSymbol": "resolveViewStyles",
-        "callExpression": "resolveViewStyles",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "src/primitives/button-base/ButtonBase.tsx",
-        "toSymbol": "setFocused",
-        "callExpression": "setFocused",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "src/primitives/button-base/ButtonBase.tsx",
-        "toSymbol": "setHovered",
-        "callExpression": "setHovered",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "src/primitives/button-base/ButtonBase.tsx",
-        "toSymbol": "getInteractionState",
-        "callExpression": "getInteractionState",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "src/primitives/button-base/ButtonBase.tsx",
-        "toSymbol": "resolveFocusRingStyles",
-        "callExpression": "resolveFocusRingStyles",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "src/primitives/button-base/ButtonBase.tsx",
-        "toSymbol": "children",
-        "callExpression": "children",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
         "fromSymbol": "src/features/accordion/utils/resolveAccordionToggle.test.ts",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -36328,8 +36346,8 @@
       },
       {
         "fromSymbol": "Button",
-        "toSymbol": "resolveButtonBaseStyle",
-        "callExpression": "resolveButtonBaseStyle",
+        "toSymbol": "resolvePressableStyle",
+        "callExpression": "resolvePressableStyle",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {
@@ -36687,6 +36705,30 @@
         "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
+        "fromSymbol": "ListItem",
+        "toSymbol": "renderStaticListItem",
+        "callExpression": "renderStaticListItem",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromSymbol": "ListItem",
+        "toSymbol": "renderInteractiveListItem",
+        "callExpression": "renderInteractiveListItem",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromSymbol": "src/features/list/adapters/inbound/ListItem.tsx",
+        "toSymbol": "resolveListItemBackground",
+        "callExpression": "resolveListItemBackground",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
+        "fromSymbol": "ListItemContent",
+        "toSymbol": "renderDefaultContent",
+        "callExpression": "renderDefaultContent",
+        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
+      },
+      {
         "fromSymbol": "src/features/modal/adapters/inbound/Modal.tsx",
         "toSymbol": "resolvePointerEvents",
         "callExpression": "resolvePointerEvents",
@@ -36823,6 +36865,66 @@
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
         "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toSymbol": "useResponsiveRuntime",
+        "callExpression": "useResponsiveRuntime",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toSymbol": "resolveViewStyles",
+        "callExpression": "resolveViewStyles",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toSymbol": "resolvePressHandlers",
+        "callExpression": "resolvePressHandlers",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toSymbol": "setFocused",
+        "callExpression": "setFocused",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toSymbol": "setHovered",
+        "callExpression": "setHovered",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toSymbol": "resolveInteractionState",
+        "callExpression": "resolveInteractionState",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toSymbol": "resolveFocusRingStyles",
+        "callExpression": "resolveFocusRingStyles",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "toSymbol": "children",
+        "callExpression": "children",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "resolveInteractionState",
+        "toSymbol": "resolveInteractiveState",
+        "callExpression": "resolveInteractiveState",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {
         "fromSymbol": "Surface",
@@ -37168,14 +37270,26 @@
       },
       {
         "fromSymbol": "Field",
+        "toSymbol": "resolveFieldPresentation",
+        "callExpression": "resolveFieldPresentation",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromSymbol": "Field",
         "toSymbol": "resolveFieldState",
         "callExpression": "resolveFieldState",
         "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
       },
       {
         "fromSymbol": "Field",
-        "toSymbol": "resolveFieldPresentation",
-        "callExpression": "resolveFieldPresentation",
+        "toSymbol": "renderFieldLabel",
+        "callExpression": "renderFieldLabel",
+        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
+      },
+      {
+        "fromSymbol": "Field",
+        "toSymbol": "renderFieldMessage",
+        "callExpression": "renderFieldMessage",
         "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
       },
       {
@@ -37282,12 +37396,6 @@
       },
       {
         "fromSymbol": "Switch",
-        "toSymbol": "resolveIndicatorSize",
-        "callExpression": "resolveIndicatorSize",
-        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
-      },
-      {
-        "fromSymbol": "Switch",
         "toSymbol": "resolveSelectionControlNextChecked",
         "callExpression": "resolveSelectionControlNextChecked",
         "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
@@ -37300,14 +37408,26 @@
       },
       {
         "fromSymbol": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toSymbol": "renderSwitchContent",
+        "callExpression": "renderSwitchContent",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "renderSwitchContent",
         "toSymbol": "resolveFieldState",
         "callExpression": "resolveFieldState",
         "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
-        "fromSymbol": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "fromSymbol": "renderSwitchContent",
         "toSymbol": "resolveSelectionControlColors",
         "callExpression": "resolveSelectionControlColors",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromSymbol": "renderSwitchContent",
+        "toSymbol": "resolveIndicatorSize",
+        "callExpression": "resolveIndicatorSize",
         "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
@@ -37344,6 +37464,12 @@
         "fromSymbol": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
         "toSymbol": "onChangeText",
         "callExpression": "nativeProps.onChangeText",
+        "sourcePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx"
+      },
+      {
+        "fromSymbol": "TextInput",
+        "toSymbol": "resolveInputStyle",
+        "callExpression": "resolveInputStyle",
         "sourcePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx"
       },
       {
@@ -39175,6 +39301,86 @@
         "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
       },
       {
+        "fromSymbol": "PressableProps",
+        "toType": "AccessibilityRole",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "AccessibilityState",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "ColorValue",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "FlexAlignType",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "GestureResponderEvent",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "InteractionPolicy",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "InteractionState",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "RadiusValue",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "React",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "Responsive",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "SpaceValue",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "StyleProp",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "PressableProps",
+        "toType": "ViewStyle",
+        "sourcePath": "src/types/pressable.ts"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toType": "PressableProps",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toType": "React",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
         "fromSymbol": "SurfaceProps",
         "toType": "AccessibilityRole",
         "sourcePath": "src/types/surface.ts"
@@ -39488,86 +39694,6 @@
         "fromSymbol": "InteractionPolicyProps",
         "toType": "InteractionPolicy",
         "sourcePath": "src/interactionPolicy.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "AccessibilityRole",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "AccessibilityState",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "ColorValue",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "FlexAlignType",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "GestureResponderEvent",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "InteractionPolicy",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "InteractionState",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "RadiusValue",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "React",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "ReactNode",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "Responsive",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "SpaceValue",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "StyleProp",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBaseProps",
-        "toType": "ViewStyle",
-        "sourcePath": "src/primitives/button-base/types.ts"
-      },
-      {
-        "fromSymbol": "ButtonBase",
-        "toType": "ButtonBaseProps",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
-        "fromSymbol": "ButtonBase",
-        "toType": "React",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
       },
       {
         "fromSymbol": "deepMerge",
@@ -40004,8 +40130,8 @@
       },
       {
         "fromComponent": "Button",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      {...props}\n      disabled={disabled || loading}\n      onPress={onPress}\n      style={resolveButtonBaseStyle(fullWidth)}\n      testID={testID}\n    >",
+        "toComponent": "Pressable",
+        "jsxElement": "<Pressable\n      {...props}\n      disabled={disabled || loading}\n      onPress={onPress}\n      style={resolvePressableStyle(fullWidth)}\n      testID={testID}\n    >",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {
@@ -40015,12 +40141,6 @@
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {
-        "fromComponent": "ButtonBase",
-        "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole={accessibilityRole}\n      accessibilityState={{ ...accessibilityState, disabled }}\n      disabled={disabled}\n      onBlur={() => setFocused(false)}\n      onFocus={() => {\n        if (isWeb) setFocused(true);\n      }}\n      onHoverIn={isWeb ? () => setHovered(true) : undefined}\n      onHoverOut={isWeb ? () => setHovered(false) : undefined}\n      onLongPress={passive ? undefined : onLongPress}\n      onPress={passive ? undefined : onPress}\n      style={(pressableState) => {\n        const state = getInteractionState(pressableState, hovered, focused, disabled);\n        return [\n          resolvedViewStyles,\n          resolveFocusRingStyles(theme.semantics.border.focus, state.focused, isWeb),\n          style,\n        ];\n      }}\n      testID={testID}\n    >",
-        "sourcePath": "src/primitives/button-base/ButtonBase.tsx"
-      },
-      {
         "fromComponent": "Card",
         "toComponent": "Surface",
         "jsxElement": "<Surface {...props} style={style} testID={testID} variant={variant}>",
@@ -40028,8 +40148,8 @@
       },
       {
         "fromComponent": "Card",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase accessibilityRole=\"button\" disabled={disabled} onPress={onPress} testID={testID}>",
+        "toComponent": "Pressable",
+        "jsxElement": "<Pressable accessibilityRole=\"button\" disabled={disabled} onPress={onPress} testID={testID}>",
         "sourcePath": "src/features/card/adapters/inbound/Card.tsx"
       },
       {
@@ -40059,37 +40179,7 @@
       {
         "fromComponent": "Field",
         "toComponent": "View",
-        "jsxElement": "<View direction=\"row\" align=\"center\" gap=\"xs\">",
-        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
-      },
-      {
-        "fromComponent": "Field",
-        "toComponent": "View",
-        "jsxElement": "<View flex={1}>",
-        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
-      },
-      {
-        "fromComponent": "Field",
-        "toComponent": "Text",
-        "jsxElement": "<Text\n                color={presentation.labelColor}\n                emphasis={presentation.labelEmphasis}\n                variant=\"label\"\n                weight=\"medium\"\n              >",
-        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
-      },
-      {
-        "fromComponent": "Field",
-        "toComponent": "Text",
-        "jsxElement": "<Text color=\"error\" variant=\"label\" weight=\"medium\">",
-        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
-      },
-      {
-        "fromComponent": "Field",
-        "toComponent": "View",
         "jsxElement": "<View>",
-        "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
-      },
-      {
-        "fromComponent": "Field",
-        "toComponent": "Text",
-        "jsxElement": "<Text\n            color={presentation.helperColor}\n            emphasis={presentation.helperEmphasis}\n            variant=\"caption\"\n          >",
         "sourcePath": "src/features/form/field/adapters/inbound/Field.tsx"
       },
       {
@@ -40124,8 +40214,8 @@
       },
       {
         "fromComponent": "IconButton",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      {...props}\n      accessibilityLabel={accessibilityLabel}\n      disabled={disabled}\n      onPress={onPress}\n      testID={testID}\n    >",
+        "toComponent": "Pressable",
+        "jsxElement": "<Pressable\n      {...props}\n      accessibilityLabel={accessibilityLabel}\n      disabled={disabled}\n      onPress={onPress}\n      testID={testID}\n    >",
         "sourcePath": "src/features/button/adapters/inbound/IconButton.tsx"
       },
       {
@@ -40157,24 +40247,6 @@
         "toComponent": "View",
         "jsxElement": "<View testID={testID}>",
         "sourcePath": "src/features/list/adapters/inbound/List.tsx"
-      },
-      {
-        "fromComponent": "ListItem",
-        "toComponent": "ListItemContent",
-        "jsxElement": "<ListItemContent\n        backgroundColor={selected ? theme.semantics.selection.background : 'transparent'}\n        compact={compact}\n        description={description}\n        disabled={disabled}\n        leading={leading}\n        testID={testID}\n        title={title}\n        trailing={trailing}\n      >",
-        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
-      },
-      {
-        "fromComponent": "ListItem",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole=\"button\"\n      accessibilityState={{ disabled, selected }}\n      disabled={disabled}\n      interactionPolicy={interactionPolicy}\n      onPress={onPress}\n      testID={testID}\n    >",
-        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
-      },
-      {
-        "fromComponent": "ListItem",
-        "toComponent": "ListItemContent",
-        "jsxElement": "<ListItemContent\n          backgroundColor={\n            state.pressed\n              ? theme.semantics.neutral.surfaceActive\n              : state.hovered\n                ? theme.semantics.neutral.surfaceHover\n                : selected\n                  ? theme.semantics.selection.background\n                  : 'transparent'\n          }\n          compact={compact}\n          description={description}\n          disabled={state.disabled}\n          leading={leading}\n          title={title}\n          trailing={trailing}\n        >",
-        "sourcePath": "src/features/list/adapters/inbound/ListItem.tsx"
       },
       {
         "fromComponent": "Modal",
@@ -40243,6 +40315,12 @@
         "sourcePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx"
       },
       {
+        "fromComponent": "Pressable",
+        "toComponent": "ReactNativePressable",
+        "jsxElement": "<ReactNativePressable\n      {...pressHandlers}\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole={accessibilityRole}\n      accessibilityState={{ ...accessibilityState, disabled }}\n      disabled={disabled}\n      onBlur={() => setFocused(false)}\n      onFocus={() => {\n        if (isWeb) setFocused(true);\n      }}\n      onHoverIn={isWeb ? () => setHovered(true) : undefined}\n      onHoverOut={isWeb ? () => setHovered(false) : undefined}\n      style={(pressableState) => {\n        const state = resolveInteractionState(pressableState, hovered, focused, disabled);\n        return [\n          resolvedViewStyles,\n          resolveFocusRingStyles(theme.semantics.border.focus, state.focused, isWeb),\n          style,\n        ];\n      }}\n      testID={testID}\n    >",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
         "fromComponent": "Radio",
         "toComponent": "RadioControl",
         "jsxElement": "<RadioControl\n      accessibilityLabel={accessibilityLabel}\n      buttonProps={buttonProps}\n      color={color}\n      disabled={disabled}\n      invalid={invalid}\n      isChecked={isChecked}\n      readOnly={readOnly}\n      setChecked={setChecked}\n      size={size}\n      testID={testID}\n      theme={theme}\n    >",
@@ -40268,38 +40346,8 @@
       },
       {
         "fromComponent": "Switch",
-        "toComponent": "ButtonBase",
-        "jsxElement": "<ButtonBase\n      {...props}\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole=\"switch\"\n      accessibilityState={{ checked: isChecked }}\n      disabled={disabled}\n      onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}\n      testID={testID}\n    >",
-        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
-      },
-      {
-        "fromComponent": "Switch",
-        "toComponent": "View",
-        "jsxElement": "<View\n            style={{\n              alignItems: 'center',\n              flexDirection: 'row',\n              opacity: colors.opacity,\n            }}\n          >",
-        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
-      },
-      {
-        "fromComponent": "Switch",
-        "toComponent": "View",
-        "jsxElement": "<View\n              radius=\"full\"\n              style={{\n                backgroundColor: colors.trackColor,\n                borderColor: colors.borderColor,\n                borderWidth: 1,\n                justifyContent: 'center',\n                minWidth: indicatorSize.switchWidth,\n                paddingHorizontal: 2,\n                width: indicatorSize.switchWidth,\n                height: indicatorSize.switchHeight,\n              }}\n            >",
-        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
-      },
-      {
-        "fromComponent": "Switch",
-        "toComponent": "View",
-        "jsxElement": "<View\n                radius=\"full\"\n                style={{\n                  alignSelf: isChecked ? 'flex-end' : 'flex-start',\n                  backgroundColor: colors.thumbColor,\n                  height: indicatorSize.switchThumb,\n                  width: indicatorSize.switchThumb,\n                }}\n              />",
-        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
-      },
-      {
-        "fromComponent": "Switch",
-        "toComponent": "View",
-        "jsxElement": "<View ml=\"s\">",
-        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
-      },
-      {
-        "fromComponent": "Switch",
-        "toComponent": "Text",
-        "jsxElement": "<Text emphasis={labelEmphasis}>",
+        "toComponent": "Pressable",
+        "jsxElement": "<Pressable\n      {...props}\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole=\"switch\"\n      accessibilityState={{ checked: isChecked }}\n      disabled={disabled}\n      onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}\n      testID={testID}\n    >",
         "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {
@@ -40359,7 +40407,7 @@
       {
         "fromComponent": "TextInput",
         "toComponent": "ReactNativeTextInput",
-        "jsxElement": "<ReactNativeTextInput\n        {...nativeProps}\n        editable={presentation.editable}\n        numberOfLines={presentation.numberOfLines}\n        onBlur={(event) => {\n          setFocused(false);\n          nativeProps.onBlur?.(event);\n        }}\n        onChangeText={(nextValue) => {\n          if (interactionPolicy !== 'passive') {\n            nativeProps.onChangeText?.(nextValue);\n          }\n        }}\n        onFocus={(event) => {\n          setFocused(true);\n          nativeProps.onFocus?.(event);\n        }}\n        placeholderTextColor={presentation.placeholderColor}\n        readOnly={readOnly}\n        style={[\n          presentation.inputStyle,\n          nativeProps.multiline ? { textAlignVertical: 'top' } : undefined,\n          nativeProps.style,\n        ]}\n      />",
+        "jsxElement": "<ReactNativeTextInput\n        {...nativeProps}\n        editable={presentation.editable}\n        numberOfLines={presentation.numberOfLines}\n        onBlur={(event) => {\n          setFocused(false);\n          nativeProps.onBlur?.(event);\n        }}\n        onChangeText={(nextValue) => {\n          if (interactionPolicy !== 'passive') nativeProps.onChangeText?.(nextValue);\n        }}\n        onFocus={(event) => {\n          setFocused(true);\n          nativeProps.onFocus?.(event);\n        }}\n        placeholderTextColor={presentation.placeholderColor}\n        readOnly={readOnly}\n        style={resolveInputStyle(presentation.inputStyle, nativeProps.multiline, nativeProps.style)}\n      />",
         "sourcePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx"
       },
       {

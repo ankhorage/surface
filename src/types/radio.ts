@@ -1,11 +1,11 @@
 import type React from 'react';
 
 import type { ControlSize } from '../internal/resolvers/resolveControlSize';
-import type { ButtonBaseProps } from '../primitives/button-base';
 import type { SurfaceColor } from '../surfaceColor';
+import type { PressableProps } from './pressable';
 
 export interface RadioProps extends Omit<
-  ButtonBaseProps,
+  PressableProps,
   'accessibilityRole' | 'accessibilityState' | 'children' | 'onPress' | 'style'
 > {
   children?: React.ReactNode;

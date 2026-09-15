@@ -19,7 +19,7 @@ describe('InteractionPolicy public export', () => {
 
   it('does not export InteractionPolicy from button-base', () => {
     expect(indexSource).not.toContain(
-      "export type { InteractionPolicy, InteractionPolicyProps } from './primitives/button-base';",
+      "export type { InteractionPolicy, InteractionPolicyProps } from './features/pressable/public';",
     );
   });
 });
@@ -57,10 +57,10 @@ describe('InteractionPolicyProps', () => {
   });
 });
 
-describe('ButtonBaseProps includes interactionPolicy', () => {
-  it('has interactionPolicy in ButtonBaseProps', () => {
+describe('PressableProps includes interactionPolicy', () => {
+  it('has interactionPolicy in PressableProps', () => {
     expect(indexSource).toContain(
-      "export type { ButtonBaseProps } from './primitives/button-base';",
+      "export type { PressableProps } from './features/pressable/public';",
     );
   });
 });

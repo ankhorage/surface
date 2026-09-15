@@ -9,12 +9,12 @@ import {
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
-import { ButtonBase } from '../../../../../primitives/button-base';
-import type { ButtonBaseProps } from '../../../../../primitives/button-base/types';
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../../theme/types';
 import type { RadioProps } from '../../../../../types/radio';
 import { View } from '../../../../layout/public';
+import type { PressableProps } from '../../../../pressable/public';
+import { Pressable } from '../../../../pressable/public';
 import { Text } from '../../../../typography/public';
 import { isRadioTextContent } from '../../utils/isRadioTextContent';
 
@@ -82,7 +82,7 @@ function RadioControl({
   });
 
   return (
-    <ButtonBase
+    <Pressable
       {...buttonProps}
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="radio"
@@ -104,7 +104,7 @@ function RadioControl({
           theme,
         })
       }
-    </ButtonBase>
+    </Pressable>
   );
 }
 
@@ -188,7 +188,7 @@ function resolveRadioDotStyle(backgroundColor: string, size: number): ViewStyle 
 
 interface RadioControlProps {
   accessibilityLabel: RadioProps['accessibilityLabel'];
-  buttonProps: ButtonBaseProps;
+  buttonProps: PressableProps;
   children: RadioProps['children'];
   color: NonNullable<RadioProps['color']>;
   disabled: boolean;

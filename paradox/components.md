@@ -635,76 +635,6 @@ Export paths: `src/index.ts`
 | wrap |`Responsive<'nowrap' \| 'wrap'> \| undefined`| no | — |  |
 | zIndex |`Responsive<number> \| undefined` | no | — | |
 
-## ButtonBase
-
-Source: `src/primitives/button-base/ButtonBase.tsx:30:1`
-
-Renders the low-level token-aware Pressable boundary shared by Surface controls.
-
-Export paths: `src/index.ts`
-
-| Prop               | Type                                                                                         | Required | Default     | Description |
-| ------------------ | -------------------------------------------------------------------------------------------- | -------- | ----------- | ----------- |
-| accessibilityLabel | `string \| undefined`                                                                        | no       | —           |             |
-| accessibilityRole  | `AccessibilityRole \| undefined`                                                             | no       | `'button'`  |             |
-| accessibilityState | `AccessibilityState \| undefined`                                                            | no       | —           |             |
-| accessible         | `ReactNativeViewProps['accessible'] \| undefined`                                            | no       | —           |             |
-| align              | `Responsive<'flex-start' \| 'center' \| 'flex-end' \| 'stretch' \| 'baseline'> \| undefined` | no       | —           |             |
-| alignSelf          | `Responsive<ViewStyle['alignSelf']> \| undefined`                                            | no       | —           |             |
-| bg                 | `Responsive<ColorValue> \| undefined`                                                        | no       | —           |             |
-| borderColor        | `Responsive<ColorValue> \| undefined`                                                        | no       | —           |             |
-| borderWidth        | `Responsive<number> \| undefined`                                                            | no       | —           |             |
-| bottom             | `Responsive<number> \| undefined`                                                            | no       | —           |             |
-| children           | `React.ReactNode \| ((state: InteractionState) => React.ReactNode) \| undefined`             | no       | —           |             |
-| columnGap          | `Responsive<SpaceValue> \| undefined`                                                        | no       | —           |             |
-| direction          | `Responsive<'row' \| 'column'> \| undefined`                                                 | no       | —           |             |
-| disabled           | `boolean \| undefined`                                                                       | no       | `false`     |             |
-| flex               | `Responsive<number> \| undefined`                                                            | no       | —           |             |
-| flexBasis          | `Responsive<number \| string> \| undefined`                                                  | no       | —           |             |
-| flexGrow           | `Responsive<number> \| undefined`                                                            | no       | —           |             |
-| flexShrink         | `Responsive<number> \| undefined`                                                            | no       | —           |             |
-| gap                | `Responsive<SpaceValue> \| undefined`                                                        | no       | —           |             |
-| height             | `Responsive<number \| string> \| undefined`                                                  | no       | —           |             |
-| interactionPolicy  | `InteractionPolicy \| undefined`                                                             | no       | `'enabled'` |             |
-| justify            | `Responsive<                                                                                 |
-
-    'flex-start' \| 'center' \| 'flex-end' \| 'space-between' \| 'space-around' \| 'space-evenly'
-
-> \| undefined`| no | — |  |
-| left |`Responsive<number> \| undefined`| no | — |  |
-| m |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| maxHeight |`Responsive<number \| string> \| undefined`| no | — |  |
-| maxWidth |`Responsive<number \| string> \| undefined`| no | — |  |
-| mb |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| minHeight |`Responsive<number \| string> \| undefined`| no | — |  |
-| minWidth |`Responsive<number \| string> \| undefined`| no | — |  |
-| ml |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| mr |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| mt |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| mx |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| my |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| onLongPress |`((event: GestureResponderEvent) => void) \| undefined`| no | — |  |
-| onPress |`((event: GestureResponderEvent) => void) \| undefined`| no | — |  |
-| opacity |`Responsive<number> \| undefined`| no | — |  |
-| overflow |`Responsive<ViewStyle['overflow']> \| undefined`| no | — |  |
-| p |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| pb |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| pl |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| position |`Responsive<ViewStyle['position']> \| undefined`| no | — |  |
-| pr |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| pt |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| px |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| py |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| radius |`Responsive<RadiusValue> \| undefined`| no | — |  |
-| right |`Responsive<number> \| undefined`| no | — |  |
-| rowGap |`Responsive<SpaceValue> \| undefined`| no | — |  |
-| style |`StyleProp<ViewStyle> \| undefined`| no | — |  |
-| testID |`string \| undefined`| no | — |  |
-| top |`Responsive<number> \| undefined`| no | — |  |
-| width |`Responsive<number \| string> \| undefined`| no | — |  |
-| wrap |`Responsive<'nowrap' \| 'wrap'> \| undefined`| no | — |  |
-| zIndex |`Responsive<number> \| undefined` | no | — | |
-
 ## Card
 
 Source: `src/features/card/adapters/inbound/Card.tsx:11:1`
@@ -914,7 +844,7 @@ Export paths: `src/index.ts`
 
 ## Field
 
-Source: `src/features/form/field/adapters/inbound/Field.tsx:9:1`
+Source: `src/features/form/field/adapters/inbound/Field.tsx:13:1`
 
 Composes a control with its label and helper or error message.
 
@@ -1278,7 +1208,7 @@ Export paths: `src/index.ts`
 
 ## ListItem
 
-Source: `src/features/list/adapters/inbound/ListItem.tsx:10:1`
+Source: `src/features/list/adapters/inbound/ListItem.tsx:11:1`
 
 Renders a static or interactive list item with shared row geometry and interaction states.
 
@@ -1288,13 +1218,13 @@ Export paths: `src/index.ts`
 | ------------------ | -------------------------------- | -------- | ------- | ----------- |
 | accessibilityLabel | `string \| undefined`            | no       | —       |             |
 | children           | `React.ReactNode \| undefined`   | no       | —       |             |
-| compact            | `boolean \| undefined`           | no       | `false` |             |
+| compact            | `boolean \| undefined`           | no       | —       |             |
 | description        | `React.ReactNode \| undefined`   | no       | —       |             |
-| disabled           | `boolean \| undefined`           | no       | `false` |             |
+| disabled           | `boolean \| undefined`           | no       | —       |             |
 | interactionPolicy  | `InteractionPolicy \| undefined` | no       | —       |             |
 | leading            | `React.ReactNode \| undefined`   | no       | —       |             |
 | onPress            | `(() => void) \| undefined`      | no       | —       |             |
-| selected           | `boolean \| undefined`           | no       | `false` |             |
+| selected           | `boolean \| undefined`           | no       | —       |             |
 | testID             | `string \| undefined`            | no       | —       |             |
 | title              | `React.ReactNode \| undefined`   | no       | —       |             |
 | trailing           | `React.ReactNode \| undefined`   | no       | —       |             |
@@ -1353,6 +1283,76 @@ Export paths: `src/index.ts`
 | interactionPolicy | `InteractionPolicy \| undefined`                          | no       | `'enabled'` |             |
 | testID            | `string \| undefined`                                     | no       | —           |             |
 | trigger           | `(controls: PopoverAnchorRenderProps) => React.ReactNode` | yes      | —           |             |
+
+## Pressable
+
+Source: `src/features/pressable/adapters/inbound/Pressable.tsx:19:1`
+
+Renders the token-aware Surface adapter for React Native Pressable.
+
+Export paths: `src/index.ts`
+
+| Prop               | Type                                                                                         | Required | Default     | Description |
+| ------------------ | -------------------------------------------------------------------------------------------- | -------- | ----------- | ----------- |
+| accessibilityLabel | `string \| undefined`                                                                        | no       | —           |             |
+| accessibilityRole  | `AccessibilityRole \| undefined`                                                             | no       | `'button'`  |             |
+| accessibilityState | `AccessibilityState \| undefined`                                                            | no       | —           |             |
+| accessible         | `ReactNativeViewProps['accessible'] \| undefined`                                            | no       | —           |             |
+| align              | `Responsive<'flex-start' \| 'center' \| 'flex-end' \| 'stretch' \| 'baseline'> \| undefined` | no       | —           |             |
+| alignSelf          | `Responsive<ViewStyle['alignSelf']> \| undefined`                                            | no       | —           |             |
+| bg                 | `Responsive<ColorValue> \| undefined`                                                        | no       | —           |             |
+| borderColor        | `Responsive<ColorValue> \| undefined`                                                        | no       | —           |             |
+| borderWidth        | `Responsive<number> \| undefined`                                                            | no       | —           |             |
+| bottom             | `Responsive<number> \| undefined`                                                            | no       | —           |             |
+| children           | `React.ReactNode \| ((state: InteractionState) => React.ReactNode) \| undefined`             | no       | —           |             |
+| columnGap          | `Responsive<SpaceValue> \| undefined`                                                        | no       | —           |             |
+| direction          | `Responsive<'row' \| 'column'> \| undefined`                                                 | no       | —           |             |
+| disabled           | `boolean \| undefined`                                                                       | no       | `false`     |             |
+| flex               | `Responsive<number> \| undefined`                                                            | no       | —           |             |
+| flexBasis          | `Responsive<number \| string> \| undefined`                                                  | no       | —           |             |
+| flexGrow           | `Responsive<number> \| undefined`                                                            | no       | —           |             |
+| flexShrink         | `Responsive<number> \| undefined`                                                            | no       | —           |             |
+| gap                | `Responsive<SpaceValue> \| undefined`                                                        | no       | —           |             |
+| height             | `Responsive<number \| string> \| undefined`                                                  | no       | —           |             |
+| interactionPolicy  | `InteractionPolicy \| undefined`                                                             | no       | `'enabled'` |             |
+| justify            | `Responsive<                                                                                 |
+
+    'flex-start' \| 'center' \| 'flex-end' \| 'space-between' \| 'space-around' \| 'space-evenly'
+
+> \| undefined`| no | — |  |
+| left |`Responsive<number> \| undefined`| no | — |  |
+| m |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| maxHeight |`Responsive<number \| string> \| undefined`| no | — |  |
+| maxWidth |`Responsive<number \| string> \| undefined`| no | — |  |
+| mb |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| minHeight |`Responsive<number \| string> \| undefined`| no | — |  |
+| minWidth |`Responsive<number \| string> \| undefined`| no | — |  |
+| ml |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| mr |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| mt |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| mx |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| my |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| onLongPress |`((event: GestureResponderEvent) => void) \| undefined`| no | — |  |
+| onPress |`((event: GestureResponderEvent) => void) \| undefined`| no | — |  |
+| opacity |`Responsive<number> \| undefined`| no | — |  |
+| overflow |`Responsive<ViewStyle['overflow']> \| undefined`| no | — |  |
+| p |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| pb |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| pl |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| position |`Responsive<ViewStyle['position']> \| undefined`| no | — |  |
+| pr |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| pt |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| px |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| py |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| radius |`Responsive<RadiusValue> \| undefined`| no | — |  |
+| right |`Responsive<number> \| undefined`| no | — |  |
+| rowGap |`Responsive<SpaceValue> \| undefined`| no | — |  |
+| style |`StyleProp<ViewStyle> \| undefined`| no | — |  |
+| testID |`string \| undefined`| no | — |  |
+| top |`Responsive<number> \| undefined`| no | — |  |
+| width |`Responsive<number \| string> \| undefined`| no | — |  |
+| wrap |`Responsive<'nowrap' \| 'wrap'> \| undefined`| no | — |  |
+| zIndex |`Responsive<number> \| undefined` | no | — | |
 
 ## Radio
 
@@ -1756,7 +1756,7 @@ Export paths: `src/index.ts`
 
 ## Switch
 
-Source: `src/features/form/switch/adapters/inbound/Switch.tsx:17:1`
+Source: `src/features/form/switch/adapters/inbound/Switch.tsx:18:1`
 
 Renders a controlled or uncontrolled accessible switch.
 
@@ -1909,7 +1909,7 @@ Export paths: `src/index.ts`
 
 ## TextInput
 
-Source: `src/features/form/text-input/adapters/inbound/TextInput.tsx:10:1`
+Source: `src/features/form/text-input/adapters/inbound/TextInput.tsx:17:1`
 
 Renders a token-aware text input with controlled interaction policy.
 
