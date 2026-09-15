@@ -26,6 +26,7 @@ graph LR
   module_src_core_responsive_resolve_test_ts["src/core/responsive/resolve.test.ts"]
   module_src_core_responsive_resolve_ts["src/core/responsive/resolve.ts"]
   module_src_core_responsive_ResponsiveProvider_tsx["src/core/responsive/ResponsiveProvider.tsx"]
+  module_src_core_responsive_Show_tsx["src/core/responsive/Show.tsx"]
   module_src_core_responsive_types_ts["src/core/responsive/types.ts"]
   module_src_core_responsive_useBreakpoint_ts["src/core/responsive/useBreakpoint.ts"]
   module_src_features_accordion_adapters_inbound_Accordion_tsx["src/features/accordion/adapters/inbound/Accordion.tsx"]
@@ -37,6 +38,8 @@ graph LR
   module_src_features_accordion_public_ts["src/features/accordion/public.ts"]
   module_src_features_accordion_utils_resolveAccordionToggle_test_ts["src/features/accordion/utils/resolveAccordionToggle.test.ts"]
   module_src_features_accordion_utils_resolveAccordionToggle_ts["src/features/accordion/utils/resolveAccordionToggle.ts"]
+  module_src_features_app_bar_adapters_inbound_AppBar_tsx["src/features/app-bar/adapters/inbound/AppBar.tsx"]
+  module_src_features_app_bar_public_ts["src/features/app-bar/public.ts"]
   module_src_features_badge_adapters_inbound_Badge_tsx["src/features/badge/adapters/inbound/Badge.tsx"]
   module_src_features_badge_public_ts["src/features/badge/public.ts"]
   module_src_features_bottom_sheet_BottomSheetContext_ts["src/features/bottom-sheet/BottomSheetContext.ts"]
@@ -76,12 +79,10 @@ graph LR
   module_src_features_image_utils_resolveResizeMode_ts["src/features/image/utils/resolveResizeMode.ts"]
   module_src_features_keyboard_avoiding_view_adapters_inbound_KeyboardAvoidingView_tsx["src/features/keyboard-avoiding-view/adapters/inbound/KeyboardAvoidingView.tsx"]
   module_src_features_keyboard_avoiding_view_public_ts["src/features/keyboard-avoiding-view/public.ts"]
-  module_src_features_layout_adapters_inbound_Box_tsx["src/features/layout/adapters/inbound/Box.tsx"]
-  module_src_features_layout_adapters_inbound_Container_tsx["src/features/layout/adapters/inbound/Container.tsx"]
   module_src_features_layout_adapters_inbound_Divider_tsx["src/features/layout/adapters/inbound/Divider.tsx"]
   module_src_features_layout_adapters_inbound_Grid_tsx["src/features/layout/adapters/inbound/Grid.tsx"]
-  module_src_features_layout_adapters_inbound_Stack_test_ts["src/features/layout/adapters/inbound/Stack.test.ts"]
-  module_src_features_layout_adapters_inbound_Stack_tsx["src/features/layout/adapters/inbound/Stack.tsx"]
+  module_src_features_layout_adapters_inbound_ScrollView_tsx["src/features/layout/adapters/inbound/ScrollView.tsx"]
+  module_src_features_layout_adapters_inbound_View_tsx["src/features/layout/adapters/inbound/View.tsx"]
   module_src_features_layout_public_ts["src/features/layout/public.ts"]
   module_src_features_modal_adapters_inbound_Modal_tsx["src/features/modal/adapters/inbound/Modal.tsx"]
   module_src_features_modal_public_ts["src/features/modal/public.ts"]
@@ -171,14 +172,6 @@ graph LR
   module_src_internal_resolvers_resolveTextStyles_test_ts["src/internal/resolvers/resolveTextStyles.test.ts"]
   module_src_internal_resolvers_resolveTextStyles_ts["src/internal/resolvers/resolveTextStyles.ts"]
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
-  module_src_layout_AppBar_tsx["src/layout/AppBar.tsx"]
-  module_src_layout_Center_tsx["src/layout/Center.tsx"]
-  module_src_layout_index_ts["src/layout/index.ts"]
-  module_src_layout_Inline_tsx["src/layout/Inline.tsx"]
-  module_src_layout_ScrollArea_tsx["src/layout/ScrollArea.tsx"]
-  module_src_layout_Show_tsx["src/layout/Show.tsx"]
-  module_src_layout_Spacer_tsx["src/layout/Spacer.tsx"]
-  module_src_layout_Template_tsx["src/layout/Template.tsx"]
   module_src_primitives_button_base_ButtonBase_tsx["src/primitives/button-base/ButtonBase.tsx"]
   module_src_primitives_button_base_index_ts["src/primitives/button-base/index.ts"]
   module_src_primitives_button_base_types_ts["src/primitives/button-base/types.ts"]
@@ -207,6 +200,7 @@ graph LR
   module_src_theme_ThemeContext_tsx["src/theme/ThemeContext.tsx"]
   module_src_theme_types_ts["src/theme/types.ts"]
   module_src_types_accordion_ts["src/types/accordion.ts"]
+  module_src_types_app_bar_ts["src/types/app-bar.ts"]
   module_src_types_badge_ts["src/types/badge.ts"]
   module_src_types_bottomSheet_ts["src/types/bottomSheet.ts"]
   module_src_types_button_ts["src/types/button.ts"]
@@ -229,9 +223,9 @@ graph LR
   module_src_utils_deepEqual_ts["src/utils/deepEqual.ts"]
   module_src_utils_deepMerge_test_ts["src/utils/deepMerge.test.ts"]
   module_src_utils_deepMerge_ts["src/utils/deepMerge.ts"]
-  module_src_utils_resolveBoxStyles_test_ts["src/utils/resolveBoxStyles.test.ts"]
-  module_src_utils_resolveBoxStyles_ts["src/utils/resolveBoxStyles.ts"]
   module_src_utils_resolveSpacing_ts["src/utils/resolveSpacing.ts"]
+  module_src_utils_resolveViewStyles_test_ts["src/utils/resolveViewStyles.test.ts"]
+  module_src_utils_resolveViewStyles_ts["src/utils/resolveViewStyles.ts"]
   module_src_webAcceptance_test_tsx["src/webAcceptance.test.tsx"]
   export_Accordion["Accordion"]
   module_src_features_accordion_adapters_inbound_Accordion_tsx --> export_Accordion
@@ -267,10 +261,10 @@ graph LR
   module_src_theme_types_ts --> export_ActionSemantics
   export_ActionSemantics -.-> export_RoleSemantics
   export_AppBar["AppBar"]
-  module_src_layout_AppBar_tsx --> export_AppBar
+  module_src_features_app_bar_adapters_inbound_AppBar_tsx --> export_AppBar
   export_AppBar -.-> export_AppBarProps
   export_AppBarProps["AppBarProps"]
-  module_src_layout_AppBar_tsx --> export_AppBarProps
+  module_src_types_app_bar_ts --> export_AppBarProps
   export_AppBarProps -.-> export_Responsive
   export_Badge["Badge"]
   module_src_features_badge_adapters_inbound_Badge_tsx --> export_Badge
@@ -279,12 +273,6 @@ graph LR
   module_src_types_badge_ts --> export_BadgeProps
   export_BorderSemantics["BorderSemantics"]
   module_src_theme_types_ts --> export_BorderSemantics
-  export_Box["Box"]
-  module_src_features_layout_adapters_inbound_Box_tsx --> export_Box
-  export_Box -.-> export_BoxProps
-  export_BoxProps["BoxProps"]
-  module_src_types_layout_ts --> export_BoxProps
-  export_BoxProps -.-> export_Responsive
   export_Breakpoint["Breakpoint"]
   module_src_core_responsive_types_ts --> export_Breakpoint
   export_BREAKPOINT_ORDER["BREAKPOINT_ORDER"]
@@ -315,12 +303,6 @@ graph LR
   module_src_types_card_ts --> export_CardProps
   export_CardProps -.-> export_Responsive
   export_CardProps -.-> export_SurfaceVariant
-  export_Center["Center"]
-  module_src_layout_Center_tsx --> export_Center
-  export_Center -.-> export_CenterProps
-  export_CenterProps["CenterProps"]
-  module_src_layout_Center_tsx --> export_CenterProps
-  export_CenterProps -.-> export_Responsive
   export_Checkbox["Checkbox"]
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> export_Checkbox
   export_Checkbox -.-> export_CheckboxProps
@@ -334,12 +316,6 @@ graph LR
   module_node_modules__ankhorage_color_theory_dist_swatches_d_ts --> export_ColorSwatch
   export_ColorSwatchStep["ColorSwatchStep"]
   module_node_modules__ankhorage_color_theory_dist_swatches_d_ts --> export_ColorSwatchStep
-  export_Container["Container"]
-  module_src_features_layout_adapters_inbound_Container_tsx --> export_Container
-  export_Container -.-> export_ContainerProps
-  export_ContainerProps["ContainerProps"]
-  module_src_types_layout_ts --> export_ContainerProps
-  export_ContainerProps -.-> export_Responsive
   export_ContentSemantics["ContentSemantics"]
   module_src_theme_types_ts --> export_ContentSemantics
   export_createTheme["createTheme"]
@@ -439,11 +415,6 @@ graph LR
   export_ImageProps["ImageProps"]
   module_src_types_image_ts --> export_ImageProps
   export_ImageProps -.-> export_SurfaceImageSource
-  export_Inline["Inline"]
-  module_src_layout_Inline_tsx --> export_Inline
-  export_Inline -.-> export_InlineProps
-  export_InlineProps["InlineProps"]
-  module_src_layout_Inline_tsx --> export_InlineProps
   export_InteractionPolicy["InteractionPolicy"]
   module_src_interactionPolicy_ts --> export_InteractionPolicy
   export_InteractionPolicyProps["InteractionPolicyProps"]
@@ -526,12 +497,14 @@ graph LR
   module_src_core_responsive_types_ts --> export_ResponsiveRuntime
   export_RoleSemantics["RoleSemantics"]
   module_src_theme_types_ts --> export_RoleSemantics
-  export_ScrollArea["ScrollArea"]
-  module_src_layout_ScrollArea_tsx --> export_ScrollArea
-  export_ScrollArea -.-> export_ScrollAreaProps
-  export_ScrollAreaProps["ScrollAreaProps"]
-  module_src_layout_ScrollArea_tsx --> export_ScrollAreaProps
-  export_ScrollAreaProps -.-> export_Responsive
+  export_ScrollView["ScrollView"]
+  module_src_features_layout_adapters_inbound_ScrollView_tsx --> export_ScrollView
+  export_ScrollView -.-> export_ScrollViewProps
+  export_ScrollViewProps["ScrollViewProps"]
+  module_src_types_layout_ts --> export_ScrollViewProps
+  export_ScrollViewProps -.-> export_Responsive
+  export_ScrollViewProps -.-> export_ScrollView
+  export_ScrollViewProps -.-> export_View
   export_SelectionSemantics["SelectionSemantics"]
   module_src_theme_types_ts --> export_SelectionSemantics
   export_SemanticColorReferenceMap["SemanticColorReferenceMap"]
@@ -539,22 +512,11 @@ graph LR
   export_SemanticColorToken["SemanticColorToken"]
   module_node_modules__ankhorage_color_theory_dist_semantics_d_ts --> export_SemanticColorToken
   export_Show["Show"]
-  module_src_layout_Show_tsx --> export_Show
+  module_src_core_responsive_Show_tsx --> export_Show
   export_Show -.-> export_ShowProps
   export_ShowProps["ShowProps"]
-  module_src_layout_Show_tsx --> export_ShowProps
+  module_src_core_responsive_Show_tsx --> export_ShowProps
   export_ShowProps -.-> export_Responsive
-  export_Spacer["Spacer"]
-  module_src_layout_Spacer_tsx --> export_Spacer
-  export_Spacer -.-> export_SpacerProps
-  export_SpacerProps["SpacerProps"]
-  module_src_layout_Spacer_tsx --> export_SpacerProps
-  export_Stack["Stack"]
-  module_src_features_layout_adapters_inbound_Stack_tsx --> export_Stack
-  export_Stack -.-> export_StackProps
-  export_StackProps["StackProps"]
-  module_src_types_layout_ts --> export_StackProps
-  export_StackProps -.-> export_Responsive
   export_SUPPORTED_ICON_PROVIDERS["SUPPORTED_ICON_PROVIDERS"]
   module_src_features_icon_constants_ts --> export_SUPPORTED_ICON_PROVIDERS
   export_Surface["Surface"]
@@ -636,12 +598,6 @@ graph LR
   export_Tabs -.-> export_TabsProps
   export_TabsProps["TabsProps"]
   module_src_types_tabs_ts --> export_TabsProps
-  export_Template["Template"]
-  module_src_layout_Template_tsx --> export_Template
-  export_Template -.-> export_TemplateProps
-  export_TemplateProps["TemplateProps"]
-  module_src_layout_Template_tsx --> export_TemplateProps
-  export_TemplateProps -.-> export_Responsive
   export_Text["Text"]
   module_src_features_typography_adapters_inbound_Text_tsx --> export_Text
   export_Text -.-> export_TextProps
@@ -744,3 +700,9 @@ graph LR
   export_useTranslationContext["useTranslationContext"]
   module_src_context_TranslationContext_tsx --> export_useTranslationContext
   export_useTranslationContext -.-> export_TranslationRuntime
+  export_View["View"]
+  module_src_features_layout_adapters_inbound_View_tsx --> export_View
+  export_View -.-> export_ViewProps
+  export_ViewProps["ViewProps"]
+  module_src_types_layout_ts --> export_ViewProps
+  export_ViewProps -.-> export_Responsive

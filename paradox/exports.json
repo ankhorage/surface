@@ -3681,14 +3681,14 @@
   },
   {
     "name": "AppBar",
-    "description": null,
+    "description": "Renders application chrome with optional safe-area padding and leading/trailing slots.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/layout/AppBar.tsx",
+    "modulePath": "src/features/app-bar/adapters/inbound/AppBar.tsx",
     "sourceLocation": {
-      "filePath": "src/layout/AppBar.tsx",
-      "line": 17,
+      "filePath": "src/features/app-bar/adapters/inbound/AppBar.tsx",
+      "line": 10,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -3717,10 +3717,10 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/layout/AppBar.tsx",
+    "modulePath": "src/types/app-bar.ts",
     "sourceLocation": {
-      "filePath": "src/layout/AppBar.tsx",
-      "line": 8,
+      "filePath": "src/types/app-bar.ts",
+      "line": 6,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -3752,6 +3752,13 @@
         "name": "accessible",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
         "required": false,
         "description": null
       },
@@ -3798,9 +3805,23 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "contentStyle",
         "kind": "property",
         "type": "StyleProp<ViewStyle>",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
         "required": false,
         "description": null
       },
@@ -3840,9 +3861,23 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -4029,6 +4064,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "safeAreaTop",
         "kind": "property",
         "type": "boolean | undefined",
@@ -4067,6 +4109,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -4221,372 +4270,6 @@
     "structuredRows": []
   },
   {
-    "name": "Box",
-    "description": "Renders the responsive foundational layout box.",
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/features/layout/adapters/inbound/Box.tsx",
-    "sourceLocation": {
-      "filePath": "src/features/layout/adapters/inbound/Box.tsx",
-      "line": 11,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["BoxProps"],
-    "signatures": [
-      {
-        "label": "({\n  accessible,\n  accessibilityLabel,\n  accessibilityRole,\n  accessibilityState,\n  children,\n  pointerEvents,\n  style,\n  testID,\n  ...props\n}: BoxProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{\n  accessible,\n  accessibilityLabel,\n  accessibilityRole,\n  accessibilityState,\n  children,\n  pointerEvents,\n  style,\n  testID,\n  ...props\n}",
-            "type": "BoxProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "BoxProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/types/layout.ts",
-    "sourceLocation": {
-      "filePath": "src/types/layout.ts",
-      "line": 56,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "accessibilityLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityRole",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityRole | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityState",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityState | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessible",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "alignSelf",
-        "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bg",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderColor",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderWidth",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bottom",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "children",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexBasis",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexGrow",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexShrink",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "height",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "left",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "m",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "ml",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mx",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "my",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "opacity",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "overflow",
-        "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "p",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pl",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pointerEvents",
-        "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "position",
-        "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "px",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "py",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "radius",
-        "kind": "property",
-        "type": "Responsive<RadiusValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "right",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "style",
-        "kind": "property",
-        "type": "StyleProp<ViewStyle>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "top",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "width",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "zIndex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
     "name": "Breakpoint",
     "description": null,
     "isReadme": false,
@@ -4674,14 +4357,14 @@
   },
   {
     "name": "ButtonBase",
-    "description": null,
+    "description": "Renders the low-level token-aware Pressable boundary shared by Surface controls.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
     "modulePath": "src/primitives/button-base/ButtonBase.tsx",
     "sourceLocation": {
       "filePath": "src/primitives/button-base/ButtonBase.tsx",
-      "line": 28,
+      "line": 30,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -4749,6 +4432,13 @@
         "description": null
       },
       {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "alignSelf",
         "kind": "property",
         "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
@@ -4791,6 +4481,20 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "disabled",
         "kind": "property",
         "type": "boolean | undefined",
@@ -4826,6 +4530,13 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
@@ -4836,6 +4547,13 @@
         "name": "interactionPolicy",
         "kind": "property",
         "type": "InteractionPolicy | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -5022,6 +4740,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "style",
         "kind": "property",
         "type": "StyleProp<ViewStyle>",
@@ -5046,6 +4771,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -5115,6 +4847,13 @@
         "description": null
       },
       {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "alignSelf",
         "kind": "property",
         "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
@@ -5164,6 +4903,20 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "disabled",
         "kind": "property",
         "type": "boolean | undefined",
@@ -5206,6 +4959,13 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
@@ -5216,6 +4976,13 @@
         "name": "interactionPolicy",
         "kind": "property",
         "type": "InteractionPolicy | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -5416,6 +5183,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "size",
         "kind": "property",
         "type": "ControlSize | undefined",
@@ -5454,6 +5228,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -5544,6 +5325,13 @@
         "description": null
       },
       {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "alignSelf",
         "kind": "property",
         "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
@@ -5561,6 +5349,20 @@
         "name": "children",
         "kind": "property",
         "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
         "required": false,
         "description": null
       },
@@ -5600,9 +5402,23 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -5789,6 +5605,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "style",
         "kind": "property",
         "type": "StyleProp<ViewStyle>",
@@ -5824,375 +5647,9 @@
         "description": null
       },
       {
-        "name": "zIndex",
+        "name": "wrap",
         "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "Center",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/layout/Center.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Center.tsx",
-      "line": 9,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["CenterProps"],
-    "signatures": [
-      {
-        "label": "({ axis = 'both', style, ...props }: CenterProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{ axis = 'both', style, ...props }",
-            "type": "CenterProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "CenterProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/layout/Center.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Center.tsx",
-      "line": 5,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "accessibilityLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityRole",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityRole | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityState",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityState | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessible",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "alignSelf",
-        "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "axis",
-        "kind": "property",
-        "type": "\"horizontal\" | \"vertical\" | \"both\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bg",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderColor",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderWidth",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bottom",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "children",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexBasis",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexGrow",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexShrink",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "height",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "left",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "m",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "ml",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mx",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "my",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "opacity",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "overflow",
-        "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "p",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pl",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pointerEvents",
-        "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "position",
-        "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "px",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "py",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "radius",
-        "kind": "property",
-        "type": "Responsive<RadiusValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "right",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "style",
-        "kind": "property",
-        "type": "StyleProp<ViewStyle>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "top",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "width",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -6269,6 +5726,13 @@
         "description": null
       },
       {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "alignSelf",
         "kind": "property",
         "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
@@ -6325,9 +5789,23 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "defaultChecked",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
         "required": false,
         "description": null
       },
@@ -6367,6 +5845,13 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
@@ -6384,6 +5869,13 @@
         "name": "invalid",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -6577,6 +6069,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "size",
         "kind": "property",
         "type": "ControlSize | undefined",
@@ -6601,6 +6100,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -6666,372 +6172,6 @@
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "Container",
-    "description": "Centers responsive content inside a configurable maximum width.",
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/features/layout/adapters/inbound/Container.tsx",
-    "sourceLocation": {
-      "filePath": "src/features/layout/adapters/inbound/Container.tsx",
-      "line": 11,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ContainerProps"],
-    "signatures": [
-      {
-        "label": "({\n  children,\n  maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },\n  px = { base: 16, md: 24, lg: 32 },\n  ...props\n}: ContainerProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{\n  children,\n  maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },\n  px = { base: 16, md: 24, lg: 32 },\n  ...props\n}",
-            "type": "ContainerProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "ContainerProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/types/layout.ts",
-    "sourceLocation": {
-      "filePath": "src/types/layout.ts",
-      "line": 66,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "accessibilityLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityRole",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityRole | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityState",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityState | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessible",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "alignSelf",
-        "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bg",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderColor",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderWidth",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bottom",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "children",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexBasis",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexGrow",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexShrink",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "height",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "left",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "m",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxWidth",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "ml",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mx",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "my",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "opacity",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "overflow",
-        "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "p",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pl",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pointerEvents",
-        "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "position",
-        "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "px",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "py",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "radius",
-        "kind": "property",
-        "type": "Responsive<RadiusValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "right",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "style",
-        "kind": "property",
-        "type": "StyleProp<ViewStyle>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "top",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "width",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "zIndex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
     "structuredRows": []
   },
   {
@@ -7268,7 +6408,7 @@
     "modulePath": "src/types/layout.ts",
     "sourceLocation": {
       "filePath": "src/types/layout.ts",
-      "line": 72,
+      "line": 80,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -7300,6 +6440,13 @@
         "name": "accessible",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
         "required": false,
         "description": null
       },
@@ -7346,6 +6493,20 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "flex",
         "kind": "property",
         "type": "Responsive<number> | undefined",
@@ -7370,6 +6531,20 @@
         "name": "flexShrink",
         "kind": "property",
         "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -7556,6 +6731,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "style",
         "kind": "property",
         "type": "StyleProp<ViewStyle>",
@@ -7584,6 +6766,13 @@
         "description": null
       },
       {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "zIndex",
         "kind": "property",
         "type": "Responsive<number> | undefined",
@@ -7595,14 +6784,14 @@
   },
   {
     "name": "Field",
-    "description": null,
+    "description": "Composes a label, control, and helper or error message into one field.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
     "modulePath": "src/components/field/Field.tsx",
     "sourceLocation": {
       "filePath": "src/components/field/Field.tsx",
-      "line": 9,
+      "line": 10,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -8044,7 +7233,7 @@
     "modulePath": "src/types/layout.ts",
     "sourceLocation": {
       "filePath": "src/types/layout.ts",
-      "line": 78,
+      "line": 86,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -8076,6 +7265,13 @@
         "name": "accessible",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
         "required": false,
         "description": null
       },
@@ -8131,8 +7327,22 @@
       {
         "name": "cols",
         "kind": "property",
-        "type": "Responsive<number>",
-        "required": true,
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
+        "required": false,
         "description": null
       },
       {
@@ -8174,6 +7384,13 @@
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -8395,6 +7612,13 @@
         "description": null
       },
       {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "zIndex",
         "kind": "property",
         "type": "Responsive<number> | undefined",
@@ -8473,7 +7697,7 @@
       {
         "name": "align",
         "kind": "property",
-        "type": "\"left\" | \"right\" | \"auto\" | \"center\" | \"justify\" | undefined",
+        "type": "\"justify\" | \"left\" | \"right\" | \"center\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -8782,6 +8006,13 @@
         "description": null
       },
       {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "alignSelf",
         "kind": "property",
         "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
@@ -8824,6 +8055,20 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "disabled",
         "kind": "property",
         "type": "boolean | undefined",
@@ -8859,6 +8104,13 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
@@ -8876,6 +8128,13 @@
         "name": "interactionPolicy",
         "kind": "property",
         "type": "InteractionPolicy | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -9062,6 +8321,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "size",
         "kind": "property",
         "type": "ControlSize | undefined",
@@ -9093,6 +8359,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -9339,56 +8612,6 @@
     "structuredRows": []
   },
   {
-    "name": "Inline",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/layout/Inline.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Inline.tsx",
-      "line": 7,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InlineProps"],
-    "signatures": [
-      {
-        "label": "({ wrap = 'wrap', align = 'center', ...props }: InlineProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{ wrap = 'wrap', align = 'center', ...props }",
-            "type": "InlineProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "InlineProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "src/layout/Inline.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Inline.tsx",
-      "line": 5,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
     "name": "InteractionPolicy",
     "description": null,
     "isReadme": false,
@@ -9626,14 +8849,14 @@
   },
   {
     "name": "ListItem",
-    "description": null,
+    "description": "Renders a static or pressable list item.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
     "modulePath": "src/components/list-item/ListItem.tsx",
     "sourceLocation": {
       "filePath": "src/components/list-item/ListItem.tsx",
-      "line": 47,
+      "line": 53,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10008,7 +9231,7 @@
     "modulePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
     "sourceLocation": {
       "filePath": "src/features/popover-menu/adapters/inbound/PopoverMenu.tsx",
-      "line": 17,
+      "line": 16,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -10362,6 +9585,13 @@
         "description": null
       },
       {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "alignSelf",
         "kind": "property",
         "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
@@ -10418,9 +9648,23 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "defaultChecked",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
         "required": false,
         "description": null
       },
@@ -10460,6 +9704,13 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
@@ -10477,6 +9728,13 @@
         "name": "invalid",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -10670,6 +9928,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "size",
         "kind": "property",
         "type": "ControlSize | undefined",
@@ -10694,6 +9959,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -11040,26 +10312,26 @@
     "structuredRows": []
   },
   {
-    "name": "ScrollArea",
-    "description": null,
+    "name": "ScrollView",
+    "description": "Renders the token-aware responsive Surface adapter for React Native ScrollView.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/layout/ScrollArea.tsx",
+    "modulePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
     "sourceLocation": {
-      "filePath": "src/layout/ScrollArea.tsx",
-      "line": 22,
+      "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
+      "line": 10,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ScrollAreaProps"],
+    "relatedSymbols": ["ScrollViewProps"],
     "signatures": [
       {
-        "label": "({\n  children,\n  contentContainerStyle,\n  p,\n  px,\n  py,\n  pt,\n  pb,\n  pl,\n  pr,\n  m,\n  mx,\n  my,\n  mt,\n  mb,\n  ml,\n  mr,\n  bg,\n  radius,\n  borderWidth,\n  borderColor,\n  width,\n  height,\n  minWidth,\n  maxWidth,\n  minHeight,\n  maxHeight,\n  flex,\n  flexGrow,\n  flexShrink,\n  flexBasis,\n  alignSelf,\n  position,\n  top,\n  bottom,\n  left,\n  right,\n  overflow,\n  zIndex,\n  opacity,\n  style,\n  ...scrollProps\n}: ScrollAreaProps) => React.JSX.Element",
+        "label": "(props: ScrollViewProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  contentContainerStyle,\n  p,\n  px,\n  py,\n  pt,\n  pb,\n  pl,\n  pr,\n  m,\n  mx,\n  my,\n  mt,\n  mb,\n  ml,\n  mr,\n  bg,\n  radius,\n  borderWidth,\n  borderColor,\n  width,\n  height,\n  minWidth,\n  maxWidth,\n  minHeight,\n  maxHeight,\n  flex,\n  flexGrow,\n  flexShrink,\n  flexBasis,\n  alignSelf,\n  position,\n  top,\n  bottom,\n  left,\n  right,\n  overflow,\n  zIndex,\n  opacity,\n  style,\n  ...scrollProps\n}",
-            "type": "ScrollAreaProps",
+            "name": "props",
+            "type": "ScrollViewProps",
             "required": true,
             "description": null
           }
@@ -11072,19 +10344,19 @@
     "structuredRows": []
   },
   {
-    "name": "ScrollAreaProps",
+    "name": "ScrollViewProps",
     "description": null,
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/layout/ScrollArea.tsx",
+    "modulePath": "src/types/layout.ts",
     "sourceLocation": {
-      "filePath": "src/layout/ScrollArea.tsx",
-      "line": 14,
+      "filePath": "src/types/layout.ts",
+      "line": 95,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "relatedSymbols": ["Responsive", "ScrollView", "View"],
     "signatures": [],
     "members": [
       {
@@ -11196,6 +10468,13 @@
         "name": "accessible",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
         "required": false,
         "description": null
       },
@@ -11417,6 +10696,13 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "contentContainerStyle",
         "kind": "property",
         "type": "StyleProp<ViewStyle>",
@@ -11447,7 +10733,14 @@
       {
         "name": "decelerationRate",
         "kind": "property",
-        "type": "number | \"normal\" | \"fast\" | undefined",
+        "type": "number | \"fast\" | \"normal\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
         "required": false,
         "description": null
       },
@@ -11522,6 +10815,13 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "hasTVPreferredFocus",
         "kind": "property",
         "type": "boolean | undefined",
@@ -11588,6 +10888,13 @@
         "name": "isTVSelectable",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -12187,6 +11494,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "screenReaderFocusable",
         "kind": "property",
         "type": "boolean | undefined",
@@ -12390,6 +11704,13 @@
         "description": null
       },
       {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "zIndex",
         "kind": "property",
         "type": "Responsive<number> | undefined",
@@ -12484,14 +11805,14 @@
   },
   {
     "name": "Show",
-    "description": null,
+    "description": "Conditionally renders one responsive subtree or its fallback.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/layout/Show.tsx",
+    "modulePath": "src/core/responsive/Show.tsx",
     "sourceLocation": {
-      "filePath": "src/layout/Show.tsx",
-      "line": 11,
+      "filePath": "src/core/responsive/Show.tsx",
+      "line": 14,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -12520,10 +11841,10 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/layout/Show.tsx",
+    "modulePath": "src/core/responsive/Show.tsx",
     "sourceLocation": {
-      "filePath": "src/layout/Show.tsx",
-      "line": 5,
+      "filePath": "src/core/responsive/Show.tsx",
+      "line": 7,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -12555,479 +11876,6 @@
     "structuredRows": []
   },
   {
-    "name": "Spacer",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/layout/Spacer.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Spacer.tsx",
-      "line": 12,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SpacerProps"],
-    "signatures": [
-      {
-        "label": "({ size = 'm', axis = 'vertical', testID }: SpacerProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{ size = 'm', axis = 'vertical', testID }",
-            "type": "SpacerProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "SpacerProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/layout/Spacer.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Spacer.tsx",
-      "line": 6,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [
-      {
-        "name": "axis",
-        "kind": "property",
-        "type": "\"horizontal\" | \"vertical\" | \"both\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "size",
-        "kind": "property",
-        "type": "SpaceValue | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "Stack",
-    "description": "Stacks authored children directly along a responsive flex direction.",
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/features/layout/adapters/inbound/Stack.tsx",
-    "sourceLocation": {
-      "filePath": "src/features/layout/adapters/inbound/Stack.tsx",
-      "line": 10,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["StackProps"],
-    "signatures": [
-      {
-        "label": "({\n  children,\n  direction = 'column',\n  gap = 0,\n  align,\n  justify,\n  wrap,\n  ...props\n}: StackProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{\n  children,\n  direction = 'column',\n  gap = 0,\n  align,\n  justify,\n  wrap,\n  ...props\n}",
-            "type": "StackProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "StackProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/types/layout.ts",
-    "sourceLocation": {
-      "filePath": "src/types/layout.ts",
-      "line": 87,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "accessibilityLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityRole",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityRole | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityState",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityState | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessible",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "align",
-        "kind": "property",
-        "type": "Responsive<\"flex-start\" | \"flex-end\" | \"center\" | \"stretch\" | \"baseline\"> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "alignSelf",
-        "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bg",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderColor",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderWidth",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bottom",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "children",
-        "kind": "property",
-        "type": "React.ReactNode",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "direction",
-        "kind": "property",
-        "type": "Responsive<\"row\" | \"column\"> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexBasis",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexGrow",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexShrink",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "gap",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "height",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "justify",
-        "kind": "property",
-        "type": "Responsive<\"flex-start\" | \"flex-end\" | \"center\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "left",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "m",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "ml",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mx",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "my",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "opacity",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "overflow",
-        "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "p",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pl",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pointerEvents",
-        "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "position",
-        "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "px",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "py",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "radius",
-        "kind": "property",
-        "type": "Responsive<RadiusValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "right",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "style",
-        "kind": "property",
-        "type": "StyleProp<ViewStyle>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "top",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "width",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "wrap",
-        "kind": "property",
-        "type": "Responsive<\"nowrap\" | \"wrap\"> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "zIndex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
     "name": "SUPPORTED_ICON_PROVIDERS",
     "description": null,
     "isReadme": false,
@@ -13047,7 +11895,7 @@
   },
   {
     "name": "Surface",
-    "description": "Renders a themed container surface with semantic elevation and border variants.",
+    "description": "Renders a themed content surface with semantic elevation and border variants.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
@@ -13433,6 +12281,13 @@
         "description": null
       },
       {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "alignSelf",
         "kind": "property",
         "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
@@ -13450,6 +12305,20 @@
         "name": "children",
         "kind": "property",
         "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
         "required": false,
         "description": null
       },
@@ -13482,9 +12351,23 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -13664,6 +12547,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "style",
         "kind": "property",
         "type": "StyleProp<ViewStyle>",
@@ -13695,6 +12585,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -13973,14 +12870,14 @@
   },
   {
     "name": "Switch",
-    "description": null,
+    "description": "Renders a controlled or uncontrolled accessible switch.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
     "modulePath": "src/components/switch/Switch.tsx",
     "sourceLocation": {
       "filePath": "src/components/switch/Switch.tsx",
-      "line": 16,
+      "line": 17,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14030,6 +12927,13 @@
         "name": "accessible",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
         "required": false,
         "description": null
       },
@@ -14090,9 +12994,23 @@
         "description": null
       },
       {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "defaultChecked",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
         "required": false,
         "description": null
       },
@@ -14132,6 +13050,13 @@
         "description": null
       },
       {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "height",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
@@ -14149,6 +13074,13 @@
         "name": "invalid",
         "kind": "property",
         "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
         "required": false,
         "description": null
       },
@@ -14342,6 +13274,13 @@
         "description": null
       },
       {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "size",
         "kind": "property",
         "type": "ControlSize | undefined",
@@ -14366,6 +13305,13 @@
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
         "required": false,
         "description": null
       },
@@ -14420,7 +13366,7 @@
     "modulePath": "src/features/tabs/adapters/inbound/TabList.tsx",
     "sourceLocation": {
       "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
-      "line": 20,
+      "line": 19,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
@@ -14682,407 +13628,6 @@
         "name": "value",
         "kind": "property",
         "type": "string | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "Template",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/layout/Template.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Template.tsx",
-      "line": 35,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TemplateProps"],
-    "signatures": [
-      {
-        "label": "({\n  slots,\n  templates,\n  columns,\n  gap = 0,\n  rowGap,\n  colGap,\n  ...props\n}: TemplateProps) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "{\n  slots,\n  templates,\n  columns,\n  gap = 0,\n  rowGap,\n  colGap,\n  ...props\n}",
-            "type": "TemplateProps",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "TemplateProps",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/layout/Template.tsx",
-    "sourceLocation": {
-      "filePath": "src/layout/Template.tsx",
-      "line": 19,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "accessibilityLabel",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityRole",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityRole | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessibilityState",
-        "kind": "property",
-        "type": "import(\"react-native\").AccessibilityState | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "accessible",
-        "kind": "property",
-        "type": "boolean | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "alignSelf",
-        "kind": "property",
-        "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bg",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderColor",
-        "kind": "property",
-        "type": "Responsive<ColorValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "borderWidth",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "bottom",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "colGap",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "columns",
-        "kind": "property",
-        "type": "Partial<Record<\"base\" | \"sm\" | \"md\" | \"lg\" | \"xl\", number[]>> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexBasis",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexGrow",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "flexShrink",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "gap",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "height",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "left",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "m",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "maxWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minHeight",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "minWidth",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "ml",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "mx",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "my",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "opacity",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "overflow",
-        "kind": "property",
-        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "p",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pb",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pl",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pointerEvents",
-        "kind": "property",
-        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "position",
-        "kind": "property",
-        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pr",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "pt",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "px",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "py",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "radius",
-        "kind": "property",
-        "type": "Responsive<RadiusValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "right",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "rowGap",
-        "kind": "property",
-        "type": "Responsive<SpaceValue> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "slots",
-        "kind": "property",
-        "type": "SlotMap",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "style",
-        "kind": "property",
-        "type": "StyleProp<ViewStyle>",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "templates",
-        "kind": "property",
-        "type": "Partial<Record<\"base\" | \"sm\" | \"md\" | \"lg\" | \"xl\", string[][]>>",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "testID",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "top",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "width",
-        "kind": "property",
-        "type": "Responsive<string | number> | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "zIndex",
-        "kind": "property",
-        "type": "Responsive<number> | undefined",
         "required": false,
         "description": null
       }
@@ -16229,7 +14774,7 @@
       {
         "name": "textAlignVertical",
         "kind": "property",
-        "type": "\"top\" | \"bottom\" | \"auto\" | \"center\" | undefined",
+        "type": "\"top\" | \"bottom\" | \"center\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -17414,7 +15959,7 @@
       {
         "name": "textAlignVertical",
         "kind": "property",
-        "type": "\"top\" | \"bottom\" | \"auto\" | \"center\" | undefined",
+        "type": "\"top\" | \"bottom\" | \"center\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -17510,7 +16055,7 @@
       {
         "name": "align",
         "kind": "property",
-        "type": "\"left\" | \"right\" | \"auto\" | \"center\" | \"justify\" | undefined",
+        "type": "\"justify\" | \"left\" | \"right\" | \"center\" | \"auto\" | undefined",
         "required": false,
         "description": null
       },
@@ -18587,6 +17132,421 @@
       }
     ],
     "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "View",
+    "description": "Renders the token-aware responsive Surface adapter for React Native View.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/layout/adapters/inbound/View.tsx",
+    "sourceLocation": {
+      "filePath": "src/features/layout/adapters/inbound/View.tsx",
+      "line": 11,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["ViewProps"],
+    "signatures": [
+      {
+        "label": "({\n  accessible,\n  accessibilityLabel,\n  accessibilityRole,\n  accessibilityState,\n  children,\n  pointerEvents,\n  style,\n  testID,\n  ...props\n}: ViewProps) => React.JSX.Element",
+        "parameters": [
+          {
+            "name": "{\n  accessible,\n  accessibilityLabel,\n  accessibilityRole,\n  accessibilityState,\n  children,\n  pointerEvents,\n  style,\n  testID,\n  ...props\n}",
+            "type": "ViewProps",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "React.JSX.Element",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "ViewProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/layout.ts",
+    "sourceLocation": {
+      "filePath": "src/types/layout.ts",
+      "line": 70,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["Responsive"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "accessibilityLabel",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityRole",
+        "kind": "property",
+        "type": "import(\"react-native\").AccessibilityRole | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessibilityState",
+        "kind": "property",
+        "type": "import(\"react-native\").AccessibilityState | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "accessible",
+        "kind": "property",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "align",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "alignSelf",
+        "kind": "property",
+        "type": "Responsive<\"auto\" | import(\"react-native\").FlexAlignType | undefined>",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "bg",
+        "kind": "property",
+        "type": "Responsive<ColorValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "borderColor",
+        "kind": "property",
+        "type": "Responsive<ColorValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "borderWidth",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "bottom",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "children",
+        "kind": "property",
+        "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "columnGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "direction",
+        "kind": "property",
+        "type": "Responsive<\"row\" | \"column\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "flex",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "flexBasis",
+        "kind": "property",
+        "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "flexGrow",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "flexShrink",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "gap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "height",
+        "kind": "property",
+        "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "justify",
+        "kind": "property",
+        "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "left",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "m",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "maxHeight",
+        "kind": "property",
+        "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "maxWidth",
+        "kind": "property",
+        "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "mb",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "minHeight",
+        "kind": "property",
+        "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "minWidth",
+        "kind": "property",
+        "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "ml",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "mr",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "mt",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "mx",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "my",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "opacity",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "overflow",
+        "kind": "property",
+        "type": "Responsive<\"visible\" | \"hidden\" | \"scroll\" | undefined>",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "p",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "pb",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "pl",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "pointerEvents",
+        "kind": "property",
+        "type": "\"none\" | \"auto\" | \"box-none\" | \"box-only\" | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "position",
+        "kind": "property",
+        "type": "Responsive<\"absolute\" | \"relative\" | \"static\" | undefined>",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "pr",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "pt",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "px",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "py",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "radius",
+        "kind": "property",
+        "type": "Responsive<RadiusValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "right",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "rowGap",
+        "kind": "property",
+        "type": "Responsive<SpaceValue> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "style",
+        "kind": "property",
+        "type": "StyleProp<ViewStyle>",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "testID",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "top",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "width",
+        "kind": "property",
+        "type": "Responsive<string | number> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "wrap",
+        "kind": "property",
+        "type": "Responsive<\"wrap\" | \"nowrap\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "zIndex",
+        "kind": "property",
+        "type": "Responsive<number> | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
     "structuredRows": []
   }
 ]

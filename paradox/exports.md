@@ -655,8 +655,10 @@ Source: `src/theme/types.ts:97:1`
 ## AppBar
 
 Kind: `function`
-Module: `src/layout/AppBar.tsx`
-Source: `src/layout/AppBar.tsx:17:1`
+Module: `src/features/app-bar/adapters/inbound/AppBar.tsx`
+Source: `src/features/app-bar/adapters/inbound/AppBar.tsx:10:1`
+
+Renders application chrome with optional safe-area padding and leading/trailing slots.
 
 ### Signatures
 
@@ -687,63 +689,70 @@ style,
 ## AppBarProps
 
 Kind: `type`
-Module: `src/layout/AppBar.tsx`
-Source: `src/layout/AppBar.tsx:8:1`
+Module: `src/types/app-bar.ts`
+Source: `src/types/app-bar.ts:6:1`
 
 ### Members
 
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| contentStyle       | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| divider            | property | `boolean \| undefined`                                                    | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| leading            | property | `React.ReactNode`                                                         | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| safeAreaTop        | property | `boolean \| undefined`                                                    | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| trailing           | property | `React.ReactNode`                                                         | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                                                                  | no       |             |
+| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                                                                 | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode`                                                                                                        | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| contentStyle       | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| divider            | property | `boolean \| undefined`                                                                                                   | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| leading            | property | `React.ReactNode`                                                                                                        | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| safeAreaTop        | property | `boolean \| undefined`                                                                                                   | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| trailing           | property | `React.ReactNode`                                                                                                        | no       |             |
+| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## Badge
 
@@ -802,96 +811,6 @@ Source: `src/theme/types.ts:83:1`
 | focus   | property | `string` | yes      |             |
 | strong  | property | `string` | yes      |             |
 | subtle  | property | `string` | yes      |             |
-
-## Box
-
-Kind: `function`
-Module: `src/features/layout/adapters/inbound/Box.tsx`
-Source: `src/features/layout/adapters/inbound/Box.tsx:11:1`
-
-Renders the responsive foundational layout box.
-
-### Signatures
-
-- `({
-accessible,
-accessibilityLabel,
-accessibilityRole,
-accessibilityState,
-children,
-pointerEvents,
-style,
-testID,
-...props
-}: BoxProps) => React.JSX.Element`
-  - {
-    accessible,
-    accessibilityLabel,
-    accessibilityRole,
-    accessibilityState,
-    children,
-    pointerEvents,
-    style,
-    testID,
-    ...props
-    }: `BoxProps`
-  - returns: `React.JSX.Element`
-
-## BoxProps
-
-Kind: `type`
-Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:56:1`
-
-### Members
-
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
 
 ## Breakpoint
 
@@ -955,7 +874,9 @@ testID,
 
 Kind: `function`
 Module: `src/primitives/button-base/ButtonBase.tsx`
-Source: `src/primitives/button-base/ButtonBase.tsx:28:1`
+Source: `src/primitives/button-base/ButtonBase.tsx:30:1`
+
+Renders the low-level token-aware Pressable boundary shared by Surface controls.
 
 ### Signatures
 
@@ -995,56 +916,63 @@ Source: `src/primitives/button-base/types.ts:8:1`
 
 ### Members
 
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `AccessibilityRole \| undefined`                                          | no       |             |
-| accessibilityState | property | `AccessibilityState \| undefined`                                         | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode \| ((state: InteractionState) => React.ReactNode)`       | no       |             |
-| disabled           | property | `boolean \| undefined`                                                    | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| interactionPolicy  | property | `InteractionPolicy \| undefined`                                          | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| onLongPress        | property | `((event: GestureResponderEvent) => void) \| undefined`                   | no       |             |
-| onPress            | property | `((event: GestureResponderEvent) => void) \| undefined`                   | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `AccessibilityRole \| undefined`                                                                                         | no       |             |
+| accessibilityState | property | `AccessibilityState \| undefined`                                                                                        | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode \| ((state: InteractionState) => React.ReactNode)`                                                      | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| disabled           | property | `boolean \| undefined`                                                                                                   | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                         | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| onLongPress        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onPress            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## ButtonIconSpec
 
@@ -1065,6 +993,7 @@ Source: `src/types/button.ts:11:1`
 | accessibilityRole  | property | `AccessibilityRole \| undefined`                                                                                                              | no       |             |
 | accessibilityState | property | `AccessibilityState \| undefined`                                                                                                             | no       |             |
 | accessible         | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                                                  | no       |             |
 | alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                                     | no       |             |
 | bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
 | borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
@@ -1072,14 +1001,18 @@ Source: `src/types/button.ts:11:1`
 | bottom             | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | children           | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color              | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                                                  | no       |             |
 | disabled           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | flex               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | fullWidth          | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined`                      | no       |             |
 | leadingIcon        | property | `IconSource \| undefined`                                                                                                                     | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | loading            | property | `boolean \| undefined`                                                                                                                        | no       |             |
@@ -1108,12 +1041,14 @@ Source: `src/types/button.ts:11:1`
 | py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                                        | no       |             |
 | right              | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | size               | property | `ControlSize \| undefined`                                                                                                                    | no       |             |
 | testID             | property | `string \| undefined`                                                                                                                         | no       |             |
 | top                | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | trailingIcon       | property | `IconSource \| undefined`                                                                                                                     | no       |             |
 | variant            | property | `ButtonVariant \| undefined`                                                                                                                  | no       |             |
 | width              | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                                                 | no       |             |
 | zIndex             | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 
 ## Card
@@ -1154,122 +1089,60 @@ Source: `src/types/card.ts:5:1`
 
 ### Members
 
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| disabled           | property | `boolean \| undefined`                                                    | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| onPress            | property | `(() => void) \| undefined`                                               | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| variant            | property | `SurfaceVariant \| undefined`                                             | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
-
-## Center
-
-Kind: `function`
-Module: `src/layout/Center.tsx`
-Source: `src/layout/Center.tsx:9:1`
-
-### Signatures
-
-- `({ axis = 'both', style, ...props }: CenterProps) => React.JSX.Element`
-  - { axis = 'both', style, ...props }: `CenterProps`
-  - returns: `React.JSX.Element`
-
-## CenterProps
-
-Kind: `type`
-Module: `src/layout/Center.tsx`
-Source: `src/layout/Center.tsx:5:1`
-
-### Members
-
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| axis               | property | `"horizontal" \| "vertical" \| "both" \| undefined`                       | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                                                                  | no       |             |
+| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                                                                 | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode`                                                                                                        | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| disabled           | property | `boolean \| undefined`                                                                                                   | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| onPress            | property | `(() => void) \| undefined`                                                                                              | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| variant            | property | `SurfaceVariant \| undefined`                                                                                            | no       |             |
+| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## Checkbox
 
@@ -1323,6 +1196,7 @@ Source: `src/types/checkbox.ts:7:1`
 | ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
 | accessibilityLabel | property | `string \| undefined`                                                                                                                         | no       |             |
 | accessible         | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                                                  | no       |             |
 | alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                                     | no       |             |
 | bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
 | borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
@@ -1331,15 +1205,19 @@ Source: `src/types/checkbox.ts:7:1`
 | checked            | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | children           | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color              | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | defaultChecked     | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                                                  | no       |             |
 | disabled           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | flex               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | invalid            | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined`                      | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
@@ -1367,10 +1245,12 @@ Source: `src/types/checkbox.ts:7:1`
 | radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                                        | no       |             |
 | readOnly           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | right              | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | size               | property | `ControlSize \| undefined`                                                                                                                    | no       |             |
 | testID             | property | `string \| undefined`                                                                                                                         | no       |             |
 | top                | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | width              | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                                                 | no       |             |
 | zIndex             | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 
 ## ColorHarmony
@@ -1390,86 +1270,6 @@ Source: `node_modules/@ankhorage/color-theory/dist/swatches.d.ts:6:1`
 Kind: `unknown`
 Module: `node_modules/@ankhorage/color-theory/dist/swatches.d.ts`
 Source: `node_modules/@ankhorage/color-theory/dist/swatches.d.ts:3:1`
-
-## Container
-
-Kind: `function`
-Module: `src/features/layout/adapters/inbound/Container.tsx`
-Source: `src/features/layout/adapters/inbound/Container.tsx:11:1`
-
-Centers responsive content inside a configurable maximum width.
-
-### Signatures
-
-- `({
-children,
-maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },
-px = { base: 16, md: 24, lg: 32 },
-...props
-}: ContainerProps) => React.JSX.Element`
-  - {
-    children,
-    maxWidth = { base: Number.MAX_SAFE_INTEGER, lg: 1120 },
-    px = { base: 16, md: 24, lg: 32 },
-    ...props
-    }: `ContainerProps`
-  - returns: `React.JSX.Element`
-
-## ContainerProps
-
-Kind: `type`
-Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:66:1`
-
-### Members
-
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
 
 ## ContentSemantics
 
@@ -1557,63 +1357,72 @@ thickness = 1,
 
 Kind: `type`
 Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:72:1`
+Source: `src/types/layout.ts:80:1`
 
 ### Members
 
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| color              | property | `ColorValue \| undefined`                                                 | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| orientation        | property | `"horizontal" \| "vertical" \| undefined`                                 | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| thickness          | property | `number \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                                                                  | no       |             |
+| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                                                                 | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode`                                                                                                        | no       |             |
+| color              | property | `ColorValue \| undefined`                                                                                                | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| orientation        | property | `"horizontal" \| "vertical" \| undefined`                                                                                | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| thickness          | property | `number \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## Field
 
 Kind: `function`
 Module: `src/components/field/Field.tsx`
-Source: `src/components/field/Field.tsx:9:1`
+Source: `src/components/field/Field.tsx:10:1`
+
+Composes a label, control, and helper or error message into one field.
 
 ### Signatures
 
@@ -1794,62 +1603,67 @@ minItemWidth,
 
 Kind: `type`
 Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:78:1`
+Source: `src/types/layout.ts:86:1`
 
 ### Members
 
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                     | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                         | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| colGap             | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| cols               | property | `Responsive<number>`                                                      | yes      |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| gap                | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minItemWidth       | property | `Responsive<number> \| undefined`                                         | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                                                                  | no       |             |
+| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                                                                 | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode`                                                                                                        | no       |             |
+| colGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| cols               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minItemWidth       | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## Heading
 
@@ -1901,7 +1715,7 @@ Source: `src/types/typography.ts:9:1`
 
 | Name          | Kind     | Type                                                                                                                                          | Required | Description |
 | ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| align         | property | `"left" \| "right" \| "auto" \| "center" \| "justify" \| undefined`                                                                           | no       |             |
+| align         | property | `"justify" \| "left" \| "right" \| "center" \| "auto" \| undefined`                                                                           | no       |             |
 | children      | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color         | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
 | emphasis      | property | `"default" \| "muted" \| "subtle" \| "inverse" \| undefined`                                                                                  | no       |             |
@@ -2020,20 +1834,25 @@ Source: `src/types/button.ts:25:1`
 | accessibilityRole  | property | `AccessibilityRole \| undefined`                                                                                                              | no       |             |
 | accessibilityState | property | `AccessibilityState \| undefined`                                                                                                             | no       |             |
 | accessible         | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                                                  | no       |             |
 | alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                                     | no       |             |
 | bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
 | borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
 | borderWidth        | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | bottom             | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | color              | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                                                  | no       |             |
 | disabled           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | flex               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | icon               | property | `IconSource`                                                                                                                                  | yes      |             |
 | interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined`                      | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
@@ -2060,11 +1879,13 @@ Source: `src/types/button.ts:25:1`
 | py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                                        | no       |             |
 | right              | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | size               | property | `ControlSize \| undefined`                                                                                                                    | no       |             |
 | testID             | property | `string \| undefined`                                                                                                                         | no       |             |
 | top                | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | variant            | property | `ButtonVariant \| undefined`                                                                                                                  | no       |             |
 | width              | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                                                 | no       |             |
 | zIndex             | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 
 ## IconProps
@@ -2162,24 +1983,6 @@ Source: `src/types/image.ts:14:1`
 | style              | property | `StyleProp<ImageStyle>`                                                  | no       |             |
 | testID             | property | `string \| undefined`                                                    | no       |             |
 | width              | property | `string \| number \| undefined`                                          | no       |             |
-
-## Inline
-
-Kind: `function`
-Module: `src/layout/Inline.tsx`
-Source: `src/layout/Inline.tsx:7:1`
-
-### Signatures
-
-- `({ wrap = 'wrap', align = 'center', ...props }: InlineProps) => React.JSX.Element`
-  - { wrap = 'wrap', align = 'center', ...props }: `InlineProps`
-  - returns: `React.JSX.Element`
-
-## InlineProps
-
-Kind: `unknown`
-Module: `src/layout/Inline.tsx`
-Source: `src/layout/Inline.tsx:5:1`
 
 ## InteractionPolicy
 
@@ -2282,7 +2085,9 @@ Source: `src/components/label/types.ts:5:1`
 
 Kind: `function`
 Module: `src/components/list-item/ListItem.tsx`
-Source: `src/components/list-item/ListItem.tsx:47:1`
+Source: `src/components/list-item/ListItem.tsx:53:1`
+
+Renders a static or pressable list item.
 
 ### Signatures
 
@@ -2409,7 +2214,7 @@ Source: `src/types/popover.ts:8:1`
 
 Kind: `function`
 Module: `src/features/popover-menu/adapters/inbound/PopoverMenu.tsx`
-Source: `src/features/popover-menu/adapters/inbound/PopoverMenu.tsx:17:1`
+Source: `src/features/popover-menu/adapters/inbound/PopoverMenu.tsx:16:1`
 
 Presents an anchored action menu using the shared Popover capability.
 
@@ -2555,6 +2360,7 @@ Source: `src/types/radio.ts:7:1`
 | ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
 | accessibilityLabel | property | `string \| undefined`                                                                                                                         | no       |             |
 | accessible         | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                                                  | no       |             |
 | alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                                     | no       |             |
 | bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
 | borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
@@ -2563,15 +2369,19 @@ Source: `src/types/radio.ts:7:1`
 | checked            | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | children           | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color              | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | defaultChecked     | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                                                  | no       |             |
 | disabled           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | flex               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | invalid            | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined`                      | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
@@ -2599,10 +2409,12 @@ Source: `src/types/radio.ts:7:1`
 | radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                                        | no       |             |
 | readOnly           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | right              | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | size               | property | `ControlSize \| undefined`                                                                                                                    | no       |             |
 | testID             | property | `string \| undefined`                                                                                                                         | no       |             |
 | top                | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | width              | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                                                 | no       |             |
 | zIndex             | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 
 ## resolveResponsive
@@ -2702,300 +2514,225 @@ Source: `src/theme/types.ts:42:1`
 | softHover        | property | `string` | yes      |             |
 | strong           | property | `string` | yes      |             |
 
-## ScrollArea
+## ScrollView
 
 Kind: `function`
-Module: `src/layout/ScrollArea.tsx`
-Source: `src/layout/ScrollArea.tsx:22:1`
+Module: `src/features/layout/adapters/inbound/ScrollView.tsx`
+Source: `src/features/layout/adapters/inbound/ScrollView.tsx:10:1`
+
+Renders the token-aware responsive Surface adapter for React Native ScrollView.
 
 ### Signatures
 
-- `({
-children,
-contentContainerStyle,
-p,
-px,
-py,
-pt,
-pb,
-pl,
-pr,
-m,
-mx,
-my,
-mt,
-mb,
-ml,
-mr,
-bg,
-radius,
-borderWidth,
-borderColor,
-width,
-height,
-minWidth,
-maxWidth,
-minHeight,
-maxHeight,
-flex,
-flexGrow,
-flexShrink,
-flexBasis,
-alignSelf,
-position,
-top,
-bottom,
-left,
-right,
-overflow,
-zIndex,
-opacity,
-style,
-...scrollProps
-}: ScrollAreaProps) => React.JSX.Element`
-  - {
-    children,
-    contentContainerStyle,
-    p,
-    px,
-    py,
-    pt,
-    pb,
-    pl,
-    pr,
-    m,
-    mx,
-    my,
-    mt,
-    mb,
-    ml,
-    mr,
-    bg,
-    radius,
-    borderWidth,
-    borderColor,
-    width,
-    height,
-    minWidth,
-    maxWidth,
-    minHeight,
-    maxHeight,
-    flex,
-    flexGrow,
-    flexShrink,
-    flexBasis,
-    alignSelf,
-    position,
-    top,
-    bottom,
-    left,
-    right,
-    overflow,
-    zIndex,
-    opacity,
-    style,
-    ...scrollProps
-    }: `ScrollAreaProps`
+- `(props: ScrollViewProps) => React.JSX.Element`
+  - props: `ScrollViewProps`
   - returns: `React.JSX.Element`
 
-## ScrollAreaProps
+## ScrollViewProps
 
 Kind: `type`
-Module: `src/layout/ScrollArea.tsx`
-Source: `src/layout/ScrollArea.tsx:14:1`
+Module: `src/types/layout.ts`
+Source: `src/types/layout.ts:95:1`
 
 ### Members
 
-| Name                                      | Kind     | Type                                                                                                           | Required | Description |
-| ----------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityActions                      | property | `readonly Readonly<{ name: AccessibilityActionName \| string; label?: string \| undefined; }>[] \| undefined`  | no       |             |
-| accessibilityElementsHidden               | property | `boolean \| undefined`                                                                                         | no       |             |
-| accessibilityHint                         | property | `string \| undefined`                                                                                          | no       |             |
-| accessibilityIgnoresInvertColors          | property | `boolean \| undefined`                                                                                         | no       |             |
-| accessibilityLabel                        | property | `string \| undefined`                                                                                          | no       |             |
-| accessibilityLabelledBy                   | property | `string \| string[] \| undefined`                                                                              | no       |             |
-| accessibilityLanguage                     | property | `string \| undefined`                                                                                          | no       |             |
-| accessibilityLargeContentTitle            | property | `string \| undefined`                                                                                          | no       |             |
-| accessibilityLiveRegion                   | property | `"none" \| "polite" \| "assertive" \| undefined`                                                               | no       |             |
-| accessibilityRespondsToUserInteraction    | property | `boolean \| undefined`                                                                                         | no       |             |
-| accessibilityRole                         | property | `AccessibilityRole \| undefined`                                                                               | no       |             |
-| accessibilityShowsLargeContentViewer      | property | `boolean \| undefined`                                                                                         | no       |             |
-| accessibilityState                        | property | `AccessibilityState \| undefined`                                                                              | no       |             |
-| accessibilityValue                        | property | `AccessibilityValue \| undefined`                                                                              | no       |             |
-| accessibilityViewIsModal                  | property | `boolean \| undefined`                                                                                         | no       |             |
-| accessible                                | property | `boolean \| undefined`                                                                                         | no       |             |
-| alignSelf                                 | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                      | no       |             |
-| alwaysBounceHorizontal                    | property | `boolean \| undefined`                                                                                         | no       |             |
-| alwaysBounceVertical                      | property | `boolean \| undefined`                                                                                         | no       |             |
-| aria-busy                                 | property | `boolean \| undefined`                                                                                         | no       |             |
-| aria-checked                              | property | `boolean \| "mixed" \| undefined`                                                                              | no       |             |
-| aria-disabled                             | property | `boolean \| undefined`                                                                                         | no       |             |
-| aria-expanded                             | property | `boolean \| undefined`                                                                                         | no       |             |
-| aria-hidden                               | property | `boolean \| undefined`                                                                                         | no       |             |
-| aria-label                                | property | `string \| undefined`                                                                                          | no       |             |
-| aria-labelledby                           | property | `string \| undefined`                                                                                          | no       |             |
-| aria-live                                 | property | `"off" \| "polite" \| "assertive" \| undefined`                                                                | no       |             |
-| aria-modal                                | property | `boolean \| undefined`                                                                                         | no       |             |
-| aria-selected                             | property | `boolean \| undefined`                                                                                         | no       |             |
-| aria-valuemax                             | property | `number \| undefined`                                                                                          | no       |             |
-| aria-valuemin                             | property | `number \| undefined`                                                                                          | no       |             |
-| aria-valuenow                             | property | `number \| undefined`                                                                                          | no       |             |
-| aria-valuetext                            | property | `string \| undefined`                                                                                          | no       |             |
-| automaticallyAdjustContentInsets          | property | `boolean \| undefined`                                                                                         | no       |             |
-| automaticallyAdjustKeyboardInsets         | property | `boolean \| undefined`                                                                                         | no       |             |
-| automaticallyAdjustsScrollIndicatorInsets | property | `boolean \| undefined`                                                                                         | no       |             |
-| bg                                        | property | `Responsive<ColorValue> \| undefined`                                                                          | no       |             |
-| borderColor                               | property | `Responsive<ColorValue> \| undefined`                                                                          | no       |             |
-| borderWidth                               | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| bottom                                    | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| bounces                                   | property | `boolean \| undefined`                                                                                         | no       |             |
-| bouncesZoom                               | property | `boolean \| undefined`                                                                                         | no       |             |
-| canCancelContentTouches                   | property | `boolean \| undefined`                                                                                         | no       |             |
-| centerContent                             | property | `boolean \| undefined`                                                                                         | no       |             |
-| children                                  | property | `React.ReactNode`                                                                                              | no       |             |
-| collapsable                               | property | `boolean \| undefined`                                                                                         | no       |             |
-| collapsableChildren                       | property | `boolean \| undefined`                                                                                         | no       |             |
-| contentContainerStyle                     | property | `StyleProp<ViewStyle>`                                                                                         | no       |             |
-| contentInset                              | property | `Insets \| undefined`                                                                                          | no       |             |
-| contentInsetAdjustmentBehavior            | property | `"never" \| "always" \| "automatic" \| "scrollableAxes" \| undefined`                                          | no       |             |
-| contentOffset                             | property | `PointProp \| undefined`                                                                                       | no       |             |
-| decelerationRate                          | property | `number \| "normal" \| "fast" \| undefined`                                                                    | no       |             |
-| directionalLockEnabled                    | property | `boolean \| undefined`                                                                                         | no       |             |
-| disableIntervalMomentum                   | property | `boolean \| undefined`                                                                                         | no       |             |
-| disableScrollViewPanResponder             | property | `boolean \| undefined`                                                                                         | no       |             |
-| endFillColor                              | property | `ColorValue \| undefined`                                                                                      | no       |             |
-| fadingEdgeLength                          | property | `number \| { start: number; end: number; } \| undefined`                                                       | no       |             |
-| flex                                      | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| flexBasis                                 | property | `Responsive<string \| number> \| undefined`                                                                    | no       |             |
-| flexGrow                                  | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| flexShrink                                | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| focusable                                 | property | `boolean \| undefined`                                                                                         | no       |             |
-| hasTVPreferredFocus                       | property | `boolean \| undefined`                                                                                         | no       |             |
-| height                                    | property | `Responsive<string \| number> \| undefined`                                                                    | no       |             |
-| hitSlop                                   | property | `number \| Insets \| null \| undefined`                                                                        | no       |             |
-| horizontal                                | property | `boolean \| null \| undefined`                                                                                 | no       |             |
-| id                                        | property | `string \| undefined`                                                                                          | no       |             |
-| importantForAccessibility                 | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined`                                                | no       |             |
-| indicatorStyle                            | property | `"default" \| "black" \| "white" \| undefined`                                                                 | no       |             |
-| innerViewRef                              | property | `React.RefObject<View> \| undefined`                                                                           | no       |             |
-| invertStickyHeaders                       | property | `boolean \| undefined`                                                                                         | no       |             |
-| isTVSelectable                            | property | `boolean \| undefined`                                                                                         | no       |             |
-| keyboardDismissMode                       | property | `"none" \| "interactive" \| "on-drag" \| undefined`                                                            | no       |             |
-| keyboardShouldPersistTaps                 | property | `boolean \| "never" \| "always" \| "handled" \| undefined`                                                     | no       |             |
-| left                                      | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| m                                         | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| maintainVisibleContentPosition            | property | `{ autoscrollToTopThreshold?: number \| null \| undefined; minIndexForVisible: number; } \| null \| undefined` | no       |             |
-| maxHeight                                 | property | `Responsive<string \| number> \| undefined`                                                                    | no       |             |
-| maximumZoomScale                          | property | `number \| undefined`                                                                                          | no       |             |
-| maxWidth                                  | property | `Responsive<string \| number> \| undefined`                                                                    | no       |             |
-| mb                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| minHeight                                 | property | `Responsive<string \| number> \| undefined`                                                                    | no       |             |
-| minimumZoomScale                          | property | `number \| undefined`                                                                                          | no       |             |
-| minWidth                                  | property | `Responsive<string \| number> \| undefined`                                                                    | no       |             |
-| ml                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| mr                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| mt                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| mx                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| my                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| nativeID                                  | property | `string \| undefined`                                                                                          | no       |             |
-| needsOffscreenAlphaCompositing            | property | `boolean \| undefined`                                                                                         | no       |             |
-| nestedScrollEnabled                       | property | `boolean \| undefined`                                                                                         | no       |             |
-| onAccessibilityAction                     | property | `((event: AccessibilityActionEvent) => void) \| undefined`                                                     | no       |             |
-| onAccessibilityEscape                     | property | `(() => void) \| undefined`                                                                                    | no       |             |
-| onAccessibilityTap                        | property | `(() => void) \| undefined`                                                                                    | no       |             |
-| onBlur                                    | property | `((e: BlurEvent) => void) \| null \| undefined`                                                                | no       |             |
-| onContentSizeChange                       | property | `((contentWidth: number, contentHeight: number) => void) \| undefined`                                         | no       |             |
-| onFocus                                   | property | `((e: FocusEvent) => void) \| null \| undefined`                                                               | no       |             |
-| onLayout                                  | property | `((event: LayoutChangeEvent) => void) \| undefined`                                                            | no       |             |
-| onMagicTap                                | property | `(() => void) \| undefined`                                                                                    | no       |             |
-| onMomentumScrollBegin                     | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                      | no       |             |
-| onMomentumScrollEnd                       | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                      | no       |             |
-| onMoveShouldSetResponder                  | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                     | no       |             |
-| onMoveShouldSetResponderCapture           | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                     | no       |             |
-| onPointerCancel                           | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerCancelCapture                    | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerDown                             | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerDownCapture                      | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerEnter                            | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerEnterCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerLeave                            | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerLeaveCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerMove                             | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerMoveCapture                      | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerUp                               | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onPointerUpCapture                        | property | `((event: PointerEvent) => void) \| undefined`                                                                 | no       |             |
-| onResponderEnd                            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onResponderGrant                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onResponderMove                           | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onResponderReject                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onResponderRelease                        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onResponderStart                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onResponderTerminate                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onResponderTerminationRequest             | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                     | no       |             |
-| onScroll                                  | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                      | no       |             |
-| onScrollAnimationEnd                      | property | `(() => void) \| undefined`                                                                                    | no       |             |
-| onScrollBeginDrag                         | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                      | no       |             |
-| onScrollEndDrag                           | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                      | no       |             |
-| onScrollToTop                             | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                      | no       |             |
-| onStartShouldSetResponder                 | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                     | no       |             |
-| onStartShouldSetResponderCapture          | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                     | no       |             |
-| onTouchCancel                             | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onTouchEnd                                | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onTouchEndCapture                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onTouchMove                               | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| onTouchStart                              | property | `((event: GestureResponderEvent) => void) \| undefined`                                                        | no       |             |
-| opacity                                   | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| overflow                                  | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                   | no       |             |
-| overScrollMode                            | property | `"auto" \| "never" \| "always" \| undefined`                                                                   | no       |             |
-| p                                         | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| pagingEnabled                             | property | `boolean \| undefined`                                                                                         | no       |             |
-| pb                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| persistentScrollbar                       | property | `boolean \| undefined`                                                                                         | no       |             |
-| pinchGestureEnabled                       | property | `boolean \| undefined`                                                                                         | no       |             |
-| pl                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| pointerEvents                             | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                    | no       |             |
-| position                                  | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                | no       |             |
-| pr                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| pt                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| px                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| py                                        | property | `Responsive<SpaceValue> \| undefined`                                                                          | no       |             |
-| radius                                    | property | `Responsive<RadiusValue> \| undefined`                                                                         | no       |             |
-| refreshControl                            | property | `React.ReactElement<RefreshControlProps, string \| React.JSXElementConstructor<any>> \| undefined`             | no       |             |
-| removeClippedSubviews                     | property | `boolean \| undefined`                                                                                         | no       |             |
-| renderToHardwareTextureAndroid            | property | `boolean \| undefined`                                                                                         | no       |             |
-| right                                     | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| role                                      | property | `Role \| undefined`                                                                                            | no       |             |
-| screenReaderFocusable                     | property | `boolean \| undefined`                                                                                         | no       |             |
-| scrollEnabled                             | property | `boolean \| undefined`                                                                                         | no       |             |
-| scrollEventThrottle                       | property | `number \| undefined`                                                                                          | no       |             |
-| scrollIndicatorInsets                     | property | `Insets \| undefined`                                                                                          | no       |             |
-| scrollPerfTag                             | property | `string \| undefined`                                                                                          | no       |             |
-| scrollsChildToFocus                       | property | `boolean \| undefined`                                                                                         | no       |             |
-| scrollsToTop                              | property | `boolean \| undefined`                                                                                         | no       |             |
-| scrollToOverflowEnabled                   | property | `boolean \| undefined`                                                                                         | no       |             |
-| scrollViewRef                             | property | `React.RefObject<ScrollView> \| undefined`                                                                     | no       |             |
-| shouldRasterizeIOS                        | property | `boolean \| undefined`                                                                                         | no       |             |
-| showsHorizontalScrollIndicator            | property | `boolean \| undefined`                                                                                         | no       |             |
-| showsVerticalScrollIndicator              | property | `boolean \| undefined`                                                                                         | no       |             |
-| snapToAlignment                           | property | `"center" \| "start" \| "end" \| undefined`                                                                    | no       |             |
-| snapToEnd                                 | property | `boolean \| undefined`                                                                                         | no       |             |
-| snapToInterval                            | property | `number \| undefined`                                                                                          | no       |             |
-| snapToOffsets                             | property | `number[] \| undefined`                                                                                        | no       |             |
-| snapToStart                               | property | `boolean \| undefined`                                                                                         | no       |             |
-| StickyHeaderComponent                     | property | `React.ComponentType<any> \| undefined`                                                                        | no       |             |
-| stickyHeaderHiddenOnScroll                | property | `boolean \| undefined`                                                                                         | no       |             |
-| stickyHeaderIndices                       | property | `number[] \| undefined`                                                                                        | no       |             |
-| style                                     | property | `StyleProp<ViewStyle>`                                                                                         | no       |             |
-| tabIndex                                  | property | `0 \| -1 \| undefined`                                                                                         | no       |             |
-| testID                                    | property | `string \| undefined`                                                                                          | no       |             |
-| top                                       | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| tvParallaxMagnification                   | property | `number \| undefined`                                                                                          | no       |             |
-| tvParallaxShiftDistanceX                  | property | `number \| undefined`                                                                                          | no       |             |
-| tvParallaxShiftDistanceY                  | property | `number \| undefined`                                                                                          | no       |             |
-| tvParallaxTiltAngle                       | property | `number \| undefined`                                                                                          | no       |             |
-| width                                     | property | `Responsive<string \| number> \| undefined`                                                                    | no       |             |
-| zIndex                                    | property | `Responsive<number> \| undefined`                                                                              | no       |             |
-| zoomScale                                 | property | `number \| undefined`                                                                                          | no       |             |
+| Name                                      | Kind     | Type                                                                                                                     | Required | Description |
+| ----------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityActions                      | property | `readonly Readonly<{ name: AccessibilityActionName \| string; label?: string \| undefined; }>[] \| undefined`            | no       |             |
+| accessibilityElementsHidden               | property | `boolean \| undefined`                                                                                                   | no       |             |
+| accessibilityHint                         | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityIgnoresInvertColors          | property | `boolean \| undefined`                                                                                                   | no       |             |
+| accessibilityLabel                        | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityLabelledBy                   | property | `string \| string[] \| undefined`                                                                                        | no       |             |
+| accessibilityLanguage                     | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityLargeContentTitle            | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityLiveRegion                   | property | `"none" \| "polite" \| "assertive" \| undefined`                                                                         | no       |             |
+| accessibilityRespondsToUserInteraction    | property | `boolean \| undefined`                                                                                                   | no       |             |
+| accessibilityRole                         | property | `AccessibilityRole \| undefined`                                                                                         | no       |             |
+| accessibilityShowsLargeContentViewer      | property | `boolean \| undefined`                                                                                                   | no       |             |
+| accessibilityState                        | property | `AccessibilityState \| undefined`                                                                                        | no       |             |
+| accessibilityValue                        | property | `AccessibilityValue \| undefined`                                                                                        | no       |             |
+| accessibilityViewIsModal                  | property | `boolean \| undefined`                                                                                                   | no       |             |
+| accessible                                | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align                                     | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf                                 | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| alwaysBounceHorizontal                    | property | `boolean \| undefined`                                                                                                   | no       |             |
+| alwaysBounceVertical                      | property | `boolean \| undefined`                                                                                                   | no       |             |
+| aria-busy                                 | property | `boolean \| undefined`                                                                                                   | no       |             |
+| aria-checked                              | property | `boolean \| "mixed" \| undefined`                                                                                        | no       |             |
+| aria-disabled                             | property | `boolean \| undefined`                                                                                                   | no       |             |
+| aria-expanded                             | property | `boolean \| undefined`                                                                                                   | no       |             |
+| aria-hidden                               | property | `boolean \| undefined`                                                                                                   | no       |             |
+| aria-label                                | property | `string \| undefined`                                                                                                    | no       |             |
+| aria-labelledby                           | property | `string \| undefined`                                                                                                    | no       |             |
+| aria-live                                 | property | `"off" \| "polite" \| "assertive" \| undefined`                                                                          | no       |             |
+| aria-modal                                | property | `boolean \| undefined`                                                                                                   | no       |             |
+| aria-selected                             | property | `boolean \| undefined`                                                                                                   | no       |             |
+| aria-valuemax                             | property | `number \| undefined`                                                                                                    | no       |             |
+| aria-valuemin                             | property | `number \| undefined`                                                                                                    | no       |             |
+| aria-valuenow                             | property | `number \| undefined`                                                                                                    | no       |             |
+| aria-valuetext                            | property | `string \| undefined`                                                                                                    | no       |             |
+| automaticallyAdjustContentInsets          | property | `boolean \| undefined`                                                                                                   | no       |             |
+| automaticallyAdjustKeyboardInsets         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| automaticallyAdjustsScrollIndicatorInsets | property | `boolean \| undefined`                                                                                                   | no       |             |
+| bg                                        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderColor                               | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderWidth                               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bottom                                    | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bounces                                   | property | `boolean \| undefined`                                                                                                   | no       |             |
+| bouncesZoom                               | property | `boolean \| undefined`                                                                                                   | no       |             |
+| canCancelContentTouches                   | property | `boolean \| undefined`                                                                                                   | no       |             |
+| centerContent                             | property | `boolean \| undefined`                                                                                                   | no       |             |
+| children                                  | property | `React.ReactNode`                                                                                                        | no       |             |
+| collapsable                               | property | `boolean \| undefined`                                                                                                   | no       |             |
+| collapsableChildren                       | property | `boolean \| undefined`                                                                                                   | no       |             |
+| columnGap                                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| contentContainerStyle                     | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| contentInset                              | property | `Insets \| undefined`                                                                                                    | no       |             |
+| contentInsetAdjustmentBehavior            | property | `"never" \| "always" \| "automatic" \| "scrollableAxes" \| undefined`                                                    | no       |             |
+| contentOffset                             | property | `PointProp \| undefined`                                                                                                 | no       |             |
+| decelerationRate                          | property | `number \| "fast" \| "normal" \| undefined`                                                                              | no       |             |
+| direction                                 | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| directionalLockEnabled                    | property | `boolean \| undefined`                                                                                                   | no       |             |
+| disableIntervalMomentum                   | property | `boolean \| undefined`                                                                                                   | no       |             |
+| disableScrollViewPanResponder             | property | `boolean \| undefined`                                                                                                   | no       |             |
+| endFillColor                              | property | `ColorValue \| undefined`                                                                                                | no       |             |
+| fadingEdgeLength                          | property | `number \| { start: number; end: number; } \| undefined`                                                                 | no       |             |
+| flex                                      | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis                                 | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow                                  | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink                                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| focusable                                 | property | `boolean \| undefined`                                                                                                   | no       |             |
+| gap                                       | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| hasTVPreferredFocus                       | property | `boolean \| undefined`                                                                                                   | no       |             |
+| height                                    | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| hitSlop                                   | property | `number \| Insets \| null \| undefined`                                                                                  | no       |             |
+| horizontal                                | property | `boolean \| null \| undefined`                                                                                           | no       |             |
+| id                                        | property | `string \| undefined`                                                                                                    | no       |             |
+| importantForAccessibility                 | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined`                                                          | no       |             |
+| indicatorStyle                            | property | `"default" \| "black" \| "white" \| undefined`                                                                           | no       |             |
+| innerViewRef                              | property | `React.RefObject<View> \| undefined`                                                                                     | no       |             |
+| invertStickyHeaders                       | property | `boolean \| undefined`                                                                                                   | no       |             |
+| isTVSelectable                            | property | `boolean \| undefined`                                                                                                   | no       |             |
+| justify                                   | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| keyboardDismissMode                       | property | `"none" \| "interactive" \| "on-drag" \| undefined`                                                                      | no       |             |
+| keyboardShouldPersistTaps                 | property | `boolean \| "never" \| "always" \| "handled" \| undefined`                                                               | no       |             |
+| left                                      | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                                         | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maintainVisibleContentPosition            | property | `{ autoscrollToTopThreshold?: number \| null \| undefined; minIndexForVisible: number; } \| null \| undefined`           | no       |             |
+| maxHeight                                 | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maximumZoomScale                          | property | `number \| undefined`                                                                                                    | no       |             |
+| maxWidth                                  | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight                                 | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minimumZoomScale                          | property | `number \| undefined`                                                                                                    | no       |             |
+| minWidth                                  | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| nativeID                                  | property | `string \| undefined`                                                                                                    | no       |             |
+| needsOffscreenAlphaCompositing            | property | `boolean \| undefined`                                                                                                   | no       |             |
+| nestedScrollEnabled                       | property | `boolean \| undefined`                                                                                                   | no       |             |
+| onAccessibilityAction                     | property | `((event: AccessibilityActionEvent) => void) \| undefined`                                                               | no       |             |
+| onAccessibilityEscape                     | property | `(() => void) \| undefined`                                                                                              | no       |             |
+| onAccessibilityTap                        | property | `(() => void) \| undefined`                                                                                              | no       |             |
+| onBlur                                    | property | `((e: BlurEvent) => void) \| null \| undefined`                                                                          | no       |             |
+| onContentSizeChange                       | property | `((contentWidth: number, contentHeight: number) => void) \| undefined`                                                   | no       |             |
+| onFocus                                   | property | `((e: FocusEvent) => void) \| null \| undefined`                                                                         | no       |             |
+| onLayout                                  | property | `((event: LayoutChangeEvent) => void) \| undefined`                                                                      | no       |             |
+| onMagicTap                                | property | `(() => void) \| undefined`                                                                                              | no       |             |
+| onMomentumScrollBegin                     | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                                | no       |             |
+| onMomentumScrollEnd                       | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                                | no       |             |
+| onMoveShouldSetResponder                  | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                               | no       |             |
+| onMoveShouldSetResponderCapture           | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                               | no       |             |
+| onPointerCancel                           | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerCancelCapture                    | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerDown                             | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerDownCapture                      | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerEnter                            | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerEnterCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerLeave                            | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerLeaveCapture                     | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerMove                             | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerMoveCapture                      | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerUp                               | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onPointerUpCapture                        | property | `((event: PointerEvent) => void) \| undefined`                                                                           | no       |             |
+| onResponderEnd                            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onResponderGrant                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onResponderMove                           | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onResponderReject                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onResponderRelease                        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onResponderStart                          | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onResponderTerminate                      | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onResponderTerminationRequest             | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                               | no       |             |
+| onScroll                                  | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                                | no       |             |
+| onScrollAnimationEnd                      | property | `(() => void) \| undefined`                                                                                              | no       |             |
+| onScrollBeginDrag                         | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                                | no       |             |
+| onScrollEndDrag                           | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                                | no       |             |
+| onScrollToTop                             | property | `((event: NativeSyntheticEvent<NativeScrollEvent>) => void) \| undefined`                                                | no       |             |
+| onStartShouldSetResponder                 | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                               | no       |             |
+| onStartShouldSetResponderCapture          | property | `((event: GestureResponderEvent) => boolean) \| undefined`                                                               | no       |             |
+| onTouchCancel                             | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onTouchEnd                                | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onTouchEndCapture                         | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onTouchMove                               | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onTouchStart                              | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| opacity                                   | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow                                  | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| overScrollMode                            | property | `"auto" \| "never" \| "always" \| undefined`                                                                             | no       |             |
+| p                                         | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pagingEnabled                             | property | `boolean \| undefined`                                                                                                   | no       |             |
+| pb                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| persistentScrollbar                       | property | `boolean \| undefined`                                                                                                   | no       |             |
+| pinchGestureEnabled                       | property | `boolean \| undefined`                                                                                                   | no       |             |
+| pl                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pointerEvents                             | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
+| position                                  | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                                        | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius                                    | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| refreshControl                            | property | `React.ReactElement<RefreshControlProps, string \| React.JSXElementConstructor<any>> \| undefined`                       | no       |             |
+| removeClippedSubviews                     | property | `boolean \| undefined`                                                                                                   | no       |             |
+| renderToHardwareTextureAndroid            | property | `boolean \| undefined`                                                                                                   | no       |             |
+| right                                     | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| role                                      | property | `Role \| undefined`                                                                                                      | no       |             |
+| rowGap                                    | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| screenReaderFocusable                     | property | `boolean \| undefined`                                                                                                   | no       |             |
+| scrollEnabled                             | property | `boolean \| undefined`                                                                                                   | no       |             |
+| scrollEventThrottle                       | property | `number \| undefined`                                                                                                    | no       |             |
+| scrollIndicatorInsets                     | property | `Insets \| undefined`                                                                                                    | no       |             |
+| scrollPerfTag                             | property | `string \| undefined`                                                                                                    | no       |             |
+| scrollsChildToFocus                       | property | `boolean \| undefined`                                                                                                   | no       |             |
+| scrollsToTop                              | property | `boolean \| undefined`                                                                                                   | no       |             |
+| scrollToOverflowEnabled                   | property | `boolean \| undefined`                                                                                                   | no       |             |
+| scrollViewRef                             | property | `React.RefObject<ScrollView> \| undefined`                                                                               | no       |             |
+| shouldRasterizeIOS                        | property | `boolean \| undefined`                                                                                                   | no       |             |
+| showsHorizontalScrollIndicator            | property | `boolean \| undefined`                                                                                                   | no       |             |
+| showsVerticalScrollIndicator              | property | `boolean \| undefined`                                                                                                   | no       |             |
+| snapToAlignment                           | property | `"center" \| "start" \| "end" \| undefined`                                                                              | no       |             |
+| snapToEnd                                 | property | `boolean \| undefined`                                                                                                   | no       |             |
+| snapToInterval                            | property | `number \| undefined`                                                                                                    | no       |             |
+| snapToOffsets                             | property | `number[] \| undefined`                                                                                                  | no       |             |
+| snapToStart                               | property | `boolean \| undefined`                                                                                                   | no       |             |
+| StickyHeaderComponent                     | property | `React.ComponentType<any> \| undefined`                                                                                  | no       |             |
+| stickyHeaderHiddenOnScroll                | property | `boolean \| undefined`                                                                                                   | no       |             |
+| stickyHeaderIndices                       | property | `number[] \| undefined`                                                                                                  | no       |             |
+| style                                     | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| tabIndex                                  | property | `0 \| -1 \| undefined`                                                                                                   | no       |             |
+| testID                                    | property | `string \| undefined`                                                                                                    | no       |             |
+| top                                       | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| tvParallaxMagnification                   | property | `number \| undefined`                                                                                                    | no       |             |
+| tvParallaxShiftDistanceX                  | property | `number \| undefined`                                                                                                    | no       |             |
+| tvParallaxShiftDistanceY                  | property | `number \| undefined`                                                                                                    | no       |             |
+| tvParallaxTiltAngle                       | property | `number \| undefined`                                                                                                    | no       |             |
+| width                                     | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap                                      | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex                                    | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| zoomScale                                 | property | `number \| undefined`                                                                                                    | no       |             |
 
 ## SelectionSemantics
 
@@ -3026,8 +2763,10 @@ Source: `node_modules/@ankhorage/color-theory/dist/semantics.d.ts:4:1`
 ## Show
 
 Kind: `function`
-Module: `src/layout/Show.tsx`
-Source: `src/layout/Show.tsx:11:1`
+Module: `src/core/responsive/Show.tsx`
+Source: `src/core/responsive/Show.tsx:14:1`
+
+Conditionally renders one responsive subtree or its fallback.
 
 ### Signatures
 
@@ -3038,8 +2777,8 @@ Source: `src/layout/Show.tsx:11:1`
 ## ShowProps
 
 Kind: `type`
-Module: `src/layout/Show.tsx`
-Source: `src/layout/Show.tsx:5:1`
+Module: `src/core/responsive/Show.tsx`
+Source: `src/core/responsive/Show.tsx:7:1`
 
 ### Members
 
@@ -3048,123 +2787,6 @@ Source: `src/layout/Show.tsx:5:1`
 | children | property | `React.ReactNode`     | yes      |             |
 | fallback | property | `React.ReactNode`     | no       |             |
 | when     | property | `Responsive<boolean>` | yes      |             |
-
-## Spacer
-
-Kind: `function`
-Module: `src/layout/Spacer.tsx`
-Source: `src/layout/Spacer.tsx:12:1`
-
-### Signatures
-
-- `({ size = 'm', axis = 'vertical', testID }: SpacerProps) => React.JSX.Element`
-  - { size = 'm', axis = 'vertical', testID }: `SpacerProps`
-  - returns: `React.JSX.Element`
-
-## SpacerProps
-
-Kind: `type`
-Module: `src/layout/Spacer.tsx`
-Source: `src/layout/Spacer.tsx:6:1`
-
-### Members
-
-| Name   | Kind     | Type                                                | Required | Description |
-| ------ | -------- | --------------------------------------------------- | -------- | ----------- |
-| axis   | property | `"horizontal" \| "vertical" \| "both" \| undefined` | no       |             |
-| size   | property | `SpaceValue \| undefined`                           | no       |             |
-| testID | property | `string \| undefined`                               | no       |             |
-
-## Stack
-
-Kind: `function`
-Module: `src/features/layout/adapters/inbound/Stack.tsx`
-Source: `src/features/layout/adapters/inbound/Stack.tsx:10:1`
-
-Stacks authored children directly along a responsive flex direction.
-
-### Signatures
-
-- `({
-children,
-direction = 'column',
-gap = 0,
-align,
-justify,
-wrap,
-...props
-}: StackProps) => React.JSX.Element`
-  - {
-    children,
-    direction = 'column',
-    gap = 0,
-    align,
-    justify,
-    wrap,
-    ...props
-    }: `StackProps`
-  - returns: `React.JSX.Element`
-
-## StackProps
-
-Kind: `type`
-Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:87:1`
-
-### Members
-
-| Name               | Kind     | Type                                                                                                                     | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                                                                  | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                                                                 | no       |             |
-| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
-| align              | property | `Responsive<"flex-start" \| "flex-end" \| "center" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| children           | property | `React.ReactNode`                                                                                                        | no       |             |
-| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| justify            | property | `Responsive<"flex-start" \| "flex-end" \| "center" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
-| testID             | property | `string \| undefined`                                                                                                    | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| wrap               | property | `Responsive<"nowrap" \| "wrap"> \| undefined`                                                                            | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## SUPPORTED_ICON_PROVIDERS
 
@@ -3178,7 +2800,7 @@ Kind: `function`
 Module: `src/features/surface/adapters/inbound/Surface.tsx`
 Source: `src/features/surface/adapters/inbound/Surface.tsx:9:1`
 
-Renders a themed container surface with semantic elevation and border variants.
+Renders a themed content surface with semantic elevation and border variants.
 
 ### Signatures
 
@@ -3290,51 +2912,58 @@ Source: `src/types/surface.ts:5:1`
 
 ### Members
 
-| Name               | Kind     | Type                                                                      | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                     | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                   | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                  | no       |             |
-| accessible         | property | `boolean \| undefined`                                                    | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                         | no       |             |
-| children           | property | `React.ReactNode`                                                         | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                         | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                         | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                         | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                         | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`              | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`               | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`           | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                     | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                    | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                         | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                    | no       |             |
-| testID             | property | `string \| undefined`                                                     | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                         | no       |             |
-| variant            | property | `SurfaceVariant \| undefined`                                             | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                               | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                         | no       |             |
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                                                                  | no       |             |
+| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                                                                 | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode`                                                                                                        | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| variant            | property | `SurfaceVariant \| undefined`                                                                                            | no       |             |
+| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## SurfaceSemanticColors
 
@@ -3412,7 +3041,9 @@ Source: `src/types/icon.ts:35:1`
 
 Kind: `function`
 Module: `src/components/switch/Switch.tsx`
-Source: `src/components/switch/Switch.tsx:16:1`
+Source: `src/components/switch/Switch.tsx:17:1`
+
+Renders a controlled or uncontrolled accessible switch.
 
 ### Signatures
 
@@ -3458,6 +3089,7 @@ Source: `src/components/switch/types.ts:7:1`
 | ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
 | accessibilityLabel | property | `string \| undefined`                                                                                                                         | no       |             |
 | accessible         | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                                                  | no       |             |
 | alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                                     | no       |             |
 | bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
 | borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                                         | no       |             |
@@ -3466,15 +3098,19 @@ Source: `src/components/switch/types.ts:7:1`
 | checked            | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | children           | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color              | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | defaultChecked     | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                                                  | no       |             |
 | disabled           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | flex               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | flexGrow           | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | flexShrink         | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | height             | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
 | interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                                              | no       |             |
 | invalid            | property | `boolean \| undefined`                                                                                                                        | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined`                      | no       |             |
 | left               | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
@@ -3502,10 +3138,12 @@ Source: `src/components/switch/types.ts:7:1`
 | radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                                        | no       |             |
 | readOnly           | property | `boolean \| undefined`                                                                                                                        | no       |             |
 | right              | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                                         | no       |             |
 | size               | property | `ControlSize \| undefined`                                                                                                                    | no       |             |
 | testID             | property | `string \| undefined`                                                                                                                         | no       |             |
 | top                | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 | width              | property | `Responsive<string \| number> \| undefined`                                                                                                   | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                                                 | no       |             |
 | zIndex             | property | `Responsive<number> \| undefined`                                                                                                             | no       |             |
 
 ## Tab
@@ -3538,7 +3176,7 @@ testID,
 
 Kind: `function`
 Module: `src/features/tabs/adapters/inbound/TabList.tsx`
-Source: `src/features/tabs/adapters/inbound/TabList.tsx:20:1`
+Source: `src/features/tabs/adapters/inbound/TabList.tsx:19:1`
 
 Renders the accessible tab list and owns keyboard focus navigation.
 
@@ -3634,95 +3272,6 @@ Source: `src/types/tabs.ts:5:1`
 | onValueChange | property | `((value: string) => void) \| undefined` | no       |             |
 | testID        | property | `string \| undefined`                    | no       |             |
 | value         | property | `string \| undefined`                    | no       |             |
-
-## Template
-
-Kind: `function`
-Module: `src/layout/Template.tsx`
-Source: `src/layout/Template.tsx:35:1`
-
-### Signatures
-
-- `({
-slots,
-templates,
-columns,
-gap = 0,
-rowGap,
-colGap,
-...props
-}: TemplateProps) => React.JSX.Element`
-  - {
-    slots,
-    templates,
-    columns,
-    gap = 0,
-    rowGap,
-    colGap,
-    ...props
-    }: `TemplateProps`
-  - returns: `React.JSX.Element`
-
-## TemplateProps
-
-Kind: `type`
-Module: `src/layout/Template.tsx`
-Source: `src/layout/Template.tsx:19:1`
-
-### Members
-
-| Name               | Kind     | Type                                                                             | Required | Description |
-| ------------------ | -------- | -------------------------------------------------------------------------------- | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                            | no       |             |
-| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                          | no       |             |
-| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                         | no       |             |
-| accessible         | property | `boolean \| undefined`                                                           | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`        | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                            | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                            | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                                | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                                | no       |             |
-| colGap             | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| columns            | property | `Partial<Record<"base" \| "sm" \| "md" \| "lg" \| "xl", number[]>> \| undefined` | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                                | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                                      | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                                | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                                | no       |             |
-| gap                | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                                      | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                                | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                                      | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                                      | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                                      | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                                      | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                                | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                     | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                      | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                  | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                           | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                                | no       |             |
-| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                            | no       |             |
-| slots              | property | `SlotMap`                                                                        | yes      |             |
-| style              | property | `StyleProp<ViewStyle>`                                                           | no       |             |
-| templates          | property | `Partial<Record<"base" \| "sm" \| "md" \| "lg" \| "xl", string[][]>>`            | yes      |             |
-| testID             | property | `string \| undefined`                                                            | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                                | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                                      | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                                | no       |             |
 
 ## Text
 
@@ -3933,7 +3482,7 @@ Source: `src/components/textarea/types.ts:3:1`
 | tabIndex                               | property | `0 \| -1 \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | testID                                 | property | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | no       |             |
 | textAlign                              | property | `"left" \| "right" \| "center" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | no       |             |
-| textAlignVertical                      | property | `"top" \| "bottom" \| "auto" \| "center" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
+| textAlignVertical                      | property | `"top" \| "bottom" \| "center" \| "auto" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | textBreakStrategy                      | property | `"simple" \| "highQuality" \| "balanced" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | textContentType                        | property | `"none" \| "name" \| "nickname" \| "password" \| "username" \| "flightNumber" \| "URL" \| "addressCity" \| "addressCityAndState" \| "addressState" \| "countryName" \| "creditCardNumber" \| "creditCardExpiration" \| "creditCardExpirationMonth" \| "creditCardExpirationYear" \| "creditCardSecurityCode" \| "creditCardType" \| "creditCardName" \| "creditCardGivenName" \| "creditCardMiddleName" \| "creditCardFamilyName" \| "emailAddress" \| "familyName" \| "fullStreetAddress" \| "givenName" \| "jobTitle" \| "location" \| "middleName" \| "namePrefix" \| "nameSuffix" \| "organizationName" \| "postalCode" \| "streetAddressLine1" \| "streetAddressLine2" \| "sublocality" \| "telephoneNumber" \| "newPassword" \| "oneTimeCode" \| "birthdate" \| "birthdateDay" \| "birthdateMonth" \| "birthdateYear" \| "cellularEID" \| "cellularIMEI" \| "dateTime" \| "shipmentTrackingNumber" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | trailingAccessory                      | property | `React.ReactNode`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | no       |             |
@@ -4120,7 +3669,7 @@ Source: `src/types/text-input.ts:11:1`
 | tabIndex                               | property | `0 \| -1 \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | testID                                 | property | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | no       |             |
 | textAlign                              | property | `"left" \| "right" \| "center" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | no       |             |
-| textAlignVertical                      | property | `"top" \| "bottom" \| "auto" \| "center" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
+| textAlignVertical                      | property | `"top" \| "bottom" \| "center" \| "auto" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | textBreakStrategy                      | property | `"simple" \| "highQuality" \| "balanced" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | textContentType                        | property | `"none" \| "name" \| "nickname" \| "password" \| "username" \| "flightNumber" \| "URL" \| "addressCity" \| "addressCityAndState" \| "addressState" \| "countryName" \| "creditCardNumber" \| "creditCardExpiration" \| "creditCardExpirationMonth" \| "creditCardExpirationYear" \| "creditCardSecurityCode" \| "creditCardType" \| "creditCardName" \| "creditCardGivenName" \| "creditCardMiddleName" \| "creditCardFamilyName" \| "emailAddress" \| "familyName" \| "fullStreetAddress" \| "givenName" \| "jobTitle" \| "location" \| "middleName" \| "namePrefix" \| "nameSuffix" \| "organizationName" \| "postalCode" \| "streetAddressLine1" \| "streetAddressLine2" \| "sublocality" \| "telephoneNumber" \| "newPassword" \| "oneTimeCode" \| "birthdate" \| "birthdateDay" \| "birthdateMonth" \| "birthdateYear" \| "cellularEID" \| "cellularIMEI" \| "dateTime" \| "shipmentTrackingNumber" \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                    | no       |             |
 | trailingAccessory                      | property | `React.ReactNode`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | no       |             |
@@ -4142,7 +3691,7 @@ Source: `src/types/typography.ts:21:1`
 
 | Name          | Kind     | Type                                                                                                                                          | Required | Description |
 | ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| align         | property | `"left" \| "right" \| "auto" \| "center" \| "justify" \| undefined`                                                                           | no       |             |
+| align         | property | `"justify" \| "left" \| "right" \| "center" \| "auto" \| undefined`                                                                           | no       |             |
 | children      | property | `React.ReactNode`                                                                                                                             | no       |             |
 | color         | property | `"primary" \| "secondary" \| "tertiary" \| "quaternary" \| "neutral" \| "success" \| "warning" \| "error" \| "info" \| "danger" \| undefined` | no       |             |
 | emphasis      | property | `"default" \| "muted" \| "subtle" \| "inverse" \| undefined`                                                                                  | no       |             |
@@ -4528,3 +4077,100 @@ Source: `src/context/TranslationContext.tsx:48:1`
 
 - `() => TranslationRuntime`
   - returns: `TranslationRuntime`
+
+## View
+
+Kind: `function`
+Module: `src/features/layout/adapters/inbound/View.tsx`
+Source: `src/features/layout/adapters/inbound/View.tsx:11:1`
+
+Renders the token-aware responsive Surface adapter for React Native View.
+
+### Signatures
+
+- `({
+accessible,
+accessibilityLabel,
+accessibilityRole,
+accessibilityState,
+children,
+pointerEvents,
+style,
+testID,
+...props
+}: ViewProps) => React.JSX.Element`
+  - {
+    accessible,
+    accessibilityLabel,
+    accessibilityRole,
+    accessibilityState,
+    children,
+    pointerEvents,
+    style,
+    testID,
+    ...props
+    }: `ViewProps`
+  - returns: `React.JSX.Element`
+
+## ViewProps
+
+Kind: `type`
+Module: `src/types/layout.ts`
+Source: `src/types/layout.ts:70:1`
+
+### Members
+
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `import("react-native").AccessibilityRole \| undefined`                                                                  | no       |             |
+| accessibilityState | property | `import("react-native").AccessibilityState \| undefined`                                                                 | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode`                                                                                                        | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pointerEvents      | property | `"none" \| "auto" \| "box-none" \| "box-only" \| undefined`                                                              | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
