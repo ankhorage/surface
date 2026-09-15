@@ -30,7 +30,10 @@ export function Modal({
 
   return (
     <Portal layer="modal" visible={visible}>
-      <ReactNativeView {...boxNonePointerEvents.props} style={[boxNonePointerEvents.style, styles.fill]}>
+      <ReactNativeView
+        {...boxNonePointerEvents.props}
+        style={[boxNonePointerEvents.style, styles.fill]}
+      >
         <Pressable
           onPress={backdropPress}
           style={[

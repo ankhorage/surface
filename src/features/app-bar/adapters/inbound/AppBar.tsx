@@ -1,5 +1,5 @@
 import React from 'react';
-import { View as ReactNativeView, type ViewStyle } from 'react-native';
+import { StyleSheet, View as ReactNativeView, type ViewStyle } from 'react-native';
 import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
 import { useTheme } from '../../../../theme/ThemeContext';
@@ -28,24 +28,20 @@ export function AppBar({
     <View {...props} bg={bg ?? theme.semantics.surface.default} style={style}>
       <ReactNativeView style={safeAreaStyle}>
         <ReactNativeView
-          style={[
-            {
-              minHeight: 56,
-              flexDirection: 'row',
-              alignItems: 'center',
-              paddingHorizontal: theme.spacing.m,
-            },
-            contentStyle,
-          ]}
+          style={[styles.content, resolveHorizontalPadding(theme.spacing.m), contentStyle]}
         >
           {leading ? (
-            <ReactNativeView style={{ marginRight: theme.spacing.s, flexShrink: 0 }}>
+            <ReactNativeView
+              style={[styles.accessory, resolveAccessoryMargin(theme.spacing.s, 'leading')]}
+            >
               {leading}
             </ReactNativeView>
           ) : null}
-          <ReactNativeView style={{ flex: 1, minWidth: 0 }}>{children}</ReactNativeView>
+          <ReactNativeView style={styles.center}>{children}</ReactNativeView>
           {trailing ? (
-            <ReactNativeView style={{ marginLeft: theme.spacing.s, flexShrink: 0 }}>
+            <ReactNativeView
+              style={[styles.accessory, resolveAccessoryMargin(theme.spacing.s, 'trailing')]}
+            >
               {trailing}
             </ReactNativeView>
           ) : null}
@@ -55,3 +51,22 @@ export function AppBar({
     </View>
   );
 }
+
+/*** Resolves dynamic horizontal padding for the AppBar content row. */
+function resolveHorizontalPadding(paddingHorizontal: number): ViewStyle {
+  return { paddingHorizontal };
+}
+
+/*** Resolves directional spacing for one AppBar accessory. */
+function resolveAccessoryMargin(
+  spacing: number,
+  position: 'leading' | 'trailing',
+): ViewStyle {
+  return position === 'leading' ? { marginRight: spacing } : { marginLeft: spacing };
+}
+
+const styles = StyleSheet.create({
+  accessory: { flexShrink: 0 },
+  center: { flex: 1, minWidth: 0 },
+  content: { alignItems: 'center', flexDirection: 'row', minHeight: 56 },
+});

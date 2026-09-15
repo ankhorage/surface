@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { resolveResponsive } from './resolve';
-import type { Responsive } from './types';
 import { useResponsiveRuntime } from './ResponsiveProvider';
+import type { Responsive } from './types';
 
 export interface ShowProps {
   when: Responsive<boolean>;

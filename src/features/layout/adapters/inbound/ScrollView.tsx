@@ -7,59 +7,35 @@ import type { ScrollViewProps } from '../../../../types/layout';
 import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
 
 /*** Renders the token-aware responsive Surface adapter for React Native ScrollView. */
-export function ScrollView({
-  children,
-  contentContainerStyle,
-  p,
-  px,
-  py,
-  pt,
-  pb,
-  pl,
-  pr,
-  m,
-  mx,
-  my,
-  mt,
-  mb,
-  ml,
-  mr,
-  gap,
-  rowGap,
-  columnGap,
-  bg,
-  radius,
-  borderWidth,
-  borderColor,
-  width,
-  height,
-  minWidth,
-  maxWidth,
-  minHeight,
-  maxHeight,
-  flex,
-  flexGrow,
-  flexShrink,
-  flexBasis,
-  direction,
-  align,
-  justify,
-  wrap,
-  alignSelf,
-  position,
-  top,
-  bottom,
-  left,
-  right,
-  overflow,
-  zIndex,
-  opacity,
-  style,
-  ...scrollProps
-}: ScrollViewProps) {
+export function ScrollView(props: ScrollViewProps) {
   const { theme } = useTheme();
   const { breakpoint } = useResponsiveRuntime();
+  const spacing = splitSpacingProps(props);
+  const visual = splitVisualProps(spacing.rest);
+  const dimensions = splitDimensionProps(visual.rest);
+  const layout = splitLayoutProps(dimensions.rest);
+  const { children, contentContainerStyle, style, ...scrollProps } = layout.rest;
   const resolved = resolveViewStyles(theme, breakpoint, {
+    ...spacing.styleProps,
+    ...visual.styleProps,
+    ...dimensions.styleProps,
+    ...layout.styleProps,
+  });
+
+  return (
+    <ReactNativeScrollView
+      {...scrollProps}
+      contentContainerStyle={contentContainerStyle}
+      style={[resolved, style]}
+    >
+      {children}
+    </ReactNativeScrollView>
+  );
+}
+
+/*** Splits spacing-aware Surface props from native ScrollView props. */
+function splitSpacingProps(props: ScrollViewProps) {
+  const {
     p,
     px,
     py,
@@ -77,16 +53,29 @@ export function ScrollView({
     gap,
     rowGap,
     columnGap,
-    bg,
-    radius,
-    borderWidth,
-    borderColor,
-    width,
-    height,
-    minWidth,
-    maxWidth,
-    minHeight,
-    maxHeight,
+    ...rest
+  } = props;
+  return {
+    rest,
+    styleProps: { p, px, py, pt, pb, pl, pr, m, mx, my, mt, mb, ml, mr, gap, rowGap, columnGap },
+  };
+}
+
+/*** Splits token-aware visual Surface props from native ScrollView props. */
+function splitVisualProps(props: ReturnType<typeof splitSpacingProps>['rest']) {
+  const { bg, radius, borderWidth, borderColor, ...rest } = props;
+  return { rest, styleProps: { bg, radius, borderWidth, borderColor } };
+}
+
+/*** Splits responsive dimension Surface props from native ScrollView props. */
+function splitDimensionProps(props: ReturnType<typeof splitVisualProps>['rest']) {
+  const { width, height, minWidth, maxWidth, minHeight, maxHeight, ...rest } = props;
+  return { rest, styleProps: { width, height, minWidth, maxWidth, minHeight, maxHeight } };
+}
+
+/*** Splits responsive flex and positioning Surface props from native ScrollView props. */
+function splitLayoutProps(props: ReturnType<typeof splitDimensionProps>['rest']) {
+  const {
     flex,
     flexGrow,
     flexShrink,
@@ -104,15 +93,28 @@ export function ScrollView({
     overflow,
     zIndex,
     opacity,
-  });
-
-  return (
-    <ReactNativeScrollView
-      {...scrollProps}
-      contentContainerStyle={contentContainerStyle}
-      style={[resolved, style]}
-    >
-      {children}
-    </ReactNativeScrollView>
-  );
+    ...rest
+  } = props;
+  return {
+    rest,
+    styleProps: {
+      flex,
+      flexGrow,
+      flexShrink,
+      flexBasis,
+      direction,
+      align,
+      justify,
+      wrap,
+      alignSelf,
+      position,
+      top,
+      bottom,
+      left,
+      right,
+      overflow,
+      zIndex,
+      opacity,
+    },
+  };
 }
