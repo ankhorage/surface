@@ -870,110 +870,6 @@ testID,
     }: `ButtonProps`
   - returns: `React.JSX.Element`
 
-## ButtonBase
-
-Kind: `function`
-Module: `src/primitives/button-base/ButtonBase.tsx`
-Source: `src/primitives/button-base/ButtonBase.tsx:30:1`
-
-Renders the low-level token-aware Pressable boundary shared by Surface controls.
-
-### Signatures
-
-- `({
-children,
-disabled = false,
-interactionPolicy = 'enabled',
-onPress,
-onLongPress,
-accessibilityLabel,
-accessibilityRole = 'button',
-accessibilityState,
-style,
-testID,
-...props
-}: ButtonBaseProps) => React.JSX.Element`
-  - {
-    children,
-    disabled = false,
-    interactionPolicy = 'enabled',
-    onPress,
-    onLongPress,
-    accessibilityLabel,
-    accessibilityRole = 'button',
-    accessibilityState,
-    style,
-    testID,
-    ...props
-    }: `ButtonBaseProps`
-  - returns: `React.JSX.Element`
-
-## ButtonBaseProps
-
-Kind: `type`
-Module: `src/primitives/button-base/types.ts`
-Source: `src/primitives/button-base/types.ts:8:1`
-
-### Members
-
-| Name               | Kind     | Type                                                                                                                     | Required | Description |
-| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
-| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
-| accessibilityRole  | property | `AccessibilityRole \| undefined`                                                                                         | no       |             |
-| accessibilityState | property | `AccessibilityState \| undefined`                                                                                        | no       |             |
-| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
-| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
-| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
-| bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
-| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
-| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| children           | property | `React.ReactNode \| ((state: InteractionState) => React.ReactNode)`                                                      | no       |             |
-| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
-| disabled           | property | `boolean \| undefined`                                                                                                   | no       |             |
-| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                         | no       |             |
-| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
-| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| onLongPress        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
-| onPress            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
-| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
-| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
-| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
-| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
-| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
-| testID             | property | `string \| undefined`                                                                                                    | no       |             |
-| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
-| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
-| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
-
 ## ButtonIconSpec
 
 Kind: `unknown`
@@ -1420,7 +1316,7 @@ Source: `src/types/layout.ts:80:1`
 
 Kind: `function`
 Module: `src/features/form/field/adapters/inbound/Field.tsx`
-Source: `src/features/form/field/adapters/inbound/Field.tsx:9:1`
+Source: `src/features/form/field/adapters/inbound/Field.tsx:13:1`
 
 Composes a control with its label and helper or error message.
 
@@ -2032,40 +1928,14 @@ Groups list items under one neutral Surface list boundary.
 
 Kind: `function`
 Module: `src/features/list/adapters/inbound/ListItem.tsx`
-Source: `src/features/list/adapters/inbound/ListItem.tsx:10:1`
+Source: `src/features/list/adapters/inbound/ListItem.tsx:11:1`
 
 Renders a static or interactive list item with shared row geometry and interaction states.
 
 ### Signatures
 
-- `({
-children,
-title,
-description,
-leading,
-trailing,
-onPress,
-disabled = false,
-selected = false,
-compact = false,
-interactionPolicy,
-accessibilityLabel,
-testID,
-}: ListItemProps) => React.JSX.Element`
-  - {
-    children,
-    title,
-    description,
-    leading,
-    trailing,
-    onPress,
-    disabled = false,
-    selected = false,
-    compact = false,
-    interactionPolicy,
-    accessibilityLabel,
-    testID,
-    }: `ListItemProps`
+- `(props: ListItemProps) => React.JSX.Element`
+  - props: `ListItemProps`
   - returns: `React.JSX.Element`
 
 ## ListItemProps
@@ -2298,6 +2168,110 @@ Source: `src/types/popover.ts:14:1`
 | open                | property | `boolean \| undefined`                                    | no       |             |
 | placement           | property | `PopoverPlacement \| undefined`                           | no       |             |
 | testID              | property | `string \| undefined`                                     | no       |             |
+
+## Pressable
+
+Kind: `function`
+Module: `src/features/pressable/adapters/inbound/Pressable.tsx`
+Source: `src/features/pressable/adapters/inbound/Pressable.tsx:19:1`
+
+Renders the token-aware Surface adapter for React Native Pressable.
+
+### Signatures
+
+- `({
+children,
+disabled = false,
+interactionPolicy = 'enabled',
+onPress,
+onLongPress,
+accessibilityLabel,
+accessibilityRole = 'button',
+accessibilityState,
+style,
+testID,
+...props
+}: PressableProps) => React.JSX.Element`
+  - {
+    children,
+    disabled = false,
+    interactionPolicy = 'enabled',
+    onPress,
+    onLongPress,
+    accessibilityLabel,
+    accessibilityRole = 'button',
+    accessibilityState,
+    style,
+    testID,
+    ...props
+    }: `PressableProps`
+  - returns: `React.JSX.Element`
+
+## PressableProps
+
+Kind: `type`
+Module: `src/types/pressable.ts`
+Source: `src/types/pressable.ts:8:1`
+
+### Members
+
+| Name               | Kind     | Type                                                                                                                     | Required | Description |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| accessibilityLabel | property | `string \| undefined`                                                                                                    | no       |             |
+| accessibilityRole  | property | `AccessibilityRole \| undefined`                                                                                         | no       |             |
+| accessibilityState | property | `AccessibilityState \| undefined`                                                                                        | no       |             |
+| accessible         | property | `boolean \| undefined`                                                                                                   | no       |             |
+| align              | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined`                             | no       |             |
+| alignSelf          | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>`                                                | no       |             |
+| bg                 | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderColor        | property | `Responsive<ColorValue> \| undefined`                                                                                    | no       |             |
+| borderWidth        | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| bottom             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| children           | property | `React.ReactNode \| ((state: InteractionState) => React.ReactNode)`                                                      | no       |             |
+| columnGap          | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| direction          | property | `Responsive<"row" \| "column"> \| undefined`                                                                             | no       |             |
+| disabled           | property | `boolean \| undefined`                                                                                                   | no       |             |
+| flex               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexBasis          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| flexGrow           | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| flexShrink         | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| gap                | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| height             | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| interactionPolicy  | property | `InteractionPolicy \| undefined`                                                                                         | no       |             |
+| justify            | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no       |             |
+| left               | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| m                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| maxHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| maxWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| mb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| minHeight          | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| minWidth           | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| ml                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| mx                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| my                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| onLongPress        | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| onPress            | property | `((event: GestureResponderEvent) => void) \| undefined`                                                                  | no       |             |
+| opacity            | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| overflow           | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>`                                                             | no       |             |
+| p                  | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pb                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pl                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| position           | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>`                                                          | no       |             |
+| pr                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| pt                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| px                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| py                 | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| radius             | property | `Responsive<RadiusValue> \| undefined`                                                                                   | no       |             |
+| right              | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| rowGap             | property | `Responsive<SpaceValue> \| undefined`                                                                                    | no       |             |
+| style              | property | `StyleProp<ViewStyle>`                                                                                                   | no       |             |
+| testID             | property | `string \| undefined`                                                                                                    | no       |             |
+| top                | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
+| width              | property | `Responsive<string \| number> \| undefined`                                                                              | no       |             |
+| wrap               | property | `Responsive<"wrap" \| "nowrap"> \| undefined`                                                                            | no       |             |
+| zIndex             | property | `Responsive<number> \| undefined`                                                                                        | no       |             |
 
 ## Radio
 
@@ -3032,7 +3006,7 @@ Source: `src/types/icon.ts:35:1`
 
 Kind: `function`
 Module: `src/features/form/switch/adapters/inbound/Switch.tsx`
-Source: `src/features/form/switch/adapters/inbound/Switch.tsx:17:1`
+Source: `src/features/form/switch/adapters/inbound/Switch.tsx:18:1`
 
 Renders a controlled or uncontrolled accessible switch.
 
@@ -3304,7 +3278,7 @@ testID,
 
 Kind: `function`
 Module: `src/features/form/text-input/adapters/inbound/TextInput.tsx`
-Source: `src/features/form/text-input/adapters/inbound/TextInput.tsx:10:1`
+Source: `src/features/form/text-input/adapters/inbound/TextInput.tsx:17:1`
 
 Renders a token-aware text input with controlled interaction policy.
 

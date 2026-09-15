@@ -88,6 +88,8 @@ graph LR
   module_src_features_popover_public_ts["src/features/popover/public.ts"]
   module_src_features_popover_utils_resolvePopoverPosition_test_ts["src/features/popover/utils/resolvePopoverPosition.test.ts"]
   module_src_features_popover_utils_resolvePopoverPosition_ts["src/features/popover/utils/resolvePopoverPosition.ts"]
+  module_src_features_pressable_adapters_inbound_Pressable_tsx["src/features/pressable/adapters/inbound/Pressable.tsx"]
+  module_src_features_pressable_public_ts["src/features/pressable/public.ts"]
   module_src_features_surface_adapters_inbound_Surface_tsx["src/features/surface/adapters/inbound/Surface.tsx"]
   module_src_features_surface_public_ts["src/features/surface/public.ts"]
   module_src_features_tabs_adapters_inbound_Tab_tsx["src/features/tabs/adapters/inbound/Tab.tsx"]
@@ -162,9 +164,6 @@ graph LR
   module_src_internal_resolvers_resolveTextStyles_test_ts["src/internal/resolvers/resolveTextStyles.test.ts"]
   module_src_internal_resolvers_resolveTextStyles_ts["src/internal/resolvers/resolveTextStyles.ts"]
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
-  module_src_primitives_button_base_ButtonBase_tsx["src/primitives/button-base/ButtonBase.tsx"]
-  module_src_primitives_button_base_index_ts["src/primitives/button-base/index.ts"]
-  module_src_primitives_button_base_types_ts["src/primitives/button-base/types.ts"]
   module_src_surfaceColor_test_ts["src/surfaceColor.test.ts"]
   module_src_surfaceColor_ts["src/surfaceColor.ts"]
   module_src_theme_colorEngine_test_ts["src/theme/colorEngine.test.ts"]
@@ -205,6 +204,7 @@ graph LR
   module_src_types_modal_ts["src/types/modal.ts"]
   module_src_types_popover_ts["src/types/popover.ts"]
   module_src_types_popoverMenu_ts["src/types/popoverMenu.ts"]
+  module_src_types_pressable_ts["src/types/pressable.ts"]
   module_src_types_radio_ts["src/types/radio.ts"]
   module_src_types_surface_ts["src/types/surface.ts"]
   module_src_types_switch_ts["src/types/switch.ts"]
@@ -275,13 +275,6 @@ graph LR
   export_Button["Button"]
   module_src_features_button_adapters_inbound_Button_tsx --> export_Button
   export_Button -.-> export_ButtonProps
-  export_ButtonBase["ButtonBase"]
-  module_src_primitives_button_base_ButtonBase_tsx --> export_ButtonBase
-  export_ButtonBase -.-> export_ButtonBaseProps
-  export_ButtonBaseProps["ButtonBaseProps"]
-  module_src_primitives_button_base_types_ts --> export_ButtonBaseProps
-  export_ButtonBaseProps -.-> export_InteractionPolicy
-  export_ButtonBaseProps -.-> export_Responsive
   export_ButtonIconSpec["ButtonIconSpec"]
   module_src_types_button_ts --> export_ButtonIconSpec
   export_ButtonProps["ButtonProps"]
@@ -461,6 +454,13 @@ graph LR
   export_PopoverProps -.-> export_InteractionPolicy
   export_PopoverProps -.-> export_PopoverAnchorRenderProps
   export_PopoverProps -.-> export_PopoverPlacement
+  export_Pressable["Pressable"]
+  module_src_features_pressable_adapters_inbound_Pressable_tsx --> export_Pressable
+  export_Pressable -.-> export_PressableProps
+  export_PressableProps["PressableProps"]
+  module_src_types_pressable_ts --> export_PressableProps
+  export_PressableProps -.-> export_InteractionPolicy
+  export_PressableProps -.-> export_Responsive
   export_Radio["Radio"]
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> export_Radio
   export_Radio -.-> export_RadioProps

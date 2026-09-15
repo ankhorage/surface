@@ -34,6 +34,7 @@ const expectedFeatureRootExports = [
   "export { Modal } from './features/modal/public';",
   "export { PopoverMenu } from './features/popover-menu/public';",
   "export { Popover } from './features/popover/public';",
+  "export { Pressable } from './features/pressable/public';",
   "export { Surface } from './features/surface/public';",
   "export { Tab, TabList, TabPanel, Tabs } from './features/tabs/public';",
   "export { Tooltip } from './features/tooltip/public';",
@@ -54,6 +55,7 @@ describe('feature-owned root barrel contract', () => {
   it('does not retain removed component or layout facades and aliases', () => {
     expect(indexSource).not.toContain("'./components/");
     expect(indexSource).not.toContain("'./layout");
+    expect(indexSource).not.toContain("'./primitives/");
     expect(indexSource).not.toMatch(/\bBoxProps\b/u);
     expect(indexSource).not.toMatch(/\bContainerProps\b/u);
     expect(indexSource).not.toMatch(/\bStackProps\b/u);

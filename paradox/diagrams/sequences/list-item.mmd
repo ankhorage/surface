@@ -1,8 +1,14 @@
 sequenceDiagram
   participant participant_ListItem as ListItem
+  participant participant_renderInteractiveListItem as renderInteractiveListItem
+  participant participant_renderStaticListItem as renderStaticListItem
   participant participant_use as use
   participant participant_useTheme as useTheme
   participant_ListItem->>participant_useTheme: useTheme()
   participant_useTheme->>participant_use: use()
   participant_use-->>participant_useTheme: return
   participant_useTheme-->>participant_ListItem: return
+  participant_ListItem->>participant_renderStaticListItem: renderStaticListItem()
+  participant_renderStaticListItem-->>participant_ListItem: return
+  participant_ListItem->>participant_renderInteractiveListItem: renderInteractiveListItem()
+  participant_renderInteractiveListItem-->>participant_ListItem: return

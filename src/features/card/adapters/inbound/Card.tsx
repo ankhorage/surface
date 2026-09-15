@@ -1,10 +1,10 @@
 import React from 'react';
 import type { ViewStyle } from 'react-native';
 
-import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { CardProps } from '../../../../types/card';
 import type { SurfaceVariant } from '../../../../types/surface';
+import { Pressable } from '../../../pressable/public';
 import { Surface } from '../../../surface/public';
 
 /*** Renders a themed content card with optional interactive press states. */
@@ -28,7 +28,7 @@ export function Card({
   }
 
   return (
-    <ButtonBase accessibilityRole="button" disabled={disabled} onPress={onPress} testID={testID}>
+    <Pressable accessibilityRole="button" disabled={disabled} onPress={onPress} testID={testID}>
       {(state) => (
         <Surface
           {...props}
@@ -46,7 +46,7 @@ export function Card({
           {children}
         </Surface>
       )}
-    </ButtonBase>
+    </Pressable>
   );
 }
 

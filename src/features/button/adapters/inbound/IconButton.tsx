@@ -6,11 +6,11 @@ import {
   resolveControlSize,
   resolveIconSize,
 } from '../../../../internal/resolvers';
-import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { IconButtonProps } from '../../../../types/button';
 import { Icon } from '../../../icon/public';
 import { View } from '../../../layout/public';
+import { Pressable } from '../../../pressable/public';
 
 /*** Renders a compact accessible icon-only action control. */
 export function IconButton({
@@ -28,7 +28,7 @@ export function IconButton({
   const controlSize = resolveControlSize(theme, size);
 
   return (
-    <ButtonBase
+    <Pressable
       {...props}
       accessibilityLabel={accessibilityLabel}
       disabled={disabled}
@@ -46,7 +46,7 @@ export function IconButton({
           </View>
         );
       }}
-    </ButtonBase>
+    </Pressable>
   );
 }
 

@@ -9,12 +9,12 @@ import {
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
-import { ButtonBase } from '../../../../../primitives/button-base';
-import type { ButtonBaseProps } from '../../../../../primitives/button-base/types';
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../../theme/types';
 import type { CheckboxProps } from '../../../../../types/checkbox';
 import { View } from '../../../../layout/public';
+import type { PressableProps } from '../../../../pressable/public';
+import { Pressable } from '../../../../pressable/public';
 import { Text } from '../../../../typography/public';
 
 /*** Renders a controlled or uncontrolled accessible checkbox. */
@@ -81,7 +81,7 @@ function CheckboxControl({
   });
 
   return (
-    <ButtonBase
+    <Pressable
       {...buttonProps}
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="checkbox"
@@ -103,7 +103,7 @@ function CheckboxControl({
           theme,
         })
       }
-    </ButtonBase>
+    </Pressable>
   );
 }
 
@@ -181,7 +181,7 @@ function resolveCheckboxIndicatorStyle(
 
 interface CheckboxControlProps {
   accessibilityLabel: CheckboxProps['accessibilityLabel'];
-  buttonProps: ButtonBaseProps;
+  buttonProps: PressableProps;
   children: CheckboxProps['children'];
   color: NonNullable<CheckboxProps['color']>;
   disabled: boolean;

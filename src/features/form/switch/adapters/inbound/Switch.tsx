@@ -8,10 +8,10 @@ import {
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
-import { ButtonBase } from '../../../../../primitives/button-base';
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { SwitchProps } from '../../../../../types/switch';
 import { View } from '../../../../layout/public';
+import { Pressable } from '../../../../pressable/public';
 import { Text } from '../../../../typography/public';
 
 /*** Renders a controlled or uncontrolled accessible switch. */
@@ -43,7 +43,7 @@ export function Switch({
   });
 
   return (
-    <ButtonBase
+    <Pressable
       {...props}
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="switch"
@@ -58,7 +58,7 @@ export function Switch({
           interactionState,
         )
       }
-    </ButtonBase>
+    </Pressable>
   );
 }
 

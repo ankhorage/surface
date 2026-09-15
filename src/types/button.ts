@@ -2,14 +2,14 @@ import type React from 'react';
 
 import type { ControlSize } from '../internal/resolvers/resolveControlSize';
 import type { ButtonVariant } from '../internal/resolvers/resolveInteractiveColors';
-import type { ButtonBaseProps } from '../primitives/button-base';
 import type { SurfaceColor } from '../surfaceColor';
 import type { IconSource } from './icon';
+import type { PressableProps } from './pressable';
 
 export type ButtonIconSpec = IconSource;
 
 export interface ButtonProps extends Omit<
-  ButtonBaseProps,
+  PressableProps,
   'accessibilityLabel' | 'children' | 'style'
 > {
   children?: React.ReactNode;
@@ -23,7 +23,7 @@ export interface ButtonProps extends Omit<
 }
 
 export interface IconButtonProps extends Omit<
-  ButtonBaseProps,
+  PressableProps,
   'children' | 'style' | 'accessibilityLabel'
 > {
   icon: IconSource;

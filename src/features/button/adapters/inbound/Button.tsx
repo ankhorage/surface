@@ -7,12 +7,12 @@ import {
   resolveControlSize,
   resolveIconSize,
 } from '../../../../internal/resolvers';
-import { ButtonBase } from '../../../../primitives/button-base';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../theme/types';
 import type { ButtonProps } from '../../../../types/button';
 import { Icon } from '../../../icon/public';
 import { View } from '../../../layout/public';
+import { Pressable } from '../../../pressable/public';
 import { Text } from '../../../typography/public';
 
 /*** Renders the primary Surface action control with semantic visual states. */
@@ -34,11 +34,11 @@ export function Button({
   const controlSize = resolveControlSize(theme, size);
 
   return (
-    <ButtonBase
+    <Pressable
       {...props}
       disabled={disabled || loading}
       onPress={onPress}
-      style={resolveButtonBaseStyle(fullWidth)}
+      style={resolvePressableStyle(fullWidth)}
       testID={testID}
     >
       {(state) => (
@@ -57,7 +57,7 @@ export function Button({
           {children}
         </ButtonContent>
       )}
-    </ButtonBase>
+    </Pressable>
   );
 }
 
@@ -114,8 +114,8 @@ function ButtonContent({
   );
 }
 
-/*** Resolves the outer ButtonBase layout style. */
-function resolveButtonBaseStyle(fullWidth: boolean): ViewStyle {
+/*** Resolves the outer Pressable layout style. */
+function resolvePressableStyle(fullWidth: boolean): ViewStyle {
   return { alignSelf: fullWidth ? 'stretch' : 'flex-start' };
 }
 
