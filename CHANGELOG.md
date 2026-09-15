@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 8.0.0
+
+### Major Changes
+
+- 337bcec: Replace the public `ButtonBase` foundation primitive with the native-aligned `Pressable` feature. Import `Pressable` and `PressableProps` from `@ankhorage/surface`; the legacy `src/primitives` path and `ButtonBase` API are removed.
+
 ## 7.0.0
 
 ### Major Changes
