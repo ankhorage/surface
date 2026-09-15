@@ -17,9 +17,7 @@ describe('public theme subpath', () => {
 
     expect(source).not.toContain('ThemeContext');
     expect(source).not.toMatch(/from ['"]react(?:-native)?['"]/);
-    expect(source).toContain(
-      "export { createTheme } from './application/use-cases/createTheme';",
-    );
+    expect(source).toContain("export { createTheme } from './application/use-cases/createTheme';");
   });
 
   test('imports and executes through the package subpath in plain Bun', async () => {
