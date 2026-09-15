@@ -1,5 +1,5 @@
-import { deepMerge, isDeepEqual } from '@ankhorage/utility/object';
-import { useEffect, useMemo, useState } from 'react';
+import { deepMerge } from '@ankhorage/utility/object';
+import { useMemo, useState } from 'react';
 
 import { ResponsiveProvider } from '../../../../core/responsive/ResponsiveProvider';
 import { OverlayProvider } from '../../../../internal/overlay/OverlayProvider';
@@ -20,14 +20,6 @@ export function ThemeProvider({
   );
   const [mode, setMode] = useState(initialMode);
   const { activeFontId } = useFontRuntime();
-
-  useEffect(() => {
-    if (initialConfig === undefined) return;
-    setConfig((previous) => {
-      const merged = deepMerge(previous, initialConfig);
-      return isDeepEqual(previous, merged) ? previous : merged;
-    });
-  }, [initialConfig]);
 
   const theme = useMemo(
     () => createTheme(config, mode, activeFontId),
