@@ -7,6 +7,7 @@ describe('canonical Surface ownership', () => {
     const src = new URL('.', import.meta.url);
     expect(existsSync(new URL('./context', src))).toBe(false);
     expect(existsSync(new URL('./theme', src))).toBe(false);
+    expect(existsSync(new URL('./contracts', src))).toBe(false);
     expect(existsSync(new URL('./interactionPolicy.ts', src))).toBe(false);
     expect(existsSync(new URL('./surfaceColor.ts', src))).toBe(false);
     expect(existsSync(new URL('./utils/deepEqual.ts', src))).toBe(false);
