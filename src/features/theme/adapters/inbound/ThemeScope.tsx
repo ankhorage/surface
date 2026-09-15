@@ -1,7 +1,7 @@
 import { deepMerge } from '@ankhorage/utility/object';
 import { useMemo } from 'react';
 
-import type { ThemeRuntime, ThemeScopeProps } from '../../../../types/theme-runtime';
+import type { ThemeRuntime, ThemeScopeProps } from '../../../../types/theme';
 import { useFontRuntime } from '../../../font/adapters/inbound/useFontRuntime';
 import { createTheme } from '../../application/use-cases/createTheme';
 import { ThemeRuntimeContext } from './ThemeRuntimeContext';
