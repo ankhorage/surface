@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {
+  type InteractionState,
   resolveFieldState,
   resolveIndicatorSize,
   resolveSelectionControlColors,
   resolveSelectionControlNextChecked,
-  type InteractionState,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
 import { ButtonBase } from '../../../../../primitives/button-base';
@@ -62,7 +62,7 @@ export function Switch({
   );
 }
 
-type SwitchContentInput = {
+interface SwitchContentInput {
   children: React.ReactNode;
   color: NonNullable<SwitchProps['color']>;
   disabled: boolean;
@@ -71,7 +71,7 @@ type SwitchContentInput = {
   readOnly: boolean;
   size: NonNullable<SwitchProps['size']>;
   theme: ReturnType<typeof useTheme>['theme'];
-};
+}
 
 /*** Resolves switch presentation for one interaction state and renders the visual control. */
 function renderSwitchContent(input: SwitchContentInput, interactionState: InteractionState) {

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {
+  type ResolvedFieldPresentation,
   resolveFieldPresentation,
   resolveFieldState,
-  type ResolvedFieldPresentation,
 } from '../../../../../internal/resolvers';
 import type { FieldProps } from '../../../../../types/field';
 import { View } from '../../../../layout/public';
@@ -70,19 +70,12 @@ function renderFieldLabel(
 }
 
 /*** Renders an optional helper or error message using field presentation semantics. */
-function renderFieldMessage(
-  message: React.ReactNode,
-  presentation: ResolvedFieldPresentation,
-) {
+function renderFieldMessage(message: React.ReactNode, presentation: ResolvedFieldPresentation) {
   if (message === undefined || message === null || message === '') return null;
   if (typeof message !== 'string' && typeof message !== 'number') return message;
 
   return (
-    <Text
-      color={presentation.helperColor}
-      emphasis={presentation.helperEmphasis}
-      variant="caption"
-    >
+    <Text color={presentation.helperColor} emphasis={presentation.helperEmphasis} variant="caption">
       {message}
     </Text>
   );

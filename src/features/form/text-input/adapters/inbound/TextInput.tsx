@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   Platform,
-  TextInput as ReactNativeTextInput,
-  View,
   type StyleProp,
+  TextInput as ReactNativeTextInput,
   type TextStyle,
+  View,
   type ViewStyle,
 } from 'react-native';
 

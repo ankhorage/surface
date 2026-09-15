@@ -55,11 +55,11 @@ function renderInteractiveListItem(
   );
 }
 
-type ListItemBackgroundState = {
+interface ListItemBackgroundState {
   hovered: boolean;
   pressed: boolean;
   selected: boolean;
-};
+}
 
 type ListItemContentProps = Omit<
   ListItemProps,
