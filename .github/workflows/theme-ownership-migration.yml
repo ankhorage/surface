@@ -25,6 +25,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Fix migration regex bootstrap
+        run: sed -i 's/\\n}\\n\\nexport function generatePalette/\\n\\}\\n\\nexport function generatePalette/' scripts/migrateThemeOwnership.ts
       - name: Apply canonical ownership migration
         run: bun scripts/migrateThemeOwnership.ts
       - name: Install released dependencies
