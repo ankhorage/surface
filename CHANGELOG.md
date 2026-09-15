@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 6.0.0
+
+### Major Changes
+
+- 574a34b: Replace legacy layout aliases with canonical React Native-named `View` and `ScrollView` primitives, remove redundant layout presets, and move AppBar and responsive Show to their owning boundaries.
+
 ## 5.0.1
 
 ### Patch Changes
