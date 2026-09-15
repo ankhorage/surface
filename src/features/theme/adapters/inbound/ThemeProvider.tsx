@@ -1,9 +1,10 @@
+import type { ThemeConfig } from '@ankhorage/contracts';
 import { deepMerge } from '@ankhorage/utility/object';
 import { useMemo, useState } from 'react';
 
 import { ResponsiveProvider } from '../../../../core/responsive/ResponsiveProvider';
 import { OverlayProvider } from '../../../../internal/overlay/OverlayProvider';
-import type { ThemeConfig, ThemeProviderProps, ThemeRuntime } from '../../../../types/theme';
+import type { ThemeProviderProps, ThemeRuntime } from '../../../../types/theme';
 import { useFontRuntime } from '../../../font/adapters/inbound/useFontRuntime';
 import { createTheme } from '../../application/use-cases/createTheme';
 import { ThemeRuntimeContext } from './ThemeRuntimeContext';
