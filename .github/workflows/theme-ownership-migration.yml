@@ -33,6 +33,8 @@ jobs:
         run: bun scripts/normalizeThemeOwnership.ts
       - name: Resolve migrated gate conflicts
         run: bun scripts/fixThemeOwnershipConflicts.ts
+      - name: Finish conflict cleanup
+        run: bun scripts/finishThemeOwnershipConflicts.ts
       - name: Canonicalize font root export
         run: sed -i "/export type { FontRuntime } from '.\/features\/font\/public';/d" src/index.ts
       - name: Install released dependencies
