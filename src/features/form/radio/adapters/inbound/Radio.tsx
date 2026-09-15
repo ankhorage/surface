@@ -14,7 +14,7 @@ import type { ButtonBaseProps } from '../../../../../primitives/button-base/type
 import { useTheme } from '../../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../../theme/types';
 import type { RadioProps } from '../../../../../types/radio';
-import { Box } from '../../../../layout/public';
+import { View } from '../../../../layout/public';
 import { Text } from '../../../../typography/public';
 import { isRadioTextContent } from '../../utils/isRadioTextContent';
 
@@ -130,8 +130,8 @@ function renderRadioContent(input: RadioContentInput) {
     input.children !== undefined && input.children !== null && input.children !== false;
 
   return (
-    <Box style={resolveSelectionRowStyle(colors.opacity)}>
-      <Box
+    <View style={resolveSelectionRowStyle(colors.opacity)}>
+      <View
         radius="full"
         style={resolveRadioIndicatorStyle(
           colors.backgroundColor,
@@ -140,22 +140,22 @@ function renderRadioContent(input: RadioContentInput) {
         )}
       >
         {input.isChecked ? (
-          <Box
+          <View
             radius="full"
             style={resolveRadioDotStyle(colors.indicatorColor, indicatorSize.radioDot)}
           />
         ) : null}
-      </Box>
+      </View>
       {hasContent ? (
-        <Box flex={1} ml="s">
+        <View flex={1} ml="s">
           {isRadioTextContent(input.children) ? (
             <Text emphasis={labelEmphasis}>{input.children}</Text>
           ) : (
             input.children
           )}
-        </Box>
+        </View>
       ) : null}
-    </Box>
+    </View>
   );
 }
 

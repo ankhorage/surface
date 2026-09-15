@@ -4,7 +4,7 @@ import { StyleSheet, type ViewStyle } from 'react-native';
 import { Portal } from '../../../../internal/overlay/Portal';
 import { resolveOverlayAnimation } from '../../../../internal/resolvers';
 import type { ToastProviderProps } from '../../../../types/toast';
-import { Stack } from '../../../layout/public';
+import { View } from '../../../layout/public';
 import { ToastContext } from '../../composition/ToastContext';
 import { useToastRuntime } from '../../composition/useToastRuntime';
 import { Toast } from './Toast';
@@ -22,7 +22,7 @@ export function ToastProvider({ children, defaultDuration = 4000 }: ToastProvide
     <ToastContext value={controller}>
       {children}
       <Portal layer="toast" visible={toasts.length > 0}>
-        <Stack gap="s" pointerEvents="box-none" style={[styles.container, animationStyle]}>
+        <View gap="s" pointerEvents="box-none" style={[styles.container, animationStyle]}>
           {toasts.map((toast) => (
             <Toast
               description={toast.description}
@@ -33,7 +33,7 @@ export function ToastProvider({ children, defaultDuration = 4000 }: ToastProvide
               title={toast.title}
             />
           ))}
-        </Stack>
+        </View>
       </Portal>
     </ToastContext>
   );

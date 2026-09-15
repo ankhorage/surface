@@ -5,7 +5,7 @@ import type { SurfaceColor } from '../../../../surfaceColor';
 import { useTheme } from '../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../theme/types';
 import type { ToastProps } from '../../../../types/toast';
-import { Box, Stack } from '../../../layout/public';
+import { View } from '../../../layout/public';
 import { Surface } from '../../../surface/public';
 import { Text } from '../../../typography/public';
 
@@ -29,15 +29,15 @@ export function Toast({
 
   return (
     <Surface p="m" style={[styles.root, statusStyle]} testID={testID} variant="raised">
-      <Stack align="center" direction="row" justify="space-between">
-        <Box flex={1}>
+      <View align="center" direction="row" justify="space-between">
+        <View flex={1}>
           {title ? (
             <Text variant="label" weight="medium">
               {title}
             </Text>
           ) : null}
           {description ? <Text emphasis="muted">{description}</Text> : null}
-        </Box>
+        </View>
         {onDismiss ? (
           <Pressable
             accessibilityLabel="Dismiss notification"
@@ -48,7 +48,7 @@ export function Toast({
             <Text color={statusTextColor}>×</Text>
           </Pressable>
         ) : null}
-      </Stack>
+      </View>
     </Surface>
   );
 }

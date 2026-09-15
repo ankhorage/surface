@@ -8,18 +8,17 @@ await mock.module('react-native', () => ReactNativeWeb);
 
 const scrollContentStyle = { padding: 4 };
 
-const { Container, Grid } = await import('./features/layout/public');
+const { Grid, ScrollView, View } = await import('./features/layout/public');
 const { KeyboardAvoidingView } = await import('./features/keyboard-avoiding-view/public');
-const { ScrollArea } = await import('./layout/ScrollArea');
-const { Show } = await import('./layout/Show');
+const { Show } = await import('./core/responsive/Show');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
 const { ThemeProvider } = await import('./theme/ThemeContext');
 
 function ResponsiveAcceptanceTree() {
   return (
     <ThemeProvider>
-      <Container maxWidth={{ base: 640, md: 960 }} px={{ base: 12, md: 24 }} testID="container">
-        <ScrollArea contentContainerStyle={scrollContentStyle} testID="scroll-area">
+      <View maxWidth={{ base: 640, md: 960 }} px={{ base: 12, md: 24 }} testID="container">
+        <ScrollView contentContainerStyle={scrollContentStyle} testID="scroll-view">
           <Grid cols={{ base: 1, md: 2 }} gap={{ base: 8, md: 16 }} testID="grid">
             <ReactNativeWeb.View testID="grid-first" />
             <ReactNativeWeb.View testID="grid-second" />
@@ -30,8 +29,8 @@ function ResponsiveAcceptanceTree() {
           >
             <ReactNativeWeb.Text>wide-content</ReactNativeWeb.Text>
           </Show>
-        </ScrollArea>
-      </Container>
+        </ScrollView>
+      </View>
     </ThemeProvider>
   );
 }
@@ -40,7 +39,7 @@ test('RN Web 0.21 statically renders and hydrates representative responsive prim
   const markup = renderToString(<ResponsiveAcceptanceTree />);
 
   expect(markup).toContain('data-testid="container"');
-  expect(markup).toContain('data-testid="scroll-area"');
+  expect(markup).toContain('data-testid="scroll-view"');
   expect(markup).toContain('data-testid="grid"');
   expect(markup).toContain('static-fallback');
   expect(markup).not.toContain('wide-content');
@@ -68,7 +67,7 @@ test('RN Web 0.21 statically renders and hydrates representative responsive prim
     await act(async () => Promise.resolve());
 
     expect(container.querySelector('[data-testid="container"]')).not.toBeNull();
-    expect(container.querySelector('[data-testid="scroll-area"]')).not.toBeNull();
+    expect(container.querySelector('[data-testid="scroll-view"]')).not.toBeNull();
     expect(container.querySelectorAll('[data-testid^="grid-"]')).toHaveLength(2);
     expect(hydrationErrors).toEqual([]);
 

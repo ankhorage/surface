@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box } from '../../features/layout/public';
+import { View } from '../../features/layout/public';
 import { Text } from '../../features/typography/public';
 import {
   resolveFieldState,
@@ -13,6 +13,7 @@ import { ButtonBase } from '../../primitives/button-base';
 import { useTheme } from '../../theme/ThemeContext';
 import type { SwitchProps } from './types';
 
+/*** Renders a controlled or uncontrolled accessible switch. */
 export function Switch({
   children,
   checked,
@@ -48,13 +49,7 @@ export function Switch({
       accessibilityRole="switch"
       accessibilityState={{ checked: isChecked }}
       disabled={disabled}
-      onPress={
-        nextChecked === null
-          ? undefined
-          : () => {
-              setChecked(nextChecked);
-            }
-      }
+      onPress={nextChecked === null ? undefined : () => setChecked(nextChecked)}
       testID={testID}
     >
       {(interactionState) => {
@@ -75,14 +70,14 @@ export function Switch({
           colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
 
         return (
-          <Box
+          <View
             style={{
               alignItems: 'center',
               flexDirection: 'row',
               opacity: colors.opacity,
             }}
           >
-            <Box
+            <View
               radius="full"
               style={{
                 backgroundColor: colors.trackColor,
@@ -95,7 +90,7 @@ export function Switch({
                 height: indicatorSize.switchHeight,
               }}
             >
-              <Box
+              <View
                 radius="full"
                 style={{
                   alignSelf: isChecked ? 'flex-end' : 'flex-start',
@@ -104,13 +99,13 @@ export function Switch({
                   width: indicatorSize.switchThumb,
                 }}
               />
-            </Box>
+            </View>
             {children ? (
-              <Box ml="s">
+              <View ml="s">
                 <Text emphasis={labelEmphasis}>{children}</Text>
-              </Box>
+              </View>
             ) : null}
-          </Box>
+          </View>
         );
       }}
     </ButtonBase>

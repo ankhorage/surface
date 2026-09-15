@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, View, type ViewStyle } from 'react-native';
+import { ActivityIndicator, View as ReactNativeView, type ViewStyle } from 'react-native';
 
 import {
   type InteractionState,
@@ -12,7 +12,7 @@ import { useTheme } from '../../../../theme/ThemeContext';
 import type { SurfaceTheme } from '../../../../theme/types';
 import type { ButtonProps } from '../../../../types/button';
 import { Icon } from '../../../icon/public';
-import { Box } from '../../../layout/public';
+import { View } from '../../../layout/public';
 import { Text } from '../../../typography/public';
 
 /*** Renders the primary Surface action control with semantic visual states. */
@@ -80,7 +80,7 @@ function ButtonContent({
   const iconSize = resolveIconSize(theme, size);
 
   return (
-    <Box
+    <View
       px={controlSize.paddingHorizontal}
       py={controlSize.paddingVertical}
       radius={controlSize.borderRadius}
@@ -91,9 +91,9 @@ function ButtonContent({
       ) : (
         <>
           {leadingIcon ? (
-            <View style={resolveAccessoryStyle(theme.spacing.s, 'leading')}>
+            <ReactNativeView style={resolveAccessoryStyle(theme.spacing.s, 'leading')}>
               <Icon {...leadingIcon} color={colors.contentColor} size={iconSize} />
-            </View>
+            </ReactNativeView>
           ) : null}
           <Text
             color={muted ? undefined : color}
@@ -104,13 +104,13 @@ function ButtonContent({
             {children}
           </Text>
           {trailingIcon ? (
-            <View style={resolveAccessoryStyle(theme.spacing.s, 'trailing')}>
+            <ReactNativeView style={resolveAccessoryStyle(theme.spacing.s, 'trailing')}>
               <Icon {...trailingIcon} color={colors.contentColor} size={iconSize} />
-            </View>
+            </ReactNativeView>
           ) : null}
         </>
       )}
-    </Box>
+    </View>
   );
 }
 
