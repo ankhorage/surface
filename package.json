@@ -16,15 +16,16 @@
     "url": "git+https://github.com/ankhorage/surface.git"
   },
   "keywords": [
+    "accessibility",
+    "ankhorage",
+    "components",
+    "design-system",
+    "expo",
+    "foundation",
     "react-native",
     "react-native-web",
-    "expo",
-    "ui",
-    "foundation",
-    "design-system",
     "theming",
-    "accessibility",
-    "components"
+    "ui"
   ],
   "peerDependencies": {
     "@react-native-vector-icons/fontawesome": "^13.1.3",
