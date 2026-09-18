@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.0.3
+
+### Patch Changes
+
+- 177b0ac: Update Ankhorage dependencies: `@ankhorage/color-theory`, `@ankhorage/contracts`, `@ankhorage/paradox`.
+
 ## 9.0.2
 
 ### Patch Changes
