@@ -2,5 +2,4 @@
 "@ankhorage/surface": minor
 ---
 
-Expose every canonical `src/features/**/public.ts` facade automatically through
-`@ankhorage/surface/<feature-path>` package subpaths.
+Expose canonical feature facades automatically through generic Surface package subpaths.
