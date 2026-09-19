@@ -150,7 +150,8 @@ function resolveFontDefinition(source: FontIconSource): WebFontDefinition {
 function resolveFontAwesome5Definition(
   variant: Extract<FontIconSource, { provider: 'FontAwesome5' }>['variant'],
 ): WebFontDefinition {
-  if (variant === 'brand') {
+  const runtimeVariant: unknown = variant;
+  if (runtimeVariant === 'brand') {
     return {
       family: 'FontAwesome5Brands-Regular',
       fontUrl: fontAwesome5BrandFont,
@@ -158,7 +159,7 @@ function resolveFontAwesome5Definition(
       weight: 400,
     };
   }
-  if (variant === 'solid') {
+  if (runtimeVariant === 'solid') {
     return {
       family: 'FontAwesome5Free-Solid',
       fontUrl: fontAwesome5SolidFont,
@@ -166,22 +167,23 @@ function resolveFontAwesome5Definition(
       weight: 900,
     };
   }
-  if (variant === 'regular') {
-    return {
-      family: 'FontAwesome5Free-Regular',
-      fontUrl: fontAwesome5RegularFont,
-      glyphs: FONT_AWESOME_5_REGULAR_GLYPHS,
-      weight: 400,
-    };
+  if (runtimeVariant !== 'regular') {
+    throw new Error(`Unsupported icon FontAwesome5 variant: ${String(runtimeVariant)}`);
   }
-  return assertNever(variant, 'FontAwesome5 variant');
+  return {
+    family: 'FontAwesome5Free-Regular',
+    fontUrl: fontAwesome5RegularFont,
+    glyphs: FONT_AWESOME_5_REGULAR_GLYPHS,
+    weight: 400,
+  };
 }
 
 /*** Resolve one FontAwesome6 style without invoking RNVI runtime components. */
 function resolveFontAwesome6Definition(
   variant: Extract<FontIconSource, { provider: 'FontAwesome6' }>['variant'],
 ): WebFontDefinition {
-  if (variant === 'brand') {
+  const runtimeVariant: unknown = variant;
+  if (runtimeVariant === 'brand') {
     return {
       family: 'FontAwesome6Brands-Regular',
       fontUrl: fontAwesome6BrandFont,
@@ -189,7 +191,7 @@ function resolveFontAwesome6Definition(
       weight: 400,
     };
   }
-  if (variant === 'solid') {
+  if (runtimeVariant === 'solid') {
     return {
       family: 'FontAwesome6Free-Solid',
       fontUrl: fontAwesome6SolidFont,
@@ -197,20 +199,15 @@ function resolveFontAwesome6Definition(
       weight: 900,
     };
   }
-  if (variant === 'regular') {
-    return {
-      family: 'FontAwesome6Free-Regular',
-      fontUrl: fontAwesome6RegularFont,
-      glyphs: FONT_AWESOME_6_REGULAR_GLYPHS,
-      weight: 400,
-    };
+  if (runtimeVariant !== 'regular') {
+    throw new Error(`Unsupported icon FontAwesome6 variant: ${String(runtimeVariant)}`);
   }
-  return assertNever(variant, 'FontAwesome6 variant');
-}
-
-/*** Reject unsupported runtime icon configuration instead of silently changing semantics. */
-function assertNever(value: never, configuration: string): never {
-  throw new Error(`Unsupported icon ${configuration}: ${String(value)}`);
+  return {
+    family: 'FontAwesome6Free-Regular',
+    fontUrl: fontAwesome6RegularFont,
+    glyphs: FONT_AWESOME_6_REGULAR_GLYPHS,
+    weight: 400,
+  };
 }
 
 /*** Register one icon font once before browser layout uses its glyphs. */
