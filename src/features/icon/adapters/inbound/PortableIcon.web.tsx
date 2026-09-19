@@ -1,21 +1,21 @@
-import fontAwesomeGlyphs from '@react-native-vector-icons/fontawesome/glyphmaps/FontAwesome.json';
 import fontAwesomeFont from '@react-native-vector-icons/fontawesome/fonts/FontAwesome.ttf';
-import fontAwesome5BrandGlyphs from '@react-native-vector-icons/fontawesome5/glyphmaps/FontAwesome5_brand.json';
-import fontAwesome5RegularGlyphs from '@react-native-vector-icons/fontawesome5/glyphmaps/FontAwesome5_regular.json';
-import fontAwesome5SolidGlyphs from '@react-native-vector-icons/fontawesome5/glyphmaps/FontAwesome5_solid.json';
+import fontAwesomeGlyphs from '@react-native-vector-icons/fontawesome/glyphmaps/FontAwesome.json';
 import fontAwesome5BrandFont from '@react-native-vector-icons/fontawesome5/fonts/FontAwesome5_Brands.ttf';
 import fontAwesome5RegularFont from '@react-native-vector-icons/fontawesome5/fonts/FontAwesome5_Regular.ttf';
 import fontAwesome5SolidFont from '@react-native-vector-icons/fontawesome5/fonts/FontAwesome5_Solid.ttf';
-import fontAwesome6BrandGlyphs from '@react-native-vector-icons/fontawesome6/glyphmaps/FontAwesome6_brand.json';
-import fontAwesome6RegularGlyphs from '@react-native-vector-icons/fontawesome6/glyphmaps/FontAwesome6_regular.json';
-import fontAwesome6SolidGlyphs from '@react-native-vector-icons/fontawesome6/glyphmaps/FontAwesome6_solid.json';
+import fontAwesome5BrandGlyphs from '@react-native-vector-icons/fontawesome5/glyphmaps/FontAwesome5_brand.json';
+import fontAwesome5RegularGlyphs from '@react-native-vector-icons/fontawesome5/glyphmaps/FontAwesome5_regular.json';
+import fontAwesome5SolidGlyphs from '@react-native-vector-icons/fontawesome5/glyphmaps/FontAwesome5_solid.json';
 import fontAwesome6BrandFont from '@react-native-vector-icons/fontawesome6/fonts/FontAwesome6_Brands.ttf';
 import fontAwesome6RegularFont from '@react-native-vector-icons/fontawesome6/fonts/FontAwesome6_Regular.ttf';
 import fontAwesome6SolidFont from '@react-native-vector-icons/fontawesome6/fonts/FontAwesome6_Solid.ttf';
-import ioniconsGlyphs from '@react-native-vector-icons/ionicons/glyphmaps/Ionicons.json';
+import fontAwesome6BrandGlyphs from '@react-native-vector-icons/fontawesome6/glyphmaps/FontAwesome6_brand.json';
+import fontAwesome6RegularGlyphs from '@react-native-vector-icons/fontawesome6/glyphmaps/FontAwesome6_regular.json';
+import fontAwesome6SolidGlyphs from '@react-native-vector-icons/fontawesome6/glyphmaps/FontAwesome6_solid.json';
 import ioniconsFont from '@react-native-vector-icons/ionicons/fonts/Ionicons.ttf';
-import materialDesignGlyphs from '@react-native-vector-icons/material-design-icons/glyphmaps/MaterialDesignIcons.json';
+import ioniconsGlyphs from '@react-native-vector-icons/ionicons/glyphmaps/Ionicons.json';
 import materialDesignFont from '@react-native-vector-icons/material-design-icons/fonts/MaterialDesignIcons.ttf';
+import materialDesignGlyphs from '@react-native-vector-icons/material-design-icons/glyphmaps/MaterialDesignIcons.json';
 import React from 'react';
 import { Image, Text, type TextStyle } from 'react-native';
 
@@ -40,8 +40,14 @@ interface PortableIconPresentationProps {
 }
 
 type WebPortableIconProps =
-  | (FontIconSource & PortableIconPresentationProps & { readonly style?: React.ComponentProps<typeof Text>['style'] })
-  | (SvgIconSource & PortableIconPresentationProps & { readonly style?: React.ComponentProps<typeof Image>['style'] });
+  | (FontIconSource &
+      PortableIconPresentationProps & {
+        readonly style?: React.ComponentProps<typeof Text>['style'];
+      })
+  | (SvgIconSource &
+      PortableIconPresentationProps & {
+        readonly style?: React.ComponentProps<typeof Image>['style'];
+      });
 
 /*** Renders Surface icons on web without React Native native modules or SVG codegen. */
 export function PortableIcon(props: WebPortableIconProps) {
@@ -57,9 +63,12 @@ interface WebFontDefinition {
 }
 
 /*** Renders one RNVI glyph through the same font and codepoint used by native. */
-function WebFontIcon(props: FontIconSource & PortableIconPresentationProps & {
-  readonly style?: React.ComponentProps<typeof Text>['style'];
-}) {
+function WebFontIcon(
+  props: FontIconSource &
+    PortableIconPresentationProps & {
+      readonly style?: React.ComponentProps<typeof Text>['style'];
+    },
+) {
   const definition = resolveFontDefinition(props);
   useWebFont(definition);
   const codepoint = definition.glyphs.get(props.name);
@@ -89,9 +98,12 @@ function WebFontIcon(props: FontIconSource & PortableIconPresentationProps & {
 }
 
 /*** Renders URL and bundled SVG sources through the portable web Image adapter. */
-function WebSvgIcon(props: SvgIconSource & PortableIconPresentationProps & {
-  readonly style?: React.ComponentProps<typeof Image>['style'];
-}) {
+function WebSvgIcon(
+  props: SvgIconSource &
+    PortableIconPresentationProps & {
+      readonly style?: React.ComponentProps<typeof Image>['style'];
+    },
+) {
   const source = typeof props.source === 'string' ? { uri: props.source } : props.source;
   return (
     <Image
