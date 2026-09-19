@@ -1,10 +1,10 @@
 import React from 'react';
 import {
+  type DimensionValue,
   Modal,
   Pressable,
   StyleSheet,
   View,
-  type DimensionValue,
   type ViewStyle,
 } from 'react-native';
 
@@ -59,12 +59,7 @@ function BottomSheetWebHost({ activeRequest, dismiss }: BottomSheetWebHostProps)
   if (activeRequest === null) return null;
 
   return (
-    <Modal
-      animationType="slide"
-      onRequestClose={dismiss}
-      transparent
-      visible
-    >
+    <Modal animationType="slide" onRequestClose={dismiss} transparent visible>
       <View style={styles.overlay}>
         <Pressable
           accessibilityLabel="Close bottom sheet"
