@@ -117,8 +117,12 @@ function renderBottomSheetContent(activeRequest: BottomSheetPresentOptions): Rea
 
 const styles = StyleSheet.create({
   backdrop: {
-    ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(0, 0, 0, 0.32)',
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+    top: 0,
   },
   overlay: {
     flex: 1,
