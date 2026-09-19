@@ -3,12 +3,10 @@ export type {
   BottomSheetController,
   BottomSheetPresentOptions,
 } from '../../types/bottomSheet';
+export { BottomSheetFlatList } from './BottomSheetFlatList';
 export { BottomSheetProvider } from './BottomSheetProvider';
+export { BottomSheetScrollView } from './BottomSheetScrollView';
+export { BottomSheetSectionList } from './BottomSheetSectionList';
+export { BottomSheetView } from './BottomSheetView';
+export { BottomSheetVirtualizedList } from './BottomSheetVirtualizedList';
 export { useBottomSheet } from './useBottomSheet';
-export {
-  BottomSheetFlatList,
-  BottomSheetScrollView,
-  BottomSheetSectionList,
-  BottomSheetView,
-  BottomSheetVirtualizedList,
-} from '@gorhom/bottom-sheet';
