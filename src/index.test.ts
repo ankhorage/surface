@@ -122,6 +122,13 @@ describe('public package metadata contract', () => {
         import: './dist/index.js',
         types: './dist/index.d.ts',
       },
+      './*': {
+        'react-native': './src/features/*/public.ts',
+        browser: './src/features/*/public.ts',
+        default: './dist/features/*/public.js',
+        import: './dist/features/*/public.js',
+        types: './dist/features/*/public.d.ts',
+      },
       './bottom-sheet': {
         'react-native': './src/features/bottom-sheet/public.ts',
         browser: './src/features/bottom-sheet/public.ts',
@@ -137,6 +144,13 @@ describe('public package metadata contract', () => {
         import: './dist/constants/surfaceColor.js',
         types: './dist/constants/surfaceColor.d.ts',
       },
+      './responsive': {
+        'react-native': './src/core/responsive/index.ts',
+        browser: './src/core/responsive/index.ts',
+        default: './dist/core/responsive/index.js',
+        import: './dist/core/responsive/index.js',
+        types: './dist/core/responsive/index.d.ts',
+      },
       './theme': {
         bun: './src/features/theme/public.ts',
         'react-native': './src/features/theme/public.ts',
@@ -144,6 +158,13 @@ describe('public package metadata contract', () => {
         default: './dist/features/theme/public.js',
         import: './dist/features/theme/public.js',
         types: './dist/features/theme/public.d.ts',
+      },
+      './theme/runtime': {
+        'react-native': './src/features/theme/runtime.ts',
+        browser: './src/features/theme/runtime.ts',
+        default: './dist/features/theme/runtime.js',
+        import: './dist/features/theme/runtime.js',
+        types: './dist/features/theme/runtime.d.ts',
       },
       './package.json': './package.json',
     });
