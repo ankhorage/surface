@@ -140,6 +140,8 @@ function resolveFontDefinition(source: FontIconSource): WebFontDefinition {
         fontUrl: materialDesignFont,
         glyphs: MATERIAL_DESIGN_GLYPHS,
       };
+    default:
+      return assertNever(source.provider, 'provider');
   }
 }
 
@@ -163,12 +165,15 @@ function resolveFontAwesome5Definition(
       weight: 900,
     };
   }
-  return {
-    family: 'FontAwesome5Free-Regular',
-    fontUrl: fontAwesome5RegularFont,
-    glyphs: FONT_AWESOME_5_REGULAR_GLYPHS,
-    weight: 400,
-  };
+  if (variant === 'regular') {
+    return {
+      family: 'FontAwesome5Free-Regular',
+      fontUrl: fontAwesome5RegularFont,
+      glyphs: FONT_AWESOME_5_REGULAR_GLYPHS,
+      weight: 400,
+    };
+  }
+  return assertNever(variant, 'FontAwesome5 variant');
 }
 
 /*** Resolve one FontAwesome6 style without invoking RNVI runtime components. */
@@ -191,12 +196,20 @@ function resolveFontAwesome6Definition(
       weight: 900,
     };
   }
-  return {
-    family: 'FontAwesome6Free-Regular',
-    fontUrl: fontAwesome6RegularFont,
-    glyphs: FONT_AWESOME_6_REGULAR_GLYPHS,
-    weight: 400,
-  };
+  if (variant === 'regular') {
+    return {
+      family: 'FontAwesome6Free-Regular',
+      fontUrl: fontAwesome6RegularFont,
+      glyphs: FONT_AWESOME_6_REGULAR_GLYPHS,
+      weight: 400,
+    };
+  }
+  return assertNever(variant, 'FontAwesome6 variant');
+}
+
+/*** Reject unsupported runtime icon configuration instead of silently changing semantics. */
+function assertNever(value: never, configuration: string): never {
+  throw new Error(`Unsupported icon ${configuration}: ${String(value)}`);
 }
 
 /*** Register one icon font once before browser layout uses its glyphs. */
