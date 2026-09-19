@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.0.6
+
+### Patch Changes
+
+- a4d56dd: Render Surface icons through a native-free web adapter using the official React Native Vector Icons
+  glyphmaps and fonts, preventing browser bundles from reaching React Native codegen modules.
+
 ## 9.0.5
 
 ### Patch Changes
