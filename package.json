@@ -63,6 +63,13 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./*": {
+      "react-native": "./src/features/*/public.ts",
+      "browser": "./src/features/*/public.ts",
+      "types": "./dist/features/*/public.d.ts",
+      "import": "./dist/features/*/public.js",
+      "default": "./dist/features/*/public.js"
+    },
     "./bottom-sheet": {
       "react-native": "./src/features/bottom-sheet/public.ts",
       "browser": "./src/features/bottom-sheet/public.ts",
@@ -78,6 +85,13 @@
       "import": "./dist/constants/surfaceColor.js",
       "default": "./dist/constants/surfaceColor.js"
     },
+    "./responsive": {
+      "react-native": "./src/core/responsive/index.ts",
+      "browser": "./src/core/responsive/index.ts",
+      "types": "./dist/core/responsive/index.d.ts",
+      "import": "./dist/core/responsive/index.js",
+      "default": "./dist/core/responsive/index.js"
+    },
     "./theme": {
       "bun": "./src/features/theme/public.ts",
       "react-native": "./src/features/theme/public.ts",
@@ -85,6 +99,13 @@
       "types": "./dist/features/theme/public.d.ts",
       "import": "./dist/features/theme/public.js",
       "default": "./dist/features/theme/public.js"
+    },
+    "./theme/runtime": {
+      "react-native": "./src/features/theme/runtime.ts",
+      "browser": "./src/features/theme/runtime.ts",
+      "types": "./dist/features/theme/runtime.d.ts",
+      "import": "./dist/features/theme/runtime.js",
+      "default": "./dist/features/theme/runtime.js"
     },
     "./package.json": "./package.json"
   },
