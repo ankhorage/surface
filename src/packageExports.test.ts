@@ -20,6 +20,8 @@ test('maps all canonical feature subpaths through one package export pattern', a
   });
   expect(packageJson.exports['.']).toBeDefined();
   expect(packageJson.exports['./color']).toBeDefined();
+  expect(packageJson.exports['./responsive']).toBeDefined();
+  expect(packageJson.exports['./theme/runtime']).toBeDefined();
   expect(resolveFeatureExport(packageJson.exports['./*'], 'accordion', 'browser')).toBe(
     './src/features/accordion/public.ts',
   );
