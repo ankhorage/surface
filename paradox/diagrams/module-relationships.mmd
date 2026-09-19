@@ -26,11 +26,23 @@ graph LR
   module_src_features_badge_adapters_inbound_Badge_tsx["src/features/badge/adapters/inbound/Badge.tsx"]
   module_src_features_badge_public_ts["src/features/badge/public.ts"]
   module_src_features_bottom_sheet_BottomSheetContext_ts["src/features/bottom-sheet/BottomSheetContext.ts"]
+  module_src_features_bottom_sheet_BottomSheetFlatList_tsx["src/features/bottom-sheet/BottomSheetFlatList.tsx"]
+  module_src_features_bottom_sheet_BottomSheetFlatList_web_tsx["src/features/bottom-sheet/BottomSheetFlatList.web.tsx"]
   module_src_features_bottom_sheet_BottomSheetProvider_tsx["src/features/bottom-sheet/BottomSheetProvider.tsx"]
+  module_src_features_bottom_sheet_BottomSheetProvider_web_tsx["src/features/bottom-sheet/BottomSheetProvider.web.tsx"]
+  module_src_features_bottom_sheet_BottomSheetScrollView_tsx["src/features/bottom-sheet/BottomSheetScrollView.tsx"]
+  module_src_features_bottom_sheet_BottomSheetScrollView_web_tsx["src/features/bottom-sheet/BottomSheetScrollView.web.tsx"]
+  module_src_features_bottom_sheet_BottomSheetSectionList_tsx["src/features/bottom-sheet/BottomSheetSectionList.tsx"]
+  module_src_features_bottom_sheet_BottomSheetSectionList_web_tsx["src/features/bottom-sheet/BottomSheetSectionList.web.tsx"]
+  module_src_features_bottom_sheet_BottomSheetView_tsx["src/features/bottom-sheet/BottomSheetView.tsx"]
+  module_src_features_bottom_sheet_BottomSheetView_web_tsx["src/features/bottom-sheet/BottomSheetView.web.tsx"]
+  module_src_features_bottom_sheet_BottomSheetVirtualizedList_tsx["src/features/bottom-sheet/BottomSheetVirtualizedList.tsx"]
+  module_src_features_bottom_sheet_BottomSheetVirtualizedList_web_tsx["src/features/bottom-sheet/BottomSheetVirtualizedList.web.tsx"]
   module_src_features_bottom_sheet_public_test_ts["src/features/bottom-sheet/public.test.ts"]
   module_src_features_bottom_sheet_public_ts["src/features/bottom-sheet/public.ts"]
   module_src_features_bottom_sheet_useBottomSheet_test_tsx["src/features/bottom-sheet/useBottomSheet.test.tsx"]
   module_src_features_bottom_sheet_useBottomSheet_ts["src/features/bottom-sheet/useBottomSheet.ts"]
+  module_src_features_bottom_sheet_webAdapters_test_tsx["src/features/bottom-sheet/webAdapters.test.tsx"]
   module_src_features_button_adapters_inbound_Button_tsx["src/features/button/adapters/inbound/Button.tsx"]
   module_src_features_button_adapters_inbound_IconButton_tsx["src/features/button/adapters/inbound/IconButton.tsx"]
   module_src_features_button_public_ts["src/features/button/public.ts"]
@@ -272,6 +284,9 @@ graph LR
   module_src_features_bottom_sheet_BottomSheetContext_ts --> module_src_types_bottomSheet_ts
   module_src_features_bottom_sheet_BottomSheetProvider_tsx --> module_src_features_bottom_sheet_BottomSheetContext_ts
   module_src_features_bottom_sheet_BottomSheetProvider_tsx --> module_src_types_bottomSheet_ts
+  module_src_features_bottom_sheet_BottomSheetProvider_web_tsx --> module_src_features_bottom_sheet_BottomSheetContext_ts
+  module_src_features_bottom_sheet_BottomSheetProvider_web_tsx --> module_src_features_surface_public_ts
+  module_src_features_bottom_sheet_BottomSheetProvider_web_tsx --> module_src_types_bottomSheet_ts
   module_src_features_bottom_sheet_useBottomSheet_test_tsx --> module_src_features_bottom_sheet_useBottomSheet_ts
   module_src_features_bottom_sheet_useBottomSheet_ts --> module_src_features_bottom_sheet_BottomSheetContext_ts
   module_src_features_bottom_sheet_useBottomSheet_ts --> module_src_types_bottomSheet_ts

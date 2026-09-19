@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.0.9
+
+### Patch Changes
+
+- 91caf32: Make the public bottom-sheet boundary portable on Web with React Native Web scrollables and a
+  Gorhom-free browser provider while preserving the native Gorhom implementation.
+
 ## 9.0.8
 
 ### Patch Changes
