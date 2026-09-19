@@ -17,7 +17,7 @@ import ioniconsFont from '@react-native-vector-icons/ionicons/fonts/Ionicons.ttf
 import materialDesignGlyphs from '@react-native-vector-icons/material-design-icons/glyphmaps/MaterialDesignIcons.json';
 import materialDesignFont from '@react-native-vector-icons/material-design-icons/fonts/MaterialDesignIcons.ttf';
 import React from 'react';
-import { Image, Text } from 'react-native';
+import { Image, Text, type TextStyle } from 'react-native';
 
 import type { FontIconSource, SvgIconSource } from '../../../../types/icon';
 
@@ -53,7 +53,7 @@ interface WebFontDefinition {
   readonly family: string;
   readonly fontUrl: string;
   readonly glyphs: GlyphMap;
-  readonly weight?: number;
+  readonly weight?: TextStyle['fontWeight'];
 }
 
 /*** Renders one RNVI glyph through the same font and codepoint used by native. */
@@ -198,9 +198,6 @@ function useWebFont(definition: WebFontDefinition) {
     style.id = id;
     style.textContent = createFontFaceCss(definition);
     document.head.appendChild(style);
-    return () => {
-      style.remove();
-    };
   }, [definition.family, definition.fontUrl, definition.weight]);
 }
 
