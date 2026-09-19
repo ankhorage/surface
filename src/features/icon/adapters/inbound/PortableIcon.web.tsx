@@ -124,6 +124,7 @@ function WebSvgIcon(
 
 /*** Resolve the browser font, glyph map, and weight for one existing Surface icon contract. */
 function resolveFontDefinition(source: FontIconSource): WebFontDefinition {
+  const runtimeProvider: unknown = source.provider;
   switch (source.provider) {
     case undefined:
     case 'Ionicons':
@@ -141,7 +142,7 @@ function resolveFontDefinition(source: FontIconSource): WebFontDefinition {
         glyphs: MATERIAL_DESIGN_GLYPHS,
       };
     default:
-      return assertNever(source.provider, 'provider');
+      throw new Error(`Unsupported icon provider: ${String(runtimeProvider)}`);
   }
 }
 
