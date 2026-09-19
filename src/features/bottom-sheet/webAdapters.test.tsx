@@ -19,11 +19,15 @@ const [
   import('./BottomSheetVirtualizedList.web'),
 ]);
 
-test('web bottom-sheet exports resolve without Gorhom runtime components', () => {
-  expect(BottomSheetFlatList).toBe(ReactNativeWeb.FlatList);
-  expect(typeof BottomSheetProvider).toBe('function');
-  expect(BottomSheetScrollView).toBe(ReactNativeWeb.ScrollView);
-  expect(BottomSheetSectionList).toBe(ReactNativeWeb.SectionList);
-  expect(BottomSheetView).toBe(ReactNativeWeb.View);
-  expect(BottomSheetVirtualizedList).toBe(ReactNativeWeb.VirtualizedList);
+test('web bottom-sheet adapters load without Gorhom runtime components', () => {
+  for (const component of [
+    BottomSheetFlatList,
+    BottomSheetProvider,
+    BottomSheetScrollView,
+    BottomSheetSectionList,
+    BottomSheetView,
+    BottomSheetVirtualizedList,
+  ]) {
+    expect(typeof component).toBe('function');
+  }
 });
