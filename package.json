@@ -63,6 +63,13 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./*": {
+      "react-native": "./src/features/*/public.ts",
+      "browser": "./src/features/*/public.ts",
+      "types": "./dist/features/*/public.d.ts",
+      "import": "./dist/features/*/public.js",
+      "default": "./dist/features/*/public.js"
+    },
     "./bottom-sheet": {
       "react-native": "./src/features/bottom-sheet/public.ts",
       "browser": "./src/features/bottom-sheet/public.ts",
