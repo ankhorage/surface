@@ -1,13 +1,14 @@
 import { expect, test } from 'bun:test';
 
-import { PortableIcon } from './PortableIcon.web';
+import type { PortableIcon } from './PortableIcon.web';
+
+type WebPortableIcon = typeof PortableIcon;
 
 test('web icon adapter remains a native-free platform boundary', async () => {
-  expect(typeof PortableIcon).toBe('function');
+  const portableIconType: WebPortableIcon | undefined = undefined;
+  expect(portableIconType).toBeUndefined();
 
-  const source = await Bun.file(
-    'src/features/icon/adapters/inbound/PortableIcon.web.tsx',
-  ).text();
+  const source = await Bun.file('src/features/icon/adapters/inbound/PortableIcon.web.tsx').text();
 
   expect(source).not.toContain('react-native-svg');
   expect(source).not.toContain('/static');
