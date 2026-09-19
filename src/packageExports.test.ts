@@ -1,0 +1,38 @@
+import { expect, test } from 'bun:test';
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+
+test('maps all canonical feature subpaths through one package export pattern', async () => {
+  const packageJson = JSON.parse(
+    await readFile(resolve(import.meta.dir, '..', 'package.json'), 'utf8'),
+  ) as {
+    readonly exports: Record<string, unknown>;
+  };
+
+  expect(packageJson.exports['./*']).toEqual({
+    'react-native': './src/features/*/public.ts',
+    browser: './src/features/*/public.ts',
+    types: './dist/features/*/public.d.ts',
+    import: './dist/features/*/public.js',
+    default: './dist/features/*/public.js',
+  });
+  expect(packageJson.exports['.']).toBeDefined();
+  expect(packageJson.exports['./color']).toBeDefined();
+  expect(resolveFeatureExport(packageJson.exports['./*'], 'accordion', 'browser')).toBe(
+    './src/features/accordion/public.ts',
+  );
+  expect(resolveFeatureExport(packageJson.exports['./*'], 'form/checkbox', 'import')).toBe(
+    './dist/features/form/checkbox/public.js',
+  );
+});
+
+/*** Resolve one export-pattern condition the same way package wildcard substitution does. */
+function resolveFeatureExport(
+  pattern: unknown,
+  featurePath: string,
+  condition: 'browser' | 'import',
+): string | null {
+  if (typeof pattern !== 'object' || pattern === null || Array.isArray(pattern)) return null;
+  const value = Reflect.get(pattern, condition);
+  return typeof value === 'string' ? value.replace('*', featurePath) : null;
+}
