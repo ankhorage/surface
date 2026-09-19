@@ -1,3 +1,4 @@
+import { isRecord } from '@ankhorage/utility/object';
 import { expect, test } from 'bun:test';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -32,7 +33,7 @@ function resolveFeatureExport(
   featurePath: string,
   condition: 'browser' | 'import',
 ): string | null {
-  if (typeof pattern !== 'object' || pattern === null || Array.isArray(pattern)) return null;
-  const value = Reflect.get(pattern, condition);
+  if (!isRecord(pattern)) return null;
+  const value: unknown = pattern[condition];
   return typeof value === 'string' ? value.replace('*', featurePath) : null;
 }
