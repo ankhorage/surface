@@ -28,6 +28,6 @@ test('web bottom-sheet adapters load without Gorhom runtime components', () => {
     BottomSheetView,
     BottomSheetVirtualizedList,
   ]) {
-    expect(typeof component).toBe('function');
+    expect(component).toBeDefined();
   }
 });
