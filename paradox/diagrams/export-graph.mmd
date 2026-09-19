@@ -1,6 +1,7 @@
 graph LR
-  module_src_context_FontContext_tsx["src/context/FontContext.tsx"]
-  module_src_context_TranslationContext_tsx["src/context/TranslationContext.tsx"]
+  module_src_constants_surfaceColor_public_test_ts["src/constants/surfaceColor.public.test.ts"]
+  module_src_constants_surfaceColor_test_ts["src/constants/surfaceColor.test.ts"]
+  module_src_constants_surfaceColor_ts["src/constants/surfaceColor.ts"]
   module_src_core_responsive_breakpoints_ts["src/core/responsive/breakpoints.ts"]
   module_src_core_responsive_getBreakpointFromWidth_test_ts["src/core/responsive/getBreakpointFromWidth.test.ts"]
   module_src_core_responsive_getBreakpointFromWidth_ts["src/core/responsive/getBreakpointFromWidth.ts"]
@@ -35,6 +36,10 @@ graph LR
   module_src_features_button_public_ts["src/features/button/public.ts"]
   module_src_features_card_adapters_inbound_Card_tsx["src/features/card/adapters/inbound/Card.tsx"]
   module_src_features_card_public_ts["src/features/card/public.ts"]
+  module_src_features_font_adapters_inbound_FontProvider_tsx["src/features/font/adapters/inbound/FontProvider.tsx"]
+  module_src_features_font_adapters_inbound_FontRuntimeContext_tsx["src/features/font/adapters/inbound/FontRuntimeContext.tsx"]
+  module_src_features_font_adapters_inbound_useFontRuntime_ts["src/features/font/adapters/inbound/useFontRuntime.ts"]
+  module_src_features_font_public_ts["src/features/font/public.ts"]
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx["src/features/form/checkbox/adapters/inbound/Checkbox.tsx"]
   module_src_features_form_checkbox_public_ts["src/features/form/checkbox/public.ts"]
   module_src_features_form_field_adapters_inbound_Field_tsx["src/features/form/field/adapters/inbound/Field.tsx"]
@@ -49,8 +54,10 @@ graph LR
   module_src_features_form_text_input_public_ts["src/features/form/text-input/public.ts"]
   module_src_features_form_text_input_utils_resolveTextInputPresentation_ts["src/features/form/text-input/utils/resolveTextInputPresentation.ts"]
   module_src_features_icon_adapters_inbound_Icon_tsx["src/features/icon/adapters/inbound/Icon.tsx"]
+  module_src_features_icon_adapters_inbound_PortableIcon_test_tsx["src/features/icon/adapters/inbound/PortableIcon.test.tsx"]
   module_src_features_icon_adapters_inbound_PortableIcon_tsx["src/features/icon/adapters/inbound/PortableIcon.tsx"]
-  module_src_features_icon_adapters_inbound_PortableIcon_web_test_tsx["src/features/icon/adapters/inbound/PortableIcon.web.test.tsx"]
+  module_src_features_icon_adapters_inbound_PortableIcon_web_test_ts["src/features/icon/adapters/inbound/PortableIcon.web.test.ts"]
+  module_src_features_icon_adapters_inbound_PortableIcon_web_tsx["src/features/icon/adapters/inbound/PortableIcon.web.tsx"]
   module_src_features_icon_constants_ts["src/features/icon/constants.ts"]
   module_src_features_icon_public_ts["src/features/icon/public.ts"]
   module_src_features_image_adapters_inbound_Image_tsx["src/features/image/adapters/inbound/Image.tsx"]
@@ -105,6 +112,32 @@ graph LR
   module_src_features_tabs_utils_resolveNextTabValue_ts["src/features/tabs/utils/resolveNextTabValue.ts"]
   module_src_features_tabs_utils_resolveTabElementId_test_ts["src/features/tabs/utils/resolveTabElementId.test.ts"]
   module_src_features_tabs_utils_resolveTabElementId_ts["src/features/tabs/utils/resolveTabElementId.ts"]
+  module_src_features_theme_adapters_inbound_ThemeProvider_tsx["src/features/theme/adapters/inbound/ThemeProvider.tsx"]
+  module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx["src/features/theme/adapters/inbound/ThemeRuntimeContext.tsx"]
+  module_src_features_theme_adapters_inbound_ThemeScope_test_tsx["src/features/theme/adapters/inbound/ThemeScope.test.tsx"]
+  module_src_features_theme_adapters_inbound_ThemeScope_tsx["src/features/theme/adapters/inbound/ThemeScope.tsx"]
+  module_src_features_theme_adapters_inbound_useTheme_ts["src/features/theme/adapters/inbound/useTheme.ts"]
+  module_src_features_theme_application_use_cases_createTheme_ts["src/features/theme/application/use-cases/createTheme.ts"]
+  module_src_features_theme_application_use_cases_createThemeOverrides_test_ts["src/features/theme/application/use-cases/createThemeOverrides.test.ts"]
+  module_src_features_theme_application_use_cases_createThemeValidation_test_ts["src/features/theme/application/use-cases/createThemeValidation.test.ts"]
+  module_src_features_theme_constants_ts["src/features/theme/constants.ts"]
+  module_src_features_theme_domain_createSurfaceColorDiagnosticCollector_ts["src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts"]
+  module_src_features_theme_domain_createSurfaceSemanticPolicy_ts["src/features/theme/domain/createSurfaceSemanticPolicy.ts"]
+  module_src_features_theme_domain_generatePalette_test_ts["src/features/theme/domain/generatePalette.test.ts"]
+  module_src_features_theme_domain_generatePalette_ts["src/features/theme/domain/generatePalette.ts"]
+  module_src_features_theme_domain_inverseSemantics_test_ts["src/features/theme/domain/inverseSemantics.test.ts"]
+  module_src_features_theme_domain_resolveRoleSemantics_ts["src/features/theme/domain/resolveRoleSemantics.ts"]
+  module_src_features_theme_domain_resolveSemanticColors_ts["src/features/theme/domain/resolveSemanticColors.ts"]
+  module_src_features_theme_domain_resolveSurfaceSemanticModel_ts["src/features/theme/domain/resolveSurfaceSemanticModel.ts"]
+  module_src_features_theme_public_test_ts["src/features/theme/public.test.ts"]
+  module_src_features_theme_public_ts["src/features/theme/public.ts"]
+  module_src_features_theme_runtime_test_ts["src/features/theme/runtime.test.ts"]
+  module_src_features_theme_runtime_ts["src/features/theme/runtime.ts"]
+  module_src_features_theme_utils_resolveGlobalTokens_ts["src/features/theme/utils/resolveGlobalTokens.ts"]
+  module_src_features_theme_utils_resolveHeadingTokenOverrides_ts["src/features/theme/utils/resolveHeadingTokenOverrides.ts"]
+  module_src_features_theme_utils_resolveNumericTokenOverrides_ts["src/features/theme/utils/resolveNumericTokenOverrides.ts"]
+  module_src_features_theme_utils_resolveToken_ts["src/features/theme/utils/resolveToken.ts"]
+  module_src_features_theme_utils_resolveWeightTokenOverrides_ts["src/features/theme/utils/resolveWeightTokenOverrides.ts"]
   module_src_features_toast_adapters_inbound_Toast_tsx["src/features/toast/adapters/inbound/Toast.tsx"]
   module_src_features_toast_adapters_inbound_ToastProvider_tsx["src/features/toast/adapters/inbound/ToastProvider.tsx"]
   module_src_features_toast_adapters_inbound_useToast_test_tsx["src/features/toast/adapters/inbound/useToast.test.tsx"]
@@ -123,8 +156,6 @@ graph LR
   module_src_features_typography_utils_resolveHeadingTextStyle_ts["src/features/typography/utils/resolveHeadingTextStyle.ts"]
   module_src_index_test_ts["src/index.test.ts"]
   module_src_index_ts["src/index.ts"]
-  module_src_interactionPolicy_test_ts["src/interactionPolicy.test.ts"]
-  module_src_interactionPolicy_ts["src/interactionPolicy.ts"]
   module_src_internal_focus_FocusScope_tsx["src/internal/focus/FocusScope.tsx"]
   module_src_internal_focus_useFocusManager_test_ts["src/internal/focus/useFocusManager.test.ts"]
   module_src_internal_focus_useFocusManager_ts["src/internal/focus/useFocusManager.ts"]
@@ -164,30 +195,7 @@ graph LR
   module_src_internal_resolvers_resolveTextStyles_test_ts["src/internal/resolvers/resolveTextStyles.test.ts"]
   module_src_internal_resolvers_resolveTextStyles_ts["src/internal/resolvers/resolveTextStyles.ts"]
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
-  module_src_surfaceColor_test_ts["src/surfaceColor.test.ts"]
-  module_src_surfaceColor_ts["src/surfaceColor.ts"]
-  module_src_theme_colorEngine_test_ts["src/theme/colorEngine.test.ts"]
-  module_src_theme_colorEngine_ts["src/theme/colorEngine.ts"]
-  module_src_theme_createSurfaceColorDiagnosticCollector_ts["src/theme/createSurfaceColorDiagnosticCollector.ts"]
-  module_src_theme_createSurfaceSemanticPolicy_ts["src/theme/createSurfaceSemanticPolicy.ts"]
-  module_src_theme_createTheme_ts["src/theme/createTheme.ts"]
-  module_src_theme_createThemeOverrides_test_ts["src/theme/createThemeOverrides.test.ts"]
-  module_src_theme_createThemeValidation_test_ts["src/theme/createThemeValidation.test.ts"]
-  module_src_theme_defaultTokens_ts["src/theme/defaultTokens.ts"]
-  module_src_theme_index_ts["src/theme/index.ts"]
-  module_src_theme_inverseSemantics_test_ts["src/theme/inverseSemantics.test.ts"]
-  module_src_theme_public_test_ts["src/theme/public.test.ts"]
-  module_src_theme_public_ts["src/theme/public.ts"]
-  module_src_theme_resolveGlobalTokens_ts["src/theme/resolveGlobalTokens.ts"]
-  module_src_theme_resolveHeadingTokenOverrides_ts["src/theme/resolveHeadingTokenOverrides.ts"]
-  module_src_theme_resolveNumericTokenOverrides_ts["src/theme/resolveNumericTokenOverrides.ts"]
-  module_src_theme_resolveRoleSemantics_ts["src/theme/resolveRoleSemantics.ts"]
-  module_src_theme_resolveSurfaceSemanticModel_ts["src/theme/resolveSurfaceSemanticModel.ts"]
-  module_src_theme_resolveToken_ts["src/theme/resolveToken.ts"]
-  module_src_theme_resolveWeightTokenOverrides_ts["src/theme/resolveWeightTokenOverrides.ts"]
-  module_src_theme_surfaceColorPolicy_ts["src/theme/surfaceColorPolicy.ts"]
-  module_src_theme_ThemeContext_tsx["src/theme/ThemeContext.tsx"]
-  module_src_theme_types_ts["src/theme/types.ts"]
+  module_src_structureOwnership_test_ts["src/structureOwnership.test.ts"]
   module_src_types_accordion_ts["src/types/accordion.ts"]
   module_src_types_app_bar_ts["src/types/app-bar.ts"]
   module_src_types_badge_ts["src/types/badge.ts"]
@@ -196,8 +204,11 @@ graph LR
   module_src_types_card_ts["src/types/card.ts"]
   module_src_types_checkbox_ts["src/types/checkbox.ts"]
   module_src_types_field_ts["src/types/field.ts"]
+  module_src_types_font_ts["src/types/font.ts"]
   module_src_types_icon_ts["src/types/icon.ts"]
   module_src_types_image_ts["src/types/image.ts"]
+  module_src_types_interactionPolicy_test_ts["src/types/interactionPolicy.test.ts"]
+  module_src_types_interactionPolicy_ts["src/types/interactionPolicy.ts"]
   module_src_types_keyboard_avoiding_view_ts["src/types/keyboard-avoiding-view.ts"]
   module_src_types_layout_ts["src/types/layout.ts"]
   module_src_types_list_ts["src/types/list.ts"]
@@ -207,15 +218,15 @@ graph LR
   module_src_types_pressable_ts["src/types/pressable.ts"]
   module_src_types_radio_ts["src/types/radio.ts"]
   module_src_types_surface_ts["src/types/surface.ts"]
+  module_src_types_surfaceColor_test_ts["src/types/surfaceColor.test.ts"]
+  module_src_types_surfaceColor_ts["src/types/surfaceColor.ts"]
   module_src_types_switch_ts["src/types/switch.ts"]
   module_src_types_tabs_ts["src/types/tabs.ts"]
   module_src_types_text_input_ts["src/types/text-input.ts"]
+  module_src_types_theme_ts["src/types/theme.ts"]
   module_src_types_toast_ts["src/types/toast.ts"]
   module_src_types_tooltip_ts["src/types/tooltip.ts"]
   module_src_types_typography_ts["src/types/typography.ts"]
-  module_src_utils_deepEqual_ts["src/utils/deepEqual.ts"]
-  module_src_utils_deepMerge_test_ts["src/utils/deepMerge.test.ts"]
-  module_src_utils_deepMerge_ts["src/utils/deepMerge.ts"]
   module_src_utils_resolveSpacing_ts["src/utils/resolveSpacing.ts"]
   module_src_utils_resolveViewStyles_test_ts["src/utils/resolveViewStyles.test.ts"]
   module_src_utils_resolveViewStyles_ts["src/utils/resolveViewStyles.ts"]
@@ -251,7 +262,7 @@ graph LR
   module_src_types_accordion_ts --> export_AccordionTriggerProps
   export_AccordionTriggerProps -.-> export_InteractionPolicy
   export_ActionSemantics["ActionSemantics"]
-  module_src_theme_types_ts --> export_ActionSemantics
+  module_src_types_theme_ts --> export_ActionSemantics
   export_ActionSemantics -.-> export_RoleSemantics
   export_AppBar["AppBar"]
   module_src_features_app_bar_adapters_inbound_AppBar_tsx --> export_AppBar
@@ -265,7 +276,7 @@ graph LR
   export_BadgeProps["BadgeProps"]
   module_src_types_badge_ts --> export_BadgeProps
   export_BorderSemantics["BorderSemantics"]
-  module_src_theme_types_ts --> export_BorderSemantics
+  module_src_types_theme_ts --> export_BorderSemantics
   export_Breakpoint["Breakpoint"]
   module_src_core_responsive_types_ts --> export_Breakpoint
   export_BREAKPOINT_ORDER["BREAKPOINT_ORDER"]
@@ -296,24 +307,11 @@ graph LR
   module_src_types_checkbox_ts --> export_CheckboxProps
   export_CheckboxProps -.-> export_InteractionPolicy
   export_CheckboxProps -.-> export_Responsive
-  export_ColorHarmony["ColorHarmony"]
-  module_node_modules__ankhorage_color_theory_dist_harmony_d_ts --> export_ColorHarmony
-  export_ColorSwatch["ColorSwatch"]
-  module_node_modules__ankhorage_color_theory_dist_swatches_d_ts --> export_ColorSwatch
-  export_ColorSwatchStep["ColorSwatchStep"]
-  module_node_modules__ankhorage_color_theory_dist_swatches_d_ts --> export_ColorSwatchStep
   export_ContentSemantics["ContentSemantics"]
-  module_src_theme_types_ts --> export_ContentSemantics
+  module_src_types_theme_ts --> export_ContentSemantics
   export_createTheme["createTheme"]
-  module_src_theme_createTheme_ts --> export_createTheme
+  module_src_features_theme_application_use_cases_createTheme_ts --> export_createTheme
   export_createTheme -.-> export_SurfaceTheme
-  export_createTheme -.-> export_ThemeConfig
-  export_deepMerge["deepMerge"]
-  module_src_utils_deepMerge_ts --> export_deepMerge
-  export_DEFAULT_CONFIG["DEFAULT_CONFIG"]
-  module_src_theme_createTheme_ts --> export_DEFAULT_CONFIG
-  export_DEFAULT_TOKENS["DEFAULT_TOKENS"]
-  module_src_theme_defaultTokens_ts --> export_DEFAULT_TOKENS
   export_Divider["Divider"]
   module_src_features_layout_adapters_inbound_Divider_tsx --> export_Divider
   export_Divider -.-> export_DividerProps
@@ -328,26 +326,14 @@ graph LR
   export_FontIconSource["FontIconSource"]
   module_src_types_icon_ts --> export_FontIconSource
   export_FontProvider["FontProvider"]
-  module_src_context_FontContext_tsx --> export_FontProvider
+  module_src_features_font_adapters_inbound_FontProvider_tsx --> export_FontProvider
+  export_FontProvider -.-> export_FontProviderProps
+  export_FontProviderProps["FontProviderProps"]
+  module_src_types_font_ts --> export_FontProviderProps
   export_FontRuntime["FontRuntime"]
-  module_src_context_FontContext_tsx --> export_FontRuntime
+  module_src_types_font_ts --> export_FontRuntime
   export_FontWeight["FontWeight"]
-  module_src_theme_types_ts --> export_FontWeight
-  export_GeneratedColorRole["GeneratedColorRole"]
-  module_node_modules__ankhorage_color_theory_dist_harmony_d_ts --> export_GeneratedColorRole
-  export_GeneratedThemeModeColors["GeneratedThemeModeColors"]
-  module_node_modules__ankhorage_color_theory_dist_theme_colors_d_ts --> export_GeneratedThemeModeColors
-  export_GeneratedThemeModeColors -.-> export_GeneratedThemeSwatches
-  export_GeneratedThemeSwatches["GeneratedThemeSwatches"]
-  module_node_modules__ankhorage_color_theory_dist_theme_colors_d_ts --> export_GeneratedThemeSwatches
-  export_GeneratedThemeSwatches -.-> export_ColorSwatch
-  export_generatePalette["generatePalette"]
-  module_src_theme_colorEngine_ts --> export_generatePalette
-  export_generatePalette -.-> export_GeneratedThemeSwatches
-  export_generatePalette -.-> export_SurfaceColorDiagnostics
-  export_generatePalette -.-> export_ThemeConfig
-  export_generatePalette -.-> export_ThemeSemantics
-  export_generatePalette -.-> export_ThemeTokens
+  module_src_types_theme_ts --> export_FontWeight
   export_getBreakpointFromWidth["getBreakpointFromWidth"]
   module_src_core_responsive_getBreakpointFromWidth_ts --> export_getBreakpointFromWidth
   export_Grid["Grid"]
@@ -364,11 +350,6 @@ graph LR
   export_HeadingProps["HeadingProps"]
   module_src_types_typography_ts --> export_HeadingProps
   export_HeadingProps -.-> export_HeadingLevel
-  export_HexColor["HexColor"]
-  module_node_modules__ankhorage_color_theory_dist_hex_d_ts --> export_HexColor
-  export_I18nInstance["I18nInstance"]
-  module_src_context_TranslationContext_tsx --> export_I18nInstance
-  export_I18nInstance -.-> export_Translator
   export_Icon["Icon"]
   module_src_features_icon_adapters_inbound_Icon_tsx --> export_Icon
   export_Icon -.-> export_IconProps
@@ -397,12 +378,10 @@ graph LR
   module_src_types_image_ts --> export_ImageProps
   export_ImageProps -.-> export_SurfaceImageSource
   export_InteractionPolicy["InteractionPolicy"]
-  module_src_interactionPolicy_ts --> export_InteractionPolicy
+  module_src_types_interactionPolicy_ts --> export_InteractionPolicy
   export_InteractionPolicyProps["InteractionPolicyProps"]
-  module_src_interactionPolicy_ts --> export_InteractionPolicyProps
+  module_src_types_interactionPolicy_ts --> export_InteractionPolicyProps
   export_InteractionPolicyProps -.-> export_InteractionPolicy
-  export_isDeepEqual["isDeepEqual"]
-  module_src_utils_deepEqual_ts --> export_isDeepEqual
   export_KeyboardAvoidingView["KeyboardAvoidingView"]
   module_src_features_keyboard_avoiding_view_adapters_inbound_KeyboardAvoidingView_tsx --> export_KeyboardAvoidingView
   export_KeyboardAvoidingView -.-> export_KeyboardAvoidingViewProps
@@ -428,7 +407,7 @@ graph LR
   module_src_types_modal_ts --> export_ModalProps
   export_ModalProps -.-> export_InteractionPolicy
   export_NeutralSemantics["NeutralSemantics"]
-  module_src_theme_types_ts --> export_NeutralSemantics
+  module_src_types_theme_ts --> export_NeutralSemantics
   export_Popover["Popover"]
   module_src_features_popover_adapters_inbound_Popover_tsx --> export_Popover
   export_Popover -.-> export_PopoverProps
@@ -471,13 +450,6 @@ graph LR
   export_resolveResponsive["resolveResponsive"]
   module_src_core_responsive_resolve_ts --> export_resolveResponsive
   export_resolveResponsive -.-> export_Responsive
-  export_resolveSemanticColors["resolveSemanticColors"]
-  module_src_theme_colorEngine_ts --> export_resolveSemanticColors
-  export_resolveSemanticColors -.-> export_GeneratedThemeModeColors
-  export_resolveSemanticColors -.-> export_SemanticColorReferenceMap
-  export_resolveSemanticColors -.-> export_SurfaceSemanticColors
-  export_resolveToken["resolveToken"]
-  module_src_theme_resolveToken_ts --> export_resolveToken
   export_Responsive["Responsive"]
   module_src_core_responsive_types_ts --> export_Responsive
   export_ResponsiveProvider["ResponsiveProvider"]
@@ -485,7 +457,7 @@ graph LR
   export_ResponsiveRuntime["ResponsiveRuntime"]
   module_src_core_responsive_types_ts --> export_ResponsiveRuntime
   export_RoleSemantics["RoleSemantics"]
-  module_src_theme_types_ts --> export_RoleSemantics
+  module_src_types_theme_ts --> export_RoleSemantics
   export_ScrollView["ScrollView"]
   module_src_features_layout_adapters_inbound_ScrollView_tsx --> export_ScrollView
   export_ScrollView -.-> export_ScrollViewProps
@@ -495,11 +467,7 @@ graph LR
   export_ScrollViewProps -.-> export_ScrollView
   export_ScrollViewProps -.-> export_View
   export_SelectionSemantics["SelectionSemantics"]
-  module_src_theme_types_ts --> export_SelectionSemantics
-  export_SemanticColorReferenceMap["SemanticColorReferenceMap"]
-  module_node_modules__ankhorage_color_theory_dist_semantics_d_ts --> export_SemanticColorReferenceMap
-  export_SemanticColorToken["SemanticColorToken"]
-  module_node_modules__ankhorage_color_theory_dist_semantics_d_ts --> export_SemanticColorToken
+  module_src_types_theme_ts --> export_SelectionSemantics
   export_Show["Show"]
   module_src_core_responsive_Show_tsx --> export_Show
   export_Show -.-> export_ShowProps
@@ -512,46 +480,40 @@ graph LR
   module_src_features_surface_adapters_inbound_Surface_tsx --> export_Surface
   export_Surface -.-> export_SurfaceProps
   export_SURFACE_COLORS["SURFACE_COLORS"]
-  module_src_surfaceColor_ts --> export_SURFACE_COLORS
+  module_src_constants_surfaceColor_ts --> export_SURFACE_COLORS
   export_SURFACE_EMPHASES["SURFACE_EMPHASES"]
-  module_src_surfaceColor_ts --> export_SURFACE_EMPHASES
+  module_src_constants_surfaceColor_ts --> export_SURFACE_EMPHASES
   export_SURFACE_PALETTE_COLORS["SURFACE_PALETTE_COLORS"]
-  module_src_surfaceColor_ts --> export_SURFACE_PALETTE_COLORS
+  module_src_constants_surfaceColor_ts --> export_SURFACE_PALETTE_COLORS
   export_SURFACE_STATUS_COLORS["SURFACE_STATUS_COLORS"]
-  module_src_surfaceColor_ts --> export_SURFACE_STATUS_COLORS
+  module_src_constants_surfaceColor_ts --> export_SURFACE_STATUS_COLORS
   export_SurfaceColor["SurfaceColor"]
-  module_src_surfaceColor_ts --> export_SurfaceColor
+  module_src_types_surfaceColor_ts --> export_SurfaceColor
   export_SurfaceColorDiagnostics["SurfaceColorDiagnostics"]
-  module_src_theme_types_ts --> export_SurfaceColorDiagnostics
-  export_SurfaceColorDiagnostics -.-> export_GeneratedThemeModeColors
-  export_SurfaceColorDiagnostics -.-> export_SemanticColorReferenceMap
+  module_src_types_theme_ts --> export_SurfaceColorDiagnostics
   export_SurfaceColorDiagnostics -.-> export_SurfaceColorSelectionDiagnostic
   export_SurfaceColorDiagnostics -.-> export_SurfaceContrastDiagnostic
   export_SurfaceColorSelectionDiagnostic["SurfaceColorSelectionDiagnostic"]
-  module_src_theme_types_ts --> export_SurfaceColorSelectionDiagnostic
+  module_src_types_theme_ts --> export_SurfaceColorSelectionDiagnostic
   export_SurfaceContrastDiagnostic["SurfaceContrastDiagnostic"]
-  module_src_theme_types_ts --> export_SurfaceContrastDiagnostic
-  export_SurfaceContrastDiagnostic -.-> export_HexColor
+  module_src_types_theme_ts --> export_SurfaceContrastDiagnostic
   export_SurfaceEmphasis["SurfaceEmphasis"]
-  module_src_surfaceColor_ts --> export_SurfaceEmphasis
+  module_src_types_surfaceColor_ts --> export_SurfaceEmphasis
   export_SurfaceImageSource["SurfaceImageSource"]
   module_src_types_image_ts --> export_SurfaceImageSource
   export_SurfacePaletteColor["SurfacePaletteColor"]
-  module_src_surfaceColor_ts --> export_SurfacePaletteColor
+  module_src_types_surfaceColor_ts --> export_SurfacePaletteColor
   export_SurfaceProps["SurfaceProps"]
   module_src_types_surface_ts --> export_SurfaceProps
   export_SurfaceProps -.-> export_Responsive
   export_SurfaceProps -.-> export_SurfaceVariant
-  export_SurfaceSemanticColors["SurfaceSemanticColors"]
-  module_src_theme_colorEngine_ts --> export_SurfaceSemanticColors
   export_SurfaceSemantics["SurfaceSemantics"]
-  module_src_theme_types_ts --> export_SurfaceSemantics
+  module_src_types_theme_ts --> export_SurfaceSemantics
   export_SurfaceStatusColor["SurfaceStatusColor"]
-  module_src_surfaceColor_ts --> export_SurfaceStatusColor
+  module_src_types_surfaceColor_ts --> export_SurfaceStatusColor
   export_SurfaceTheme["SurfaceTheme"]
-  module_src_theme_types_ts --> export_SurfaceTheme
+  module_src_types_theme_ts --> export_SurfaceTheme
   export_SurfaceTheme -.-> export_FontWeight
-  export_SurfaceTheme -.-> export_GeneratedThemeSwatches
   export_SurfaceTheme -.-> export_SurfaceColorDiagnostics
   export_SurfaceTheme -.-> export_ThemeSemantics
   export_SurfaceVariant["SurfaceVariant"]
@@ -598,18 +560,26 @@ graph LR
   export_TextInputProps -.-> export_InteractionPolicy
   export_TextProps["TextProps"]
   module_src_types_typography_ts --> export_TextProps
-  export_ThemeConfig["ThemeConfig"]
-  module_node_modules__ankhorage_contracts_dist_types_d_ts --> export_ThemeConfig
-  export_ThemeConfig -.-> export_ThemeModeConfig
-  export_ThemeContext["ThemeContext"]
-  module_src_theme_ThemeContext_tsx --> export_ThemeContext
-  export_ThemeModeConfig["ThemeModeConfig"]
-  module_node_modules__ankhorage_contracts_dist_types_d_ts --> export_ThemeModeConfig
+  export_ThemeMode["ThemeMode"]
+  module_src_types_theme_ts --> export_ThemeMode
   export_ThemeProvider["ThemeProvider"]
-  module_src_theme_ThemeContext_tsx --> export_ThemeProvider
-  export_ThemeProvider -.-> export_ThemeConfig
+  module_src_features_theme_adapters_inbound_ThemeProvider_tsx --> export_ThemeProvider
+  export_ThemeProvider -.-> export_ThemeProviderProps
+  export_ThemeProviderProps["ThemeProviderProps"]
+  module_src_types_theme_ts --> export_ThemeProviderProps
+  export_ThemeProviderProps -.-> export_ThemeMode
+  export_ThemeRuntime["ThemeRuntime"]
+  module_src_types_theme_ts --> export_ThemeRuntime
+  export_ThemeRuntime -.-> export_SurfaceTheme
+  export_ThemeRuntime -.-> export_ThemeMode
+  export_ThemeScope["ThemeScope"]
+  module_src_features_theme_adapters_inbound_ThemeScope_tsx --> export_ThemeScope
+  export_ThemeScope -.-> export_ThemeScopeProps
+  export_ThemeScopeProps["ThemeScopeProps"]
+  module_src_types_theme_ts --> export_ThemeScopeProps
+  export_ThemeScopeProps -.-> export_ThemeMode
   export_ThemeSemantics["ThemeSemantics"]
-  module_src_theme_types_ts --> export_ThemeSemantics
+  module_src_types_theme_ts --> export_ThemeSemantics
   export_ThemeSemantics -.-> export_ActionSemantics
   export_ThemeSemantics -.-> export_BorderSemantics
   export_ThemeSemantics -.-> export_ContentSemantics
@@ -618,9 +588,8 @@ graph LR
   export_ThemeSemantics -.-> export_SelectionSemantics
   export_ThemeSemantics -.-> export_SurfaceSemantics
   export_ThemeTokens["ThemeTokens"]
-  module_src_theme_types_ts --> export_ThemeTokens
+  module_src_types_theme_ts --> export_ThemeTokens
   export_ThemeTokens -.-> export_FontWeight
-  export_ThemeTokens -.-> export_GeneratedThemeSwatches
   export_ThemeTokens -.-> export_SurfaceColorDiagnostics
   export_ThemeTokens -.-> export_ThemeSemantics
   export_Toast["Toast"]
@@ -650,39 +619,17 @@ graph LR
   export_TooltipProps["TooltipProps"]
   module_src_types_tooltip_ts --> export_TooltipProps
   export_TooltipProps -.-> export_InteractionPolicy
-  export_TranslationProvider["TranslationProvider"]
-  module_src_context_TranslationContext_tsx --> export_TranslationProvider
-  export_TranslationProvider -.-> export_I18nInstance
-  export_TranslationProvider -.-> export_Translator
-  export_TranslationRuntime["TranslationRuntime"]
-  module_src_context_TranslationContext_tsx --> export_TranslationRuntime
-  export_TranslationRuntime -.-> export_I18nInstance
-  export_TranslationRuntime -.-> export_Translator
-  export_Translator["Translator"]
-  module_src_context_TranslationContext_tsx --> export_Translator
   export_useBreakpoint["useBreakpoint"]
   module_src_core_responsive_useBreakpoint_ts --> export_useBreakpoint
-  export_useFontContext["useFontContext"]
-  module_src_context_FontContext_tsx --> export_useFontContext
-  export_useFontContext -.-> export_FontRuntime
   export_useResponsiveRuntime["useResponsiveRuntime"]
   module_src_core_responsive_ResponsiveProvider_tsx --> export_useResponsiveRuntime
   export_useResponsiveRuntime -.-> export_ResponsiveRuntime
   export_useTheme["useTheme"]
-  module_src_theme_ThemeContext_tsx --> export_useTheme
-  export_useTheme -.-> export_SurfaceTheme
-  export_useTheme -.-> export_ThemeConfig
-  export_useThemeConfig["useThemeConfig"]
-  module_src_theme_ThemeContext_tsx --> export_useThemeConfig
-  export_useThemeConfig -.-> export_ThemeConfig
-  export_useThemeMode["useThemeMode"]
-  module_src_theme_ThemeContext_tsx --> export_useThemeMode
+  module_src_features_theme_adapters_inbound_useTheme_ts --> export_useTheme
+  export_useTheme -.-> export_ThemeRuntime
   export_useToast["useToast"]
   module_src_features_toast_adapters_inbound_useToast_ts --> export_useToast
   export_useToast -.-> export_ToastController
-  export_useTranslationContext["useTranslationContext"]
-  module_src_context_TranslationContext_tsx --> export_useTranslationContext
-  export_useTranslationContext -.-> export_TranslationRuntime
   export_View["View"]
   module_src_features_layout_adapters_inbound_View_tsx --> export_View
   export_View -.-> export_ViewProps

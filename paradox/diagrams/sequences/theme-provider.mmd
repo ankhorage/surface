@@ -1,11 +1,14 @@
 sequenceDiagram
   participant participant_ThemeProvider as ThemeProvider
   participant participant_use as use
-  participant participant_useFontContext as useFontContext
+  participant participant_useFontRuntime as useFontRuntime
   participant participant_useMemo as useMemo
-  participant_ThemeProvider->>participant_useFontContext: useFontContext()
-  participant_useFontContext->>participant_use: use()
-  participant_use-->>participant_useFontContext: return
-  participant_useFontContext-->>participant_ThemeProvider: return
+  participant participant_useState as useState
   participant_ThemeProvider->>participant_useMemo: useMemo()
   participant_useMemo-->>participant_ThemeProvider: return
+  participant_ThemeProvider->>participant_useState: useState()
+  participant_useState-->>participant_ThemeProvider: return
+  participant_ThemeProvider->>participant_useFontRuntime: useFontRuntime()
+  participant_useFontRuntime->>participant_use: use()
+  participant_use-->>participant_useFontRuntime: return
+  participant_useFontRuntime-->>participant_ThemeProvider: return

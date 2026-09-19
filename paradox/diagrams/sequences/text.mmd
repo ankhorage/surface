@@ -1,0 +1,23 @@
+sequenceDiagram
+  participant participant_getVariantStyle as getVariantStyle
+  participant participant_resolveSurfaceColor as resolveSurfaceColor
+  participant participant_resolveTextColor as resolveTextColor
+  participant participant_resolveTextStyles as resolveTextStyles
+  participant participant_resolveWeight as resolveWeight
+  participant participant_Text as Text
+  participant participant_use as use
+  participant participant_useTheme as useTheme
+  participant_Text->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_use: use()
+  participant_use-->>participant_useTheme: return
+  participant_useTheme-->>participant_Text: return
+  participant_Text->>participant_resolveTextStyles: resolveTextStyles()
+  participant_resolveTextStyles->>participant_getVariantStyle: getVariantStyle()
+  participant_getVariantStyle-->>participant_resolveTextStyles: return
+  participant_resolveTextStyles->>participant_resolveWeight: resolveWeight()
+  participant_resolveWeight-->>participant_resolveTextStyles: return
+  participant_resolveTextStyles-->>participant_Text: return
+  participant_Text->>participant_resolveTextColor: resolveTextColor()
+  participant_resolveTextColor->>participant_resolveSurfaceColor: resolveSurfaceColor()
+  participant_resolveSurfaceColor-->>participant_resolveTextColor: return
+  participant_resolveTextColor-->>participant_Text: return

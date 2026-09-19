@@ -3,7 +3,7 @@
 
 # @ankhorage/surface
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v7.0.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v9.0.8](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
 
 Cross-platform UI foundation for React Native and React Native Web. Provides theming, layout primitives, and core building blocks for modern apps.
 
@@ -25,7 +25,6 @@ Cross-platform UI foundation for React Native and React Native Web. Provides the
 - [FontProvider sequence](././paradox/diagrams/sequences/font-provider.mmd)
 - [Icon sequence](././paradox/diagrams/sequences/icon.mmd)
 - [IconButton sequence](././paradox/diagrams/sequences/icon-button.mmd)
-- [isDeepEqual sequence](././paradox/diagrams/sequences/is-deep-equal.mmd)
 - [ListItem sequence](././paradox/diagrams/sequences/list-item.mmd)
 - [Modal sequence](././paradox/diagrams/sequences/modal.mmd)
 - [Popover sequence](././paradox/diagrams/sequences/popover.mmd)
@@ -39,15 +38,13 @@ Cross-platform UI foundation for React Native and React Native Web. Provides the
 - [TabList sequence](././paradox/diagrams/sequences/tab-list.mmd)
 - [TabPanel sequence](././paradox/diagrams/sequences/tab-panel.mmd)
 - [Tabs sequence](././paradox/diagrams/sequences/tabs.mmd)
+- [Text sequence](././paradox/diagrams/sequences/text.mmd)
 - [ThemeProvider sequence](././paradox/diagrams/sequences/theme-provider.mmd)
+- [ThemeScope sequence](././paradox/diagrams/sequences/theme-scope.mmd)
 - [Toast sequence](././paradox/diagrams/sequences/toast.mmd)
 - [ToastProvider sequence](././paradox/diagrams/sequences/toast-provider.mmd)
 - [Tooltip sequence](././paradox/diagrams/sequences/tooltip.mmd)
 - [useBreakpoint sequence](././paradox/diagrams/sequences/use-breakpoint.mmd)
-- [useFontContext sequence](././paradox/diagrams/sequences/use-font-context.mmd)
 - [useResponsiveRuntime sequence](././paradox/diagrams/sequences/use-responsive-runtime.mmd)
 - [useTheme sequence](././paradox/diagrams/sequences/use-theme.mmd)
-- [useThemeConfig sequence](././paradox/diagrams/sequences/use-theme-config.mmd)
-- [useThemeMode sequence](././paradox/diagrams/sequences/use-theme-mode.mmd)
 - [useToast sequence](././paradox/diagrams/sequences/use-toast.mmd)
-- [useTranslationContext sequence](././paradox/diagrams/sequences/use-translation-context.mmd)

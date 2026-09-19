@@ -11,8 +11,12 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["AccordionProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "AccordionProps"
+    ],
     "signatures": [
       {
         "label": "(props: AccordionProps) => React.JSX.Element",
@@ -43,8 +47,12 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["AccordionContentProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "AccordionContentProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  forceMount = false,\n  style,\n  ...viewProps\n}: AccordionContentProps) => React.JSX.Element | null",
@@ -75,7 +83,9 @@
       "line": 48,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -731,8 +741,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["AccordionItemProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "AccordionItemProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  disabled = false,\n  interactionPolicy,\n  value,\n  ...viewProps\n}: AccordionItemProps) => React.JSX.Element",
@@ -763,8 +777,12 @@
       "line": 31,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -1433,7 +1451,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -1451,8 +1471,12 @@
       "line": 21,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -2149,7 +2173,9 @@
       "line": 29,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -2167,8 +2193,12 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -2865,8 +2895,12 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["AccordionTriggerProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "AccordionTriggerProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  disabled = false,\n  interactionPolicy,\n  ...pressableProps\n}: AccordionTriggerProps) => React.JSX.Element",
@@ -2897,8 +2931,12 @@
       "line": 37,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -3645,14 +3683,18 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 97,
+      "filePath": "src/types/theme.ts",
+      "line": 85,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["RoleSemantics"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "RoleSemantics"
+    ],
     "signatures": [],
     "members": [
       {
@@ -3691,8 +3733,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["AppBarProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "AppBarProps"
+    ],
     "signatures": [
       {
         "label": "({\n  leading,\n  trailing,\n  children,\n  safeAreaTop = true,\n  divider = false,\n  contentStyle,\n  bg,\n  style,\n  ...props\n}: AppBarProps) => React.JSX.Element",
@@ -3723,8 +3769,12 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4141,8 +4191,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["BadgeProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "BadgeProps"
+    ],
     "signatures": [
       {
         "label": "({\n  content,\n  variant = 'soft',\n  color = 'primary',\n  size = 's',\n  testID,\n}: BadgeProps) => React.JSX.Element",
@@ -4173,7 +4227,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -4221,13 +4277,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 83,
+      "filePath": "src/types/theme.ts",
+      "line": 71,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -4281,7 +4339,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -4299,7 +4359,9 @@
       "line": 9,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -4317,7 +4379,9 @@
       "line": 1,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -4335,8 +4399,12 @@
       "line": 19,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ButtonProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ButtonProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  variant = 'solid',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  fullWidth = false,\n  onPress,\n  testID,\n  ...props\n}: ButtonProps) => React.JSX.Element",
@@ -4367,7 +4435,9 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -4385,8 +4455,14 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconSource", "InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "IconSource",
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -4824,8 +4900,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["CardProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "CardProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  variant = 'default',\n  onPress,\n  disabled = false,\n  testID,\n  style,\n  ...props\n}: CardProps) => React.JSX.Element",
@@ -4856,8 +4936,13 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive", "SurfaceVariant"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive",
+      "SurfaceVariant"
+    ],
     "signatures": [],
     "members": [
       {
@@ -5239,8 +5324,12 @@
       "line": 21,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["CheckboxProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "CheckboxProps"
+    ],
     "signatures": [
       {
         "label": "({\n  accessibilityLabel,\n  checked,\n  children,\n  color = 'primary',\n  defaultChecked = false,\n  disabled = false,\n  invalid = false,\n  onCheckedChange,\n  readOnly = false,\n  size = 'm',\n  testID,\n  ...buttonProps\n}: CheckboxProps) => React.JSX.Element",
@@ -5271,8 +5360,13 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -5685,72 +5779,20 @@
     "structuredRows": []
   },
   {
-    "name": "ColorHarmony",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-      "line": 54,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "ColorSwatch",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
-      "line": 6,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "ColorSwatchStep",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/swatches.d.ts",
-      "line": 3,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
     "name": "ContentSemantics",
     "description": null,
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 72,
+      "filePath": "src/types/theme.ts",
+      "line": 60,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -5815,18 +5857,22 @@
   },
   {
     "name": "createTheme",
-    "description": null,
+    "description": "Resolve canonical persisted theme source into the complete Surface runtime theme.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/theme/createTheme.ts",
+    "modulePath": "src/features/theme/application/use-cases/createTheme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/createTheme.ts",
-      "line": 26,
+      "filePath": "src/features/theme/application/use-cases/createTheme.ts",
+      "line": 15,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceTheme", "ThemeConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceTheme"
+    ],
     "signatures": [
       {
         "label": "(config?: ThemeConfig, mode?: \"light\" | \"dark\", activeFontId?: string | null | undefined) => SurfaceTheme",
@@ -5858,80 +5904,6 @@
     "structuredRows": []
   },
   {
-    "name": "deepMerge",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/utils/deepMerge.ts",
-    "sourceLocation": {
-      "filePath": "src/utils/deepMerge.ts",
-      "line": 5,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [
-      {
-        "label": "(target: T, source: Partial<T>) => T",
-        "parameters": [
-          {
-            "name": "source",
-            "type": "Partial<T>",
-            "required": true,
-            "description": null
-          },
-          {
-            "name": "target",
-            "type": "T",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "T",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "DEFAULT_CONFIG",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "value",
-    "modulePath": "src/theme/createTheme.ts",
-    "sourceLocation": {
-      "filePath": "src/theme/createTheme.ts",
-      "line": 7,
-      "column": 14
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "DEFAULT_TOKENS",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "value",
-    "modulePath": "src/theme/defaultTokens.ts",
-    "sourceLocation": {
-      "filePath": "src/theme/defaultTokens.ts",
-      "line": 17,
-      "column": 14
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
     "name": "Divider",
     "description": "Renders a horizontal or vertical separator using layout tokens.",
     "isReadme": false,
@@ -5943,8 +5915,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["DividerProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DividerProps"
+    ],
     "signatures": [
       {
         "label": "({\n  orientation = 'horizontal',\n  color = 'border',\n  thickness = 1,\n  ...props\n}: DividerProps) => React.JSX.Element",
@@ -5975,8 +5951,12 @@
       "line": 80,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -6358,8 +6338,12 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FieldProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "FieldProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  label,\n  helperText,\n  errorText,\n  required = false,\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  testID,\n}: FieldProps) => React.JSX.Element",
@@ -6390,7 +6374,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -6472,7 +6458,9 @@
       "line": 24,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -6480,34 +6468,87 @@
   },
   {
     "name": "FontProvider",
-    "description": null,
+    "description": "Provide loaded-font state and the active font id to Surface theme composition.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
-    "modulePath": "src/context/FontContext.tsx",
+    "modulePath": "src/features/font/adapters/inbound/FontProvider.tsx",
     "sourceLocation": {
-      "filePath": "src/context/FontContext.tsx",
-      "line": 27,
+      "filePath": "src/features/font/adapters/inbound/FontProvider.tsx",
+      "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "FontProviderProps"
+    ],
     "signatures": [
       {
-        "label": "(props: { fontsLoaded: boolean; activeFontId?: string | null; children: React.ReactNode; onActiveFontChange?: (id: string) => void; }) => React.JSX.Element",
+        "label": "({\n  fontsLoaded,\n  activeFontId: initialActiveFontId = null,\n  children,\n  onActiveFontChange,\n}: FontProviderProps) => import(\"react\").JSX.Element",
         "parameters": [
           {
-            "name": "props",
-            "type": "{ fontsLoaded: boolean; activeFontId?: string | null; children: React.ReactNode; onActiveFontChange?: (id: string) => void; }",
+            "name": "{\n  fontsLoaded,\n  activeFontId: initialActiveFontId = null,\n  children,\n  onActiveFontChange,\n}",
+            "type": "FontProviderProps",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "React.JSX.Element",
+        "returnType": "import(\"react\").JSX.Element",
         "returnDescription": null
       }
     ],
     "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "FontProviderProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/font.ts",
+    "sourceLocation": {
+      "filePath": "src/types/font.ts",
+      "line": 9,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "activeFontId",
+        "kind": "property",
+        "type": "string | null | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "children",
+        "kind": "property",
+        "type": "ReactNode",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "fontsLoaded",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "onActiveFontChange",
+        "kind": "property",
+        "type": "((id: string) => void) | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
     "structuredRows": []
   },
   {
@@ -6516,13 +6557,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/context/FontContext.tsx",
+    "modulePath": "src/types/font.ts",
     "sourceLocation": {
-      "filePath": "src/context/FontContext.tsx",
-      "line": 6,
+      "filePath": "src/types/font.ts",
+      "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -6556,171 +6599,17 @@
     "isReadme": false,
     "examples": [],
     "kind": "unknown",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 147,
+      "filePath": "src/types/theme.ts",
+      "line": 135,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "GeneratedColorRole",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/harmony.d.ts",
-      "line": 2,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "GeneratedThemeModeColors",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/theme-colors.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/theme-colors.d.ts",
-      "line": 20,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["GeneratedThemeSwatches"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "harmonyRoleColors",
-        "kind": "property",
-        "type": "GeneratedHarmonyRoleColors",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "neutral",
-        "kind": "property",
-        "type": "GeneratedNeutralMetadata",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "swatches",
-        "kind": "property",
-        "type": "GeneratedThemeSwatches",
-        "required": true,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "GeneratedThemeSwatches",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/theme-colors.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/theme-colors.d.ts",
-      "line": 13,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ColorSwatch"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "neutral",
-        "kind": "property",
-        "type": "ColorSwatch",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "primary",
-        "kind": "property",
-        "type": "ColorSwatch",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "quaternary",
-        "kind": "property",
-        "type": "ColorSwatch | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "secondary",
-        "kind": "property",
-        "type": "ColorSwatch | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "tertiary",
-        "kind": "property",
-        "type": "ColorSwatch | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "generatePalette",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/theme/colorEngine.ts",
-    "sourceLocation": {
-      "filePath": "src/theme/colorEngine.ts",
-      "line": 41,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [
-      "GeneratedThemeSwatches",
-      "SurfaceColorDiagnostics",
-      "ThemeConfig",
-      "ThemeSemantics",
-      "ThemeTokens"
-    ],
-    "signatures": [
-      {
-        "label": "(config: ThemeConfig, mode?: ThemeColorMode) => { colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }",
-        "parameters": [
-          {
-            "name": "config",
-            "type": "ThemeConfig",
-            "required": true,
-            "description": null
-          },
-          {
-            "name": "mode",
-            "type": "ThemeColorMode",
-            "required": false,
-            "description": null
-          }
-        ],
-        "returnType": "{ colors: ThemeTokens[\"colors\"]; swatches: GeneratedThemeSwatches; semantics: ThemeSemantics; colorDiagnostics: SurfaceColorDiagnostics; }",
-        "returnDescription": null
-      }
-    ],
     "members": [],
     "structuredRows": []
   },
@@ -6736,7 +6625,9 @@
       "line": 4,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -6768,8 +6659,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["GridProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "GridProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  cols,\n  gap = 0,\n  rowGap,\n  colGap,\n  minItemWidth,\n  ...props\n}: GridProps) => React.JSX.Element",
@@ -6800,8 +6695,12 @@
       "line": 86,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -7194,24 +7093,28 @@
   },
   {
     "name": "Heading",
-    "description": "Renders a semantic, translatable heading using Surface typography tokens.",
+    "description": "Renders a semantic heading using Surface typography tokens.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
     "modulePath": "src/features/typography/adapters/inbound/Heading.tsx",
     "sourceLocation": {
       "filePath": "src/features/typography/adapters/inbound/Heading.tsx",
-      "line": 10,
+      "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["HeadingProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "HeadingProps"
+    ],
     "signatures": [
       {
-        "label": "({\n  text,\n  children,\n  level = 2,\n  align,\n  color,\n  emphasis = 'default',\n  numberOfLines,\n  i18nKey,\n  testID,\n}: HeadingProps) => React.JSX.Element",
+        "label": "({\n  text,\n  children,\n  level = 2,\n  align,\n  color,\n  emphasis = 'default',\n  numberOfLines,\n  testID,\n}: HeadingProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  text,\n  children,\n  level = 2,\n  align,\n  color,\n  emphasis = 'default',\n  numberOfLines,\n  i18nKey,\n  testID,\n}",
+            "name": "{\n  text,\n  children,\n  level = 2,\n  align,\n  color,\n  emphasis = 'default',\n  numberOfLines,\n  testID,\n}",
             "type": "HeadingProps",
             "required": true,
             "description": null
@@ -7236,7 +7139,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -7254,8 +7159,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["HeadingLevel"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "HeadingLevel"
+    ],
     "signatures": [],
     "members": [
       {
@@ -7325,64 +7234,6 @@
     "structuredRows": []
   },
   {
-    "name": "HexColor",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/hex.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/hex.d.ts",
-      "line": 1,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "I18nInstance",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/context/TranslationContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/context/TranslationContext.tsx",
-      "line": 7,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Translator"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "changeLanguage",
-        "kind": "property",
-        "type": "(lng: string) => Promise<unknown>",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "language",
-        "kind": "property",
-        "type": "string | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "t",
-        "kind": "property",
-        "type": "Translator | undefined",
-        "required": false,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
     "name": "Icon",
     "description": "Renders a theme-aware font or SVG icon through the portable icon adapter.",
     "isReadme": false,
@@ -7394,8 +7245,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "IconProps"
+    ],
     "signatures": [
       {
         "label": "(props: IconProps) => import(\"react\").JSX.Element",
@@ -7426,8 +7281,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconButtonProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "IconButtonProps"
+    ],
     "signatures": [
       {
         "label": "({\n  icon,\n  accessibilityLabel,\n  variant = 'ghost',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  onPress,\n  testID,\n  ...props\n}: IconButtonProps) => React.JSX.Element",
@@ -7458,8 +7317,14 @@
       "line": 25,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["IconSource", "InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "IconSource",
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -7876,7 +7741,9 @@
       "line": 50,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -7894,7 +7761,9 @@
       "line": 19,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -7912,7 +7781,9 @@
       "line": 42,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -7930,7 +7801,9 @@
       "line": 22,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -7948,8 +7821,12 @@
       "line": 15,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ImageProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ImageProps"
+    ],
     "signatures": [
       {
         "label": "({\n  source,\n  fallbackSource,\n  alt,\n  accessibilityLabel,\n  width,\n  height,\n  aspectRatio,\n  fit,\n  resizeMode,\n  radius,\n  style,\n  testID,\n  onError,\n}: ImageProps) => React.JSX.Element | null",
@@ -7980,7 +7857,9 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -7998,8 +7877,12 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceImageSource"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceImageSource"
+    ],
     "signatures": [],
     "members": [
       {
@@ -8102,13 +7985,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "unknown",
-    "modulePath": "src/interactionPolicy.ts",
+    "modulePath": "src/types/interactionPolicy.ts",
     "sourceLocation": {
-      "filePath": "src/interactionPolicy.ts",
+      "filePath": "src/types/interactionPolicy.ts",
       "line": 1,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -8120,14 +8005,18 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/interactionPolicy.ts",
+    "modulePath": "src/types/interactionPolicy.ts",
     "sourceLocation": {
-      "filePath": "src/interactionPolicy.ts",
+      "filePath": "src/types/interactionPolicy.ts",
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -8138,44 +8027,6 @@
         "description": null
       }
     ],
-    "structuredRows": []
-  },
-  {
-    "name": "isDeepEqual",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "value",
-    "modulePath": "src/utils/deepEqual.ts",
-    "sourceLocation": {
-      "filePath": "src/utils/deepEqual.ts",
-      "line": 5,
-      "column": 14
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [
-      {
-        "label": "(a: unknown, b: unknown) => boolean",
-        "parameters": [
-          {
-            "name": "a",
-            "type": "unknown",
-            "required": true,
-            "description": null
-          },
-          {
-            "name": "b",
-            "type": "unknown",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "boolean",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
     "structuredRows": []
   },
   {
@@ -8190,8 +8041,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["KeyboardAvoidingViewProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "KeyboardAvoidingViewProps"
+    ],
     "signatures": [
       {
         "label": "(props: import(\"react-native\").KeyboardAvoidingViewProps) => React.JSX.Element",
@@ -8222,7 +8077,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -8240,7 +8097,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -8258,8 +8117,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ListProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ListProps"
+    ],
     "signatures": [
       {
         "label": "({ children, testID }: ListProps) => React.JSX.Element",
@@ -8290,8 +8153,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ListItemProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ListItemProps"
+    ],
     "signatures": [
       {
         "label": "(props: ListItemProps) => React.JSX.Element",
@@ -8322,8 +8189,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -8425,7 +8296,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -8458,8 +8331,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ModalProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ModalProps"
+    ],
     "signatures": [
       {
         "label": "({\n  visible,\n  onDismiss,\n  children,\n  closeOnBackdrop = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: ModalProps) => React.JSX.Element | null",
@@ -8490,8 +8367,12 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -8545,13 +8426,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 26,
+      "filePath": "src/types/theme.ts",
+      "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -8661,8 +8544,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["PopoverProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "PopoverProps"
+    ],
     "signatures": [
       {
         "label": "(props: PopoverProps) => React.JSX.Element",
@@ -8693,7 +8580,9 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -8733,8 +8622,12 @@
       "line": 16,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["PopoverMenuProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "PopoverMenuProps"
+    ],
     "signatures": [
       {
         "label": "({\n  trigger,\n  actions,\n  dismiss,\n  closeOnSelect = true,\n  interactionPolicy = 'enabled',\n  testID,\n}: PopoverMenuProps) => React.JSX.Element",
@@ -8765,8 +8658,12 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["PopoverMenuActionIntent"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "PopoverMenuActionIntent"
+    ],
     "signatures": [],
     "members": [
       {
@@ -8847,7 +8744,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -8865,8 +8764,14 @@
       "line": 20,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "PopoverAnchorRenderProps", "PopoverMenuAction"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "PopoverAnchorRenderProps",
+      "PopoverMenuAction"
+    ],
     "signatures": [],
     "members": [
       {
@@ -8926,7 +8831,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -8944,8 +8851,14 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "PopoverAnchorRenderProps", "PopoverPlacement"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "PopoverAnchorRenderProps",
+      "PopoverPlacement"
+    ],
     "signatures": [],
     "members": [
       {
@@ -9033,8 +8946,12 @@
       "line": 19,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["PressableProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "PressableProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  onPress,\n  onLongPress,\n  accessibilityLabel,\n  accessibilityRole = 'button',\n  accessibilityState,\n  style,\n  testID,\n  ...props\n}: PressableProps) => React.JSX.Element",
@@ -9065,8 +8982,13 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -9469,8 +9391,12 @@
       "line": 22,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["RadioProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "RadioProps"
+    ],
     "signatures": [
       {
         "label": "({\n  accessibilityLabel,\n  checked,\n  children,\n  color = 'primary',\n  defaultChecked = false,\n  disabled = false,\n  invalid = false,\n  onCheckedChange,\n  readOnly = false,\n  size = 'm',\n  testID,\n  ...buttonProps\n}: RadioProps) => React.JSX.Element",
@@ -9501,8 +9427,13 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -9926,8 +9857,12 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [
       {
         "label": "(value: Responsive<T> | undefined, breakpoint: \"base\" | \"sm\" | \"md\" | \"lg\" | \"xl\") => T | undefined",
@@ -9953,86 +9888,6 @@
     "structuredRows": []
   },
   {
-    "name": "resolveSemanticColors",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/theme/colorEngine.ts",
-    "sourceLocation": {
-      "filePath": "src/theme/colorEngine.ts",
-      "line": 26,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [
-      "GeneratedThemeModeColors",
-      "SemanticColorReferenceMap",
-      "SurfaceSemanticColors"
-    ],
-    "signatures": [
-      {
-        "label": "(generated: GeneratedThemeModeColors, references: SemanticColorReferenceMap) => SurfaceSemanticColors",
-        "parameters": [
-          {
-            "name": "generated",
-            "type": "GeneratedThemeModeColors",
-            "required": true,
-            "description": null
-          },
-          {
-            "name": "references",
-            "type": "SemanticColorReferenceMap",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "SurfaceSemanticColors",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "resolveToken",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/theme/resolveToken.ts",
-    "sourceLocation": {
-      "filePath": "src/theme/resolveToken.ts",
-      "line": 11,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [
-      {
-        "label": "(map: TMap, value: TValue) => ResolvedToken<TMap, TValue>",
-        "parameters": [
-          {
-            "name": "map",
-            "type": "TMap",
-            "required": true,
-            "description": null
-          },
-          {
-            "name": "value",
-            "type": "TValue",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "ResolvedToken<TMap, TValue>",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
     "name": "Responsive",
     "description": null,
     "isReadme": false,
@@ -10044,7 +9899,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -10062,7 +9919,9 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
@@ -10094,7 +9953,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -10121,13 +9982,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 42,
+      "filePath": "src/types/theme.ts",
+      "line": 30,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -10258,8 +10121,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ScrollViewProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ScrollViewProps"
+    ],
     "signatures": [
       {
         "label": "(props: ScrollViewProps) => React.JSX.Element",
@@ -10290,8 +10157,14 @@
       "line": 95,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive", "ScrollView", "View"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive",
+      "ScrollView",
+      "View"
+    ],
     "signatures": [],
     "members": [
       {
@@ -11668,13 +11541,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 91,
+      "filePath": "src/types/theme.ts",
+      "line": 79,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -11703,42 +11578,6 @@
     "structuredRows": []
   },
   {
-    "name": "SemanticColorReferenceMap",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/semantics.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/semantics.d.ts",
-      "line": 10,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "SemanticColorToken",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "node_modules/@ankhorage/color-theory/dist/semantics.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/color-theory/dist/semantics.d.ts",
-      "line": 4,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
     "name": "Show",
     "description": "Conditionally renders one responsive subtree or its fallback.",
     "isReadme": false,
@@ -11750,8 +11589,12 @@
       "line": 14,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ShowProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ShowProps"
+    ],
     "signatures": [
       {
         "label": "({ when, children, fallback = null }: ShowProps) => React.JSX.Element",
@@ -11782,8 +11625,12 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -11822,7 +11669,9 @@
       "line": 3,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -11840,8 +11689,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceProps"
+    ],
     "signatures": [
       {
         "label": "({ variant = 'default', radius = 'm', style, ...props }: SurfaceProps) => React.JSX.Element",
@@ -11866,13 +11719,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "value",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/constants/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
+      "filePath": "src/constants/surfaceColor.ts",
       "line": 11,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -11884,13 +11739,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "value",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/constants/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
+      "filePath": "src/constants/surfaceColor.ts",
       "line": 17,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -11902,13 +11759,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "value",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/constants/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
+      "filePath": "src/constants/surfaceColor.ts",
       "line": 1,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -11920,13 +11779,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "value",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/constants/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
+      "filePath": "src/constants/surfaceColor.ts",
       "line": 9,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -11938,13 +11799,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "unknown",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/types/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
-      "line": 21,
+      "filePath": "src/types/surfaceColor.ts",
+      "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -11956,16 +11819,16 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 137,
+      "filePath": "src/types/theme.ts",
+      "line": 125,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [
-      "GeneratedThemeModeColors",
-      "SemanticColorReferenceMap",
       "SurfaceColorSelectionDiagnostic",
       "SurfaceContrastDiagnostic"
     ],
@@ -12029,13 +11892,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 131,
+      "filePath": "src/types/theme.ts",
+      "line": 119,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -12062,14 +11927,16 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 121,
+      "filePath": "src/types/theme.ts",
+      "line": 109,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["HexColor"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
     "signatures": [],
     "members": [
       {
@@ -12123,13 +11990,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "unknown",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/types/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
-      "line": 22,
+      "filePath": "src/types/surfaceColor.ts",
+      "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -12147,7 +12016,9 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -12159,13 +12030,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "unknown",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/types/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
-      "line": 19,
+      "filePath": "src/types/surfaceColor.ts",
+      "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -12183,8 +12056,13 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive", "SurfaceVariant"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive",
+      "SurfaceVariant"
+    ],
     "signatures": [],
     "members": [
       {
@@ -12541,36 +12419,20 @@
     "structuredRows": []
   },
   {
-    "name": "SurfaceSemanticColors",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "src/theme/colorEngine.ts",
-    "sourceLocation": {
-      "filePath": "src/theme/colorEngine.ts",
-      "line": 24,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
     "name": "SurfaceSemantics",
     "description": null,
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 61,
+      "filePath": "src/types/theme.ts",
+      "line": 49,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -12639,13 +12501,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "unknown",
-    "modulePath": "src/surfaceColor.ts",
+    "modulePath": "src/types/surfaceColor.ts",
     "sourceLocation": {
-      "filePath": "src/surfaceColor.ts",
-      "line": 20,
+      "filePath": "src/types/surfaceColor.ts",
+      "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -12657,16 +12521,17 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 242,
+      "filePath": "src/types/theme.ts",
+      "line": 230,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [
       "FontWeight",
-      "GeneratedThemeSwatches",
       "SurfaceColorDiagnostics",
       "ThemeSemantics"
     ],
@@ -12750,7 +12615,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -12768,8 +12635,12 @@
       "line": 35,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceImageSource"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceImageSource"
+    ],
     "signatures": [],
     "members": [
       {
@@ -12815,8 +12686,12 @@
       "line": 18,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SwitchProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SwitchProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  checked,\n  defaultChecked = false,\n  onCheckedChange,\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  invalid = false,\n  readOnly = false,\n  accessibilityLabel,\n  testID,\n  ...props\n}: SwitchProps) => React.JSX.Element",
@@ -12847,8 +12722,13 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {
@@ -13272,8 +13152,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabProps"
+    ],
     "signatures": [
       {
         "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}: TabProps) => React.JSX.Element",
@@ -13304,8 +13188,12 @@
       "line": 19,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabListProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabListProps"
+    ],
     "signatures": [
       {
         "label": "({ children, testID }: TabListProps) => React.JSX.Element",
@@ -13336,7 +13224,9 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -13369,8 +13259,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabPanelProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabPanelProps"
+    ],
     "signatures": [
       {
         "label": "({ value, children, testID }: TabPanelProps) => React.JSX.Element | null",
@@ -13401,7 +13295,9 @@
       "line": 26,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -13441,8 +13337,12 @@
       "line": 18,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -13495,8 +13395,12 @@
       "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TabsProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TabsProps"
+    ],
     "signatures": [
       {
         "label": "({ children, ...props }: TabsProps) => React.JSX.Element",
@@ -13527,7 +13431,9 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -13571,18 +13477,22 @@
   },
   {
     "name": "Text",
-    "description": "Renders translatable body text using Surface semantic typography.",
+    "description": "Renders body text using Surface semantic typography.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
     "modulePath": "src/features/typography/adapters/inbound/Text.tsx",
     "sourceLocation": {
       "filePath": "src/features/typography/adapters/inbound/Text.tsx",
-      "line": 10,
+      "line": 9,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TextProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TextProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  i18nKey,\n  variant = 'body',\n  emphasis = 'default',\n  color,\n  align,\n  weight,\n  italic = false,\n  numberOfLines,\n  testID,\n}: TextProps) => React.JSX.Element",
@@ -13613,8 +13523,12 @@
       "line": 17,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TextInputProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TextInputProps"
+    ],
     "signatures": [
       {
         "label": "(props: TextInputProps) => React.JSX.Element",
@@ -13645,8 +13559,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -14798,7 +14716,9 @@
       "line": 21,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -14876,147 +14796,235 @@
     "structuredRows": []
   },
   {
-    "name": "ThemeConfig",
+    "name": "ThemeMode",
     "description": null,
     "isReadme": false,
     "examples": [],
-    "kind": "type",
-    "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
+    "kind": "unknown",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 15,
+      "filePath": "src/types/theme.ts",
+      "line": 234,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ThemeModeConfig"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "dark",
-        "kind": "property",
-        "type": "ThemeModeConfig",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "id",
-        "kind": "property",
-        "type": "string",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "light",
-        "kind": "property",
-        "type": "ThemeModeConfig",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "name",
-        "kind": "property",
-        "type": "string",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "recipes",
-        "kind": "property",
-        "type": "ThemeRecipeOverrides | undefined",
-        "required": false,
-        "description": null
-      },
-      {
-        "name": "tokens",
-        "kind": "property",
-        "type": "ThemeGlobalTokenOverrides | undefined",
-        "required": false,
-        "description": null
-      }
+    "exportPaths": [
+      "src/index.ts"
     ],
-    "structuredRows": []
-  },
-  {
-    "name": "ThemeContext",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "value",
-    "modulePath": "src/theme/ThemeContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/theme/ThemeContext.tsx",
-      "line": 13,
-      "column": 14
-    },
-    "exportPaths": ["src/index.ts"],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "ThemeModeConfig",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-    "sourceLocation": {
-      "filePath": "node_modules/@ankhorage/contracts/dist/types.d.ts",
-      "line": 11,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [
-      {
-        "name": "harmony",
-        "kind": "property",
-        "type": "\"complementary\" | \"monochromatic\" | \"analogous\" | \"splitComplementary\" | \"triadic\" | \"tetradic\" | \"square\"",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "primaryColor",
-        "kind": "property",
-        "type": "string",
-        "required": true,
-        "description": null
-      }
-    ],
     "structuredRows": []
   },
   {
     "name": "ThemeProvider",
-    "description": null,
+    "description": "Install the app-level Surface theme together with global responsive and overlay runtime.",
     "isReadme": false,
     "examples": [],
-    "kind": "value",
-    "modulePath": "src/theme/ThemeContext.tsx",
+    "kind": "function",
+    "modulePath": "src/features/theme/adapters/inbound/ThemeProvider.tsx",
     "sourceLocation": {
-      "filePath": "src/theme/ThemeContext.tsx",
-      "line": 31,
-      "column": 14
+      "filePath": "src/features/theme/adapters/inbound/ThemeProvider.tsx",
+      "line": 13,
+      "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ThemeConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ThemeProviderProps"
+    ],
     "signatures": [
       {
-        "label": "({\n  children,\n  initialConfig,\n  initialMode = 'light',\n}: { children: React.ReactNode; initialConfig?: Partial<ThemeConfig>; initialMode?: \"light\" | \"dark\"; }) => React.JSX.Element",
+        "label": "({\n  children,\n  initialConfig,\n  initialMode = 'light',\n}: ThemeProviderProps) => import(\"react\").JSX.Element",
         "parameters": [
           {
             "name": "{\n  children,\n  initialConfig,\n  initialMode = 'light',\n}",
-            "type": "{ children: React.ReactNode; initialConfig?: Partial<ThemeConfig>; initialMode?: \"light\" | \"dark\"; }",
+            "type": "ThemeProviderProps",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "React.JSX.Element",
+        "returnType": "import(\"react\").JSX.Element",
         "returnDescription": null
       }
     ],
     "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "ThemeProviderProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/theme.ts",
+    "sourceLocation": {
+      "filePath": "src/types/theme.ts",
+      "line": 243,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ThemeMode"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "children",
+        "kind": "property",
+        "type": "ReactNode",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "initialConfig",
+        "kind": "property",
+        "type": "Partial<ContractsThemeConfig> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "initialMode",
+        "kind": "property",
+        "type": "ThemeMode | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "ThemeRuntime",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/theme.ts",
+    "sourceLocation": {
+      "filePath": "src/types/theme.ts",
+      "line": 236,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "SurfaceTheme",
+      "ThemeMode"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "mode",
+        "kind": "property",
+        "type": "ThemeMode",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "setMode",
+        "kind": "property",
+        "type": "(mode: ThemeMode) => void",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "setThemeConfig",
+        "kind": "property",
+        "type": "(config: Partial<ContractsThemeConfig>) => void",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "theme",
+        "kind": "property",
+        "type": "SurfaceTheme",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "ThemeScope",
+    "description": "Apply a nested Surface theme or mode override without remounting app-level providers.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/theme/adapters/inbound/ThemeScope.tsx",
+    "sourceLocation": {
+      "filePath": "src/features/theme/adapters/inbound/ThemeScope.tsx",
+      "line": 11,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ThemeScopeProps"
+    ],
+    "signatures": [
+      {
+        "label": "({ children, themeConfig, mode }: ThemeScopeProps) => import(\"react\").JSX.Element",
+        "parameters": [
+          {
+            "name": "{ children, themeConfig, mode }",
+            "type": "ThemeScopeProps",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "import(\"react\").JSX.Element",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "ThemeScopeProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/theme.ts",
+    "sourceLocation": {
+      "filePath": "src/types/theme.ts",
+      "line": 249,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ThemeMode"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "children",
+        "kind": "property",
+        "type": "ReactNode",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "mode",
+        "kind": "property",
+        "type": "ThemeMode | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "themeConfig",
+        "kind": "property",
+        "type": "Partial<ContractsThemeConfig> | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
     "structuredRows": []
   },
   {
@@ -15025,13 +15033,15 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 103,
+      "filePath": "src/types/theme.ts",
+      "line": 91,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [
       "ActionSemantics",
       "BorderSemantics",
@@ -15157,16 +15167,17 @@
     "isReadme": false,
     "examples": [],
     "kind": "type",
-    "modulePath": "src/theme/types.ts",
+    "modulePath": "src/types/theme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/types.ts",
-      "line": 150,
+      "filePath": "src/types/theme.ts",
+      "line": 138,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [
       "FontWeight",
-      "GeneratedThemeSwatches",
       "SurfaceColorDiagnostics",
       "ThemeSemantics"
     ],
@@ -15243,8 +15254,12 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ToastProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ToastProps"
+    ],
     "signatures": [
       {
         "label": "({\n  title,\n  description,\n  status = 'default',\n  onDismiss,\n  interactionPolicy = 'enabled',\n  testID,\n}: ToastProps) => React.JSX.Element",
@@ -15275,8 +15290,12 @@
       "line": 27,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ToastOptions"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ToastOptions"
+    ],
     "signatures": [],
     "members": [
       {
@@ -15308,8 +15327,13 @@
       "line": 17,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "ToastStatus"
+    ],
     "signatures": [],
     "members": [
       {
@@ -15376,8 +15400,13 @@
       "line": 8,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy", "ToastStatus"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy",
+      "ToastStatus"
+    ],
     "signatures": [],
     "members": [
       {
@@ -15437,8 +15466,12 @@
       "line": 13,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ToastProviderProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ToastProviderProps"
+    ],
     "signatures": [
       {
         "label": "({ children, defaultDuration = 4000 }: ToastProviderProps) => React.JSX.Element",
@@ -15469,7 +15502,9 @@
       "line": 22,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -15502,7 +15537,9 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -15520,8 +15557,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TooltipProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "TooltipProps"
+    ],
     "signatures": [
       {
         "label": "({\n  children,\n  content,\n  delay = 150,\n  interactionPolicy = 'enabled',\n  placement = 'top',\n  testID,\n}: TooltipProps) => React.JSX.Element",
@@ -15552,8 +15593,12 @@
       "line": 5,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["InteractionPolicy"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "InteractionPolicy"
+    ],
     "signatures": [],
     "members": [
       {
@@ -15602,89 +15647,6 @@
     "structuredRows": []
   },
   {
-    "name": "TranslationProvider",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/context/TranslationContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/context/TranslationContext.tsx",
-      "line": 27,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["I18nInstance", "Translator"],
-    "signatures": [
-      {
-        "label": "(props: { t: Translator; i18n?: I18nInstance | null; children: React.ReactNode; }) => React.JSX.Element",
-        "parameters": [
-          {
-            "name": "props",
-            "type": "{ t: Translator; i18n?: I18nInstance | null; children: React.ReactNode; }",
-            "required": true,
-            "description": null
-          }
-        ],
-        "returnType": "React.JSX.Element",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "TranslationRuntime",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "type",
-    "modulePath": "src/context/TranslationContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/context/TranslationContext.tsx",
-      "line": 15,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["I18nInstance", "Translator"],
-    "signatures": [],
-    "members": [
-      {
-        "name": "i18n",
-        "kind": "property",
-        "type": "I18nInstance | null",
-        "required": true,
-        "description": null
-      },
-      {
-        "name": "t",
-        "kind": "property",
-        "type": "Translator",
-        "required": true,
-        "description": null
-      }
-    ],
-    "structuredRows": []
-  },
-  {
-    "name": "Translator",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "unknown",
-    "modulePath": "src/context/TranslationContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/context/TranslationContext.tsx",
-      "line": 13,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
-    "signatures": [],
-    "members": [],
-    "structuredRows": []
-  },
-  {
     "name": "useBreakpoint",
     "description": null,
     "isReadme": false,
@@ -15696,38 +15658,15 @@
       "line": 6,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [
       {
         "label": "() => \"base\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
         "parameters": [],
         "returnType": "\"base\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "useFontContext",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/context/FontContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/context/FontContext.tsx",
-      "line": 57,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["FontRuntime"],
-    "signatures": [
-      {
-        "label": "() => FontRuntime",
-        "parameters": [],
-        "returnType": "FontRuntime",
         "returnDescription": null
       }
     ],
@@ -15746,8 +15685,12 @@
       "line": 23,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ResponsiveRuntime"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ResponsiveRuntime"
+    ],
     "signatures": [
       {
         "label": "() => ResponsiveRuntime",
@@ -15761,73 +15704,27 @@
   },
   {
     "name": "useTheme",
-    "description": null,
+    "description": "Read the active Surface theme runtime.",
     "isReadme": false,
     "examples": [],
-    "kind": "value",
-    "modulePath": "src/theme/ThemeContext.tsx",
+    "kind": "function",
+    "modulePath": "src/features/theme/adapters/inbound/useTheme.ts",
     "sourceLocation": {
-      "filePath": "src/theme/ThemeContext.tsx",
-      "line": 82,
-      "column": 14
+      "filePath": "src/features/theme/adapters/inbound/useTheme.ts",
+      "line": 7,
+      "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["SurfaceTheme", "ThemeConfig"],
-    "signatures": [
-      {
-        "label": "() => { theme: SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
-        "parameters": [],
-        "returnType": "{ theme: SurfaceTheme; mode: \"light\" | \"dark\"; setThemeConfig: (config: Partial<ThemeConfig>) => void; setMode: (mode: \"light\" | \"dark\") => void; _hasProvider?: boolean; }",
-        "returnDescription": null
-      }
+    "exportPaths": [
+      "src/index.ts"
     ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "useThemeConfig",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "value",
-    "modulePath": "src/theme/ThemeContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/theme/ThemeContext.tsx",
-      "line": 86,
-      "column": 14
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ThemeConfig"],
-    "signatures": [
-      {
-        "label": "() => (config: Partial<ThemeConfig>) => void",
-        "parameters": [],
-        "returnType": "(config: Partial<ThemeConfig>) => void",
-        "returnDescription": null
-      }
+    "relatedSymbols": [
+      "ThemeRuntime"
     ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "useThemeMode",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "value",
-    "modulePath": "src/theme/ThemeContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/theme/ThemeContext.tsx",
-      "line": 91,
-      "column": 14
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
     "signatures": [
       {
-        "label": "() => { mode: \"light\" | \"dark\"; setMode: (mode: \"light\" | \"dark\") => void; }",
+        "label": "() => ThemeRuntime",
         "parameters": [],
-        "returnType": "{ mode: \"light\" | \"dark\"; setMode: (mode: \"light\" | \"dark\") => void; }",
+        "returnType": "ThemeRuntime",
         "returnDescription": null
       }
     ],
@@ -15846,38 +15743,17 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ToastController"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ToastController"
+    ],
     "signatures": [
       {
         "label": "() => ToastController",
         "parameters": [],
         "returnType": "ToastController",
-        "returnDescription": null
-      }
-    ],
-    "members": [],
-    "structuredRows": []
-  },
-  {
-    "name": "useTranslationContext",
-    "description": null,
-    "isReadme": false,
-    "examples": [],
-    "kind": "function",
-    "modulePath": "src/context/TranslationContext.tsx",
-    "sourceLocation": {
-      "filePath": "src/context/TranslationContext.tsx",
-      "line": 48,
-      "column": 1
-    },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["TranslationRuntime"],
-    "signatures": [
-      {
-        "label": "() => TranslationRuntime",
-        "parameters": [],
-        "returnType": "TranslationRuntime",
         "returnDescription": null
       }
     ],
@@ -15896,8 +15772,12 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["ViewProps"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "ViewProps"
+    ],
     "signatures": [
       {
         "label": "({\n  accessible,\n  accessibilityLabel,\n  accessibilityRole,\n  accessibilityState,\n  children,\n  pointerEvents,\n  style,\n  testID,\n  ...props\n}: ViewProps) => React.JSX.Element",
@@ -15928,8 +15808,12 @@
       "line": 70,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["Responsive"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "Responsive"
+    ],
     "signatures": [],
     "members": [
       {

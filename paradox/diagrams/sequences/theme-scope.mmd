@@ -1,0 +1,16 @@
+sequenceDiagram
+  participant participant_ThemeScope as ThemeScope
+  participant participant_use as use
+  participant participant_useFontRuntime as useFontRuntime
+  participant participant_useMemo as useMemo
+  participant participant_useTheme as useTheme
+  participant_ThemeScope->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_use: use()
+  participant_use-->>participant_useTheme: return
+  participant_useTheme-->>participant_ThemeScope: return
+  participant_ThemeScope->>participant_useFontRuntime: useFontRuntime()
+  participant_useFontRuntime->>participant_use: use()
+  participant_use-->>participant_useFontRuntime: return
+  participant_useFontRuntime-->>participant_ThemeScope: return
+  participant_ThemeScope->>participant_useMemo: useMemo()
+  participant_useMemo-->>participant_ThemeScope: return
