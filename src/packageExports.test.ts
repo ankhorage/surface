@@ -1,7 +1,8 @@
-import { isRecord } from '@ankhorage/utility/object';
-import { expect, test } from 'bun:test';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+
+import { isRecord } from '@ankhorage/utility/object';
+import { expect, test } from 'bun:test';
 
 test('maps all canonical feature subpaths through one package export pattern', async () => {
   const packageJson = JSON.parse(
@@ -34,6 +35,6 @@ function resolveFeatureExport(
   condition: 'browser' | 'import',
 ): string | null {
   if (!isRecord(pattern)) return null;
-  const value: unknown = pattern[condition];
+  const value: unknown = condition === 'browser' ? pattern.browser : pattern.import;
   return typeof value === 'string' ? value.replace('*', featurePath) : null;
 }
