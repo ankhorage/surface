@@ -1,8 +1,9 @@
 import type React from 'react';
 
 import type { InteractionPolicy } from './interactionPolicy';
+import type { ViewStyleProps } from './layout';
 
-export interface TabsProps {
+export interface TabsProps extends ViewStyleProps {
   children?: React.ReactNode;
   value?: string;
   defaultValue?: string;
@@ -23,7 +24,7 @@ export interface TabProps {
   testID?: string;
 }
 
-export interface TabPanelProps {
+export interface TabPanelProps extends ViewStyleProps {
   value: string;
   children?: React.ReactNode;
   testID?: string;
