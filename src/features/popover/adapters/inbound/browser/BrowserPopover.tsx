@@ -1,6 +1,6 @@
 import React from 'react';
-import { createPortal } from 'react-dom';
 
+import { Portal } from '../../../../../internal/overlay/Portal.js';
 import { useControllableState } from '../../../../../internal/useControllableState.js';
 import type { PopoverProps } from '../../../../../types/popover.js';
 import { resolvePopoverPosition } from '../../../utils/resolvePopoverPosition.js';
@@ -35,9 +35,9 @@ export function BrowserPopover(props: PopoverProps) {
       >
         {props.anchor({ close, open, toggle })}
       </div>
-      {content === null || typeof document === 'undefined'
-        ? null
-        : createPortal(content, document.body)}
+      <Portal layer="popover" visible={open}>
+        {content}
+      </Portal>
     </>
   );
 }
@@ -165,5 +165,4 @@ const anchorStyle: React.CSSProperties = { display: 'inline-block' };
 const baseContentStyle: React.CSSProperties = {
   pointerEvents: 'auto',
   position: 'fixed',
-  zIndex: 1000,
 };

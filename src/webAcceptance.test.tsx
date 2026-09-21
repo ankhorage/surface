@@ -22,12 +22,16 @@ const ReactNativeWeb = await import('react-native-web');
 await mock.module('react-native', () => ReactNativeWeb);
 
 const scrollContentStyle = { padding: 4 };
+const clippedRootStyle = { height: 12, overflow: 'hidden' as const };
 
 const { Grid, ReactNativeWebStyleSheet, ScrollView, View } =
   await import('./features/layout/public');
 const { KeyboardAvoidingView } = await import('./features/keyboard-avoiding-view/public');
 const { Show, useBreakpoint } = await import('./core/responsive');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
+const { OverlayProvider: WebOverlayProvider } =
+  await import('./internal/overlay/OverlayProvider.web');
+const { Portal } = await import('./internal/overlay/Portal');
 const { ThemeProvider } = await import('./features/theme/runtime');
 
 function ResponsiveAcceptanceTree() {
@@ -68,6 +72,18 @@ function SsrLayoutTree() {
       </ThemeProvider>
       <ReactNativeWebStyleSheet />
     </>
+  );
+}
+
+function OverlayPortalAcceptanceTree() {
+  return (
+    <ReactNativeWeb.View style={clippedRootStyle} testID="clipped-root">
+      <WebOverlayProvider>
+        <Portal layer="popover">
+          <ReactNativeWeb.View testID="portaled-overlay" />
+        </Portal>
+      </WebOverlayProvider>
+    </ReactNativeWeb.View>
   );
 }
 
@@ -203,6 +219,36 @@ test('RN Web 0.21 compiles box-none overlay pointer events into a hit-test-safe 
 
   expect(markup).toContain('data-testid="interactive-content"');
   expect(markup).toContain('r-pointerEvents-');
+});
+
+test('RN Web portals shared overlays outside clipped provider roots after hydration', async () => {
+  const markup = renderToString(<OverlayPortalAcceptanceTree />);
+  const container = browserWindow.document.createElement('div');
+  container.innerHTML = markup;
+  browserWindow.document.body.append(container);
+  const hydrationErrors: string[] = [];
+  const originalError = console.error;
+  console.error = (...values: unknown[]) => {
+    hydrationErrors.push(values.map(String).join(' '));
+  };
+
+  try {
+    const { hydrateRoot } = await import('react-dom/client');
+    const root = hydrateRoot(container as unknown as Element, <OverlayPortalAcceptanceTree />);
+    await act(async () => Promise.resolve());
+
+    expect(container.querySelector('[data-testid="clipped-root"]')).not.toBeNull();
+    expect(container.querySelector('[data-testid="portaled-overlay"]')).toBeNull();
+    expect(
+      browserWindow.document.body.querySelector('[data-testid="portaled-overlay"]'),
+    ).not.toBeNull();
+    expect(hydrationErrors).toEqual([]);
+
+    act(() => root.unmount());
+  } finally {
+    console.error = originalError;
+    container.remove();
+  }
 });
 
 test('RN Web 0.21 renders keyboard-safe content through the Surface layout boundary', () => {
