@@ -11,9 +11,11 @@ import { useTheme } from '../../../theme/runtime';
 export function View({
   accessible,
   accessibilityLabel,
+  accessibilityLabelledBy,
   accessibilityRole,
   accessibilityState,
   children,
+  nativeID,
   pointerEvents,
   style,
   testID,
@@ -29,8 +31,10 @@ export function View({
       {...resolvedPointerEvents?.props}
       accessible={accessible}
       accessibilityLabel={accessibilityLabel}
+      accessibilityLabelledBy={accessibilityLabelledBy}
       accessibilityRole={accessibilityRole}
       accessibilityState={accessibilityState}
+      nativeID={nativeID}
       testID={testID}
       style={[resolved, resolvedPointerEvents?.style, style]}
     >

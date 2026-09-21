@@ -5,13 +5,22 @@ import { View } from '../../../layout/public';
 import { TabsContext } from '../../composition/TabsContext';
 import { useTabsController } from '../../composition/useTabsController';
 
-/*** Provides accessible tab selection state to TabList, Tab, and TabPanel children. */
-export function Tabs({ children, ...props }: TabsProps) {
-  const contextValue = useTabsController(props);
+/*** Provides accessible tab selection and forwards View layout to the tab container. */
+export function Tabs({
+  children,
+  defaultValue,
+  onValueChange,
+  testID,
+  value,
+  ...layoutProps
+}: TabsProps) {
+  const contextValue = useTabsController({ defaultValue, onValueChange, testID, value });
 
   return (
     <TabsContext value={contextValue}>
-      <View testID={props.testID}>{children}</View>
+      <View {...layoutProps} testID={testID}>
+        {children}
+      </View>
     </TabsContext>
   );
 }

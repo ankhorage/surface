@@ -69,10 +69,12 @@ export interface ViewStyleProps {
 
 export interface ViewProps extends ViewStyleProps {
   accessibilityLabel?: ReactNativeViewProps['accessibilityLabel'];
+  accessibilityLabelledBy?: ReactNativeViewProps['accessibilityLabelledBy'];
   accessibilityRole?: ReactNativeViewProps['accessibilityRole'];
   accessibilityState?: ReactNativeViewProps['accessibilityState'];
   accessible?: ReactNativeViewProps['accessible'];
   children?: React.ReactNode;
+  nativeID?: ReactNativeViewProps['nativeID'];
   pointerEvents?: ReactNativeViewProps['pointerEvents'];
   testID?: string;
 }
