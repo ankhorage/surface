@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.0.12
+
+### Patch Changes
+
+- 3dad165: Forward canonical View layout props through Tabs and TabPanel so bounded tab content can host a scrolling child.
+
 ## 9.0.11
 
 ### Patch Changes

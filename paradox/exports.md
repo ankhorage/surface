@@ -697,6 +697,7 @@ Source: `src/types/app-bar.ts:6:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `import("react-native").AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `import("react-native").AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -731,6 +732,7 @@ Source: `src/types/app-bar.ts:6:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
 | overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
 | p | property | `Responsive<SpaceValue> \| undefined` | no |  |
@@ -886,6 +888,7 @@ Source: `src/types/button.ts:11:1`
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -923,6 +926,7 @@ Source: `src/types/button.ts:11:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | onLongPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | onPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
@@ -988,6 +992,7 @@ Source: `src/types/card.ts:5:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `import("react-native").AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `import("react-native").AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -1017,6 +1022,7 @@ Source: `src/types/card.ts:5:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | onPress | property | `(() => void) \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
 | overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
@@ -1091,6 +1097,7 @@ Source: `src/types/checkbox.ts:7:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
 | align | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined` | no |  |
 | alignSelf | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no |  |
@@ -1126,6 +1133,7 @@ Source: `src/types/checkbox.ts:7:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | onCheckedChange | property | `((checked: boolean) => void) \| undefined` | no |  |
 | onLongPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
@@ -1212,13 +1220,14 @@ Renders a horizontal or vertical separator using layout tokens.
 
 Kind: `type`
 Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:80:1`
+Source: `src/types/layout.ts:82:1`
 
 ### Members
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `import("react-native").AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `import("react-native").AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -1249,6 +1258,7 @@ Source: `src/types/layout.ts:80:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
 | orientation | property | `"horizontal" \| "vertical" \| undefined` | no |  |
 | overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
@@ -1436,13 +1446,14 @@ Lays out children in a responsive wrapping grid.
 
 Kind: `type`
 Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:86:1`
+Source: `src/types/layout.ts:88:1`
 
 ### Members
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `import("react-native").AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `import("react-native").AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -1477,6 +1488,7 @@ Source: `src/types/layout.ts:86:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
 | overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
 | p | property | `Responsive<SpaceValue> \| undefined` | no |  |
@@ -1615,6 +1627,7 @@ Source: `src/types/button.ts:25:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string` | yes |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -1649,6 +1662,7 @@ Source: `src/types/button.ts:25:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | onLongPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | onPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
@@ -2120,6 +2134,7 @@ Source: `src/types/pressable.ts:8:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -2153,6 +2168,7 @@ Source: `src/types/pressable.ts:8:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | onLongPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | onPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
@@ -2226,6 +2242,7 @@ Source: `src/types/radio.ts:7:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
 | align | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined` | no |  |
 | alignSelf | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no |  |
@@ -2261,6 +2278,7 @@ Source: `src/types/radio.ts:7:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | onCheckedChange | property | `((checked: boolean) => void) \| undefined` | no |  |
 | onLongPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
@@ -2373,7 +2391,7 @@ Renders the token-aware responsive Surface adapter for React Native ScrollView.
 
 Kind: `type`
 Module: `src/types/layout.ts`
-Source: `src/types/layout.ts:95:1`
+Source: `src/types/layout.ts:97:1`
 
 ### Members
 
@@ -2744,6 +2762,7 @@ Source: `src/types/surface.ts:5:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `import("react-native").AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `import("react-native").AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -2772,6 +2791,7 @@ Source: `src/types/surface.ts:5:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
 | overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
 | p | property | `Responsive<SpaceValue> \| undefined` | no |  |
@@ -2911,6 +2931,7 @@ Source: `src/types/switch.ts:7:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
 | align | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined` | no |  |
 | alignSelf | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no |  |
@@ -2946,6 +2967,7 @@ Source: `src/types/switch.ts:7:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | onCheckedChange | property | `((checked: boolean) => void) \| undefined` | no |  |
 | onLongPress | property | `((event: GestureResponderEvent) => void) \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
@@ -3013,7 +3035,7 @@ Renders the accessible tab list and owns keyboard focus navigation.
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:13:1`
+Source: `src/types/tabs.ts:14:1`
 
 ### Members
 
@@ -3028,33 +3050,78 @@ Kind: `function`
 Module: `src/features/tabs/adapters/inbound/TabPanel.tsx`
 Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:10:1`
 
-Renders the content panel associated with the active tab value.
+Renders the active content panel with the supplied View layout and tab accessibility linkage.
 
 ### Signatures
 
-- `({ value, children, testID }: TabPanelProps) => React.JSX.Element | null`
-  - { value, children, testID }: `TabPanelProps`
+- `({ value, children, testID, ...layoutProps }: TabPanelProps) => React.JSX.Element | null`
+  - { value, children, testID, ...layoutProps }: `TabPanelProps`
   - returns: `React.JSX.Element | null`
 
 ## TabPanelProps
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:26:1`
+Source: `src/types/tabs.ts:27:1`
 
 ### Members
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
+| align | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined` | no |  |
+| alignSelf | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no |  |
+| bg | property | `Responsive<ColorValue> \| undefined` | no |  |
+| borderColor | property | `Responsive<ColorValue> \| undefined` | no |  |
+| borderWidth | property | `Responsive<number> \| undefined` | no |  |
+| bottom | property | `Responsive<number> \| undefined` | no |  |
 | children | property | `React.ReactNode` | no |  |
+| columnGap | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| direction | property | `Responsive<"row" \| "column"> \| undefined` | no |  |
+| flex | property | `Responsive<number> \| undefined` | no |  |
+| flexBasis | property | `Responsive<string \| number> \| undefined` | no |  |
+| flexGrow | property | `Responsive<number> \| undefined` | no |  |
+| flexShrink | property | `Responsive<number> \| undefined` | no |  |
+| gap | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| height | property | `Responsive<string \| number> \| undefined` | no |  |
+| justify | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no |  |
+| left | property | `Responsive<number> \| undefined` | no |  |
+| m | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| maxHeight | property | `Responsive<string \| number> \| undefined` | no |  |
+| maxWidth | property | `Responsive<string \| number> \| undefined` | no |  |
+| mb | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| minHeight | property | `Responsive<string \| number> \| undefined` | no |  |
+| minWidth | property | `Responsive<string \| number> \| undefined` | no |  |
+| ml | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| mr | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| opacity | property | `Responsive<number> \| undefined` | no |  |
+| overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
+| p | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| pb | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| pl | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| position | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>` | no |  |
+| pr | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| pt | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| px | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| py | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| radius | property | `Responsive<RadiusValue> \| undefined` | no |  |
+| right | property | `Responsive<number> \| undefined` | no |  |
+| rowGap | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| style | property | `StyleProp<ViewStyle>` | no |  |
 | testID | property | `string \| undefined` | no |  |
+| top | property | `Responsive<number> \| undefined` | no |  |
 | value | property | `string` | yes |  |
+| width | property | `Responsive<string \| number> \| undefined` | no |  |
+| wrap | property | `Responsive<"wrap" \| "nowrap"> \| undefined` | no |  |
+| zIndex | property | `Responsive<number> \| undefined` | no |  |
 
 ## TabProps
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:18:1`
+Source: `src/types/tabs.ts:19:1`
 
 ### Members
 
@@ -3072,29 +3139,88 @@ Kind: `function`
 Module: `src/features/tabs/adapters/inbound/Tabs.tsx`
 Source: `src/features/tabs/adapters/inbound/Tabs.tsx:9:1`
 
-Provides accessible tab selection state to TabList, Tab, and TabPanel children.
+Provides accessible tab selection and forwards View layout to the tab container.
 
 ### Signatures
 
-- `({ children, ...props }: TabsProps) => React.JSX.Element`
-  - { children, ...props }: `TabsProps`
+- `({
+  children,
+  defaultValue,
+  onValueChange,
+  testID,
+  value,
+  ...layoutProps
+}: TabsProps) => React.JSX.Element`
+  - {
+  children,
+  defaultValue,
+  onValueChange,
+  testID,
+  value,
+  ...layoutProps
+}: `TabsProps`
   - returns: `React.JSX.Element`
 
 ## TabsProps
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:5:1`
+Source: `src/types/tabs.ts:6:1`
 
 ### Members
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
+| align | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "stretch" \| "baseline"> \| undefined` | no |  |
+| alignSelf | property | `Responsive<"auto" \| import("react-native").FlexAlignType \| undefined>` | no |  |
+| bg | property | `Responsive<ColorValue> \| undefined` | no |  |
+| borderColor | property | `Responsive<ColorValue> \| undefined` | no |  |
+| borderWidth | property | `Responsive<number> \| undefined` | no |  |
+| bottom | property | `Responsive<number> \| undefined` | no |  |
 | children | property | `React.ReactNode` | no |  |
+| columnGap | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | defaultValue | property | `string \| undefined` | no |  |
+| direction | property | `Responsive<"row" \| "column"> \| undefined` | no |  |
+| flex | property | `Responsive<number> \| undefined` | no |  |
+| flexBasis | property | `Responsive<string \| number> \| undefined` | no |  |
+| flexGrow | property | `Responsive<number> \| undefined` | no |  |
+| flexShrink | property | `Responsive<number> \| undefined` | no |  |
+| gap | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| height | property | `Responsive<string \| number> \| undefined` | no |  |
+| justify | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no |  |
+| left | property | `Responsive<number> \| undefined` | no |  |
+| m | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| maxHeight | property | `Responsive<string \| number> \| undefined` | no |  |
+| maxWidth | property | `Responsive<string \| number> \| undefined` | no |  |
+| mb | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| minHeight | property | `Responsive<string \| number> \| undefined` | no |  |
+| minWidth | property | `Responsive<string \| number> \| undefined` | no |  |
+| ml | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| mr | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| my | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | onValueChange | property | `((value: string) => void) \| undefined` | no |  |
+| opacity | property | `Responsive<number> \| undefined` | no |  |
+| overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
+| p | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| pb | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| pl | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| position | property | `Responsive<"absolute" \| "relative" \| "static" \| undefined>` | no |  |
+| pr | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| pt | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| px | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| py | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| radius | property | `Responsive<RadiusValue> \| undefined` | no |  |
+| right | property | `Responsive<number> \| undefined` | no |  |
+| rowGap | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| style | property | `StyleProp<ViewStyle>` | no |  |
 | testID | property | `string \| undefined` | no |  |
+| top | property | `Responsive<number> \| undefined` | no |  |
 | value | property | `string \| undefined` | no |  |
+| width | property | `Responsive<string \| number> \| undefined` | no |  |
+| wrap | property | `Responsive<"wrap" \| "nowrap"> \| undefined` | no |  |
+| zIndex | property | `Responsive<number> \| undefined` | no |  |
 
 ## Text
 
@@ -3685,9 +3811,11 @@ Renders the token-aware responsive Surface adapter for React Native View.
 - `({
   accessible,
   accessibilityLabel,
+  accessibilityLabelledBy,
   accessibilityRole,
   accessibilityState,
   children,
+  nativeID,
   pointerEvents,
   style,
   testID,
@@ -3696,9 +3824,11 @@ Renders the token-aware responsive Surface adapter for React Native View.
   - {
   accessible,
   accessibilityLabel,
+  accessibilityLabelledBy,
   accessibilityRole,
   accessibilityState,
   children,
+  nativeID,
   pointerEvents,
   style,
   testID,
@@ -3717,6 +3847,7 @@ Source: `src/types/layout.ts:70:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | property | `string \| undefined` | no |  |
+| accessibilityLabelledBy | property | `string \| string[] \| undefined` | no |  |
 | accessibilityRole | property | `import("react-native").AccessibilityRole \| undefined` | no |  |
 | accessibilityState | property | `import("react-native").AccessibilityState \| undefined` | no |  |
 | accessible | property | `boolean \| undefined` | no |  |
@@ -3748,6 +3879,7 @@ Source: `src/types/layout.ts:70:1`
 | mt | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | mx | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | my | property | `Responsive<SpaceValue> \| undefined` | no |  |
+| nativeID | property | `string \| undefined` | no |  |
 | opacity | property | `Responsive<number> \| undefined` | no |  |
 | overflow | property | `Responsive<"visible" \| "hidden" \| "scroll" \| undefined>` | no |  |
 | p | property | `Responsive<SpaceValue> \| undefined` | no |  |

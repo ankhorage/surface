@@ -733,7 +733,7 @@
       <div class="summary">
         <div><strong>144</strong><span class="muted">public exports</span></div>
         <div><strong>42</strong><span class="muted">components</span></div>
-        <div><strong>244</strong><span class="muted">modules</span></div>
+        <div><strong>245</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -1314,11 +1314,16 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/features/layout/public.ts</code>, <code>src/features/tabs/composition/useTabsContext.ts</code>, <code>src/features/tabs/utils/resolveNextTabValue.ts</code>, <code>src/internal/focus/useFocusManager.ts</code>, <code>src/types/tabs.ts</code></p>
     <p><strong>Exports:</strong> <code>TabList</code></p>
-  </article><article class="item" data-search="src/features/tabs/adapters/inbound/TabPanel.tsx src/features/tabs/composition/useTabsContext.ts src/types/tabs.ts TabPanel">
+  </article><article class="item" data-search="src/features/tabs/adapters/inbound/TabPanel.tsx src/features/layout/public.ts src/features/tabs/composition/useTabsContext.ts src/types/tabs.ts TabPanel">
     <h3>src/features/tabs/adapters/inbound/TabPanel.tsx</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/features/tabs/composition/useTabsContext.ts</code>, <code>src/types/tabs.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/features/layout/public.ts</code>, <code>src/features/tabs/composition/useTabsContext.ts</code>, <code>src/types/tabs.ts</code></p>
     <p><strong>Exports:</strong> <code>TabPanel</code></p>
+  </article><article class="item" data-search="src/features/tabs/adapters/inbound/Tabs.layout.test.tsx">
+    <h3>src/features/tabs/adapters/inbound/Tabs.layout.test.tsx</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
   </article><article class="item" data-search="src/features/tabs/adapters/inbound/Tabs.tsx src/features/layout/public.ts src/features/tabs/composition/TabsContext.tsx src/features/tabs/composition/useTabsController.ts src/types/tabs.ts Tabs">
     <h3>src/features/tabs/adapters/inbound/Tabs.tsx</h3>
     <p class="muted">Referenced module</p>
@@ -1914,10 +1919,10 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/internal/resolvers/resolveControlSize.ts</code>, <code>src/types/pressable.ts</code>, <code>src/types/surfaceColor.ts</code></p>
     <p><strong>Exports:</strong> <code>SwitchProps</code></p>
-  </article><article class="item" data-search="src/types/tabs.ts src/types/interactionPolicy.ts TabListProps TabNavigationKey TabPanelProps TabProps TabRegistration TabsContextValue TabsProps">
+  </article><article class="item" data-search="src/types/tabs.ts src/types/interactionPolicy.ts src/types/layout.ts TabListProps TabNavigationKey TabPanelProps TabProps TabRegistration TabsContextValue TabsProps">
     <h3>src/types/tabs.ts</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/types/interactionPolicy.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/types/interactionPolicy.ts</code>, <code>src/types/layout.ts</code></p>
     <p><strong>Exports:</strong> <code>TabListProps</code>, <code>TabNavigationKey</code>, <code>TabPanelProps</code>, <code>TabProps</code>, <code>TabRegistration</code>, <code>TabsContextValue</code>, <code>TabsProps</code></p>
   </article><article class="item" data-search="src/types/text-input.ts src/internal/resolvers/resolveControlSize.ts src/types/interactionPolicy.ts TextInputProps">
     <h3>src/types/text-input.ts</h3>
@@ -3113,7 +3118,7 @@
             </section>
             <section>
               <h3>src/features/layout/adapters/inbound/View.tsx</h3>
-              <article class="item" id="symbol-view" data-search="View function src/features/layout/adapters/inbound/View.tsx Renders the token-aware responsive Surface adapter for React Native View. ViewProps ({&#10;  accessible,&#10;  accessibilityLabel,&#10;  accessibilityRole,&#10;  accessibilityState,&#10;  children,&#10;  pointerEvents,&#10;  style,&#10;  testID,&#10;  ...props&#10;}: ViewProps) =&gt; React.JSX.Element">
+              <article class="item" id="symbol-view" data-search="View function src/features/layout/adapters/inbound/View.tsx Renders the token-aware responsive Surface adapter for React Native View. ViewProps ({&#10;  accessible,&#10;  accessibilityLabel,&#10;  accessibilityLabelledBy,&#10;  accessibilityRole,&#10;  accessibilityState,&#10;  children,&#10;  nativeID,&#10;  pointerEvents,&#10;  style,&#10;  testID,&#10;  ...props&#10;}: ViewProps) =&gt; React.JSX.Element">
     <h4>View</h4>
     <p class="muted">function • <code>src/features/layout/adapters/inbound/View.tsx:11:1</code></p>
     <p>Renders the token-aware responsive Surface adapter for React Native View.</p>
@@ -3124,9 +3129,11 @@
         <pre>({
   accessible,
   accessibilityLabel,
+  accessibilityLabelledBy,
   accessibilityRole,
   accessibilityState,
   children,
+  nativeID,
   pointerEvents,
   style,
   testID,
@@ -3139,9 +3146,11 @@
                         <td><code>{
   accessible,
   accessibilityLabel,
+  accessibilityLabelledBy,
   accessibilityRole,
   accessibilityState,
   children,
+  nativeID,
   pointerEvents,
   style,
   testID,
@@ -3467,20 +3476,20 @@
             </section>
             <section>
               <h3>src/features/tabs/adapters/inbound/TabPanel.tsx</h3>
-              <article class="item" id="symbol-tabpanel" data-search="TabPanel function src/features/tabs/adapters/inbound/TabPanel.tsx Renders the content panel associated with the active tab value. TabPanelProps ({ value, children, testID }: TabPanelProps) =&gt; React.JSX.Element | null">
+              <article class="item" id="symbol-tabpanel" data-search="TabPanel function src/features/tabs/adapters/inbound/TabPanel.tsx Renders the active content panel with the supplied View layout and tab accessibility linkage. TabPanelProps ({ value, children, testID, ...layoutProps }: TabPanelProps) =&gt; React.JSX.Element | null">
     <h4>TabPanel</h4>
     <p class="muted">function • <code>src/features/tabs/adapters/inbound/TabPanel.tsx:10:1</code></p>
-    <p>Renders the content panel associated with the active tab value.</p>
+    <p>Renders the active content panel with the supplied View layout and tab accessibility linkage.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">TabPanelProps</li></ul></div>
     <div>
         <h5>Signature</h5>
-        <pre>({ value, children, testID }: TabPanelProps) =&gt; React.JSX.Element | null</pre>
+        <pre>({ value, children, testID, ...layoutProps }: TabPanelProps) =&gt; React.JSX.Element | null</pre>
         <table>
                 <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
                 <tbody>
                   <tr>
-                        <td><code>{ value, children, testID }</code></td>
+                        <td><code>{ value, children, testID, ...layoutProps }</code></td>
                         <td><code>TabPanelProps</code></td>
                         <td>yes</td>
                         <td></td>
@@ -3494,20 +3503,34 @@
             </section>
             <section>
               <h3>src/features/tabs/adapters/inbound/Tabs.tsx</h3>
-              <article class="item" id="symbol-tabs" data-search="Tabs function src/features/tabs/adapters/inbound/Tabs.tsx Provides accessible tab selection state to TabList, Tab, and TabPanel children. TabsProps ({ children, ...props }: TabsProps) =&gt; React.JSX.Element">
+              <article class="item" id="symbol-tabs" data-search="Tabs function src/features/tabs/adapters/inbound/Tabs.tsx Provides accessible tab selection and forwards View layout to the tab container. TabsProps ({&#10;  children,&#10;  defaultValue,&#10;  onValueChange,&#10;  testID,&#10;  value,&#10;  ...layoutProps&#10;}: TabsProps) =&gt; React.JSX.Element">
     <h4>Tabs</h4>
     <p class="muted">function • <code>src/features/tabs/adapters/inbound/Tabs.tsx:9:1</code></p>
-    <p>Provides accessible tab selection state to TabList, Tab, and TabPanel children.</p>
+    <p>Provides accessible tab selection and forwards View layout to the tab container.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">TabsProps</li></ul></div>
     <div>
         <h5>Signature</h5>
-        <pre>({ children, ...props }: TabsProps) =&gt; React.JSX.Element</pre>
+        <pre>({
+  children,
+  defaultValue,
+  onValueChange,
+  testID,
+  value,
+  ...layoutProps
+}: TabsProps) =&gt; React.JSX.Element</pre>
         <table>
                 <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
                 <tbody>
                   <tr>
-                        <td><code>{ children, ...props }</code></td>
+                        <td><code>{
+  children,
+  defaultValue,
+  onValueChange,
+  testID,
+  value,
+  ...layoutProps
+}</code></td>
                         <td><code>TabsProps</code></td>
                         <td>yes</td>
                         <td></td>
@@ -6857,6 +6880,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>accessibilityRole</code></td>
             <td>property</td>
             <td><code>import(&quot;react-native&quot;).AccessibilityRole | undefined</code></td>
@@ -7058,6 +7087,12 @@
             <td><code>my</code></td>
             <td>property</td>
             <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -7265,6 +7300,12 @@
     <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
     <tbody>
       <tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>accessibilityRole</code></td>
             <td>property</td>
             <td><code>AccessibilityRole | undefined</code></td>
@@ -7487,6 +7528,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>onLongPress</code></td>
             <td>property</td>
             <td><code>((event: GestureResponderEvent) =&gt; void) | undefined</code></td>
@@ -7642,6 +7689,12 @@
             <td>property</td>
             <td><code>string</code></td>
             <td>yes</td>
+            <td></td>
+          </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
+            <td>no</td>
             <td></td>
           </tr><tr>
             <td><code>accessibilityRole</code></td>
@@ -7848,6 +7901,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>onLongPress</code></td>
             <td>property</td>
             <td><code>((event: GestureResponderEvent) =&gt; void) | undefined</code></td>
@@ -8000,6 +8059,12 @@
             <td><code>accessibilityLabel</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -8177,6 +8242,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>onPress</code></td>
             <td>property</td>
             <td><code>(() =&gt; void) | undefined</code></td>
@@ -8329,6 +8400,12 @@
             <td><code>accessibilityLabel</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -8539,6 +8616,12 @@
             <td><code>my</code></td>
             <td>property</td>
             <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -9068,7 +9151,7 @@
               <h3>src/types/layout.ts</h3>
               <article class="item" id="symbol-dividerprops" data-search="DividerProps type src/types/layout.ts  Responsive">
     <h4>DividerProps</h4>
-    <p class="muted">type • <code>src/types/layout.ts:80:1</code></p>
+    <p class="muted">type • <code>src/types/layout.ts:82:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">Responsive</li></ul></div>
@@ -9080,6 +9163,12 @@
             <td><code>accessibilityLabel</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -9263,6 +9352,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>opacity</code></td>
             <td>property</td>
             <td><code>Responsive&lt;number&gt; | undefined</code></td>
@@ -9393,7 +9488,7 @@
   </table>
   </article><article class="item" id="symbol-gridprops" data-search="GridProps type src/types/layout.ts  Responsive">
     <h4>GridProps</h4>
-    <p class="muted">type • <code>src/types/layout.ts:86:1</code></p>
+    <p class="muted">type • <code>src/types/layout.ts:88:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">Responsive</li></ul></div>
@@ -9405,6 +9500,12 @@
             <td><code>accessibilityLabel</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -9612,6 +9713,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>opacity</code></td>
             <td>property</td>
             <td><code>Responsive&lt;number&gt; | undefined</code></td>
@@ -9736,7 +9843,7 @@
   </table>
   </article><article class="item" id="symbol-scrollviewprops" data-search="ScrollViewProps type src/types/layout.ts  Responsive ScrollView View">
     <h4>ScrollViewProps</h4>
-    <p class="muted">type • <code>src/types/layout.ts:95:1</code></p>
+    <p class="muted">type • <code>src/types/layout.ts:97:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">Responsive</li><li class="chip">ScrollView</li><li class="chip">View</li></ul></div>
@@ -10934,6 +11041,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>accessibilityRole</code></td>
             <td>property</td>
             <td><code>import(&quot;react-native&quot;).AccessibilityRole | undefined</code></td>
@@ -11117,6 +11230,12 @@
             <td><code>my</code></td>
             <td>property</td>
             <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -11674,6 +11793,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>accessibilityRole</code></td>
             <td>property</td>
             <td><code>AccessibilityRole | undefined</code></td>
@@ -11872,6 +11997,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>onLongPress</code></td>
             <td>property</td>
             <td><code>((event: GestureResponderEvent) =&gt; void) | undefined</code></td>
@@ -12018,6 +12149,12 @@
             <td><code>accessibilityLabel</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -12231,6 +12368,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>onCheckedChange</code></td>
             <td>property</td>
             <td><code>((checked: boolean) =&gt; void) | undefined</code></td>
@@ -12383,6 +12526,12 @@
             <td><code>accessibilityLabel</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -12551,6 +12700,12 @@
             <td><code>my</code></td>
             <td>property</td>
             <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -12747,6 +12902,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>accessibilityLabelledBy</code></td>
+            <td>property</td>
+            <td><code>string | string[] | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>accessible</code></td>
             <td>property</td>
             <td><code>boolean | undefined</code></td>
@@ -12957,6 +13118,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>nativeID</code></td>
+            <td>property</td>
+            <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>onCheckedChange</code></td>
             <td>property</td>
             <td><code>((checked: boolean) =&gt; void) | undefined</code></td>
@@ -13097,7 +13264,7 @@
               <h3>src/types/tabs.ts</h3>
               <article class="item" id="symbol-tablistprops" data-search="TabListProps type src/types/tabs.ts ">
     <h4>TabListProps</h4>
-    <p class="muted">type • <code>src/types/tabs.ts:13:1</code></p>
+    <p class="muted">type • <code>src/types/tabs.ts:14:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -13120,26 +13287,278 @@
           </tr>
     </tbody>
   </table>
-  </article><article class="item" id="symbol-tabpanelprops" data-search="TabPanelProps type src/types/tabs.ts ">
+  </article><article class="item" id="symbol-tabpanelprops" data-search="TabPanelProps type src/types/tabs.ts  Responsive">
     <h4>TabPanelProps</h4>
-    <p class="muted">type • <code>src/types/tabs.ts:26:1</code></p>
+    <p class="muted">type • <code>src/types/tabs.ts:27:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-    <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+    <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">Responsive</li></ul></div>
     
     <table>
     <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
     <tbody>
       <tr>
+            <td><code>align</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;flex-start&quot; | &quot;center&quot; | &quot;flex-end&quot; | &quot;stretch&quot; | &quot;baseline&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>alignSelf</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;auto&quot; | import(&quot;react-native&quot;).FlexAlignType | undefined&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>bg</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>borderColor</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>borderWidth</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>bottom</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>children</code></td>
             <td>property</td>
             <td><code>React.ReactNode</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>columnGap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>direction</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;row&quot; | &quot;column&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flex</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flexBasis</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flexGrow</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flexShrink</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>gap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>height</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>justify</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;flex-start&quot; | &quot;center&quot; | &quot;flex-end&quot; | &quot;space-between&quot; | &quot;space-around&quot; | &quot;space-evenly&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>left</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>m</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>maxHeight</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>maxWidth</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mb</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>minHeight</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>minWidth</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>ml</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mr</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mt</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mx</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>my</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>opacity</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>overflow</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;visible&quot; | &quot;hidden&quot; | &quot;scroll&quot; | undefined&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>p</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pb</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pl</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>position</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;absolute&quot; | &quot;relative&quot; | &quot;static&quot; | undefined&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pr</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pt</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>px</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>py</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>radius</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;RadiusValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>right</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>rowGap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>style</code></td>
+            <td>property</td>
+            <td><code>StyleProp&lt;ViewStyle&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>testID</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>top</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -13148,12 +13567,30 @@
             <td><code>string</code></td>
             <td>yes</td>
             <td></td>
+          </tr><tr>
+            <td><code>width</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>wrap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;wrap&quot; | &quot;nowrap&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>zIndex</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
           </tr>
     </tbody>
   </table>
   </article><article class="item" id="symbol-tabprops" data-search="TabProps type src/types/tabs.ts  InteractionPolicy">
     <h4>TabProps</h4>
-    <p class="muted">type • <code>src/types/tabs.ts:18:1</code></p>
+    <p class="muted">type • <code>src/types/tabs.ts:19:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">InteractionPolicy</li></ul></div>
@@ -13194,20 +13631,62 @@
           </tr>
     </tbody>
   </table>
-  </article><article class="item" id="symbol-tabsprops" data-search="TabsProps type src/types/tabs.ts ">
+  </article><article class="item" id="symbol-tabsprops" data-search="TabsProps type src/types/tabs.ts  Responsive">
     <h4>TabsProps</h4>
-    <p class="muted">type • <code>src/types/tabs.ts:5:1</code></p>
+    <p class="muted">type • <code>src/types/tabs.ts:6:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-    <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+    <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">Responsive</li></ul></div>
     
     <table>
     <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
     <tbody>
       <tr>
+            <td><code>align</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;flex-start&quot; | &quot;center&quot; | &quot;flex-end&quot; | &quot;stretch&quot; | &quot;baseline&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>alignSelf</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;auto&quot; | import(&quot;react-native&quot;).FlexAlignType | undefined&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>bg</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>borderColor</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>borderWidth</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>bottom</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>children</code></td>
             <td>property</td>
             <td><code>React.ReactNode</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>columnGap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -13217,9 +13696,213 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>direction</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;row&quot; | &quot;column&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flex</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flexBasis</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flexGrow</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>flexShrink</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>gap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>height</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>justify</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;flex-start&quot; | &quot;center&quot; | &quot;flex-end&quot; | &quot;space-between&quot; | &quot;space-around&quot; | &quot;space-evenly&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>left</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>m</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>maxHeight</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>maxWidth</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mb</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>minHeight</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>minWidth</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>ml</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mr</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mt</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>mx</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>my</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>onValueChange</code></td>
             <td>property</td>
             <td><code>((value: string) =&gt; void) | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>opacity</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>overflow</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;visible&quot; | &quot;hidden&quot; | &quot;scroll&quot; | undefined&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>p</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pb</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pl</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>position</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;absolute&quot; | &quot;relative&quot; | &quot;static&quot; | undefined&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pr</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>pt</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>px</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>py</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>radius</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;RadiusValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>right</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>rowGap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>style</code></td>
+            <td>property</td>
+            <td><code>StyleProp&lt;ViewStyle&gt;</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -13229,9 +13912,33 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>top</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>value</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>width</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;string | number&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>wrap</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;&quot;wrap&quot; | &quot;nowrap&quot;&gt; | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>zIndex</code></td>
+            <td>property</td>
+            <td><code>Responsive&lt;number&gt; | undefined</code></td>
             <td>no</td>
             <td></td>
           </tr>
@@ -17516,7 +18223,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-appbar" data-search="AppBar src/features/app-bar/adapters/inbound/AppBar.tsx Renders application chrome with optional safe-area padding and leading/trailing slots. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined contentStyle StyleProp&lt;ViewStyle&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined divider boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined leading React.ReactNode | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined safeAreaTop boolean | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined trailing React.ReactNode | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-appbar" data-search="AppBar src/features/app-bar/adapters/inbound/AppBar.tsx Renders application chrome with optional safe-area padding and leading/trailing slots. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined contentStyle StyleProp&lt;ViewStyle&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined divider boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined leading React.ReactNode | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined safeAreaTop boolean | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined trailing React.ReactNode | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>AppBar</h3>
     <p class="muted"><code>src/features/app-bar/adapters/inbound/AppBar.tsx:10:1</code></p>
     <p>Renders application chrome with optional safe-area padding and leading/trailing slots.</p>
@@ -17527,6 +18234,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -17702,6 +18414,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>opacity</code></td>
               <td><code>Responsive&lt;number&gt; | undefined</code></td>
               <td>no</td>
@@ -17850,7 +18567,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-button" data-search="Button src/features/button/adapters/inbound/Button.tsx Renders the primary Surface action control with semantic visual states. accessibilityRole AccessibilityRole | undefined accessibilityState AccessibilityState | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined fullWidth boolean | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined leadingIcon ButtonIconSpec | undefined left Responsive&lt;number&gt; | undefined loading boolean | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined onPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined trailingIcon ButtonIconSpec | undefined variant ButtonVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-button" data-search="Button src/features/button/adapters/inbound/Button.tsx Renders the primary Surface action control with semantic visual states. accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole AccessibilityRole | undefined accessibilityState AccessibilityState | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined fullWidth boolean | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined leadingIcon ButtonIconSpec | undefined left Responsive&lt;number&gt; | undefined loading boolean | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined onPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined trailingIcon ButtonIconSpec | undefined variant ButtonVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Button</h3>
     <p class="muted"><code>src/features/button/adapters/inbound/Button.tsx:19:1</code></p>
     <p>Renders the primary Surface action control with semantic visual states.</p>
@@ -17859,6 +18576,11 @@
       <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
       <tbody>
         <tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>accessibilityRole</code></td>
               <td><code>AccessibilityRole | undefined</code></td>
               <td>no</td>
@@ -18046,6 +18768,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>onLongPress</code></td>
               <td><code>((event: GestureResponderEvent) =&gt; void) | undefined</code></td>
               <td>no</td>
@@ -18163,7 +18890,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-card" data-search="Card src/features/card/adapters/inbound/Card.tsx Renders a themed content card with optional interactive press states. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onPress (() =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined variant SurfaceVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-card" data-search="Card src/features/card/adapters/inbound/Card.tsx Renders a themed content card with optional interactive press states. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined onPress (() =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined variant SurfaceVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Card</h3>
     <p class="muted"><code>src/features/card/adapters/inbound/Card.tsx:11:1</code></p>
     <p>Renders a themed content card with optional interactive press states.</p>
@@ -18174,6 +18901,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -18324,6 +19056,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>onPress</code></td>
               <td><code>(() =&gt; void) | undefined</code></td>
               <td>no</td>
@@ -18436,7 +19173,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-checkbox" data-search="Checkbox src/features/form/checkbox/adapters/inbound/Checkbox.tsx Renders a controlled or uncontrolled accessible checkbox. accessibilityLabel string | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined checked boolean | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined defaultChecked boolean | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined invalid boolean | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onCheckedChange ((checked: boolean) =&gt; void) | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined readOnly boolean | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-checkbox" data-search="Checkbox src/features/form/checkbox/adapters/inbound/Checkbox.tsx Renders a controlled or uncontrolled accessible checkbox. accessibilityLabel string | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined checked boolean | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined defaultChecked boolean | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined invalid boolean | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined onCheckedChange ((checked: boolean) =&gt; void) | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined readOnly boolean | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Checkbox</h3>
     <p class="muted"><code>src/features/form/checkbox/adapters/inbound/Checkbox.tsx:21:1</code></p>
     <p>Renders a controlled or uncontrolled accessible checkbox.</p>
@@ -18447,6 +19184,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -18627,6 +19369,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>onCheckedChange</code></td>
               <td><code>((checked: boolean) =&gt; void) | undefined</code></td>
               <td>no</td>
@@ -18739,7 +19486,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-divider" data-search="Divider src/features/layout/adapters/inbound/Divider.tsx Renders a horizontal or vertical separator using layout tokens. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined color ColorValue | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined opacity Responsive&lt;number&gt; | undefined orientation &#39;horizontal&#39; | &#39;vertical&#39; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined thickness number | undefined top Responsive&lt;number&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-divider" data-search="Divider src/features/layout/adapters/inbound/Divider.tsx Renders a horizontal or vertical separator using layout tokens. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined color ColorValue | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined opacity Responsive&lt;number&gt; | undefined orientation &#39;horizontal&#39; | &#39;vertical&#39; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined thickness number | undefined top Responsive&lt;number&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Divider</h3>
     <p class="muted"><code>src/features/layout/adapters/inbound/Divider.tsx:7:1</code></p>
     <p>Renders a horizontal or vertical separator using layout tokens.</p>
@@ -18750,6 +19497,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -18902,6 +19654,11 @@
             </tr><tr>
               <td><code>my</code></td>
               <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -19099,7 +19856,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-grid" data-search="Grid src/features/layout/adapters/inbound/Grid.tsx Lays out children in a responsive wrapping grid. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined colGap Responsive&lt;SpaceValue&gt; | undefined cols Responsive&lt;number&gt; | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minItemWidth Responsive&lt;number&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-grid" data-search="Grid src/features/layout/adapters/inbound/Grid.tsx Lays out children in a responsive wrapping grid. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined colGap Responsive&lt;SpaceValue&gt; | undefined cols Responsive&lt;number&gt; | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minItemWidth Responsive&lt;number&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Grid</h3>
     <p class="muted"><code>src/features/layout/adapters/inbound/Grid.tsx:11:1</code></p>
     <p>Lays out children in a responsive wrapping grid.</p>
@@ -19110,6 +19867,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -19282,6 +20044,11 @@
             </tr><tr>
               <td><code>my</code></td>
               <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -19489,7 +20256,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-iconbutton" data-search="IconButton src/features/button/adapters/inbound/IconButton.tsx Renders a compact accessible icon-only action control. accessibilityLabel string accessibilityRole AccessibilityRole | undefined accessibilityState AccessibilityState | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined icon IconSource interactionPolicy InteractionPolicy | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined onPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined variant ButtonVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-iconbutton" data-search="IconButton src/features/button/adapters/inbound/IconButton.tsx Renders a compact accessible icon-only action control. accessibilityLabel string accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole AccessibilityRole | undefined accessibilityState AccessibilityState | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined icon IconSource interactionPolicy InteractionPolicy | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined onPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined variant ButtonVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>IconButton</h3>
     <p class="muted"><code>src/features/button/adapters/inbound/IconButton.tsx:16:1</code></p>
     <p>Renders a compact accessible icon-only action control.</p>
@@ -19501,6 +20268,11 @@
               <td><code>accessibilityLabel</code></td>
               <td><code>string</code></td>
               <td>yes</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
+              <td>no</td>
               <td></td>
             </tr><tr>
               <td><code>accessibilityRole</code></td>
@@ -19672,6 +20444,11 @@
             </tr><tr>
               <td><code>my</code></td>
               <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -20586,7 +21363,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-pressable" data-search="Pressable src/features/pressable/adapters/inbound/Pressable.tsx Renders the token-aware Surface adapter for React Native Pressable. accessibilityLabel string | undefined accessibilityRole AccessibilityRole | undefined accessibilityState AccessibilityState | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | ((state: InteractionState) =&gt; React.ReactNode) | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined onPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-pressable" data-search="Pressable src/features/pressable/adapters/inbound/Pressable.tsx Renders the token-aware Surface adapter for React Native Pressable. accessibilityLabel string | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole AccessibilityRole | undefined accessibilityState AccessibilityState | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | ((state: InteractionState) =&gt; React.ReactNode) | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined onPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Pressable</h3>
     <p class="muted"><code>src/features/pressable/adapters/inbound/Pressable.tsx:19:1</code></p>
     <p>Renders the token-aware Surface adapter for React Native Pressable.</p>
@@ -20597,6 +21374,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -20767,6 +21549,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>onLongPress</code></td>
               <td><code>((event: GestureResponderEvent) =&gt; void) | undefined</code></td>
               <td>no</td>
@@ -20874,7 +21661,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-radio" data-search="Radio src/features/form/radio/adapters/inbound/Radio.tsx Renders one accessible radio control with text or structured label content. accessibilityLabel string | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined checked boolean | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined defaultChecked boolean | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined invalid boolean | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onCheckedChange ((checked: boolean) =&gt; void) | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined readOnly boolean | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-radio" data-search="Radio src/features/form/radio/adapters/inbound/Radio.tsx Renders one accessible radio control with text or structured label content. accessibilityLabel string | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined checked boolean | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined defaultChecked boolean | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined invalid boolean | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined onCheckedChange ((checked: boolean) =&gt; void) | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined readOnly boolean | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Radio</h3>
     <p class="muted"><code>src/features/form/radio/adapters/inbound/Radio.tsx:22:1</code></p>
     <p>Renders one accessible radio control with text or structured label content.</p>
@@ -20885,6 +21672,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -21062,6 +21854,11 @@
             </tr><tr>
               <td><code>my</code></td>
               <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -22234,7 +23031,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-surface" data-search="Surface src/features/surface/adapters/inbound/Surface.tsx Renders a themed content surface with semantic elevation and border variants. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined variant SurfaceVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-surface" data-search="Surface src/features/surface/adapters/inbound/Surface.tsx Renders a themed content surface with semantic elevation and border variants. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined variant SurfaceVariant | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Surface</h3>
     <p class="muted"><code>src/features/surface/adapters/inbound/Surface.tsx:9:1</code></p>
     <p>Renders a themed content surface with semantic elevation and border variants.</p>
@@ -22245,6 +23042,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -22390,6 +23192,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>opacity</code></td>
               <td><code>Responsive&lt;number&gt; | undefined</code></td>
               <td>no</td>
@@ -22497,7 +23304,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-switch" data-search="Switch src/features/form/switch/adapters/inbound/Switch.tsx Renders a controlled or uncontrolled accessible switch. accessibilityLabel string | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined checked boolean | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined defaultChecked boolean | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined invalid boolean | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onCheckedChange ((checked: boolean) =&gt; void) | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined readOnly boolean | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-switch" data-search="Switch src/features/form/switch/adapters/inbound/Switch.tsx Renders a controlled or uncontrolled accessible switch. accessibilityLabel string | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined checked boolean | undefined children React.ReactNode | undefined color SurfaceColor | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined defaultChecked boolean | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined disabled boolean | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined interactionPolicy InteractionPolicy | undefined invalid boolean | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined onCheckedChange ((checked: boolean) =&gt; void) | undefined onLongPress ((event: GestureResponderEvent) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined readOnly boolean | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined size ControlSize | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Switch</h3>
     <p class="muted"><code>src/features/form/switch/adapters/inbound/Switch.tsx:18:1</code></p>
     <p>Renders a controlled or uncontrolled accessible switch.</p>
@@ -22508,6 +23315,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -22688,6 +23500,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>onCheckedChange</code></td>
               <td><code>((checked: boolean) =&gt; void) | undefined</code></td>
               <td>no</td>
@@ -22857,17 +23674,224 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-tabpanel" data-search="TabPanel src/features/tabs/adapters/inbound/TabPanel.tsx Renders the content panel associated with the active tab value. children React.ReactNode | undefined testID string | undefined value string">
+  </article><article class="item" id="component-tabpanel" data-search="TabPanel src/features/tabs/adapters/inbound/TabPanel.tsx Renders the active content panel with the supplied View layout and tab accessibility linkage. align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined value string width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>TabPanel</h3>
     <p class="muted"><code>src/features/tabs/adapters/inbound/TabPanel.tsx:10:1</code></p>
-    <p>Renders the content panel associated with the active tab value.</p>
+    <p>Renders the active content panel with the supplied View layout and tab accessibility linkage.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <table>
       <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
       <tbody>
         <tr>
+              <td><code>align</code></td>
+              <td><code>Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>alignSelf</code></td>
+              <td><code>Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>bg</code></td>
+              <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>borderColor</code></td>
+              <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>borderWidth</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>bottom</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>children</code></td>
               <td><code>React.ReactNode | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>columnGap</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>direction</code></td>
+              <td><code>Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flex</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flexBasis</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flexGrow</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flexShrink</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>gap</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>height</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>justify</code></td>
+              <td><code>Responsive&lt;
+    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;
+  &gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>left</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>m</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>maxHeight</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>maxWidth</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mb</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>minHeight</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>minWidth</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>ml</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mr</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mt</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mx</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>my</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>opacity</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>overflow</code></td>
+              <td><code>Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>p</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pb</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pl</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>position</code></td>
+              <td><code>Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pr</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pt</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>px</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>py</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>radius</code></td>
+              <td><code>Responsive&lt;RadiusValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>right</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>rowGap</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>style</code></td>
+              <td><code>StyleProp&lt;ViewStyle&gt; | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -22876,24 +23900,79 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>top</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>value</code></td>
               <td><code>string</code></td>
               <td>yes</td>
               <td></td>
+            </tr><tr>
+              <td><code>width</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>wrap</code></td>
+              <td><code>Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>zIndex</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-tabs" data-search="Tabs src/features/tabs/adapters/inbound/Tabs.tsx Provides accessible tab selection state to TabList, Tab, and TabPanel children. children React.ReactNode | undefined defaultValue string | undefined onValueChange ((value: string) =&gt; void) | undefined testID string | undefined value string | undefined">
+  </article><article class="item" id="component-tabs" data-search="Tabs src/features/tabs/adapters/inbound/Tabs.tsx Provides accessible tab selection and forwards View layout to the tab container. align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined defaultValue string | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined onValueChange ((value: string) =&gt; void) | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined value string | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>Tabs</h3>
     <p class="muted"><code>src/features/tabs/adapters/inbound/Tabs.tsx:9:1</code></p>
-    <p>Provides accessible tab selection state to TabList, Tab, and TabPanel children.</p>
+    <p>Provides accessible tab selection and forwards View layout to the tab container.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <table>
       <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
       <tbody>
         <tr>
+              <td><code>align</code></td>
+              <td><code>Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>alignSelf</code></td>
+              <td><code>Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>bg</code></td>
+              <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>borderColor</code></td>
+              <td><code>Responsive&lt;ColorValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>borderWidth</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>bottom</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>children</code></td>
               <td><code>React.ReactNode | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>columnGap</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -22902,8 +23981,180 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>direction</code></td>
+              <td><code>Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flex</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flexBasis</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flexGrow</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>flexShrink</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>gap</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>height</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>justify</code></td>
+              <td><code>Responsive&lt;
+    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;
+  &gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>left</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>m</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>maxHeight</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>maxWidth</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mb</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>minHeight</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>minWidth</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>ml</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mr</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mt</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>mx</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>my</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>onValueChange</code></td>
               <td><code>((value: string) =&gt; void) | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>opacity</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>overflow</code></td>
+              <td><code>Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>p</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pb</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pl</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>position</code></td>
+              <td><code>Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pr</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>pt</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>px</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>py</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>radius</code></td>
+              <td><code>Responsive&lt;RadiusValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>right</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>rowGap</code></td>
+              <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>style</code></td>
+              <td><code>StyleProp&lt;ViewStyle&gt; | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -22912,8 +24163,28 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>top</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>value</code></td>
               <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>width</code></td>
+              <td><code>Responsive&lt;number | string&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>wrap</code></td>
+              <td><code>Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>zIndex</code></td>
+              <td><code>Responsive&lt;number&gt; | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr>
@@ -24099,7 +25370,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-view" data-search="View src/features/layout/adapters/inbound/View.tsx Renders the token-aware responsive Surface adapter for React Native View. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
+  </article><article class="item" id="component-view" data-search="View src/features/layout/adapters/inbound/View.tsx Renders the token-aware responsive Surface adapter for React Native View. accessibilityLabel ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined accessibilityLabelledBy ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined accessibilityRole ReactNativeViewProps[&#39;accessibilityRole&#39;] | undefined accessibilityState ReactNativeViewProps[&#39;accessibilityState&#39;] | undefined accessible ReactNativeViewProps[&#39;accessible&#39;] | undefined align Responsive&lt;&#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;stretch&#39; | &#39;baseline&#39;&gt; | undefined alignSelf Responsive&lt;ViewStyle[&#39;alignSelf&#39;]&gt; | undefined bg Responsive&lt;ColorValue&gt; | undefined borderColor Responsive&lt;ColorValue&gt; | undefined borderWidth Responsive&lt;number&gt; | undefined bottom Responsive&lt;number&gt; | undefined children React.ReactNode | undefined columnGap Responsive&lt;SpaceValue&gt; | undefined direction Responsive&lt;&#39;row&#39; | &#39;column&#39;&gt; | undefined flex Responsive&lt;number&gt; | undefined flexBasis Responsive&lt;number | string&gt; | undefined flexGrow Responsive&lt;number&gt; | undefined flexShrink Responsive&lt;number&gt; | undefined gap Responsive&lt;SpaceValue&gt; | undefined height Responsive&lt;number | string&gt; | undefined justify Responsive&lt;&#10;    &#39;flex-start&#39; | &#39;center&#39; | &#39;flex-end&#39; | &#39;space-between&#39; | &#39;space-around&#39; | &#39;space-evenly&#39;&#10;  &gt; | undefined left Responsive&lt;number&gt; | undefined m Responsive&lt;SpaceValue&gt; | undefined maxHeight Responsive&lt;number | string&gt; | undefined maxWidth Responsive&lt;number | string&gt; | undefined mb Responsive&lt;SpaceValue&gt; | undefined minHeight Responsive&lt;number | string&gt; | undefined minWidth Responsive&lt;number | string&gt; | undefined ml Responsive&lt;SpaceValue&gt; | undefined mr Responsive&lt;SpaceValue&gt; | undefined mt Responsive&lt;SpaceValue&gt; | undefined mx Responsive&lt;SpaceValue&gt; | undefined my Responsive&lt;SpaceValue&gt; | undefined nativeID ReactNativeViewProps[&#39;nativeID&#39;] | undefined opacity Responsive&lt;number&gt; | undefined overflow Responsive&lt;ViewStyle[&#39;overflow&#39;]&gt; | undefined p Responsive&lt;SpaceValue&gt; | undefined pb Responsive&lt;SpaceValue&gt; | undefined pl Responsive&lt;SpaceValue&gt; | undefined pointerEvents ReactNativeViewProps[&#39;pointerEvents&#39;] | undefined position Responsive&lt;ViewStyle[&#39;position&#39;]&gt; | undefined pr Responsive&lt;SpaceValue&gt; | undefined pt Responsive&lt;SpaceValue&gt; | undefined px Responsive&lt;SpaceValue&gt; | undefined py Responsive&lt;SpaceValue&gt; | undefined radius Responsive&lt;RadiusValue&gt; | undefined right Responsive&lt;number&gt; | undefined rowGap Responsive&lt;SpaceValue&gt; | undefined style StyleProp&lt;ViewStyle&gt; | undefined testID string | undefined top Responsive&lt;number&gt; | undefined width Responsive&lt;number | string&gt; | undefined wrap Responsive&lt;&#39;nowrap&#39; | &#39;wrap&#39;&gt; | undefined zIndex Responsive&lt;number&gt; | undefined">
     <h3>View</h3>
     <p class="muted"><code>src/features/layout/adapters/inbound/View.tsx:11:1</code></p>
     <p>Renders the token-aware responsive Surface adapter for React Native View.</p>
@@ -24110,6 +25381,11 @@
         <tr>
               <td><code>accessibilityLabel</code></td>
               <td><code>ReactNativeViewProps[&#39;accessibilityLabel&#39;] | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>accessibilityLabelledBy</code></td>
+              <td><code>ReactNativeViewProps[&#39;accessibilityLabelledBy&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -24267,6 +25543,11 @@
             </tr><tr>
               <td><code>my</code></td>
               <td><code>Responsive&lt;SpaceValue&gt; | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>nativeID</code></td>
+              <td><code>ReactNativeViewProps[&#39;nativeID&#39;] | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -24826,8 +26107,11 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_tabs_adapters_inbound_TabPanel_tsx
+  module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.layout.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx
   module_src_features_tabs_adapters_inbound_Tabs_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_tabs_adapters_inbound_Tabs_tsx
   module_src_features_tabs_adapters_inbound_Tabs_tsx --&gt; module_src_features_layout_public_ts
@@ -25263,6 +26547,7 @@
   module_src_types_tabs_ts[&quot;src/types/tabs.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_types_tabs_ts
   module_src_types_tabs_ts --&gt; module_src_types_interactionPolicy_ts
+  module_src_types_tabs_ts --&gt; module_src_types_layout_ts
   module_src_types_text_input_ts[&quot;src/types/text-input.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_types_text_input_ts
   module_src_types_text_input_ts --&gt; module_src_internal_resolvers_resolveControlSize_ts
@@ -25749,8 +27034,11 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_tabs_adapters_inbound_TabPanel_tsx
+  module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.layout.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx
   module_src_features_tabs_adapters_inbound_Tabs_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_tabs_adapters_inbound_Tabs_tsx
   module_src_features_tabs_adapters_inbound_Tabs_tsx --&gt; module_src_features_layout_public_ts
@@ -26186,6 +27474,7 @@
   module_src_types_tabs_ts[&quot;src/types/tabs.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_types_tabs_ts
   module_src_types_tabs_ts --&gt; module_src_types_interactionPolicy_ts
+  module_src_types_tabs_ts --&gt; module_src_types_layout_ts
   module_src_types_text_input_ts[&quot;src/types/text-input.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_types_text_input_ts
   module_src_types_text_input_ts --&gt; module_src_internal_resolvers_resolveControlSize_ts
@@ -26343,6 +27632,7 @@
   module_src_features_tabs_adapters_inbound_Tab_tsx[&quot;src/features/tabs/adapters/inbound/Tab.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabList_tsx[&quot;src/features/tabs/adapters/inbound/TabList.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.layout.test.tsx&quot;]
   module_src_features_tabs_adapters_inbound_Tabs_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.tsx&quot;]
   module_src_features_tabs_composition_TabsContext_tsx[&quot;src/features/tabs/composition/TabsContext.tsx&quot;]
   module_src_features_tabs_composition_useTabRegistration_ts[&quot;src/features/tabs/composition/useTabRegistration.ts&quot;]
@@ -26685,6 +27975,7 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_Tabs_tsx --&gt; module_src_features_layout_public_ts
@@ -26883,6 +28174,7 @@
   module_src_types_switch_ts --&gt; module_src_types_pressable_ts
   module_src_types_switch_ts --&gt; module_src_types_surfaceColor_ts
   module_src_types_tabs_ts --&gt; module_src_types_interactionPolicy_ts
+  module_src_types_tabs_ts --&gt; module_src_types_layout_ts
   module_src_types_text_input_ts --&gt; module_src_internal_resolvers_resolveControlSize_ts
   module_src_types_text_input_ts --&gt; module_src_types_interactionPolicy_ts
   module_src_types_toast_ts --&gt; module_src_types_interactionPolicy_ts
@@ -27020,6 +28312,7 @@
   module_src_features_tabs_adapters_inbound_Tab_tsx[&quot;src/features/tabs/adapters/inbound/Tab.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabList_tsx[&quot;src/features/tabs/adapters/inbound/TabList.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.layout.test.tsx&quot;]
   module_src_features_tabs_adapters_inbound_Tabs_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.tsx&quot;]
   module_src_features_tabs_composition_TabsContext_tsx[&quot;src/features/tabs/composition/TabsContext.tsx&quot;]
   module_src_features_tabs_composition_useTabRegistration_ts[&quot;src/features/tabs/composition/useTabRegistration.ts&quot;]
@@ -27362,6 +28655,7 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_Tabs_tsx --&gt; module_src_features_layout_public_ts
@@ -27560,6 +28854,7 @@
   module_src_types_switch_ts --&gt; module_src_types_pressable_ts
   module_src_types_switch_ts --&gt; module_src_types_surfaceColor_ts
   module_src_types_tabs_ts --&gt; module_src_types_interactionPolicy_ts
+  module_src_types_tabs_ts --&gt; module_src_types_layout_ts
   module_src_types_text_input_ts --&gt; module_src_internal_resolvers_resolveControlSize_ts
   module_src_types_text_input_ts --&gt; module_src_types_interactionPolicy_ts
   module_src_types_toast_ts --&gt; module_src_types_interactionPolicy_ts
@@ -27699,6 +28994,7 @@
   module_src_features_tabs_adapters_inbound_Tab_tsx[&quot;src/features/tabs/adapters/inbound/Tab.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabList_tsx[&quot;src/features/tabs/adapters/inbound/TabList.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.layout.test.tsx&quot;]
   module_src_features_tabs_adapters_inbound_Tabs_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.tsx&quot;]
   module_src_features_tabs_composition_TabsContext_tsx[&quot;src/features/tabs/composition/TabsContext.tsx&quot;]
   module_src_features_tabs_composition_useTabRegistration_ts[&quot;src/features/tabs/composition/useTabRegistration.ts&quot;]
@@ -28138,6 +29434,7 @@
   export_TabPanel -.-&gt; export_TabPanelProps
   export_TabPanelProps[&quot;TabPanelProps&quot;]
   module_src_types_tabs_ts --&gt; export_TabPanelProps
+  export_TabPanelProps -.-&gt; export_Responsive
   export_TabProps[&quot;TabProps&quot;]
   module_src_types_tabs_ts --&gt; export_TabProps
   export_TabProps -.-&gt; export_InteractionPolicy
@@ -28146,6 +29443,7 @@
   export_Tabs -.-&gt; export_TabsProps
   export_TabsProps[&quot;TabsProps&quot;]
   module_src_types_tabs_ts --&gt; export_TabsProps
+  export_TabsProps -.-&gt; export_Responsive
   export_Text[&quot;Text&quot;]
   module_src_features_typography_adapters_inbound_Text_tsx --&gt; export_Text
   export_Text -.-&gt; export_TextProps
@@ -28352,6 +29650,7 @@
   module_src_features_tabs_adapters_inbound_Tab_tsx[&quot;src/features/tabs/adapters/inbound/Tab.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabList_tsx[&quot;src/features/tabs/adapters/inbound/TabList.tsx&quot;]
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.layout.test.tsx&quot;]
   module_src_features_tabs_adapters_inbound_Tabs_tsx[&quot;src/features/tabs/adapters/inbound/Tabs.tsx&quot;]
   module_src_features_tabs_composition_TabsContext_tsx[&quot;src/features/tabs/composition/TabsContext.tsx&quot;]
   module_src_features_tabs_composition_useTabRegistration_ts[&quot;src/features/tabs/composition/useTabRegistration.ts&quot;]
@@ -28791,6 +30090,7 @@
   export_TabPanel -.-&gt; export_TabPanelProps
   export_TabPanelProps[&quot;TabPanelProps&quot;]
   module_src_types_tabs_ts --&gt; export_TabPanelProps
+  export_TabPanelProps -.-&gt; export_Responsive
   export_TabProps[&quot;TabProps&quot;]
   module_src_types_tabs_ts --&gt; export_TabProps
   export_TabProps -.-&gt; export_InteractionPolicy
@@ -28799,6 +30099,7 @@
   export_Tabs -.-&gt; export_TabsProps
   export_TabsProps[&quot;TabsProps&quot;]
   module_src_types_tabs_ts --&gt; export_TabsProps
+  export_TabsProps -.-&gt; export_Responsive
   export_Text[&quot;Text&quot;]
   module_src_features_typography_adapters_inbound_Text_tsx --&gt; export_Text
   export_Text -.-&gt; export_TextProps
@@ -30719,19 +32020,19 @@
   </section><section id="view-src-features-tabs-adapters-inbound-tabpanel-tsx" class="view" data-view="src/features/tabs/adapters/inbound/TabPanel.tsx" hidden>
     <section class="panel">
       <h2>src/features/tabs/adapters/inbound/TabPanel.tsx</h2>
-      <article class="item" data-search="TabPanel src/features/tabs/adapters/inbound/TabPanel.tsx Renders the content panel associated with the active tab value.">
+      <article class="item" data-search="TabPanel src/features/tabs/adapters/inbound/TabPanel.tsx Renders the active content panel with the supplied View layout and tab accessibility linkage.">
     <h3>TabPanel</h3>
     <p class="muted"><code>src/features/tabs/adapters/inbound/TabPanel.tsx:10:1</code></p>
-    <p>Renders the content panel associated with the active tab value.</p>
+    <p>Renders the active content panel with the supplied View layout and tab accessibility linkage.</p>
   </article>
     </section>
   </section><section id="view-src-features-tabs-adapters-inbound-tabs-tsx" class="view" data-view="src/features/tabs/adapters/inbound/Tabs.tsx" hidden>
     <section class="panel">
       <h2>src/features/tabs/adapters/inbound/Tabs.tsx</h2>
-      <article class="item" data-search="Tabs src/features/tabs/adapters/inbound/Tabs.tsx Provides accessible tab selection state to TabList, Tab, and TabPanel children.">
+      <article class="item" data-search="Tabs src/features/tabs/adapters/inbound/Tabs.tsx Provides accessible tab selection and forwards View layout to the tab container.">
     <h3>Tabs</h3>
     <p class="muted"><code>src/features/tabs/adapters/inbound/Tabs.tsx:9:1</code></p>
-    <p>Provides accessible tab selection state to TabList, Tab, and TabPanel children.</p>
+    <p>Provides accessible tab selection and forwards View layout to the tab container.</p>
   </article>
     </section>
   </section><section id="view-src-features-tabs-composition-usetabregistration-ts" class="view" data-view="src/features/tabs/composition/useTabRegistration.ts" hidden>

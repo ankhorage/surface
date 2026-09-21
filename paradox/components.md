@@ -475,6 +475,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `ReactNativeViewProps['accessibilityLabel'] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `ReactNativeViewProps['accessibilityRole'] \| undefined` | no | — |  |
 | accessibilityState | `ReactNativeViewProps['accessibilityState'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -511,6 +512,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
 | overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
 | p | `Responsive<SpaceValue> \| undefined` | no | — |  |
@@ -560,6 +562,7 @@ Export paths: `src/index.ts`
 
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityState | `AccessibilityState \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -599,6 +602,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | onLongPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | onPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
@@ -634,6 +638,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `ReactNativeViewProps['accessibilityLabel'] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `ReactNativeViewProps['accessibilityRole'] \| undefined` | no | — |  |
 | accessibilityState | `ReactNativeViewProps['accessibilityState'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -665,6 +670,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | onPress | `(() => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
 | overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
@@ -699,6 +705,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `string \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
 | align | `Responsive<'flex-start' \| 'center' \| 'flex-end' \| 'stretch' \| 'baseline'> \| undefined` | no | — |  |
 | alignSelf | `Responsive<ViewStyle['alignSelf']> \| undefined` | no | — |  |
@@ -736,6 +743,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | onCheckedChange | `((checked: boolean) => void) \| undefined` | no | — |  |
 | onLongPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
@@ -770,6 +778,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `ReactNativeViewProps['accessibilityLabel'] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `ReactNativeViewProps['accessibilityRole'] \| undefined` | no | — |  |
 | accessibilityState | `ReactNativeViewProps['accessibilityState'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -802,6 +811,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
 | orientation | `'horizontal' \| 'vertical' \| undefined` | no | `'horizontal'` |  |
 | overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
@@ -870,6 +880,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `ReactNativeViewProps['accessibilityLabel'] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `ReactNativeViewProps['accessibilityRole'] \| undefined` | no | — |  |
 | accessibilityState | `ReactNativeViewProps['accessibilityState'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -906,6 +917,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
 | overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
 | p | `Responsive<SpaceValue> \| undefined` | no | — |  |
@@ -976,6 +988,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `string` | yes | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityState | `AccessibilityState \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -1012,6 +1025,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | onLongPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | onPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
@@ -1273,6 +1287,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `string \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | `'button'` |  |
 | accessibilityState | `AccessibilityState \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -1308,6 +1323,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | onLongPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | onPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
@@ -1341,6 +1357,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `string \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
 | align | `Responsive<'flex-start' \| 'center' \| 'flex-end' \| 'stretch' \| 'baseline'> \| undefined` | no | — |  |
 | alignSelf | `Responsive<ViewStyle['alignSelf']> \| undefined` | no | — |  |
@@ -1378,6 +1395,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | onCheckedChange | `((checked: boolean) => void) \| undefined` | no | — |  |
 | onLongPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
@@ -1671,6 +1689,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `ReactNativeViewProps['accessibilityLabel'] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `ReactNativeViewProps['accessibilityRole'] \| undefined` | no | — |  |
 | accessibilityState | `ReactNativeViewProps['accessibilityState'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -1701,6 +1720,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
 | overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
 | p | `Responsive<SpaceValue> \| undefined` | no | — |  |
@@ -1734,6 +1754,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `string \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
 | align | `Responsive<'flex-start' \| 'center' \| 'flex-end' \| 'stretch' \| 'baseline'> \| undefined` | no | — |  |
 | alignSelf | `Responsive<ViewStyle['alignSelf']> \| undefined` | no | — |  |
@@ -1771,6 +1792,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | onCheckedChange | `((checked: boolean) => void) \| undefined` | no | — |  |
 | onLongPress | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
@@ -1827,31 +1849,125 @@ Export paths: `src/index.ts`
 
 Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:10:1`
 
-Renders the content panel associated with the active tab value.
+Renders the active content panel with the supplied View layout and tab accessibility linkage.
 
 Export paths: `src/index.ts`
 
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
+| align | `Responsive<'flex-start' \| 'center' \| 'flex-end' \| 'stretch' \| 'baseline'> \| undefined` | no | — |  |
+| alignSelf | `Responsive<ViewStyle['alignSelf']> \| undefined` | no | — |  |
+| bg | `Responsive<ColorValue> \| undefined` | no | — |  |
+| borderColor | `Responsive<ColorValue> \| undefined` | no | — |  |
+| borderWidth | `Responsive<number> \| undefined` | no | — |  |
+| bottom | `Responsive<number> \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
+| columnGap | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| direction | `Responsive<'row' \| 'column'> \| undefined` | no | — |  |
+| flex | `Responsive<number> \| undefined` | no | — |  |
+| flexBasis | `Responsive<number \| string> \| undefined` | no | — |  |
+| flexGrow | `Responsive<number> \| undefined` | no | — |  |
+| flexShrink | `Responsive<number> \| undefined` | no | — |  |
+| gap | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| height | `Responsive<number \| string> \| undefined` | no | — |  |
+| justify | `Responsive<
+    'flex-start' \| 'center' \| 'flex-end' \| 'space-between' \| 'space-around' \| 'space-evenly'
+  > \| undefined` | no | — |  |
+| left | `Responsive<number> \| undefined` | no | — |  |
+| m | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| maxHeight | `Responsive<number \| string> \| undefined` | no | — |  |
+| maxWidth | `Responsive<number \| string> \| undefined` | no | — |  |
+| mb | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| minHeight | `Responsive<number \| string> \| undefined` | no | — |  |
+| minWidth | `Responsive<number \| string> \| undefined` | no | — |  |
+| ml | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| mr | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| opacity | `Responsive<number> \| undefined` | no | — |  |
+| overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
+| p | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| pb | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| pl | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| position | `Responsive<ViewStyle['position']> \| undefined` | no | — |  |
+| pr | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| pt | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| px | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| py | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| radius | `Responsive<RadiusValue> \| undefined` | no | — |  |
+| right | `Responsive<number> \| undefined` | no | — |  |
+| rowGap | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| style | `StyleProp<ViewStyle> \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
+| top | `Responsive<number> \| undefined` | no | — |  |
 | value | `string` | yes | — |  |
+| width | `Responsive<number \| string> \| undefined` | no | — |  |
+| wrap | `Responsive<'nowrap' \| 'wrap'> \| undefined` | no | — |  |
+| zIndex | `Responsive<number> \| undefined` | no | — |  |
 
 ## Tabs
 
 Source: `src/features/tabs/adapters/inbound/Tabs.tsx:9:1`
 
-Provides accessible tab selection state to TabList, Tab, and TabPanel children.
+Provides accessible tab selection and forwards View layout to the tab container.
 
 Export paths: `src/index.ts`
 
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
+| align | `Responsive<'flex-start' \| 'center' \| 'flex-end' \| 'stretch' \| 'baseline'> \| undefined` | no | — |  |
+| alignSelf | `Responsive<ViewStyle['alignSelf']> \| undefined` | no | — |  |
+| bg | `Responsive<ColorValue> \| undefined` | no | — |  |
+| borderColor | `Responsive<ColorValue> \| undefined` | no | — |  |
+| borderWidth | `Responsive<number> \| undefined` | no | — |  |
+| bottom | `Responsive<number> \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
+| columnGap | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | defaultValue | `string \| undefined` | no | — |  |
+| direction | `Responsive<'row' \| 'column'> \| undefined` | no | — |  |
+| flex | `Responsive<number> \| undefined` | no | — |  |
+| flexBasis | `Responsive<number \| string> \| undefined` | no | — |  |
+| flexGrow | `Responsive<number> \| undefined` | no | — |  |
+| flexShrink | `Responsive<number> \| undefined` | no | — |  |
+| gap | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| height | `Responsive<number \| string> \| undefined` | no | — |  |
+| justify | `Responsive<
+    'flex-start' \| 'center' \| 'flex-end' \| 'space-between' \| 'space-around' \| 'space-evenly'
+  > \| undefined` | no | — |  |
+| left | `Responsive<number> \| undefined` | no | — |  |
+| m | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| maxHeight | `Responsive<number \| string> \| undefined` | no | — |  |
+| maxWidth | `Responsive<number \| string> \| undefined` | no | — |  |
+| mb | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| minHeight | `Responsive<number \| string> \| undefined` | no | — |  |
+| minWidth | `Responsive<number \| string> \| undefined` | no | — |  |
+| ml | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| mr | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| my | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | onValueChange | `((value: string) => void) \| undefined` | no | — |  |
+| opacity | `Responsive<number> \| undefined` | no | — |  |
+| overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
+| p | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| pb | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| pl | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| position | `Responsive<ViewStyle['position']> \| undefined` | no | — |  |
+| pr | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| pt | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| px | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| py | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| radius | `Responsive<RadiusValue> \| undefined` | no | — |  |
+| right | `Responsive<number> \| undefined` | no | — |  |
+| rowGap | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| style | `StyleProp<ViewStyle> \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
+| top | `Responsive<number> \| undefined` | no | — |  |
 | value | `string \| undefined` | no | — |  |
+| width | `Responsive<number \| string> \| undefined` | no | — |  |
+| wrap | `Responsive<'nowrap' \| 'wrap'> \| undefined` | no | — |  |
+| zIndex | `Responsive<number> \| undefined` | no | — |  |
 
 ## Text
 
@@ -2276,6 +2392,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | accessibilityLabel | `ReactNativeViewProps['accessibilityLabel'] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `ReactNativeViewProps['accessibilityLabelledBy'] \| undefined` | no | — |  |
 | accessibilityRole | `ReactNativeViewProps['accessibilityRole'] \| undefined` | no | — |  |
 | accessibilityState | `ReactNativeViewProps['accessibilityState'] \| undefined` | no | — |  |
 | accessible | `ReactNativeViewProps['accessible'] \| undefined` | no | — |  |
@@ -2309,6 +2426,7 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeID | `ReactNativeViewProps['nativeID'] \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
 | overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
 | p | `Responsive<SpaceValue> \| undefined` | no | — |  |

@@ -114,6 +114,7 @@ graph LR
   module_src_features_tabs_adapters_inbound_Tab_tsx["src/features/tabs/adapters/inbound/Tab.tsx"]
   module_src_features_tabs_adapters_inbound_TabList_tsx["src/features/tabs/adapters/inbound/TabList.tsx"]
   module_src_features_tabs_adapters_inbound_TabPanel_tsx["src/features/tabs/adapters/inbound/TabPanel.tsx"]
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx["src/features/tabs/adapters/inbound/Tabs.layout.test.tsx"]
   module_src_features_tabs_adapters_inbound_Tabs_tsx["src/features/tabs/adapters/inbound/Tabs.tsx"]
   module_src_features_tabs_composition_TabsContext_tsx["src/features/tabs/composition/TabsContext.tsx"]
   module_src_features_tabs_composition_useTabRegistration_ts["src/features/tabs/composition/useTabRegistration.ts"]
@@ -553,6 +554,7 @@ graph LR
   export_TabPanel -.-> export_TabPanelProps
   export_TabPanelProps["TabPanelProps"]
   module_src_types_tabs_ts --> export_TabPanelProps
+  export_TabPanelProps -.-> export_Responsive
   export_TabProps["TabProps"]
   module_src_types_tabs_ts --> export_TabProps
   export_TabProps -.-> export_InteractionPolicy
@@ -561,6 +563,7 @@ graph LR
   export_Tabs -.-> export_TabsProps
   export_TabsProps["TabsProps"]
   module_src_types_tabs_ts --> export_TabsProps
+  export_TabsProps -.-> export_Responsive
   export_Text["Text"]
   module_src_features_typography_adapters_inbound_Text_tsx --> export_Text
   export_Text -.-> export_TextProps

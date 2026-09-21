@@ -114,6 +114,7 @@ graph LR
   module_src_features_tabs_adapters_inbound_Tab_tsx["src/features/tabs/adapters/inbound/Tab.tsx"]
   module_src_features_tabs_adapters_inbound_TabList_tsx["src/features/tabs/adapters/inbound/TabList.tsx"]
   module_src_features_tabs_adapters_inbound_TabPanel_tsx["src/features/tabs/adapters/inbound/TabPanel.tsx"]
+  module_src_features_tabs_adapters_inbound_Tabs_layout_test_tsx["src/features/tabs/adapters/inbound/Tabs.layout.test.tsx"]
   module_src_features_tabs_adapters_inbound_Tabs_tsx["src/features/tabs/adapters/inbound/Tabs.tsx"]
   module_src_features_tabs_composition_TabsContext_tsx["src/features/tabs/composition/TabsContext.tsx"]
   module_src_features_tabs_composition_useTabRegistration_ts["src/features/tabs/composition/useTabRegistration.ts"]
@@ -456,6 +457,7 @@ graph LR
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_features_tabs_utils_resolveNextTabValue_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_types_tabs_ts
+  module_src_features_tabs_adapters_inbound_TabPanel_tsx --> module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --> module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --> module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_Tabs_tsx --> module_src_features_layout_public_ts
@@ -654,6 +656,7 @@ graph LR
   module_src_types_switch_ts --> module_src_types_pressable_ts
   module_src_types_switch_ts --> module_src_types_surfaceColor_ts
   module_src_types_tabs_ts --> module_src_types_interactionPolicy_ts
+  module_src_types_tabs_ts --> module_src_types_layout_ts
   module_src_types_text_input_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_types_text_input_ts --> module_src_types_interactionPolicy_ts
   module_src_types_toast_ts --> module_src_types_interactionPolicy_ts
