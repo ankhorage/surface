@@ -10,6 +10,9 @@ test('accepts trailing tab content without replacing the canonical label', () =>
     trailing,
   };
 
-  expect(props.children).toBe('Rules');
-  expect(props.trailing).toBe(trailing);
+  expect(props).toEqual({
+    value: 'rules',
+    children: 'Rules',
+    trailing,
+  });
 });
