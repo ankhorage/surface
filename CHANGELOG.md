@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.2
+
+### Patch Changes
+
+- ee52390: Keep inactive tab separators while removing the visible bottom border from the selected tab so active tabs visually connect to their panel without changing tab height.
+
 ## 9.1.1
 
 ### Patch Changes

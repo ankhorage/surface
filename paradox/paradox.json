@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.1.1",
+      "value": "v9.1.2",
       "color": "cb3837"
     },
     {
@@ -1333,6 +1333,12 @@
     },
     {
       "path": "src/features/tabs/adapters/inbound/Tabs.layout.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    },
+    {
+      "path": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx",
       "isEntrypoint": false,
       "dependencies": [],
       "exports": []
@@ -32408,7 +32414,7 @@
       "description": "Renders the canonical tab label with optional trailing content.",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
-        "line": 58,
+        "line": 56,
         "column": 1
       }
     },
@@ -32417,7 +32423,7 @@
       "description": "Resolves active and disabled visual state without inline JSX styles.",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
-        "line": 78,
+        "line": 76,
         "column": 1
       }
     },
@@ -39517,6 +39523,24 @@
         "sourcePath": "src/features/tabs/adapters/inbound/Tabs.layout.test.tsx"
       },
       {
+        "fromSymbol": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx",
+        "toSymbol": "renderToStaticMarkup",
+        "callExpression": "renderToStaticMarkup",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx"
+      },
+      {
         "fromSymbol": "Tabs",
         "toSymbol": "useTabsController",
         "callExpression": "useTabsController",
@@ -42935,7 +42959,7 @@
       {
         "fromComponent": "Tab",
         "toComponent": "View",
-        "jsxElement": "<View\n        px=\"m\"\n        py=\"s\"\n        style={resolveTabStyle({\n          borderColor: selected\n            ? theme.semantics.action.primary.base\n            : theme.semantics.border.default,\n          disabled,\n        })}\n      >",
+        "jsxElement": "<View\n        px=\"m\"\n        py=\"s\"\n        style={resolveTabStyle({\n          borderColor: selected ? 'transparent' : theme.semantics.border.default,\n          disabled,\n        })}\n      >",
         "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
       },
       {
