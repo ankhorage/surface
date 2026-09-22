@@ -15,6 +15,7 @@ export function Tab({
   disabled = false,
   interactionPolicy = 'enabled',
   testID,
+  trailing,
 }: TabProps) {
   const { theme } = useTheme();
   const { activeValue, getPanelId, getTabId, setActiveValue, setFocusedValue } = useTabsContext();
@@ -47,9 +48,18 @@ export function Tab({
           disabled,
         })}
       >
-        <Text color={selected ? 'primary' : undefined} variant="label" weight="medium">
-          {children}
-        </Text>
+        {trailing === undefined ? (
+          <Text color={selected ? 'primary' : undefined} variant="label" weight="medium">
+            {children}
+          </Text>
+        ) : (
+          <View align="center" direction="row" gap="xs">
+            <Text color={selected ? 'primary' : undefined} variant="label" weight="medium">
+              {children}
+            </Text>
+            {trailing}
+          </View>
+        )}
       </View>
     </Pressable>
   );
