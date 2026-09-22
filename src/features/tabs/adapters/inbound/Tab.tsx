@@ -42,9 +42,7 @@ export function Tab({
         px="m"
         py="s"
         style={resolveTabStyle({
-          borderColor: selected
-            ? theme.semantics.action.primary.base
-            : theme.semantics.border.default,
+          borderColor: selected ? 'transparent' : theme.semantics.border.default,
           disabled,
         })}
       >
