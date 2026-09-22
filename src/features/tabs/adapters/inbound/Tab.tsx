@@ -15,6 +15,7 @@ export function Tab({
   disabled = false,
   interactionPolicy = 'enabled',
   testID,
+  trailing,
 }: TabProps) {
   const { theme } = useTheme();
   const { activeValue, getPanelId, getTabId, setActiveValue, setFocusedValue } = useTabsContext();
@@ -47,11 +48,29 @@ export function Tab({
           disabled,
         })}
       >
-        <Text color={selected ? 'primary' : undefined} variant="label" weight="medium">
-          {children}
-        </Text>
+        {renderTabContent(children, trailing, selected)}
       </View>
     </Pressable>
+  );
+}
+
+/*** Renders the canonical tab label with optional trailing content. */
+function renderTabContent(
+  children: React.ReactNode,
+  trailing: React.ReactNode,
+  selected: boolean,
+): React.ReactNode {
+  const label = (
+    <Text color={selected ? 'primary' : undefined} variant="label" weight="medium">
+      {children}
+    </Text>
+  );
+  if (trailing === undefined) return label;
+  return (
+    <View align="center" direction="row" gap="xs">
+      {label}
+      {trailing}
+    </View>
   );
 }
 

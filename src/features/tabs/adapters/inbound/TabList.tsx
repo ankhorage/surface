@@ -5,6 +5,7 @@ import type { TabListProps, TabNavigationKey } from '../../../../types/tabs';
 import { View } from '../../../layout/public';
 import { useTabsContext } from '../../composition/useTabsContext';
 import { resolveNextTabValue } from '../../utils/resolveNextTabValue';
+import { wrapTabListChildren } from '../../utils/wrapTabListChildren';
 
 const navigationKeys: readonly string[] = [
   'ArrowLeft',
@@ -16,7 +17,7 @@ const navigationKeys: readonly string[] = [
 ];
 
 /*** Renders the accessible tab list and owns keyboard focus navigation. */
-export function TabList({ children, testID }: TabListProps) {
+export function TabList({ children, fill = false, testID }: TabListProps) {
   const { bindKeydown } = useFocusManager();
   const { focusedValue, setActiveValue, tabs } = useTabsContext();
 
@@ -36,7 +37,7 @@ export function TabList({ children, testID }: TabListProps) {
 
   return (
     <View accessibilityRole="tablist" direction="row" testID={testID}>
-      {children}
+      {wrapTabListChildren(children, fill)}
     </View>
   );
 }
