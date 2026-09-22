@@ -16,7 +16,7 @@ const navigationKeys: readonly string[] = [
 ];
 
 /*** Renders the accessible tab list and owns keyboard focus navigation. */
-export function TabList({ children, testID }: TabListProps) {
+export function TabList({ children, fill = false, testID }: TabListProps) {
   const { bindKeydown } = useFocusManager();
   const { focusedValue, setActiveValue, tabs } = useTabsContext();
 
@@ -36,7 +36,9 @@ export function TabList({ children, testID }: TabListProps) {
 
   return (
     <View accessibilityRole="tablist" direction="row" testID={testID}>
-      {children}
+      {fill
+        ? React.Children.map(children, (child) => <View flex={1}>{child}</View>)
+        : children}
     </View>
   );
 }
