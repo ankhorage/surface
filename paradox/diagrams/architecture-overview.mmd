@@ -441,6 +441,7 @@ graph TD
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_features_tabs_utils_resolveNextTabValue_ts
+  module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_features_tabs_utils_wrapTabListChildren_tsx
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --> module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx["src/features/tabs/adapters/inbound/TabPanel.tsx"]
@@ -484,6 +485,15 @@ graph TD
   module_src_features_tabs_utils_resolveTabElementId_test_ts --> module_src_features_tabs_utils_resolveTabElementId_ts
   module_src_features_tabs_utils_resolveTabElementId_ts["src/features/tabs/utils/resolveTabElementId.ts"]
   package__ankhorage_surface -.-> module_src_features_tabs_utils_resolveTabElementId_ts
+  module_src_features_tabs_utils_tabContract_test_tsx["src/features/tabs/utils/tabContract.test.tsx"]
+  package__ankhorage_surface -.-> module_src_features_tabs_utils_tabContract_test_tsx
+  module_src_features_tabs_utils_tabContract_test_tsx --> module_src_types_tabs_ts
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx["src/features/tabs/utils/wrapTabListChildren.test.tsx"]
+  package__ankhorage_surface -.-> module_src_features_tabs_utils_wrapTabListChildren_test_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx --> module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx["src/features/tabs/utils/wrapTabListChildren.tsx"]
+  package__ankhorage_surface -.-> module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx --> module_src_features_layout_public_ts
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx["src/features/theme/adapters/inbound/ThemeProvider.tsx"]
   package__ankhorage_surface -.-> module_src_features_theme_adapters_inbound_ThemeProvider_tsx
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --> module_src_core_responsive_ResponsiveProvider_tsx

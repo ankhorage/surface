@@ -1830,11 +1830,12 @@ Export paths: `src/index.ts`
 | disabled | `boolean \| undefined` | no | `false` |  |
 | interactionPolicy | `InteractionPolicy \| undefined` | no | `'enabled'` |  |
 | testID | `string \| undefined` | no | — |  |
+| trailing | `React.ReactNode \| undefined` | no | — |  |
 | value | `string` | yes | — |  |
 
 ## TabList
 
-Source: `src/features/tabs/adapters/inbound/TabList.tsx:19:1`
+Source: `src/features/tabs/adapters/inbound/TabList.tsx:20:1`
 
 Renders the accessible tab list and owns keyboard focus navigation.
 
@@ -1843,6 +1844,7 @@ Export paths: `src/index.ts`
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | children | `React.ReactNode \| undefined` | no | — |  |
+| fill | `boolean \| undefined` | no | `false` |  |
 | testID | `string \| undefined` | no | — |  |
 
 ## TabPanel

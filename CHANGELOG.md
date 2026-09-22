@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.0
+
+### Minor Changes
+
+- bea3e43: Add trailing tab content and opt-in equal-width TabList fill distribution for badges and responsive tab bars.
+
 ## 9.0.15
 
 ### Patch Changes

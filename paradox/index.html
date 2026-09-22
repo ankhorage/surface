@@ -414,7 +414,7 @@
   </li><li>
     <button class="nav-button" type="button" data-target="src/features/tabs/adapters/inbound/Tab.tsx">
       src/features/tabs/adapters/inbound/Tab.tsx
-      <small>2 functions</small>
+      <small>3 functions</small>
     </button>
   </li><li>
     <button class="nav-button" type="button" data-target="src/features/tabs/adapters/inbound/TabList.tsx">
@@ -455,6 +455,11 @@
     <button class="nav-button" type="button" data-target="src/features/tabs/utils/resolveTabElementId.ts">
       src/features/tabs/utils/resolveTabElementId.ts
       <small>2 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/tabs/utils/wrapTabListChildren.tsx">
+      src/features/tabs/utils/wrapTabListChildren.tsx
+      <small>1 function</small>
     </button>
   </li><li>
     <button class="nav-button" type="button" data-target="src/features/theme/adapters/inbound/ThemeProvider.tsx">
@@ -733,7 +738,7 @@
       <div class="summary">
         <div><strong>144</strong><span class="muted">public exports</span></div>
         <div><strong>42</strong><span class="muted">components</span></div>
-        <div><strong>245</strong><span class="muted">modules</span></div>
+        <div><strong>248</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -1309,10 +1314,10 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/features/layout/public.ts</code>, <code>src/features/tabs/composition/useTabRegistration.ts</code>, <code>src/features/tabs/composition/useTabsContext.ts</code>, <code>src/features/theme/runtime.ts</code>, <code>src/features/typography/public.ts</code>, <code>src/types/tabs.ts</code></p>
     <p><strong>Exports:</strong> <code>Tab</code></p>
-  </article><article class="item" data-search="src/features/tabs/adapters/inbound/TabList.tsx src/features/layout/public.ts src/features/tabs/composition/useTabsContext.ts src/features/tabs/utils/resolveNextTabValue.ts src/internal/focus/useFocusManager.ts src/types/tabs.ts TabList">
+  </article><article class="item" data-search="src/features/tabs/adapters/inbound/TabList.tsx src/features/layout/public.ts src/features/tabs/composition/useTabsContext.ts src/features/tabs/utils/resolveNextTabValue.ts src/features/tabs/utils/wrapTabListChildren.tsx src/internal/focus/useFocusManager.ts src/types/tabs.ts TabList">
     <h3>src/features/tabs/adapters/inbound/TabList.tsx</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/features/layout/public.ts</code>, <code>src/features/tabs/composition/useTabsContext.ts</code>, <code>src/features/tabs/utils/resolveNextTabValue.ts</code>, <code>src/internal/focus/useFocusManager.ts</code>, <code>src/types/tabs.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/features/layout/public.ts</code>, <code>src/features/tabs/composition/useTabsContext.ts</code>, <code>src/features/tabs/utils/resolveNextTabValue.ts</code>, <code>src/features/tabs/utils/wrapTabListChildren.tsx</code>, <code>src/internal/focus/useFocusManager.ts</code>, <code>src/types/tabs.ts</code></p>
     <p><strong>Exports:</strong> <code>TabList</code></p>
   </article><article class="item" data-search="src/features/tabs/adapters/inbound/TabPanel.tsx src/features/layout/public.ts src/features/tabs/composition/useTabsContext.ts src/types/tabs.ts TabPanel">
     <h3>src/features/tabs/adapters/inbound/TabPanel.tsx</h3>
@@ -1374,6 +1379,21 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>resolveTabElementId</code></p>
+  </article><article class="item" data-search="src/features/tabs/utils/tabContract.test.tsx src/types/tabs.ts">
+    <h3>src/features/tabs/utils/tabContract.test.tsx</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/types/tabs.ts</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="src/features/tabs/utils/wrapTabListChildren.test.tsx src/features/tabs/utils/wrapTabListChildren.tsx">
+    <h3>src/features/tabs/utils/wrapTabListChildren.test.tsx</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/tabs/utils/wrapTabListChildren.tsx</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="src/features/tabs/utils/wrapTabListChildren.tsx src/features/layout/public.ts wrapTabListChildren">
+    <h3>src/features/tabs/utils/wrapTabListChildren.tsx</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/layout/public.ts</code></p>
+    <p><strong>Exports:</strong> <code>wrapTabListChildren</code></p>
   </article><article class="item" data-search="src/features/theme/adapters/inbound/ThemeProvider.tsx src/core/responsive/ResponsiveProvider.tsx src/features/font/adapters/inbound/useFontRuntime.ts src/features/theme/adapters/inbound/ThemeRuntimeContext.tsx src/features/theme/application/use-cases/createTheme.ts src/internal/overlay/OverlayProvider.tsx src/types/theme.ts ThemeProvider">
     <h3>src/features/theme/adapters/inbound/ThemeProvider.tsx</h3>
     <p class="muted">Referenced module</p>
@@ -3410,7 +3430,7 @@
             </section>
             <section>
               <h3>src/features/tabs/adapters/inbound/Tab.tsx</h3>
-              <article class="item" id="symbol-tab" data-search="Tab function src/features/tabs/adapters/inbound/Tab.tsx Renders one accessible selectable tab inside a Tabs context. TabProps ({&#10;  value,&#10;  children,&#10;  disabled = false,&#10;  interactionPolicy = &#39;enabled&#39;,&#10;  testID,&#10;}: TabProps) =&gt; React.JSX.Element">
+              <article class="item" id="symbol-tab" data-search="Tab function src/features/tabs/adapters/inbound/Tab.tsx Renders one accessible selectable tab inside a Tabs context. TabProps ({&#10;  value,&#10;  children,&#10;  disabled = false,&#10;  interactionPolicy = &#39;enabled&#39;,&#10;  testID,&#10;  trailing,&#10;}: TabProps) =&gt; React.JSX.Element">
     <h4>Tab</h4>
     <p class="muted">function • <code>src/features/tabs/adapters/inbound/Tab.tsx:12:1</code></p>
     <p>Renders one accessible selectable tab inside a Tabs context.</p>
@@ -3424,6 +3444,7 @@
   disabled = false,
   interactionPolicy = &#39;enabled&#39;,
   testID,
+  trailing,
 }: TabProps) =&gt; React.JSX.Element</pre>
         <table>
                 <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
@@ -3435,6 +3456,7 @@
   disabled = false,
   interactionPolicy = &#39;enabled&#39;,
   testID,
+  trailing,
 }</code></td>
                         <td><code>TabProps</code></td>
                         <td>yes</td>
@@ -3449,20 +3471,20 @@
             </section>
             <section>
               <h3>src/features/tabs/adapters/inbound/TabList.tsx</h3>
-              <article class="item" id="symbol-tablist" data-search="TabList function src/features/tabs/adapters/inbound/TabList.tsx Renders the accessible tab list and owns keyboard focus navigation. TabListProps ({ children, testID }: TabListProps) =&gt; React.JSX.Element">
+              <article class="item" id="symbol-tablist" data-search="TabList function src/features/tabs/adapters/inbound/TabList.tsx Renders the accessible tab list and owns keyboard focus navigation. TabListProps ({ children, fill = false, testID }: TabListProps) =&gt; React.JSX.Element">
     <h4>TabList</h4>
-    <p class="muted">function • <code>src/features/tabs/adapters/inbound/TabList.tsx:19:1</code></p>
+    <p class="muted">function • <code>src/features/tabs/adapters/inbound/TabList.tsx:20:1</code></p>
     <p>Renders the accessible tab list and owns keyboard focus navigation.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">TabListProps</li></ul></div>
     <div>
         <h5>Signature</h5>
-        <pre>({ children, testID }: TabListProps) =&gt; React.JSX.Element</pre>
+        <pre>({ children, fill = false, testID }: TabListProps) =&gt; React.JSX.Element</pre>
         <table>
                 <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
                 <tbody>
                   <tr>
-                        <td><code>{ children, testID }</code></td>
+                        <td><code>{ children, fill = false, testID }</code></td>
                         <td><code>TabListProps</code></td>
                         <td>yes</td>
                         <td></td>
@@ -13279,6 +13301,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>fill</code></td>
+            <td>property</td>
+            <td><code>boolean | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>testID</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
@@ -13289,7 +13317,7 @@
   </table>
   </article><article class="item" id="symbol-tabpanelprops" data-search="TabPanelProps type src/types/tabs.ts  Responsive">
     <h4>TabPanelProps</h4>
-    <p class="muted">type • <code>src/types/tabs.ts:27:1</code></p>
+    <p class="muted">type • <code>src/types/tabs.ts:29:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">Responsive</li></ul></div>
@@ -13590,7 +13618,7 @@
   </table>
   </article><article class="item" id="symbol-tabprops" data-search="TabProps type src/types/tabs.ts  InteractionPolicy">
     <h4>TabProps</h4>
-    <p class="muted">type • <code>src/types/tabs.ts:19:1</code></p>
+    <p class="muted">type • <code>src/types/tabs.ts:20:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">InteractionPolicy</li></ul></div>
@@ -13620,6 +13648,12 @@
             <td><code>testID</code></td>
             <td>property</td>
             <td><code>string | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>trailing</code></td>
+            <td>property</td>
+            <td><code>React.ReactNode</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -23617,7 +23651,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-tab" data-search="Tab src/features/tabs/adapters/inbound/Tab.tsx Renders one accessible selectable tab inside a Tabs context. children React.ReactNode | undefined disabled boolean | undefined interactionPolicy InteractionPolicy | undefined testID string | undefined value string">
+  </article><article class="item" id="component-tab" data-search="Tab src/features/tabs/adapters/inbound/Tab.tsx Renders one accessible selectable tab inside a Tabs context. children React.ReactNode | undefined disabled boolean | undefined interactionPolicy InteractionPolicy | undefined testID string | undefined trailing React.ReactNode | undefined value string">
     <h3>Tab</h3>
     <p class="muted"><code>src/features/tabs/adapters/inbound/Tab.tsx:12:1</code></p>
     <p>Renders one accessible selectable tab inside a Tabs context.</p>
@@ -23646,6 +23680,11 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>trailing</code></td>
+              <td><code>React.ReactNode | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>value</code></td>
               <td><code>string</code></td>
               <td>yes</td>
@@ -23653,9 +23692,9 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-tablist" data-search="TabList src/features/tabs/adapters/inbound/TabList.tsx Renders the accessible tab list and owns keyboard focus navigation. children React.ReactNode | undefined testID string | undefined">
+  </article><article class="item" id="component-tablist" data-search="TabList src/features/tabs/adapters/inbound/TabList.tsx Renders the accessible tab list and owns keyboard focus navigation. children React.ReactNode | undefined fill boolean | undefined testID string | undefined">
     <h3>TabList</h3>
-    <p class="muted"><code>src/features/tabs/adapters/inbound/TabList.tsx:19:1</code></p>
+    <p class="muted"><code>src/features/tabs/adapters/inbound/TabList.tsx:20:1</code></p>
     <p>Renders the accessible tab list and owns keyboard focus navigation.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <table>
@@ -23664,6 +23703,11 @@
         <tr>
               <td><code>children</code></td>
               <td><code>React.ReactNode | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>fill</code></td>
+              <td><code>boolean | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -26103,6 +26147,7 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
+  module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
@@ -26146,6 +26191,15 @@
   module_src_features_tabs_utils_resolveTabElementId_test_ts --&gt; module_src_features_tabs_utils_resolveTabElementId_ts
   module_src_features_tabs_utils_resolveTabElementId_ts[&quot;src/features/tabs/utils/resolveTabElementId.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_resolveTabElementId_ts
+  module_src_features_tabs_utils_tabContract_test_tsx[&quot;src/features/tabs/utils/tabContract.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_tabContract_test_tsx
+  module_src_features_tabs_utils_tabContract_test_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_wrapTabListChildren_test_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx[&quot;src/features/theme/adapters/inbound/ThemeProvider.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_theme_adapters_inbound_ThemeProvider_tsx
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_core_responsive_ResponsiveProvider_tsx
@@ -27030,6 +27084,7 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
+  module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx[&quot;src/features/tabs/adapters/inbound/TabPanel.tsx&quot;]
@@ -27073,6 +27128,15 @@
   module_src_features_tabs_utils_resolveTabElementId_test_ts --&gt; module_src_features_tabs_utils_resolveTabElementId_ts
   module_src_features_tabs_utils_resolveTabElementId_ts[&quot;src/features/tabs/utils/resolveTabElementId.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_resolveTabElementId_ts
+  module_src_features_tabs_utils_tabContract_test_tsx[&quot;src/features/tabs/utils/tabContract.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_tabContract_test_tsx
+  module_src_features_tabs_utils_tabContract_test_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_wrapTabListChildren_test_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx[&quot;src/features/theme/adapters/inbound/ThemeProvider.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_theme_adapters_inbound_ThemeProvider_tsx
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_core_responsive_ResponsiveProvider_tsx
@@ -27643,6 +27707,9 @@
   module_src_features_tabs_utils_resolveNextTabValue_ts[&quot;src/features/tabs/utils/resolveNextTabValue.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_test_ts[&quot;src/features/tabs/utils/resolveTabElementId.test.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_ts[&quot;src/features/tabs/utils/resolveTabElementId.ts&quot;]
+  module_src_features_tabs_utils_tabContract_test_tsx[&quot;src/features/tabs/utils/tabContract.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx[&quot;src/features/theme/adapters/inbound/ThemeProvider.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx[&quot;src/features/theme/adapters/inbound/ThemeRuntimeContext.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeScope_test_tsx[&quot;src/features/theme/adapters/inbound/ThemeScope.test.tsx&quot;]
@@ -27973,6 +28040,7 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
+  module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_layout_public_ts
@@ -27992,6 +28060,9 @@
   module_src_features_tabs_utils_resolveNextTabValue_test_ts --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
   module_src_features_tabs_utils_resolveNextTabValue_ts --&gt; module_src_types_tabs_ts
   module_src_features_tabs_utils_resolveTabElementId_test_ts --&gt; module_src_features_tabs_utils_resolveTabElementId_ts
+  module_src_features_tabs_utils_tabContract_test_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_core_responsive_ResponsiveProvider_tsx
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_features_font_adapters_inbound_useFontRuntime_ts
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx
@@ -28323,6 +28394,9 @@
   module_src_features_tabs_utils_resolveNextTabValue_ts[&quot;src/features/tabs/utils/resolveNextTabValue.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_test_ts[&quot;src/features/tabs/utils/resolveTabElementId.test.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_ts[&quot;src/features/tabs/utils/resolveTabElementId.ts&quot;]
+  module_src_features_tabs_utils_tabContract_test_tsx[&quot;src/features/tabs/utils/tabContract.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx[&quot;src/features/theme/adapters/inbound/ThemeProvider.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx[&quot;src/features/theme/adapters/inbound/ThemeRuntimeContext.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeScope_test_tsx[&quot;src/features/theme/adapters/inbound/ThemeScope.test.tsx&quot;]
@@ -28653,6 +28727,7 @@
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_composition_useTabsContext_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
+  module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_internal_focus_useFocusManager_ts
   module_src_features_tabs_adapters_inbound_TabList_tsx --&gt; module_src_types_tabs_ts
   module_src_features_tabs_adapters_inbound_TabPanel_tsx --&gt; module_src_features_layout_public_ts
@@ -28672,6 +28747,9 @@
   module_src_features_tabs_utils_resolveNextTabValue_test_ts --&gt; module_src_features_tabs_utils_resolveNextTabValue_ts
   module_src_features_tabs_utils_resolveNextTabValue_ts --&gt; module_src_types_tabs_ts
   module_src_features_tabs_utils_resolveTabElementId_test_ts --&gt; module_src_features_tabs_utils_resolveTabElementId_ts
+  module_src_features_tabs_utils_tabContract_test_tsx --&gt; module_src_types_tabs_ts
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx --&gt; module_src_features_tabs_utils_wrapTabListChildren_tsx
+  module_src_features_tabs_utils_wrapTabListChildren_tsx --&gt; module_src_features_layout_public_ts
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_core_responsive_ResponsiveProvider_tsx
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_features_font_adapters_inbound_useFontRuntime_ts
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx --&gt; module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx
@@ -29005,6 +29083,9 @@
   module_src_features_tabs_utils_resolveNextTabValue_ts[&quot;src/features/tabs/utils/resolveNextTabValue.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_test_ts[&quot;src/features/tabs/utils/resolveTabElementId.test.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_ts[&quot;src/features/tabs/utils/resolveTabElementId.ts&quot;]
+  module_src_features_tabs_utils_tabContract_test_tsx[&quot;src/features/tabs/utils/tabContract.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx[&quot;src/features/theme/adapters/inbound/ThemeProvider.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx[&quot;src/features/theme/adapters/inbound/ThemeRuntimeContext.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeScope_test_tsx[&quot;src/features/theme/adapters/inbound/ThemeScope.test.tsx&quot;]
@@ -29661,6 +29742,9 @@
   module_src_features_tabs_utils_resolveNextTabValue_ts[&quot;src/features/tabs/utils/resolveNextTabValue.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_test_ts[&quot;src/features/tabs/utils/resolveTabElementId.test.ts&quot;]
   module_src_features_tabs_utils_resolveTabElementId_ts[&quot;src/features/tabs/utils/resolveTabElementId.ts&quot;]
+  module_src_features_tabs_utils_tabContract_test_tsx[&quot;src/features/tabs/utils/tabContract.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_test_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.test.tsx&quot;]
+  module_src_features_tabs_utils_wrapTabListChildren_tsx[&quot;src/features/tabs/utils/wrapTabListChildren.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeProvider_tsx[&quot;src/features/theme/adapters/inbound/ThemeProvider.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx[&quot;src/features/theme/adapters/inbound/ThemeRuntimeContext.tsx&quot;]
   module_src_features_theme_adapters_inbound_ThemeScope_test_tsx[&quot;src/features/theme/adapters/inbound/ThemeScope.test.tsx&quot;]
@@ -30796,10 +30880,13 @@
   participant participant_TabList as TabList
   participant participant_useFocusManager as useFocusManager
   participant participant_useTabsContext as useTabsContext
+  participant participant_wrapTabListChildren as wrapTabListChildren
   participant_TabList-&gt;&gt;participant_useFocusManager: useFocusManager()
   participant_useFocusManager--&gt;&gt;participant_TabList: return
   participant_TabList-&gt;&gt;participant_useTabsContext: useTabsContext()
   participant_useTabsContext--&gt;&gt;participant_TabList: return
+  participant_TabList-&gt;&gt;participant_wrapTabListChildren: wrapTabListChildren()
+  participant_wrapTabListChildren--&gt;&gt;participant_TabList: return
 </div>
     <details>
       <summary>View Mermaid source</summary>
@@ -30807,10 +30894,13 @@
   participant participant_TabList as TabList
   participant participant_useFocusManager as useFocusManager
   participant participant_useTabsContext as useTabsContext
+  participant participant_wrapTabListChildren as wrapTabListChildren
   participant_TabList-&gt;&gt;participant_useFocusManager: useFocusManager()
   participant_useFocusManager--&gt;&gt;participant_TabList: return
   participant_TabList-&gt;&gt;participant_useTabsContext: useTabsContext()
   participant_useTabsContext--&gt;&gt;participant_TabList: return
+  participant_TabList-&gt;&gt;participant_wrapTabListChildren: wrapTabListChildren()
+  participant_wrapTabListChildren--&gt;&gt;participant_TabList: return
 </pre>
     </details>
   </article><article class="item" data-search="TabPanel sequence diagrams/sequences/tab-panel.mmd">
@@ -31998,9 +32088,13 @@
     <h3>Tab</h3>
     <p class="muted"><code>src/features/tabs/adapters/inbound/Tab.tsx:12:1</code></p>
     <p>Renders one accessible selectable tab inside a Tabs context.</p>
+  </article><article class="item" data-search="renderTabContent src/features/tabs/adapters/inbound/Tab.tsx Renders the canonical tab label with optional trailing content.">
+    <h3>renderTabContent</h3>
+    <p class="muted"><code>src/features/tabs/adapters/inbound/Tab.tsx:58:1</code></p>
+    <p>Renders the canonical tab label with optional trailing content.</p>
   </article><article class="item" data-search="resolveTabStyle src/features/tabs/adapters/inbound/Tab.tsx Resolves active and disabled visual state without inline JSX styles.">
     <h3>resolveTabStyle</h3>
-    <p class="muted"><code>src/features/tabs/adapters/inbound/Tab.tsx:59:1</code></p>
+    <p class="muted"><code>src/features/tabs/adapters/inbound/Tab.tsx:78:1</code></p>
     <p>Resolves active and disabled visual state without inline JSX styles.</p>
   </article>
     </section>
@@ -32009,11 +32103,11 @@
       <h2>src/features/tabs/adapters/inbound/TabList.tsx</h2>
       <article class="item" data-search="TabList src/features/tabs/adapters/inbound/TabList.tsx Renders the accessible tab list and owns keyboard focus navigation.">
     <h3>TabList</h3>
-    <p class="muted"><code>src/features/tabs/adapters/inbound/TabList.tsx:19:1</code></p>
+    <p class="muted"><code>src/features/tabs/adapters/inbound/TabList.tsx:20:1</code></p>
     <p>Renders the accessible tab list and owns keyboard focus navigation.</p>
   </article><article class="item" data-search="isTabNavigationKey src/features/tabs/adapters/inbound/TabList.tsx Narrows keyboard event keys to the tab navigation key contract.">
     <h3>isTabNavigationKey</h3>
-    <p class="muted"><code>src/features/tabs/adapters/inbound/TabList.tsx:45:1</code></p>
+    <p class="muted"><code>src/features/tabs/adapters/inbound/TabList.tsx:46:1</code></p>
     <p>Narrows keyboard event keys to the tab navigation key contract.</p>
   </article>
     </section>
@@ -32082,6 +32176,15 @@
     <h3>sanitizeTabValue</h3>
     <p class="muted"><code>src/features/tabs/utils/resolveTabElementId.ts:12:1</code></p>
     <p>Normalizes a tab value for use inside an accessibility id.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-tabs-utils-wraptablistchildren-tsx" class="view" data-view="src/features/tabs/utils/wrapTabListChildren.tsx" hidden>
+    <section class="panel">
+      <h2>src/features/tabs/utils/wrapTabListChildren.tsx</h2>
+      <article class="item" data-search="wrapTabListChildren src/features/tabs/utils/wrapTabListChildren.tsx Wrap direct tab-list children with equal flex only when fill distribution is enabled.">
+    <h3>wrapTabListChildren</h3>
+    <p class="muted"><code>src/features/tabs/utils/wrapTabListChildren.tsx:6:1</code></p>
+    <p>Wrap direct tab-list children with equal flex only when fill distribution is enabled.</p>
   </article>
     </section>
   </section><section id="view-src-features-theme-adapters-inbound-themeprovider-tsx" class="view" data-view="src/features/theme/adapters/inbound/ThemeProvider.tsx" hidden>

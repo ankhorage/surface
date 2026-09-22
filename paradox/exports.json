@@ -13314,10 +13314,10 @@
     ],
     "signatures": [
       {
-        "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}: TabProps) => React.JSX.Element",
+        "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n  trailing,\n}: TabProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}",
+            "name": "{\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n  trailing,\n}",
             "type": "TabProps",
             "required": true,
             "description": null
@@ -13339,7 +13339,7 @@
     "modulePath": "src/features/tabs/adapters/inbound/TabList.tsx",
     "sourceLocation": {
       "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
-      "line": 19,
+      "line": 20,
       "column": 1
     },
     "exportPaths": [
@@ -13350,10 +13350,10 @@
     ],
     "signatures": [
       {
-        "label": "({ children, testID }: TabListProps) => React.JSX.Element",
+        "label": "({ children, fill = false, testID }: TabListProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{ children, testID }",
+            "name": "{ children, fill = false, testID }",
             "type": "TabListProps",
             "required": true,
             "description": null
@@ -13388,6 +13388,13 @@
         "name": "children",
         "kind": "property",
         "type": "React.ReactNode",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "fill",
+        "kind": "property",
+        "type": "boolean | undefined",
         "required": false,
         "description": null
       },
@@ -13446,7 +13453,7 @@
     "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
       "filePath": "src/types/tabs.ts",
-      "line": 27,
+      "line": 29,
       "column": 1
     },
     "exportPaths": [
@@ -13805,7 +13812,7 @@
     "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
       "filePath": "src/types/tabs.ts",
-      "line": 19,
+      "line": 20,
       "column": 1
     },
     "exportPaths": [
@@ -13841,6 +13848,13 @@
         "name": "testID",
         "kind": "property",
         "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "trailing",
+        "kind": "property",
+        "type": "React.ReactNode",
         "required": false,
         "description": null
       },

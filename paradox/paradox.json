@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.0.15",
+      "value": "v9.1.0",
       "color": "cb3837"
     },
     {
@@ -1311,6 +1311,7 @@
         "src/features/layout/public.ts",
         "src/features/tabs/composition/useTabsContext.ts",
         "src/features/tabs/utils/resolveNextTabValue.ts",
+        "src/features/tabs/utils/wrapTabListChildren.tsx",
         "src/internal/focus/useFocusManager.ts",
         "src/types/tabs.ts"
       ],
@@ -1439,6 +1440,32 @@
       "dependencies": [],
       "exports": [
         "resolveTabElementId"
+      ]
+    },
+    {
+      "path": "src/features/tabs/utils/tabContract.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/tabs.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/tabs/utils/wrapTabListChildren.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/tabs/utils/wrapTabListChildren.tsx"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/tabs/utils/wrapTabListChildren.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/layout/public.ts"
+      ],
+      "exports": [
+        "wrapTabListChildren"
       ]
     },
     {
@@ -16238,10 +16265,10 @@
       ],
       "signatures": [
         {
-          "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}: TabProps) => React.JSX.Element",
+          "label": "({\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n  trailing,\n}: TabProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n}",
+              "name": "{\n  value,\n  children,\n  disabled = false,\n  interactionPolicy = 'enabled',\n  testID,\n  trailing,\n}",
               "type": "TabProps",
               "required": true,
               "description": null
@@ -16263,7 +16290,7 @@
       "modulePath": "src/features/tabs/adapters/inbound/TabList.tsx",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
-        "line": 19,
+        "line": 20,
         "column": 1
       },
       "exportPaths": [
@@ -16274,10 +16301,10 @@
       ],
       "signatures": [
         {
-          "label": "({ children, testID }: TabListProps) => React.JSX.Element",
+          "label": "({ children, fill = false, testID }: TabListProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{ children, testID }",
+              "name": "{ children, fill = false, testID }",
               "type": "TabListProps",
               "required": true,
               "description": null
@@ -16312,6 +16339,13 @@
           "name": "children",
           "kind": "property",
           "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "fill",
+          "kind": "property",
+          "type": "boolean | undefined",
           "required": false,
           "description": null
         },
@@ -16370,7 +16404,7 @@
       "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
         "filePath": "src/types/tabs.ts",
-        "line": 27,
+        "line": 29,
         "column": 1
       },
       "exportPaths": [
@@ -16729,7 +16763,7 @@
       "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
         "filePath": "src/types/tabs.ts",
-        "line": 19,
+        "line": 20,
         "column": 1
       },
       "exportPaths": [
@@ -16765,6 +16799,13 @@
           "name": "testID",
           "kind": "property",
           "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "trailing",
+          "kind": "property",
+          "type": "React.ReactNode",
           "required": false,
           "description": null
         },
@@ -28897,6 +28938,12 @@
           "description": null
         },
         {
+          "name": "trailing",
+          "type": "React.ReactNode | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "value",
           "type": "string",
           "required": true,
@@ -28912,7 +28959,7 @@
       "modulePath": "src/features/tabs/adapters/inbound/TabList.tsx",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
-        "line": 19,
+        "line": 20,
         "column": 1
       },
       "exportPaths": [
@@ -28923,6 +28970,13 @@
           "name": "children",
           "type": "React.ReactNode | undefined",
           "required": false,
+          "description": null
+        },
+        {
+          "name": "fill",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "false",
           "description": null
         },
         {
@@ -32350,11 +32404,20 @@
       }
     },
     {
+      "name": "renderTabContent",
+      "description": "Renders the canonical tab label with optional trailing content.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
+        "line": 58,
+        "column": 1
+      }
+    },
+    {
       "name": "resolveTabStyle",
       "description": "Resolves active and disabled visual state without inline JSX styles.",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
-        "line": 59,
+        "line": 78,
         "column": 1
       }
     },
@@ -32363,7 +32426,7 @@
       "description": "Renders the accessible tab list and owns keyboard focus navigation.",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
-        "line": 19,
+        "line": 20,
         "column": 1
       }
     },
@@ -32372,7 +32435,7 @@
       "description": "Narrows keyboard event keys to the tab navigation key contract.",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/TabList.tsx",
-        "line": 45,
+        "line": 46,
         "column": 1
       }
     },
@@ -32445,6 +32508,15 @@
       "sourceLocation": {
         "filePath": "src/features/tabs/utils/resolveTabElementId.ts",
         "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "wrapTabListChildren",
+      "description": "Wrap direct tab-list children with equal flex only when fill distribution is enabled.",
+      "sourceLocation": {
+        "filePath": "src/features/tabs/utils/wrapTabListChildren.tsx",
+        "line": 6,
         "column": 1
       }
     },
@@ -35153,6 +35225,21 @@
         "sourcePath": "src/features/tabs/utils/resolveTabElementId.test.ts"
       },
       {
+        "fromPath": "src/features/tabs/utils/tabContract.test.tsx",
+        "toPath": "src/types/tabs.ts",
+        "sourcePath": "src/features/tabs/utils/tabContract.test.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/utils/wrapTabListChildren.test.tsx",
+        "toPath": "src/features/tabs/utils/wrapTabListChildren.tsx",
+        "sourcePath": "src/features/tabs/utils/wrapTabListChildren.test.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/utils/wrapTabListChildren.tsx",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/tabs/utils/wrapTabListChildren.tsx"
+      },
+      {
         "fromPath": "src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts",
         "toPath": "src/types/theme.ts",
         "sourcePath": "src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts"
@@ -35975,6 +36062,11 @@
       {
         "fromPath": "src/features/tabs/adapters/inbound/TabList.tsx",
         "toPath": "src/features/tabs/utils/resolveNextTabValue.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabList.tsx",
+        "toPath": "src/features/tabs/utils/wrapTabListChildren.tsx",
         "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
       },
       {
@@ -38045,6 +38137,36 @@
         "sourcePath": "src/features/tabs/utils/resolveTabElementId.ts"
       },
       {
+        "fromSymbol": "src/features/tabs/utils/tabContract.test.tsx",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/tabs/utils/tabContract.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/tabContract.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/tabs/utils/tabContract.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/wrapTabListChildren.test.tsx",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/tabs/utils/wrapTabListChildren.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/wrapTabListChildren.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/tabs/utils/wrapTabListChildren.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/utils/wrapTabListChildren.test.tsx",
+        "toSymbol": "wrapTabListChildren",
+        "callExpression": "wrapTabListChildren",
+        "sourcePath": "src/features/tabs/utils/wrapTabListChildren.test.tsx"
+      },
+      {
         "fromSymbol": "src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts",
         "toSymbol": "getContrastRatio",
         "callExpression": "getContrastRatio",
@@ -39299,6 +39421,12 @@
         "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
       },
       {
+        "fromSymbol": "Tab",
+        "toSymbol": "renderTabContent",
+        "callExpression": "renderTabContent",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
+      },
+      {
         "fromSymbol": "TabList",
         "toSymbol": "useFocusManager",
         "callExpression": "useFocusManager",
@@ -39344,6 +39472,12 @@
         "fromSymbol": "src/features/tabs/adapters/inbound/TabList.tsx",
         "toSymbol": "setActiveValue",
         "callExpression": "setActiveValue",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
+      },
+      {
+        "fromSymbol": "TabList",
+        "toSymbol": "wrapTabListChildren",
+        "callExpression": "wrapTabListChildren",
         "sourcePath": "src/features/tabs/adapters/inbound/TabList.tsx"
       },
       {
@@ -42802,12 +42936,6 @@
         "fromComponent": "Tab",
         "toComponent": "View",
         "jsxElement": "<View\n        px=\"m\"\n        py=\"s\"\n        style={resolveTabStyle({\n          borderColor: selected\n            ? theme.semantics.action.primary.base\n            : theme.semantics.border.default,\n          disabled,\n        })}\n      >",
-        "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
-      },
-      {
-        "fromComponent": "Tab",
-        "toComponent": "Text",
-        "jsxElement": "<Text color={selected ? 'primary' : undefined} variant=\"label\" weight=\"medium\">",
         "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
       },
       {

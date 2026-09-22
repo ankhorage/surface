@@ -3007,6 +3007,7 @@ Renders one accessible selectable tab inside a Tabs context.
   disabled = false,
   interactionPolicy = 'enabled',
   testID,
+  trailing,
 }: TabProps) => React.JSX.Element`
   - {
   value,
@@ -3014,6 +3015,7 @@ Renders one accessible selectable tab inside a Tabs context.
   disabled = false,
   interactionPolicy = 'enabled',
   testID,
+  trailing,
 }: `TabProps`
   - returns: `React.JSX.Element`
 
@@ -3021,14 +3023,14 @@ Renders one accessible selectable tab inside a Tabs context.
 
 Kind: `function`
 Module: `src/features/tabs/adapters/inbound/TabList.tsx`
-Source: `src/features/tabs/adapters/inbound/TabList.tsx:19:1`
+Source: `src/features/tabs/adapters/inbound/TabList.tsx:20:1`
 
 Renders the accessible tab list and owns keyboard focus navigation.
 
 ### Signatures
 
-- `({ children, testID }: TabListProps) => React.JSX.Element`
-  - { children, testID }: `TabListProps`
+- `({ children, fill = false, testID }: TabListProps) => React.JSX.Element`
+  - { children, fill = false, testID }: `TabListProps`
   - returns: `React.JSX.Element`
 
 ## TabListProps
@@ -3042,6 +3044,7 @@ Source: `src/types/tabs.ts:14:1`
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | children | property | `React.ReactNode` | no |  |
+| fill | property | `boolean \| undefined` | no |  |
 | testID | property | `string \| undefined` | no |  |
 
 ## TabPanel
@@ -3062,7 +3065,7 @@ Renders the active content panel with the supplied View layout and tab accessibi
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:27:1`
+Source: `src/types/tabs.ts:29:1`
 
 ### Members
 
@@ -3121,7 +3124,7 @@ Source: `src/types/tabs.ts:27:1`
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:19:1`
+Source: `src/types/tabs.ts:20:1`
 
 ### Members
 
@@ -3131,6 +3134,7 @@ Source: `src/types/tabs.ts:19:1`
 | disabled | property | `boolean \| undefined` | no |  |
 | interactionPolicy | property | `InteractionPolicy \| undefined` | no |  |
 | testID | property | `string \| undefined` | no |  |
+| trailing | property | `React.ReactNode` | no |  |
 | value | property | `string` | yes |  |
 
 ## Tabs
