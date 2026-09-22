@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.0.15
+
+### Patch Changes
+
+- cad0524: Update Ankhorage dependencies: `@ankhorage/utility`.
+
 ## 9.0.14
 
 ### Patch Changes
