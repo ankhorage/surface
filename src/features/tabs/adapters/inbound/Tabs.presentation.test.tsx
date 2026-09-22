@@ -37,6 +37,6 @@ test('opens the selected tab into its panel while retaining inactive separators'
   expect(inactiveStyle).toContain('border-bottom-width:2px');
   expect(inactiveStyle).not.toContain('border-bottom-color:transparent');
   expect(activeStyle).toContain('border-bottom-width:2px');
-  expect(activeStyle).toContain('border-bottom-color:transparent');
+  expect(activeStyle).toMatch(/border-bottom-color:(?:transparent|rgba\(0,0,0,0(?:\.0+)?\))/u);
   browserWindow.close();
 });
