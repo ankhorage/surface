@@ -13,6 +13,7 @@ export interface TabsProps extends ViewStyleProps {
 
 export interface TabListProps {
   children?: React.ReactNode;
+  fill?: boolean;
   testID?: string;
 }
 
@@ -22,6 +23,7 @@ export interface TabProps {
   disabled?: boolean;
   interactionPolicy?: InteractionPolicy;
   testID?: string;
+  trailing?: React.ReactNode;
 }
 
 export interface TabPanelProps extends ViewStyleProps {
