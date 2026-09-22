@@ -5,6 +5,7 @@ import type { TabListProps, TabNavigationKey } from '../../../../types/tabs';
 import { View } from '../../../layout/public';
 import { useTabsContext } from '../../composition/useTabsContext';
 import { resolveNextTabValue } from '../../utils/resolveNextTabValue';
+import { wrapTabListChildren } from '../../utils/wrapTabListChildren';
 
 const navigationKeys: readonly string[] = [
   'ArrowLeft',
@@ -36,9 +37,7 @@ export function TabList({ children, fill = false, testID }: TabListProps) {
 
   return (
     <View accessibilityRole="tablist" direction="row" testID={testID}>
-      {fill
-        ? React.Children.map(children, (child) => <View flex={1}>{child}</View>)
-        : children}
+      {wrapTabListChildren(children, fill)}
     </View>
   );
 }
