@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.5
+
+### Patch Changes
+
+- f6478b5: Update Ankhorage dependencies: `@ankhorage/contracts`.
+
 ## 9.1.4
 
 ### Patch Changes
