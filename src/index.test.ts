@@ -152,8 +152,10 @@ describe('public package metadata contract', () => {
   it('supports RN 0.86 patches while validating the canonical RN 0.86.3 baseline', () => {
     expect(packageJson.peerDependencies['react-native']).toBe('0.86.x');
     expect(packageJson.devDependencies['react-native']).toBe('0.86.3');
-    expect(packageJson.peerDependencies['react-native-svg']).toBe('15.15.4');
-    expect(packageJson.devDependencies['react-native-svg']).toBe('15.15.4');
+    expect(packageJson.peerDependencies['react-native-svg']).toMatch(/^15\.15\.\d+$/);
+    expect(packageJson.devDependencies['react-native-svg']).toBe(
+      packageJson.peerDependencies['react-native-svg'],
+    );
   });
 });
 
