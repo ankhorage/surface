@@ -2,4 +2,4 @@
 '@ankhorage/surface': patch
 ---
 
-Update dependencies from Renovate pull request #256.
+Update Ankhorage dependencies: `@ankhorage/paradox`, `@ankhorage/utility`.
