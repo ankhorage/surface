@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.19
+
+### Patch Changes
+
+- 41ec6cd: Update Renovate-managed workflows.
+- d890725: Update dependencies: `@ankhorage/contracts`.
+
 ## 9.1.18
 
 ### Patch Changes
