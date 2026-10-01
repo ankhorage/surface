@@ -11,7 +11,7 @@ export interface FocusScopeProps {
 }
 
 export function FocusScope({ active, children, onEscape, testID }: FocusScopeProps) {
-  const containerRef = React.useRef<View | null>(null);
+  const containerRef = React.useRef<React.ElementRef<typeof View> | null>(null);
   const { bindKeydown, capturePreviousFocus, cycleFocus, focusFirst, restorePreviousFocus } =
     useFocusManager();
 
