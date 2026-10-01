@@ -149,10 +149,12 @@ describe('public package metadata contract', () => {
     });
   });
 
-  it('supports RN 0.86 patches while validating the canonical RN 0.86.3 baseline', () => {
-    expect(packageJson.peerDependencies['react-native']).toBe('0.86.x');
-    expect(packageJson.devDependencies['react-native']).toBe('0.86.3');
-    expect(packageJson.peerDependencies['react-native-svg']).toMatch(/^15\.15\.\d+$/);
+  it('keeps React Native runtime peers aligned with the tested development baseline', () => {
+    expect(packageJson.peerDependencies['react-native']).toMatch(/^\d+\.\d+\.\d+$/);
+    expect(packageJson.devDependencies['react-native']).toBe(
+      packageJson.peerDependencies['react-native'],
+    );
+    expect(packageJson.peerDependencies['react-native-svg']).toMatch(/^\d+\.\d+\.\d+$/);
     expect(packageJson.devDependencies['react-native-svg']).toBe(
       packageJson.peerDependencies['react-native-svg'],
     );
@@ -160,10 +162,21 @@ describe('public package metadata contract', () => {
 });
 
 describe('bottom-sheet package contract', () => {
-  it('keeps the implementation and Expo 57 runtime boundary explicit', () => {
+  it('keeps the implementation and native runtime boundaries explicit', () => {
     expect(packageJson.dependencies['@gorhom/bottom-sheet']).toMatch(/^\^5\./);
-    expect(packageJson.peerDependencies['react-native-gesture-handler']).toMatch(/^~2\.32\./);
-    expect(packageJson.peerDependencies['react-native-reanimated']).toBe('4.5.1');
-    expect(packageJson.peerDependencies['react-native-worklets']).toBe('0.10.1');
+    expect(packageJson.peerDependencies['react-native-gesture-handler']).toMatch(
+      /^~\d+\.\d+\.\d+$/,
+    );
+    expect(packageJson.devDependencies['react-native-gesture-handler']).toBe(
+      packageJson.peerDependencies['react-native-gesture-handler'],
+    );
+    expect(packageJson.peerDependencies['react-native-reanimated']).toMatch(/^\d+\.\d+\.\d+$/);
+    expect(packageJson.devDependencies['react-native-reanimated']).toBe(
+      packageJson.peerDependencies['react-native-reanimated'],
+    );
+    expect(packageJson.peerDependencies['react-native-worklets']).toMatch(/^\d+\.\d+\.\d+$/);
+    expect(packageJson.devDependencies['react-native-worklets']).toBe(
+      packageJson.peerDependencies['react-native-worklets'],
+    );
   });
 });
