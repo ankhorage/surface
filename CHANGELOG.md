@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.20
+
+### Patch Changes
+
+- 394907f: Update dependencies: `@ankhorage/contracts`, `@ankhorage/utility`.
+
 ## 9.1.19
 
 ### Patch Changes
