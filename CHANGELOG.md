@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.51
+
+### Patch Changes
+
+- 6a9cead: Update Renovate-managed workflows.
+
 ## 9.1.50
 
 ### Patch Changes
