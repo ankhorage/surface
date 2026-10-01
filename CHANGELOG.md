@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.10
+
+### Patch Changes
+
+- 2698cb8: Preserve the previously supported React Native ecosystem peer ranges while keeping the latest tested development baseline.
+
 ## 9.1.9
 
 ### Patch Changes
