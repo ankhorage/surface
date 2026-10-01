@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.13
+
+### Patch Changes
+
+- 5c7d9ff: Update dependencies: `react-native-safe-area-context`.
+- 651f094: Update dependencies: `@ankhorage/contracts`, `@ankhorage/utility`.
+
 ## 9.1.12
 
 ### Patch Changes
