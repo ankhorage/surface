@@ -1,4 +1,4 @@
-import type { ImageSourcePropType } from 'react-native';
+import type { ImageSourcePropType, ImageURISource } from 'react-native';
 
 import type { SurfaceImageSource } from '../../../types/image';
 
@@ -7,7 +7,7 @@ export function getSourceKey(source: SurfaceImageSource | null | undefined): str
   if (source === null || source === undefined) return null;
   if (typeof source === 'string') return `uri:${source}`;
   if (typeof source === 'number') return `asset:${source}`;
-  if (Array.isArray(source)) {
+  if (isImageUriSourceList(source)) {
     const parts = source
       .map((item) => item.uri)
       .filter((value): value is string => typeof value === 'string');
@@ -26,7 +26,17 @@ export function getSourceKey(source: SurfaceImageSource | null | undefined): str
 
 /*** Reads the first URI represented by a React Native image source. */
 function getUriFromSource(source: ImageSourcePropType): string | undefined {
-  if (Array.isArray(source)) return source[0]?.uri;
+  if (isImageUriSourceList(source)) return source[0]?.uri;
   if (typeof source === 'number') return undefined;
-  return source.uri;
+  return isImageUriSource(source) ? source.uri : undefined;
+}
+
+/*** Narrows a React Native image source to one URI-bearing source object. */
+function isImageUriSource(source: ImageSourcePropType): source is ImageURISource {
+  return typeof source === 'object' && 'uri' in source;
+}
+
+/*** Narrows a React Native image source to the readonly multi-source form. */
+function isImageUriSourceList(source: ImageSourcePropType): source is readonly ImageURISource[] {
+  return Array.isArray(source);
 }

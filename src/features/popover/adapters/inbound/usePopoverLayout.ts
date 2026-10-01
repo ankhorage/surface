@@ -44,7 +44,7 @@ export function usePopoverLayout({ anchorRef, offset, open, placement }: UsePopo
 }
 
 interface UsePopoverLayoutInput {
-  anchorRef: React.RefObject<View | null>;
+  anchorRef: React.RefObject<React.ElementRef<typeof View> | null>;
   offset: number;
   open: boolean;
   placement: PopoverPlacement;

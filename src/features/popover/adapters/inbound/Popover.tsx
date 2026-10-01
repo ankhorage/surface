@@ -7,7 +7,7 @@ import { PopoverOverlay } from './PopoverOverlay';
 
 /*** Renders anchored overlay content through the shared Surface overlay stack. */
 export function Popover(props: PopoverProps) {
-  const anchorRef = React.useRef<View | null>(null);
+  const anchorRef = React.useRef<React.ElementRef<typeof View> | null>(null);
   const [resolvedOpen, setResolvedOpen] = useControllableState<boolean>({
     defaultValue: props.defaultOpen ?? false,
     onChange: props.onOpenChange,

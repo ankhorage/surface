@@ -70,30 +70,12 @@ function resolveDimensionStyles(
   props: ViewStyleProps,
 ): ViewStyle {
   return {
-    width: resolveDimension(
-      theme,
-      resolveResponsive(props.width, breakpoint),
-    ) as ViewStyle['width'],
-    height: resolveDimension(
-      theme,
-      resolveResponsive(props.height, breakpoint),
-    ) as ViewStyle['height'],
-    minWidth: resolveDimension(
-      theme,
-      resolveResponsive(props.minWidth, breakpoint),
-    ) as ViewStyle['minWidth'],
-    maxWidth: resolveDimension(
-      theme,
-      resolveResponsive(props.maxWidth, breakpoint),
-    ) as ViewStyle['maxWidth'],
-    minHeight: resolveDimension(
-      theme,
-      resolveResponsive(props.minHeight, breakpoint),
-    ) as ViewStyle['minHeight'],
-    maxHeight: resolveDimension(
-      theme,
-      resolveResponsive(props.maxHeight, breakpoint),
-    ) as ViewStyle['maxHeight'],
+    width: resolveDimension(theme, resolveResponsive(props.width, breakpoint)),
+    height: resolveDimension(theme, resolveResponsive(props.height, breakpoint)),
+    minWidth: resolveDimension(theme, resolveResponsive(props.minWidth, breakpoint)),
+    maxWidth: resolveDimension(theme, resolveResponsive(props.maxWidth, breakpoint)),
+    minHeight: resolveDimension(theme, resolveResponsive(props.minHeight, breakpoint)),
+    maxHeight: resolveDimension(theme, resolveResponsive(props.maxHeight, breakpoint)),
   };
 }
 
@@ -103,7 +85,7 @@ function resolveLayoutStyles(breakpoint: Breakpoint, props: ViewStyleProps): Vie
     flex: resolveResponsive(props.flex, breakpoint),
     flexGrow: resolveResponsive(props.flexGrow, breakpoint),
     flexShrink: resolveResponsive(props.flexShrink, breakpoint),
-    flexBasis: resolveResponsive(props.flexBasis, breakpoint) as ViewStyle['flexBasis'],
+    flexBasis: resolveResponsive(props.flexBasis, breakpoint),
     flexDirection: resolveResponsive(props.direction, breakpoint),
     alignItems: resolveResponsive(props.align, breakpoint),
     justifyContent: resolveResponsive(props.justify, breakpoint),
