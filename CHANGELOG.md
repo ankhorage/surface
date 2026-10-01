@@ -1,5 +1,21 @@
 # @ankhorage/surface
 
+## 9.1.8
+
+### Patch Changes
+
+- 67c1faa: Consolidate the current Renovate dependency updates, adapt Surface to React Native 0.87 host and image-source types, and restore release documentation validation.
+- 3772594: Update Ankhorage dependencies: `@ankhorage/paradox`, `@ankhorage/utility`.
+- ef91354: Update dependencies from Renovate pull request #244.
+- 655fca6: Update dependencies from Renovate pull request #249.
+- edc9d6f: Update dependencies from Renovate pull request #250.
+- f3b9ca9: Update dependencies from Renovate pull request #252.
+- c6ddd9a: Update dependencies from Renovate pull request #253.
+- 2f7c98d: Update dependencies from Renovate pull request #254.
+- 874803c: Update Ankhorage dependencies: `@ankhorage/paradox`, `@ankhorage/utility`.
+- 0601633: Update dependencies from Renovate pull request #259.
+- a4a4e83: Update dependencies from Renovate pull request #262.
+
 ## 9.1.7
 
 ### Patch Changes

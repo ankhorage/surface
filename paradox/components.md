@@ -15,10 +15,10 @@ Export paths: `src/index.ts`
 | accessibilityHint | `string \| undefined` | no | — |  |
 | accessibilityIgnoresInvertColors | `boolean \| undefined` | no | — |  |
 | accessibilityLabel | `string \| undefined` | no | — |  |
-| accessibilityLabelledBy | `string \| string[] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `(string \| undefined) \| (Array<string> \| undefined) \| undefined` | no | — |  |
 | accessibilityLanguage | `string \| undefined` | no | — |  |
 | accessibilityLargeContentTitle | `string \| undefined` | no | — |  |
-| accessibilityLiveRegion | `'none' \| 'polite' \| 'assertive' \| undefined` | no | — |  |
+| accessibilityLiveRegion | `("none" \| "polite" \| "assertive") \| undefined` | no | — |  |
 | accessibilityRespondsToUserInteraction | `boolean \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityShowsLargeContentViewer | `boolean \| undefined` | no | — |  |
@@ -27,91 +27,108 @@ Export paths: `src/index.ts`
 | accessibilityViewIsModal | `boolean \| undefined` | no | — |  |
 | accessible | `boolean \| undefined` | no | — |  |
 | aria-busy | `boolean \| undefined` | no | — |  |
-| aria-checked | `boolean \| 'mixed' \| undefined` | no | — |  |
+| aria-checked | `(boolean \| undefined) \| "mixed" \| undefined` | no | — |  |
 | aria-disabled | `boolean \| undefined` | no | — |  |
 | aria-expanded | `boolean \| undefined` | no | — |  |
 | aria-hidden | `boolean \| undefined` | no | — |  |
 | aria-label | `string \| undefined` | no | — |  |
 | aria-labelledby | `string \| undefined` | no | — |  |
-| aria-live | `('polite' \| 'assertive' \| 'off') \| undefined` | no | — |  |
+| aria-live | `("polite" \| "assertive" \| "off") \| undefined` | no | — |  |
 | aria-modal | `boolean \| undefined` | no | — |  |
 | aria-selected | `boolean \| undefined` | no | — |  |
-| aria-valuemax | `AccessibilityValue['max'] \| undefined` | no | — |  |
-| aria-valuemin | `AccessibilityValue['min'] \| undefined` | no | — |  |
-| aria-valuenow | `AccessibilityValue['now'] \| undefined` | no | — |  |
-| aria-valuetext | `AccessibilityValue['text'] \| undefined` | no | — |  |
+| aria-valuemax | `AccessibilityValue["max"] \| undefined` | no | — |  |
+| aria-valuemin | `AccessibilityValue["min"] \| undefined` | no | — |  |
+| aria-valuenow | `AccessibilityValue["now"] \| undefined` | no | — |  |
+| aria-valuetext | `AccessibilityValue["text"] \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
 | collapsable | `boolean \| undefined` | no | — |  |
 | collapsableChildren | `boolean \| undefined` | no | — |  |
 | collapsible | `never \| undefined` | no | — |  |
 | defaultValue | `readonly string[] \| undefined` | no | — |  |
 | disabled | `boolean \| undefined` | no | — |  |
+| experimental_accessibilityOrder | `Array<string> \| undefined` | no | — |  |
 | focusable | `boolean \| undefined` | no | — |  |
 | hasTVPreferredFocus | `boolean \| undefined` | no | — |  |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — |  |
+| hitSlop | `EdgeInsetsOrSizeProp \| undefined` | no | — |  |
 | id | `string \| undefined` | no | — |  |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — |  |
+| importantForAccessibility | `("auto" \| "yes" \| "no" \| "no-hide-descendants") \| undefined` | no | — |  |
 | interactionPolicy | `InteractionPolicy \| undefined` | no | — |  |
-| isTVSelectable | `boolean \| undefined` | no | — |  |
+| nativeBackgroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
+| nativeForegroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
 | nativeID | `string \| undefined` | no | — |  |
 | needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — |  |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — |  |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — |  |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — |  |
-| onBlur | `((e: BlurEvent) => void) \| null \| undefined` | no | — |  |
-| onFocus | `((e: FocusEvent) => void) \| null \| undefined` | no | — |  |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — |  |
-| onMagicTap | `(() => void) \| undefined` | no | — |  |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| nextFocusDown | `number \| undefined` | no | — |  |
+| nextFocusForward | `number \| undefined` | no | — |  |
+| nextFocusLeft | `number \| undefined` | no | — |  |
+| nextFocusRight | `number \| undefined` | no | — |  |
+| nextFocusUp | `number \| undefined` | no | — |  |
+| onAccessibilityAction | `((event: AccessibilityActionEvent) => unknown) \| undefined` | no | — |  |
+| onAccessibilityEscape | `(() => unknown) \| undefined` | no | — |  |
+| onAccessibilityTap | `(() => unknown) \| undefined` | no | — |  |
+| onBlur | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onBlurCapture | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onClick | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onClickCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onFocus | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onFocusCapture | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onKeyDown | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyDownCapture | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyUp | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onKeyUpCapture | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onLayout | `((event: LayoutChangeEvent) => unknown) \| undefined` | no | — |  |
+| onLostPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onLostPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onMagicTap | `(() => unknown) \| undefined` | no | — |  |
+| onMouseEnter | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMouseLeave | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMoveShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onMoveShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onPointerCancel | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerCancelCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDown | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDownCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onPointerOut | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOutCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOver | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
+| onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderReject | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderRelease | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminate | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminationRequest | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onTouchCancel | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchCancelCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEndCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMoveCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStartCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | onValueChange | `(value: readonly string[]) => void \| undefined` | no | — |  |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — |  |
+| pointerEvents | `("auto" \| "box-none" \| "box-only" \| "none") \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | role | `Role \| undefined` | no | — |  |
 | screenReaderFocusable | `boolean \| undefined` | no | — |  |
 | shouldRasterizeIOS | `boolean \| undefined` | no | — |  |
-| style | `StyleProp<ViewStyle> \| undefined` | no | — |  |
+| style | `ViewStyleProp \| undefined` | no | — |  |
 | tabIndex | `0 \| -1 \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
-| tvParallaxMagnification | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — |  |
-| tvParallaxTiltAngle | `number \| undefined` | no | — |  |
 | type | `'multiple' \| undefined` | no | — |  |
 | value | `readonly string[] \| undefined` | no | — |  |
 
@@ -130,10 +147,10 @@ Export paths: `src/index.ts`
 | accessibilityHint | `string \| undefined` | no | — |  |
 | accessibilityIgnoresInvertColors | `boolean \| undefined` | no | — |  |
 | accessibilityLabel | `string \| undefined` | no | — |  |
-| accessibilityLabelledBy | `string \| string[] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `(string \| undefined) \| (Array<string> \| undefined) \| undefined` | no | — |  |
 | accessibilityLanguage | `string \| undefined` | no | — |  |
 | accessibilityLargeContentTitle | `string \| undefined` | no | — |  |
-| accessibilityLiveRegion | `'none' \| 'polite' \| 'assertive' \| undefined` | no | — |  |
+| accessibilityLiveRegion | `("none" \| "polite" \| "assertive") \| undefined` | no | — |  |
 | accessibilityRespondsToUserInteraction | `boolean \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityShowsLargeContentViewer | `boolean \| undefined` | no | — |  |
@@ -142,87 +159,104 @@ Export paths: `src/index.ts`
 | accessibilityViewIsModal | `boolean \| undefined` | no | — |  |
 | accessible | `boolean \| undefined` | no | — |  |
 | aria-busy | `boolean \| undefined` | no | — |  |
-| aria-checked | `boolean \| 'mixed' \| undefined` | no | — |  |
+| aria-checked | `(boolean \| undefined) \| "mixed" \| undefined` | no | — |  |
 | aria-disabled | `boolean \| undefined` | no | — |  |
 | aria-expanded | `boolean \| undefined` | no | — |  |
 | aria-hidden | `boolean \| undefined` | no | — |  |
 | aria-label | `string \| undefined` | no | — |  |
 | aria-labelledby | `string \| undefined` | no | — |  |
-| aria-live | `('polite' \| 'assertive' \| 'off') \| undefined` | no | — |  |
+| aria-live | `("polite" \| "assertive" \| "off") \| undefined` | no | — |  |
 | aria-modal | `boolean \| undefined` | no | — |  |
 | aria-selected | `boolean \| undefined` | no | — |  |
-| aria-valuemax | `AccessibilityValue['max'] \| undefined` | no | — |  |
-| aria-valuemin | `AccessibilityValue['min'] \| undefined` | no | — |  |
-| aria-valuenow | `AccessibilityValue['now'] \| undefined` | no | — |  |
-| aria-valuetext | `AccessibilityValue['text'] \| undefined` | no | — |  |
+| aria-valuemax | `AccessibilityValue["max"] \| undefined` | no | — |  |
+| aria-valuemin | `AccessibilityValue["min"] \| undefined` | no | — |  |
+| aria-valuenow | `AccessibilityValue["now"] \| undefined` | no | — |  |
+| aria-valuetext | `AccessibilityValue["text"] \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
 | collapsable | `boolean \| undefined` | no | — |  |
 | collapsableChildren | `boolean \| undefined` | no | — |  |
+| experimental_accessibilityOrder | `Array<string> \| undefined` | no | — |  |
 | focusable | `boolean \| undefined` | no | — |  |
 | forceMount | `boolean \| undefined` | no | `false` |  |
 | hasTVPreferredFocus | `boolean \| undefined` | no | — |  |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — |  |
+| hitSlop | `EdgeInsetsOrSizeProp \| undefined` | no | — |  |
 | id | `string \| undefined` | no | — |  |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — |  |
-| isTVSelectable | `boolean \| undefined` | no | — |  |
+| importantForAccessibility | `("auto" \| "yes" \| "no" \| "no-hide-descendants") \| undefined` | no | — |  |
+| nativeBackgroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
+| nativeForegroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
 | nativeID | `string \| undefined` | no | — |  |
 | needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — |  |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — |  |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — |  |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — |  |
-| onBlur | `((e: BlurEvent) => void) \| null \| undefined` | no | — |  |
-| onFocus | `((e: FocusEvent) => void) \| null \| undefined` | no | — |  |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — |  |
-| onMagicTap | `(() => void) \| undefined` | no | — |  |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| nextFocusDown | `number \| undefined` | no | — |  |
+| nextFocusForward | `number \| undefined` | no | — |  |
+| nextFocusLeft | `number \| undefined` | no | — |  |
+| nextFocusRight | `number \| undefined` | no | — |  |
+| nextFocusUp | `number \| undefined` | no | — |  |
+| onAccessibilityAction | `((event: AccessibilityActionEvent) => unknown) \| undefined` | no | — |  |
+| onAccessibilityEscape | `(() => unknown) \| undefined` | no | — |  |
+| onAccessibilityTap | `(() => unknown) \| undefined` | no | — |  |
+| onBlur | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onBlurCapture | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onClick | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onClickCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onFocus | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onFocusCapture | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onKeyDown | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyDownCapture | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyUp | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onKeyUpCapture | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onLayout | `((event: LayoutChangeEvent) => unknown) \| undefined` | no | — |  |
+| onLostPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onLostPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onMagicTap | `(() => unknown) \| undefined` | no | — |  |
+| onMouseEnter | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMouseLeave | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMoveShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onMoveShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onPointerCancel | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerCancelCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDown | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDownCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — |  |
+| onPointerOut | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOutCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOver | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
+| onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderReject | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderRelease | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminate | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminationRequest | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onTouchCancel | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchCancelCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEndCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMoveCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStartCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| pointerEvents | `("auto" \| "box-none" \| "box-only" \| "none") \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | role | `Role \| undefined` | no | — |  |
 | screenReaderFocusable | `boolean \| undefined` | no | — |  |
 | shouldRasterizeIOS | `boolean \| undefined` | no | — |  |
-| style | `StyleProp<ViewStyle> \| undefined` | no | — |  |
+| style | `ViewStyleProp \| undefined` | no | — |  |
 | tabIndex | `0 \| -1 \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
-| tvParallaxMagnification | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — |  |
-| tvParallaxTiltAngle | `number \| undefined` | no | — |  |
 
 ## AccordionItem
 
@@ -239,10 +273,10 @@ Export paths: `src/index.ts`
 | accessibilityHint | `string \| undefined` | no | — |  |
 | accessibilityIgnoresInvertColors | `boolean \| undefined` | no | — |  |
 | accessibilityLabel | `string \| undefined` | no | — |  |
-| accessibilityLabelledBy | `string \| string[] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `(string \| undefined) \| (Array<string> \| undefined) \| undefined` | no | — |  |
 | accessibilityLanguage | `string \| undefined` | no | — |  |
 | accessibilityLargeContentTitle | `string \| undefined` | no | — |  |
-| accessibilityLiveRegion | `'none' \| 'polite' \| 'assertive' \| undefined` | no | — |  |
+| accessibilityLiveRegion | `("none" \| "polite" \| "assertive") \| undefined` | no | — |  |
 | accessibilityRespondsToUserInteraction | `boolean \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityShowsLargeContentViewer | `boolean \| undefined` | no | — |  |
@@ -251,88 +285,105 @@ Export paths: `src/index.ts`
 | accessibilityViewIsModal | `boolean \| undefined` | no | — |  |
 | accessible | `boolean \| undefined` | no | — |  |
 | aria-busy | `boolean \| undefined` | no | — |  |
-| aria-checked | `boolean \| 'mixed' \| undefined` | no | — |  |
+| aria-checked | `(boolean \| undefined) \| "mixed" \| undefined` | no | — |  |
 | aria-disabled | `boolean \| undefined` | no | — |  |
 | aria-expanded | `boolean \| undefined` | no | — |  |
 | aria-hidden | `boolean \| undefined` | no | — |  |
 | aria-label | `string \| undefined` | no | — |  |
 | aria-labelledby | `string \| undefined` | no | — |  |
-| aria-live | `('polite' \| 'assertive' \| 'off') \| undefined` | no | — |  |
+| aria-live | `("polite" \| "assertive" \| "off") \| undefined` | no | — |  |
 | aria-modal | `boolean \| undefined` | no | — |  |
 | aria-selected | `boolean \| undefined` | no | — |  |
-| aria-valuemax | `AccessibilityValue['max'] \| undefined` | no | — |  |
-| aria-valuemin | `AccessibilityValue['min'] \| undefined` | no | — |  |
-| aria-valuenow | `AccessibilityValue['now'] \| undefined` | no | — |  |
-| aria-valuetext | `AccessibilityValue['text'] \| undefined` | no | — |  |
+| aria-valuemax | `AccessibilityValue["max"] \| undefined` | no | — |  |
+| aria-valuemin | `AccessibilityValue["min"] \| undefined` | no | — |  |
+| aria-valuenow | `AccessibilityValue["now"] \| undefined` | no | — |  |
+| aria-valuetext | `AccessibilityValue["text"] \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
 | collapsable | `boolean \| undefined` | no | — |  |
 | collapsableChildren | `boolean \| undefined` | no | — |  |
 | disabled | `boolean \| undefined` | no | `false` |  |
+| experimental_accessibilityOrder | `Array<string> \| undefined` | no | — |  |
 | focusable | `boolean \| undefined` | no | — |  |
 | hasTVPreferredFocus | `boolean \| undefined` | no | — |  |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — |  |
+| hitSlop | `EdgeInsetsOrSizeProp \| undefined` | no | — |  |
 | id | `string \| undefined` | no | — |  |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — |  |
+| importantForAccessibility | `("auto" \| "yes" \| "no" \| "no-hide-descendants") \| undefined` | no | — |  |
 | interactionPolicy | `InteractionPolicy \| undefined` | no | — |  |
-| isTVSelectable | `boolean \| undefined` | no | — |  |
+| nativeBackgroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
+| nativeForegroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
 | nativeID | `string \| undefined` | no | — |  |
 | needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — |  |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — |  |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — |  |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — |  |
-| onBlur | `((e: BlurEvent) => void) \| null \| undefined` | no | — |  |
-| onFocus | `((e: FocusEvent) => void) \| null \| undefined` | no | — |  |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — |  |
-| onMagicTap | `(() => void) \| undefined` | no | — |  |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| nextFocusDown | `number \| undefined` | no | — |  |
+| nextFocusForward | `number \| undefined` | no | — |  |
+| nextFocusLeft | `number \| undefined` | no | — |  |
+| nextFocusRight | `number \| undefined` | no | — |  |
+| nextFocusUp | `number \| undefined` | no | — |  |
+| onAccessibilityAction | `((event: AccessibilityActionEvent) => unknown) \| undefined` | no | — |  |
+| onAccessibilityEscape | `(() => unknown) \| undefined` | no | — |  |
+| onAccessibilityTap | `(() => unknown) \| undefined` | no | — |  |
+| onBlur | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onBlurCapture | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onClick | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onClickCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onFocus | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onFocusCapture | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onKeyDown | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyDownCapture | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyUp | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onKeyUpCapture | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onLayout | `((event: LayoutChangeEvent) => unknown) \| undefined` | no | — |  |
+| onLostPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onLostPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onMagicTap | `(() => unknown) \| undefined` | no | — |  |
+| onMouseEnter | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMouseLeave | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMoveShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onMoveShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onPointerCancel | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerCancelCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDown | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDownCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — |  |
+| onPointerOut | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOutCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOver | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
+| onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderReject | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderRelease | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminate | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminationRequest | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onTouchCancel | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchCancelCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEndCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMoveCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStartCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| pointerEvents | `("auto" \| "box-none" \| "box-only" \| "none") \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | role | `Role \| undefined` | no | — |  |
 | screenReaderFocusable | `boolean \| undefined` | no | — |  |
 | shouldRasterizeIOS | `boolean \| undefined` | no | — |  |
-| style | `StyleProp<ViewStyle> \| undefined` | no | — |  |
+| style | `ViewStyleProp \| undefined` | no | — |  |
 | tabIndex | `0 \| -1 \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
-| tvParallaxMagnification | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — |  |
-| tvParallaxTiltAngle | `number \| undefined` | no | — |  |
 | value | `string` | yes | — |  |
 
 ## AccordionTrigger
@@ -350,118 +401,128 @@ Export paths: `src/index.ts`
 | accessibilityHint | `string \| undefined` | no | — |  |
 | accessibilityIgnoresInvertColors | `boolean \| undefined` | no | — |  |
 | accessibilityLabel | `string \| undefined` | no | — |  |
-| accessibilityLabelledBy | `string \| string[] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `(string \| undefined) \| (Array<string> \| undefined) \| undefined` | no | — |  |
 | accessibilityLanguage | `string \| undefined` | no | — |  |
 | accessibilityLargeContentTitle | `string \| undefined` | no | — |  |
-| accessibilityLiveRegion | `'none' \| 'polite' \| 'assertive' \| undefined` | no | — |  |
+| accessibilityLiveRegion | `("none" \| "polite" \| "assertive") \| undefined` | no | — |  |
 | accessibilityRespondsToUserInteraction | `boolean \| undefined` | no | — |  |
 | accessibilityShowsLargeContentViewer | `boolean \| undefined` | no | — |  |
 | accessibilityValue | `AccessibilityValue \| undefined` | no | — |  |
 | accessibilityViewIsModal | `boolean \| undefined` | no | — |  |
 | accessible | `boolean \| undefined` | no | — |  |
-| android_disableSound | `null \| boolean \| undefined` | no | — |  |
-| android_ripple | `null \| PressableAndroidRippleConfig \| undefined` | no | — |  |
+| android_disableSound | `boolean \| undefined` | no | — |  |
+| android_ripple | `PressableAndroidRippleConfig \| undefined` | no | — |  |
 | aria-busy | `boolean \| undefined` | no | — |  |
-| aria-checked | `boolean \| 'mixed' \| undefined` | no | — |  |
+| aria-checked | `(boolean \| undefined) \| "mixed" \| undefined` | no | — |  |
 | aria-disabled | `boolean \| undefined` | no | — |  |
 | aria-expanded | `boolean \| undefined` | no | — |  |
 | aria-hidden | `boolean \| undefined` | no | — |  |
 | aria-label | `string \| undefined` | no | — |  |
 | aria-labelledby | `string \| undefined` | no | — |  |
-| aria-live | `('polite' \| 'assertive' \| 'off') \| undefined` | no | — |  |
+| aria-live | `("polite" \| "assertive" \| "off") \| undefined` | no | — |  |
 | aria-modal | `boolean \| undefined` | no | — |  |
 | aria-selected | `boolean \| undefined` | no | — |  |
-| aria-valuemax | `AccessibilityValue['max'] \| undefined` | no | — |  |
-| aria-valuemin | `AccessibilityValue['min'] \| undefined` | no | — |  |
-| aria-valuenow | `AccessibilityValue['now'] \| undefined` | no | — |  |
-| aria-valuetext | `AccessibilityValue['text'] \| undefined` | no | — |  |
-| cancelable | `null \| boolean \| undefined` | no | — |  |
+| aria-valuemax | `AccessibilityValue["max"] \| undefined` | no | — |  |
+| aria-valuemin | `AccessibilityValue["min"] \| undefined` | no | — |  |
+| aria-valuenow | `AccessibilityValue["now"] \| undefined` | no | — |  |
+| aria-valuetext | `AccessibilityValue["text"] \| undefined` | no | — |  |
+| blockNativeResponder | `boolean \| undefined` | no | — |  |
+| cancelable | `boolean \| undefined` | no | — |  |
 | children | `PressableProps['children'] \| undefined` | no | — |  |
 | collapsable | `boolean \| undefined` | no | — |  |
 | collapsableChildren | `boolean \| undefined` | no | — |  |
-| delayHoverIn | `number \| null \| undefined` | no | — |  |
-| delayHoverOut | `number \| null \| undefined` | no | — |  |
-| delayLongPress | `null \| number \| undefined` | no | — |  |
+| delayHoverIn | `number \| undefined` | no | — |  |
+| delayHoverOut | `number \| undefined` | no | — |  |
+| delayLongPress | `number \| undefined` | no | — |  |
 | disabled | `boolean \| undefined` | no | `false` |  |
+| experimental_accessibilityOrder | `Array<string> \| undefined` | no | — |  |
 | focusable | `boolean \| undefined` | no | — |  |
 | hasTVPreferredFocus | `boolean \| undefined` | no | — |  |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — |  |
+| hitSlop | `RectOrSize \| undefined` | no | — |  |
 | id | `string \| undefined` | no | — |  |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — |  |
+| importantForAccessibility | `("auto" \| "yes" \| "no" \| "no-hide-descendants") \| undefined` | no | — |  |
 | interactionPolicy | `InteractionPolicy \| undefined` | no | — |  |
-| isTVSelectable | `boolean \| undefined` | no | — |  |
+| nativeBackgroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
+| nativeForegroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
 | nativeID | `string \| undefined` | no | — |  |
 | needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — |  |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — |  |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — |  |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — |  |
-| onBlur | `\| null
-    \| ((event: NativeSyntheticEvent<TargetedEvent>) => void)
-    \| undefined` | no | — |  |
-| onFocus | `\| null
-    \| ((event: NativeSyntheticEvent<TargetedEvent>) => void)
-    \| undefined` | no | — |  |
-| onHoverIn | `null \| ((event: MouseEvent) => void) \| undefined` | no | — |  |
-| onHoverOut | `null \| ((event: MouseEvent) => void) \| undefined` | no | — |  |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — |  |
-| onLongPress | `null \| ((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onMagicTap | `(() => void) \| undefined` | no | — |  |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| nextFocusDown | `number \| undefined` | no | — |  |
+| nextFocusForward | `number \| undefined` | no | — |  |
+| nextFocusLeft | `number \| undefined` | no | — |  |
+| nextFocusRight | `number \| undefined` | no | — |  |
+| nextFocusUp | `number \| undefined` | no | — |  |
+| onAccessibilityAction | `((event: AccessibilityActionEvent) => unknown) \| undefined` | no | — |  |
+| onAccessibilityEscape | `(() => unknown) \| undefined` | no | — |  |
+| onAccessibilityTap | `(() => unknown) \| undefined` | no | — |  |
+| onBlur | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onBlurCapture | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onClick | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onClickCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onFocus | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onFocusCapture | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onHoverIn | `((event: MouseEvent) => unknown) \| undefined` | no | — |  |
+| onHoverOut | `((event: MouseEvent) => unknown) \| undefined` | no | — |  |
+| onKeyDown | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyDownCapture | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyUp | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onKeyUpCapture | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onLayout | `((event: LayoutChangeEvent) => unknown) \| undefined` | no | — |  |
+| onLongPress | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onLostPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onLostPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onMagicTap | `(() => unknown) \| undefined` | no | — |  |
+| onMoveShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onMoveShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onPointerCancel | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerCancelCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDown | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDownCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPressIn | `null \| ((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onPressMove | `null \| ((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onPressOut | `null \| ((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — |  |
-| pressRetentionOffset | `null \| Insets \| number \| undefined` | no | — |  |
+| onPointerOut | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOutCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOver | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPressIn | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onPressMove | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onPressOut | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
+| onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderReject | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderRelease | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminate | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminationRequest | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onTouchCancel | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchCancelCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEndCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMoveCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStartCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| pointerEvents | `("auto" \| "box-none" \| "box-only" \| "none") \| undefined` | no | — |  |
+| pressRetentionOffset | `RectOrSize \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | role | `Role \| undefined` | no | — |  |
 | screenReaderFocusable | `boolean \| undefined` | no | — |  |
 | shouldRasterizeIOS | `boolean \| undefined` | no | — |  |
-| style | `\| StyleProp<ViewStyle>
-    \| ((state: PressableStateCallbackType) => StyleProp<ViewStyle>)
-    \| undefined` | no | — |  |
+| style | `ViewStyleProp \| ((state: PressableStateCallbackType) => ViewStyleProp) \| undefined` | no | — |  |
 | tabIndex | `0 \| -1 \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
-| testOnly_pressed | `null \| boolean \| undefined` | no | — |  |
-| tvParallaxMagnification | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — |  |
-| tvParallaxTiltAngle | `number \| undefined` | no | — |  |
+| testOnly_pressed | `boolean \| undefined` | no | — |  |
 | unstable_pressDelay | `number \| undefined` | no | — |  |
 
 ## AppBar
@@ -1088,10 +1149,10 @@ Export paths: `src/index.ts`
 | accessibilityHint | `string \| undefined` | no | — |  |
 | accessibilityIgnoresInvertColors | `boolean \| undefined` | no | — |  |
 | accessibilityLabel | `string \| undefined` | no | — |  |
-| accessibilityLabelledBy | `string \| string[] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `(string \| undefined) \| (Array<string> \| undefined) \| undefined` | no | — |  |
 | accessibilityLanguage | `string \| undefined` | no | — |  |
 | accessibilityLargeContentTitle | `string \| undefined` | no | — |  |
-| accessibilityLiveRegion | `'none' \| 'polite' \| 'assertive' \| undefined` | no | — |  |
+| accessibilityLiveRegion | `("none" \| "polite" \| "assertive") \| undefined` | no | — |  |
 | accessibilityRespondsToUserInteraction | `boolean \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityShowsLargeContentViewer | `boolean \| undefined` | no | — |  |
@@ -1100,90 +1161,107 @@ Export paths: `src/index.ts`
 | accessibilityViewIsModal | `boolean \| undefined` | no | — |  |
 | accessible | `boolean \| undefined` | no | — |  |
 | aria-busy | `boolean \| undefined` | no | — |  |
-| aria-checked | `boolean \| 'mixed' \| undefined` | no | — |  |
+| aria-checked | `(boolean \| undefined) \| "mixed" \| undefined` | no | — |  |
 | aria-disabled | `boolean \| undefined` | no | — |  |
 | aria-expanded | `boolean \| undefined` | no | — |  |
 | aria-hidden | `boolean \| undefined` | no | — |  |
 | aria-label | `string \| undefined` | no | — |  |
 | aria-labelledby | `string \| undefined` | no | — |  |
-| aria-live | `('polite' \| 'assertive' \| 'off') \| undefined` | no | — |  |
+| aria-live | `("polite" \| "assertive" \| "off") \| undefined` | no | — |  |
 | aria-modal | `boolean \| undefined` | no | — |  |
 | aria-selected | `boolean \| undefined` | no | — |  |
-| aria-valuemax | `AccessibilityValue['max'] \| undefined` | no | — |  |
-| aria-valuemin | `AccessibilityValue['min'] \| undefined` | no | — |  |
-| aria-valuenow | `AccessibilityValue['now'] \| undefined` | no | — |  |
-| aria-valuetext | `AccessibilityValue['text'] \| undefined` | no | — |  |
-| behavior | `'height' \| 'position' \| 'padding' \| undefined` | no | — |  |
+| aria-valuemax | `AccessibilityValue["max"] \| undefined` | no | — |  |
+| aria-valuemin | `AccessibilityValue["min"] \| undefined` | no | — |  |
+| aria-valuenow | `AccessibilityValue["now"] \| undefined` | no | — |  |
+| aria-valuetext | `AccessibilityValue["text"] \| undefined` | no | — |  |
+| behavior | `("height" \| "position" \| "padding") \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
 | collapsable | `boolean \| undefined` | no | — |  |
 | collapsableChildren | `boolean \| undefined` | no | — |  |
-| contentContainerStyle | `StyleProp<ViewStyle> \| undefined` | no | — |  |
+| contentContainerStyle | `ViewStyleProp \| undefined` | no | — |  |
 | enabled | `boolean \| undefined` | no | — |  |
+| experimental_accessibilityOrder | `Array<string> \| undefined` | no | — |  |
 | focusable | `boolean \| undefined` | no | — |  |
 | hasTVPreferredFocus | `boolean \| undefined` | no | — |  |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — |  |
+| hitSlop | `EdgeInsetsOrSizeProp \| undefined` | no | — |  |
 | id | `string \| undefined` | no | — |  |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — |  |
-| isTVSelectable | `boolean \| undefined` | no | — |  |
+| importantForAccessibility | `("auto" \| "yes" \| "no" \| "no-hide-descendants") \| undefined` | no | — |  |
 | keyboardVerticalOffset | `number \| undefined` | no | — |  |
+| nativeBackgroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
+| nativeForegroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
 | nativeID | `string \| undefined` | no | — |  |
 | needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — |  |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — |  |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — |  |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — |  |
-| onBlur | `((e: BlurEvent) => void) \| null \| undefined` | no | — |  |
-| onFocus | `((e: FocusEvent) => void) \| null \| undefined` | no | — |  |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — |  |
-| onMagicTap | `(() => void) \| undefined` | no | — |  |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| nextFocusDown | `number \| undefined` | no | — |  |
+| nextFocusForward | `number \| undefined` | no | — |  |
+| nextFocusLeft | `number \| undefined` | no | — |  |
+| nextFocusRight | `number \| undefined` | no | — |  |
+| nextFocusUp | `number \| undefined` | no | — |  |
+| onAccessibilityAction | `((event: AccessibilityActionEvent) => unknown) \| undefined` | no | — |  |
+| onAccessibilityEscape | `(() => unknown) \| undefined` | no | — |  |
+| onAccessibilityTap | `(() => unknown) \| undefined` | no | — |  |
+| onBlur | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onBlurCapture | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onClick | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onClickCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onFocus | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onFocusCapture | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onKeyDown | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyDownCapture | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyUp | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onKeyUpCapture | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onLayout | `((event: LayoutChangeEvent) => unknown) \| undefined` | no | — |  |
+| onLostPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onLostPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onMagicTap | `(() => unknown) \| undefined` | no | — |  |
+| onMouseEnter | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMouseLeave | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMoveShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onMoveShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onPointerCancel | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerCancelCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDown | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDownCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — |  |
+| onPointerOut | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOutCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOver | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
+| onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderReject | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderRelease | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminate | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminationRequest | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onTouchCancel | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchCancelCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEndCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMoveCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStartCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| pointerEvents | `("auto" \| "box-none" \| "box-only" \| "none") \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | role | `Role \| undefined` | no | — |  |
 | screenReaderFocusable | `boolean \| undefined` | no | — |  |
 | shouldRasterizeIOS | `boolean \| undefined` | no | — |  |
-| style | `StyleProp<ViewStyle> \| undefined` | no | — |  |
+| style | `ViewStyleProp \| undefined` | no | — |  |
 | tabIndex | `0 \| -1 \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
-| tvParallaxMagnification | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — |  |
-| tvParallaxTiltAngle | `number \| undefined` | no | — |  |
 
 ## List
 
@@ -1444,10 +1522,10 @@ Export paths: `src/index.ts`
 | accessibilityHint | `string \| undefined` | no | — |  |
 | accessibilityIgnoresInvertColors | `boolean \| undefined` | no | — |  |
 | accessibilityLabel | `string \| undefined` | no | — |  |
-| accessibilityLabelledBy | `string \| string[] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `(string \| undefined) \| (Array<string> \| undefined) \| undefined` | no | — |  |
 | accessibilityLanguage | `string \| undefined` | no | — |  |
 | accessibilityLargeContentTitle | `string \| undefined` | no | — |  |
-| accessibilityLiveRegion | `'none' \| 'polite' \| 'assertive' \| undefined` | no | — |  |
+| accessibilityLiveRegion | `("none" \| "polite" \| "assertive") \| undefined` | no | — |  |
 | accessibilityRespondsToUserInteraction | `boolean \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityShowsLargeContentViewer | `boolean \| undefined` | no | — |  |
@@ -1460,19 +1538,19 @@ Export paths: `src/index.ts`
 | alwaysBounceHorizontal | `boolean \| undefined` | no | — |  |
 | alwaysBounceVertical | `boolean \| undefined` | no | — |  |
 | aria-busy | `boolean \| undefined` | no | — |  |
-| aria-checked | `boolean \| 'mixed' \| undefined` | no | — |  |
+| aria-checked | `(boolean \| undefined) \| "mixed" \| undefined` | no | — |  |
 | aria-disabled | `boolean \| undefined` | no | — |  |
 | aria-expanded | `boolean \| undefined` | no | — |  |
 | aria-hidden | `boolean \| undefined` | no | — |  |
 | aria-label | `string \| undefined` | no | — |  |
 | aria-labelledby | `string \| undefined` | no | — |  |
-| aria-live | `('polite' \| 'assertive' \| 'off') \| undefined` | no | — |  |
+| aria-live | `("polite" \| "assertive" \| "off") \| undefined` | no | — |  |
 | aria-modal | `boolean \| undefined` | no | — |  |
 | aria-selected | `boolean \| undefined` | no | — |  |
-| aria-valuemax | `AccessibilityValue['max'] \| undefined` | no | — |  |
-| aria-valuemin | `AccessibilityValue['min'] \| undefined` | no | — |  |
-| aria-valuenow | `AccessibilityValue['now'] \| undefined` | no | — |  |
-| aria-valuetext | `AccessibilityValue['text'] \| undefined` | no | — |  |
+| aria-valuemax | `AccessibilityValue["max"] \| undefined` | no | — |  |
+| aria-valuemin | `AccessibilityValue["min"] \| undefined` | no | — |  |
+| aria-valuenow | `AccessibilityValue["now"] \| undefined` | no | — |  |
+| aria-valuetext | `AccessibilityValue["text"] \| undefined` | no | — |  |
 | automaticallyAdjustContentInsets | `boolean \| undefined` | no | — |  |
 | automaticallyAdjustKeyboardInsets | `boolean \| undefined` | no | — |  |
 | automaticallyAdjustsScrollIndicatorInsets | `boolean \| undefined` | no | — |  |
@@ -1489,20 +1567,20 @@ Export paths: `src/index.ts`
 | collapsableChildren | `boolean \| undefined` | no | — |  |
 | columnGap | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | contentContainerStyle | `StyleProp<ViewStyle> \| undefined` | no | — |  |
-| contentInset | `Insets \| undefined` | no | — |  |
-| contentInsetAdjustmentBehavior | `\| 'automatic'
-    \| 'scrollableAxes'
-    \| 'never'
-    \| 'always'
-    \| undefined` | no | — |  |
+| contentInset | `EdgeInsetsProp \| undefined` | no | — |  |
+| contentInsetAdjustmentBehavior | `("automatic" \| "scrollableAxes" \| "never" \| "always") \| undefined` | no | — |  |
 | contentOffset | `PointProp \| undefined` | no | — |  |
-| decelerationRate | `'fast' \| 'normal' \| number \| undefined` | no | — |  |
+| decelerationRate | `DecelerationRateType \| undefined` | no | — |  |
 | direction | `Responsive<'row' \| 'column'> \| undefined` | no | — |  |
 | directionalLockEnabled | `boolean \| undefined` | no | — |  |
 | disableIntervalMomentum | `boolean \| undefined` | no | — |  |
 | disableScrollViewPanResponder | `boolean \| undefined` | no | — |  |
 | endFillColor | `ColorValue \| undefined` | no | — |  |
-| fadingEdgeLength | `number \| {start: number; end: number} \| undefined` | no | — |  |
+| experimental_endDraggingSensitivityMultiplier | `number \| undefined` | no | — |  |
+| fadingEdgeLength | `(number \| undefined) \| {
+    start: number;
+    end: number;
+  } \| undefined` | no | — |  |
 | flex | `Responsive<number> \| undefined` | no | — |  |
 | flexBasis | `Responsive<number \| string> \| undefined` | no | — |  |
 | flexGrow | `Responsive<number> \| undefined` | no | — |  |
@@ -1511,32 +1589,24 @@ Export paths: `src/index.ts`
 | gap | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | hasTVPreferredFocus | `boolean \| undefined` | no | — |  |
 | height | `Responsive<number \| string> \| undefined` | no | — |  |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — |  |
-| horizontal | `boolean \| null \| undefined` | no | — |  |
+| hitSlop | `EdgeInsetsOrSizeProp \| undefined` | no | — |  |
+| horizontal | `boolean \| undefined` | no | — |  |
 | id | `string \| undefined` | no | — |  |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — |  |
-| indicatorStyle | `'default' \| 'black' \| 'white' \| undefined` | no | — |  |
-| innerViewRef | `React.RefObject<View> \| undefined` | no | — |  |
+| importantForAccessibility | `("auto" \| "yes" \| "no" \| "no-hide-descendants") \| undefined` | no | — |  |
+| indicatorStyle | `("default" \| "black" \| "white") \| undefined` | no | — |  |
+| innerViewRef | `React.Ref<InnerViewInstance> \| undefined` | no | — |  |
 | invertStickyHeaders | `boolean \| undefined` | no | — |  |
-| isTVSelectable | `boolean \| undefined` | no | — |  |
 | justify | `Responsive<
     'flex-start' \| 'center' \| 'flex-end' \| 'space-between' \| 'space-around' \| 'space-evenly'
   > \| undefined` | no | — |  |
-| keyboardDismissMode | `'none' \| 'interactive' \| 'on-drag' \| undefined` | no | — |  |
-| keyboardShouldPersistTaps | `\| boolean
-    \| 'always'
-    \| 'never'
-    \| 'handled'
-    \| undefined` | no | — |  |
+| keyboardDismissMode | `("none" \| "on-drag" \| "interactive") \| undefined` | no | — |  |
+| keyboardShouldPersistTaps | `("always" \| "never" \| "handled") \| undefined` | no | — |  |
 | left | `Responsive<number> \| undefined` | no | — |  |
 | m | `Responsive<SpaceValue> \| undefined` | no | — |  |
-| maintainVisibleContentPosition | `\| null
-    \| {
-        autoscrollToTopThreshold?: number \| null \| undefined;
-        minIndexForVisible: number;
-      }
-    \| undefined` | no | — |  |
+| maintainVisibleContentPosition | `Readonly<{
+    minIndexForVisible: number;
+    autoscrollToTopThreshold?: number \| undefined;
+  }> \| undefined` | no | — |  |
 | maxHeight | `Responsive<number \| string> \| undefined` | no | — |  |
 | maximumZoomScale | `number \| undefined` | no | — |  |
 | maxWidth | `Responsive<number \| string> \| undefined` | no | — |  |
@@ -1549,83 +1619,101 @@ Export paths: `src/index.ts`
 | mt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | mx | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | my | `Responsive<SpaceValue> \| undefined` | no | — |  |
+| nativeBackgroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
+| nativeForegroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
 | nativeID | `string \| undefined` | no | — |  |
 | needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — |  |
 | nestedScrollEnabled | `boolean \| undefined` | no | — |  |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — |  |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — |  |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — |  |
-| onBlur | `((e: BlurEvent) => void) \| null \| undefined` | no | — |  |
-| onContentSizeChange | `\| ((contentWidth: number, contentHeight: number) => void)
-    \| undefined` | no | — |  |
-| onFocus | `((e: FocusEvent) => void) \| null \| undefined` | no | — |  |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — |  |
-| onMagicTap | `(() => void) \| undefined` | no | — |  |
-| onMomentumScrollBegin | `\| ((event: NativeSyntheticEvent<NativeScrollEvent>) => void)
-    \| undefined` | no | — |  |
-| onMomentumScrollEnd | `\| ((event: NativeSyntheticEvent<NativeScrollEvent>) => void)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| nextFocusDown | `number \| undefined` | no | — |  |
+| nextFocusForward | `number \| undefined` | no | — |  |
+| nextFocusLeft | `number \| undefined` | no | — |  |
+| nextFocusRight | `number \| undefined` | no | — |  |
+| nextFocusUp | `number \| undefined` | no | — |  |
+| onAccessibilityAction | `((event: AccessibilityActionEvent) => unknown) \| undefined` | no | — |  |
+| onAccessibilityEscape | `(() => unknown) \| undefined` | no | — |  |
+| onAccessibilityTap | `(() => unknown) \| undefined` | no | — |  |
+| onBlur | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onBlurCapture | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onClick | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onClickCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onContentSizeChange | `((contentWidth: number, contentHeight: number) => void) \| undefined` | no | — |  |
+| onFocus | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onFocusCapture | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onKeyboardDidHide | `((event: KeyboardEvent) => void) \| undefined` | no | — |  |
+| onKeyboardDidShow | `((event: KeyboardEvent) => void) \| undefined` | no | — |  |
+| onKeyboardWillHide | `((event: KeyboardEvent) => void) \| undefined` | no | — |  |
+| onKeyboardWillShow | `((event: KeyboardEvent) => void) \| undefined` | no | — |  |
+| onKeyDown | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyDownCapture | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyUp | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onKeyUpCapture | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onLayout | `((event: LayoutChangeEvent) => unknown) \| undefined` | no | — |  |
+| onLostPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onLostPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onMagicTap | `(() => unknown) \| undefined` | no | — |  |
+| onMomentumScrollBegin | `((event: ScrollEvent) => void) \| undefined` | no | — |  |
+| onMomentumScrollEnd | `((event: ScrollEvent) => void) \| undefined` | no | — |  |
+| onMouseEnter | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMouseLeave | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMoveShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onMoveShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onPointerCancel | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerCancelCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDown | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDownCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onScroll | `\| ((event: NativeSyntheticEvent<NativeScrollEvent>) => void)
-    \| undefined` | no | — |  |
-| onScrollAnimationEnd | `(() => void) \| undefined` | no | — |  |
-| onScrollBeginDrag | `\| ((event: NativeSyntheticEvent<NativeScrollEvent>) => void)
-    \| undefined` | no | — |  |
-| onScrollEndDrag | `\| ((event: NativeSyntheticEvent<NativeScrollEvent>) => void)
-    \| undefined` | no | — |  |
-| onScrollToTop | `\| ((event: NativeSyntheticEvent<NativeScrollEvent>) => void)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onPointerOut | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOutCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOver | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
+| onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderReject | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderRelease | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminate | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminationRequest | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onScroll | `((event: ScrollEvent) => void) \| undefined` | no | — |  |
+| onScrollBeginDrag | `((event: ScrollEvent) => void) \| undefined` | no | — |  |
+| onScrollEndDrag | `((event: ScrollEvent) => void) \| undefined` | no | — |  |
+| onScrollToTop | `((event: ScrollEvent) => void) \| undefined` | no | — |  |
+| onStartShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onTouchCancel | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchCancelCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEndCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMoveCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStartCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | opacity | `Responsive<number> \| undefined` | no | — |  |
 | overflow | `Responsive<ViewStyle['overflow']> \| undefined` | no | — |  |
-| overScrollMode | `'auto' \| 'always' \| 'never' \| undefined` | no | — |  |
+| overScrollMode | `("auto" \| "always" \| "never") \| undefined` | no | — |  |
 | p | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | pagingEnabled | `boolean \| undefined` | no | — |  |
 | pb | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | persistentScrollbar | `boolean \| undefined` | no | — |  |
 | pinchGestureEnabled | `boolean \| undefined` | no | — |  |
 | pl | `Responsive<SpaceValue> \| undefined` | no | — |  |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — |  |
+| pointerEvents | `("auto" \| "box-none" \| "box-only" \| "none") \| undefined` | no | — |  |
 | position | `Responsive<ViewStyle['position']> \| undefined` | no | — |  |
 | pr | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | pt | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | px | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | py | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | radius | `Responsive<RadiusValue> \| undefined` | no | — |  |
-| refreshControl | `React.ReactElement<RefreshControlProps> \| undefined` | no | — |  |
+| refreshControl | `React.JSX.Element \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | right | `Responsive<number> \| undefined` | no | — |  |
@@ -1634,31 +1722,27 @@ Export paths: `src/index.ts`
 | screenReaderFocusable | `boolean \| undefined` | no | — |  |
 | scrollEnabled | `boolean \| undefined` | no | — |  |
 | scrollEventThrottle | `number \| undefined` | no | — |  |
-| scrollIndicatorInsets | `Insets \| undefined` | no | — |  |
+| scrollIndicatorInsets | `EdgeInsetsProp \| undefined` | no | — |  |
 | scrollPerfTag | `string \| undefined` | no | — |  |
 | scrollsChildToFocus | `boolean \| undefined` | no | — |  |
 | scrollsToTop | `boolean \| undefined` | no | — |  |
 | scrollToOverflowEnabled | `boolean \| undefined` | no | — |  |
-| scrollViewRef | `React.RefObject<ScrollView> \| undefined` | no | — |  |
+| scrollViewRef | `React.Ref<ScrollViewInstance> \| undefined` | no | — |  |
 | shouldRasterizeIOS | `boolean \| undefined` | no | — |  |
 | showsHorizontalScrollIndicator | `boolean \| undefined` | no | — |  |
 | showsVerticalScrollIndicator | `boolean \| undefined` | no | — |  |
-| snapToAlignment | `'start' \| 'center' \| 'end' \| undefined` | no | — |  |
+| snapToAlignment | `("start" \| "center" \| "end") \| undefined` | no | — |  |
 | snapToEnd | `boolean \| undefined` | no | — |  |
 | snapToInterval | `number \| undefined` | no | — |  |
-| snapToOffsets | `number[] \| undefined` | no | — |  |
+| snapToOffsets | `ReadonlyArray<number> \| undefined` | no | — |  |
 | snapToStart | `boolean \| undefined` | no | — |  |
-| StickyHeaderComponent | `React.ComponentType<any> \| undefined` | no | — |  |
+| StickyHeaderComponent | `StickyHeaderComponentType \| undefined` | no | — |  |
 | stickyHeaderHiddenOnScroll | `boolean \| undefined` | no | — |  |
-| stickyHeaderIndices | `number[] \| undefined` | no | — |  |
+| stickyHeaderIndices | `ReadonlyArray<number> \| undefined` | no | — |  |
 | style | `StyleProp<ViewStyle> \| undefined` | no | — |  |
 | tabIndex | `0 \| -1 \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
 | top | `Responsive<number> \| undefined` | no | — |  |
-| tvParallaxMagnification | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — |  |
-| tvParallaxTiltAngle | `number \| undefined` | no | — |  |
 | width | `Responsive<number \| string> \| undefined` | no | — |  |
 | wrap | `Responsive<'nowrap' \| 'wrap'> \| undefined` | no | — |  |
 | zIndex | `Responsive<number> \| undefined` | no | — |  |
@@ -2007,10 +2091,10 @@ Export paths: `src/index.ts`
 | accessibilityHint | `string \| undefined` | no | — |  |
 | accessibilityIgnoresInvertColors | `boolean \| undefined` | no | — |  |
 | accessibilityLabel | `string \| undefined` | no | — |  |
-| accessibilityLabelledBy | `string \| string[] \| undefined` | no | — |  |
+| accessibilityLabelledBy | `(string \| undefined) \| (Array<string> \| undefined) \| undefined` | no | — |  |
 | accessibilityLanguage | `string \| undefined` | no | — |  |
 | accessibilityLargeContentTitle | `string \| undefined` | no | — |  |
-| accessibilityLiveRegion | `'none' \| 'polite' \| 'assertive' \| undefined` | no | — |  |
+| accessibilityLiveRegion | `("none" \| "polite" \| "assertive") \| undefined` | no | — |  |
 | accessibilityRespondsToUserInteraction | `boolean \| undefined` | no | — |  |
 | accessibilityRole | `AccessibilityRole \| undefined` | no | — |  |
 | accessibilityShowsLargeContentViewer | `boolean \| undefined` | no | — |  |
@@ -2020,124 +2104,47 @@ Export paths: `src/index.ts`
 | accessible | `boolean \| undefined` | no | — |  |
 | allowFontScaling | `boolean \| undefined` | no | — |  |
 | aria-busy | `boolean \| undefined` | no | — |  |
-| aria-checked | `boolean \| 'mixed' \| undefined` | no | — |  |
+| aria-checked | `(boolean \| undefined) \| "mixed" \| undefined` | no | — |  |
 | aria-disabled | `boolean \| undefined` | no | — |  |
 | aria-expanded | `boolean \| undefined` | no | — |  |
 | aria-hidden | `boolean \| undefined` | no | — |  |
 | aria-label | `string \| undefined` | no | — |  |
 | aria-labelledby | `string \| undefined` | no | — |  |
-| aria-live | `('polite' \| 'assertive' \| 'off') \| undefined` | no | — |  |
+| aria-live | `("polite" \| "assertive" \| "off") \| undefined` | no | — |  |
 | aria-modal | `boolean \| undefined` | no | — |  |
 | aria-selected | `boolean \| undefined` | no | — |  |
-| aria-valuemax | `AccessibilityValue['max'] \| undefined` | no | — |  |
-| aria-valuemin | `AccessibilityValue['min'] \| undefined` | no | — |  |
-| aria-valuenow | `AccessibilityValue['now'] \| undefined` | no | — |  |
-| aria-valuetext | `AccessibilityValue['text'] \| undefined` | no | — |  |
-| autoCapitalize | `'none' \| 'sentences' \| 'words' \| 'characters' \| undefined` | no | — |  |
-| autoComplete | `\| '2fa-app-otp'
-    \| 'additional-name'
-    \| 'address-line1'
-    \| 'address-line2'
-    \| 'birthdate-day'
-    \| 'birthdate-full'
-    \| 'birthdate-month'
-    \| 'birthdate-year'
-    \| 'cc-csc'
-    \| 'cc-exp'
-    \| 'cc-exp-day'
-    \| 'cc-exp-month'
-    \| 'cc-exp-year'
-    \| 'cc-number'
-    \| 'cc-name'
-    \| 'cc-given-name'
-    \| 'cc-middle-name'
-    \| 'cc-family-name'
-    \| 'cc-type'
-    \| 'country'
-    \| 'current-password'
-    \| 'email'
-    \| 'email-otp'
-    \| 'flight-confirmation-code'
-    \| 'flight-number'
-    \| 'family-name'
-    \| 'gender'
-    \| 'gift-card-number'
-    \| 'gift-card-pin'
-    \| 'given-name'
-    \| 'honorific-prefix'
-    \| 'honorific-suffix'
-    \| 'loyalty-account-number'
-    \| 'name'
-    \| 'name-family'
-    \| 'name-given'
-    \| 'name-middle'
-    \| 'name-middle-initial'
-    \| 'name-prefix'
-    \| 'name-suffix'
-    \| 'new-password'
-    \| 'nickname'
-    \| 'one-time-code'
-    \| 'organization'
-    \| 'organization-title'
-    \| 'password'
-    \| 'password-new'
-    \| 'postal-address'
-    \| 'postal-address-country'
-    \| 'postal-address-dependent-locality'
-    \| 'postal-address-extended'
-    \| 'postal-address-extended-postal-code'
-    \| 'postal-address-locality'
-    \| 'postal-address-region'
-    \| 'postal-address-unit'
-    \| 'postal-code'
-    \| 'promo-code'
-    \| 'street-address'
-    \| 'sms-otp'
-    \| 'tel'
-    \| 'tel-country-code'
-    \| 'tel-national'
-    \| 'tel-device'
-    \| 'upi-vpa'
-    \| 'url'
-    \| 'wifi-password'
-    \| 'username'
-    \| 'username-new'
-    \| 'off'
-    \| undefined` | no | — |  |
+| aria-valuemax | `AccessibilityValue["max"] \| undefined` | no | — |  |
+| aria-valuemin | `AccessibilityValue["min"] \| undefined` | no | — |  |
+| aria-valuenow | `AccessibilityValue["now"] \| undefined` | no | — |  |
+| aria-valuetext | `AccessibilityValue["text"] \| undefined` | no | — |  |
+| autoCapitalize | `AutoCapitalize \| undefined` | no | — |  |
+| autoComplete | `("2fa-app-otp" \| "additional-name" \| "address-line1" \| "address-line2" \| "birthdate-day" \| "birthdate-full" \| "birthdate-month" \| "birthdate-year" \| "cc-csc" \| "cc-exp" \| "cc-exp-day" \| "cc-exp-month" \| "cc-exp-year" \| "cc-number" \| "cc-name" \| "cc-given-name" \| "cc-middle-name" \| "cc-family-name" \| "cc-type" \| "country" \| "current-password" \| "email" \| "email-otp" \| "flight-confirmation-code" \| "flight-number" \| "family-name" \| "gender" \| "gift-card-number" \| "gift-card-pin" \| "given-name" \| "honorific-prefix" \| "honorific-suffix" \| "loyalty-account-number" \| "name" \| "name-family" \| "name-given" \| "name-middle" \| "name-middle-initial" \| "name-prefix" \| "name-suffix" \| "new-password" \| "nickname" \| "one-time-code" \| "organization" \| "organization-title" \| "password" \| "password-new" \| "postal-address" \| "postal-address-country" \| "postal-address-dependent-locality" \| "postal-address-extended" \| "postal-address-extended-postal-code" \| "postal-address-locality" \| "postal-address-region" \| "postal-address-unit" \| "postal-code" \| "promo-code" \| "street-address" \| "sms-otp" \| "tel" \| "tel-country-code" \| "tel-national" \| "tel-device" \| "upi-vpa" \| "url" \| "wifi-password" \| "username" \| "username-new" \| "off") \| undefined` | no | — |  |
 | autoCorrect | `boolean \| undefined` | no | — |  |
 | autoFocus | `boolean \| undefined` | no | — |  |
 | blurOnSubmit | `boolean \| undefined` | no | — |  |
 | caretHidden | `boolean \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
-| clearButtonMode | `\| 'never'
-    \| 'while-editing'
-    \| 'unless-editing'
-    \| 'always'
-    \| undefined` | no | — |  |
+| clearButtonMode | `("never" \| "while-editing" \| "unless-editing" \| "always") \| undefined` | no | — |  |
 | clearTextOnFocus | `boolean \| undefined` | no | — |  |
 | collapsable | `boolean \| undefined` | no | — |  |
 | collapsableChildren | `boolean \| undefined` | no | — |  |
 | contextMenuHidden | `boolean \| undefined` | no | — |  |
-| cursorColor | `ColorValue \| null \| undefined` | no | — |  |
-| dataDetectorTypes | `DataDetectorTypes \| DataDetectorTypes[] \| undefined` | no | — |  |
+| cursorColor | `ColorValue \| undefined` | no | — |  |
+| dataDetectorTypes | `(DataDetectorTypesType \| undefined) \| ReadonlyArray<DataDetectorTypesType> \| undefined` | no | — |  |
 | defaultValue | `string \| undefined` | no | — |  |
 | disabled | `boolean \| undefined` | no | — |  |
 | disableFullscreenUI | `boolean \| undefined` | no | — |  |
 | disableKeyboardShortcuts | `boolean \| undefined` | no | — |  |
 | enablesReturnKeyAutomatically | `boolean \| undefined` | no | — |  |
 | enterKeyHint | `EnterKeyHintTypeOptions \| undefined` | no | — |  |
+| experimental_acceptDragAndDropTypes | `ReadonlyArray<string> \| undefined` | no | — |  |
 | focusable | `boolean \| undefined` | no | — |  |
+| forwardedRef | `React.Ref<TextInputInstance> \| undefined` | no | — |  |
 | hasTVPreferredFocus | `boolean \| undefined` | no | — |  |
-| hitSlop | `null \| Insets \| number \| undefined` | no | — |  |
+| hitSlop | `EdgeInsetsOrSizeProp \| undefined` | no | — |  |
 | id | `string \| undefined` | no | — |  |
-| importantForAccessibility | `\| ('auto' \| 'yes' \| 'no' \| 'no-hide-descendants')
-    \| undefined` | no | — |  |
-| importantForAutofill | `\| 'auto'
-    \| 'no'
-    \| 'noExcludeDescendants'
-    \| 'yes'
-    \| 'yesExcludeDescendants'
-    \| undefined` | no | — |  |
+| importantForAccessibility | `("auto" \| "yes" \| "no" \| "no-hide-descendants") \| undefined` | no | — |  |
+| importantForAutofill | `("auto" \| "no" \| "noExcludeDescendants" \| "yes" \| "yesExcludeDescendants") \| undefined` | no | — |  |
 | inlineImageLeft | `string \| undefined` | no | — |  |
 | inlineImagePadding | `number \| undefined` | no | — |  |
 | inputAccessoryViewButtonLabel | `string \| undefined` | no | — |  |
@@ -2145,100 +2152,112 @@ Export paths: `src/index.ts`
 | inputMode | `InputModeOptions \| undefined` | no | — |  |
 | interactionPolicy | `InteractionPolicy \| undefined` | no | — |  |
 | invalid | `boolean \| undefined` | no | — |  |
-| isTVSelectable | `boolean \| undefined` | no | — |  |
-| keyboardAppearance | `'default' \| 'light' \| 'dark' \| undefined` | no | — |  |
+| keyboardAppearance | `("default" \| "light" \| "dark") \| undefined` | no | — |  |
 | keyboardType | `KeyboardTypeOptions \| undefined` | no | — |  |
 | leadingAccessory | `React.ReactNode \| undefined` | no | — |  |
-| lineBreakModeIOS | `\| 'wordWrapping'
-    \| 'char'
-    \| 'clip'
-    \| 'head'
-    \| 'middle'
-    \| 'tail'
-    \| undefined` | no | — |  |
-| lineBreakStrategyIOS | `\| 'none'
-    \| 'standard'
-    \| 'hangul-word'
-    \| 'push-out'
-    \| undefined` | no | — |  |
-| maxFontSizeMultiplier | `number \| null \| undefined` | no | — |  |
+| lineBreakModeIOS | `("wordWrapping" \| "char" \| "clip" \| "head" \| "middle" \| "tail") \| undefined` | no | — |  |
+| lineBreakStrategyIOS | `("none" \| "standard" \| "hangul-word" \| "push-out") \| undefined` | no | — |  |
+| maxFontSizeMultiplier | `number \| undefined` | no | — |  |
 | maxLength | `number \| undefined` | no | — |  |
 | multiline | `boolean \| undefined` | no | — |  |
+| nativeBackgroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
+| nativeForegroundAndroid | `AndroidDrawable \| undefined` | no | — |  |
 | nativeID | `string \| undefined` | no | — |  |
 | needsOffscreenAlphaCompositing | `boolean \| undefined` | no | — |  |
+| nextFocusDown | `number \| undefined` | no | — |  |
+| nextFocusForward | `number \| undefined` | no | — |  |
+| nextFocusLeft | `number \| undefined` | no | — |  |
+| nextFocusRight | `number \| undefined` | no | — |  |
+| nextFocusUp | `number \| undefined` | no | — |  |
 | numberOfLines | `number \| undefined` | no | — |  |
-| onAccessibilityAction | `\| ((event: AccessibilityActionEvent) => void)
-    \| undefined` | no | — |  |
-| onAccessibilityEscape | `(() => void) \| undefined` | no | — |  |
-| onAccessibilityTap | `(() => void) \| undefined` | no | — |  |
-| onBlur | `((e: BlurEvent) => void) \| undefined` | no | — |  |
-| onChange | `((e: TextInputChangeEvent) => void) \| undefined` | no | — |  |
+| onAccessibilityAction | `((event: AccessibilityActionEvent) => unknown) \| undefined` | no | — |  |
+| onAccessibilityEscape | `(() => unknown) \| undefined` | no | — |  |
+| onAccessibilityTap | `(() => unknown) \| undefined` | no | — |  |
+| onBlur | `((e: TextInputBlurEvent) => unknown) \| undefined` | no | — |  |
+| onBlurCapture | `((event: BlurEvent) => void) \| undefined` | no | — |  |
+| onChange | `((e: TextInputChangeEvent) => unknown) \| undefined` | no | — |  |
 | onChangeText | `((text: string) => void) \| undefined` | no | — |  |
-| onContentSizeChange | `\| ((e: TextInputContentSizeChangeEvent) => void)
-    \| undefined` | no | — |  |
-| onEndEditing | `((e: TextInputEndEditingEvent) => void) \| undefined` | no | — |  |
-| onFocus | `((e: FocusEvent) => void) \| undefined` | no | — |  |
-| onKeyPress | `((e: TextInputKeyPressEvent) => void) \| undefined` | no | — |  |
-| onLayout | `((event: LayoutChangeEvent) => void) \| undefined` | no | — |  |
-| onMagicTap | `(() => void) \| undefined` | no | — |  |
-| onMoveShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onMoveShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onPointerCancel | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerCancelCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDown | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerDownCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onClick | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onClickCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
+| onContentSizeChange | `((e: TextInputContentSizeChangeEvent) => unknown) \| undefined` | no | — |  |
+| onEndEditing | `((e: TextInputEndEditingEvent) => unknown) \| undefined` | no | — |  |
+| onFocus | `((e: TextInputFocusEvent) => unknown) \| undefined` | no | — |  |
+| onFocusCapture | `((event: FocusEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onGotPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onKeyDown | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyDownCapture | `((event: KeyDownEvent) => void) \| undefined` | no | — |  |
+| onKeyPress | `((e: TextInputKeyPressEvent) => unknown) \| undefined` | no | — |  |
+| onKeyUp | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onKeyUpCapture | `((event: KeyUpEvent) => void) \| undefined` | no | — |  |
+| onLayout | `((event: LayoutChangeEvent) => unknown) \| undefined` | no | — |  |
+| onLostPointerCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onLostPointerCaptureCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onMagicTap | `(() => unknown) \| undefined` | no | — |  |
+| onMouseEnter | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMouseLeave | `((event: MouseEvent) => void) \| undefined` | no | — |  |
+| onMoveShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onMoveShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onPointerCancel | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerCancelCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDown | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerDownCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnter | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerEnterCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeave | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerLeaveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMove | `((event: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerMoveCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUp | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPointerUpCapture | `((event: PointerEvent) => void) \| undefined` | no | — |  |
-| onPress | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no | — |  |
-| onPressIn | `((e: NativeSyntheticEvent<NativeTouchEvent>) => void) \| undefined` | no | — |  |
-| onPressOut | `\| ((e: NativeSyntheticEvent<NativeTouchEvent>) => void)
-    \| undefined` | no | — |  |
-| onResponderEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderGrant | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderReject | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderRelease | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminate | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onResponderTerminationRequest | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onScroll | `((e: TextInputScrollEvent) => void) \| undefined` | no | — |  |
-| onSelectionChange | `((e: TextInputSelectionChangeEvent) => void) \| undefined` | no | — |  |
-| onStartShouldSetResponder | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onStartShouldSetResponderCapture | `\| ((event: GestureResponderEvent) => boolean)
-    \| undefined` | no | — |  |
-| onSubmitEditing | `((e: TextInputSubmitEditingEvent) => void) \| undefined` | no | — |  |
-| onTouchCancel | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEnd | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchEndCapture | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchMove | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| onTouchStart | `((event: GestureResponderEvent) => void) \| undefined` | no | — |  |
-| passwordRules | `string \| null \| undefined` | no | — |  |
+| onPointerOut | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOutCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOver | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onPress | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onPressIn | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onPressOut | `((event: GestureResponderEvent) => unknown) \| undefined` | no | — |  |
+| onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
+| onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderReject | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderRelease | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminate | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onResponderTerminationRequest | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onScroll | `((e: ScrollEvent) => unknown) \| undefined` | no | — |  |
+| onSelectionChange | `((e: TextInputSelectionChangeEvent) => unknown) \| undefined` | no | — |  |
+| onStartShouldSetResponder | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onStartShouldSetResponderCapture | `((e: GestureResponderEvent) => boolean) \| undefined` | no | — |  |
+| onSubmitEditing | `((e: TextInputSubmitEditingEvent) => unknown) \| undefined` | no | — |  |
+| onTouchCancel | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchCancelCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchEndCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchMoveCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStart | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| onTouchStartCapture | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
+| passwordRules | `PasswordRules \| undefined` | no | — |  |
 | placeholder | `string \| undefined` | no | — |  |
-| pointerEvents | `'box-none' \| 'none' \| 'box-only' \| 'auto' \| undefined` | no | — |  |
+| pointerEvents | `("auto" \| "box-none" \| "box-only" \| "none") \| undefined` | no | — |  |
 | readOnly | `boolean \| undefined` | no | — |  |
-| rejectResponderTermination | `boolean \| null \| undefined` | no | — |  |
+| rejectResponderTermination | `boolean \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | returnKeyLabel | `string \| undefined` | no | — |  |
 | returnKeyType | `ReturnKeyTypeOptions \| undefined` | no | — |  |
 | role | `Role \| undefined` | no | — |  |
+| rows | `number \| undefined` | no | — |  |
 | screenReaderFocusable | `boolean \| undefined` | no | — |  |
 | scrollEnabled | `boolean \| undefined` | no | — |  |
 | secureTextEntry | `boolean \| undefined` | no | — |  |
-| selection | `{start: number; end?: number \| undefined} \| undefined` | no | — |  |
+| selection | `Readonly<{
+    start: number;
+    end?: number \| undefined;
+  }> \| undefined` | no | — |  |
 | selectionColor | `ColorValue \| undefined` | no | — |  |
-| selectionHandleColor | `ColorValue \| null \| undefined` | no | — |  |
-| selectionState | `DocumentSelectionState \| undefined` | no | — |  |
+| selectionHandleColor | `ColorValue \| undefined` | no | — |  |
 | selectTextOnFocus | `boolean \| undefined` | no | — |  |
 | shouldRasterizeIOS | `boolean \| undefined` | no | — |  |
 | showSoftInputOnFocus | `boolean \| undefined` | no | — |  |
@@ -2249,64 +2268,13 @@ Export paths: `src/index.ts`
 | submitBehavior | `SubmitBehavior \| undefined` | no | — |  |
 | tabIndex | `0 \| -1 \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
-| textAlign | `'left' \| 'center' \| 'right' \| undefined` | no | — |  |
-| textAlignVertical | `'auto' \| 'top' \| 'bottom' \| 'center' \| undefined` | no | — |  |
-| textBreakStrategy | `'simple' \| 'highQuality' \| 'balanced' \| undefined` | no | — |  |
-| textContentType | `\| 'none'
-    \| 'URL'
-    \| 'addressCity'
-    \| 'addressCityAndState'
-    \| 'addressState'
-    \| 'countryName'
-    \| 'creditCardNumber'
-    \| 'creditCardExpiration'
-    \| 'creditCardExpirationMonth'
-    \| 'creditCardExpirationYear'
-    \| 'creditCardSecurityCode'
-    \| 'creditCardType'
-    \| 'creditCardName'
-    \| 'creditCardGivenName'
-    \| 'creditCardMiddleName'
-    \| 'creditCardFamilyName'
-    \| 'emailAddress'
-    \| 'familyName'
-    \| 'fullStreetAddress'
-    \| 'givenName'
-    \| 'jobTitle'
-    \| 'location'
-    \| 'middleName'
-    \| 'name'
-    \| 'namePrefix'
-    \| 'nameSuffix'
-    \| 'nickname'
-    \| 'organizationName'
-    \| 'postalCode'
-    \| 'streetAddressLine1'
-    \| 'streetAddressLine2'
-    \| 'sublocality'
-    \| 'telephoneNumber'
-    \| 'username'
-    \| 'password'
-    \| 'newPassword'
-    \| 'oneTimeCode'
-    \| 'birthdate'
-    \| 'birthdateDay'
-    \| 'birthdateMonth'
-    \| 'birthdateYear'
-    \| 'cellularEID'
-    \| 'cellularIMEI'
-    \| 'dateTime'
-    \| 'flightNumber'
-    \| 'shipmentTrackingNumber'
-    \| undefined` | no | — |  |
+| textAlign | `("left" \| "center" \| "right" \| "start" \| "end") \| undefined` | no | — |  |
+| textAlignVertical | `("auto" \| "top" \| "bottom" \| "center") \| undefined` | no | — |  |
+| textBreakStrategy | `("simple" \| "highQuality" \| "balanced") \| undefined` | no | — |  |
+| textContentType | `TextContentType \| undefined` | no | — |  |
 | trailingAccessory | `React.ReactNode \| undefined` | no | — |  |
-| tvParallaxMagnification | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceX | `number \| undefined` | no | — |  |
-| tvParallaxShiftDistanceY | `number \| undefined` | no | — |  |
-| tvParallaxTiltAngle | `number \| undefined` | no | — |  |
 | underlineColorAndroid | `ColorValue \| undefined` | no | — |  |
 | value | `string \| undefined` | no | — |  |
-| verticalAlign | `'auto' \| 'top' \| 'bottom' \| 'middle' \| undefined` | no | — |  |
 
 ## ThemeProvider
 
