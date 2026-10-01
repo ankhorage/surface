@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.44
+
+### Patch Changes
+
+- f1ddcec: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`, `@ankhorage/utility`.
+
 ## 9.1.43
 
 ### Patch Changes
