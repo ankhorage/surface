@@ -70,30 +70,12 @@ function resolveDimensionStyles(
   props: ViewStyleProps,
 ): ViewStyle {
   return {
-    width: resolveDimension(
-      theme,
-      resolveResponsive(props.width, breakpoint),
-    ),
-    height: resolveDimension(
-      theme,
-      resolveResponsive(props.height, breakpoint),
-    ),
-    minWidth: resolveDimension(
-      theme,
-      resolveResponsive(props.minWidth, breakpoint),
-    ),
-    maxWidth: resolveDimension(
-      theme,
-      resolveResponsive(props.maxWidth, breakpoint),
-    ),
-    minHeight: resolveDimension(
-      theme,
-      resolveResponsive(props.minHeight, breakpoint),
-    ),
-    maxHeight: resolveDimension(
-      theme,
-      resolveResponsive(props.maxHeight, breakpoint),
-    ),
+    width: resolveDimension(theme, resolveResponsive(props.width, breakpoint)),
+    height: resolveDimension(theme, resolveResponsive(props.height, breakpoint)),
+    minWidth: resolveDimension(theme, resolveResponsive(props.minWidth, breakpoint)),
+    maxWidth: resolveDimension(theme, resolveResponsive(props.maxWidth, breakpoint)),
+    minHeight: resolveDimension(theme, resolveResponsive(props.minHeight, breakpoint)),
+    maxHeight: resolveDimension(theme, resolveResponsive(props.maxHeight, breakpoint)),
   };
 }
 
