@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.38
+
+### Patch Changes
+
+- 03ead05: Update Renovate-managed workflows.
+- 32319c5: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
+
 ## 9.1.37
 
 ### Patch Changes
