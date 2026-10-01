@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.21
+
+### Patch Changes
+
+- d103cf4: Update dependencies: `@ankhorage/contracts`, `@ankhorage/utility`.
+
 ## 9.1.20
 
 ### Patch Changes
