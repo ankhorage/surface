@@ -47,7 +47,7 @@ export function PopoverOverlay({
 }
 
 interface PopoverOverlayProps {
-  anchorRef: React.RefObject<View | null>;
+  anchorRef: React.RefObject<React.ElementRef<typeof View> | null>;
   children?: React.ReactNode;
   closeOnOutsidePress: boolean;
   offset: number;
