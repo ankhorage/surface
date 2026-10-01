@@ -3,7 +3,7 @@ import {
   type LayoutChangeEvent,
   type LayoutRectangle,
   useWindowDimensions,
-  type View,
+  View,
 } from 'react-native';
 
 import type { PopoverPlacement } from '../../../../types/popover';
@@ -44,7 +44,7 @@ export function usePopoverLayout({ anchorRef, offset, open, placement }: UsePopo
 }
 
 interface UsePopoverLayoutInput {
-  anchorRef: React.RefObject<View | null>;
+  anchorRef: React.RefObject<React.ElementRef<typeof View> | null>;
   offset: number;
   open: boolean;
   placement: PopoverPlacement;
