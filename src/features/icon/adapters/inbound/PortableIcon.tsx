@@ -72,7 +72,7 @@ function resolveSvgIconUri(source: SurfaceImageSource): string | null {
 
 /*** Narrows a React Native image source to one URI-bearing source object. */
 function isImageUriSource(source: Exclude<SurfaceImageSource, string>): source is ImageURISource {
-  return typeof source === 'object' && source !== null && 'uri' in source;
+  return typeof source === 'object' && 'uri' in source;
 }
 
 /*** Renders URI-backed SVGs and bundled SVG image assets. */
