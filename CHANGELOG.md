@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.14
+
+### Patch Changes
+
+- 91a7891: Keep image-source narrowing and layout dimensions compatible across the supported React Native 0.86 and 0.87 lines.
+- 89e24aa: Update Renovate-managed workflows.
+
 ## 9.1.13
 
 ### Patch Changes

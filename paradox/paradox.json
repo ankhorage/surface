@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.1.13",
+      "value": "v9.1.14",
       "color": "cb3837"
     },
     {
@@ -36357,7 +36357,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/utils/resolveViewStyles.ts",
-        "line": 106,
+        "line": 110,
         "column": 1
       }
     },
@@ -36368,18 +36368,29 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/utils/resolveViewStyles.ts",
-        "line": 114,
+        "line": 118,
         "column": 1
       }
     },
     {
       "name": "resolveDimension",
-      "description": "Resolves spacing-token dimensions while preserving raw dimension strings.",
+      "description": "Resolves spacing-token dimensions into values portable across supported React Native lines.",
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/utils/resolveViewStyles.ts",
-        "line": 119,
+        "line": 125,
+        "column": 1
+      }
+    },
+    {
+      "name": "isPortableDimensionString",
+      "description": "Narrows raw dimension strings to the React Native values shared by supported versions.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/utils/resolveViewStyles.ts",
+        "line": 136,
         "column": 1
       }
     },
@@ -39947,6 +39958,12 @@
         "sourcePath": "src/utils/resolveViewStyles.ts"
       },
       {
+        "fromSymbol": "resolveLayoutStyles",
+        "toSymbol": "resolveDimension",
+        "callExpression": "resolveDimension",
+        "sourcePath": "src/utils/resolveViewStyles.ts"
+      },
+      {
         "fromSymbol": "resolveRadius",
         "toSymbol": "resolveToken",
         "callExpression": "resolveToken",
@@ -39962,6 +39979,12 @@
         "fromSymbol": "resolveDimension",
         "toSymbol": "resolveToken",
         "callExpression": "resolveToken",
+        "sourcePath": "src/utils/resolveViewStyles.ts"
+      },
+      {
+        "fromSymbol": "resolveDimension",
+        "toSymbol": "isPortableDimensionString",
+        "callExpression": "isPortableDimensionString",
         "sourcePath": "src/utils/resolveViewStyles.ts"
       },
       {
