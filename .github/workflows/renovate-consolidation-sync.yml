@@ -1,0 +1,34 @@
+name: Surface Renovate Consolidation Sync
+
+on:
+  push:
+    branches:
+      - fix/renovate-consolidation
+
+permissions:
+  contents: write
+
+jobs:
+  synchronize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/renovate-consolidation
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.2'
+      - name: Synchronize lockfile
+        run: bun install --lockfile-only
+      - name: Commit generated dependency state
+        run: |
+          if git diff --quiet -- bun.lock; then
+            echo "No lockfile changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bun.lock
+          git commit -m "fix(deps): synchronize consolidated Surface lockfile"
+          git push origin HEAD:fix/renovate-consolidation
