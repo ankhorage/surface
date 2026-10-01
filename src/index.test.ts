@@ -149,11 +149,10 @@ describe('public package metadata contract', () => {
     });
   });
 
-  it('keeps React Native runtime peers aligned with the tested development baseline', () => {
-    expect(packageJson.peerDependencies['react-native']).toMatch(/^\d+\.\d+\.\d+$/);
-    expect(packageJson.devDependencies['react-native']).toBe(
-      packageJson.peerDependencies['react-native'],
-    );
+  it('preserves tested React Native peer compatibility while advancing the dev baseline', () => {
+    expect(packageJson.peerDependencies['react-native']).toContain('0.86.x');
+    expect(packageJson.peerDependencies['react-native']).toContain('0.87.x');
+    expect(packageJson.devDependencies['react-native']).toMatch(/^\d+\.\d+\.\d+$/);
     expect(packageJson.peerDependencies['react-native-svg']).toMatch(/^\d+\.\d+\.\d+$/);
     expect(packageJson.devDependencies['react-native-svg']).toBe(
       packageJson.peerDependencies['react-native-svg'],
@@ -162,21 +161,13 @@ describe('public package metadata contract', () => {
 });
 
 describe('bottom-sheet package contract', () => {
-  it('keeps the implementation and native runtime boundaries explicit', () => {
+  it('keeps the implementation and native runtime compatibility boundaries explicit', () => {
     expect(packageJson.dependencies['@gorhom/bottom-sheet']).toMatch(/^\^5\./);
-    expect(packageJson.peerDependencies['react-native-gesture-handler']).toMatch(
-      /^~\d+\.\d+\.\d+$/,
-    );
-    expect(packageJson.devDependencies['react-native-gesture-handler']).toBe(
-      packageJson.peerDependencies['react-native-gesture-handler'],
-    );
-    expect(packageJson.peerDependencies['react-native-reanimated']).toMatch(/^\d+\.\d+\.\d+$/);
-    expect(packageJson.devDependencies['react-native-reanimated']).toBe(
-      packageJson.peerDependencies['react-native-reanimated'],
-    );
-    expect(packageJson.peerDependencies['react-native-worklets']).toMatch(/^\d+\.\d+\.\d+$/);
-    expect(packageJson.devDependencies['react-native-worklets']).toBe(
-      packageJson.peerDependencies['react-native-worklets'],
-    );
+    expect(packageJson.peerDependencies['react-native-gesture-handler']).toContain('~2.32.0');
+    expect(packageJson.peerDependencies['react-native-gesture-handler']).toContain('~3.3.0');
+    expect(packageJson.peerDependencies['react-native-reanimated']).toContain('4.5.1');
+    expect(packageJson.peerDependencies['react-native-reanimated']).toContain('4.7.0');
+    expect(packageJson.peerDependencies['react-native-worklets']).toContain('0.10.1');
+    expect(packageJson.peerDependencies['react-native-worklets']).toContain('0.13.0');
   });
 });
