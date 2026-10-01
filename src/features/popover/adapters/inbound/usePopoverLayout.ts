@@ -3,7 +3,7 @@ import {
   type LayoutChangeEvent,
   type LayoutRectangle,
   useWindowDimensions,
-  View,
+  type View,
 } from 'react-native';
 
 import type { PopoverPlacement } from '../../../../types/popover';
