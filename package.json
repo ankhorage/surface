@@ -44,8 +44,8 @@
   },
   "dependencies": {
     "@ankhorage/color-theory": "^0.3.1",
-    "@ankhorage/contracts": "^22.8.42",
-    "@ankhorage/utility": "^1.9.32",
+    "@ankhorage/contracts": "^22.8.44",
+    "@ankhorage/utility": "^1.9.33",
     "@gorhom/bottom-sheet": "^5.2.14"
   },
   "files": [
@@ -108,7 +108,7 @@
   },
   "devDependencies": {
     "@ankhorage/devtools": "^2.0.56",
-    "@ankhorage/paradox": "^0.2.14",
+    "@ankhorage/paradox": "^0.2.15",
     "@react-native-vector-icons/fontawesome": "^13.1.4",
     "@react-native-vector-icons/fontawesome5": "^13.1.4",
     "@react-native-vector-icons/fontawesome6": "^13.1.4",
