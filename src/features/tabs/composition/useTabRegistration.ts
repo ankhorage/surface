@@ -4,7 +4,13 @@ import type { Pressable } from 'react-native';
 import { useTabsContext } from './useTabsContext';
 
 /*** Registers one focusable tab with the owning Tabs context. */
-export function useTabRegistration({ disabled, value }: { disabled: boolean; value: string }) {
+export function useTabRegistration({
+  disabled,
+  value,
+}: {
+  disabled: boolean;
+  value: string;
+}): React.RefObject<React.ElementRef<typeof Pressable> | null> {
   const { registerTab, unregisterTab } = useTabsContext();
   const pressableRef = React.useRef<React.ElementRef<typeof Pressable> | null>(null);
 
