@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.52
+
+### Patch Changes
+
+- 00bfe0f: Update dependencies: `@types/node`.
+- b7e4a89: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`, `@ankhorage/utility`.
+
 ## 9.1.51
 
 ### Patch Changes
