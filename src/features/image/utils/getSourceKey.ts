@@ -1,4 +1,4 @@
-import type { ImageSourcePropType } from 'react-native';
+import type { ImageSourcePropType, ImageURISource } from 'react-native';
 
 import type { SurfaceImageSource } from '../../../types/image';
 
@@ -28,5 +28,10 @@ export function getSourceKey(source: SurfaceImageSource | null | undefined): str
 function getUriFromSource(source: ImageSourcePropType): string | undefined {
   if (Array.isArray(source)) return source[0]?.uri;
   if (typeof source === 'number') return undefined;
-  return source.uri;
+  return isImageUriSource(source) ? source.uri : undefined;
+}
+
+/*** Narrows a React Native image source to one URI-bearing source object. */
+function isImageUriSource(source: ImageSourcePropType): source is ImageURISource {
+  return typeof source === 'object' && source !== null && 'uri' in source;
 }
