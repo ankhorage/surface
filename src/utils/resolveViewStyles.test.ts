@@ -63,6 +63,23 @@ describe('resolveViewStyles visual and dimension styles', () => {
     expect(styles.maxWidth).toBe('50%');
   });
 
+  test('supports portable raw dimensions across React Native versions', () => {
+    const styles = resolveViewStyles(mockTheme, 'base', {
+      width: '50%',
+      height: 'auto',
+      flexBasis: '25%',
+    });
+    expect(styles.width).toBe('50%');
+    expect(styles.height).toBe('auto');
+    expect(styles.flexBasis).toBe('25%');
+  });
+
+  test('rejects raw dimensions that are not portable React Native values', () => {
+    expect(() => resolveViewStyles(mockTheme, 'base', { width: '100vh' })).toThrow(
+      'Unsupported Surface dimension',
+    );
+  });
+
   test('handles undefined props gracefully', () => {
     const styles = resolveViewStyles(mockTheme, 'base', {});
     expect(styles.padding).toBeUndefined();

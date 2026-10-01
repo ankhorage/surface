@@ -37,6 +37,6 @@ function isImageUriSource(source: ImageSourcePropType): source is ImageURISource
 }
 
 /*** Narrows a React Native image source to the readonly multi-source form. */
-function isImageUriSourceList(source: ImageSourcePropType): source is readonly ImageURISource[] {
+function isImageUriSourceList(source: ImageSourcePropType): source is ImageURISource[] {
   return Array.isArray(source);
 }

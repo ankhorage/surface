@@ -18,7 +18,7 @@ export function resolveViewStyles(
     ...resolveSpacingStyles(theme, breakpoint, props),
     ...resolveVisualStyles(theme, breakpoint, props),
     ...resolveDimensionStyles(theme, breakpoint, props),
-    ...resolveLayoutStyles(breakpoint, props),
+    ...resolveLayoutStyles(theme, breakpoint, props),
   };
 }
 
@@ -80,12 +80,16 @@ function resolveDimensionStyles(
 }
 
 /*** Resolves responsive flex, positioning, and visibility styles. */
-function resolveLayoutStyles(breakpoint: Breakpoint, props: ViewStyleProps): ViewStyle {
+function resolveLayoutStyles(
+  theme: SurfaceTheme,
+  breakpoint: Breakpoint,
+  props: ViewStyleProps,
+): ViewStyle {
   return {
     flex: resolveResponsive(props.flex, breakpoint),
     flexGrow: resolveResponsive(props.flexGrow, breakpoint),
     flexShrink: resolveResponsive(props.flexShrink, breakpoint),
-    flexBasis: resolveResponsive(props.flexBasis, breakpoint),
+    flexBasis: resolveDimension(theme, resolveResponsive(props.flexBasis, breakpoint)),
     flexDirection: resolveResponsive(props.direction, breakpoint),
     alignItems: resolveResponsive(props.align, breakpoint),
     justifyContent: resolveResponsive(props.justify, breakpoint),
@@ -115,10 +119,20 @@ function resolveColor(theme: SurfaceTheme, value: ColorValue | undefined): strin
   return resolveToken(theme.colors, value);
 }
 
-/*** Resolves spacing-token dimensions while preserving raw dimension strings. */
+type PortableDimensionValue = number | 'auto' | `${number}%`;
+
+/*** Resolves spacing-token dimensions into values portable across supported React Native lines. */
 function resolveDimension(
   theme: SurfaceTheme,
   value: number | string | undefined,
-): number | string | undefined {
-  return resolveToken(theme.spacing, value);
+): PortableDimensionValue | undefined {
+  const resolved = resolveToken(theme.spacing, value);
+  if (resolved === undefined || typeof resolved === 'number') return resolved;
+  if (isPortableDimensionString(resolved)) return resolved;
+  throw new Error(`Unsupported Surface dimension: ${JSON.stringify(resolved)}.`);
+}
+
+/*** Narrows raw dimension strings to the React Native values shared by supported versions. */
+function isPortableDimensionString(value: string): value is 'auto' | `${number}%` {
+  return value === 'auto' || /^-?(?:\d+(?:\.\d+)?|\.\d+)%$/u.test(value);
 }
