@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.59
+
+### Patch Changes
+
+- 1ed2009: Update Renovate-managed workflows.
+- b2c2a24: Update dependencies: `@ankhorage/contracts`, `@ankhorage/utility`.
+
 ## 9.1.58
 
 ### Patch Changes
