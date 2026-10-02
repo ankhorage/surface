@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.101
+
+### Patch Changes
+
+- bf3b547: Update dependencies: `react-native-reanimated`.
+
 ## 9.1.100
 
 ### Patch Changes
