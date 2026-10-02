@@ -44,8 +44,8 @@
   },
   "dependencies": {
     "@ankhorage/color-theory": "^0.3.1",
-    "@ankhorage/contracts": "^22.8.60",
-    "@ankhorage/utility": "^1.9.48",
+    "@ankhorage/contracts": "^22.8.61",
+    "@ankhorage/utility": "^1.9.51",
     "@gorhom/bottom-sheet": "^5.2.14"
   },
   "files": [
