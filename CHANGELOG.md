@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.69
+
+### Patch Changes
+
+- c1526a4: Update dependencies: `@ankhorage/contracts`.
+
 ## 9.1.68
 
 ### Patch Changes
