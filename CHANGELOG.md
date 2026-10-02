@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.111
+
+### Patch Changes
+
+- 93ad289: Update dependencies: `@ankhorage/devtools`.
+
 ## 9.1.110
 
 ### Patch Changes
