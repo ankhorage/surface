@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.61
+
+### Patch Changes
+
+- 977ae2a: Update Renovate-managed workflows.
+- 94206ea: Update dependencies: `@ankhorage/utility`.
+
 ## 9.1.60
 
 ### Patch Changes
