@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.78
+
+### Patch Changes
+
+- bac2dbc: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
+
 ## 9.1.77
 
 ### Patch Changes
