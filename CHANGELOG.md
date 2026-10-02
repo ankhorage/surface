@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.91
+
+### Patch Changes
+
+- cfbcaa7: Update dependencies: `@ankhorage/contracts`, `@ankhorage/utility`.
+
 ## 9.1.90
 
 ### Patch Changes
