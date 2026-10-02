@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.56
+
+### Patch Changes
+
+- 6d668d9: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`, `@ankhorage/utility`.
+
 ## 9.1.55
 
 ### Patch Changes
