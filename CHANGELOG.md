@@ -1,5 +1,12 @@
 # @ankhorage/surface
 
+## 9.1.112
+
+### Patch Changes
+
+- e742cfe: Update Renovate-managed workflows.
+- e78942b: Update dependencies: `@ankhorage/devtools`.
+
 ## 9.1.111
 
 ### Patch Changes
