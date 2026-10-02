@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.106
+
+### Patch Changes
+
+- cd865cb: Update dependencies: `@ankhorage/contracts`, `@ankhorage/utility`.
+
 ## 9.1.105
 
 ### Patch Changes
