@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.1.87",
+      "value": "v9.1.88",
       "color": "cb3837"
     },
     {
@@ -103,11 +103,6 @@
       "line": 6
     }
   ],
-  "readmeConfig": {
-    "language": "ts",
-    "code": "import { defineParadoxConfig } from '@ankhorage/paradox';\n\nexport default defineParadoxConfig({\n  mode: 'write',\n\n  docs: {\n    title: '@ankhorage/surface',\n    description:\n      'Cross-platform UI foundation for React Native and React Native Web. Provides theming, layout primitives, and core building blocks for modern apps.',\n  },\n\n  package: {\n    root: '.',\n    entrypoints: ['src/index.ts'],\n  },\n\n  output: {\n    dir: './paradox',\n  },\n});",
-    "sourcePath": "paradox.config.ts"
-  },
   "config": null,
   "entrypoints": [
     "src/index.ts"
