@@ -2,12 +2,12 @@ import React from 'react';
 import { ActivityIndicator, View as ReactNativeView, type ViewStyle } from 'react-native';
 
 import {
-  type InteractionState,
   resolveButtonColors,
   resolveControlSize,
   resolveIconSize,
 } from '../../../../internal/resolvers';
 import type { ButtonProps } from '../../../../types/button';
+import type { InteractionState } from '../../../../types/pressable';
 import type { SurfaceTheme } from '../../../../types/theme';
 import { Icon } from '../../../icon/public';
 import { View } from '../../../layout/public';
