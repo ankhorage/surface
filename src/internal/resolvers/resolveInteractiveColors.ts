@@ -1,10 +1,10 @@
+import type { ButtonVariant } from '../../types/button';
 import type { SurfaceColor } from '../../types/surfaceColor';
 import type { SurfaceTheme } from '../../types/theme';
 import type { FieldState } from './resolveFieldState';
 import type { InteractionState } from './resolveInteractiveState';
 import { resolveSurfaceColor } from './resolveSurfaceColor';
 
-export type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'soft';
 
 export interface ResolvedInteractiveColors {
   backgroundColor: string;
