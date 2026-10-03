@@ -10,7 +10,8 @@ export function useTabsController({
   onValueChange,
   testID,
   value,
-}: Pick<TabsProps, 'defaultValue' | 'onValueChange' | 'testID' | 'value'>): TabsContextValue {
+  variant = 'line',
+}: Pick<TabsProps, 'defaultValue' | 'onValueChange' | 'testID' | 'value' | 'variant'>): TabsContextValue {
   const [activeValue, setActiveValue] = useControllableState<string | undefined>({
     defaultValue,
     onChange: (nextValue) => {
@@ -49,7 +50,8 @@ export function useTabsController({
       setFocusedValue,
       tabs,
       unregisterTab,
+      variant,
     }),
-    [activeValue, focusedValue, registerTab, setActiveValue, tabs, testID, unregisterTab],
+    [activeValue, focusedValue, registerTab, setActiveValue, tabs, testID, unregisterTab, variant],
   );
 }
