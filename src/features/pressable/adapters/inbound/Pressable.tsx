@@ -6,12 +6,8 @@ import {
 } from 'react-native';
 
 import { useResponsiveRuntime } from '../../../../core/responsive';
-import {
-  type InteractionState,
-  resolveFocusRingStyles,
-  resolveInteractiveState,
-} from '../../../../internal/resolvers';
-import type { PressableProps } from '../../../../types/pressable';
+import { resolveFocusRingStyles, resolveInteractiveState } from '../../../../internal/resolvers';
+import type { InteractionState, PressableProps } from '../../../../types/pressable';
 import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
 import { useTheme } from '../../../theme/runtime';
 
