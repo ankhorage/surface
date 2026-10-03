@@ -2,7 +2,7 @@ import type { ButtonVariant } from '../../types/button';
 import type { SurfaceColor } from '../../types/surfaceColor';
 import type { SurfaceTheme } from '../../types/theme';
 import type { FieldState } from './resolveFieldState';
-import type { InteractionState } from './resolveInteractiveState';
+import type { InteractionState } from '../../types/pressable';
 import { resolveSurfaceColor } from './resolveSurfaceColor';
 
 
