@@ -1,13 +1,13 @@
 import React from 'react';
 
 import {
-  type InteractionState,
   resolveFieldState,
   resolveIndicatorSize,
   resolveSelectionControlColors,
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
+import type { InteractionState } from '../../../../../types/pressable';
 import type { SwitchProps } from '../../../../../types/switch';
 import { View } from '../../../../layout/public';
 import { Pressable } from '../../../../pressable/public';
