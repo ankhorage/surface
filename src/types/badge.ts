@@ -1,7 +1,7 @@
 import type React from 'react';
 
-import type { ControlSize } from '../internal/resolvers/resolveControlSize';
-import type { ButtonVariant } from '../internal/resolvers/resolveInteractiveColors';
+import type { ButtonVariant } from './button';
+import type { ControlSize } from './control';
 import type { SurfaceColor } from './surfaceColor';
 
 export interface BadgeProps {

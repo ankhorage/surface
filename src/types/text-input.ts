@@ -5,7 +5,7 @@ import type {
   TextStyle,
 } from 'react-native';
 
-import type { ControlSize } from '../internal/resolvers/resolveControlSize';
+import type { ControlSize } from './control';
 import type { InteractionPolicy } from './interactionPolicy';
 
 export interface TextInputProps extends Omit<

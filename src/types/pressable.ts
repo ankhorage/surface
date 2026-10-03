@@ -1,9 +1,15 @@
 import type React from 'react';
 import type { AccessibilityRole, AccessibilityState, GestureResponderEvent } from 'react-native';
 
-import type { InteractionState } from '../internal/resolvers/resolveInteractiveState';
 import type { InteractionPolicyProps } from './interactionPolicy';
 import type { ViewProps } from './layout';
+
+export interface InteractionState {
+  pressed: boolean;
+  hovered: boolean;
+  focused: boolean;
+  disabled: boolean;
+}
 
 export interface PressableProps
   extends Omit<ViewProps, 'children' | 'pointerEvents'>, InteractionPolicyProps {

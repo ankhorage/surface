@@ -1,12 +1,12 @@
 import type React from 'react';
 
-import type { ControlSize } from '../internal/resolvers/resolveControlSize';
-import type { ButtonVariant } from '../internal/resolvers/resolveInteractiveColors';
+import type { ControlSize } from './control';
 import type { IconSource } from './icon';
 import type { PressableProps } from './pressable';
 import type { SurfaceColor } from './surfaceColor';
 
 export type ButtonIconSpec = IconSource;
+export type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'soft';
 
 export interface ButtonProps extends Omit<
   PressableProps,

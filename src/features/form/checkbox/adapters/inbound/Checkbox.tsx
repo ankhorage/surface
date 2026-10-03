@@ -2,7 +2,6 @@ import React from 'react';
 import type { ViewStyle } from 'react-native';
 
 import {
-  type InteractionState,
   resolveFieldState,
   resolveIndicatorSize,
   resolveSelectionControlColors,
@@ -10,6 +9,7 @@ import {
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
 import type { CheckboxProps } from '../../../../../types/checkbox';
+import type { InteractionState } from '../../../../../types/pressable';
 import type { SurfaceTheme } from '../../../../../types/theme';
 import { View } from '../../../../layout/public';
 import type { PressableProps } from '../../../../pressable/public';

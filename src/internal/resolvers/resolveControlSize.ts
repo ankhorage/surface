@@ -1,6 +1,5 @@
+import type { ControlSize } from '../../types/control';
 import type { SurfaceTheme } from '../../types/theme';
-
-export type ControlSize = 's' | 'm' | 'l';
 
 export interface ResolvedControlSize {
   minHeight: number;

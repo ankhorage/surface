@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import type { ControlSize } from '../internal/resolvers/resolveControlSize';
+import type { ControlSize } from './control';
 import type { PressableProps } from './pressable';
 import type { SurfaceColor } from './surfaceColor';
 

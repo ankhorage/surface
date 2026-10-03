@@ -2,13 +2,13 @@ import React from 'react';
 import type { ViewStyle } from 'react-native';
 
 import {
-  type InteractionState,
   resolveFieldState,
   resolveIndicatorSize,
   resolveSelectionControlColors,
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
+import type { InteractionState } from '../../../../../types/pressable';
 import type { RadioProps } from '../../../../../types/radio';
 import type { SurfaceTheme } from '../../../../../types/theme';
 import { View } from '../../../../layout/public';
