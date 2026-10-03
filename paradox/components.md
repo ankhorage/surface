@@ -1356,7 +1356,7 @@ Export paths: `src/index.ts`
 
 ## Pressable
 
-Source: `src/features/pressable/adapters/inbound/Pressable.tsx:19:1`
+Source: `src/features/pressable/adapters/inbound/Pressable.tsx:15:1`
 
 Renders the token-aware Surface adapter for React Native Pressable.
 

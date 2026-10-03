@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.1.112",
+      "value": "v9.1.113",
       "color": "cb3837"
     },
     {
@@ -567,6 +567,7 @@
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
         "src/types/button.ts",
+        "src/types/pressable.ts",
         "src/types/theme.ts"
       ],
       "exports": [
@@ -676,6 +677,7 @@
         "src/internal/resolvers/index.ts",
         "src/internal/useControllableState.ts",
         "src/types/checkbox.ts",
+        "src/types/pressable.ts",
         "src/types/theme.ts"
       ],
       "exports": [
@@ -732,6 +734,7 @@
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
         "src/internal/useControllableState.ts",
+        "src/types/pressable.ts",
         "src/types/radio.ts",
         "src/types/theme.ts"
       ],
@@ -766,6 +769,7 @@
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
         "src/internal/useControllableState.ts",
+        "src/types/pressable.ts",
         "src/types/switch.ts"
       ],
       "exports": [
@@ -2239,10 +2243,7 @@
       "isEntrypoint": false,
       "dependencies": [],
       "exports": [
-        "ButtonVariant",
-        "ControlSize",
         "FieldState",
-        "InteractionState",
         "OverlayAnimationValues",
         "OverlayLayer",
         "resolveButtonColors",
@@ -2267,9 +2268,7 @@
         "resolveTextColor",
         "ResolveTextStyleOptions",
         "resolveTextStyles",
-        "SelectionControlKind",
-        "TextVariant",
-        "TextWeight"
+        "SelectionControlKind"
       ]
     },
     {
@@ -2285,10 +2284,10 @@
       "path": "src/internal/resolvers/resolveControlSize.ts",
       "isEntrypoint": false,
       "dependencies": [
+        "src/types/control.ts",
         "src/types/theme.ts"
       ],
       "exports": [
-        "ControlSize",
         "resolveControlSize",
         "ResolvedControlSize"
       ]
@@ -2344,6 +2343,7 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/internal/resolvers/resolveControlSize.ts",
+        "src/types/control.ts",
         "src/types/theme.ts"
       ],
       "exports": [
@@ -2362,7 +2362,7 @@
       "path": "src/internal/resolvers/resolveIndicatorSize.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts"
+        "src/types/control.ts"
       ],
       "exports": [
         "ResolvedIndicatorSize",
@@ -2384,13 +2384,13 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/internal/resolvers/resolveFieldState.ts",
-        "src/internal/resolvers/resolveInteractiveState.ts",
         "src/internal/resolvers/resolveSurfaceColor.ts",
+        "src/types/button.ts",
+        "src/types/pressable.ts",
         "src/types/surfaceColor.ts",
         "src/types/theme.ts"
       ],
       "exports": [
-        "ButtonVariant",
         "resolveButtonColors",
         "ResolvedInteractiveColors",
         "resolveInputColors"
@@ -2407,9 +2407,10 @@
     {
       "path": "src/internal/resolvers/resolveInteractiveState.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": [
+        "src/types/pressable.ts"
+      ],
       "exports": [
-        "InteractionState",
         "resolveInteractiveState"
       ]
     },
@@ -2544,13 +2545,12 @@
       "path": "src/internal/resolvers/resolveTextStyles.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/types/theme.ts"
+        "src/types/theme.ts",
+        "src/types/typography.ts"
       ],
       "exports": [
         "ResolveTextStyleOptions",
-        "resolveTextStyles",
-        "TextVariant",
-        "TextWeight"
+        "resolveTextStyles"
       ]
     },
     {
@@ -2599,8 +2599,8 @@
       "path": "src/types/badge.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts",
-        "src/internal/resolvers/resolveInteractiveColors.ts",
+        "src/types/button.ts",
+        "src/types/control.ts",
         "src/types/surfaceColor.ts"
       ],
       "exports": [
@@ -2621,8 +2621,7 @@
       "path": "src/types/button.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts",
-        "src/internal/resolvers/resolveInteractiveColors.ts",
+        "src/types/control.ts",
         "src/types/icon.ts",
         "src/types/pressable.ts",
         "src/types/surfaceColor.ts"
@@ -2630,6 +2629,7 @@
       "exports": [
         "ButtonIconSpec",
         "ButtonProps",
+        "ButtonVariant",
         "IconButtonProps"
       ]
     },
@@ -2647,12 +2647,20 @@
       "path": "src/types/checkbox.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts",
+        "src/types/control.ts",
         "src/types/pressable.ts",
         "src/types/surfaceColor.ts"
       ],
       "exports": [
         "CheckboxProps"
+      ]
+    },
+    {
+      "path": "src/types/control.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "ControlSize"
       ]
     },
     {
@@ -2794,11 +2802,11 @@
       "path": "src/types/pressable.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveInteractiveState.ts",
         "src/types/interactionPolicy.ts",
         "src/types/layout.ts"
       ],
       "exports": [
+        "InteractionState",
         "PressableProps"
       ]
     },
@@ -2806,7 +2814,7 @@
       "path": "src/types/radio.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts",
+        "src/types/control.ts",
         "src/types/pressable.ts",
         "src/types/surfaceColor.ts"
       ],
@@ -2851,7 +2859,7 @@
       "path": "src/types/switch.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts",
+        "src/types/control.ts",
         "src/types/pressable.ts",
         "src/types/surfaceColor.ts"
       ],
@@ -2880,7 +2888,7 @@
       "path": "src/types/text-input.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveControlSize.ts",
+        "src/types/control.ts",
         "src/types/interactionPolicy.ts"
       ],
       "exports": [
@@ -2941,13 +2949,15 @@
       "path": "src/types/typography.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/internal/resolvers/resolveTextStyles.ts",
-        "src/types/surfaceColor.ts"
+        "src/types/surfaceColor.ts",
+        "src/types/theme.ts"
       ],
       "exports": [
         "HeadingLevel",
         "HeadingProps",
-        "TextProps"
+        "TextProps",
+        "TextVariant",
+        "TextWeight"
       ]
     },
     {
@@ -8318,7 +8328,7 @@
       "modulePath": "src/types/button.ts",
       "sourceLocation": {
         "filePath": "src/types/button.ts",
-        "line": 9,
+        "line": 8,
         "column": 1
       },
       "exportPaths": [
@@ -11134,7 +11144,7 @@
       "modulePath": "src/types/typography.ts",
       "sourceLocation": {
         "filePath": "src/types/typography.ts",
-        "line": 7,
+        "line": 10,
         "column": 1
       },
       "exportPaths": [
@@ -11156,7 +11166,7 @@
       "modulePath": "src/types/typography.ts",
       "sourceLocation": {
         "filePath": "src/types/typography.ts",
-        "line": 9,
+        "line": 12,
         "column": 1
       },
       "exportPaths": [
@@ -13019,7 +13029,7 @@
       "modulePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
       "sourceLocation": {
         "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "line": 19,
+        "line": 15,
         "column": 1
       },
       "exportPaths": [
@@ -13057,7 +13067,7 @@
       "modulePath": "src/types/pressable.ts",
       "sourceLocation": {
         "filePath": "src/types/pressable.ts",
-        "line": 8,
+        "line": 14,
         "column": 1
       },
       "exportPaths": [
@@ -19940,7 +19950,7 @@
       "modulePath": "src/types/typography.ts",
       "sourceLocation": {
         "filePath": "src/types/typography.ts",
-        "line": 21,
+        "line": 24,
         "column": 1
       },
       "exportPaths": [
@@ -28457,7 +28467,7 @@
       "modulePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
       "sourceLocation": {
         "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "line": 19,
+        "line": 15,
         "column": 1
       },
       "exportPaths": [
@@ -35219,7 +35229,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "line": 19,
+        "line": 15,
         "column": 1
       }
     },
@@ -35230,7 +35240,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "line": 72,
+        "line": 68,
         "column": 1
       }
     },
@@ -35241,7 +35251,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "line": 83,
+        "line": 79,
         "column": 1
       }
     },
@@ -36077,7 +36087,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveControlSize.ts",
-        "line": 14,
+        "line": 13,
         "column": 1
       }
     },
@@ -36121,7 +36131,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveIconSize.ts",
-        "line": 4,
+        "line": 5,
         "column": 1
       }
     },
@@ -36143,7 +36153,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveInteractiveColors.ts",
-        "line": 16,
+        "line": 15,
         "column": 1
       }
     },
@@ -36154,7 +36164,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveInteractiveColors.ts",
-        "line": 91,
+        "line": 90,
         "column": 1
       }
     },
@@ -36165,7 +36175,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveInteractiveState.ts",
-        "line": 8,
+        "line": 3,
         "column": 1
       }
     },
@@ -36242,7 +36252,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveTextStyles.ts",
-        "line": 22,
+        "line": 20,
         "column": 1
       }
     },
@@ -36253,7 +36263,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveTextStyles.ts",
-        "line": 30,
+        "line": 28,
         "column": 1
       }
     },
@@ -36264,7 +36274,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveTextStyles.ts",
-        "line": 66,
+        "line": 64,
         "column": 1
       }
     },
@@ -36984,12 +36994,12 @@
       },
       {
         "fromPath": "src/types/badge.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
+        "toPath": "src/types/button.ts",
         "sourcePath": "src/types/badge.ts"
       },
       {
         "fromPath": "src/types/badge.ts",
-        "toPath": "src/internal/resolvers/resolveInteractiveColors.ts",
+        "toPath": "src/types/control.ts",
         "sourcePath": "src/types/badge.ts"
       },
       {
@@ -36999,12 +37009,7 @@
       },
       {
         "fromPath": "src/types/button.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
-        "sourcePath": "src/types/button.ts"
-      },
-      {
-        "fromPath": "src/types/button.ts",
-        "toPath": "src/internal/resolvers/resolveInteractiveColors.ts",
+        "toPath": "src/types/control.ts",
         "sourcePath": "src/types/button.ts"
       },
       {
@@ -37029,7 +37034,7 @@
       },
       {
         "fromPath": "src/types/checkbox.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
+        "toPath": "src/types/control.ts",
         "sourcePath": "src/types/checkbox.ts"
       },
       {
@@ -37104,11 +37109,6 @@
       },
       {
         "fromPath": "src/types/pressable.ts",
-        "toPath": "src/internal/resolvers/resolveInteractiveState.ts",
-        "sourcePath": "src/types/pressable.ts"
-      },
-      {
-        "fromPath": "src/types/pressable.ts",
         "toPath": "src/types/interactionPolicy.ts",
         "sourcePath": "src/types/pressable.ts"
       },
@@ -37119,7 +37119,7 @@
       },
       {
         "fromPath": "src/types/radio.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
+        "toPath": "src/types/control.ts",
         "sourcePath": "src/types/radio.ts"
       },
       {
@@ -37154,7 +37154,7 @@
       },
       {
         "fromPath": "src/types/switch.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
+        "toPath": "src/types/control.ts",
         "sourcePath": "src/types/switch.ts"
       },
       {
@@ -37179,7 +37179,7 @@
       },
       {
         "fromPath": "src/types/text-input.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
+        "toPath": "src/types/control.ts",
         "sourcePath": "src/types/text-input.ts"
       },
       {
@@ -37204,12 +37204,12 @@
       },
       {
         "fromPath": "src/types/typography.ts",
-        "toPath": "src/internal/resolvers/resolveTextStyles.ts",
+        "toPath": "src/types/surfaceColor.ts",
         "sourcePath": "src/types/typography.ts"
       },
       {
         "fromPath": "src/types/typography.ts",
-        "toPath": "src/types/surfaceColor.ts",
+        "toPath": "src/types/theme.ts",
         "sourcePath": "src/types/typography.ts"
       },
       {
@@ -37904,6 +37904,11 @@
       },
       {
         "fromPath": "src/internal/resolvers/resolveControlSize.ts",
+        "toPath": "src/types/control.ts",
+        "sourcePath": "src/internal/resolvers/resolveControlSize.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveControlSize.ts",
         "toPath": "src/types/theme.ts",
         "sourcePath": "src/internal/resolvers/resolveControlSize.ts"
       },
@@ -37934,6 +37939,11 @@
       },
       {
         "fromPath": "src/internal/resolvers/resolveIconSize.ts",
+        "toPath": "src/types/control.ts",
+        "sourcePath": "src/internal/resolvers/resolveIconSize.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveIconSize.ts",
         "toPath": "src/types/theme.ts",
         "sourcePath": "src/internal/resolvers/resolveIconSize.ts"
       },
@@ -37949,7 +37959,7 @@
       },
       {
         "fromPath": "src/internal/resolvers/resolveIndicatorSize.ts",
-        "toPath": "src/internal/resolvers/resolveControlSize.ts",
+        "toPath": "src/types/control.ts",
         "sourcePath": "src/internal/resolvers/resolveIndicatorSize.ts"
       },
       {
@@ -37969,6 +37979,16 @@
       },
       {
         "fromPath": "src/internal/resolvers/resolveInteractiveColors.ts",
+        "toPath": "src/types/button.ts",
+        "sourcePath": "src/internal/resolvers/resolveInteractiveColors.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveInteractiveColors.ts",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/internal/resolvers/resolveInteractiveColors.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveInteractiveColors.ts",
         "toPath": "src/types/surfaceColor.ts",
         "sourcePath": "src/internal/resolvers/resolveInteractiveColors.ts"
       },
@@ -37984,11 +38004,6 @@
       },
       {
         "fromPath": "src/internal/resolvers/resolveInteractiveColors.ts",
-        "toPath": "src/internal/resolvers/resolveInteractiveState.ts",
-        "sourcePath": "src/internal/resolvers/resolveInteractiveColors.ts"
-      },
-      {
-        "fromPath": "src/internal/resolvers/resolveInteractiveColors.ts",
         "toPath": "src/internal/resolvers/resolveSurfaceColor.ts",
         "sourcePath": "src/internal/resolvers/resolveInteractiveColors.ts"
       },
@@ -37996,6 +38011,11 @@
         "fromPath": "src/internal/resolvers/resolveInteractiveState.test.ts",
         "toPath": "src/internal/resolvers/resolveInteractiveState.ts",
         "sourcePath": "src/internal/resolvers/resolveInteractiveState.test.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveInteractiveState.ts",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/internal/resolvers/resolveInteractiveState.ts"
       },
       {
         "fromPath": "src/internal/resolvers/resolveOverlayAnimation.test.ts",
@@ -38110,6 +38130,11 @@
       {
         "fromPath": "src/internal/resolvers/resolveTextStyles.ts",
         "toPath": "src/types/theme.ts",
+        "sourcePath": "src/internal/resolvers/resolveTextStyles.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveTextStyles.ts",
+        "toPath": "src/types/typography.ts",
         "sourcePath": "src/internal/resolvers/resolveTextStyles.ts"
       },
       {
@@ -38590,6 +38615,11 @@
       {
         "fromPath": "src/features/button/adapters/inbound/Button.tsx",
         "toPath": "src/types/button.ts",
+        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
+        "toPath": "src/types/pressable.ts",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {
@@ -39484,6 +39514,11 @@
       },
       {
         "fromPath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
+      },
+      {
+        "fromPath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
         "toPath": "src/types/theme.ts",
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
@@ -39544,6 +39579,11 @@
       },
       {
         "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
+      },
+      {
+        "fromPath": "src/features/form/radio/adapters/inbound/Radio.tsx",
         "toPath": "src/types/radio.ts",
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
       },
@@ -39585,6 +39625,11 @@
       {
         "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
         "toPath": "src/internal/useControllableState.ts",
+        "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
+      },
+      {
+        "fromPath": "src/features/form/switch/adapters/inbound/Switch.tsx",
+        "toPath": "src/types/pressable.ts",
         "sourcePath": "src/features/form/switch/adapters/inbound/Switch.tsx"
       },
       {

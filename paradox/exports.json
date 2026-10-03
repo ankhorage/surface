@@ -5323,7 +5323,7 @@
     "modulePath": "src/types/button.ts",
     "sourceLocation": {
       "filePath": "src/types/button.ts",
-      "line": 9,
+      "line": 8,
       "column": 1
     },
     "exportPaths": [
@@ -8139,7 +8139,7 @@
     "modulePath": "src/types/typography.ts",
     "sourceLocation": {
       "filePath": "src/types/typography.ts",
-      "line": 7,
+      "line": 10,
       "column": 1
     },
     "exportPaths": [
@@ -8161,7 +8161,7 @@
     "modulePath": "src/types/typography.ts",
     "sourceLocation": {
       "filePath": "src/types/typography.ts",
-      "line": 9,
+      "line": 12,
       "column": 1
     },
     "exportPaths": [
@@ -10024,7 +10024,7 @@
     "modulePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
     "sourceLocation": {
       "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-      "line": 19,
+      "line": 15,
       "column": 1
     },
     "exportPaths": [
@@ -10062,7 +10062,7 @@
     "modulePath": "src/types/pressable.ts",
     "sourceLocation": {
       "filePath": "src/types/pressable.ts",
-      "line": 8,
+      "line": 14,
       "column": 1
     },
     "exportPaths": [
@@ -16945,7 +16945,7 @@
     "modulePath": "src/types/typography.ts",
     "sourceLocation": {
       "filePath": "src/types/typography.ts",
-      "line": 21,
+      "line": 24,
       "column": 1
     },
     "exportPaths": [

@@ -146,6 +146,7 @@ graph TD
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_typography_public_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_types_button_ts
+  module_src_features_button_adapters_inbound_Button_tsx --> module_src_types_pressable_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_types_theme_ts
   module_src_features_button_adapters_inbound_IconButton_tsx["src/features/button/adapters/inbound/IconButton.tsx"]
   package__ankhorage_surface -.-> module_src_features_button_adapters_inbound_IconButton_tsx
@@ -188,6 +189,7 @@ graph TD
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_internal_useControllableState_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_types_checkbox_ts
+  module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_types_pressable_ts
   module_src_features_form_checkbox_adapters_inbound_Checkbox_tsx --> module_src_types_theme_ts
   module_src_features_form_checkbox_public_ts["src/features/form/checkbox/public.ts"]
   package__ankhorage_surface -.-> module_src_features_form_checkbox_public_ts
@@ -211,6 +213,7 @@ graph TD
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_features_typography_public_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_internal_useControllableState_ts
+  module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_types_pressable_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_types_radio_ts
   module_src_features_form_radio_adapters_inbound_Radio_tsx --> module_src_types_theme_ts
   module_src_features_form_radio_public_ts["src/features/form/radio/public.ts"]
@@ -225,6 +228,7 @@ graph TD
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_features_typography_public_ts
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_internal_useControllableState_ts
+  module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_types_pressable_ts
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> module_src_types_switch_ts
   module_src_features_form_switch_public_ts["src/features/form/switch/public.ts"]
   package__ankhorage_surface -.-> module_src_features_form_switch_public_ts
@@ -707,6 +711,7 @@ graph TD
   module_src_internal_resolvers_resolveControlSize_test_ts --> module_src_internal_resolvers_resolveControlSize_ts
   module_src_internal_resolvers_resolveControlSize_ts["src/internal/resolvers/resolveControlSize.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_internal_resolvers_resolveControlSize_ts --> module_src_types_control_ts
   module_src_internal_resolvers_resolveControlSize_ts --> module_src_types_theme_ts
   module_src_internal_resolvers_resolveFieldPresentation_test_ts["src/internal/resolvers/resolveFieldPresentation.test.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveFieldPresentation_test_ts
@@ -726,13 +731,14 @@ graph TD
   module_src_internal_resolvers_resolveIconSize_ts["src/internal/resolvers/resolveIconSize.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveIconSize_ts
   module_src_internal_resolvers_resolveIconSize_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_internal_resolvers_resolveIconSize_ts --> module_src_types_control_ts
   module_src_internal_resolvers_resolveIconSize_ts --> module_src_types_theme_ts
   module_src_internal_resolvers_resolveIndicatorSize_test_ts["src/internal/resolvers/resolveIndicatorSize.test.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveIndicatorSize_test_ts
   module_src_internal_resolvers_resolveIndicatorSize_test_ts --> module_src_internal_resolvers_resolveIndicatorSize_ts
   module_src_internal_resolvers_resolveIndicatorSize_ts["src/internal/resolvers/resolveIndicatorSize.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveIndicatorSize_ts
-  module_src_internal_resolvers_resolveIndicatorSize_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_internal_resolvers_resolveIndicatorSize_ts --> module_src_types_control_ts
   module_src_internal_resolvers_resolveInteractiveColors_test_ts["src/internal/resolvers/resolveInteractiveColors.test.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveInteractiveColors_test_ts
   module_src_internal_resolvers_resolveInteractiveColors_test_ts --> module_src_features_theme_application_use_cases_createTheme_ts
@@ -741,8 +747,9 @@ graph TD
   module_src_internal_resolvers_resolveInteractiveColors_ts["src/internal/resolvers/resolveInteractiveColors.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveInteractiveColors_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_internal_resolvers_resolveFieldState_ts
-  module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_internal_resolvers_resolveSurfaceColor_ts
+  module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_types_button_ts
+  module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_types_pressable_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_types_surfaceColor_ts
   module_src_internal_resolvers_resolveInteractiveColors_ts --> module_src_types_theme_ts
   module_src_internal_resolvers_resolveInteractiveState_test_ts["src/internal/resolvers/resolveInteractiveState.test.ts"]
@@ -750,6 +757,7 @@ graph TD
   module_src_internal_resolvers_resolveInteractiveState_test_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
   module_src_internal_resolvers_resolveInteractiveState_ts["src/internal/resolvers/resolveInteractiveState.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveInteractiveState_ts
+  module_src_internal_resolvers_resolveInteractiveState_ts --> module_src_types_pressable_ts
   module_src_internal_resolvers_resolveOverlayAnimation_test_ts["src/internal/resolvers/resolveOverlayAnimation.test.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveOverlayAnimation_test_ts
   module_src_internal_resolvers_resolveOverlayAnimation_test_ts --> module_src_internal_resolvers_resolveOverlayAnimation_ts
@@ -801,6 +809,7 @@ graph TD
   module_src_internal_resolvers_resolveTextStyles_ts["src/internal/resolvers/resolveTextStyles.ts"]
   package__ankhorage_surface -.-> module_src_internal_resolvers_resolveTextStyles_ts
   module_src_internal_resolvers_resolveTextStyles_ts --> module_src_types_theme_ts
+  module_src_internal_resolvers_resolveTextStyles_ts --> module_src_types_typography_ts
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
   package__ankhorage_surface -.-> module_src_internal_useControllableState_ts
   module_src_structureOwnership_test_ts["src/structureOwnership.test.ts"]
@@ -813,15 +822,14 @@ graph TD
   module_src_types_app_bar_ts --> module_src_types_layout_ts
   module_src_types_badge_ts["src/types/badge.ts"]
   package__ankhorage_surface -.-> module_src_types_badge_ts
-  module_src_types_badge_ts --> module_src_internal_resolvers_resolveControlSize_ts
-  module_src_types_badge_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
+  module_src_types_badge_ts --> module_src_types_button_ts
+  module_src_types_badge_ts --> module_src_types_control_ts
   module_src_types_badge_ts --> module_src_types_surfaceColor_ts
   module_src_types_bottomSheet_ts["src/types/bottomSheet.ts"]
   package__ankhorage_surface -.-> module_src_types_bottomSheet_ts
   module_src_types_button_ts["src/types/button.ts"]
   package__ankhorage_surface -.-> module_src_types_button_ts
-  module_src_types_button_ts --> module_src_internal_resolvers_resolveControlSize_ts
-  module_src_types_button_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
+  module_src_types_button_ts --> module_src_types_control_ts
   module_src_types_button_ts --> module_src_types_icon_ts
   module_src_types_button_ts --> module_src_types_pressable_ts
   module_src_types_button_ts --> module_src_types_surfaceColor_ts
@@ -830,9 +838,11 @@ graph TD
   module_src_types_card_ts --> module_src_types_surface_ts
   module_src_types_checkbox_ts["src/types/checkbox.ts"]
   package__ankhorage_surface -.-> module_src_types_checkbox_ts
-  module_src_types_checkbox_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_types_checkbox_ts --> module_src_types_control_ts
   module_src_types_checkbox_ts --> module_src_types_pressable_ts
   module_src_types_checkbox_ts --> module_src_types_surfaceColor_ts
+  module_src_types_control_ts["src/types/control.ts"]
+  package__ankhorage_surface -.-> module_src_types_control_ts
   module_src_types_field_ts["src/types/field.ts"]
   package__ankhorage_surface -.-> module_src_types_field_ts
   module_src_types_font_ts["src/types/font.ts"]
@@ -871,12 +881,11 @@ graph TD
   module_src_types_popoverMenu_ts --> module_src_types_popover_ts
   module_src_types_pressable_ts["src/types/pressable.ts"]
   package__ankhorage_surface -.-> module_src_types_pressable_ts
-  module_src_types_pressable_ts --> module_src_internal_resolvers_resolveInteractiveState_ts
   module_src_types_pressable_ts --> module_src_types_interactionPolicy_ts
   module_src_types_pressable_ts --> module_src_types_layout_ts
   module_src_types_radio_ts["src/types/radio.ts"]
   package__ankhorage_surface -.-> module_src_types_radio_ts
-  module_src_types_radio_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_types_radio_ts --> module_src_types_control_ts
   module_src_types_radio_ts --> module_src_types_pressable_ts
   module_src_types_radio_ts --> module_src_types_surfaceColor_ts
   module_src_types_surface_ts["src/types/surface.ts"]
@@ -891,7 +900,7 @@ graph TD
   module_src_types_surfaceColor_ts --> module_src_constants_surfaceColor_ts
   module_src_types_switch_ts["src/types/switch.ts"]
   package__ankhorage_surface -.-> module_src_types_switch_ts
-  module_src_types_switch_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_types_switch_ts --> module_src_types_control_ts
   module_src_types_switch_ts --> module_src_types_pressable_ts
   module_src_types_switch_ts --> module_src_types_surfaceColor_ts
   module_src_types_tabs_ts["src/types/tabs.ts"]
@@ -900,7 +909,7 @@ graph TD
   module_src_types_tabs_ts --> module_src_types_layout_ts
   module_src_types_text_input_ts["src/types/text-input.ts"]
   package__ankhorage_surface -.-> module_src_types_text_input_ts
-  module_src_types_text_input_ts --> module_src_internal_resolvers_resolveControlSize_ts
+  module_src_types_text_input_ts --> module_src_types_control_ts
   module_src_types_text_input_ts --> module_src_types_interactionPolicy_ts
   module_src_types_theme_ts["src/types/theme.ts"]
   package__ankhorage_surface -.-> module_src_types_theme_ts
@@ -913,8 +922,8 @@ graph TD
   module_src_types_tooltip_ts --> module_src_types_interactionPolicy_ts
   module_src_types_typography_ts["src/types/typography.ts"]
   package__ankhorage_surface -.-> module_src_types_typography_ts
-  module_src_types_typography_ts --> module_src_internal_resolvers_resolveTextStyles_ts
   module_src_types_typography_ts --> module_src_types_surfaceColor_ts
+  module_src_types_typography_ts --> module_src_types_theme_ts
   module_src_utils_resolveSpacing_ts["src/utils/resolveSpacing.ts"]
   package__ankhorage_surface -.-> module_src_utils_resolveSpacing_ts
   module_src_utils_resolveSpacing_ts --> module_src_features_theme_utils_resolveToken_ts

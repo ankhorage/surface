@@ -995,7 +995,7 @@ Renders the primary Surface action control with semantic visual states.
 
 Kind: `unknown`
 Module: `src/types/button.ts`
-Source: `src/types/button.ts:9:1`
+Source: `src/types/button.ts:8:1`
 
 ## ButtonProps
 
@@ -1665,13 +1665,13 @@ Renders a semantic heading using Surface typography tokens.
 
 Kind: `unknown`
 Module: `src/types/typography.ts`
-Source: `src/types/typography.ts:7:1`
+Source: `src/types/typography.ts:10:1`
 
 ## HeadingProps
 
 Kind: `type`
 Module: `src/types/typography.ts`
-Source: `src/types/typography.ts:9:1`
+Source: `src/types/typography.ts:12:1`
 
 ### Members
 
@@ -2208,7 +2208,7 @@ Source: `src/types/popover.ts:14:1`
 
 Kind: `function`
 Module: `src/features/pressable/adapters/inbound/Pressable.tsx`
-Source: `src/features/pressable/adapters/inbound/Pressable.tsx:19:1`
+Source: `src/features/pressable/adapters/inbound/Pressable.tsx:15:1`
 
 Renders the token-aware Surface adapter for React Native Pressable.
 
@@ -2246,7 +2246,7 @@ Renders the token-aware Surface adapter for React Native Pressable.
 
 Kind: `type`
 Module: `src/types/pressable.ts`
-Source: `src/types/pressable.ts:8:1`
+Source: `src/types/pressable.ts:14:1`
 
 ### Members
 
@@ -3623,7 +3623,7 @@ Source: `src/types/text-input.ts:11:1`
 
 Kind: `type`
 Module: `src/types/typography.ts`
-Source: `src/types/typography.ts:21:1`
+Source: `src/types/typography.ts:24:1`
 
 ### Members
 
