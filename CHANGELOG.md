@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.1.114
+
+### Patch Changes
+
+- 2d372bb: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`, `@ankhorage/utility`.
+
 ## 9.1.113
 
 ### Patch Changes

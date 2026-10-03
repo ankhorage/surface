@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.1.113",
+      "value": "v9.1.114",
       "color": "cb3837"
     },
     {
@@ -70,35 +70,35 @@
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function getBreakpointFromWidth has no Paradox description.",
+      "message": "Exported function getBreakpointFromWidth has no documentation description.",
       "sourcePath": "src/core/responsive/getBreakpointFromWidth.ts",
       "line": 4
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function resolveResponsive has no Paradox description.",
+      "message": "Exported function resolveResponsive has no documentation description.",
       "sourcePath": "src/core/responsive/resolve.ts",
       "line": 8
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function ResponsiveProvider has no Paradox description.",
+      "message": "Exported function ResponsiveProvider has no documentation description.",
       "sourcePath": "src/core/responsive/ResponsiveProvider.tsx",
       "line": 9
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function useResponsiveRuntime has no Paradox description.",
+      "message": "Exported function useResponsiveRuntime has no documentation description.",
       "sourcePath": "src/core/responsive/ResponsiveProvider.tsx",
       "line": 23
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function useBreakpoint has no Paradox description.",
+      "message": "Exported function useBreakpoint has no documentation description.",
       "sourcePath": "src/core/responsive/useBreakpoint.ts",
       "line": 6
     }
