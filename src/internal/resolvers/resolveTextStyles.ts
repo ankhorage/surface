@@ -1,9 +1,7 @@
 import type { TextStyle } from 'react-native';
 
 import type { FontWeight, SurfaceTheme } from '../../types/theme';
-
-export type TextVariant = 'body' | 'bodySmall' | 'caption' | 'label' | 'mono';
-export type TextWeight = keyof SurfaceTheme['typography']['weights'] | FontWeight;
+import type { TextVariant, TextWeight } from '../../types/typography';
 
 interface VariantStyle {
   fontSize: number;
