@@ -1,8 +1,11 @@
 import type React from 'react';
 import type { TextStyle } from 'react-native';
 
-import type { TextVariant, TextWeight } from '../internal/resolvers/resolveTextStyles';
 import type { SurfaceColor, SurfaceEmphasis } from './surfaceColor';
+import type { FontWeight, SurfaceTheme } from './theme';
+
+export type TextVariant = 'body' | 'bodySmall' | 'caption' | 'label' | 'mono';
+export type TextWeight = keyof SurfaceTheme['typography']['weights'] | FontWeight;
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
