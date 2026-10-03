@@ -78,7 +78,13 @@ export type { PressableProps } from './features/pressable/public';
 export { Pressable } from './features/pressable/public';
 export type { SurfaceProps, SurfaceVariant } from './features/surface/public';
 export { Surface } from './features/surface/public';
-export type { TabListProps, TabPanelProps, TabProps, TabsProps, TabsVariant } from './features/tabs/public';
+export type {
+  TabListProps,
+  TabPanelProps,
+  TabProps,
+  TabsProps,
+  TabsVariant,
+} from './features/tabs/public';
 export { Tab, TabList, TabPanel, Tabs } from './features/tabs/public';
 export type {
   ActionSemantics,
