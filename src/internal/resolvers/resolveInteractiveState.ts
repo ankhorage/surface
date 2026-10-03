@@ -1,9 +1,4 @@
-export interface InteractionState {
-  pressed: boolean;
-  hovered: boolean;
-  focused: boolean;
-  disabled: boolean;
-}
+import type { InteractionState } from '../../types/pressable';
 
 export function resolveInteractiveState(input: Partial<InteractionState>): InteractionState {
   return {
