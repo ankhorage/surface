@@ -12,9 +12,10 @@ export function Tabs({
   onValueChange,
   testID,
   value,
+  variant,
   ...layoutProps
 }: TabsProps) {
-  const contextValue = useTabsController({ defaultValue, onValueChange, testID, value });
+  const contextValue = useTabsController({ defaultValue, onValueChange, testID, value, variant });
 
   return (
     <TabsContext value={contextValue}>
