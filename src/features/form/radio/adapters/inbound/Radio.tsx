@@ -8,8 +8,8 @@ import {
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
-import type { RadioProps } from '../../../../../types/radio';
 import type { InteractionState } from '../../../../../types/pressable';
+import type { RadioProps } from '../../../../../types/radio';
 import type { SurfaceTheme } from '../../../../../types/theme';
 import { View } from '../../../../layout/public';
 import type { PressableProps } from '../../../../pressable/public';
