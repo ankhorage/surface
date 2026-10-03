@@ -17,6 +17,7 @@ export function Text({
   italic = false,
   numberOfLines,
   testID,
+  style,
 }: TextProps) {
   const { theme } = useTheme();
   const content = children ?? i18nKey ?? null;
@@ -28,6 +29,7 @@ export function Text({
       style={[
         resolveTextStyles(theme, { align, italic, variant, weight }),
         { color: resolveTextColor(theme, emphasis, color) },
+        style,
       ]}
     >
       {content}

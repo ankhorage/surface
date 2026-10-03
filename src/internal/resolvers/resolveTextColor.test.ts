@@ -4,6 +4,11 @@ import { createTheme } from '../../features/theme/application/use-cases/createTh
 import { resolveTextColor } from './resolveTextColor';
 
 describe('resolveTextColor', () => {
+  it('uses inverse-surface role foregrounds for semantic text inside inverted scopes', () => {
+    const theme = createTheme(undefined, 'light', undefined, true);
+    expect(resolveTextColor(theme, 'default', 'primary')).toBe(theme.semantics.brand.onSurfaceText);
+    expect(resolveTextColor(theme, 'inverse', 'primary')).toBe(theme.semantics.brand.onSolidText);
+  });
   it('maps semantic text emphases through content aliases', () => {
     const theme = createTheme();
 

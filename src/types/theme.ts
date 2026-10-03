@@ -229,6 +229,7 @@ export interface ThemeTokens {
 
 export interface SurfaceTheme extends ThemeTokens {
   config: ContractsThemeConfig;
+  inverted: boolean;
 }
 
 export type ThemeMode = 'light' | 'dark';
@@ -236,6 +237,7 @@ export type ThemeMode = 'light' | 'dark';
 export interface ThemeRuntime {
   theme: SurfaceTheme;
   mode: ThemeMode;
+  inverted: boolean;
   setThemeConfig: (config: Partial<ContractsThemeConfig>) => void;
   setMode: (mode: ThemeMode) => void;
 }
@@ -250,4 +252,5 @@ export interface ThemeScopeProps {
   children: ReactNode;
   themeConfig?: Partial<ContractsThemeConfig>;
   mode?: ThemeMode;
+  inverted?: boolean;
 }

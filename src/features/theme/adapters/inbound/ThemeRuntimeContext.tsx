@@ -9,6 +9,7 @@ const defaultTheme = createTheme();
 export const ThemeRuntimeContext = createContext<ThemeRuntime>({
   theme: defaultTheme,
   mode: 'light',
+  inverted: false,
   setThemeConfig: () => undefined,
   setMode: () => undefined,
 });

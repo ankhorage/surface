@@ -76,7 +76,6 @@ function ButtonContent({
   variant,
 }: ButtonContentProps) {
   const colors = resolveButtonColors(theme, { variant, color, state });
-  const muted = colors.contentColor === theme.semantics.content.muted;
   const iconSize = resolveIconSize(theme, size);
 
   return (
@@ -96,8 +95,7 @@ function ButtonContent({
             </ReactNativeView>
           ) : null}
           <Text
-            color={muted ? undefined : color}
-            emphasis={muted ? 'muted' : variant === 'solid' ? 'inverse' : 'default'}
+            style={{ color: colors.contentColor }}
             variant={controlSize.textVariant}
             weight="semiBold"
           >
