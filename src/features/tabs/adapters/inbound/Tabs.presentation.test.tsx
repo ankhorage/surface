@@ -42,7 +42,6 @@ test('opens the selected tab into its panel while retaining inactive separators'
   browserWindow.close();
 });
 
-
 test('attaches the selected tab to the active panel without borders', () => {
   const markup = renderToStaticMarkup(
     <ThemeProvider>
@@ -70,7 +69,7 @@ test('attaches the selected tab to the active panel without borders', () => {
   const activeStyle = active?.getAttribute('style') ?? '';
   const inactiveStyle = inactive?.getAttribute('style') ?? '';
   const panelStyle = panel?.getAttribute('style') ?? '';
-  const activeBackground = activeStyle.match(/background-color:([^;]+)/u)?.[1];
+  const activeBackground = /background-color:([^;]+)/u.exec(activeStyle)?.[1];
 
   expect(activeStyle).not.toContain('border-bottom-width');
   expect(inactiveStyle).not.toContain('border-bottom-width');
