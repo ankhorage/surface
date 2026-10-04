@@ -12,7 +12,7 @@ export function ThemeScope({ children, themeConfig, mode, inverted }: ThemeScope
   const parent = useTheme();
   const { activeFontId } = useFontRuntime();
   const scopedMode = mode ?? parent.mode;
-  const scopedInverted = inverted ?? parent.inverted;
+  const scopedInverted = inverted ?? parent.inverted ?? false;
   const scopedConfig = useMemo(
     () => (themeConfig ? deepMerge(parent.theme.config, themeConfig) : parent.theme.config),
     [parent.theme.config, themeConfig],

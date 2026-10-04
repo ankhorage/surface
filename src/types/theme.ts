@@ -229,7 +229,7 @@ export interface ThemeTokens {
 
 export interface SurfaceTheme extends ThemeTokens {
   config: ContractsThemeConfig;
-  inverted: boolean;
+  inverted?: boolean;
 }
 
 export type ThemeMode = 'light' | 'dark';
@@ -237,7 +237,7 @@ export type ThemeMode = 'light' | 'dark';
 export interface ThemeRuntime {
   theme: SurfaceTheme;
   mode: ThemeMode;
-  inverted: boolean;
+  inverted?: boolean;
   setThemeConfig: (config: Partial<ContractsThemeConfig>) => void;
   setMode: (mode: ThemeMode) => void;
 }

@@ -74,6 +74,7 @@ export function projectInvertedTheme(theme: SurfaceTheme): SurfaceTheme {
       ...theme.colorDiagnostics,
       selections: [...theme.colorDiagnostics.selections, ...collector.selections],
       contrasts: [...theme.colorDiagnostics.contrasts, ...collector.contrasts],
+      surfaceSeparation: measureInverseSurfaceSeparation(surface, collector),
     },
   };
 }
@@ -112,9 +113,13 @@ function createInverseSelection(
       {
         id: 'inverse-surface',
         against: parseHexColorOrThrow(surface.default),
-        minimumContrast: 4.5,
+        minimumContrast: SURFACE_COLOR_POLICY.textContrast,
       },
-      { id: 'inverse-subtle', against: parseHexColorOrThrow(surface.subtle), minimumContrast: 4.5 },
+      {
+        id: 'inverse-subtle',
+        against: parseHexColorOrThrow(surface.subtle),
+        minimumContrast: SURFACE_COLOR_POLICY.textContrast,
+      },
     ],
     tiePolicy: lightSurface ? 'higher-step' : 'lower-step',
     textTarget: { lightness: lightSurface ? 0.2 : 0.9, chroma: 0.02 },
@@ -132,7 +137,13 @@ function resolveInverseContent(theme: SurfaceTheme, selection: InverseSelection)
     default: selectText('content.default', neutral, selection.textTarget, selection),
     muted: selectText('content.muted', neutral, selection.mutedTarget, selection),
     subtle: selectText('content.subtle', neutral, selection.subtleTarget, selection),
-    disabled: selectText('content.disabled', neutral, selection.subtleTarget, selection),
+    disabled: selectText(
+      'content.disabled',
+      neutral,
+      selection.subtleTarget,
+      selection,
+      SURFACE_COLOR_POLICY.disabledContrast,
+    ),
     icon: selectText('content.icon', neutral, selection.textTarget, selection),
     link: selectText('content.link', primary, selection.textTarget, selection),
     visited: selectText('content.visited', secondary, selection.textTarget, selection),
@@ -237,17 +248,37 @@ function selectText(
   swatch: ColorSwatch,
   target: ColorSelectionTarget,
   selection: InverseSelection,
+  minimumContrast: number = SURFACE_COLOR_POLICY.textContrast,
 ): HexColor {
-  const color = selectInverseColor(id, swatch, target, selection.contexts, selection);
-  for (const context of selection.contexts) {
+  const contexts = selection.contexts.map((context) => ({ ...context, minimumContrast }));
+  const color = selectInverseColor(id, swatch, target, contexts, selection);
+  for (const context of contexts) {
     selection.collector.measureForeground(
       `inverse.${id}/${context.id}`,
       color,
       context.against,
-      SURFACE_COLOR_POLICY.textContrast,
+      minimumContrast,
     );
   }
   return color;
+}
+
+/*** Measure effective inverted surfaces against their returned background. */
+function measureInverseSurfaceSeparation(surface: SurfaceSemantics, collector: Collector) {
+  const background = parseHexColorOrThrow(surface.sunken);
+  const surfaces = [
+    ['surface.default', surface.default],
+    ['surface.raised', surface.raised],
+    ['surface.disabled', surface.disabled],
+  ] as const;
+  return surfaces.map(([id, foreground]) =>
+    collector.measureSurface(
+      id,
+      parseHexColorOrThrow(foreground),
+      background,
+      SURFACE_COLOR_POLICY.surfaceSeparation,
+    ),
+  );
 }
 
 /*** Select inverse-surface outlines with the UI contrast policy. */

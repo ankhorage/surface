@@ -17,7 +17,6 @@ function ThemeProbe() {
 const parentRuntime: ThemeRuntime = {
   theme: createTheme(),
   mode: 'light',
-  inverted: false,
   setThemeConfig: () => undefined,
   setMode: () => undefined,
 };
@@ -33,9 +32,9 @@ test('overrides mode without mutating the parent theme runtime', () => {
     </ThemeRuntimeContext>,
   );
 
-  expect(markup).toContain('default:light:light:false');
+  expect(markup).toContain('default:light:light:undefined');
   expect(markup).toContain('default:dark:dark:false');
-  expect(markup.match(/default:light:light:false/g)).toHaveLength(2);
+  expect(markup.match(/default:light:light:undefined/g)).toHaveLength(2);
 });
 
 test('deep-merges a nested config override while preserving the parent config', () => {
@@ -50,7 +49,7 @@ test('deep-merges a nested config override while preserving the parent config', 
   );
 
   expect(markup).toContain('scoped:light:light:false');
-  expect(markup.match(/default:light:light:false/g)).toHaveLength(2);
+  expect(markup.match(/default:light:light:undefined/g)).toHaveLength(2);
   expect(parentRuntime.theme.config.id).toBe('default');
 });
 
@@ -78,7 +77,7 @@ test.each(['light', 'dark'] as const)(
 
     expect(markup.match(new RegExp(`${mode}:${mode}:true:${inverse}`, 'g'))).toHaveLength(3);
     expect(markup).toContain(`${mode}:${mode}:false:${normal}`);
-    expect(root.inverted).toBe(false);
+    expect(root.inverted).toBeUndefined();
     expect(root.theme.semantics.surface.default).toBe(normal);
   },
 );

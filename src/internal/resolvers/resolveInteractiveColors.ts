@@ -43,7 +43,7 @@ export function resolveButtonColors(
             ? semanticTone.softHover
             : 'transparent',
         borderColor: semanticTone.outline,
-        contentColor: resolveTransparentContentColor(theme, semanticTone, state),
+        contentColor: resolveTransparentContentColor(semanticTone, state),
       };
     case 'ghost':
       return {
@@ -53,7 +53,7 @@ export function resolveButtonColors(
             ? semanticTone.softHover
             : 'transparent',
         borderColor: 'transparent',
-        contentColor: resolveTransparentContentColor(theme, semanticTone, state),
+        contentColor: resolveTransparentContentColor(semanticTone, state),
       };
     case 'soft':
       return {
@@ -87,13 +87,11 @@ export function resolveButtonColors(
   }
 }
 
-/*** Pair interactive transparent controls with their own soft fill when polarity is inverted. */
+/*** Pair hovered and pressed transparent controls with their own soft fill. */
 function resolveTransparentContentColor(
-  theme: SurfaceTheme,
   role: ReturnType<typeof resolveSurfaceColor>,
   state: InteractionState,
 ): string {
-  if (!theme.inverted) return role.onSurfaceText;
   if (state.pressed) return role.onSoftActiveText;
   if (state.hovered) return role.onSoftHoverText;
   return role.onSurfaceText;
