@@ -2,6 +2,7 @@ import type { ThemeConfig } from '@ankhorage/contracts';
 
 import type { FontWeight, SurfaceTheme } from '../../../../types/theme';
 import { generatePalette } from '../../domain/generatePalette';
+import { projectInvertedTheme } from '../../domain/projectInvertedTheme';
 import { resolveGlobalTokens } from '../../utils/resolveGlobalTokens';
 
 const DEFAULT_CONFIG: ThemeConfig = {
@@ -11,11 +12,12 @@ const DEFAULT_CONFIG: ThemeConfig = {
   dark: { primaryColor: '#3B82F6', harmony: 'monochromatic' },
 };
 
-/*** Resolve canonical persisted theme source into the complete Surface runtime theme. */
+/*** Resolve canonical theme source into a normal or inverted Surface runtime theme. */
 export function createTheme(
   config: ThemeConfig = DEFAULT_CONFIG,
   mode: 'light' | 'dark' = 'light',
   activeFontId?: string | null,
+  inverted = false,
 ): SurfaceTheme {
   const { colors, swatches, semantics, colorDiagnostics } = generatePalette(config, mode);
   const baseTheme: SurfaceTheme = {
@@ -25,8 +27,10 @@ export function createTheme(
     semantics,
     colorDiagnostics,
     config,
+    inverted: false,
   };
-  return activeFontId ? withActiveFont(baseTheme, activeFontId) : baseTheme;
+  const themed = activeFontId ? withActiveFont(baseTheme, activeFontId) : baseTheme;
+  return inverted ? projectInvertedTheme(themed) : themed;
 }
 
 /*** Return a theme with generated module font-family names without mutating the base theme. */

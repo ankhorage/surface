@@ -30,6 +30,7 @@ export function ThemeProvider({
     () => ({
       theme,
       mode,
+      inverted: false,
       setThemeConfig: (nextConfig) => setConfig((previous) => deepMerge(previous, nextConfig)),
       setMode,
     }),

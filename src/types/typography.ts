@@ -32,4 +32,5 @@ export interface TextProps {
   italic?: boolean;
   numberOfLines?: number;
   testID?: string;
+  style?: TextStyle;
 }

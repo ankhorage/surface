@@ -12,7 +12,8 @@ export function resolveTextColor(
       return resolveSurfaceColor(theme, color).onSolidText;
     }
 
-    return resolveSurfaceColor(theme, color).base;
+    const role = resolveSurfaceColor(theme, color);
+    return theme.inverted ? role.onSurfaceText : role.base;
   }
 
   switch (emphasis) {

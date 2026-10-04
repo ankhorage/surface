@@ -31,12 +31,7 @@ export function Badge({
       style={resolveBadgeStyle(colors.backgroundColor, colors.borderColor, variant)}
       testID={testID}
     >
-      <Text
-        color={color}
-        emphasis={variant === 'solid' ? 'inverse' : 'default'}
-        variant="bodySmall"
-        weight="medium"
-      >
+      <Text style={{ color: colors.contentColor }} variant="bodySmall" weight="medium">
         {content}
       </Text>
     </View>
