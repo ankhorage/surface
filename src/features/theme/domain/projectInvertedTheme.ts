@@ -22,6 +22,7 @@ import type {
 } from '../../../types/theme';
 import { SURFACE_COLOR_POLICY } from '../constants';
 import { createSurfaceColorDiagnosticCollector } from './createSurfaceColorDiagnosticCollector';
+import { resolveInverseSurface } from './resolveInverseSurface';
 
 type Collector = ReturnType<typeof createSurfaceColorDiagnosticCollector>;
 
@@ -41,7 +42,7 @@ export function projectInvertedTheme(theme: SurfaceTheme): SurfaceTheme {
   const collector = createSurfaceColorDiagnosticCollector();
   const lightSurface = theme.colorDiagnostics.mode === 'dark';
   const { neutral } = theme.swatches;
-  const surface = resolveInverseSurface(theme, neutral, lightSurface);
+  const { surface, surfaceSeparation } = resolveInverseSurface(theme, lightSurface, collector);
   const selection = createInverseSelection(collector, surface, neutral, lightSurface);
   const content = resolveInverseContent(theme, selection);
   const border = resolveInverseBorder(theme, selection);
@@ -55,6 +56,11 @@ export function projectInvertedTheme(theme: SurfaceTheme): SurfaceTheme {
     border,
     ...semanticRoles,
     error: roles.danger,
+    selection: {
+      background: roles.brand.softBg,
+      content: roles.brand.onSoftText,
+      border: border.focus,
+    },
     action: { primary: roles.brand, neutral: neutralAction, danger: roles.danger },
   };
 
@@ -64,7 +70,7 @@ export function projectInvertedTheme(theme: SurfaceTheme): SurfaceTheme {
     semantics,
     colors: {
       ...theme.colors,
-      background: surface.default,
+      background: surface.sunken,
       surface: surface.default,
       text: content.default,
       textSecondary: content.muted,
@@ -74,28 +80,8 @@ export function projectInvertedTheme(theme: SurfaceTheme): SurfaceTheme {
       ...theme.colorDiagnostics,
       selections: [...theme.colorDiagnostics.selections, ...collector.selections],
       contrasts: [...theme.colorDiagnostics.contrasts, ...collector.contrasts],
-      surfaceSeparation: measureInverseSurfaceSeparation(surface, collector),
+      surfaceSeparation,
     },
-  };
-}
-
-/*** Resolve inverse backgrounds from the neutral swatch of the active theme mode. */
-function resolveInverseSurface(
-  theme: SurfaceTheme,
-  neutral: ColorSwatch,
-  lightSurface: boolean,
-): SurfaceSemantics {
-  const base = theme.semantics.surface.inverse;
-  const adjacent = lightSurface ? neutral[100] : neutral[800];
-  return {
-    ...theme.semantics.surface,
-    default: base,
-    subtle: adjacent,
-    raised: adjacent,
-    sunken: base,
-    overlay: adjacent,
-    disabled: adjacent,
-    inverse: theme.semantics.surface.default,
   };
 }
 
@@ -118,6 +104,11 @@ function createInverseSelection(
       {
         id: 'inverse-subtle',
         against: parseHexColorOrThrow(surface.subtle),
+        minimumContrast: SURFACE_COLOR_POLICY.textContrast,
+      },
+      {
+        id: 'inverse-sunken',
+        against: parseHexColorOrThrow(surface.sunken),
         minimumContrast: SURFACE_COLOR_POLICY.textContrast,
       },
     ],
@@ -226,7 +217,7 @@ function resolveInverseNeutral(
 ): NeutralSemantics {
   return {
     ...theme.semantics.neutral,
-    bg: surface.default,
+    bg: surface.sunken,
     bgSubtle: surface.subtle,
     surface: surface.default,
     surfaceHover: lightSurface ? swatch[200] : swatch[700],
@@ -261,24 +252,6 @@ function selectText(
     );
   }
   return color;
-}
-
-/*** Measure effective inverted surfaces against their returned background. */
-function measureInverseSurfaceSeparation(surface: SurfaceSemantics, collector: Collector) {
-  const background = parseHexColorOrThrow(surface.sunken);
-  const surfaces = [
-    ['surface.default', surface.default],
-    ['surface.raised', surface.raised],
-    ['surface.disabled', surface.disabled],
-  ] as const;
-  return surfaces.map(([id, foreground]) =>
-    collector.measureSurface(
-      id,
-      parseHexColorOrThrow(foreground),
-      background,
-      SURFACE_COLOR_POLICY.surfaceSeparation,
-    ),
-  );
 }
 
 /*** Select inverse-surface outlines with the UI contrast policy. */

@@ -21,6 +21,8 @@ it.each(modes)('%s inversion keeps mode and self-owned role pairs', (mode) => {
   expect(inverted.semantics.brand.onSolidText).toBe(normal.semantics.brand.onSolidText);
   expect(inverted.semantics.brand.softBg).toBe(normal.semantics.brand.softBg);
   expect(inverted.semantics.brand.onSoftText).toBe(normal.semantics.brand.onSoftText);
+  expect(inverted.colors.background).toBe(inverted.semantics.surface.sunken);
+  expect(inverted.semantics.neutral.bg).toBe(inverted.semantics.surface.sunken);
 });
 
 it.each(modes)('%s inversion selects readable content and border semantics', (mode) => {
@@ -49,7 +51,7 @@ it.each(modes)(
     const disabled = theme.colorDiagnostics.contrasts.filter((entry) =>
       entry.id.startsWith('inverse.content.disabled/'),
     );
-    expect(disabled).toHaveLength(2);
+    expect(disabled).toHaveLength(3);
     expect(
       disabled.every((entry) => entry.minimumContrast === SURFACE_COLOR_POLICY.disabledContrast),
     ).toBe(true);
@@ -66,9 +68,24 @@ it.each(modes)(
         (entry) => entry.background === theme.semantics.surface.sunken,
       ),
     ).toBe(true);
-    expect(theme.colorDiagnostics.surfaceSeparation[0]?.contrast).toBe(1);
+    expect(theme.semantics.surface.default).not.toBe(theme.semantics.surface.sunken);
+    expect(theme.colorDiagnostics.surfaceSeparation.every((entry) => entry.passes)).toBe(true);
   },
 );
+
+it.each(modes)('%s inversion keeps selection semantics paired', (mode) => {
+  const theme = createTheme(undefined, mode, undefined, true);
+  const { brand, border, selection } = theme.semantics;
+  expect(selection.background).toBe(brand.softBg);
+  expect(selection.content).toBe(brand.onSoftText);
+  expect(selection.border).toBe(border.focus);
+  expect(
+    getContrastRatio(
+      parseHexColorOrThrow(selection.content),
+      parseHexColorOrThrow(selection.background),
+    ),
+  ).toBeGreaterThanOrEqual(SURFACE_COLOR_POLICY.textContrast);
+});
 
 it.each(modes)('%s disabled controls use the disabled contrast policy', (mode) => {
   const theme = createTheme(undefined, mode, undefined, true);
@@ -183,4 +200,5 @@ it.each([
   expect(
     theme.colorDiagnostics.selections.some((entry) => entry.id.endsWith('neutralFallback')),
   ).toBe(true);
+  expect(theme.colorDiagnostics.surfaceSeparation.every((entry) => entry.passes)).toBe(true);
 });
