@@ -21,8 +21,8 @@ export function TabPanel({ value, children, testID, style, ...layoutProps }: Tab
       accessibilityRole={TAB_PANEL_ROLE}
       nativeID={getPanelId(value)}
       style={[
-        variant === 'attached' ? { backgroundColor: theme.semantics.surface.subtle } : undefined,
         style,
+        variant === 'attached' ? { backgroundColor: theme.semantics.surface.subtle } : undefined,
       ]}
       testID={testID}
     >
