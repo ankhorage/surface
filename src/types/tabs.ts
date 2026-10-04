@@ -3,12 +3,15 @@ import type React from 'react';
 import type { InteractionPolicy } from './interactionPolicy';
 import type { ViewStyleProps } from './layout';
 
+export type TabsVariant = 'line' | 'attached';
+
 export interface TabsProps extends ViewStyleProps {
   children?: React.ReactNode;
   value?: string;
   defaultValue?: string;
   onValueChange?: ((value: string) => void) | undefined;
   testID?: string;
+  variant?: TabsVariant;
 }
 
 export interface TabListProps {
@@ -48,6 +51,7 @@ export interface TabsContextValue {
   setFocusedValue: (value: string | undefined) => void;
   tabs: readonly TabRegistration[];
   unregisterTab: (value: string) => void;
+  variant: TabsVariant;
 }
 
 export type TabNavigationKey =
