@@ -42,7 +42,6 @@ test('opens the selected tab into its panel while retaining inactive separators'
   browserWindow.close();
 });
 
-
 test.each([
   ['light', false],
   ['light', true],
@@ -55,7 +54,7 @@ test.each([
   expect(styles.inactive).not.toContain('border-bottom-width');
   expect(styles.inactive).toMatch(/background-color:(?:transparent|rgba\(0,0,0,0(?:\.0+)?\))/u);
   expect(styles.activeBackground).toBeTruthy();
-  expect(styles.panel).toContain(\`background-color:\${styles.activeBackground}\`);
+  expect(styles.panel).toContain(`background-color:${styles.activeBackground}`);
   expect(styles.panel).not.toContain('rgb(255, 0, 255)');
 });
 
@@ -66,8 +65,8 @@ test.each(['light', 'dark'] as const)(
     const inverted = renderAttachedStyles(mode, true);
 
     expect(normal.activeBackground).not.toBe(inverted.activeBackground);
-    expect(normal.panel).toContain(\`background-color:\${normal.activeBackground}\`);
-    expect(inverted.panel).toContain(\`background-color:\${inverted.activeBackground}\`);
+    expect(normal.panel).toContain(`background-color:${normal.activeBackground}`);
+    expect(inverted.panel).toContain(`background-color:${inverted.activeBackground}`);
   },
 );
 
