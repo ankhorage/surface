@@ -247,10 +247,13 @@ graph TD
   module_src_features_form_text_input_utils_resolveTextInputPresentation_ts --> module_src_types_theme_ts
   module_src_features_icon_adapters_inbound_Icon_tsx["src/features/icon/adapters/inbound/Icon.tsx"]
   package__ankhorage_surface -.-> module_src_features_icon_adapters_inbound_Icon_tsx
+  module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_constants_surfaceColor_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_features_icon_adapters_inbound_PortableIcon_tsx
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_features_theme_runtime_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_features_theme_utils_resolveToken_ts
+  module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_internal_resolvers_resolveTextColor_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_types_icon_ts
+  module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_types_surfaceColor_ts
   module_src_features_icon_adapters_inbound_PortableIcon_test_tsx["src/features/icon/adapters/inbound/PortableIcon.test.tsx"]
   package__ankhorage_surface -.-> module_src_features_icon_adapters_inbound_PortableIcon_test_tsx
   module_src_features_icon_adapters_inbound_PortableIcon_tsx["src/features/icon/adapters/inbound/PortableIcon.tsx"]
@@ -533,6 +536,7 @@ graph TD
   module_src_features_theme_application_use_cases_createTheme_ts["src/features/theme/application/use-cases/createTheme.ts"]
   package__ankhorage_surface -.-> module_src_features_theme_application_use_cases_createTheme_ts
   module_src_features_theme_application_use_cases_createTheme_ts --> module_src_features_theme_domain_generatePalette_ts
+  module_src_features_theme_application_use_cases_createTheme_ts --> module_src_features_theme_domain_projectInvertedTheme_ts
   module_src_features_theme_application_use_cases_createTheme_ts --> module_src_features_theme_utils_resolveGlobalTokens_ts
   module_src_features_theme_application_use_cases_createTheme_ts --> module_src_types_theme_ts
   module_src_features_theme_application_use_cases_createThemeOverrides_test_ts["src/features/theme/application/use-cases/createThemeOverrides.test.ts"]
@@ -564,6 +568,17 @@ graph TD
   module_src_features_theme_domain_inverseSemantics_test_ts["src/features/theme/domain/inverseSemantics.test.ts"]
   package__ankhorage_surface -.-> module_src_features_theme_domain_inverseSemantics_test_ts
   module_src_features_theme_domain_inverseSemantics_test_ts --> module_src_features_theme_domain_generatePalette_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts["src/features/theme/domain/projectInvertedTheme.ts"]
+  package__ankhorage_surface -.-> module_src_features_theme_domain_projectInvertedTheme_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_features_theme_constants_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_features_theme_domain_createSurfaceColorDiagnosticCollector_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_features_theme_domain_resolveInverseSurface_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_types_theme_ts
+  module_src_features_theme_domain_resolveInverseSurface_ts["src/features/theme/domain/resolveInverseSurface.ts"]
+  package__ankhorage_surface -.-> module_src_features_theme_domain_resolveInverseSurface_ts
+  module_src_features_theme_domain_resolveInverseSurface_ts --> module_src_features_theme_constants_ts
+  module_src_features_theme_domain_resolveInverseSurface_ts --> module_src_features_theme_domain_createSurfaceColorDiagnosticCollector_ts
+  module_src_features_theme_domain_resolveInverseSurface_ts --> module_src_types_theme_ts
   module_src_features_theme_domain_resolveRoleSemantics_ts["src/features/theme/domain/resolveRoleSemantics.ts"]
   package__ankhorage_surface -.-> module_src_features_theme_domain_resolveRoleSemantics_ts
   module_src_features_theme_domain_resolveRoleSemantics_ts --> module_src_features_theme_constants_ts
@@ -812,6 +827,11 @@ graph TD
   module_src_internal_resolvers_resolveTextStyles_ts --> module_src_types_typography_ts
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
   package__ankhorage_surface -.-> module_src_internal_useControllableState_ts
+  module_src_invertedThemeAcceptance_test_ts["src/invertedThemeAcceptance.test.ts"]
+  package__ankhorage_surface -.-> module_src_invertedThemeAcceptance_test_ts
+  module_src_invertedThemeAcceptance_test_ts --> module_src_features_theme_application_use_cases_createTheme_ts
+  module_src_invertedThemeAcceptance_test_ts --> module_src_features_theme_constants_ts
+  module_src_invertedThemeAcceptance_test_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
   module_src_structureOwnership_test_ts["src/structureOwnership.test.ts"]
   package__ankhorage_surface -.-> module_src_structureOwnership_test_ts
   module_src_types_accordion_ts["src/types/accordion.ts"]

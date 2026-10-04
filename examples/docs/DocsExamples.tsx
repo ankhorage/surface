@@ -14,6 +14,7 @@ import {
   Text,
   TextInput,
   ThemeProvider,
+  ThemeScope,
   ToastProvider,
   Tooltip,
   type ThemeConfig,
@@ -124,6 +125,25 @@ export function NavigationExample() {
           <Text color="success">Theme overrides can stay semantic.</Text>
         </View>
       </View>
+    </ThemeProvider>
+  );
+}
+
+export function InvertedSurfaceExample() {
+  return (
+    <ThemeProvider initialConfig={docsThemeConfig}>
+      <ThemeScope inverted>
+        <View bg="surface" gap="s" p="l">
+          <Text>Inverted surface content inherits readable colors.</Text>
+          <Button variant="ghost">Transparent action</Button>
+          <Button variant="solid">Solid action</Button>
+          <ThemeScope inverted={false}>
+            <View bg="surface" p="m">
+              <Text>Nested content returns to normal polarity.</Text>
+            </View>
+          </ThemeScope>
+        </View>
+      </ThemeScope>
     </ThemeProvider>
   );
 }

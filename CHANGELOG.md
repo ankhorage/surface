@@ -1,5 +1,29 @@
 # @ankhorage/surface
 
+## 9.2.0
+
+### Minor Changes
+
+- 5c2f97d: Add inherited inverted surface polarity with contrast-safe semantic projection
+
+## 9.1.116
+
+### Patch Changes
+
+- 3421a15: Update dependencies: `@ankhorage/contracts`.
+
+## 9.1.115
+
+### Patch Changes
+
+- b9a911a: Update dependencies: `@ankhorage/contracts`.
+
+## 9.1.114
+
+### Patch Changes
+
+- 2d372bb: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`, `@ankhorage/utility`.
+
 ## 9.1.113
 
 ### Patch Changes

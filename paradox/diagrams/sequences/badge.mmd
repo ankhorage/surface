@@ -4,6 +4,7 @@ sequenceDiagram
   participant participant_resolveButtonColors as resolveButtonColors
   participant participant_resolveControlSize as resolveControlSize
   participant participant_resolveSurfaceColor as resolveSurfaceColor
+  participant participant_resolveTransparentContentColor as resolveTransparentContentColor
   participant participant_use as use
   participant participant_useTheme as useTheme
   participant_Badge->>participant_useTheme: useTheme()
@@ -15,6 +16,8 @@ sequenceDiagram
   participant_Badge->>participant_resolveButtonColors: resolveButtonColors()
   participant_resolveButtonColors->>participant_resolveSurfaceColor: resolveSurfaceColor()
   participant_resolveSurfaceColor-->>participant_resolveButtonColors: return
+  participant_resolveButtonColors->>participant_resolveTransparentContentColor: resolveTransparentContentColor()
+  participant_resolveTransparentContentColor-->>participant_resolveButtonColors: return
   participant_resolveButtonColors-->>participant_Badge: return
   participant_Badge->>participant_resolveBadgeStyle: resolveBadgeStyle()
   participant_resolveBadgeStyle-->>participant_Badge: return

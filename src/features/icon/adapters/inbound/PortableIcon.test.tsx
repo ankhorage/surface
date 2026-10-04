@@ -37,6 +37,8 @@ await mock.module('react-native-svg', () => ({
 const { SUPPORTED_ICON_PROVIDERS } = await import('../../constants');
 const { Icon } = await import('./Icon');
 const { PortableIcon } = await import('./PortableIcon');
+const { createTheme } = await import('../../../theme/application/use-cases/createTheme');
+const { ThemeRuntimeContext } = await import('../../../theme/adapters/inbound/ThemeRuntimeContext');
 
 describe('portable icon rendering', () => {
   test('renders Ionicons through the public Icon API', () => {
@@ -88,6 +90,36 @@ describe('portable icon rendering', () => {
     expect(markup).toContain('width="18"');
     expect(markup).toContain('height="18"');
   });
+});
+
+test('semantic icon roles follow polarity while raw colors remain unchanged', () => {
+  for (const mode of ['light', 'dark'] as const) {
+    const normal = createTheme(undefined, mode);
+    const inverted = createTheme(undefined, mode, undefined, true);
+    const renderColor = (theme: typeof normal, color: string) =>
+      renderToStaticMarkup(
+        <ThemeRuntimeContext
+          value={{
+            theme,
+            mode,
+            inverted: theme.inverted,
+            setThemeConfig: () => undefined,
+            setMode: () => undefined,
+          }}
+        >
+          <Icon color={color} size={18} source="https://example.com/icons/home.svg" />
+        </ThemeRuntimeContext>,
+      );
+
+    expect(renderColor(normal, 'primary')).toContain(`data-color="${normal.semantics.brand.base}"`);
+    expect(renderColor(inverted, 'primary')).toContain(
+      `data-color="${inverted.semantics.brand.onSurfaceText}"`,
+    );
+    expect(renderColor(inverted, 'text')).toContain(
+      `data-color="${inverted.semantics.content.default}"`,
+    );
+    expect(renderColor(inverted, '#123456')).toContain('data-color="#123456"');
+  }
 });
 
 describe('portable icon web assets', () => {

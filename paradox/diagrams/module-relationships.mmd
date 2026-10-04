@@ -143,6 +143,8 @@ graph LR
   module_src_features_theme_domain_generatePalette_test_ts["src/features/theme/domain/generatePalette.test.ts"]
   module_src_features_theme_domain_generatePalette_ts["src/features/theme/domain/generatePalette.ts"]
   module_src_features_theme_domain_inverseSemantics_test_ts["src/features/theme/domain/inverseSemantics.test.ts"]
+  module_src_features_theme_domain_projectInvertedTheme_ts["src/features/theme/domain/projectInvertedTheme.ts"]
+  module_src_features_theme_domain_resolveInverseSurface_ts["src/features/theme/domain/resolveInverseSurface.ts"]
   module_src_features_theme_domain_resolveRoleSemantics_ts["src/features/theme/domain/resolveRoleSemantics.ts"]
   module_src_features_theme_domain_resolveSemanticColors_ts["src/features/theme/domain/resolveSemanticColors.ts"]
   module_src_features_theme_domain_resolveSurfaceSemanticModel_ts["src/features/theme/domain/resolveSurfaceSemanticModel.ts"]
@@ -212,6 +214,7 @@ graph LR
   module_src_internal_resolvers_resolveTextStyles_test_ts["src/internal/resolvers/resolveTextStyles.test.ts"]
   module_src_internal_resolvers_resolveTextStyles_ts["src/internal/resolvers/resolveTextStyles.ts"]
   module_src_internal_useControllableState_ts["src/internal/useControllableState.ts"]
+  module_src_invertedThemeAcceptance_test_ts["src/invertedThemeAcceptance.test.ts"]
   module_src_structureOwnership_test_ts["src/structureOwnership.test.ts"]
   module_src_types_accordion_ts["src/types/accordion.ts"]
   module_src_types_app_bar_ts["src/types/app-bar.ts"]
@@ -360,10 +363,13 @@ graph LR
   module_src_features_form_text_input_utils_resolveTextInputPresentation_ts --> module_src_internal_resolvers_index_ts
   module_src_features_form_text_input_utils_resolveTextInputPresentation_ts --> module_src_types_text_input_ts
   module_src_features_form_text_input_utils_resolveTextInputPresentation_ts --> module_src_types_theme_ts
+  module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_constants_surfaceColor_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_features_icon_adapters_inbound_PortableIcon_tsx
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_features_theme_runtime_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_features_theme_utils_resolveToken_ts
+  module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_internal_resolvers_resolveTextColor_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_types_icon_ts
+  module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_types_surfaceColor_ts
   module_src_features_icon_adapters_inbound_PortableIcon_tsx --> module_src_types_icon_ts
   module_src_features_icon_adapters_inbound_PortableIcon_tsx --> module_src_types_image_ts
   module_src_features_icon_adapters_inbound_PortableIcon_web_test_ts --> module_src_features_icon_adapters_inbound_PortableIcon_web_tsx
@@ -508,6 +514,7 @@ graph LR
   module_src_features_theme_adapters_inbound_useTheme_ts --> module_src_features_theme_adapters_inbound_ThemeRuntimeContext_tsx
   module_src_features_theme_adapters_inbound_useTheme_ts --> module_src_types_theme_ts
   module_src_features_theme_application_use_cases_createTheme_ts --> module_src_features_theme_domain_generatePalette_ts
+  module_src_features_theme_application_use_cases_createTheme_ts --> module_src_features_theme_domain_projectInvertedTheme_ts
   module_src_features_theme_application_use_cases_createTheme_ts --> module_src_features_theme_utils_resolveGlobalTokens_ts
   module_src_features_theme_application_use_cases_createTheme_ts --> module_src_types_theme_ts
   module_src_features_theme_application_use_cases_createThemeOverrides_test_ts --> module_src_features_theme_application_use_cases_createTheme_ts
@@ -523,6 +530,13 @@ graph LR
   module_src_features_theme_domain_generatePalette_ts --> module_src_features_theme_domain_resolveSurfaceSemanticModel_ts
   module_src_features_theme_domain_generatePalette_ts --> module_src_types_theme_ts
   module_src_features_theme_domain_inverseSemantics_test_ts --> module_src_features_theme_domain_generatePalette_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_features_theme_constants_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_features_theme_domain_createSurfaceColorDiagnosticCollector_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_features_theme_domain_resolveInverseSurface_ts
+  module_src_features_theme_domain_projectInvertedTheme_ts --> module_src_types_theme_ts
+  module_src_features_theme_domain_resolveInverseSurface_ts --> module_src_features_theme_constants_ts
+  module_src_features_theme_domain_resolveInverseSurface_ts --> module_src_features_theme_domain_createSurfaceColorDiagnosticCollector_ts
+  module_src_features_theme_domain_resolveInverseSurface_ts --> module_src_types_theme_ts
   module_src_features_theme_domain_resolveRoleSemantics_ts --> module_src_features_theme_constants_ts
   module_src_features_theme_domain_resolveRoleSemantics_ts --> module_src_types_theme_ts
   module_src_features_theme_domain_resolveSurfaceSemanticModel_ts --> module_src_features_theme_domain_createSurfaceColorDiagnosticCollector_ts
@@ -634,6 +648,9 @@ graph LR
   module_src_internal_resolvers_resolveTextStyles_test_ts --> module_src_internal_resolvers_resolveTextStyles_ts
   module_src_internal_resolvers_resolveTextStyles_ts --> module_src_types_theme_ts
   module_src_internal_resolvers_resolveTextStyles_ts --> module_src_types_typography_ts
+  module_src_invertedThemeAcceptance_test_ts --> module_src_features_theme_application_use_cases_createTheme_ts
+  module_src_invertedThemeAcceptance_test_ts --> module_src_features_theme_constants_ts
+  module_src_invertedThemeAcceptance_test_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
   module_src_types_accordion_ts --> module_src_types_interactionPolicy_ts
   module_src_types_app_bar_ts --> module_src_types_layout_ts
   module_src_types_badge_ts --> module_src_types_button_ts

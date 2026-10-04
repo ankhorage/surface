@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.1.113",
+      "value": "v9.2.0",
       "color": "cb3837"
     },
     {
@@ -70,35 +70,35 @@
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function getBreakpointFromWidth has no Paradox description.",
+      "message": "Exported function getBreakpointFromWidth has no documentation description.",
       "sourcePath": "src/core/responsive/getBreakpointFromWidth.ts",
       "line": 4
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function resolveResponsive has no Paradox description.",
+      "message": "Exported function resolveResponsive has no documentation description.",
       "sourcePath": "src/core/responsive/resolve.ts",
       "line": 8
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function ResponsiveProvider has no Paradox description.",
+      "message": "Exported function ResponsiveProvider has no documentation description.",
       "sourcePath": "src/core/responsive/ResponsiveProvider.tsx",
       "line": 9
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function useResponsiveRuntime has no Paradox description.",
+      "message": "Exported function useResponsiveRuntime has no documentation description.",
       "sourcePath": "src/core/responsive/ResponsiveProvider.tsx",
       "line": 23
     },
     {
       "ruleId": "documentation.public-function.description",
       "severity": "warning",
-      "message": "Public function useBreakpoint has no Paradox description.",
+      "message": "Exported function useBreakpoint has no documentation description.",
       "sourcePath": "src/core/responsive/useBreakpoint.ts",
       "line": 6
     }
@@ -823,10 +823,13 @@
       "path": "src/features/icon/adapters/inbound/Icon.tsx",
       "isEntrypoint": false,
       "dependencies": [
+        "src/constants/surfaceColor.ts",
         "src/features/icon/adapters/inbound/PortableIcon.tsx",
         "src/features/theme/runtime.ts",
         "src/features/theme/utils/resolveToken.ts",
-        "src/types/icon.ts"
+        "src/internal/resolvers/resolveTextColor.ts",
+        "src/types/icon.ts",
+        "src/types/surfaceColor.ts"
       ],
       "exports": [
         "Icon"
@@ -1584,6 +1587,7 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/features/theme/domain/generatePalette.ts",
+        "src/features/theme/domain/projectInvertedTheme.ts",
         "src/features/theme/utils/resolveGlobalTokens.ts",
         "src/types/theme.ts"
       ],
@@ -1668,6 +1672,31 @@
         "src/features/theme/domain/generatePalette.ts"
       ],
       "exports": []
+    },
+    {
+      "path": "src/features/theme/domain/projectInvertedTheme.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/theme/constants.ts",
+        "src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts",
+        "src/features/theme/domain/resolveInverseSurface.ts",
+        "src/types/theme.ts"
+      ],
+      "exports": [
+        "projectInvertedTheme"
+      ]
+    },
+    {
+      "path": "src/features/theme/domain/resolveInverseSurface.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/theme/constants.ts",
+        "src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts",
+        "src/types/theme.ts"
+      ],
+      "exports": [
+        "resolveInverseSurface"
+      ]
     },
     {
       "path": "src/features/theme/domain/resolveRoleSemantics.ts",
@@ -2560,6 +2589,16 @@
       "exports": [
         "useControllableState"
       ]
+    },
+    {
+      "path": "src/invertedThemeAcceptance.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/theme/application/use-cases/createTheme.ts",
+        "src/features/theme/constants.ts",
+        "src/internal/resolvers/resolveInteractiveColors.ts"
+      ],
+      "exports": []
     },
     {
       "path": "src/structureOwnership.test.ts",
@@ -9808,7 +9847,7 @@
     {
       "name": "createTheme",
       "title": null,
-      "description": "Resolve canonical persisted theme source into the complete Surface runtime theme.",
+      "description": "Resolve canonical theme source into a normal or inverted Surface runtime theme.",
       "isReadme": false,
       "see": [],
       "security": [],
@@ -9816,7 +9855,7 @@
       "modulePath": "src/features/theme/application/use-cases/createTheme.ts",
       "sourceLocation": {
         "filePath": "src/features/theme/application/use-cases/createTheme.ts",
-        "line": 15,
+        "line": 16,
         "column": 1
       },
       "exportPaths": [
@@ -9827,7 +9866,7 @@
       ],
       "signatures": [
         {
-          "label": "(config?: ThemeConfig, mode?: \"light\" | \"dark\", activeFontId?: string | null | undefined) => SurfaceTheme",
+          "label": "(config?: ThemeConfig, mode?: \"light\" | \"dark\", activeFontId?: string | null | undefined, inverted?: boolean) => SurfaceTheme",
           "parameters": [
             {
               "name": "activeFontId",
@@ -9838,6 +9877,12 @@
             {
               "name": "config",
               "type": "ThemeConfig",
+              "required": false,
+              "description": null
+            },
+            {
+              "name": "inverted",
+              "type": "boolean",
               "required": false,
               "description": null
             },
@@ -11254,7 +11299,7 @@
       "modulePath": "src/features/icon/adapters/inbound/Icon.tsx",
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/Icon.tsx",
-        "line": 7,
+        "line": 10,
         "column": 1
       },
       "exportPaths": [
@@ -16934,6 +16979,13 @@
           "description": null
         },
         {
+          "name": "inverted",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "radii",
           "kind": "property",
           "type": "{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }",
@@ -18558,10 +18610,10 @@
       ],
       "signatures": [
         {
-          "label": "({\n  children,\n  i18nKey,\n  variant = 'body',\n  emphasis = 'default',\n  color,\n  align,\n  weight,\n  italic = false,\n  numberOfLines,\n  testID,\n}: TextProps) => React.JSX.Element",
+          "label": "({\n  children,\n  i18nKey,\n  variant = 'body',\n  emphasis = 'default',\n  color,\n  align,\n  weight,\n  italic = false,\n  numberOfLines,\n  testID,\n  style,\n}: TextProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  i18nKey,\n  variant = 'body',\n  emphasis = 'default',\n  color,\n  align,\n  weight,\n  italic = false,\n  numberOfLines,\n  testID,\n}",
+              "name": "{\n  children,\n  i18nKey,\n  variant = 'body',\n  emphasis = 'default',\n  color,\n  align,\n  weight,\n  italic = false,\n  numberOfLines,\n  testID,\n  style,\n}",
               "type": "TextProps",
               "required": true,
               "description": null
@@ -20009,6 +20061,13 @@
           "description": null
         },
         {
+          "name": "style",
+          "kind": "property",
+          "type": "Readonly<Omit<Readonly<Omit<Readonly<Omit<Readonly<Omit<Readonly<{ display?: \"none\" | \"flex\" | \"contents\" | undefined; width?: import(\"react-native\").DimensionValue | undefined; height?: import(\"react-native\").DimensionValue | undefined; bottom?: import(\"react-native\").DimensionValue | undefined; end?: import(\"react-native\").DimensionValue | undefined; left?: import(\"react-native\").DimensionValue | undefined; right?: import(\"react-native\").DimensionValue | undefined; start?: import(\"react-native\").DimensionValue | undefined; top?: import(\"react-native\").DimensionValue | undefined; inset?: import(\"react-native\").DimensionValue | undefined; insetBlock?: import(\"react-native\").DimensionValue | undefined; insetBlockEnd?: import(\"react-native\").DimensionValue | undefined; insetBlockStart?: import(\"react-native\").DimensionValue | undefined; insetInline?: import(\"react-native\").DimensionValue | undefined; insetInlineEnd?: import(\"react-native\").DimensionValue | undefined; insetInlineStart?: import(\"react-native\").DimensionValue | undefined; minWidth?: import(\"react-native\").DimensionValue | undefined; maxWidth?: import(\"react-native\").DimensionValue | undefined; minHeight?: import(\"react-native\").DimensionValue | undefined; maxHeight?: import(\"react-native\").DimensionValue | undefined; margin?: import(\"react-native\").DimensionValue | undefined; marginBlock?: import(\"react-native\").DimensionValue | undefined; marginBlockEnd?: import(\"react-native\").DimensionValue | undefined; marginBlockStart?: import(\"react-native\").DimensionValue | undefined; marginBottom?: import(\"react-native\").DimensionValue | undefined; marginEnd?: import(\"react-native\").DimensionValue | undefined; marginHorizontal?: import(\"react-native\").DimensionValue | undefined; marginInline?: import(\"react-native\").DimensionValue | undefined; marginInlineEnd?: import(\"react-native\").DimensionValue | undefined; marginInlineStart?: import(\"react-native\").DimensionValue | undefined; marginLeft?: import(\"react-native\").DimensionValue | undefined; marginRight?: import(\"react-native\").DimensionValue | undefined; marginStart?: import(\"react-native\").DimensionValue | undefined; marginTop?: import(\"react-native\").DimensionValue | undefined; marginVertical?: import(\"react-native\").DimensionValue | undefined; padding?: import(\"react-native\").DimensionValue | undefined; paddingBlock?: import(\"react-native\").DimensionValue | undefined; paddingBlockEnd?: import(\"react-native\").DimensionValue | undefined; paddingBlockStart?: import(\"react-native\").DimensionValue | undefined; paddingBottom?: import(\"react-native\").DimensionValue | undefined; paddingEnd?: import(\"react-native\").DimensionValue | undefined; paddingHorizontal?: import(\"react-native\").DimensionValue | undefined; paddingInline?: import(\"react-native\").DimensionValue | undefined; paddingInlineEnd?: import(\"react-native\").DimensionValue | undefined; paddingInlineStart?: import(\"react-native\").DimensionValue | undefined; paddingLeft?: import(\"react-native\").DimensionValue | undefined; paddingRight?: import(\"react-native\").DimensionValue | undefined; paddingStart?: import(\"react-native\").DimensionValue | undefined; paddingTop?: import(\"react-native\").DimensionValue | undefined; paddingVertical?: import(\"react-native\").DimensionValue | undefined; borderWidth?: number | undefined; borderBottomWidth?: number | undefined; borderEndWidth?: number | undefined; borderLeftWidth?: number | undefined; borderRightWidth?: number | undefined; borderStartWidth?: number | undefined; borderTopWidth?: number | undefined; position?: \"absolute\" | \"relative\" | \"static\" | undefined; flexDirection?: \"row\" | \"row-reverse\" | \"column\" | \"column-reverse\" | undefined; flexWrap?: \"wrap\" | \"nowrap\" | \"wrap-reverse\" | undefined; justifyContent?: \"flex-start\" | \"flex-end\" | \"center\" | \"space-between\" | \"space-around\" | \"space-evenly\" | undefined; alignItems?: \"flex-start\" | \"flex-end\" | \"center\" | \"stretch\" | \"baseline\" | undefined; alignSelf?: \"auto\" | \"flex-start\" | \"flex-end\" | \"center\" | \"stretch\" | \"baseline\" | undefined; alignContent?: \"flex-start\" | \"flex-end\" | \"center\" | \"stretch\" | \"space-between\" | \"space-around\" | \"space-evenly\" | undefined; overflow?: \"visible\" | \"hidden\" | \"scroll\" | undefined; flex?: number | undefined; flexGrow?: number | undefined; flexShrink?: number | undefined; flexBasis?: number | string | undefined; aspectRatio?: number | string | undefined; boxSizing?: \"border-box\" | \"content-box\" | undefined; zIndex?: number | undefined; direction?: \"inherit\" | \"ltr\" | \"rtl\" | undefined; rowGap?: number | string | undefined; columnGap?: number | string | undefined; gap?: number | string | undefined; }>, \"pointerEvents\" | \"shadowColor\" | \"shadowOffset\" | \"shadowOpacity\" | \"shadowRadius\" | \"transform\" | \"transformOrigin\" | \"backfaceVisibility\" | \"backgroundColor\" | \"borderColor\" | \"borderCurve\" | \"borderBottomColor\" | \"borderEndColor\" | \"borderLeftColor\" | \"borderRightColor\" | \"borderStartColor\" | \"borderTopColor\" | \"borderBlockColor\" | \"borderBlockEndColor\" | \"borderBlockStartColor\" | \"borderRadius\" | \"borderBottomEndRadius\" | \"borderBottomLeftRadius\" | \"borderBottomRightRadius\" | \"borderBottomStartRadius\" | \"borderEndEndRadius\" | \"borderEndStartRadius\" | \"borderStartEndRadius\" | \"borderStartStartRadius\" | \"borderTopEndRadius\" | \"borderTopLeftRadius\" | \"borderTopRightRadius\" | \"borderTopStartRadius\" | \"borderStyle\" | \"borderWidth\" | \"borderBottomWidth\" | \"borderEndWidth\" | \"borderLeftWidth\" | \"borderRightWidth\" | \"borderStartWidth\" | \"borderTopWidth\" | \"opacity\" | \"outlineColor\" | \"outlineOffset\" | \"outlineStyle\" | \"outlineWidth\" | \"elevation\" | \"cursor\" | \"boxShadow\" | \"filter\" | \"mixBlendMode\" | \"backgroundImage\" | \"experimental_backgroundImage\" | \"experimental_backgroundSize\" | \"experimental_backgroundPosition\" | \"experimental_backgroundRepeat\" | \"isolation\"> & Omit<Readonly<Omit<Readonly<{ shadowColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; shadowOffset?: Readonly<{ width?: number | undefined; height?: number | undefined; }> | undefined; shadowOpacity?: number | undefined; shadowRadius?: number | undefined; }>, never> & Omit<Readonly<{}>, never>>, \"pointerEvents\" | \"transform\" | \"transformOrigin\" | \"backfaceVisibility\" | \"backgroundColor\" | \"borderColor\" | \"borderCurve\" | \"borderBottomColor\" | \"borderEndColor\" | \"borderLeftColor\" | \"borderRightColor\" | \"borderStartColor\" | \"borderTopColor\" | \"borderBlockColor\" | \"borderBlockEndColor\" | \"borderBlockStartColor\" | \"borderRadius\" | \"borderBottomEndRadius\" | \"borderBottomLeftRadius\" | \"borderBottomRightRadius\" | \"borderBottomStartRadius\" | \"borderEndEndRadius\" | \"borderEndStartRadius\" | \"borderStartEndRadius\" | \"borderStartStartRadius\" | \"borderTopEndRadius\" | \"borderTopLeftRadius\" | \"borderTopRightRadius\" | \"borderTopStartRadius\" | \"borderStyle\" | \"borderWidth\" | \"borderBottomWidth\" | \"borderEndWidth\" | \"borderLeftWidth\" | \"borderRightWidth\" | \"borderStartWidth\" | \"borderTopWidth\" | \"opacity\" | \"outlineColor\" | \"outlineOffset\" | \"outlineStyle\" | \"outlineWidth\" | \"elevation\" | \"cursor\" | \"boxShadow\" | \"filter\" | \"mixBlendMode\" | \"backgroundImage\" | \"experimental_backgroundImage\" | \"experimental_backgroundSize\" | \"experimental_backgroundPosition\" | \"experimental_backgroundRepeat\" | \"isolation\"> & Omit<Readonly<{ transform?: ReadonlyArray<Readonly<import(\"react-native/types_generated/Libraries/StyleSheet/private/_TransformStyle\").MaximumOneOf<import(\"react-native/types_generated/Libraries/StyleSheet/private/_TransformStyle\").MergeUnion<{ readonly perspective: number | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly rotate: string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly rotateX: string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly rotateY: string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly rotateZ: string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly scale: number | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly scaleX: number | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly scaleY: number | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly translateX: number | string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly translateY: number | string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly translate: [number | string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node, number | string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node] | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly skewX: string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly skewY: string | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; } | { readonly matrix: ReadonlyArray<number | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node> | import(\"react-native/types_generated/Libraries/Animated/AnimatedExports\").Node; }>>>> | string | undefined; transformOrigin?: [string | number, string | number, string | number] | string | undefined; }>, \"pointerEvents\" | \"backfaceVisibility\" | \"backgroundColor\" | \"borderColor\" | \"borderCurve\" | \"borderBottomColor\" | \"borderEndColor\" | \"borderLeftColor\" | \"borderRightColor\" | \"borderStartColor\" | \"borderTopColor\" | \"borderBlockColor\" | \"borderBlockEndColor\" | \"borderBlockStartColor\" | \"borderRadius\" | \"borderBottomEndRadius\" | \"borderBottomLeftRadius\" | \"borderBottomRightRadius\" | \"borderBottomStartRadius\" | \"borderEndEndRadius\" | \"borderEndStartRadius\" | \"borderStartEndRadius\" | \"borderStartStartRadius\" | \"borderTopEndRadius\" | \"borderTopLeftRadius\" | \"borderTopRightRadius\" | \"borderTopStartRadius\" | \"borderStyle\" | \"borderWidth\" | \"borderBottomWidth\" | \"borderEndWidth\" | \"borderLeftWidth\" | \"borderRightWidth\" | \"borderStartWidth\" | \"borderTopWidth\" | \"opacity\" | \"outlineColor\" | \"outlineOffset\" | \"outlineStyle\" | \"outlineWidth\" | \"elevation\" | \"cursor\" | \"boxShadow\" | \"filter\" | \"mixBlendMode\" | \"backgroundImage\" | \"experimental_backgroundImage\" | \"experimental_backgroundSize\" | \"experimental_backgroundPosition\" | \"experimental_backgroundRepeat\" | \"isolation\"> & Omit<Readonly<{ backfaceVisibility?: \"visible\" | \"hidden\" | undefined; backgroundColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderCurve?: \"circular\" | \"continuous\" | undefined; borderBottomColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderEndColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderLeftColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderRightColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderStartColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderTopColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderBlockColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderBlockEndColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderBlockStartColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; borderRadius?: number | string | undefined; borderBottomEndRadius?: number | string | undefined; borderBottomLeftRadius?: number | string | undefined; borderBottomRightRadius?: number | string | undefined; borderBottomStartRadius?: number | string | undefined; borderEndEndRadius?: number | string | undefined; borderEndStartRadius?: number | string | undefined; borderStartEndRadius?: number | string | undefined; borderStartStartRadius?: number | string | undefined; borderTopEndRadius?: number | string | undefined; borderTopLeftRadius?: number | string | undefined; borderTopRightRadius?: number | string | undefined; borderTopStartRadius?: number | string | undefined; borderStyle?: \"solid\" | \"dotted\" | \"dashed\" | undefined; borderWidth?: number | undefined; borderBottomWidth?: number | undefined; borderEndWidth?: number | undefined; borderLeftWidth?: number | undefined; borderRightWidth?: number | undefined; borderStartWidth?: number | undefined; borderTopWidth?: number | undefined; opacity?: number | undefined; outlineColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; outlineOffset?: number | undefined; outlineStyle?: \"solid\" | \"dotted\" | \"dashed\" | undefined; outlineWidth?: number | undefined; elevation?: number | undefined; pointerEvents?: \"auto\" | \"none\" | \"box-none\" | \"box-only\" | undefined; cursor?: import(\"react-native\").CursorValue | undefined; boxShadow?: ReadonlyArray<import(\"react-native\").BoxShadowValue> | string | undefined; filter?: ReadonlyArray<import(\"react-native\").FilterFunction> | string | undefined; mixBlendMode?: (\"normal\" | \"multiply\" | \"screen\" | \"overlay\" | \"darken\" | \"lighten\" | \"color-dodge\" | \"color-burn\" | \"hard-light\" | \"soft-light\" | \"difference\" | \"exclusion\" | \"hue\" | \"saturation\" | \"color\" | \"luminosity\" | \"plus-lighter\") | undefined; backgroundImage?: ReadonlyArray<import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").BackgroundImageValue> | string | undefined; experimental_backgroundImage?: ReadonlyArray<import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").BackgroundImageValue> | string | undefined; experimental_backgroundSize?: ReadonlyArray<import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").BackgroundSizeValue> | string | undefined; experimental_backgroundPosition?: ReadonlyArray<import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").BackgroundPositionValue> | string | undefined; experimental_backgroundRepeat?: ReadonlyArray<import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").BackgroundRepeatValue> | string | undefined; isolation?: \"auto\" | \"isolate\" | undefined; }>, never>>, never> & Omit<Readonly<{}>, never>>, \"color\" | \"textAlignVertical\" | \"textAlign\" | \"fontFamily\" | \"fontSize\" | \"fontStyle\" | \"fontWeight\" | \"fontVariant\" | \"textShadowOffset\" | \"textShadowRadius\" | \"textShadowColor\" | \"letterSpacing\" | \"lineHeight\" | \"includeFontPadding\" | \"textDecorationLine\" | \"textDecorationStyle\" | \"textDecorationColor\" | \"textTransform\" | \"userSelect\" | \"verticalAlign\" | \"writingDirection\"> & Omit<Readonly<{ color?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; fontFamily?: string | undefined; fontSize?: number | undefined; fontStyle?: \"normal\" | \"italic\" | undefined; fontWeight?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____FontWeight_Internal | undefined; fontVariant?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____FontVariantArray_Internal | string | undefined; textShadowOffset?: Readonly<{ width: number; height: number; }> | undefined; textShadowRadius?: number | undefined; textShadowColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; letterSpacing?: number | undefined; lineHeight?: number | undefined; textAlign?: \"auto\" | \"left\" | \"right\" | \"center\" | \"justify\" | \"start\" | \"end\" | undefined; textAlignVertical?: \"auto\" | \"top\" | \"bottom\" | \"center\" | undefined; includeFontPadding?: boolean | undefined; textDecorationLine?: \"none\" | \"underline\" | \"line-through\" | \"underline line-through\" | undefined; textDecorationStyle?: \"solid\" | \"double\" | \"dotted\" | \"dashed\" | \"wavy\" | undefined; textDecorationColor?: import(\"react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes\").____ColorValue_Internal | undefined; textTransform?: \"none\" | \"capitalize\" | \"uppercase\" | \"lowercase\" | undefined; userSelect?: \"auto\" | \"text\" | \"none\" | \"contain\" | \"all\" | undefined; verticalAlign?: \"auto\" | \"top\" | \"bottom\" | \"middle\" | undefined; writingDirection?: \"auto\" | \"ltr\" | \"rtl\" | undefined; }>, never>>, never> & Omit<Readonly<{}>, never>> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "testID",
           "kind": "property",
           "type": "string | undefined",
@@ -20043,7 +20102,7 @@
       "modulePath": "src/types/theme.ts",
       "sourceLocation": {
         "filePath": "src/types/theme.ts",
-        "line": 234,
+        "line": 235,
         "column": 1
       },
       "exportPaths": [
@@ -20103,7 +20162,7 @@
       "modulePath": "src/types/theme.ts",
       "sourceLocation": {
         "filePath": "src/types/theme.ts",
-        "line": 243,
+        "line": 245,
         "column": 1
       },
       "exportPaths": [
@@ -20149,7 +20208,7 @@
       "modulePath": "src/types/theme.ts",
       "sourceLocation": {
         "filePath": "src/types/theme.ts",
-        "line": 236,
+        "line": 237,
         "column": 1
       },
       "exportPaths": [
@@ -20161,6 +20220,13 @@
       ],
       "signatures": [],
       "members": [
+        {
+          "name": "inverted",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
         {
           "name": "mode",
           "kind": "property",
@@ -20195,7 +20261,7 @@
     {
       "name": "ThemeScope",
       "title": null,
-      "description": "Apply a nested Surface theme or mode override without remounting app-level providers.",
+      "description": "Apply nested theme, mode, or inherited surface-polarity overrides without remounting providers.",
       "isReadme": false,
       "see": [],
       "security": [],
@@ -20214,10 +20280,10 @@
       ],
       "signatures": [
         {
-          "label": "({ children, themeConfig, mode }: ThemeScopeProps) => import(\"react\").JSX.Element",
+          "label": "({ children, themeConfig, mode, inverted }: ThemeScopeProps) => import(\"react\").JSX.Element",
           "parameters": [
             {
-              "name": "{ children, themeConfig, mode }",
+              "name": "{ children, themeConfig, mode, inverted }",
               "type": "ThemeScopeProps",
               "required": true,
               "description": null
@@ -20241,7 +20307,7 @@
       "modulePath": "src/types/theme.ts",
       "sourceLocation": {
         "filePath": "src/types/theme.ts",
-        "line": 249,
+        "line": 251,
         "column": 1
       },
       "exportPaths": [
@@ -20257,6 +20323,13 @@
           "kind": "property",
           "type": "ReactNode",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "inverted",
+          "kind": "property",
+          "type": "boolean | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -26899,7 +26972,7 @@
       "modulePath": "src/features/icon/adapters/inbound/Icon.tsx",
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/Icon.tsx",
-        "line": 7,
+        "line": 10,
         "column": 1
       },
       "exportPaths": [
@@ -32110,6 +32183,12 @@
           "description": null
         },
         {
+          "name": "style",
+          "type": "TextStyle | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "testID",
           "type": "string | undefined",
           "required": false,
@@ -33303,7 +33382,7 @@
     },
     {
       "name": "ThemeScope",
-      "description": "Apply a nested Surface theme or mode override without remounting app-level providers.",
+      "description": "Apply nested theme, mode, or inherited surface-polarity overrides without remounting providers.",
       "isReadme": false,
       "see": [],
       "security": [],
@@ -33320,6 +33399,12 @@
         {
           "name": "children",
           "type": "ReactNode | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "inverted",
+          "type": "boolean | undefined",
           "required": false,
           "description": null
         },
@@ -34030,7 +34115,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/badge/adapters/inbound/Badge.tsx",
-        "line": 47,
+        "line": 42,
         "column": 1
       }
     },
@@ -34184,7 +34269,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 118,
+        "line": 116,
         "column": 1
       }
     },
@@ -34195,7 +34280,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 123,
+        "line": 121,
         "column": 1
       }
     },
@@ -34206,7 +34291,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 143,
+        "line": 141,
         "column": 1
       }
     },
@@ -34547,7 +34632,18 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/Icon.tsx",
-        "line": 7,
+        "line": 10,
+        "column": 1
+      }
+    },
+    {
+      "name": "isSurfaceColor",
+      "description": "Distinguish semantic color roles from raw icon colors and other tokens.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/icon/adapters/inbound/Icon.tsx",
+        "line": 23,
         "column": 1
       }
     },
@@ -34560,6 +34656,17 @@
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
         "line": 8,
         "column": 7
+      }
+    },
+    {
+      "name": "renderColor",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
+        "line": 99,
+        "column": 11
       }
     },
     {
@@ -35455,7 +35562,7 @@
     },
     {
       "name": "ThemeScope",
-      "description": "Apply a nested Surface theme or mode override without remounting app-level providers.",
+      "description": "Apply nested theme, mode, or inherited surface-polarity overrides without remounting providers.",
       "see": [],
       "security": [],
       "sourceLocation": {
@@ -35477,12 +35584,12 @@
     },
     {
       "name": "createTheme",
-      "description": "Resolve canonical persisted theme source into the complete Surface runtime theme.",
+      "description": "Resolve canonical theme source into a normal or inverted Surface runtime theme.",
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/theme/application/use-cases/createTheme.ts",
-        "line": 15,
+        "line": 16,
         "column": 1
       }
     },
@@ -35493,7 +35600,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/theme/application/use-cases/createTheme.ts",
-        "line": 33,
+        "line": 37,
         "column": 1
       }
     },
@@ -35504,7 +35611,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/theme/application/use-cases/createTheme.ts",
-        "line": 47,
+        "line": 51,
         "column": 1
       }
     },
@@ -35515,7 +35622,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/theme/application/use-cases/createTheme.ts",
-        "line": 66,
+        "line": 70,
         "column": 1
       }
     },
@@ -35571,6 +35678,138 @@
       "sourceLocation": {
         "filePath": "src/features/theme/domain/generatePalette.ts",
         "line": 14,
+        "column": 1
+      }
+    },
+    {
+      "name": "projectInvertedTheme",
+      "description": "Project normal canonical theme semantics onto the opposite surface polarity.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 41,
+        "column": 1
+      }
+    },
+    {
+      "name": "createInverseSelection",
+      "description": "Select swatch steps against both inverse surface levels.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 89,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInverseContent",
+      "description": "Resolve all surface-relative content colors against inverse backgrounds.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 124,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInverseBorder",
+      "description": "Resolve separators and focus chrome against inverse backgrounds.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 146,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInverseRoles",
+      "description": "Project only surface-relative role fields and preserve self-owned color pairs.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 159,
+        "column": 1
+      }
+    },
+    {
+      "name": "projectRole",
+      "description": "Keep opaque and soft role pairs intact while selecting inverse-safe transparent colors.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 196,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInverseNeutral",
+      "description": "Keep direct neutral semantic reads aligned with active surface polarity.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 210,
+        "column": 1
+      }
+    },
+    {
+      "name": "selectText",
+      "description": "Select and measure inverse-surface text through Color Theory.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 237,
+        "column": 1
+      }
+    },
+    {
+      "name": "selectOutline",
+      "description": "Select inverse-surface outlines with the UI contrast policy.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 258,
+        "column": 1
+      }
+    },
+    {
+      "name": "selectInverseColor",
+      "description": "Keep inverse contrast safe when a chromatic swatch cannot meet the policy.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "line": 281,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveInverseSurface",
+      "description": "Resolve inverted surface levels and measure their effective separation.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/resolveInverseSurface.ts",
+        "line": 14,
+        "column": 1
+      }
+    },
+    {
+      "name": "measureInverseSurfaceSeparation",
+      "description": "Measure the returned surface levels against their shared sunken background.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/theme/domain/resolveInverseSurface.ts",
+        "line": 37,
         "column": 1
       }
     },
@@ -36158,13 +36397,24 @@
       }
     },
     {
+      "name": "resolveTransparentContentColor",
+      "description": "Pair hovered and pressed transparent controls with their own soft fill.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/internal/resolvers/resolveInteractiveColors.ts",
+        "line": 91,
+        "column": 1
+      }
+    },
+    {
       "name": "resolveInputColors",
       "description": null,
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/internal/resolvers/resolveInteractiveColors.ts",
-        "line": 90,
+        "line": 100,
         "column": 1
       }
     },
@@ -36489,7 +36739,7 @@
       "name": "createTheme",
       "sourcePath": "src/features/theme/application/use-cases/createTheme.ts",
       "symbolName": "createTheme",
-      "description": "Resolve canonical persisted theme source into the complete Surface runtime theme.",
+      "description": "Resolve canonical theme source into a normal or inverted Surface runtime theme.",
       "isReadme": false
     },
     {
@@ -36737,7 +36987,7 @@
       "name": "ThemeScope",
       "sourcePath": "src/features/theme/adapters/inbound/ThemeScope.tsx",
       "symbolName": "ThemeScope",
-      "description": "Apply a nested Surface theme or mode override without remounting app-level providers.",
+      "description": "Apply nested theme, mode, or inherited surface-polarity overrides without remounting providers.",
       "isReadme": false
     },
     {
@@ -36966,6 +37216,21 @@
         "fromPath": "src/index.ts",
         "toPath": "src/types/surfaceColor.ts",
         "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/invertedThemeAcceptance.test.ts",
+        "toPath": "src/features/theme/application/use-cases/createTheme.ts",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
+      },
+      {
+        "fromPath": "src/invertedThemeAcceptance.test.ts",
+        "toPath": "src/features/theme/constants.ts",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
+      },
+      {
+        "fromPath": "src/invertedThemeAcceptance.test.ts",
+        "toPath": "src/internal/resolvers/resolveInteractiveColors.ts",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
       },
       {
         "fromPath": "src/constants/surfaceColor.public.test.ts",
@@ -38398,6 +38663,41 @@
         "sourcePath": "src/features/theme/domain/inverseSemantics.test.ts"
       },
       {
+        "fromPath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "toPath": "src/types/theme.ts",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromPath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "toPath": "src/features/theme/constants.ts",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromPath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "toPath": "src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromPath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "toPath": "src/features/theme/domain/resolveInverseSurface.ts",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromPath": "src/features/theme/domain/resolveInverseSurface.ts",
+        "toPath": "src/types/theme.ts",
+        "sourcePath": "src/features/theme/domain/resolveInverseSurface.ts"
+      },
+      {
+        "fromPath": "src/features/theme/domain/resolveInverseSurface.ts",
+        "toPath": "src/features/theme/constants.ts",
+        "sourcePath": "src/features/theme/domain/resolveInverseSurface.ts"
+      },
+      {
+        "fromPath": "src/features/theme/domain/resolveInverseSurface.ts",
+        "toPath": "src/features/theme/domain/createSurfaceColorDiagnosticCollector.ts",
+        "sourcePath": "src/features/theme/domain/resolveInverseSurface.ts"
+      },
+      {
         "fromPath": "src/features/theme/domain/resolveRoleSemantics.ts",
         "toPath": "src/types/theme.ts",
         "sourcePath": "src/features/theme/domain/resolveRoleSemantics.ts"
@@ -38749,7 +39049,22 @@
       },
       {
         "fromPath": "src/features/icon/adapters/inbound/Icon.tsx",
+        "toPath": "src/constants/surfaceColor.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.tsx",
+        "toPath": "src/internal/resolvers/resolveTextColor.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.tsx",
         "toPath": "src/types/icon.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.tsx",
+        "toPath": "src/types/surfaceColor.ts",
         "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
       },
       {
@@ -39334,6 +39649,11 @@
       },
       {
         "fromPath": "src/features/theme/application/use-cases/createTheme.ts",
+        "toPath": "src/features/theme/domain/projectInvertedTheme.ts",
+        "sourcePath": "src/features/theme/application/use-cases/createTheme.ts"
+      },
+      {
+        "fromPath": "src/features/theme/application/use-cases/createTheme.ts",
         "toPath": "src/features/theme/utils/resolveGlobalTokens.ts",
         "sourcePath": "src/features/theme/application/use-cases/createTheme.ts"
       },
@@ -39708,6 +40028,42 @@
         "toSymbol": "createTheme",
         "callExpression": "createTheme",
         "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/invertedThemeAcceptance.test.ts",
+        "toSymbol": "createTheme",
+        "callExpression": "createTheme",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
+      },
+      {
+        "fromSymbol": "src/invertedThemeAcceptance.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
+      },
+      {
+        "fromSymbol": "src/invertedThemeAcceptance.test.ts",
+        "toSymbol": "parseHexColorOrThrow",
+        "callExpression": "parseHexColorOrThrow",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
+      },
+      {
+        "fromSymbol": "src/invertedThemeAcceptance.test.ts",
+        "toSymbol": "getContrastRatio",
+        "callExpression": "getContrastRatio",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
+      },
+      {
+        "fromSymbol": "src/invertedThemeAcceptance.test.ts",
+        "toSymbol": "resolveButtonColors",
+        "callExpression": "resolveButtonColors",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
+      },
+      {
+        "fromSymbol": "src/invertedThemeAcceptance.test.ts",
+        "toSymbol": "resolveInputColors",
+        "callExpression": "resolveInputColors",
+        "sourcePath": "src/invertedThemeAcceptance.test.ts"
       },
       {
         "fromSymbol": "src/structureOwnership.test.ts",
@@ -40730,6 +41086,12 @@
         "sourcePath": "src/internal/resolvers/resolveInteractiveColors.ts"
       },
       {
+        "fromSymbol": "resolveButtonColors",
+        "toSymbol": "resolveTransparentContentColor",
+        "callExpression": "resolveTransparentContentColor",
+        "sourcePath": "src/internal/resolvers/resolveInteractiveColors.ts"
+      },
+      {
         "fromSymbol": "src/internal/resolvers/resolveInteractiveState.test.ts",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -41480,6 +41842,150 @@
         "sourcePath": "src/features/theme/domain/inverseSemantics.test.ts"
       },
       {
+        "fromSymbol": "projectInvertedTheme",
+        "toSymbol": "createSurfaceColorDiagnosticCollector",
+        "callExpression": "createSurfaceColorDiagnosticCollector",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectInvertedTheme",
+        "toSymbol": "resolveInverseSurface",
+        "callExpression": "resolveInverseSurface",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectInvertedTheme",
+        "toSymbol": "createInverseSelection",
+        "callExpression": "createInverseSelection",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectInvertedTheme",
+        "toSymbol": "resolveInverseContent",
+        "callExpression": "resolveInverseContent",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectInvertedTheme",
+        "toSymbol": "resolveInverseBorder",
+        "callExpression": "resolveInverseBorder",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectInvertedTheme",
+        "toSymbol": "resolveInverseRoles",
+        "callExpression": "resolveInverseRoles",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectInvertedTheme",
+        "toSymbol": "resolveInverseNeutral",
+        "callExpression": "resolveInverseNeutral",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "createInverseSelection",
+        "toSymbol": "parseHexColorOrThrow",
+        "callExpression": "parseHexColorOrThrow",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "resolveInverseContent",
+        "toSymbol": "selectText",
+        "callExpression": "selectText",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "resolveInverseBorder",
+        "toSymbol": "selectOutline",
+        "callExpression": "selectOutline",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "resolveInverseRoles",
+        "toSymbol": "createDefaultSemanticStatusSwatches",
+        "callExpression": "createDefaultSemanticStatusSwatches",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "resolveInverseRoles",
+        "toSymbol": "projectRole",
+        "callExpression": "projectRole",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectRole",
+        "toSymbol": "selectText",
+        "callExpression": "selectText",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "projectRole",
+        "toSymbol": "selectOutline",
+        "callExpression": "selectOutline",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "selectText",
+        "toSymbol": "selectInverseColor",
+        "callExpression": "selectInverseColor",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "selectText",
+        "toSymbol": "measureForeground",
+        "callExpression": "selection.collector.measureForeground",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "selectOutline",
+        "toSymbol": "selectInverseColor",
+        "callExpression": "selectInverseColor",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "selectOutline",
+        "toSymbol": "measureForeground",
+        "callExpression": "selection.collector.measureForeground",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "selectInverseColor",
+        "toSymbol": "selectColorSwatchStep",
+        "callExpression": "selectColorSwatchStep",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "selectInverseColor",
+        "toSymbol": "selectColor",
+        "callExpression": "selection.collector.selectColor",
+        "sourcePath": "src/features/theme/domain/projectInvertedTheme.ts"
+      },
+      {
+        "fromSymbol": "resolveInverseSurface",
+        "toSymbol": "measureInverseSurfaceSeparation",
+        "callExpression": "measureInverseSurfaceSeparation",
+        "sourcePath": "src/features/theme/domain/resolveInverseSurface.ts"
+      },
+      {
+        "fromSymbol": "measureInverseSurfaceSeparation",
+        "toSymbol": "parseHexColorOrThrow",
+        "callExpression": "parseHexColorOrThrow",
+        "sourcePath": "src/features/theme/domain/resolveInverseSurface.ts"
+      },
+      {
+        "fromSymbol": "src/features/theme/domain/resolveInverseSurface.ts",
+        "toSymbol": "measureSurface",
+        "callExpression": "collector.measureSurface",
+        "sourcePath": "src/features/theme/domain/resolveInverseSurface.ts"
+      },
+      {
+        "fromSymbol": "src/features/theme/domain/resolveInverseSurface.ts",
+        "toSymbol": "parseHexColorOrThrow",
+        "callExpression": "parseHexColorOrThrow",
+        "sourcePath": "src/features/theme/domain/resolveInverseSurface.ts"
+      },
+      {
         "fromSymbol": "resolveRoleSemantics",
         "toSymbol": "resolveRoleStateColors",
         "callExpression": "resolveRoleStateColors",
@@ -42014,6 +42520,18 @@
         "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
       },
       {
+        "fromSymbol": "Icon",
+        "toSymbol": "isSurfaceColor",
+        "callExpression": "isSurfaceColor",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
+      },
+      {
+        "fromSymbol": "Icon",
+        "toSymbol": "resolveTextColor",
+        "callExpression": "resolveTextColor",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
+      },
+      {
         "fromSymbol": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -42035,6 +42553,24 @@
         "fromSymbol": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
         "toSymbol": "expect",
         "callExpression": "expect",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
+        "toSymbol": "createTheme",
+        "callExpression": "createTheme",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx"
+      },
+      {
+        "fromSymbol": "renderColor",
+        "toSymbol": "renderToStaticMarkup",
+        "callExpression": "renderToStaticMarkup",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
+        "toSymbol": "renderColor",
+        "callExpression": "renderColor",
         "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx"
       },
       {
@@ -42839,6 +43375,12 @@
         "fromSymbol": "createTheme",
         "toSymbol": "withActiveFont",
         "callExpression": "withActiveFont",
+        "sourcePath": "src/features/theme/application/use-cases/createTheme.ts"
+      },
+      {
+        "fromSymbol": "createTheme",
+        "toSymbol": "projectInvertedTheme",
+        "callExpression": "projectInvertedTheme",
         "sourcePath": "src/features/theme/application/use-cases/createTheme.ts"
       },
       {
@@ -46685,12 +47227,102 @@
       },
       {
         "fromSymbol": "TextProps",
+        "toType": "Animated",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "AnimatedExports",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "BackgroundImageValue",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "BackgroundPositionValue",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "BackgroundRepeatValue",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "BackgroundSizeValue",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "BoxShadowValue",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "CursorValue",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "DimensionValue",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "FilterFunction",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "Libraries",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "MaximumOneOf",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "MergeUnion",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "Node",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "Omit",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
         "toType": "React",
         "sourcePath": "src/types/typography.ts"
       },
       {
         "fromSymbol": "TextProps",
         "toType": "ReactNode",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "Readonly",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "StyleSheet",
+        "sourcePath": "src/types/typography.ts"
+      },
+      {
+        "fromSymbol": "TextProps",
+        "toType": "StyleSheetTypes",
         "sourcePath": "src/types/typography.ts"
       },
       {
@@ -46873,7 +47505,7 @@
       {
         "fromComponent": "Badge",
         "toComponent": "Text",
-        "jsxElement": "<Text\n        color={color}\n        emphasis={variant === 'solid' ? 'inverse' : 'default'}\n        variant=\"bodySmall\"\n        weight=\"medium\"\n      >",
+        "jsxElement": "<Text style={{ color: colors.contentColor }} variant=\"bodySmall\" weight=\"medium\">",
         "sourcePath": "src/features/badge/adapters/inbound/Badge.tsx"
       },
       {
@@ -47137,7 +47769,7 @@
       {
         "fromComponent": "Text",
         "toComponent": "ReactNativeText",
-        "jsxElement": "<ReactNativeText\n      numberOfLines={numberOfLines}\n      testID={testID}\n      style={[\n        resolveTextStyles(theme, { align, italic, variant, weight }),\n        { color: resolveTextColor(theme, emphasis, color) },\n      ]}\n    >",
+        "jsxElement": "<ReactNativeText\n      numberOfLines={numberOfLines}\n      testID={testID}\n      style={[\n        resolveTextStyles(theme, { align, italic, variant, weight }),\n        { color: resolveTextColor(theme, emphasis, color) },\n        style,\n      ]}\n    >",
         "sourcePath": "src/features/typography/adapters/inbound/Text.tsx"
       },
       {
