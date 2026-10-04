@@ -1299,15 +1299,16 @@ Source: `src/types/theme.ts:60:1`
 
 Kind: `function`
 Module: `src/features/theme/application/use-cases/createTheme.ts`
-Source: `src/features/theme/application/use-cases/createTheme.ts:15:1`
+Source: `src/features/theme/application/use-cases/createTheme.ts:16:1`
 
-Resolve canonical persisted theme source into the complete Surface runtime theme.
+Resolve canonical theme source into a normal or inverted Surface runtime theme.
 
 ### Signatures
 
-- `(config?: ThemeConfig, mode?: "light" | "dark", activeFontId?: string | null | undefined) => SurfaceTheme`
+- `(config?: ThemeConfig, mode?: "light" | "dark", activeFontId?: string | null | undefined, inverted?: boolean) => SurfaceTheme`
   - activeFontId: `string | null | undefined` (optional)
   - config: `ThemeConfig` (optional)
+  - inverted: `boolean` (optional)
   - mode: `"light" | "dark"` (optional)
   - returns: `SurfaceTheme`
 
@@ -1691,7 +1692,7 @@ Source: `src/types/typography.ts:12:1`
 
 Kind: `function`
 Module: `src/features/icon/adapters/inbound/Icon.tsx`
-Source: `src/features/icon/adapters/inbound/Icon.tsx:7:1`
+Source: `src/features/icon/adapters/inbound/Icon.tsx:10:1`
 
 Renders a theme-aware font or SVG icon through the portable icon adapter.
 
@@ -2998,6 +2999,7 @@ Source: `src/types/theme.ts:230:1`
 | colorDiagnostics | property | `SurfaceColorDiagnostics` | yes |  |
 | colors | property | `{ [key: string]: string; primary: string; secondary: string; accent: string; highlight: string; tertiary: string; quaternary: string; background: string; surface: string; text: string; textSecondary: string; border: string; error: string; success: string; warning: string; info: string; }` | yes |  |
 | config | property | `ContractsThemeConfig` | yes |  |
+| inverted | property | `boolean \| undefined` | no |  |
 | radii | property | `{ [key: string]: number; none: 0; s: number; m: number; l: number; full: number; }` | yes |  |
 | semantics | property | `ThemeSemantics` | yes |  |
 | shadows | property | `{ [key: string]: number; soft: number; medium: number; hard: number; }` | yes |  |
@@ -3393,6 +3395,7 @@ Renders body text using Surface semantic typography.
   italic = false,
   numberOfLines,
   testID,
+  style,
 }: TextProps) => React.JSX.Element`
   - {
   children,
@@ -3405,6 +3408,7 @@ Renders body text using Surface semantic typography.
   italic = false,
   numberOfLines,
   testID,
+  style,
 }: `TextProps`
   - returns: `React.JSX.Element`
 
@@ -3636,6 +3640,7 @@ Source: `src/types/typography.ts:24:1`
 | i18nKey | property | `string \| undefined` | no |  |
 | italic | property | `boolean \| undefined` | no |  |
 | numberOfLines | property | `number \| undefined` | no |  |
+| style | property | `Readonly<Omit<Readonly<Omit<Readonly<Omit<Readonly<Omit<Readonly<{ display?: "none" \| "flex" \| "contents" \| undefined; width?: import("react-native").DimensionValue \| undefined; height?: import("react-native").DimensionValue \| undefined; bottom?: import("react-native").DimensionValue \| undefined; end?: import("react-native").DimensionValue \| undefined; left?: import("react-native").DimensionValue \| undefined; right?: import("react-native").DimensionValue \| undefined; start?: import("react-native").DimensionValue \| undefined; top?: import("react-native").DimensionValue \| undefined; inset?: import("react-native").DimensionValue \| undefined; insetBlock?: import("react-native").DimensionValue \| undefined; insetBlockEnd?: import("react-native").DimensionValue \| undefined; insetBlockStart?: import("react-native").DimensionValue \| undefined; insetInline?: import("react-native").DimensionValue \| undefined; insetInlineEnd?: import("react-native").DimensionValue \| undefined; insetInlineStart?: import("react-native").DimensionValue \| undefined; minWidth?: import("react-native").DimensionValue \| undefined; maxWidth?: import("react-native").DimensionValue \| undefined; minHeight?: import("react-native").DimensionValue \| undefined; maxHeight?: import("react-native").DimensionValue \| undefined; margin?: import("react-native").DimensionValue \| undefined; marginBlock?: import("react-native").DimensionValue \| undefined; marginBlockEnd?: import("react-native").DimensionValue \| undefined; marginBlockStart?: import("react-native").DimensionValue \| undefined; marginBottom?: import("react-native").DimensionValue \| undefined; marginEnd?: import("react-native").DimensionValue \| undefined; marginHorizontal?: import("react-native").DimensionValue \| undefined; marginInline?: import("react-native").DimensionValue \| undefined; marginInlineEnd?: import("react-native").DimensionValue \| undefined; marginInlineStart?: import("react-native").DimensionValue \| undefined; marginLeft?: import("react-native").DimensionValue \| undefined; marginRight?: import("react-native").DimensionValue \| undefined; marginStart?: import("react-native").DimensionValue \| undefined; marginTop?: import("react-native").DimensionValue \| undefined; marginVertical?: import("react-native").DimensionValue \| undefined; padding?: import("react-native").DimensionValue \| undefined; paddingBlock?: import("react-native").DimensionValue \| undefined; paddingBlockEnd?: import("react-native").DimensionValue \| undefined; paddingBlockStart?: import("react-native").DimensionValue \| undefined; paddingBottom?: import("react-native").DimensionValue \| undefined; paddingEnd?: import("react-native").DimensionValue \| undefined; paddingHorizontal?: import("react-native").DimensionValue \| undefined; paddingInline?: import("react-native").DimensionValue \| undefined; paddingInlineEnd?: import("react-native").DimensionValue \| undefined; paddingInlineStart?: import("react-native").DimensionValue \| undefined; paddingLeft?: import("react-native").DimensionValue \| undefined; paddingRight?: import("react-native").DimensionValue \| undefined; paddingStart?: import("react-native").DimensionValue \| undefined; paddingTop?: import("react-native").DimensionValue \| undefined; paddingVertical?: import("react-native").DimensionValue \| undefined; borderWidth?: number \| undefined; borderBottomWidth?: number \| undefined; borderEndWidth?: number \| undefined; borderLeftWidth?: number \| undefined; borderRightWidth?: number \| undefined; borderStartWidth?: number \| undefined; borderTopWidth?: number \| undefined; position?: "absolute" \| "relative" \| "static" \| undefined; flexDirection?: "row" \| "row-reverse" \| "column" \| "column-reverse" \| undefined; flexWrap?: "wrap" \| "nowrap" \| "wrap-reverse" \| undefined; justifyContent?: "flex-start" \| "flex-end" \| "center" \| "space-between" \| "space-around" \| "space-evenly" \| undefined; alignItems?: "flex-start" \| "flex-end" \| "center" \| "stretch" \| "baseline" \| undefined; alignSelf?: "auto" \| "flex-start" \| "flex-end" \| "center" \| "stretch" \| "baseline" \| undefined; alignContent?: "flex-start" \| "flex-end" \| "center" \| "stretch" \| "space-between" \| "space-around" \| "space-evenly" \| undefined; overflow?: "visible" \| "hidden" \| "scroll" \| undefined; flex?: number \| undefined; flexGrow?: number \| undefined; flexShrink?: number \| undefined; flexBasis?: number \| string \| undefined; aspectRatio?: number \| string \| undefined; boxSizing?: "border-box" \| "content-box" \| undefined; zIndex?: number \| undefined; direction?: "inherit" \| "ltr" \| "rtl" \| undefined; rowGap?: number \| string \| undefined; columnGap?: number \| string \| undefined; gap?: number \| string \| undefined; }>, "pointerEvents" \| "shadowColor" \| "shadowOffset" \| "shadowOpacity" \| "shadowRadius" \| "transform" \| "transformOrigin" \| "backfaceVisibility" \| "backgroundColor" \| "borderColor" \| "borderCurve" \| "borderBottomColor" \| "borderEndColor" \| "borderLeftColor" \| "borderRightColor" \| "borderStartColor" \| "borderTopColor" \| "borderBlockColor" \| "borderBlockEndColor" \| "borderBlockStartColor" \| "borderRadius" \| "borderBottomEndRadius" \| "borderBottomLeftRadius" \| "borderBottomRightRadius" \| "borderBottomStartRadius" \| "borderEndEndRadius" \| "borderEndStartRadius" \| "borderStartEndRadius" \| "borderStartStartRadius" \| "borderTopEndRadius" \| "borderTopLeftRadius" \| "borderTopRightRadius" \| "borderTopStartRadius" \| "borderStyle" \| "borderWidth" \| "borderBottomWidth" \| "borderEndWidth" \| "borderLeftWidth" \| "borderRightWidth" \| "borderStartWidth" \| "borderTopWidth" \| "opacity" \| "outlineColor" \| "outlineOffset" \| "outlineStyle" \| "outlineWidth" \| "elevation" \| "cursor" \| "boxShadow" \| "filter" \| "mixBlendMode" \| "backgroundImage" \| "experimental_backgroundImage" \| "experimental_backgroundSize" \| "experimental_backgroundPosition" \| "experimental_backgroundRepeat" \| "isolation"> & Omit<Readonly<Omit<Readonly<{ shadowColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; shadowOffset?: Readonly<{ width?: number \| undefined; height?: number \| undefined; }> \| undefined; shadowOpacity?: number \| undefined; shadowRadius?: number \| undefined; }>, never> & Omit<Readonly<{}>, never>>, "pointerEvents" \| "transform" \| "transformOrigin" \| "backfaceVisibility" \| "backgroundColor" \| "borderColor" \| "borderCurve" \| "borderBottomColor" \| "borderEndColor" \| "borderLeftColor" \| "borderRightColor" \| "borderStartColor" \| "borderTopColor" \| "borderBlockColor" \| "borderBlockEndColor" \| "borderBlockStartColor" \| "borderRadius" \| "borderBottomEndRadius" \| "borderBottomLeftRadius" \| "borderBottomRightRadius" \| "borderBottomStartRadius" \| "borderEndEndRadius" \| "borderEndStartRadius" \| "borderStartEndRadius" \| "borderStartStartRadius" \| "borderTopEndRadius" \| "borderTopLeftRadius" \| "borderTopRightRadius" \| "borderTopStartRadius" \| "borderStyle" \| "borderWidth" \| "borderBottomWidth" \| "borderEndWidth" \| "borderLeftWidth" \| "borderRightWidth" \| "borderStartWidth" \| "borderTopWidth" \| "opacity" \| "outlineColor" \| "outlineOffset" \| "outlineStyle" \| "outlineWidth" \| "elevation" \| "cursor" \| "boxShadow" \| "filter" \| "mixBlendMode" \| "backgroundImage" \| "experimental_backgroundImage" \| "experimental_backgroundSize" \| "experimental_backgroundPosition" \| "experimental_backgroundRepeat" \| "isolation"> & Omit<Readonly<{ transform?: ReadonlyArray<Readonly<import("react-native/types_generated/Libraries/StyleSheet/private/_TransformStyle").MaximumOneOf<import("react-native/types_generated/Libraries/StyleSheet/private/_TransformStyle").MergeUnion<{ readonly perspective: number \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly rotate: string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly rotateX: string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly rotateY: string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly rotateZ: string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly scale: number \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly scaleX: number \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly scaleY: number \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly translateX: number \| string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly translateY: number \| string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly translate: [number \| string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node, number \| string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node] \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly skewX: string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly skewY: string \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; } \| { readonly matrix: ReadonlyArray<number \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node> \| import("react-native/types_generated/Libraries/Animated/AnimatedExports").Node; }>>>> \| string \| undefined; transformOrigin?: [string \| number, string \| number, string \| number] \| string \| undefined; }>, "pointerEvents" \| "backfaceVisibility" \| "backgroundColor" \| "borderColor" \| "borderCurve" \| "borderBottomColor" \| "borderEndColor" \| "borderLeftColor" \| "borderRightColor" \| "borderStartColor" \| "borderTopColor" \| "borderBlockColor" \| "borderBlockEndColor" \| "borderBlockStartColor" \| "borderRadius" \| "borderBottomEndRadius" \| "borderBottomLeftRadius" \| "borderBottomRightRadius" \| "borderBottomStartRadius" \| "borderEndEndRadius" \| "borderEndStartRadius" \| "borderStartEndRadius" \| "borderStartStartRadius" \| "borderTopEndRadius" \| "borderTopLeftRadius" \| "borderTopRightRadius" \| "borderTopStartRadius" \| "borderStyle" \| "borderWidth" \| "borderBottomWidth" \| "borderEndWidth" \| "borderLeftWidth" \| "borderRightWidth" \| "borderStartWidth" \| "borderTopWidth" \| "opacity" \| "outlineColor" \| "outlineOffset" \| "outlineStyle" \| "outlineWidth" \| "elevation" \| "cursor" \| "boxShadow" \| "filter" \| "mixBlendMode" \| "backgroundImage" \| "experimental_backgroundImage" \| "experimental_backgroundSize" \| "experimental_backgroundPosition" \| "experimental_backgroundRepeat" \| "isolation"> & Omit<Readonly<{ backfaceVisibility?: "visible" \| "hidden" \| undefined; backgroundColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderCurve?: "circular" \| "continuous" \| undefined; borderBottomColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderEndColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderLeftColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderRightColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderStartColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderTopColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderBlockColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderBlockEndColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderBlockStartColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; borderRadius?: number \| string \| undefined; borderBottomEndRadius?: number \| string \| undefined; borderBottomLeftRadius?: number \| string \| undefined; borderBottomRightRadius?: number \| string \| undefined; borderBottomStartRadius?: number \| string \| undefined; borderEndEndRadius?: number \| string \| undefined; borderEndStartRadius?: number \| string \| undefined; borderStartEndRadius?: number \| string \| undefined; borderStartStartRadius?: number \| string \| undefined; borderTopEndRadius?: number \| string \| undefined; borderTopLeftRadius?: number \| string \| undefined; borderTopRightRadius?: number \| string \| undefined; borderTopStartRadius?: number \| string \| undefined; borderStyle?: "solid" \| "dotted" \| "dashed" \| undefined; borderWidth?: number \| undefined; borderBottomWidth?: number \| undefined; borderEndWidth?: number \| undefined; borderLeftWidth?: number \| undefined; borderRightWidth?: number \| undefined; borderStartWidth?: number \| undefined; borderTopWidth?: number \| undefined; opacity?: number \| undefined; outlineColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; outlineOffset?: number \| undefined; outlineStyle?: "solid" \| "dotted" \| "dashed" \| undefined; outlineWidth?: number \| undefined; elevation?: number \| undefined; pointerEvents?: "auto" \| "none" \| "box-none" \| "box-only" \| undefined; cursor?: import("react-native").CursorValue \| undefined; boxShadow?: ReadonlyArray<import("react-native").BoxShadowValue> \| string \| undefined; filter?: ReadonlyArray<import("react-native").FilterFunction> \| string \| undefined; mixBlendMode?: ("normal" \| "multiply" \| "screen" \| "overlay" \| "darken" \| "lighten" \| "color-dodge" \| "color-burn" \| "hard-light" \| "soft-light" \| "difference" \| "exclusion" \| "hue" \| "saturation" \| "color" \| "luminosity" \| "plus-lighter") \| undefined; backgroundImage?: ReadonlyArray<import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").BackgroundImageValue> \| string \| undefined; experimental_backgroundImage?: ReadonlyArray<import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").BackgroundImageValue> \| string \| undefined; experimental_backgroundSize?: ReadonlyArray<import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").BackgroundSizeValue> \| string \| undefined; experimental_backgroundPosition?: ReadonlyArray<import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").BackgroundPositionValue> \| string \| undefined; experimental_backgroundRepeat?: ReadonlyArray<import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").BackgroundRepeatValue> \| string \| undefined; isolation?: "auto" \| "isolate" \| undefined; }>, never>>, never> & Omit<Readonly<{}>, never>>, "color" \| "textAlignVertical" \| "textAlign" \| "fontFamily" \| "fontSize" \| "fontStyle" \| "fontWeight" \| "fontVariant" \| "textShadowOffset" \| "textShadowRadius" \| "textShadowColor" \| "letterSpacing" \| "lineHeight" \| "includeFontPadding" \| "textDecorationLine" \| "textDecorationStyle" \| "textDecorationColor" \| "textTransform" \| "userSelect" \| "verticalAlign" \| "writingDirection"> & Omit<Readonly<{ color?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; fontFamily?: string \| undefined; fontSize?: number \| undefined; fontStyle?: "normal" \| "italic" \| undefined; fontWeight?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____FontWeight_Internal \| undefined; fontVariant?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____FontVariantArray_Internal \| string \| undefined; textShadowOffset?: Readonly<{ width: number; height: number; }> \| undefined; textShadowRadius?: number \| undefined; textShadowColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; letterSpacing?: number \| undefined; lineHeight?: number \| undefined; textAlign?: "auto" \| "left" \| "right" \| "center" \| "justify" \| "start" \| "end" \| undefined; textAlignVertical?: "auto" \| "top" \| "bottom" \| "center" \| undefined; includeFontPadding?: boolean \| undefined; textDecorationLine?: "none" \| "underline" \| "line-through" \| "underline line-through" \| undefined; textDecorationStyle?: "solid" \| "double" \| "dotted" \| "dashed" \| "wavy" \| undefined; textDecorationColor?: import("react-native/types_generated/Libraries/StyleSheet/StyleSheetTypes").____ColorValue_Internal \| undefined; textTransform?: "none" \| "capitalize" \| "uppercase" \| "lowercase" \| undefined; userSelect?: "auto" \| "text" \| "none" \| "contain" \| "all" \| undefined; verticalAlign?: "auto" \| "top" \| "bottom" \| "middle" \| undefined; writingDirection?: "auto" \| "ltr" \| "rtl" \| undefined; }>, never>>, never> & Omit<Readonly<{}>, never>> \| undefined` | no |  |
 | testID | property | `string \| undefined` | no |  |
 | variant | property | `TextVariant \| undefined` | no |  |
 | weight | property | `TextWeight \| undefined` | no |  |
@@ -3644,7 +3649,7 @@ Source: `src/types/typography.ts:24:1`
 
 Kind: `unknown`
 Module: `src/types/theme.ts`
-Source: `src/types/theme.ts:234:1`
+Source: `src/types/theme.ts:235:1`
 
 ## ThemeProvider
 
@@ -3672,7 +3677,7 @@ Install the app-level Surface theme together with global responsive and overlay 
 
 Kind: `type`
 Module: `src/types/theme.ts`
-Source: `src/types/theme.ts:243:1`
+Source: `src/types/theme.ts:245:1`
 
 ### Members
 
@@ -3686,12 +3691,13 @@ Source: `src/types/theme.ts:243:1`
 
 Kind: `type`
 Module: `src/types/theme.ts`
-Source: `src/types/theme.ts:236:1`
+Source: `src/types/theme.ts:237:1`
 
 ### Members
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
+| inverted | property | `boolean \| undefined` | no |  |
 | mode | property | `ThemeMode` | yes |  |
 | setMode | property | `(mode: ThemeMode) => void` | yes |  |
 | setThemeConfig | property | `(config: Partial<ContractsThemeConfig>) => void` | yes |  |
@@ -3703,25 +3709,26 @@ Kind: `function`
 Module: `src/features/theme/adapters/inbound/ThemeScope.tsx`
 Source: `src/features/theme/adapters/inbound/ThemeScope.tsx:11:1`
 
-Apply a nested Surface theme or mode override without remounting app-level providers.
+Apply nested theme, mode, or inherited surface-polarity overrides without remounting providers.
 
 ### Signatures
 
-- `({ children, themeConfig, mode }: ThemeScopeProps) => import("react").JSX.Element`
-  - { children, themeConfig, mode }: `ThemeScopeProps`
+- `({ children, themeConfig, mode, inverted }: ThemeScopeProps) => import("react").JSX.Element`
+  - { children, themeConfig, mode, inverted }: `ThemeScopeProps`
   - returns: `import("react").JSX.Element`
 
 ## ThemeScopeProps
 
 Kind: `type`
 Module: `src/types/theme.ts`
-Source: `src/types/theme.ts:249:1`
+Source: `src/types/theme.ts:251:1`
 
 ### Members
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | children | property | `ReactNode` | yes |  |
+| inverted | property | `boolean \| undefined` | no |  |
 | mode | property | `ThemeMode \| undefined` | no |  |
 | themeConfig | property | `Partial<ContractsThemeConfig> \| undefined` | no |  |
 

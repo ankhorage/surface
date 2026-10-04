@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.2.0
+
+### Minor Changes
+
+- 5c2f97d: Add inherited inverted surface polarity with contrast-safe semantic projection
+
 ## 9.1.116
 
 ### Patch Changes

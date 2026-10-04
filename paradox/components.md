@@ -1022,7 +1022,7 @@ Export paths: `src/index.ts`
 
 ## Icon
 
-Source: `src/features/icon/adapters/inbound/Icon.tsx:7:1`
+Source: `src/features/icon/adapters/inbound/Icon.tsx:10:1`
 
 Renders a theme-aware font or SVG icon through the portable icon adapter.
 
@@ -2072,6 +2072,7 @@ Export paths: `src/index.ts`
 | i18nKey | `string \| undefined` | no | — |  |
 | italic | `boolean \| undefined` | no | `false` |  |
 | numberOfLines | `number \| undefined` | no | — |  |
+| style | `TextStyle \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
 | variant | `TextVariant \| undefined` | no | `'body'` |  |
 | weight | `TextWeight \| undefined` | no | — |  |
@@ -2294,13 +2295,14 @@ Export paths: `src/index.ts`
 
 Source: `src/features/theme/adapters/inbound/ThemeScope.tsx:11:1`
 
-Apply a nested Surface theme or mode override without remounting app-level providers.
+Apply nested theme, mode, or inherited surface-polarity overrides without remounting providers.
 
 Export paths: `src/index.ts`
 
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | children | `ReactNode \| undefined` | no | — |  |
+| inverted | `boolean \| undefined` | no | — |  |
 | mode | `ThemeMode \| undefined` | no | — |  |
 | themeConfig | `Partial<ContractsThemeConfig> \| undefined` | no | — |  |
 
