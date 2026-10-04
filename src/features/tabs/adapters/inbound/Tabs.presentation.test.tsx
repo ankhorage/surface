@@ -6,6 +6,8 @@ import * as ReactNativeWeb from 'react-native-web';
 
 await mock.module('react-native', () => ReactNativeWeb);
 
+const CONSUMER_PANEL_STYLE = { backgroundColor: '#ff00ff' };
+
 const { ThemeProvider, ThemeScope } = await import('../../../theme/runtime');
 const { Tab } = await import('./Tab');
 const { TabList } = await import('./TabList');
@@ -84,11 +86,7 @@ function renderAttachedStyles(mode: 'light' | 'dark', inverted: boolean) {
               Export
             </Tab>
           </TabList>
-          <TabPanel
-            style={{ backgroundColor: '#ff00ff' }}
-            testID="tree-panel"
-            value="tree"
-          >
+          <TabPanel style={CONSUMER_PANEL_STYLE} testID="tree-panel" value="tree">
             Content
           </TabPanel>
         </Tabs>
