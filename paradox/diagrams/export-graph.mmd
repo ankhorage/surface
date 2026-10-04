@@ -570,6 +570,9 @@ graph LR
   export_TabsProps["TabsProps"]
   module_src_types_tabs_ts --> export_TabsProps
   export_TabsProps -.-> export_Responsive
+  export_TabsProps -.-> export_TabsVariant
+  export_TabsVariant["TabsVariant"]
+  module_src_types_tabs_ts --> export_TabsVariant
   export_Text["Text"]
   module_src_features_typography_adapters_inbound_Text_tsx --> export_Text
   export_Text -.-> export_TextProps

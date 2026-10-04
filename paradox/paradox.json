@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.2.0",
+      "value": "v9.3.0",
       "color": "cb3837"
     },
     {
@@ -1370,6 +1370,7 @@
       "dependencies": [
         "src/features/layout/public.ts",
         "src/features/tabs/composition/useTabsContext.ts",
+        "src/features/theme/runtime.ts",
         "src/types/tabs.ts"
       ],
       "exports": [
@@ -1456,7 +1457,8 @@
         "TabPanelProps",
         "TabProps",
         "Tabs",
-        "TabsProps"
+        "TabsProps",
+        "TabsVariant"
       ]
     },
     {
@@ -2144,6 +2146,7 @@
         "TabProps",
         "Tabs",
         "TabsProps",
+        "TabsVariant",
         "Text",
         "TextInput",
         "TextInputProps",
@@ -2920,7 +2923,8 @@
         "TabProps",
         "TabRegistration",
         "TabsContextValue",
-        "TabsProps"
+        "TabsProps",
+        "TabsVariant"
       ]
     },
     {
@@ -17676,7 +17680,7 @@
       "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
         "filePath": "src/types/tabs.ts",
-        "line": 14,
+        "line": 17,
         "column": 1
       },
       "exportPaths": [
@@ -17720,7 +17724,7 @@
       "modulePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
-        "line": 10,
+        "line": 11,
         "column": 1
       },
       "exportPaths": [
@@ -17731,10 +17735,10 @@
       ],
       "signatures": [
         {
-          "label": "({ value, children, testID, ...layoutProps }: TabPanelProps) => React.JSX.Element | null",
+          "label": "({ value, children, testID, style, ...layoutProps }: TabPanelProps) => React.JSX.Element | null",
           "parameters": [
             {
-              "name": "{ value, children, testID, ...layoutProps }",
+              "name": "{ value, children, testID, style, ...layoutProps }",
               "type": "TabPanelProps",
               "required": true,
               "description": null
@@ -17758,7 +17762,7 @@
       "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
         "filePath": "src/types/tabs.ts",
-        "line": 29,
+        "line": 32,
         "column": 1
       },
       "exportPaths": [
@@ -18119,7 +18123,7 @@
       "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
         "filePath": "src/types/tabs.ts",
-        "line": 20,
+        "line": 23,
         "column": 1
       },
       "exportPaths": [
@@ -18197,10 +18201,10 @@
       ],
       "signatures": [
         {
-          "label": "({\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  ...layoutProps\n}: TabsProps) => React.JSX.Element",
+          "label": "({\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  variant,\n  ...layoutProps\n}: TabsProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  ...layoutProps\n}",
+              "name": "{\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  variant,\n  ...layoutProps\n}",
               "type": "TabsProps",
               "required": true,
               "description": null
@@ -18224,14 +18228,15 @@
       "modulePath": "src/types/tabs.ts",
       "sourceLocation": {
         "filePath": "src/types/tabs.ts",
-        "line": 6,
+        "line": 8,
         "column": 1
       },
       "exportPaths": [
         "src/index.ts"
       ],
       "relatedSymbols": [
-        "Responsive"
+        "Responsive",
+        "TabsVariant"
       ],
       "signatures": [],
       "members": [
@@ -18565,6 +18570,13 @@
           "description": null
         },
         {
+          "name": "variant",
+          "kind": "property",
+          "type": "TabsVariant | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "width",
           "kind": "property",
           "type": "Responsive<string | number> | undefined",
@@ -18586,6 +18598,28 @@
           "description": null
         }
       ],
+      "structuredRows": []
+    },
+    {
+      "name": "TabsVariant",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/tabs.ts",
+      "sourceLocation": {
+        "filePath": "src/types/tabs.ts",
+        "line": 6,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
       "structuredRows": []
     },
     {
@@ -31507,7 +31541,7 @@
       "modulePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
-        "line": 10,
+        "line": 11,
         "column": 1
       },
       "exportPaths": [
@@ -32099,6 +32133,12 @@
         {
           "name": "value",
           "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "variant",
+          "type": "TabsVariant | undefined",
           "required": false,
           "description": null
         },
@@ -35402,7 +35442,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
-        "line": 56,
+        "line": 61,
         "column": 1
       }
     },
@@ -35413,7 +35453,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/Tab.tsx",
-        "line": 76,
+        "line": 81,
         "column": 1
       }
     },
@@ -35446,7 +35486,18 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
-        "line": 10,
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderAttachedStyles",
+      "description": "Render attached tabs and return their observable web presentation styles.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx",
+        "line": 76,
         "column": 1
       }
     },
@@ -39514,6 +39565,11 @@
       },
       {
         "fromPath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
+        "toPath": "src/features/theme/runtime.ts",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromPath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
         "toPath": "src/features/tabs/composition/useTabsContext.ts",
         "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
       },
@@ -43187,6 +43243,12 @@
       },
       {
         "fromSymbol": "TabPanel",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
+      },
+      {
+        "fromSymbol": "TabPanel",
         "toSymbol": "useTabsContext",
         "callExpression": "useTabsContext",
         "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
@@ -43237,6 +43299,18 @@
         "fromSymbol": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx",
         "toSymbol": "expect",
         "callExpression": "expect",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx",
+        "toSymbol": "renderAttachedStyles",
+        "callExpression": "renderAttachedStyles",
+        "sourcePath": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx"
+      },
+      {
+        "fromSymbol": "renderAttachedStyles",
+        "toSymbol": "renderToStaticMarkup",
+        "callExpression": "renderToStaticMarkup",
         "sourcePath": "src/features/tabs/adapters/inbound/Tabs.presentation.test.tsx"
       },
       {
@@ -46856,6 +46930,11 @@
         "sourcePath": "src/types/tabs.ts"
       },
       {
+        "fromSymbol": "TabsProps",
+        "toType": "TabsVariant",
+        "sourcePath": "src/types/tabs.ts"
+      },
+      {
         "fromSymbol": "Tab",
         "toType": "React",
         "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
@@ -47739,7 +47818,7 @@
       {
         "fromComponent": "Tab",
         "toComponent": "View",
-        "jsxElement": "<View\n        px=\"m\"\n        py=\"s\"\n        style={resolveTabStyle({\n          borderColor: selected ? 'transparent' : theme.semantics.border.default,\n          disabled,\n        })}\n      >",
+        "jsxElement": "<View\n        px=\"m\"\n        py=\"s\"\n        style={resolveTabStyle({\n          activeBackground: theme.semantics.surface.subtle,\n          borderColor: selected ? 'transparent' : theme.semantics.border.default,\n          disabled,\n          radius: theme.radii.s,\n          selected,\n          variant,\n        })}\n      >",
         "sourcePath": "src/features/tabs/adapters/inbound/Tab.tsx"
       },
       {
@@ -47751,7 +47830,7 @@
       {
         "fromComponent": "TabPanel",
         "toComponent": "View",
-        "jsxElement": "<View\n      {...layoutProps}\n      accessibilityLabelledBy={getTabId(value)}\n      accessibilityRole={TAB_PANEL_ROLE}\n      nativeID={getPanelId(value)}\n      testID={testID}\n    >",
+        "jsxElement": "<View\n      {...layoutProps}\n      accessibilityLabelledBy={getTabId(value)}\n      accessibilityRole={TAB_PANEL_ROLE}\n      nativeID={getPanelId(value)}\n      style={[\n        style,\n        variant === 'attached' ? { backgroundColor: theme.semantics.surface.subtle } : undefined,\n      ]}\n      testID={testID}\n    >",
         "sourcePath": "src/features/tabs/adapters/inbound/TabPanel.tsx"
       },
       {

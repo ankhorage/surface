@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.3.0
+
+### Minor Changes
+
+- 5ad50dd: Add an attached tab presentation variant that keeps the active tab and panel on one semantic surface across light, dark, and inverted polarity.
+
 ## 9.2.0
 
 ### Minor Changes

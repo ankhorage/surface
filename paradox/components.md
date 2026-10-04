@@ -1933,7 +1933,7 @@ Export paths: `src/index.ts`
 
 ## TabPanel
 
-Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:10:1`
+Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:11:1`
 
 Renders the active content panel with the supplied View layout and tab accessibility linkage.
 
@@ -2051,6 +2051,7 @@ Export paths: `src/index.ts`
 | testID | `string \| undefined` | no | — |  |
 | top | `Responsive<number> \| undefined` | no | — |  |
 | value | `string \| undefined` | no | — |  |
+| variant | `TabsVariant \| undefined` | no | — |  |
 | width | `Responsive<number \| string> \| undefined` | no | — |  |
 | wrap | `Responsive<'nowrap' \| 'wrap'> \| undefined` | no | — |  |
 | zIndex | `Responsive<number> \| undefined` | no | — |  |

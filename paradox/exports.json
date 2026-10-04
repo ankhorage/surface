@@ -14632,7 +14632,7 @@
     "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
       "filePath": "src/types/tabs.ts",
-      "line": 14,
+      "line": 17,
       "column": 1
     },
     "exportPaths": [
@@ -14676,7 +14676,7 @@
     "modulePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
     "sourceLocation": {
       "filePath": "src/features/tabs/adapters/inbound/TabPanel.tsx",
-      "line": 10,
+      "line": 11,
       "column": 1
     },
     "exportPaths": [
@@ -14687,10 +14687,10 @@
     ],
     "signatures": [
       {
-        "label": "({ value, children, testID, ...layoutProps }: TabPanelProps) => React.JSX.Element | null",
+        "label": "({ value, children, testID, style, ...layoutProps }: TabPanelProps) => React.JSX.Element | null",
         "parameters": [
           {
-            "name": "{ value, children, testID, ...layoutProps }",
+            "name": "{ value, children, testID, style, ...layoutProps }",
             "type": "TabPanelProps",
             "required": true,
             "description": null
@@ -14714,7 +14714,7 @@
     "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
       "filePath": "src/types/tabs.ts",
-      "line": 29,
+      "line": 32,
       "column": 1
     },
     "exportPaths": [
@@ -15075,7 +15075,7 @@
     "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
       "filePath": "src/types/tabs.ts",
-      "line": 20,
+      "line": 23,
       "column": 1
     },
     "exportPaths": [
@@ -15153,10 +15153,10 @@
     ],
     "signatures": [
       {
-        "label": "({\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  ...layoutProps\n}: TabsProps) => React.JSX.Element",
+        "label": "({\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  variant,\n  ...layoutProps\n}: TabsProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  ...layoutProps\n}",
+            "name": "{\n  children,\n  defaultValue,\n  onValueChange,\n  testID,\n  value,\n  variant,\n  ...layoutProps\n}",
             "type": "TabsProps",
             "required": true,
             "description": null
@@ -15180,14 +15180,15 @@
     "modulePath": "src/types/tabs.ts",
     "sourceLocation": {
       "filePath": "src/types/tabs.ts",
-      "line": 6,
+      "line": 8,
       "column": 1
     },
     "exportPaths": [
       "src/index.ts"
     ],
     "relatedSymbols": [
-      "Responsive"
+      "Responsive",
+      "TabsVariant"
     ],
     "signatures": [],
     "members": [
@@ -15521,6 +15522,13 @@
         "description": null
       },
       {
+        "name": "variant",
+        "kind": "property",
+        "type": "TabsVariant | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "width",
         "kind": "property",
         "type": "Responsive<string | number> | undefined",
@@ -15542,6 +15550,28 @@
         "description": null
       }
     ],
+    "structuredRows": []
+  },
+  {
+    "name": "TabsVariant",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/tabs.ts",
+    "sourceLocation": {
+      "filePath": "src/types/tabs.ts",
+      "line": 6,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
     "structuredRows": []
   },
   {

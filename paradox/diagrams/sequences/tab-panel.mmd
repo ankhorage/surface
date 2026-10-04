@@ -4,7 +4,13 @@ sequenceDiagram
   participant participant_resolveTabElementId as resolveTabElementId
   participant participant_sanitizeTabValue as sanitizeTabValue
   participant participant_TabPanel as TabPanel
+  participant participant_use as use
   participant participant_useTabsContext as useTabsContext
+  participant participant_useTheme as useTheme
+  participant_TabPanel->>participant_useTheme: useTheme()
+  participant_useTheme->>participant_use: use()
+  participant_use-->>participant_useTheme: return
+  participant_useTheme-->>participant_TabPanel: return
   participant_TabPanel->>participant_useTabsContext: useTabsContext()
   participant_useTabsContext-->>participant_TabPanel: return
   participant_TabPanel->>participant_getTabId: getTabId()

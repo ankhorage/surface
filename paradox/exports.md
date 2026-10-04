@@ -3185,7 +3185,7 @@ Renders the accessible tab list and owns keyboard focus navigation.
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:14:1`
+Source: `src/types/tabs.ts:17:1`
 
 ### Members
 
@@ -3199,21 +3199,21 @@ Source: `src/types/tabs.ts:14:1`
 
 Kind: `function`
 Module: `src/features/tabs/adapters/inbound/TabPanel.tsx`
-Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:10:1`
+Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:11:1`
 
 Renders the active content panel with the supplied View layout and tab accessibility linkage.
 
 ### Signatures
 
-- `({ value, children, testID, ...layoutProps }: TabPanelProps) => React.JSX.Element | null`
-  - { value, children, testID, ...layoutProps }: `TabPanelProps`
+- `({ value, children, testID, style, ...layoutProps }: TabPanelProps) => React.JSX.Element | null`
+  - { value, children, testID, style, ...layoutProps }: `TabPanelProps`
   - returns: `React.JSX.Element | null`
 
 ## TabPanelProps
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:29:1`
+Source: `src/types/tabs.ts:32:1`
 
 ### Members
 
@@ -3272,7 +3272,7 @@ Source: `src/types/tabs.ts:29:1`
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:20:1`
+Source: `src/types/tabs.ts:23:1`
 
 ### Members
 
@@ -3301,6 +3301,7 @@ Provides accessible tab selection and forwards View layout to the tab container.
   onValueChange,
   testID,
   value,
+  variant,
   ...layoutProps
 }: TabsProps) => React.JSX.Element`
   - {
@@ -3309,6 +3310,7 @@ Provides accessible tab selection and forwards View layout to the tab container.
   onValueChange,
   testID,
   value,
+  variant,
   ...layoutProps
 }: `TabsProps`
   - returns: `React.JSX.Element`
@@ -3317,7 +3319,7 @@ Provides accessible tab selection and forwards View layout to the tab container.
 
 Kind: `type`
 Module: `src/types/tabs.ts`
-Source: `src/types/tabs.ts:6:1`
+Source: `src/types/tabs.ts:8:1`
 
 ### Members
 
@@ -3370,9 +3372,16 @@ Source: `src/types/tabs.ts:6:1`
 | testID | property | `string \| undefined` | no |  |
 | top | property | `Responsive<number> \| undefined` | no |  |
 | value | property | `string \| undefined` | no |  |
+| variant | property | `TabsVariant \| undefined` | no |  |
 | width | property | `Responsive<string \| number> \| undefined` | no |  |
 | wrap | property | `Responsive<"wrap" \| "nowrap"> \| undefined` | no |  |
 | zIndex | property | `Responsive<number> \| undefined` | no |  |
+
+## TabsVariant
+
+Kind: `unknown`
+Module: `src/types/tabs.ts`
+Source: `src/types/tabs.ts:6:1`
 
 ## Text
 
