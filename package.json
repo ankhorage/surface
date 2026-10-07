@@ -78,6 +78,11 @@
       "import": "./dist/constants/surfaceColor.js",
       "default": "./dist/constants/surfaceColor.js"
     },
+    "./capabilities": {
+      "types": "./dist/capabilities/index.d.ts",
+      "import": "./dist/capabilities/index.js",
+      "default": "./dist/capabilities/index.js"
+    },
     "./theme": {
       "bun": "./src/features/theme/public.ts",
       "react-native": "./src/features/theme/public.ts",
@@ -131,5 +136,42 @@
     "react-native-worklets": "0.13.0",
     "typescript": "~6.0.3"
   },
-  "packageManager": "bun@1.4.2"
+  "packageManager": "bun@1.4.2",
+  "ankh": {
+    "category": "surface",
+    "provider": null,
+    "capabilities": [
+      {
+        "id": "theme.setMode",
+        "owner": "@ankhorage/surface",
+        "access": [
+          "invoke"
+        ],
+        "binding": {
+          "kind": "action",
+          "bindableAs": [
+            "target"
+          ]
+        },
+        "input": {
+          "schema": {
+            "type": "object",
+            "required": [
+              "mode"
+            ],
+            "properties": {
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "light",
+                  "dark"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    ]
+  }
 }
