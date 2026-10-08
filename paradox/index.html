@@ -753,7 +753,7 @@
       <div class="summary">
         <div><strong>145</strong><span class="muted">public exports</span></div>
         <div><strong>42</strong><span class="muted">components</span></div>
-        <div><strong>253</strong><span class="muted">modules</span></div>
+        <div><strong>255</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -788,7 +788,17 @@
   </section>
     <section class="panel">
       <h2>Modules</h2>
-      <article class="item" data-search="src/constants/surfaceColor.public.test.ts src/constants/surfaceColor.ts">
+      <article class="item" data-search="src/capabilities/index.test.ts src/capabilities/index.ts">
+    <h3>src/capabilities/index.test.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/capabilities/index.ts</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="src/capabilities/index.ts CAPABILITIES">
+    <h3>src/capabilities/index.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>CAPABILITIES</code></p>
+  </article><article class="item" data-search="src/constants/surfaceColor.public.test.ts src/constants/surfaceColor.ts">
     <h3>src/constants/surfaceColor.public.test.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/constants/surfaceColor.ts</code></p>
@@ -27834,6 +27844,11 @@
   package__ankhorage_surface[&quot;@ankhorage/surface&quot;]
   entrypoint_src_index_ts[&quot;src/index.ts&quot;]
   package__ankhorage_surface --&gt; entrypoint_src_index_ts
+  module_src_capabilities_index_test_ts[&quot;src/capabilities/index.test.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_capabilities_index_test_ts
+  module_src_capabilities_index_test_ts --&gt; module_src_capabilities_index_ts
+  module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_capabilities_index_ts
   module_src_constants_surfaceColor_public_test_ts[&quot;src/constants/surfaceColor.public.test.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_constants_surfaceColor_public_test_ts
   module_src_constants_surfaceColor_public_test_ts --&gt; module_src_constants_surfaceColor_ts
@@ -28803,6 +28818,11 @@
   package__ankhorage_surface[&quot;@ankhorage/surface&quot;]
   entrypoint_src_index_ts[&quot;src/index.ts&quot;]
   package__ankhorage_surface --&gt; entrypoint_src_index_ts
+  module_src_capabilities_index_test_ts[&quot;src/capabilities/index.test.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_capabilities_index_test_ts
+  module_src_capabilities_index_test_ts --&gt; module_src_capabilities_index_ts
+  module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_capabilities_index_ts
   module_src_constants_surfaceColor_public_test_ts[&quot;src/constants/surfaceColor.public.test.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_constants_surfaceColor_public_test_ts
   module_src_constants_surfaceColor_public_test_ts --&gt; module_src_constants_surfaceColor_ts
@@ -29771,6 +29791,8 @@
     <h3>Module relationships</h3>
     <p class="muted"><code>diagrams/module-relationships.mmd</code></p>
     <div class="mermaid">graph LR
+  module_src_capabilities_index_test_ts[&quot;src/capabilities/index.test.ts&quot;]
+  module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
   module_src_constants_surfaceColor_public_test_ts[&quot;src/constants/surfaceColor.public.test.ts&quot;]
   module_src_constants_surfaceColor_test_ts[&quot;src/constants/surfaceColor.test.ts&quot;]
   module_src_constants_surfaceColor_ts[&quot;src/constants/surfaceColor.ts&quot;]
@@ -30024,6 +30046,7 @@
   module_src_utils_resolveViewStyles_test_ts[&quot;src/utils/resolveViewStyles.test.ts&quot;]
   module_src_utils_resolveViewStyles_ts[&quot;src/utils/resolveViewStyles.ts&quot;]
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
+  module_src_capabilities_index_test_ts --&gt; module_src_capabilities_index_ts
   module_src_constants_surfaceColor_public_test_ts --&gt; module_src_constants_surfaceColor_ts
   module_src_constants_surfaceColor_test_ts --&gt; module_src_constants_surfaceColor_ts
   module_src_core_responsive_getBreakpointFromWidth_test_ts --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
@@ -30485,6 +30508,8 @@
     <details>
       <summary>View Mermaid source</summary>
       <pre>graph LR
+  module_src_capabilities_index_test_ts[&quot;src/capabilities/index.test.ts&quot;]
+  module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
   module_src_constants_surfaceColor_public_test_ts[&quot;src/constants/surfaceColor.public.test.ts&quot;]
   module_src_constants_surfaceColor_test_ts[&quot;src/constants/surfaceColor.test.ts&quot;]
   module_src_constants_surfaceColor_ts[&quot;src/constants/surfaceColor.ts&quot;]
@@ -30738,6 +30763,7 @@
   module_src_utils_resolveViewStyles_test_ts[&quot;src/utils/resolveViewStyles.test.ts&quot;]
   module_src_utils_resolveViewStyles_ts[&quot;src/utils/resolveViewStyles.ts&quot;]
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
+  module_src_capabilities_index_test_ts --&gt; module_src_capabilities_index_ts
   module_src_constants_surfaceColor_public_test_ts --&gt; module_src_constants_surfaceColor_ts
   module_src_constants_surfaceColor_test_ts --&gt; module_src_constants_surfaceColor_ts
   module_src_core_responsive_getBreakpointFromWidth_test_ts --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
@@ -31201,6 +31227,8 @@
     <h3>Export graph</h3>
     <p class="muted"><code>diagrams/export-graph.mmd</code></p>
     <div class="mermaid">graph LR
+  module_src_capabilities_index_test_ts[&quot;src/capabilities/index.test.ts&quot;]
+  module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
   module_src_constants_surfaceColor_public_test_ts[&quot;src/constants/surfaceColor.public.test.ts&quot;]
   module_src_constants_surfaceColor_test_ts[&quot;src/constants/surfaceColor.test.ts&quot;]
   module_src_constants_surfaceColor_ts[&quot;src/constants/surfaceColor.ts&quot;]
@@ -31866,6 +31894,8 @@
     <details>
       <summary>View Mermaid source</summary>
       <pre>graph LR
+  module_src_capabilities_index_test_ts[&quot;src/capabilities/index.test.ts&quot;]
+  module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
   module_src_constants_surfaceColor_public_test_ts[&quot;src/constants/surfaceColor.public.test.ts&quot;]
   module_src_constants_surfaceColor_test_ts[&quot;src/constants/surfaceColor.test.ts&quot;]
   module_src_constants_surfaceColor_ts[&quot;src/constants/surfaceColor.ts&quot;]

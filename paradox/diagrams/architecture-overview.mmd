@@ -2,6 +2,11 @@ graph TD
   package__ankhorage_surface["@ankhorage/surface"]
   entrypoint_src_index_ts["src/index.ts"]
   package__ankhorage_surface --> entrypoint_src_index_ts
+  module_src_capabilities_index_test_ts["src/capabilities/index.test.ts"]
+  package__ankhorage_surface -.-> module_src_capabilities_index_test_ts
+  module_src_capabilities_index_test_ts --> module_src_capabilities_index_ts
+  module_src_capabilities_index_ts["src/capabilities/index.ts"]
+  package__ankhorage_surface -.-> module_src_capabilities_index_ts
   module_src_constants_surfaceColor_public_test_ts["src/constants/surfaceColor.public.test.ts"]
   package__ankhorage_surface -.-> module_src_constants_surfaceColor_public_test_ts
   module_src_constants_surfaceColor_public_test_ts --> module_src_constants_surfaceColor_ts

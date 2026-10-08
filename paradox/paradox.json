@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.3.3",
+      "value": "v9.4.0",
       "color": "cb3837"
     },
     {
@@ -108,6 +108,22 @@
     "src/index.ts"
   ],
   "modules": [
+    {
+      "path": "src/capabilities/index.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/capabilities/index.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/capabilities/index.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "CAPABILITIES"
+      ]
+    },
     {
       "path": "src/constants/surfaceColor.public.test.ts",
       "isEntrypoint": false,
@@ -37284,6 +37300,11 @@
         "sourcePath": "src/invertedThemeAcceptance.test.ts"
       },
       {
+        "fromPath": "src/capabilities/index.test.ts",
+        "toPath": "src/capabilities/index.ts",
+        "sourcePath": "src/capabilities/index.test.ts"
+      },
+      {
         "fromPath": "src/constants/surfaceColor.public.test.ts",
         "toPath": "src/constants/surfaceColor.ts",
         "sourcePath": "src/constants/surfaceColor.public.test.ts"
@@ -40174,6 +40195,24 @@
         "toSymbol": "act",
         "callExpression": "act",
         "sourcePath": "src/webAcceptance.test.tsx"
+      },
+      {
+        "fromSymbol": "src/capabilities/index.test.ts",
+        "toSymbol": "readFileSync",
+        "callExpression": "readFileSync",
+        "sourcePath": "src/capabilities/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/capabilities/index.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/capabilities/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/capabilities/index.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/capabilities/index.test.ts"
       },
       {
         "fromSymbol": "src/constants/surfaceColor.public.test.ts",

@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.0
+
+### Minor Changes
+
+- 3d9d961: Publish the canonical `theme.setMode` capability for portable theme-mode invocation.
+
 ## 9.3.3
 
 ### Patch Changes
