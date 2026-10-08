@@ -16,6 +16,14 @@ const packageJson = JSON.parse(
   peerDependencies: Record<string, string>;
 };
 
+const capabilitiesExport = {
+  './capabilities': {
+    default: './dist/capabilities/index.js',
+    import: './dist/capabilities/index.js',
+    types: './dist/capabilities/index.d.ts',
+  },
+};
+
 const expectedFeatureRootExports = [
   "export { AppBar } from './features/app-bar/public';",
   "export { Badge } from './features/badge/public';",
@@ -137,6 +145,7 @@ describe('public package metadata contract', () => {
         import: './dist/constants/surfaceColor.js',
         types: './dist/constants/surfaceColor.d.ts',
       },
+      ...capabilitiesExport,
       './theme': {
         bun: './src/features/theme/public.ts',
         'react-native': './src/features/theme/public.ts',
