@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.4
+
+### Patch Changes
+
+- 72c6f1f: Use the singular Contracts capability declaration and standalone Capability validation toolkit.
+
 ## 9.4.3
 
 ### Patch Changes
