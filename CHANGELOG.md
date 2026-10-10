@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.3
+
+### Patch Changes
+
+- 56d88af: Restore the tested Expo SDK 57 peer tuple alongside the current React Native 0.87 development tuple.
+
 ## 9.4.2
 
 ### Patch Changes
