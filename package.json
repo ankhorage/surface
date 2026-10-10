@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@ankhorage/color-theory": "^0.3.1",
-    "@ankhorage/contracts": "^24.2.1",
+    "@ankhorage/contracts": "^26.0.0",
     "@ankhorage/utility": "^1.9.85",
     "@gorhom/bottom-sheet": "^5.2.14"
   },
@@ -112,6 +112,7 @@
     "version-packages": "ankhorage-changeset version"
   },
   "devDependencies": {
+    "@ankhorage/capability": "^0.2.1",
     "@ankhorage/devtools": "^2.3.14",
     "@ankhorage/paradox": "^0.3.1",
     "@react-native-vector-icons/fontawesome": "^13.1.4",
