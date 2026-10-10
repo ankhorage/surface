@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.5
+
+### Patch Changes
+
+- 0f9a15d: Declare `@ankhorage/capability` as a runtime dependency so packed catalog verification resolves from the installed package boundary.
+
 ## 9.4.4
 
 ### Patch Changes
