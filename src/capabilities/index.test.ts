@@ -5,15 +5,19 @@ import { expect, test } from 'bun:test';
 
 import { CAPABILITIES } from './index';
 
-const packageMetadata = (
-  JSON.parse(readFileSync(new URL('../../package.json', import.meta.url), 'utf8')) as {
-    readonly ankh?: {
-      readonly capabilities?: unknown;
-      readonly category?: unknown;
-      readonly provider?: unknown;
-    };
-  }
-).ankh;
+const packageManifest = JSON.parse(
+  readFileSync(new URL('../../package.json', import.meta.url), 'utf8'),
+) as {
+  readonly ankh?: {
+    readonly capabilities?: unknown;
+    readonly category?: unknown;
+    readonly provider?: unknown;
+  };
+  readonly dependencies?: Readonly<Record<string, string>>;
+  readonly devDependencies?: Readonly<Record<string, string>>;
+};
+
+const packageMetadata = packageManifest.ankh;
 
 test('publishes a valid and uniquely identified canonical Surface theme capability', () => {
   expect(CAPABILITIES).toHaveLength(1);
@@ -41,6 +45,11 @@ test('keeps Ankh package metadata identical to the canonical Surface catalog', (
   expect(packageMetadata?.category).toBe('surface');
   expect(packageMetadata?.provider).toBeNull();
   expect(packageMetadata?.capabilities).toEqual(CAPABILITIES);
+});
+
+test('keeps capability validation development-only', () => {
+  expect(packageManifest.dependencies?.['@ankhorage/capability']).toBeUndefined();
+  expect(packageManifest.devDependencies?.['@ankhorage/capability']).toMatch(/^\^\d+\.\d+\.\d+$/u);
 });
 
 test('exports the catalog from the public capabilities subpath', async () => {
