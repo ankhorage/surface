@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.6
+
+### Patch Changes
+
+- c4fbea6: Synchronize the managed release verifier and keep capability validation tooling out of the published runtime dependencies.
+
 ## 9.4.5
 
 ### Patch Changes
