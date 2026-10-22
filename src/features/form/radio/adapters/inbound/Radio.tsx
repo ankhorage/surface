@@ -2,9 +2,7 @@ import React from 'react';
 import type { ViewStyle } from 'react-native';
 
 import {
-  resolveFieldState,
-  resolveIndicatorSize,
-  resolveSelectionControlColors,
+  resolveSelectionControlInteractionState,
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
@@ -110,22 +108,16 @@ function RadioControl({
 
 /*** Renders the radio indicator and optional content for one interaction state. */
 function renderRadioContent(input: RadioContentInput) {
-  const { interactionState, theme } = input;
-  const fieldState = resolveFieldState({
+  const { colors, indicatorSize, labelEmphasis } = resolveSelectionControlInteractionState({
+    checked: input.isChecked,
+    color: input.color,
     disabled: input.disabled,
-    focused: interactionState.focused,
+    interactionState: input.interactionState,
     invalid: input.invalid,
     readOnly: input.readOnly,
+    size: input.size,
+    theme: input.theme,
   });
-  const colors = resolveSelectionControlColors(theme, {
-    checked: input.isChecked,
-    fieldState,
-    hovered: interactionState.hovered,
-    pressed: interactionState.pressed,
-    color: input.color,
-  });
-  const indicatorSize = resolveIndicatorSize(input.size);
-  const labelEmphasis = colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
   const hasContent =
     input.children !== undefined && input.children !== null && input.children !== false;
 

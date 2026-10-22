@@ -2,9 +2,7 @@ import React from 'react';
 import type { ViewStyle } from 'react-native';
 
 import {
-  resolveFieldState,
-  resolveIndicatorSize,
-  resolveSelectionControlColors,
+  resolveSelectionControlInteractionState,
   resolveSelectionControlNextChecked,
 } from '../../../../../internal/resolvers';
 import { useControllableState } from '../../../../../internal/useControllableState';
@@ -109,22 +107,17 @@ function CheckboxControl({
 
 /*** Renders the checkbox indicator and optional label for one interaction state. */
 function renderCheckboxContent(input: CheckboxContentInput) {
-  const { interactionState, theme } = input;
-  const fieldState = resolveFieldState({
-    disabled: input.disabled,
-    focused: interactionState.focused,
-    invalid: input.invalid,
-    readOnly: input.readOnly,
-  });
-  const colors = resolveSelectionControlColors(theme, {
-    checked: input.isChecked,
-    fieldState,
-    hovered: interactionState.hovered,
-    pressed: interactionState.pressed,
-    color: input.color,
-  });
-  const indicatorSize = resolveIndicatorSize(input.size);
-  const labelEmphasis = colors.labelColor === theme.semantics.content.muted ? 'muted' : 'default';
+  const { colors, fieldState, indicatorSize, labelEmphasis } =
+    resolveSelectionControlInteractionState({
+      checked: input.isChecked,
+      color: input.color,
+      disabled: input.disabled,
+      interactionState: input.interactionState,
+      invalid: input.invalid,
+      readOnly: input.readOnly,
+      size: input.size,
+      theme: input.theme,
+    });
   const indicatorColor = fieldState.invalid ? 'error' : input.color;
 
   return (
