@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.8
+
+### Patch Changes
+
+- edcfd6e: Update dependencies: `@ankhorage/contracts`.
+
 ## 9.4.7
 
 ### Patch Changes
