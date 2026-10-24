@@ -1,5 +1,9 @@
 import React from 'react';
-import { ScrollView as ReactNativeScrollView } from 'react-native';
+import {
+  RefreshControl,
+  ScrollView as ReactNativeScrollView,
+  type ScrollViewProps as ReactNativeScrollViewProps,
+} from 'react-native';
 
 import { useResponsiveRuntime } from '../../../../core/responsive';
 import type { ScrollViewProps } from '../../../../types/layout';
@@ -14,7 +18,15 @@ export function ScrollView(props: ScrollViewProps) {
   const visual = splitVisualProps(spacing.rest);
   const dimensions = splitDimensionProps(visual.rest);
   const layout = splitLayoutProps(dimensions.rest);
-  const { children, contentContainerStyle, style, ...scrollProps } = layout.rest;
+  const {
+    children,
+    contentContainerStyle,
+    style,
+    refreshing,
+    onRefresh,
+    refreshControl: nativeRefreshControl,
+    ...scrollProps
+  } = layout.rest;
   const resolved = resolveViewStyles(theme, breakpoint, {
     ...spacing.styleProps,
     ...visual.styleProps,
@@ -26,11 +38,25 @@ export function ScrollView(props: ScrollViewProps) {
     <ReactNativeScrollView
       {...scrollProps}
       contentContainerStyle={contentContainerStyle}
+      refreshControl={resolveRefreshControl({ nativeRefreshControl, onRefresh, refreshing })}
       style={[resolved, style]}
     >
       {children}
     </ReactNativeScrollView>
   );
+}
+
+/*** Creates the standard controlled React Native refresh control only when Surface refresh props are supplied. */
+function resolveRefreshControl({
+  nativeRefreshControl,
+  onRefresh,
+  refreshing,
+}: Pick<ScrollViewProps, 'onRefresh' | 'refreshing'> & {
+  nativeRefreshControl: ReactNativeScrollViewProps['refreshControl'];
+}) {
+  if (onRefresh === undefined && refreshing === undefined) return nativeRefreshControl;
+
+  return <RefreshControl onRefresh={onRefresh} refreshing={refreshing ?? false} />;
 }
 
 /*** Splits spacing-aware Surface props from native ScrollView props. */

@@ -165,3 +165,22 @@ test('RN Web 0.21 renders keyboard-safe content through the Surface layout bound
   expect(markup).toContain('data-testid="keyboard-safe"');
   expect(markup).toContain('Keyboard-safe content');
 });
+
+test('RN Web renders controlled refresh state without simulating a native pull gesture', () => {
+  const refreshSignals: undefined[] = [];
+  const markup = renderToString(
+    <ThemeProvider>
+      <ScrollView
+        onRefresh={() => refreshSignals.push(undefined)}
+        refreshing
+        testID="refreshable-scroll-view"
+      >
+        <ReactNativeWeb.Text>refreshable content</ReactNativeWeb.Text>
+      </ScrollView>
+    </ThemeProvider>,
+  );
+
+  expect(markup).toContain('data-testid="refreshable-scroll-view"');
+  expect(markup).toContain('refreshable content');
+  expect(refreshSignals).toEqual([]);
+});
