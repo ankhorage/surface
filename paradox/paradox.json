@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.4.8",
+      "value": "v9.4.9",
       "color": "cb3837"
     },
     {
@@ -2311,6 +2311,7 @@
         "resolveOverlayAnimation",
         "resolveOverlayZIndex",
         "resolveSelectionControlColors",
+        "resolveSelectionControlInteractionState",
         "resolveSelectionControlNextChecked",
         "resolveSurfaceColor",
         "resolveTextColor",
@@ -2537,6 +2538,31 @@
       "exports": [
         "ResolvedSelectionControlColors",
         "resolveSelectionControlColors"
+      ]
+    },
+    {
+      "path": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/theme/application/use-cases/createTheme.ts",
+        "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/internal/resolvers/resolveFieldState.ts",
+        "src/internal/resolvers/resolveIndicatorSize.ts",
+        "src/internal/resolvers/resolveSelectionControlColors.ts",
+        "src/types/control.ts",
+        "src/types/pressable.ts",
+        "src/types/surfaceColor.ts",
+        "src/types/theme.ts"
+      ],
+      "exports": [
+        "resolveSelectionControlInteractionState"
       ]
     },
     {
@@ -9312,7 +9338,7 @@
       "modulePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "line": 21,
+        "line": 19,
         "column": 1
       },
       "exportPaths": [
@@ -13557,7 +13583,7 @@
       "modulePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 22,
+        "line": 20,
         "column": 1
       },
       "exportPaths": [
@@ -25740,7 +25766,7 @@
       "modulePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "line": 21,
+        "line": 19,
         "column": 1
       },
       "exportPaths": [
@@ -28953,7 +28979,7 @@
       "modulePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 22,
+        "line": 20,
         "column": 1
       },
       "exportPaths": [
@@ -34435,7 +34461,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "line": 21,
+        "line": 19,
         "column": 1
       }
     },
@@ -34446,7 +34472,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "line": 62,
+        "line": 60,
         "column": 1
       }
     },
@@ -34457,7 +34483,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "line": 111,
+        "line": 109,
         "column": 1
       }
     },
@@ -34468,7 +34494,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "line": 161,
+        "line": 154,
         "column": 1
       }
     },
@@ -34479,7 +34505,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-        "line": 166,
+        "line": 159,
         "column": 1
       }
     },
@@ -34523,7 +34549,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 22,
+        "line": 20,
         "column": 1
       }
     },
@@ -34534,7 +34560,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 63,
+        "line": 61,
         "column": 1
       }
     },
@@ -34545,7 +34571,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 112,
+        "line": 110,
         "column": 1
       }
     },
@@ -34556,7 +34582,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 163,
+        "line": 155,
         "column": 1
       }
     },
@@ -34567,7 +34593,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 168,
+        "line": 160,
         "column": 1
       }
     },
@@ -34578,7 +34604,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-        "line": 185,
+        "line": 177,
         "column": 1
       }
     },
@@ -36541,6 +36567,17 @@
       }
     },
     {
+      "name": "resolveSelectionControlInteractionState",
+      "description": "Resolves the visual interaction state shared by checkbox and radio controls.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "line": 21,
+        "column": 1
+      }
+    },
+    {
       "name": "resolveSurfaceColor",
       "description": null,
       "see": [],
@@ -38216,6 +38253,11 @@
       },
       {
         "fromPath": "src/internal/resolvers/index.ts",
+        "toPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "sourcePath": "src/internal/resolvers/index.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/index.ts",
         "toPath": "src/internal/resolvers/resolveSurfaceColor.ts",
         "sourcePath": "src/internal/resolvers/index.ts"
       },
@@ -38408,6 +38450,51 @@
         "fromPath": "src/internal/resolvers/resolveSelectionControlColors.ts",
         "toPath": "src/internal/resolvers/resolveSurfaceColor.ts",
         "sourcePath": "src/internal/resolvers/resolveSelectionControlColors.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+        "toPath": "src/features/theme/application/use-cases/createTheme.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+        "toPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "toPath": "src/types/control.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "toPath": "src/types/surfaceColor.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "toPath": "src/types/theme.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "toPath": "src/internal/resolvers/resolveFieldState.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "toPath": "src/internal/resolvers/resolveIndicatorSize.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromPath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts",
+        "toPath": "src/internal/resolvers/resolveSelectionControlColors.ts",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
       },
       {
         "fromPath": "src/internal/resolvers/resolveSurfaceColor.test.ts",
@@ -41325,6 +41412,54 @@
         "sourcePath": "src/internal/resolvers/resolveSelectionControlColors.ts"
       },
       {
+        "fromSymbol": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts"
+      },
+      {
+        "fromSymbol": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+        "toSymbol": "it",
+        "callExpression": "it",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts"
+      },
+      {
+        "fromSymbol": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+        "toSymbol": "createTheme",
+        "callExpression": "createTheme",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts"
+      },
+      {
+        "fromSymbol": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+        "toSymbol": "resolveSelectionControlInteractionState",
+        "callExpression": "resolveSelectionControlInteractionState",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts"
+      },
+      {
+        "fromSymbol": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.test.ts"
+      },
+      {
+        "fromSymbol": "resolveSelectionControlInteractionState",
+        "toSymbol": "resolveFieldState",
+        "callExpression": "resolveFieldState",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromSymbol": "resolveSelectionControlInteractionState",
+        "toSymbol": "resolveSelectionControlColors",
+        "callExpression": "resolveSelectionControlColors",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
+        "fromSymbol": "resolveSelectionControlInteractionState",
+        "toSymbol": "resolveIndicatorSize",
+        "callExpression": "resolveIndicatorSize",
+        "sourcePath": "src/internal/resolvers/resolveSelectionControlInteractionState.ts"
+      },
+      {
         "fromSymbol": "src/internal/resolvers/resolveSurfaceColor.test.ts",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -43708,20 +43843,8 @@
       },
       {
         "fromSymbol": "renderCheckboxContent",
-        "toSymbol": "resolveFieldState",
-        "callExpression": "resolveFieldState",
-        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
-      },
-      {
-        "fromSymbol": "renderCheckboxContent",
-        "toSymbol": "resolveSelectionControlColors",
-        "callExpression": "resolveSelectionControlColors",
-        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
-      },
-      {
-        "fromSymbol": "renderCheckboxContent",
-        "toSymbol": "resolveIndicatorSize",
-        "callExpression": "resolveIndicatorSize",
+        "toSymbol": "resolveSelectionControlInteractionState",
+        "callExpression": "resolveSelectionControlInteractionState",
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
       {
@@ -43810,20 +43933,8 @@
       },
       {
         "fromSymbol": "renderRadioContent",
-        "toSymbol": "resolveFieldState",
-        "callExpression": "resolveFieldState",
-        "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
-      },
-      {
-        "fromSymbol": "renderRadioContent",
-        "toSymbol": "resolveSelectionControlColors",
-        "callExpression": "resolveSelectionControlColors",
-        "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
-      },
-      {
-        "fromSymbol": "renderRadioContent",
-        "toSymbol": "resolveIndicatorSize",
-        "callExpression": "resolveIndicatorSize",
+        "toSymbol": "resolveSelectionControlInteractionState",
+        "callExpression": "resolveSelectionControlInteractionState",
         "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx"
       },
       {

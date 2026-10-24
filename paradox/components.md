@@ -757,7 +757,7 @@ Export paths: `src/index.ts`
 
 ## Checkbox
 
-Source: `src/features/form/checkbox/adapters/inbound/Checkbox.tsx:21:1`
+Source: `src/features/form/checkbox/adapters/inbound/Checkbox.tsx:19:1`
 
 Renders a controlled or uncontrolled accessible checkbox.
 
@@ -1426,7 +1426,7 @@ Export paths: `src/index.ts`
 
 ## Radio
 
-Source: `src/features/form/radio/adapters/inbound/Radio.tsx:22:1`
+Source: `src/features/form/radio/adapters/inbound/Radio.tsx:20:1`
 
 Renders one accessible radio control with text or structured label content.
 

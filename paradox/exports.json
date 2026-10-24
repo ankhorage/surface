@@ -6248,7 +6248,7 @@
     "modulePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
     "sourceLocation": {
       "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx",
-      "line": 21,
+      "line": 19,
       "column": 1
     },
     "exportPaths": [
@@ -10493,7 +10493,7 @@
     "modulePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
     "sourceLocation": {
       "filePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
-      "line": 22,
+      "line": 20,
       "column": 1
     },
     "exportPaths": [

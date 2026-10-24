@@ -1169,7 +1169,7 @@ Source: `src/types/card.ts:5:1`
 
 Kind: `function`
 Module: `src/features/form/checkbox/adapters/inbound/Checkbox.tsx`
-Source: `src/features/form/checkbox/adapters/inbound/Checkbox.tsx:21:1`
+Source: `src/features/form/checkbox/adapters/inbound/Checkbox.tsx:19:1`
 
 Renders a controlled or uncontrolled accessible checkbox.
 
@@ -2315,7 +2315,7 @@ Source: `src/types/pressable.ts:14:1`
 
 Kind: `function`
 Module: `src/features/form/radio/adapters/inbound/Radio.tsx`
-Source: `src/features/form/radio/adapters/inbound/Radio.tsx:22:1`
+Source: `src/features/form/radio/adapters/inbound/Radio.tsx:20:1`
 
 Renders one accessible radio control with text or structured label content.
 
