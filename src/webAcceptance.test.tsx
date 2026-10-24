@@ -2,7 +2,18 @@ import { expect, mock, test } from 'bun:test';
 import { Window } from 'happy-dom';
 import React, { act } from 'react';
 import { renderToString } from 'react-dom/server';
-import * as ReactNativeWeb from 'react-native-web';
+
+const browserWindow = new Window({ url: 'https://surface.test/' });
+Object.assign(globalThis, {
+  IS_REACT_ACT_ENVIRONMENT: true,
+  Node: browserWindow.Node,
+  ShadowRoot: browserWindow.ShadowRoot,
+  document: browserWindow.document,
+  navigator: browserWindow.navigator,
+  window: browserWindow,
+});
+
+const ReactNativeWeb = await import('react-native-web');
 
 await mock.module('react-native', () => ReactNativeWeb);
 
@@ -10,7 +21,7 @@ const scrollContentStyle = { padding: 4 };
 
 const { Grid, ScrollView, View } = await import('./features/layout/public');
 const { KeyboardAvoidingView } = await import('./features/keyboard-avoiding-view/public');
-const { Show } = await import('./core/responsive/Show');
+const { Show, useBreakpoint } = await import('./core/responsive');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
 const { ThemeProvider } = await import('./features/theme/runtime');
 
@@ -24,34 +35,75 @@ function ResponsiveAcceptanceTree() {
             <ReactNativeWeb.View testID="grid-second" />
           </Grid>
           <Show
-            fallback={<ReactNativeWeb.Text>static-fallback</ReactNativeWeb.Text>}
+            fallback={
+              <ReactNativeWeb.View testID="mobile-branch">
+                <ReactNativeWeb.Text>static-fallback</ReactNativeWeb.Text>
+              </ReactNativeWeb.View>
+            }
             when={{ base: false, md: true }}
           >
-            <ReactNativeWeb.Text>wide-content</ReactNativeWeb.Text>
+            <ReactNativeWeb.Text testID="desktop-branch">wide-content</ReactNativeWeb.Text>
           </Show>
         </ScrollView>
       </View>
+      <BreakpointProbe />
     </ThemeProvider>
   );
 }
 
-test('RN Web 0.21 statically renders and hydrates representative responsive primitives', async () => {
+function BreakpointProbe() {
+  return <ReactNativeWeb.Text testID="breakpoint-probe">{useBreakpoint()}</ReactNativeWeb.Text>;
+}
+
+test('RN Web 0.21 preserves SSR responsive structure during desktop hydration', async () => {
+  act(() => setViewportWidth(0));
   const markup = renderToString(<ResponsiveAcceptanceTree />);
 
   expect(markup).toContain('data-testid="container"');
   expect(markup).toContain('data-testid="scroll-view"');
   expect(markup).toContain('data-testid="grid"');
+  expect(markup).toContain('base');
   expect(markup).toContain('static-fallback');
   expect(markup).not.toContain('wide-content');
 
-  const browserWindow = new Window({ url: 'https://surface.test/' });
-  Object.assign(globalThis, {
-    IS_REACT_ACT_ENVIRONMENT: true,
-    Node: browserWindow.Node,
-    document: browserWindow.document,
-    navigator: browserWindow.navigator,
-    window: browserWindow,
-  });
+  act(() => setViewportWidth(1440));
+  const container = browserWindow.document.createElement('div');
+  container.innerHTML = markup;
+  browserWindow.document.body.append(container);
+  const hydrationErrors: string[] = [];
+  const originalError = console.error;
+  console.error = (...values: unknown[]) => {
+    hydrationErrors.push(values.map(String).join(' '));
+  };
+
+  try {
+    const { hydrateRoot } = await import('react-dom/client');
+    const root = hydrateRoot(container as unknown as Element, <ResponsiveAcceptanceTree />);
+
+    expect(container.querySelector('[data-testid="mobile-branch"]')).not.toBeNull();
+    expect(container.querySelector('[data-testid="desktop-branch"]')).toBeNull();
+    expect(container.querySelector('[data-testid="breakpoint-probe"]')?.textContent).toBe('base');
+    await act(async () => Promise.resolve());
+
+    expect(container.querySelector('[data-testid="container"]')).not.toBeNull();
+    expect(container.querySelector('[data-testid="scroll-view"]')).not.toBeNull();
+    expect(container.querySelectorAll('[data-testid^="grid-"]')).toHaveLength(2);
+    expect(container.querySelector('[data-testid="mobile-branch"]')).toBeNull();
+    expect(container.querySelector('[data-testid="desktop-branch"]')).not.toBeNull();
+    expect(container.querySelector('[data-testid="breakpoint-probe"]')?.textContent).toBe('xl');
+    expect(hydrationErrors).toEqual([]);
+
+    act(() => root.unmount());
+  } finally {
+    console.error = originalError;
+    container.remove();
+  }
+});
+
+test('RN Web 0.21 keeps the server responsive structure at a narrow viewport', async () => {
+  act(() => setViewportWidth(0));
+  const markup = renderToString(<ResponsiveAcceptanceTree />);
+  act(() => setViewportWidth(375));
   const container = browserWindow.document.createElement('div');
   container.innerHTML = markup;
   browserWindow.document.body.append(container);
@@ -66,22 +118,26 @@ test('RN Web 0.21 statically renders and hydrates representative responsive prim
     const root = hydrateRoot(container as unknown as Element, <ResponsiveAcceptanceTree />);
     await act(async () => Promise.resolve());
 
-    expect(container.querySelector('[data-testid="container"]')).not.toBeNull();
-    expect(container.querySelector('[data-testid="scroll-view"]')).not.toBeNull();
+    expect(container.querySelector('[data-testid="mobile-branch"]')).not.toBeNull();
+    expect(container.querySelector('[data-testid="desktop-branch"]')).toBeNull();
+    expect(container.querySelector('[data-testid="breakpoint-probe"]')?.textContent).toBe('base');
     expect(container.querySelectorAll('[data-testid^="grid-"]')).toHaveLength(2);
     expect(hydrationErrors).toEqual([]);
 
     act(() => root.unmount());
   } finally {
     console.error = originalError;
-    browserWindow.close();
-    Reflect.deleteProperty(globalThis, 'IS_REACT_ACT_ENVIRONMENT');
-    Reflect.deleteProperty(globalThis, 'Node');
-    Reflect.deleteProperty(globalThis, 'document');
-    Reflect.deleteProperty(globalThis, 'navigator');
-    Reflect.deleteProperty(globalThis, 'window');
+    container.remove();
   }
 });
+
+function setViewportWidth(width: number) {
+  Object.defineProperty(browserWindow.document.documentElement, 'clientWidth', {
+    configurable: true,
+    value: width,
+  });
+  browserWindow.dispatchEvent(new browserWindow.Event('resize'));
+}
 
 test('RN Web 0.21 compiles box-none overlay pointer events into a hit-test-safe class', () => {
   const markup = renderToString(
