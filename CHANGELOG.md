@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.11
+
+### Patch Changes
+
+- 45f3725: Keep responsive rendering stable through server hydration before applying browser viewport changes.
+
 ## 9.4.10
 
 ### Patch Changes

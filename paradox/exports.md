@@ -3946,6 +3946,8 @@ Kind: `function`
 Module: `src/core/responsive/useBreakpoint.ts`
 Source: `src/core/responsive/useBreakpoint.ts:6:1`
 
+Returns the hydration-stable responsive breakpoint without requiring a provider.
+
 ### Signatures
 
 - `() => "base" | "sm" | "md" | "lg" | "xl"`

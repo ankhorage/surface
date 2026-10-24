@@ -37,6 +37,7 @@ graph TD
   package__ankhorage_surface -.-> module_src_core_responsive_ResponsiveProvider_tsx
   module_src_core_responsive_ResponsiveProvider_tsx --> module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_ResponsiveProvider_tsx --> module_src_core_responsive_types_ts
+  module_src_core_responsive_ResponsiveProvider_tsx --> module_src_core_responsive_useResponsiveWidth_ts
   module_src_core_responsive_Show_tsx["src/core/responsive/Show.tsx"]
   package__ankhorage_surface -.-> module_src_core_responsive_Show_tsx
   module_src_core_responsive_Show_tsx --> module_src_core_responsive_resolve_ts
@@ -49,6 +50,9 @@ graph TD
   package__ankhorage_surface -.-> module_src_core_responsive_useBreakpoint_ts
   module_src_core_responsive_useBreakpoint_ts --> module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_useBreakpoint_ts --> module_src_core_responsive_types_ts
+  module_src_core_responsive_useBreakpoint_ts --> module_src_core_responsive_useResponsiveWidth_ts
+  module_src_core_responsive_useResponsiveWidth_ts["src/core/responsive/useResponsiveWidth.ts"]
+  package__ankhorage_surface -.-> module_src_core_responsive_useResponsiveWidth_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx["src/features/accordion/adapters/inbound/Accordion.tsx"]
   package__ankhorage_surface -.-> module_src_features_accordion_adapters_inbound_Accordion_tsx
   module_src_features_accordion_adapters_inbound_Accordion_tsx --> module_src_features_accordion_adapters_inbound_AccordionContext_ts

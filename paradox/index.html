@@ -152,6 +152,11 @@
       <small>1 function</small>
     </button>
   </li><li>
+    <button class="nav-button" type="button" data-target="src/core/responsive/useResponsiveWidth.ts">
+      src/core/responsive/useResponsiveWidth.ts
+      <small>4 functions</small>
+    </button>
+  </li><li>
     <button class="nav-button" type="button" data-target="src/features/accordion/adapters/inbound/Accordion.tsx">
       src/features/accordion/adapters/inbound/Accordion.tsx
       <small>3 functions</small>
@@ -744,7 +749,7 @@
   </li><li>
     <button class="nav-button" type="button" data-target="src/webAcceptance.test.tsx">
       src/webAcceptance.test.tsx
-      <small>1 function</small>
+      <small>3 functions</small>
     </button>
   </li>
           </ul>
@@ -758,7 +763,7 @@
       <div class="summary">
         <div><strong>145</strong><span class="muted">public exports</span></div>
         <div><strong>42</strong><span class="muted">components</span></div>
-        <div><strong>257</strong><span class="muted">modules</span></div>
+        <div><strong>258</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -785,10 +790,6 @@
           <h3>documentation.public-function.description</h3>
           <p><strong>warning</strong> — Exported function useResponsiveRuntime has no documentation description.</p>
           <p class="muted"><code>src/core/responsive/ResponsiveProvider.tsx:23</code></p>
-        </article><article class="item" data-search="documentation.public-function.description warning Exported function useBreakpoint has no documentation description. src/core/responsive/useBreakpoint.ts">
-          <h3>documentation.public-function.description</h3>
-          <p><strong>warning</strong> — Exported function useBreakpoint has no documentation description.</p>
-          <p class="muted"><code>src/core/responsive/useBreakpoint.ts:6</code></p>
         </article>
   </section>
     <section class="panel">
@@ -848,10 +849,10 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/core/responsive/breakpoints.ts</code>, <code>src/core/responsive/types.ts</code></p>
     <p><strong>Exports:</strong> <code>resolveResponsive</code></p>
-  </article><article class="item" data-search="src/core/responsive/ResponsiveProvider.tsx src/core/responsive/getBreakpointFromWidth.ts src/core/responsive/types.ts ResponsiveProvider useResponsiveRuntime">
+  </article><article class="item" data-search="src/core/responsive/ResponsiveProvider.tsx src/core/responsive/getBreakpointFromWidth.ts src/core/responsive/types.ts src/core/responsive/useResponsiveWidth.ts ResponsiveProvider useResponsiveRuntime">
     <h3>src/core/responsive/ResponsiveProvider.tsx</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/core/responsive/getBreakpointFromWidth.ts</code>, <code>src/core/responsive/types.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/core/responsive/getBreakpointFromWidth.ts</code>, <code>src/core/responsive/types.ts</code>, <code>src/core/responsive/useResponsiveWidth.ts</code></p>
     <p><strong>Exports:</strong> <code>ResponsiveProvider</code>, <code>useResponsiveRuntime</code></p>
   </article><article class="item" data-search="src/core/responsive/Show.tsx src/core/responsive/resolve.ts src/core/responsive/ResponsiveProvider.tsx src/core/responsive/types.ts Show ShowProps">
     <h3>src/core/responsive/Show.tsx</h3>
@@ -863,11 +864,16 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/core/responsive/breakpoints.ts</code></p>
     <p><strong>Exports:</strong> <code>Breakpoint</code>, <code>Responsive</code>, <code>ResponsiveRuntime</code></p>
-  </article><article class="item" data-search="src/core/responsive/useBreakpoint.ts src/core/responsive/getBreakpointFromWidth.ts src/core/responsive/types.ts useBreakpoint">
+  </article><article class="item" data-search="src/core/responsive/useBreakpoint.ts src/core/responsive/getBreakpointFromWidth.ts src/core/responsive/types.ts src/core/responsive/useResponsiveWidth.ts useBreakpoint">
     <h3>src/core/responsive/useBreakpoint.ts</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/core/responsive/getBreakpointFromWidth.ts</code>, <code>src/core/responsive/types.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/core/responsive/getBreakpointFromWidth.ts</code>, <code>src/core/responsive/types.ts</code>, <code>src/core/responsive/useResponsiveWidth.ts</code></p>
     <p><strong>Exports:</strong> <code>useBreakpoint</code></p>
+  </article><article class="item" data-search="src/core/responsive/useResponsiveWidth.ts useResponsiveWidth">
+    <h3>src/core/responsive/useResponsiveWidth.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>useResponsiveWidth</code></p>
   </article><article class="item" data-search="src/features/accordion/adapters/inbound/Accordion.tsx src/features/accordion/adapters/inbound/AccordionContext.ts src/features/accordion/utils/resolveAccordionToggle.ts src/types/accordion.ts Accordion">
     <h3>src/features/accordion/adapters/inbound/Accordion.tsx</h3>
     <p class="muted">Referenced module</p>
@@ -2373,11 +2379,11 @@
             </section>
             <section>
               <h3>src/core/responsive/useBreakpoint.ts</h3>
-              <article class="item" id="symbol-usebreakpoint" data-search="useBreakpoint  function src/core/responsive/useBreakpoint.ts  () =&gt; &quot;base&quot; | &quot;sm&quot; | &quot;md&quot; | &quot;lg&quot; | &quot;xl&quot;">
+              <article class="item" id="symbol-usebreakpoint" data-search="useBreakpoint  function src/core/responsive/useBreakpoint.ts Returns the hydration-stable responsive breakpoint without requiring a provider. () =&gt; &quot;base&quot; | &quot;sm&quot; | &quot;md&quot; | &quot;lg&quot; | &quot;xl&quot;">
     <h4>useBreakpoint</h4>
     
     <p class="muted">function • <code>src/core/responsive/useBreakpoint.ts:6:1</code></p>
-    
+    <p>Returns the hydration-stable responsive breakpoint without requiring a provider.</p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -27894,6 +27900,7 @@
   package__ankhorage_surface -.-&gt; module_src_core_responsive_ResponsiveProvider_tsx
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_core_responsive_Show_tsx[&quot;src/core/responsive/Show.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_core_responsive_Show_tsx
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_resolve_ts
@@ -27906,6 +27913,9 @@
   package__ankhorage_surface -.-&gt; module_src_core_responsive_useBreakpoint_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_useResponsiveWidth_ts
+  module_src_core_responsive_useResponsiveWidth_ts[&quot;src/core/responsive/useResponsiveWidth.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx[&quot;src/features/accordion/adapters/inbound/Accordion.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_accordion_adapters_inbound_Accordion_tsx
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_features_accordion_adapters_inbound_AccordionContext_ts
@@ -28881,6 +28891,7 @@
   package__ankhorage_surface -.-&gt; module_src_core_responsive_ResponsiveProvider_tsx
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_core_responsive_Show_tsx[&quot;src/core/responsive/Show.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_core_responsive_Show_tsx
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_resolve_ts
@@ -28893,6 +28904,9 @@
   package__ankhorage_surface -.-&gt; module_src_core_responsive_useBreakpoint_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_useResponsiveWidth_ts
+  module_src_core_responsive_useResponsiveWidth_ts[&quot;src/core/responsive/useResponsiveWidth.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx[&quot;src/features/accordion/adapters/inbound/Accordion.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_accordion_adapters_inbound_Accordion_tsx
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_features_accordion_adapters_inbound_AccordionContext_ts
@@ -29847,6 +29861,7 @@
   module_src_core_responsive_Show_tsx[&quot;src/core/responsive/Show.tsx&quot;]
   module_src_core_responsive_types_ts[&quot;src/core/responsive/types.ts&quot;]
   module_src_core_responsive_useBreakpoint_ts[&quot;src/core/responsive/useBreakpoint.ts&quot;]
+  module_src_core_responsive_useResponsiveWidth_ts[&quot;src/core/responsive/useResponsiveWidth.ts&quot;]
   module_src_features_accordion_adapters_inbound_Accordion_tsx[&quot;src/features/accordion/adapters/inbound/Accordion.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContent_tsx[&quot;src/features/accordion/adapters/inbound/AccordionContent.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContext_ts[&quot;src/features/accordion/adapters/inbound/AccordionContext.ts&quot;]
@@ -30100,12 +30115,14 @@
   module_src_core_responsive_resolve_ts --&gt; module_src_core_responsive_types_ts
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_resolve_ts
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_ResponsiveProvider_tsx
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_types_ts
   module_src_core_responsive_types_ts --&gt; module_src_core_responsive_breakpoints_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_features_accordion_adapters_inbound_AccordionContext_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_features_accordion_utils_resolveAccordionToggle_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_types_accordion_ts
@@ -30575,6 +30592,7 @@
   module_src_core_responsive_Show_tsx[&quot;src/core/responsive/Show.tsx&quot;]
   module_src_core_responsive_types_ts[&quot;src/core/responsive/types.ts&quot;]
   module_src_core_responsive_useBreakpoint_ts[&quot;src/core/responsive/useBreakpoint.ts&quot;]
+  module_src_core_responsive_useResponsiveWidth_ts[&quot;src/core/responsive/useResponsiveWidth.ts&quot;]
   module_src_features_accordion_adapters_inbound_Accordion_tsx[&quot;src/features/accordion/adapters/inbound/Accordion.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContent_tsx[&quot;src/features/accordion/adapters/inbound/AccordionContent.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContext_ts[&quot;src/features/accordion/adapters/inbound/AccordionContext.ts&quot;]
@@ -30828,12 +30846,14 @@
   module_src_core_responsive_resolve_ts --&gt; module_src_core_responsive_types_ts
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_ResponsiveProvider_tsx --&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_resolve_ts
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_ResponsiveProvider_tsx
   module_src_core_responsive_Show_tsx --&gt; module_src_core_responsive_types_ts
   module_src_core_responsive_types_ts --&gt; module_src_core_responsive_breakpoints_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_getBreakpointFromWidth_ts
   module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_types_ts
+  module_src_core_responsive_useBreakpoint_ts --&gt; module_src_core_responsive_useResponsiveWidth_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_features_accordion_adapters_inbound_AccordionContext_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_features_accordion_utils_resolveAccordionToggle_ts
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; module_src_types_accordion_ts
@@ -31305,6 +31325,7 @@
   module_src_core_responsive_Show_tsx[&quot;src/core/responsive/Show.tsx&quot;]
   module_src_core_responsive_types_ts[&quot;src/core/responsive/types.ts&quot;]
   module_src_core_responsive_useBreakpoint_ts[&quot;src/core/responsive/useBreakpoint.ts&quot;]
+  module_src_core_responsive_useResponsiveWidth_ts[&quot;src/core/responsive/useResponsiveWidth.ts&quot;]
   module_src_features_accordion_adapters_inbound_Accordion_tsx[&quot;src/features/accordion/adapters/inbound/Accordion.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContent_tsx[&quot;src/features/accordion/adapters/inbound/AccordionContent.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContext_ts[&quot;src/features/accordion/adapters/inbound/AccordionContext.ts&quot;]
@@ -31974,6 +31995,7 @@
   module_src_core_responsive_Show_tsx[&quot;src/core/responsive/Show.tsx&quot;]
   module_src_core_responsive_types_ts[&quot;src/core/responsive/types.ts&quot;]
   module_src_core_responsive_useBreakpoint_ts[&quot;src/core/responsive/useBreakpoint.ts&quot;]
+  module_src_core_responsive_useResponsiveWidth_ts[&quot;src/core/responsive/useResponsiveWidth.ts&quot;]
   module_src_features_accordion_adapters_inbound_Accordion_tsx[&quot;src/features/accordion/adapters/inbound/Accordion.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContent_tsx[&quot;src/features/accordion/adapters/inbound/AccordionContent.tsx&quot;]
   module_src_features_accordion_adapters_inbound_AccordionContext_ts[&quot;src/features/accordion/adapters/inbound/AccordionContext.ts&quot;]
@@ -33130,9 +33152,12 @@
     <div class="mermaid">sequenceDiagram
   participant participant_ResponsiveProvider as ResponsiveProvider
   participant participant_useMemo as useMemo
-  participant participant_useWindowDimensions as useWindowDimensions
-  participant_ResponsiveProvider-&gt;&gt;participant_useWindowDimensions: useWindowDimensions()
-  participant_useWindowDimensions--&gt;&gt;participant_ResponsiveProvider: return
+  participant participant_useResponsiveWidth as useResponsiveWidth
+  participant participant_useSyncExternalStore as useSyncExternalStore
+  participant_ResponsiveProvider-&gt;&gt;participant_useResponsiveWidth: useResponsiveWidth()
+  participant_useResponsiveWidth-&gt;&gt;participant_useSyncExternalStore: useSyncExternalStore()
+  participant_useSyncExternalStore--&gt;&gt;participant_useResponsiveWidth: return
+  participant_useResponsiveWidth--&gt;&gt;participant_ResponsiveProvider: return
   participant_ResponsiveProvider-&gt;&gt;participant_useMemo: useMemo()
   participant_useMemo--&gt;&gt;participant_ResponsiveProvider: return
 </div>
@@ -33141,9 +33166,12 @@
       <pre>sequenceDiagram
   participant participant_ResponsiveProvider as ResponsiveProvider
   participant participant_useMemo as useMemo
-  participant participant_useWindowDimensions as useWindowDimensions
-  participant_ResponsiveProvider-&gt;&gt;participant_useWindowDimensions: useWindowDimensions()
-  participant_useWindowDimensions--&gt;&gt;participant_ResponsiveProvider: return
+  participant participant_useResponsiveWidth as useResponsiveWidth
+  participant participant_useSyncExternalStore as useSyncExternalStore
+  participant_ResponsiveProvider-&gt;&gt;participant_useResponsiveWidth: useResponsiveWidth()
+  participant_useResponsiveWidth-&gt;&gt;participant_useSyncExternalStore: useSyncExternalStore()
+  participant_useSyncExternalStore--&gt;&gt;participant_useResponsiveWidth: return
+  participant_useResponsiveWidth--&gt;&gt;participant_ResponsiveProvider: return
   participant_ResponsiveProvider-&gt;&gt;participant_useMemo: useMemo()
   participant_useMemo--&gt;&gt;participant_ResponsiveProvider: return
 </pre>
@@ -33594,9 +33622,12 @@
     <div class="mermaid">sequenceDiagram
   participant participant_getBreakpointFromWidth as getBreakpointFromWidth
   participant participant_useBreakpoint as useBreakpoint
-  participant participant_useWindowDimensions as useWindowDimensions
-  participant_useBreakpoint-&gt;&gt;participant_useWindowDimensions: useWindowDimensions()
-  participant_useWindowDimensions--&gt;&gt;participant_useBreakpoint: return
+  participant participant_useResponsiveWidth as useResponsiveWidth
+  participant participant_useSyncExternalStore as useSyncExternalStore
+  participant_useBreakpoint-&gt;&gt;participant_useResponsiveWidth: useResponsiveWidth()
+  participant_useResponsiveWidth-&gt;&gt;participant_useSyncExternalStore: useSyncExternalStore()
+  participant_useSyncExternalStore--&gt;&gt;participant_useResponsiveWidth: return
+  participant_useResponsiveWidth--&gt;&gt;participant_useBreakpoint: return
   participant_useBreakpoint-&gt;&gt;participant_getBreakpointFromWidth: getBreakpointFromWidth()
   participant_getBreakpointFromWidth--&gt;&gt;participant_useBreakpoint: return
 </div>
@@ -33605,9 +33636,12 @@
       <pre>sequenceDiagram
   participant participant_getBreakpointFromWidth as getBreakpointFromWidth
   participant participant_useBreakpoint as useBreakpoint
-  participant participant_useWindowDimensions as useWindowDimensions
-  participant_useBreakpoint-&gt;&gt;participant_useWindowDimensions: useWindowDimensions()
-  participant_useWindowDimensions--&gt;&gt;participant_useBreakpoint: return
+  participant participant_useResponsiveWidth as useResponsiveWidth
+  participant participant_useSyncExternalStore as useSyncExternalStore
+  participant_useBreakpoint-&gt;&gt;participant_useResponsiveWidth: useResponsiveWidth()
+  participant_useResponsiveWidth-&gt;&gt;participant_useSyncExternalStore: useSyncExternalStore()
+  participant_useSyncExternalStore--&gt;&gt;participant_useResponsiveWidth: return
+  participant_useResponsiveWidth--&gt;&gt;participant_useBreakpoint: return
   participant_useBreakpoint-&gt;&gt;participant_getBreakpointFromWidth: getBreakpointFromWidth()
   participant_getBreakpointFromWidth--&gt;&gt;participant_useBreakpoint: return
 </pre>
@@ -33722,10 +33756,35 @@
   </section><section id="view-src-core-responsive-usebreakpoint-ts" class="view" data-view="src/core/responsive/useBreakpoint.ts" hidden>
     <section class="panel">
       <h2>src/core/responsive/useBreakpoint.ts</h2>
-      <article class="item" data-search="useBreakpoint src/core/responsive/useBreakpoint.ts ">
+      <article class="item" data-search="useBreakpoint src/core/responsive/useBreakpoint.ts Returns the hydration-stable responsive breakpoint without requiring a provider.">
     <h3>useBreakpoint</h3>
     <p class="muted"><code>src/core/responsive/useBreakpoint.ts:6:1</code></p>
-    <p class="empty">No description available.</p>
+    <p>Returns the hydration-stable responsive breakpoint without requiring a provider.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-core-responsive-useresponsivewidth-ts" class="view" data-view="src/core/responsive/useResponsiveWidth.ts" hidden>
+    <section class="panel">
+      <h2>src/core/responsive/useResponsiveWidth.ts</h2>
+      <article class="item" data-search="useResponsiveWidth src/core/responsive/useResponsiveWidth.ts Reads the viewport width without changing the server and hydration render.">
+    <h3>useResponsiveWidth</h3>
+    <p class="muted"><code>src/core/responsive/useResponsiveWidth.ts:7:1</code></p>
+    <p>Reads the viewport width without changing the server and hydration render.</p>
+    
+  </article><article class="item" data-search="subscribeToWindowDimensions src/core/responsive/useResponsiveWidth.ts Subscribes to viewport changes after hydration.">
+    <h3>subscribeToWindowDimensions</h3>
+    <p class="muted"><code>src/core/responsive/useResponsiveWidth.ts:12:1</code></p>
+    <p>Subscribes to viewport changes after hydration.</p>
+    
+  </article><article class="item" data-search="getWindowWidth src/core/responsive/useResponsiveWidth.ts Returns the current native or browser viewport width.">
+    <h3>getWindowWidth</h3>
+    <p class="muted"><code>src/core/responsive/useResponsiveWidth.ts:18:1</code></p>
+    <p>Returns the current native or browser viewport width.</p>
+    
+  </article><article class="item" data-search="getServerWidth src/core/responsive/useResponsiveWidth.ts Supplies the deterministic responsive width used by SSR and first hydration.">
+    <h3>getServerWidth</h3>
+    <p class="muted"><code>src/core/responsive/useResponsiveWidth.ts:23:1</code></p>
+    <p>Supplies the deterministic responsive width used by SSR and first hydration.</p>
     
   </article>
     </section>
@@ -35544,7 +35603,17 @@
       <h2>src/webAcceptance.test.tsx</h2>
       <article class="item" data-search="ResponsiveAcceptanceTree src/webAcceptance.test.tsx ">
     <h3>ResponsiveAcceptanceTree</h3>
-    <p class="muted"><code>src/webAcceptance.test.tsx:17:1</code></p>
+    <p class="muted"><code>src/webAcceptance.test.tsx:28:1</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="BreakpointProbe src/webAcceptance.test.tsx ">
+    <h3>BreakpointProbe</h3>
+    <p class="muted"><code>src/webAcceptance.test.tsx:54:1</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="setViewportWidth src/webAcceptance.test.tsx ">
+    <h3>setViewportWidth</h3>
+    <p class="muted"><code>src/webAcceptance.test.tsx:134:1</code></p>
     <p class="empty">No description available.</p>
     
   </article>

@@ -1,8 +1,11 @@
 sequenceDiagram
   participant participant_ResponsiveProvider as ResponsiveProvider
   participant participant_useMemo as useMemo
-  participant participant_useWindowDimensions as useWindowDimensions
-  participant_ResponsiveProvider->>participant_useWindowDimensions: useWindowDimensions()
-  participant_useWindowDimensions-->>participant_ResponsiveProvider: return
+  participant participant_useResponsiveWidth as useResponsiveWidth
+  participant participant_useSyncExternalStore as useSyncExternalStore
+  participant_ResponsiveProvider->>participant_useResponsiveWidth: useResponsiveWidth()
+  participant_useResponsiveWidth->>participant_useSyncExternalStore: useSyncExternalStore()
+  participant_useSyncExternalStore-->>participant_useResponsiveWidth: return
+  participant_useResponsiveWidth-->>participant_ResponsiveProvider: return
   participant_ResponsiveProvider->>participant_useMemo: useMemo()
   participant_useMemo-->>participant_ResponsiveProvider: return

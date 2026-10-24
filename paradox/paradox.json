@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.4.10",
+      "value": "v9.4.11",
       "color": "cb3837"
     },
     {
@@ -94,13 +94,6 @@
       "message": "Exported function useResponsiveRuntime has no documentation description.",
       "sourcePath": "src/core/responsive/ResponsiveProvider.tsx",
       "line": 23
-    },
-    {
-      "ruleId": "documentation.public-function.description",
-      "severity": "warning",
-      "message": "Exported function useBreakpoint has no documentation description.",
-      "sourcePath": "src/core/responsive/useBreakpoint.ts",
-      "line": 6
     }
   ],
   "config": null,
@@ -222,7 +215,8 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/core/responsive/getBreakpointFromWidth.ts",
-        "src/core/responsive/types.ts"
+        "src/core/responsive/types.ts",
+        "src/core/responsive/useResponsiveWidth.ts"
       ],
       "exports": [
         "ResponsiveProvider",
@@ -259,10 +253,19 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/core/responsive/getBreakpointFromWidth.ts",
-        "src/core/responsive/types.ts"
+        "src/core/responsive/types.ts",
+        "src/core/responsive/useResponsiveWidth.ts"
       ],
       "exports": [
         "useBreakpoint"
+      ]
+    },
+    {
+      "path": "src/core/responsive/useResponsiveWidth.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "useResponsiveWidth"
       ]
     },
     {
@@ -21069,7 +21072,7 @@
     {
       "name": "useBreakpoint",
       "title": null,
-      "description": null,
+      "description": "Returns the hydration-stable responsive breakpoint without requiring a provider.",
       "isReadme": false,
       "see": [],
       "security": [],
@@ -34060,12 +34063,56 @@
     },
     {
       "name": "useBreakpoint",
-      "description": null,
+      "description": "Returns the hydration-stable responsive breakpoint without requiring a provider.",
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/core/responsive/useBreakpoint.ts",
         "line": 6,
+        "column": 1
+      }
+    },
+    {
+      "name": "useResponsiveWidth",
+      "description": "Reads the viewport width without changing the server and hydration render.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/core/responsive/useResponsiveWidth.ts",
+        "line": 7,
+        "column": 1
+      }
+    },
+    {
+      "name": "subscribeToWindowDimensions",
+      "description": "Subscribes to viewport changes after hydration.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/core/responsive/useResponsiveWidth.ts",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "getWindowWidth",
+      "description": "Returns the current native or browser viewport width.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/core/responsive/useResponsiveWidth.ts",
+        "line": 18,
+        "column": 1
+      }
+    },
+    {
+      "name": "getServerWidth",
+      "description": "Supplies the deterministic responsive width used by SSR and first hydration.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/core/responsive/useResponsiveWidth.ts",
+        "line": 23,
         "column": 1
       }
     },
@@ -36760,7 +36807,29 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/webAcceptance.test.tsx",
-        "line": 17,
+        "line": 28,
+        "column": 1
+      }
+    },
+    {
+      "name": "BreakpointProbe",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/webAcceptance.test.tsx",
+        "line": 54,
+        "column": 1
+      }
+    },
+    {
+      "name": "setViewportWidth",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/webAcceptance.test.tsx",
+        "line": 134,
         "column": 1
       }
     }
@@ -37123,7 +37192,7 @@
       "name": "useBreakpoint",
       "sourcePath": "src/core/responsive/useBreakpoint.ts",
       "symbolName": "useBreakpoint",
-      "description": null,
+      "description": "Returns the hydration-stable responsive breakpoint without requiring a provider.",
       "isReadme": false
     },
     {
@@ -37717,6 +37786,11 @@
         "sourcePath": "src/core/responsive/ResponsiveProvider.tsx"
       },
       {
+        "fromPath": "src/core/responsive/ResponsiveProvider.tsx",
+        "toPath": "src/core/responsive/useResponsiveWidth.ts",
+        "sourcePath": "src/core/responsive/ResponsiveProvider.tsx"
+      },
+      {
         "fromPath": "src/core/responsive/Show.tsx",
         "toPath": "src/core/responsive/resolve.ts",
         "sourcePath": "src/core/responsive/Show.tsx"
@@ -37744,6 +37818,11 @@
       {
         "fromPath": "src/core/responsive/useBreakpoint.ts",
         "toPath": "src/core/responsive/types.ts",
+        "sourcePath": "src/core/responsive/useBreakpoint.ts"
+      },
+      {
+        "fromPath": "src/core/responsive/useBreakpoint.ts",
+        "toPath": "src/core/responsive/useResponsiveWidth.ts",
         "sourcePath": "src/core/responsive/useBreakpoint.ts"
       },
       {
@@ -40254,9 +40333,27 @@
         "sourcePath": "src/structureOwnership.test.ts"
       },
       {
+        "fromSymbol": "BreakpointProbe",
+        "toSymbol": "useBreakpoint",
+        "callExpression": "useBreakpoint",
+        "sourcePath": "src/webAcceptance.test.tsx"
+      },
+      {
         "fromSymbol": "src/webAcceptance.test.tsx",
         "toSymbol": "test",
         "callExpression": "test",
+        "sourcePath": "src/webAcceptance.test.tsx"
+      },
+      {
+        "fromSymbol": "src/webAcceptance.test.tsx",
+        "toSymbol": "act",
+        "callExpression": "act",
+        "sourcePath": "src/webAcceptance.test.tsx"
+      },
+      {
+        "fromSymbol": "src/webAcceptance.test.tsx",
+        "toSymbol": "setViewportWidth",
+        "callExpression": "setViewportWidth",
         "sourcePath": "src/webAcceptance.test.tsx"
       },
       {
@@ -40275,12 +40372,6 @@
         "fromSymbol": "src/webAcceptance.test.tsx",
         "toSymbol": "hydrateRoot",
         "callExpression": "hydrateRoot",
-        "sourcePath": "src/webAcceptance.test.tsx"
-      },
-      {
-        "fromSymbol": "src/webAcceptance.test.tsx",
-        "toSymbol": "act",
-        "callExpression": "act",
         "sourcePath": "src/webAcceptance.test.tsx"
       },
       {
@@ -40627,8 +40718,8 @@
       },
       {
         "fromSymbol": "ResponsiveProvider",
-        "toSymbol": "useWindowDimensions",
-        "callExpression": "useWindowDimensions",
+        "toSymbol": "useResponsiveWidth",
+        "callExpression": "useResponsiveWidth",
         "sourcePath": "src/core/responsive/ResponsiveProvider.tsx"
       },
       {
@@ -40663,8 +40754,8 @@
       },
       {
         "fromSymbol": "useBreakpoint",
-        "toSymbol": "useWindowDimensions",
-        "callExpression": "useWindowDimensions",
+        "toSymbol": "useResponsiveWidth",
+        "callExpression": "useResponsiveWidth",
         "sourcePath": "src/core/responsive/useBreakpoint.ts"
       },
       {
@@ -40672,6 +40763,12 @@
         "toSymbol": "getBreakpointFromWidth",
         "callExpression": "getBreakpointFromWidth",
         "sourcePath": "src/core/responsive/useBreakpoint.ts"
+      },
+      {
+        "fromSymbol": "useResponsiveWidth",
+        "toSymbol": "useSyncExternalStore",
+        "callExpression": "useSyncExternalStore",
+        "sourcePath": "src/core/responsive/useResponsiveWidth.ts"
       },
       {
         "fromSymbol": "src/features/bottom-sheet/BottomSheetProvider.tsx",

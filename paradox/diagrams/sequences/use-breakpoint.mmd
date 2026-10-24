@@ -1,8 +1,11 @@
 sequenceDiagram
   participant participant_getBreakpointFromWidth as getBreakpointFromWidth
   participant participant_useBreakpoint as useBreakpoint
-  participant participant_useWindowDimensions as useWindowDimensions
-  participant_useBreakpoint->>participant_useWindowDimensions: useWindowDimensions()
-  participant_useWindowDimensions-->>participant_useBreakpoint: return
+  participant participant_useResponsiveWidth as useResponsiveWidth
+  participant participant_useSyncExternalStore as useSyncExternalStore
+  participant_useBreakpoint->>participant_useResponsiveWidth: useResponsiveWidth()
+  participant_useResponsiveWidth->>participant_useSyncExternalStore: useSyncExternalStore()
+  participant_useSyncExternalStore-->>participant_useResponsiveWidth: return
+  participant_useResponsiveWidth-->>participant_useBreakpoint: return
   participant_useBreakpoint->>participant_getBreakpointFromWidth: getBreakpointFromWidth()
   participant_getBreakpointFromWidth-->>participant_useBreakpoint: return

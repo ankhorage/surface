@@ -17979,7 +17979,7 @@
   {
     "name": "useBreakpoint",
     "title": null,
-    "description": null,
+    "description": "Returns the hydration-stable responsive breakpoint without requiring a provider.",
     "isReadme": false,
     "see": [],
     "security": [],
