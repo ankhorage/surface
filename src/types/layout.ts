@@ -100,4 +100,8 @@ export interface ScrollViewProps
     Omit<ReactNativeScrollViewProps, 'children' | 'contentContainerStyle' | 'style'> {
   children?: React.ReactNode;
   contentContainerStyle?: StyleProp<ViewStyle>;
+  /** Controlled visibility of the native refresh indicator. */
+  refreshing?: boolean;
+  /** Called by the native refresh control after a pull-to-refresh gesture. */
+  onRefresh?: () => void;
 }
