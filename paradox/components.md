@@ -1509,7 +1509,7 @@ Export paths: `src/index.ts`
 
 ## ScrollView
 
-Source: `src/features/layout/adapters/inbound/ScrollView.tsx:10:1`
+Source: `src/features/layout/adapters/inbound/ScrollView.tsx:14:1`
 
 Renders the token-aware responsive Surface adapter for React Native ScrollView.
 
@@ -1675,6 +1675,7 @@ Export paths: `src/index.ts`
 | onPointerOverCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerUp | `((e: PointerEvent) => void) \| undefined` | no | — |  |
 | onPointerUpCapture | `((e: PointerEvent) => void) \| undefined` | no | — |  |
+| onRefresh | `() => void \| undefined` | no | — |  |
 | onResponderEnd | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
 | onResponderGrant | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no | — |  |
 | onResponderMove | `((e: GestureResponderEvent) => void) \| undefined` | no | — |  |
@@ -1714,6 +1715,7 @@ Export paths: `src/index.ts`
 | py | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | radius | `Responsive<RadiusValue> \| undefined` | no | — |  |
 | refreshControl | `React.JSX.Element \| undefined` | no | — |  |
+| refreshing | `boolean \| undefined` | no | — |  |
 | removeClippedSubviews | `boolean \| undefined` | no | — |  |
 | renderToHardwareTextureAndroid | `boolean \| undefined` | no | — |  |
 | right | `Responsive<number> \| undefined` | no | — |  |

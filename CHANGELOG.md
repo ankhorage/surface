@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.12
+
+### Patch Changes
+
+- 5340e24: Support controlled pull-to-refresh state and callbacks through `ScrollView`.
+
 ## 9.4.11
 
 ### Patch Changes

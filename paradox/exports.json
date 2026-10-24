@@ -11251,7 +11251,7 @@
     "modulePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
     "sourceLocation": {
       "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-      "line": 10,
+      "line": 14,
       "column": 1
     },
     "exportPaths": [
@@ -12351,6 +12351,13 @@
         "description": null
       },
       {
+        "name": "onRefresh",
+        "kind": "property",
+        "type": "(() => void) | undefined",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "onResponderEnd",
         "kind": "property",
         "type": "((e: GestureResponderEvent) => void) | undefined",
@@ -12620,6 +12627,13 @@
         "name": "refreshControl",
         "kind": "property",
         "type": "React.JSX.Element | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "refreshing",
+        "kind": "property",
+        "type": "boolean | undefined",
         "required": false,
         "description": null
       },

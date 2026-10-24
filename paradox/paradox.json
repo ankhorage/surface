@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.4.11",
+      "value": "v9.4.12",
       "color": "cb3837"
     },
     {
@@ -1070,6 +1070,12 @@
       "exports": [
         "Grid"
       ]
+    },
+    {
+      "path": "src/features/layout/adapters/inbound/ScrollView.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
     },
     {
       "path": "src/features/layout/adapters/inbound/ScrollView.tsx",
@@ -14344,7 +14350,7 @@
       "modulePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-        "line": 10,
+        "line": 14,
         "column": 1
       },
       "exportPaths": [
@@ -15444,6 +15450,13 @@
           "description": null
         },
         {
+          "name": "onRefresh",
+          "kind": "property",
+          "type": "(() => void) | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "onResponderEnd",
           "kind": "property",
           "type": "((e: GestureResponderEvent) => void) | undefined",
@@ -15713,6 +15726,13 @@
           "name": "refreshControl",
           "kind": "property",
           "type": "React.JSX.Element | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "refreshing",
+          "kind": "property",
+          "type": "boolean | undefined",
           "required": false,
           "description": null
         },
@@ -29390,7 +29410,7 @@
       "modulePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-        "line": 10,
+        "line": 14,
         "column": 1
       },
       "exportPaths": [
@@ -30298,6 +30318,12 @@
           "description": null
         },
         {
+          "name": "onRefresh",
+          "type": "() => void | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "onResponderEnd",
           "type": "((e: GestureResponderEvent) => void) | undefined",
           "required": false,
@@ -30528,6 +30554,12 @@
         {
           "name": "refreshControl",
           "type": "React.JSX.Element | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "refreshing",
+          "type": "boolean | undefined",
           "required": false,
           "description": null
         },
@@ -35151,13 +35183,46 @@
       }
     },
     {
+      "name": "renderScrollView",
+      "description": "Renders Surface ScrollView under the production theme boundary and captures native props.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/layout/adapters/inbound/ScrollView.test.tsx",
+        "line": 23,
+        "column": 1
+      }
+    },
+    {
+      "name": "onRefresh",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/layout/adapters/inbound/ScrollView.test.tsx",
+        "line": 37,
+        "column": 9
+      }
+    },
+    {
       "name": "ScrollView",
       "description": "Renders the token-aware responsive Surface adapter for React Native ScrollView.",
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-        "line": 10,
+        "line": 14,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveRefreshControl",
+      "description": "Creates the standard controlled React Native refresh control only when Surface refresh props are supplied.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
+        "line": 50,
         "column": 1
       }
     },
@@ -35168,7 +35233,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-        "line": 37,
+        "line": 63,
         "column": 1
       }
     },
@@ -35179,7 +35244,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-        "line": 47,
+        "line": 73,
         "column": 1
       }
     },
@@ -35190,7 +35255,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-        "line": 53,
+        "line": 79,
         "column": 1
       }
     },
@@ -35201,7 +35266,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/layout/adapters/inbound/ScrollView.tsx",
-        "line": 59,
+        "line": 85,
         "column": 1
       }
     },
@@ -43099,6 +43164,30 @@
         "sourcePath": "src/features/layout/adapters/inbound/Grid.tsx"
       },
       {
+        "fromSymbol": "renderScrollView",
+        "toSymbol": "renderToString",
+        "callExpression": "renderToString",
+        "sourcePath": "src/features/layout/adapters/inbound/ScrollView.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/layout/adapters/inbound/ScrollView.test.tsx",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/layout/adapters/inbound/ScrollView.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/layout/adapters/inbound/ScrollView.test.tsx",
+        "toSymbol": "renderScrollView",
+        "callExpression": "renderScrollView",
+        "sourcePath": "src/features/layout/adapters/inbound/ScrollView.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/layout/adapters/inbound/ScrollView.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/layout/adapters/inbound/ScrollView.test.tsx"
+      },
+      {
         "fromSymbol": "ScrollView",
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
@@ -43138,6 +43227,12 @@
         "fromSymbol": "ScrollView",
         "toSymbol": "resolveViewStyles",
         "callExpression": "resolveViewStyles",
+        "sourcePath": "src/features/layout/adapters/inbound/ScrollView.tsx"
+      },
+      {
+        "fromSymbol": "ScrollView",
+        "toSymbol": "resolveRefreshControl",
+        "callExpression": "resolveRefreshControl",
         "sourcePath": "src/features/layout/adapters/inbound/ScrollView.tsx"
       },
       {
@@ -48041,7 +48136,7 @@
       {
         "fromComponent": "ScrollView",
         "toComponent": "ReactNativeScrollView",
-        "jsxElement": "<ReactNativeScrollView\n      {...scrollProps}\n      contentContainerStyle={contentContainerStyle}\n      style={[resolved, style]}\n    >",
+        "jsxElement": "<ReactNativeScrollView\n      {...scrollProps}\n      contentContainerStyle={contentContainerStyle}\n      refreshControl={resolveRefreshControl({ nativeRefreshControl, onRefresh, refreshing })}\n      style={[resolved, style]}\n    >",
         "sourcePath": "src/features/layout/adapters/inbound/ScrollView.tsx"
       },
       {

@@ -2497,7 +2497,7 @@ Source: `src/types/theme.ts:30:1`
 
 Kind: `function`
 Module: `src/features/layout/adapters/inbound/ScrollView.tsx`
-Source: `src/features/layout/adapters/inbound/ScrollView.tsx:10:1`
+Source: `src/features/layout/adapters/inbound/ScrollView.tsx:14:1`
 
 Renders the token-aware responsive Surface adapter for React Native ScrollView.
 
@@ -2667,6 +2667,7 @@ Source: `src/types/layout.ts:97:1`
 | onPointerOverCapture | property | `((e: PointerEvent) => void) \| undefined` | no |  |
 | onPointerUp | property | `((e: PointerEvent) => void) \| undefined` | no |  |
 | onPointerUpCapture | property | `((e: PointerEvent) => void) \| undefined` | no |  |
+| onRefresh | property | `(() => void) \| undefined` | no |  |
 | onResponderEnd | property | `((e: GestureResponderEvent) => void) \| undefined` | no |  |
 | onResponderGrant | property | `((e: GestureResponderEvent) => void \| boolean) \| undefined` | no |  |
 | onResponderMove | property | `((e: GestureResponderEvent) => void) \| undefined` | no |  |
@@ -2706,6 +2707,7 @@ Source: `src/types/layout.ts:97:1`
 | py | property | `Responsive<SpaceValue> \| undefined` | no |  |
 | radius | property | `Responsive<RadiusValue> \| undefined` | no |  |
 | refreshControl | property | `React.JSX.Element \| undefined` | no |  |
+| refreshing | property | `boolean \| undefined` | no |  |
 | removeClippedSubviews | property | `boolean \| undefined` | no |  |
 | renderToHardwareTextureAndroid | property | `boolean \| undefined` | no |  |
 | right | property | `Responsive<number> \| undefined` | no |  |
