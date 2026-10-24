@@ -1,13 +1,13 @@
 import React, { createContext, use, useMemo } from 'react';
-import { useWindowDimensions } from 'react-native';
 
 import { getBreakpointFromWidth } from './getBreakpointFromWidth';
 import type { ResponsiveRuntime } from './types';
+import { useResponsiveWidth } from './useResponsiveWidth';
 
 const ResponsiveContext = createContext<ResponsiveRuntime | null>(null);
 
 export function ResponsiveProvider({ children }: { children: React.ReactNode }) {
-  const { width } = useWindowDimensions();
+  const width = useResponsiveWidth();
 
   const value = useMemo<ResponsiveRuntime>(
     () => ({
