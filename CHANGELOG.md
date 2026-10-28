@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.13
+
+### Patch Changes
+
+- baed1ca: Update dependencies: `@ankhorage/color-theory`, `@ankhorage/contracts`.
+
 ## 9.4.12
 
 ### Patch Changes
