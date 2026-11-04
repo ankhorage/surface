@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.4.14
+
+### Patch Changes
+
+- bfb2739: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
+
 ## 9.4.13
 
 ### Patch Changes
