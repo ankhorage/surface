@@ -137,6 +137,11 @@ describe('public package metadata contract', () => {
         import: './dist/features/bottom-sheet/public.js',
         types: './dist/features/bottom-sheet/public.d.ts',
       },
+      './browser': {
+        default: './dist/features/popover/browser.js',
+        import: './dist/features/popover/browser.js',
+        types: './dist/features/popover/browser.d.ts',
+      },
       './color': {
         bun: './src/constants/surfaceColor.ts',
         'react-native': './src/constants/surfaceColor.ts',
@@ -162,6 +167,7 @@ describe('public package metadata contract', () => {
 describe('native peer compatibility contract', () => {
   it('preserves the independently tested Expo 57 and current native peer tuples', () => {
     expect(packageJson.peerDependencies.react).toBe('19.2.3 || 19.3.0');
+    expect(packageJson.peerDependencies['react-dom']).toBe('19.2.3 || 19.3.0');
     expect(packageJson.peerDependencies['react-native']).toBe('0.86.x || 0.87.x');
     expect(packageJson.peerDependencies['react-native-web']).toBe('~0.21.0');
     expect(packageJson.peerDependencies['react-native-safe-area-context']).toBe(
