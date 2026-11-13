@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.4.18",
+      "value": "v9.4.19",
       "color": "cb3837"
     },
     {
@@ -62,7 +62,7 @@
   ],
   "usage": {
     "packageName": "@ankhorage/surface",
-    "command": "ankh surface --help"
+    "command": null
   },
   "usageEntries": [],
   "exampleCount": 1,
