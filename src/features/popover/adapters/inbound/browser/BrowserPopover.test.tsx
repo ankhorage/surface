@@ -14,12 +14,14 @@ test('BrowserPopover opens, uses browser placement, and closes on outside press'
       await Promise.resolve();
     });
 
-    const content = container.querySelector(
+    const content = browserWindow.document.querySelector(
       '[data-testid="popover-content"]',
     ) as HTMLElement | null;
     expect(content?.textContent).toBe('Content');
-    expect(content?.style.bottom).toBe('calc(100% + 8px)');
-    expect(content?.style.right).toBe('0px');
+    expect(content?.style.position).toBe('fixed');
+    expect(Number.parseInt(content?.style.bottom ?? '', 10)).toBeGreaterThan(0);
+    expect(content?.style.left).toBe('0px');
+    expect(content?.style.transform).toBe('translateX(-100%)');
 
     await act(async () => {
       browserWindow.document.body.dispatchEvent(
@@ -27,8 +29,37 @@ test('BrowserPopover opens, uses browser placement, and closes on outside press'
       );
       await Promise.resolve();
     });
-    expect(container.querySelector('[data-testid="popover-content"]')).toBeNull();
+    expect(browserWindow.document.querySelector('[data-testid="popover-content"]')).toBeNull();
     act(() => root.unmount());
+  } finally {
+    resetBrowserGlobals(browserWindow);
+  }
+});
+
+test('BrowserPopover closes on Escape and removes browser listeners after unmount', async () => {
+  const { browserWindow, container, root } = await renderBrowserPopover();
+  try {
+    const button = container.querySelector('button');
+    if (button === null) throw new Error('BrowserPopover anchor did not render.');
+    await act(async () => {
+      button.click();
+      await Promise.resolve();
+    });
+
+    await act(async () => {
+      browserWindow.document.dispatchEvent(
+        new browserWindow.KeyboardEvent('keydown', { bubbles: true, key: 'Escape' }),
+      );
+      await Promise.resolve();
+    });
+    expect(browserWindow.document.querySelector('[data-testid="popover-content"]')).toBeNull();
+
+    act(() => root.unmount());
+    browserWindow.dispatchEvent(new browserWindow.Event('resize'));
+    browserWindow.document.body.dispatchEvent(
+      new browserWindow.PointerEvent('pointerdown', { bubbles: true }),
+    );
+    expect(browserWindow.document.querySelector('[data-testid="popover-content"]')).toBeNull();
   } finally {
     resetBrowserGlobals(browserWindow);
   }
