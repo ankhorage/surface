@@ -70,6 +70,11 @@
       "import": "./dist/features/bottom-sheet/public.js",
       "default": "./dist/features/bottom-sheet/public.js"
     },
+    "./browser": {
+      "types": "./dist/features/popover/browser.d.ts",
+      "import": "./dist/features/popover/browser.js",
+      "default": "./dist/features/popover/browser.js"
+    },
     "./color": {
       "bun": "./src/constants/surfaceColor.ts",
       "react-native": "./src/constants/surfaceColor.ts",

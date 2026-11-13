@@ -137,6 +137,11 @@ describe('public package metadata contract', () => {
         import: './dist/features/bottom-sheet/public.js',
         types: './dist/features/bottom-sheet/public.d.ts',
       },
+      './browser': {
+        default: './dist/features/popover/browser.js',
+        import: './dist/features/popover/browser.js',
+        types: './dist/features/popover/browser.d.ts',
+      },
       './color': {
         bun: './src/constants/surfaceColor.ts',
         'react-native': './src/constants/surfaceColor.ts',
