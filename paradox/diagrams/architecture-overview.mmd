@@ -408,6 +408,13 @@ graph TD
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts --> module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
   module_src_features_popover_menu_utils_resolveNextMenuIndex_ts["src/features/popover-menu/utils/resolveNextMenuIndex.ts"]
   package__ankhorage_surface -.-> module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx["src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"]
+  package__ankhorage_surface -.-> module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --> module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx["src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"]
+  package__ankhorage_surface -.-> module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --> module_src_internal_useControllableState_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --> module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx["src/features/popover/adapters/inbound/Popover.tsx"]
   package__ankhorage_surface -.-> module_src_features_popover_adapters_inbound_Popover_tsx
   module_src_features_popover_adapters_inbound_Popover_tsx --> module_src_features_popover_adapters_inbound_PopoverOverlay_tsx
@@ -422,6 +429,8 @@ graph TD
   package__ankhorage_surface -.-> module_src_features_popover_adapters_inbound_usePopoverLayout_ts
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts --> module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts --> module_src_types_popover_ts
+  module_src_features_popover_browser_ts["src/features/popover/browser.ts"]
+  package__ankhorage_surface -.-> module_src_features_popover_browser_ts
   module_src_features_popover_public_ts["src/features/popover/public.ts"]
   package__ankhorage_surface -.-> module_src_features_popover_public_ts
   module_src_features_popover_utils_resolvePopoverPosition_test_ts["src/features/popover/utils/resolvePopoverPosition.test.ts"]

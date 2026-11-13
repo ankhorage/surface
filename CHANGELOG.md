@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.0
+
+### Minor Changes
+
+- 68db7bb: Add a browser-only Popover entrypoint that does not load React Native modules.
+
 ## 9.4.19
 
 ### Patch Changes

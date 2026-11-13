@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.4.19",
+      "value": "v9.5.0",
       "color": "cb3837"
     },
     {
@@ -1251,6 +1251,25 @@
       ]
     },
     {
+      "path": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/internal/useControllableState.ts",
+        "src/types/popover.ts"
+      ],
+      "exports": [
+        "BrowserPopover"
+      ]
+    },
+    {
       "path": "src/features/popover/adapters/inbound/Popover.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -1283,6 +1302,17 @@
       ],
       "exports": [
         "usePopoverLayout"
+      ]
+    },
+    {
+      "path": "src/features/popover/browser.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "Popover",
+        "PopoverAnchorRenderProps",
+        "PopoverPlacement",
+        "PopoverProps"
       ]
     },
     {
@@ -35469,6 +35499,116 @@
       }
     },
     {
+      "name": "renderBrowserPopover",
+      "description": "Mount the browser-only Popover in a DOM isolated from the Bun test process.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "line": 69,
+        "column": 1
+      }
+    },
+    {
+      "name": "resetBrowserGlobals",
+      "description": "Remove the temporary DOM globals so other tests retain their own environment.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "line": 104,
+        "column": 1
+      }
+    },
+    {
+      "name": "BrowserPopover",
+      "description": "Renders the browser-only Popover without loading React Native implementation modules.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "useBrowserPopoverDismissal",
+      "description": "Closes the open browser overlay for a true outside pointer press or Escape.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 43,
+        "column": 1
+      }
+    },
+    {
+      "name": "closeOnPointerDown",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 52,
+        "column": 11
+      }
+    },
+    {
+      "name": "closeOnEscape",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 58,
+        "column": 11
+      }
+    },
+    {
+      "name": "renderBrowserPopoverContent",
+      "description": "Create portal content only after the browser anchor has viewport coordinates.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 71,
+        "column": 1
+      }
+    },
+    {
+      "name": "useBrowserPopoverAnchorRect",
+      "description": "Tracks the anchor in viewport coordinates while the browser overlay is visible.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 91,
+        "column": 1
+      }
+    },
+    {
+      "name": "updateAnchorRect",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 100,
+        "column": 11
+      }
+    },
+    {
+      "name": "contentStyle",
+      "description": "Position browser content in the document overlay using the shared Popover placement contract.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "line": 113,
+        "column": 1
+      }
+    },
+    {
       "name": "Popover",
       "description": "Renders anchored overlay content through the shared Surface overlay stack.",
       "see": [],
@@ -38146,6 +38286,16 @@
         "sourcePath": "src/features/modal/public.ts"
       },
       {
+        "fromPath": "src/features/popover/browser.ts",
+        "toPath": "src/types/popover.ts",
+        "sourcePath": "src/features/popover/browser.ts"
+      },
+      {
+        "fromPath": "src/features/popover/browser.ts",
+        "toPath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "sourcePath": "src/features/popover/browser.ts"
+      },
+      {
         "fromPath": "src/features/popover/public.ts",
         "toPath": "src/types/popover.ts",
         "sourcePath": "src/features/popover/public.ts"
@@ -40304,6 +40454,21 @@
         "fromPath": "src/features/form/text-input/adapters/inbound/TextInput.tsx",
         "toPath": "src/features/form/text-input/utils/resolveTextInputPresentation.ts",
         "sourcePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "toPath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "toPath": "src/internal/useControllableState.ts",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "toPath": "src/types/popover.ts",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
       }
     ],
     "calls": [
@@ -44248,6 +44413,126 @@
         "toSymbol": "resolveAccessoryStyle",
         "callExpression": "resolveAccessoryStyle",
         "sourcePath": "src/features/form/text-input/adapters/inbound/TextInput.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "toSymbol": "renderBrowserPopover",
+        "callExpression": "renderBrowserPopover",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "toSymbol": "act",
+        "callExpression": "act",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx",
+        "toSymbol": "resetBrowserGlobals",
+        "callExpression": "resetBrowserGlobals",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "renderBrowserPopover",
+        "toSymbol": "createRoot",
+        "callExpression": "createRoot",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "renderBrowserPopover",
+        "toSymbol": "act",
+        "callExpression": "act",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "renderBrowserPopover",
+        "toSymbol": "resetBrowserGlobals",
+        "callExpression": "resetBrowserGlobals",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx"
+      },
+      {
+        "fromSymbol": "BrowserPopover",
+        "toSymbol": "useControllableState",
+        "callExpression": "useControllableState",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "toSymbol": "setOpen",
+        "callExpression": "setOpen",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "BrowserPopover",
+        "toSymbol": "useBrowserPopoverDismissal",
+        "callExpression": "useBrowserPopoverDismissal",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "BrowserPopover",
+        "toSymbol": "useBrowserPopoverAnchorRect",
+        "callExpression": "useBrowserPopoverAnchorRect",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "BrowserPopover",
+        "toSymbol": "renderBrowserPopoverContent",
+        "callExpression": "renderBrowserPopoverContent",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "BrowserPopover",
+        "toSymbol": "anchor",
+        "callExpression": "props.anchor",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "BrowserPopover",
+        "toSymbol": "createPortal",
+        "callExpression": "createPortal",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "closeOnPointerDown",
+        "toSymbol": "close",
+        "callExpression": "close",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "closeOnEscape",
+        "toSymbol": "close",
+        "callExpression": "close",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "renderBrowserPopoverContent",
+        "toSymbol": "contentStyle",
+        "callExpression": "contentStyle",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "updateAnchorRect",
+        "toSymbol": "setAnchorRect",
+        "callExpression": "setAnchorRect",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "toSymbol": "updateAnchorRect",
+        "callExpression": "updateAnchorRect",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
       }
     ],
     "typeReferences": [

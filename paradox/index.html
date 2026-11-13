@@ -392,6 +392,16 @@
       <small>1 function</small>
     </button>
   </li><li>
+    <button class="nav-button" type="button" data-target="src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx">
+      src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx
+      <small>2 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/popover/adapters/inbound/browser/BrowserPopover.tsx">
+      src/features/popover/adapters/inbound/browser/BrowserPopover.tsx
+      <small>8 functions</small>
+    </button>
+  </li><li>
     <button class="nav-button" type="button" data-target="src/features/popover/adapters/inbound/Popover.tsx">
       src/features/popover/adapters/inbound/Popover.tsx
       <small>1 function</small>
@@ -768,7 +778,7 @@
       <div class="summary">
         <div><strong>145</strong><span class="muted">public exports</span></div>
         <div><strong>42</strong><span class="muted">components</span></div>
-        <div><strong>259</strong><span class="muted">modules</span></div>
+        <div><strong>262</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -1329,6 +1339,16 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>resolveNextMenuIndex</code></p>
+  </article><article class="item" data-search="src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx src/features/popover/adapters/inbound/browser/BrowserPopover.tsx">
+    <h3>src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="src/features/popover/adapters/inbound/browser/BrowserPopover.tsx src/internal/useControllableState.ts src/types/popover.ts BrowserPopover">
+    <h3>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/internal/useControllableState.ts</code>, <code>src/types/popover.ts</code></p>
+    <p><strong>Exports:</strong> <code>BrowserPopover</code></p>
   </article><article class="item" data-search="src/features/popover/adapters/inbound/Popover.tsx src/features/popover/adapters/inbound/PopoverOverlay.tsx src/internal/useControllableState.ts src/types/popover.ts Popover">
     <h3>src/features/popover/adapters/inbound/Popover.tsx</h3>
     <p class="muted">Referenced module</p>
@@ -1344,6 +1364,11 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/features/popover/utils/resolvePopoverPosition.ts</code>, <code>src/types/popover.ts</code></p>
     <p><strong>Exports:</strong> <code>usePopoverLayout</code></p>
+  </article><article class="item" data-search="src/features/popover/browser.ts Popover PopoverAnchorRenderProps PopoverPlacement PopoverProps">
+    <h3>src/features/popover/browser.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>Popover</code>, <code>PopoverAnchorRenderProps</code>, <code>PopoverPlacement</code>, <code>PopoverProps</code></p>
   </article><article class="item" data-search="src/features/popover/public.ts Popover PopoverAnchorRenderProps PopoverPlacement PopoverProps">
     <h3>src/features/popover/public.ts</h3>
     <p class="muted">Referenced module</p>
@@ -28303,6 +28328,13 @@
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts --&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
   module_src_features_popover_menu_utils_resolveNextMenuIndex_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_Popover_tsx
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_features_popover_adapters_inbound_PopoverOverlay_tsx
@@ -28317,6 +28349,8 @@
   package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_usePopoverLayout_ts
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts --&gt; module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts --&gt; module_src_types_popover_ts
+  module_src_features_popover_browser_ts[&quot;src/features/popover/browser.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_popover_browser_ts
   module_src_features_popover_public_ts[&quot;src/features/popover/public.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_public_ts
   module_src_features_popover_utils_resolvePopoverPosition_test_ts[&quot;src/features/popover/utils/resolvePopoverPosition.test.ts&quot;]
@@ -29296,6 +29330,13 @@
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts --&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
   module_src_features_popover_menu_utils_resolveNextMenuIndex_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_Popover_tsx
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_features_popover_adapters_inbound_PopoverOverlay_tsx
@@ -29310,6 +29351,8 @@
   package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_usePopoverLayout_ts
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts --&gt; module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts --&gt; module_src_types_popover_ts
+  module_src_features_popover_browser_ts[&quot;src/features/popover/browser.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_features_popover_browser_ts
   module_src_features_popover_public_ts[&quot;src/features/popover/public.ts&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_public_ts
   module_src_features_popover_utils_resolvePopoverPosition_test_ts[&quot;src/features/popover/utils/resolvePopoverPosition.test.ts&quot;]
@@ -29988,9 +30031,12 @@
   module_src_features_popover_menu_public_ts[&quot;src/features/popover-menu/public.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.test.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.ts&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
   module_src_features_popover_adapters_inbound_PopoverOverlay_tsx[&quot;src/features/popover/adapters/inbound/PopoverOverlay.tsx&quot;]
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts[&quot;src/features/popover/adapters/inbound/usePopoverLayout.ts&quot;]
+  module_src_features_popover_browser_ts[&quot;src/features/popover/browser.ts&quot;]
   module_src_features_popover_public_ts[&quot;src/features/popover/public.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_test_ts[&quot;src/features/popover/utils/resolvePopoverPosition.test.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_ts[&quot;src/features/popover/utils/resolvePopoverPosition.ts&quot;]
@@ -30335,6 +30381,9 @@
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --&gt; module_src_types_popoverMenu_ts
   module_src_features_popover_menu_composition_usePopoverMenuController_ts --&gt; module_src_types_popoverMenu_ts
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts --&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_features_popover_adapters_inbound_PopoverOverlay_tsx
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_internal_useControllableState_ts
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_types_popover_ts
@@ -30720,9 +30769,12 @@
   module_src_features_popover_menu_public_ts[&quot;src/features/popover-menu/public.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.test.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.ts&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
   module_src_features_popover_adapters_inbound_PopoverOverlay_tsx[&quot;src/features/popover/adapters/inbound/PopoverOverlay.tsx&quot;]
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts[&quot;src/features/popover/adapters/inbound/usePopoverLayout.ts&quot;]
+  module_src_features_popover_browser_ts[&quot;src/features/popover/browser.ts&quot;]
   module_src_features_popover_public_ts[&quot;src/features/popover/public.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_test_ts[&quot;src/features/popover/utils/resolvePopoverPosition.test.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_ts[&quot;src/features/popover/utils/resolvePopoverPosition.ts&quot;]
@@ -31067,6 +31119,9 @@
   module_src_features_popover_menu_adapters_inbound_PopoverMenu_tsx --&gt; module_src_types_popoverMenu_ts
   module_src_features_popover_menu_composition_usePopoverMenuController_ts --&gt; module_src_types_popoverMenu_ts
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts --&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_features_popover_adapters_inbound_PopoverOverlay_tsx
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_internal_useControllableState_ts
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_types_popover_ts
@@ -31454,9 +31509,12 @@
   module_src_features_popover_menu_public_ts[&quot;src/features/popover-menu/public.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.test.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.ts&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
   module_src_features_popover_adapters_inbound_PopoverOverlay_tsx[&quot;src/features/popover/adapters/inbound/PopoverOverlay.tsx&quot;]
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts[&quot;src/features/popover/adapters/inbound/usePopoverLayout.ts&quot;]
+  module_src_features_popover_browser_ts[&quot;src/features/popover/browser.ts&quot;]
   module_src_features_popover_public_ts[&quot;src/features/popover/public.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_test_ts[&quot;src/features/popover/utils/resolvePopoverPosition.test.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_ts[&quot;src/features/popover/utils/resolvePopoverPosition.ts&quot;]
@@ -32125,9 +32183,12 @@
   module_src_features_popover_menu_public_ts[&quot;src/features/popover-menu/public.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.test.ts&quot;]
   module_src_features_popover_menu_utils_resolveNextMenuIndex_ts[&quot;src/features/popover-menu/utils/resolveNextMenuIndex.ts&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx&quot;]
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
   module_src_features_popover_adapters_inbound_PopoverOverlay_tsx[&quot;src/features/popover/adapters/inbound/PopoverOverlay.tsx&quot;]
   module_src_features_popover_adapters_inbound_usePopoverLayout_ts[&quot;src/features/popover/adapters/inbound/usePopoverLayout.ts&quot;]
+  module_src_features_popover_browser_ts[&quot;src/features/popover/browser.ts&quot;]
   module_src_features_popover_public_ts[&quot;src/features/popover/public.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_test_ts[&quot;src/features/popover/utils/resolvePopoverPosition.test.ts&quot;]
   module_src_features_popover_utils_resolvePopoverPosition_ts[&quot;src/features/popover/utils/resolvePopoverPosition.ts&quot;]
@@ -34660,6 +34721,66 @@
     <h3>resolveNextMenuIndex</h3>
     <p class="muted"><code>src/features/popover-menu/utils/resolveNextMenuIndex.ts:2:1</code></p>
     <p>Resolves the next enabled action index for standard menu keyboard navigation.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-popover-adapters-inbound-browser-browserpopover-test-tsx" class="view" data-view="src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx" hidden>
+    <section class="panel">
+      <h2>src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx</h2>
+      <article class="item" data-search="renderBrowserPopover src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx Mount the browser-only Popover in a DOM isolated from the Bun test process.">
+    <h3>renderBrowserPopover</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx:69:1</code></p>
+    <p>Mount the browser-only Popover in a DOM isolated from the Bun test process.</p>
+    
+  </article><article class="item" data-search="resetBrowserGlobals src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx Remove the temporary DOM globals so other tests retain their own environment.">
+    <h3>resetBrowserGlobals</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.test.tsx:104:1</code></p>
+    <p>Remove the temporary DOM globals so other tests retain their own environment.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-popover-adapters-inbound-browser-browserpopover-tsx" class="view" data-view="src/features/popover/adapters/inbound/browser/BrowserPopover.tsx" hidden>
+    <section class="panel">
+      <h2>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx</h2>
+      <article class="item" data-search="BrowserPopover src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Renders the browser-only Popover without loading React Native implementation modules.">
+    <h3>BrowserPopover</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:8:1</code></p>
+    <p>Renders the browser-only Popover without loading React Native implementation modules.</p>
+    
+  </article><article class="item" data-search="useBrowserPopoverDismissal src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Closes the open browser overlay for a true outside pointer press or Escape.">
+    <h3>useBrowserPopoverDismissal</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:43:1</code></p>
+    <p>Closes the open browser overlay for a true outside pointer press or Escape.</p>
+    
+  </article><article class="item" data-search="closeOnPointerDown src/features/popover/adapters/inbound/browser/BrowserPopover.tsx ">
+    <h3>closeOnPointerDown</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:52:11</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="closeOnEscape src/features/popover/adapters/inbound/browser/BrowserPopover.tsx ">
+    <h3>closeOnEscape</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:58:11</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="renderBrowserPopoverContent src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Create portal content only after the browser anchor has viewport coordinates.">
+    <h3>renderBrowserPopoverContent</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:71:1</code></p>
+    <p>Create portal content only after the browser anchor has viewport coordinates.</p>
+    
+  </article><article class="item" data-search="useBrowserPopoverAnchorRect src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Tracks the anchor in viewport coordinates while the browser overlay is visible.">
+    <h3>useBrowserPopoverAnchorRect</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:91:1</code></p>
+    <p>Tracks the anchor in viewport coordinates while the browser overlay is visible.</p>
+    
+  </article><article class="item" data-search="updateAnchorRect src/features/popover/adapters/inbound/browser/BrowserPopover.tsx ">
+    <h3>updateAnchorRect</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:100:11</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="contentStyle src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Position browser content in the document overlay using the shared Popover placement contract.">
+    <h3>contentStyle</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:113:1</code></p>
+    <p>Position browser content in the document overlay using the shared Popover placement contract.</p>
     
   </article>
     </section>
