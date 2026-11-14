@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.4
+
+### Patch Changes
+
+- 5725fc4: Expose the browser-safe authoring control entrypoint without loading application chrome.
+
 ## 9.5.3
 
 ### Patch Changes

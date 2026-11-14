@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.5.3",
+      "value": "v9.5.4",
       "color": "cb3837"
     },
     {
@@ -392,6 +392,48 @@
       ]
     },
     {
+      "path": "src/features/authoring/browser.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "Button",
+        "ButtonProps",
+        "Card",
+        "CardProps",
+        "Text",
+        "TextInput",
+        "TextInputProps",
+        "TextProps",
+        "ThemeProvider",
+        "ThemeProviderProps",
+        "ThemeRuntime",
+        "useTheme",
+        "View",
+        "ViewProps"
+      ]
+    },
+    {
+      "path": "src/features/authoring/public.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "Button",
+        "ButtonProps",
+        "Card",
+        "CardProps",
+        "Text",
+        "TextInput",
+        "TextInputProps",
+        "TextProps",
+        "ThemeProvider",
+        "ThemeProviderProps",
+        "ThemeRuntime",
+        "useTheme",
+        "View",
+        "ViewProps"
+      ]
+    },
+    {
       "path": "src/features/badge/adapters/inbound/Badge.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -579,18 +621,42 @@
       "path": "src/features/button/adapters/inbound/Button.tsx",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/button/adapters/inbound/ButtonPresentation.tsx",
         "src/features/icon/public.ts",
+        "src/types/button.ts"
+      ],
+      "exports": [
+        "Button"
+      ]
+    },
+    {
+      "path": "src/features/button/adapters/inbound/Button.web.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "src/types/button.ts"
+      ],
+      "exports": [
+        "Button"
+      ]
+    },
+    {
+      "path": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
         "src/features/layout/public.ts",
         "src/features/pressable/public.ts",
         "src/features/theme/runtime.ts",
         "src/features/typography/public.ts",
         "src/internal/resolvers/index.ts",
         "src/types/button.ts",
+        "src/types/icon.ts",
         "src/types/pressable.ts",
         "src/types/theme.ts"
       ],
       "exports": [
-        "Button"
+        "ButtonPresentation"
       ]
     },
     {
@@ -844,6 +910,22 @@
       "dependencies": [
         "src/constants/surfaceColor.ts",
         "src/features/icon/adapters/inbound/PortableIcon.tsx",
+        "src/features/theme/runtime.ts",
+        "src/features/theme/utils/resolveToken.ts",
+        "src/internal/resolvers/resolveTextColor.ts",
+        "src/types/icon.ts",
+        "src/types/surfaceColor.ts"
+      ],
+      "exports": [
+        "Icon"
+      ]
+    },
+    {
+      "path": "src/features/icon/adapters/inbound/Icon.web.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/constants/surfaceColor.ts",
+        "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
         "src/features/theme/runtime.ts",
         "src/features/theme/utils/resolveToken.ts",
         "src/internal/resolvers/resolveTextColor.ts",
@@ -8414,7 +8496,7 @@
       "modulePath": "src/features/button/adapters/inbound/Button.tsx",
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 19,
+        "line": 6,
         "column": 1
       },
       "exportPaths": [
@@ -8425,16 +8507,16 @@
       ],
       "signatures": [
         {
-          "label": "({\n  children,\n  variant = 'solid',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  fullWidth = false,\n  onPress,\n  testID,\n  ...props\n}: ButtonProps) => React.JSX.Element",
+          "label": "(props: ButtonProps) => import(\"react\").JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  variant = 'solid',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  fullWidth = false,\n  onPress,\n  testID,\n  ...props\n}",
+              "name": "props",
               "type": "ButtonProps",
               "required": true,
               "description": null
             }
           ],
-          "returnType": "React.JSX.Element",
+          "returnType": "import(\"react\").JSX.Element",
           "returnDescription": null
         }
       ],
@@ -25079,7 +25161,7 @@
       "modulePath": "src/features/button/adapters/inbound/Button.tsx",
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 19,
+        "line": 6,
         "column": 1
       },
       "exportPaths": [
@@ -25156,7 +25238,6 @@
           "name": "color",
           "type": "SurfaceColor | undefined",
           "required": false,
-          "defaultValue": "'primary'",
           "description": null
         },
         {
@@ -25175,7 +25256,6 @@
           "name": "disabled",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -25206,7 +25286,6 @@
           "name": "fullWidth",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -25249,7 +25328,6 @@
           "name": "loading",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -25418,7 +25496,6 @@
           "name": "size",
           "type": "ControlSize | undefined",
           "required": false,
-          "defaultValue": "'m'",
           "description": null
         },
         {
@@ -25443,7 +25520,6 @@
           "name": "variant",
           "type": "ButtonVariant | undefined",
           "required": false,
-          "defaultValue": "'solid'",
           "description": null
         },
         {
@@ -34438,6 +34514,28 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/Button.tsx",
+        "line": 6,
+        "column": 1
+      }
+    },
+    {
+      "name": "Button",
+      "description": "Renders Button through the browser-safe Icon platform adapter.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/button/adapters/inbound/Button.web.tsx",
+        "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "ButtonPresentation",
+      "description": "Renders shared Button behavior with the platform-owned icon adapter.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
         "line": 19,
         "column": 1
       }
@@ -34448,8 +34546,8 @@
       "see": [],
       "security": [],
       "sourceLocation": {
-        "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 65,
+        "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "line": 67,
         "column": 1
       }
     },
@@ -34459,8 +34557,8 @@
       "see": [],
       "security": [],
       "sourceLocation": {
-        "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 116,
+        "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "line": 119,
         "column": 1
       }
     },
@@ -34470,8 +34568,8 @@
       "see": [],
       "security": [],
       "sourceLocation": {
-        "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 121,
+        "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "line": 124,
         "column": 1
       }
     },
@@ -34481,8 +34579,8 @@
       "see": [],
       "security": [],
       "sourceLocation": {
-        "filePath": "src/features/button/adapters/inbound/Button.tsx",
-        "line": 141,
+        "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "line": 144,
         "column": 1
       }
     },
@@ -34839,6 +34937,28 @@
       }
     },
     {
+      "name": "Icon",
+      "description": "Renders browser icons through the existing browser-safe portable adapter.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "line": 10,
+        "column": 1
+      }
+    },
+    {
+      "name": "isSurfaceColor",
+      "description": "Distinguish semantic color roles from raw icon colors and other tokens.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "line": 23,
+        "column": 1
+      }
+    },
+    {
       "name": "WebImageWithoutResolveAssetSource",
       "description": null,
       "see": [],
@@ -34977,7 +35097,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 126,
+        "line": 120,
         "column": 1
       }
     },
@@ -34988,7 +35108,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 150,
+        "line": 144,
         "column": 1
       }
     },
@@ -34999,7 +35119,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 182,
+        "line": 176,
         "column": 1
       }
     },
@@ -35010,7 +35130,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 214,
+        "line": 208,
         "column": 1
       }
     },
@@ -35021,7 +35141,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 228,
+        "line": 222,
         "column": 1
       }
     },
@@ -35032,7 +35152,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 233,
+        "line": 227,
         "column": 1
       }
     },
@@ -38066,6 +38186,71 @@
         "sourcePath": "src/features/app-bar/public.ts"
       },
       {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/button/adapters/inbound/Button.web.tsx",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/button/public.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/card/public.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/form/text-input/public.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/theme/runtime.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/button/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/card/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/form/text-input/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/layout/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/theme/runtime.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/typography/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
         "fromPath": "src/features/badge/public.ts",
         "toPath": "src/types/badge.ts",
         "sourcePath": "src/features/badge/public.ts"
@@ -39362,22 +39547,7 @@
       },
       {
         "fromPath": "src/features/button/adapters/inbound/Button.tsx",
-        "toPath": "src/internal/resolvers/index.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
-      },
-      {
-        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
         "toPath": "src/types/button.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
-      },
-      {
-        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
-        "toPath": "src/types/pressable.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
-      },
-      {
-        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
-        "toPath": "src/types/theme.ts",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {
@@ -39387,23 +39557,68 @@
       },
       {
         "fromPath": "src/features/button/adapters/inbound/Button.tsx",
+        "toPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/Button.web.tsx",
+        "toPath": "src/types/button.ts",
+        "sourcePath": "src/features/button/adapters/inbound/Button.web.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/Button.web.tsx",
+        "toPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "sourcePath": "src/features/button/adapters/inbound/Button.web.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/Button.web.tsx",
+        "toPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "sourcePath": "src/features/button/adapters/inbound/Button.web.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "toPath": "src/internal/resolvers/index.ts",
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "toPath": "src/types/button.ts",
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "toPath": "src/types/icon.ts",
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "toPath": "src/types/pressable.ts",
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
+        "toPath": "src/types/theme.ts",
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
+      },
+      {
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
         "toPath": "src/features/layout/public.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
-        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
         "toPath": "src/features/pressable/public.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
-        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
         "toPath": "src/features/theme/runtime.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
-        "fromPath": "src/features/button/adapters/inbound/Button.tsx",
+        "fromPath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
         "toPath": "src/features/typography/public.ts",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
         "fromPath": "src/features/button/adapters/inbound/IconButton.tsx",
@@ -39534,6 +39749,41 @@
         "fromPath": "src/features/icon/adapters/inbound/Icon.tsx",
         "toPath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
         "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "toPath": "src/constants/surfaceColor.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "toPath": "src/internal/resolvers/resolveTextColor.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "toPath": "src/types/icon.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "toPath": "src/types/surfaceColor.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "toPath": "src/features/theme/runtime.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "toPath": "src/features/theme/utils/resolveToken.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
+        "toPath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
       },
       {
         "fromPath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
@@ -42909,46 +43159,46 @@
         "sourcePath": "src/features/badge/adapters/inbound/Badge.tsx"
       },
       {
-        "fromSymbol": "Button",
+        "fromSymbol": "ButtonPresentation",
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
-        "fromSymbol": "Button",
+        "fromSymbol": "ButtonPresentation",
         "toSymbol": "resolveControlSize",
         "callExpression": "resolveControlSize",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
-        "fromSymbol": "Button",
+        "fromSymbol": "ButtonPresentation",
         "toSymbol": "resolvePressableStyle",
         "callExpression": "resolvePressableStyle",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
         "fromSymbol": "ButtonContent",
         "toSymbol": "resolveButtonColors",
         "callExpression": "resolveButtonColors",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
         "fromSymbol": "ButtonContent",
         "toSymbol": "resolveIconSize",
         "callExpression": "resolveIconSize",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
         "fromSymbol": "ButtonContent",
         "toSymbol": "resolveButtonContentStyle",
         "callExpression": "resolveButtonContentStyle",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
         "fromSymbol": "ButtonContent",
         "toSymbol": "resolveAccessoryStyle",
         "callExpression": "resolveAccessoryStyle",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
+        "sourcePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx"
       },
       {
         "fromSymbol": "IconButton",
@@ -43087,6 +43337,30 @@
         "toSymbol": "resolveTextColor",
         "callExpression": "resolveTextColor",
         "sourcePath": "src/features/icon/adapters/inbound/Icon.tsx"
+      },
+      {
+        "fromSymbol": "Icon",
+        "toSymbol": "useTheme",
+        "callExpression": "useTheme",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromSymbol": "Icon",
+        "toSymbol": "resolveToken",
+        "callExpression": "resolveToken",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromSymbol": "Icon",
+        "toSymbol": "isSurfaceColor",
+        "callExpression": "isSurfaceColor",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromSymbol": "Icon",
+        "toSymbol": "resolveTextColor",
+        "callExpression": "resolveTextColor",
+        "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
       },
       {
         "fromSymbol": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
@@ -45379,11 +45653,6 @@
       {
         "fromSymbol": "Button",
         "toType": "ButtonProps",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
-      },
-      {
-        "fromSymbol": "Button",
-        "toType": "React",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {
@@ -48216,14 +48485,8 @@
       },
       {
         "fromComponent": "Button",
-        "toComponent": "Pressable",
-        "jsxElement": "<Pressable\n      {...props}\n      disabled={disabled || loading}\n      onPress={onPress}\n      style={resolvePressableStyle(fullWidth)}\n      testID={testID}\n    >",
-        "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
-      },
-      {
-        "fromComponent": "Button",
-        "toComponent": "ButtonContent",
-        "jsxElement": "<ButtonContent\n          color={color}\n          controlSize={controlSize}\n          fullWidth={fullWidth}\n          leadingIcon={leadingIcon}\n          loading={loading}\n          size={size}\n          state={state}\n          theme={theme}\n          trailingIcon={trailingIcon}\n          variant={variant}\n        >",
+        "toComponent": "ButtonPresentation",
+        "jsxElement": "<ButtonPresentation {...props} Icon={Icon} />",
         "sourcePath": "src/features/button/adapters/inbound/Button.tsx"
       },
       {

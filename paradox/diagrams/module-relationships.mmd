@@ -26,6 +26,8 @@ graph LR
   module_src_features_accordion_utils_resolveAccordionToggle_ts["src/features/accordion/utils/resolveAccordionToggle.ts"]
   module_src_features_app_bar_adapters_inbound_AppBar_tsx["src/features/app-bar/adapters/inbound/AppBar.tsx"]
   module_src_features_app_bar_public_ts["src/features/app-bar/public.ts"]
+  module_src_features_authoring_browser_ts["src/features/authoring/browser.ts"]
+  module_src_features_authoring_public_ts["src/features/authoring/public.ts"]
   module_src_features_badge_adapters_inbound_Badge_tsx["src/features/badge/adapters/inbound/Badge.tsx"]
   module_src_features_badge_public_ts["src/features/badge/public.ts"]
   module_src_features_bottom_sheet_BottomSheetContext_ts["src/features/bottom-sheet/BottomSheetContext.ts"]
@@ -47,6 +49,8 @@ graph LR
   module_src_features_bottom_sheet_useBottomSheet_ts["src/features/bottom-sheet/useBottomSheet.ts"]
   module_src_features_bottom_sheet_webAdapters_test_tsx["src/features/bottom-sheet/webAdapters.test.tsx"]
   module_src_features_button_adapters_inbound_Button_tsx["src/features/button/adapters/inbound/Button.tsx"]
+  module_src_features_button_adapters_inbound_Button_web_tsx["src/features/button/adapters/inbound/Button.web.tsx"]
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx["src/features/button/adapters/inbound/ButtonPresentation.tsx"]
   module_src_features_button_adapters_inbound_IconButton_tsx["src/features/button/adapters/inbound/IconButton.tsx"]
   module_src_features_button_public_ts["src/features/button/public.ts"]
   module_src_features_card_adapters_inbound_Card_tsx["src/features/card/adapters/inbound/Card.tsx"]
@@ -69,6 +73,7 @@ graph LR
   module_src_features_form_text_input_public_ts["src/features/form/text-input/public.ts"]
   module_src_features_form_text_input_utils_resolveTextInputPresentation_ts["src/features/form/text-input/utils/resolveTextInputPresentation.ts"]
   module_src_features_icon_adapters_inbound_Icon_tsx["src/features/icon/adapters/inbound/Icon.tsx"]
+  module_src_features_icon_adapters_inbound_Icon_web_tsx["src/features/icon/adapters/inbound/Icon.web.tsx"]
   module_src_features_icon_adapters_inbound_PortableIcon_test_tsx["src/features/icon/adapters/inbound/PortableIcon.test.tsx"]
   module_src_features_icon_adapters_inbound_PortableIcon_tsx["src/features/icon/adapters/inbound/PortableIcon.tsx"]
   module_src_features_icon_adapters_inbound_PortableIcon_web_test_ts["src/features/icon/adapters/inbound/PortableIcon.web.test.ts"]
@@ -311,15 +316,21 @@ graph LR
   module_src_features_bottom_sheet_useBottomSheet_test_tsx --> module_src_features_bottom_sheet_useBottomSheet_ts
   module_src_features_bottom_sheet_useBottomSheet_ts --> module_src_features_bottom_sheet_BottomSheetContext_ts
   module_src_features_bottom_sheet_useBottomSheet_ts --> module_src_types_bottomSheet_ts
+  module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_button_adapters_inbound_ButtonPresentation_tsx
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_icon_public_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_layout_public_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_pressable_public_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_theme_runtime_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_features_typography_public_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_internal_resolvers_index_ts
   module_src_features_button_adapters_inbound_Button_tsx --> module_src_types_button_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_types_pressable_ts
-  module_src_features_button_adapters_inbound_Button_tsx --> module_src_types_theme_ts
+  module_src_features_button_adapters_inbound_Button_web_tsx --> module_src_features_button_adapters_inbound_ButtonPresentation_tsx
+  module_src_features_button_adapters_inbound_Button_web_tsx --> module_src_features_icon_adapters_inbound_Icon_web_tsx
+  module_src_features_button_adapters_inbound_Button_web_tsx --> module_src_types_button_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_features_layout_public_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_features_pressable_public_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_features_theme_runtime_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_features_typography_public_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_internal_resolvers_index_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_types_button_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_types_icon_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_types_pressable_ts
+  module_src_features_button_adapters_inbound_ButtonPresentation_tsx --> module_src_types_theme_ts
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_features_icon_public_ts
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_features_layout_public_ts
   module_src_features_button_adapters_inbound_IconButton_tsx --> module_src_features_pressable_public_ts
@@ -382,6 +393,13 @@ graph LR
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_internal_resolvers_resolveTextColor_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_types_icon_ts
   module_src_features_icon_adapters_inbound_Icon_tsx --> module_src_types_surfaceColor_ts
+  module_src_features_icon_adapters_inbound_Icon_web_tsx --> module_src_constants_surfaceColor_ts
+  module_src_features_icon_adapters_inbound_Icon_web_tsx --> module_src_features_icon_adapters_inbound_PortableIcon_web_tsx
+  module_src_features_icon_adapters_inbound_Icon_web_tsx --> module_src_features_theme_runtime_ts
+  module_src_features_icon_adapters_inbound_Icon_web_tsx --> module_src_features_theme_utils_resolveToken_ts
+  module_src_features_icon_adapters_inbound_Icon_web_tsx --> module_src_internal_resolvers_resolveTextColor_ts
+  module_src_features_icon_adapters_inbound_Icon_web_tsx --> module_src_types_icon_ts
+  module_src_features_icon_adapters_inbound_Icon_web_tsx --> module_src_types_surfaceColor_ts
   module_src_features_icon_adapters_inbound_PortableIcon_tsx --> module_src_types_icon_ts
   module_src_features_icon_adapters_inbound_PortableIcon_tsx --> module_src_types_image_ts
   module_src_features_icon_adapters_inbound_PortableIcon_web_test_ts --> module_src_features_icon_adapters_inbound_PortableIcon_web_tsx

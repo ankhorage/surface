@@ -955,41 +955,15 @@ Source: `src/core/responsive/breakpoints.ts:1:14`
 
 Kind: `function`
 Module: `src/features/button/adapters/inbound/Button.tsx`
-Source: `src/features/button/adapters/inbound/Button.tsx:19:1`
+Source: `src/features/button/adapters/inbound/Button.tsx:6:1`
 
 Renders the primary Surface action control with semantic visual states.
 
 ### Signatures
 
-- `({
-  children,
-  variant = 'solid',
-  color = 'primary',
-  size = 'm',
-  disabled = false,
-  loading = false,
-  leadingIcon,
-  trailingIcon,
-  fullWidth = false,
-  onPress,
-  testID,
-  ...props
-}: ButtonProps) => React.JSX.Element`
-  - {
-  children,
-  variant = 'solid',
-  color = 'primary',
-  size = 'm',
-  disabled = false,
-  loading = false,
-  leadingIcon,
-  trailingIcon,
-  fullWidth = false,
-  onPress,
-  testID,
-  ...props
-}: `ButtonProps`
-  - returns: `React.JSX.Element`
+- `(props: ButtonProps) => import("react").JSX.Element`
+  - props: `ButtonProps`
+  - returns: `import("react").JSX.Element`
 
 ## ButtonIconSpec
 

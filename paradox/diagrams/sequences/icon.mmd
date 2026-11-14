@@ -18,3 +18,11 @@ sequenceDiagram
   participant_resolveTextColor->>participant_resolveSurfaceColor: resolveSurfaceColor()
   participant_resolveSurfaceColor-->>participant_resolveTextColor: return
   participant_resolveTextColor-->>participant_Icon: return
+  participant_Icon->>participant_useTheme: useTheme()
+  participant_useTheme-->>participant_Icon: return
+  participant_Icon->>participant_resolveToken: resolveToken()
+  participant_resolveToken-->>participant_Icon: return
+  participant_Icon->>participant_isSurfaceColor: isSurfaceColor()
+  participant_isSurfaceColor-->>participant_Icon: return
+  participant_Icon->>participant_resolveTextColor: resolveTextColor()
+  participant_resolveTextColor-->>participant_Icon: return

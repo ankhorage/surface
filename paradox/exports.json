@@ -5285,7 +5285,7 @@
     "modulePath": "src/features/button/adapters/inbound/Button.tsx",
     "sourceLocation": {
       "filePath": "src/features/button/adapters/inbound/Button.tsx",
-      "line": 19,
+      "line": 6,
       "column": 1
     },
     "exportPaths": [
@@ -5296,16 +5296,16 @@
     ],
     "signatures": [
       {
-        "label": "({\n  children,\n  variant = 'solid',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  fullWidth = false,\n  onPress,\n  testID,\n  ...props\n}: ButtonProps) => React.JSX.Element",
+        "label": "(props: ButtonProps) => import(\"react\").JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  variant = 'solid',\n  color = 'primary',\n  size = 'm',\n  disabled = false,\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  fullWidth = false,\n  onPress,\n  testID,\n  ...props\n}",
+            "name": "props",
             "type": "ButtonProps",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "React.JSX.Element",
+        "returnType": "import(\"react\").JSX.Element",
         "returnDescription": null
       }
     ],

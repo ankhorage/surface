@@ -615,7 +615,7 @@ Export paths: `src/index.ts`
 
 ## Button
 
-Source: `src/features/button/adapters/inbound/Button.tsx:19:1`
+Source: `src/features/button/adapters/inbound/Button.tsx:6:1`
 
 Renders the primary Surface action control with semantic visual states.
 
@@ -634,15 +634,15 @@ Export paths: `src/index.ts`
 | borderWidth | `Responsive<number> \| undefined` | no | — |  |
 | bottom | `Responsive<number> \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
-| color | `SurfaceColor \| undefined` | no | `'primary'` |  |
+| color | `SurfaceColor \| undefined` | no | — |  |
 | columnGap | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | direction | `Responsive<'row' \| 'column'> \| undefined` | no | — |  |
-| disabled | `boolean \| undefined` | no | `false` |  |
+| disabled | `boolean \| undefined` | no | — |  |
 | flex | `Responsive<number> \| undefined` | no | — |  |
 | flexBasis | `Responsive<number \| string> \| undefined` | no | — |  |
 | flexGrow | `Responsive<number> \| undefined` | no | — |  |
 | flexShrink | `Responsive<number> \| undefined` | no | — |  |
-| fullWidth | `boolean \| undefined` | no | `false` |  |
+| fullWidth | `boolean \| undefined` | no | — |  |
 | gap | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | height | `Responsive<number \| string> \| undefined` | no | — |  |
 | interactionPolicy | `InteractionPolicy \| undefined` | no | — |  |
@@ -651,7 +651,7 @@ Export paths: `src/index.ts`
   > \| undefined` | no | — |  |
 | leadingIcon | `ButtonIconSpec \| undefined` | no | — |  |
 | left | `Responsive<number> \| undefined` | no | — |  |
-| loading | `boolean \| undefined` | no | `false` |  |
+| loading | `boolean \| undefined` | no | — |  |
 | m | `Responsive<SpaceValue> \| undefined` | no | — |  |
 | maxHeight | `Responsive<number \| string> \| undefined` | no | — |  |
 | maxWidth | `Responsive<number \| string> \| undefined` | no | — |  |
@@ -679,11 +679,11 @@ Export paths: `src/index.ts`
 | radius | `Responsive<RadiusValue> \| undefined` | no | — |  |
 | right | `Responsive<number> \| undefined` | no | — |  |
 | rowGap | `Responsive<SpaceValue> \| undefined` | no | — |  |
-| size | `ControlSize \| undefined` | no | `'m'` |  |
+| size | `ControlSize \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
 | top | `Responsive<number> \| undefined` | no | — |  |
 | trailingIcon | `ButtonIconSpec \| undefined` | no | — |  |
-| variant | `ButtonVariant \| undefined` | no | `'solid'` |  |
+| variant | `ButtonVariant \| undefined` | no | — |  |
 | width | `Responsive<number \| string> \| undefined` | no | — |  |
 | wrap | `Responsive<'nowrap' \| 'wrap'> \| undefined` | no | — |  |
 | zIndex | `Responsive<number> \| undefined` | no | — |  |
