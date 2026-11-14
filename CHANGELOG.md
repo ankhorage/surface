@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.8
+
+### Patch Changes
+
+- 5efb819: Update dependencies: `@ankhorage/capability`, `@ankhorage/utility`.
+
 ## 9.5.7
 
 ### Patch Changes
