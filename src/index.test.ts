@@ -24,6 +24,16 @@ const capabilitiesExport = {
   },
 };
 
+const authoringControlsExport = {
+  './authoring-controls': {
+    'react-native': './src/features/authoring/public.ts',
+    browser: './src/features/authoring/browser.ts',
+    default: './dist/features/authoring/public.js',
+    import: './dist/features/authoring/public.js',
+    types: './dist/features/authoring/public.d.ts',
+  },
+};
+
 const expectedFeatureRootExports = [
   "export { AppBar } from './features/app-bar/public';",
   "export { Badge } from './features/badge/public';",
@@ -142,6 +152,7 @@ describe('public package metadata contract', () => {
         import: './dist/features/popover/browser.js',
         types: './dist/features/popover/browser.d.ts',
       },
+      ...authoringControlsExport,
       './color': {
         bun: './src/constants/surfaceColor.ts',
         'react-native': './src/constants/surfaceColor.ts',

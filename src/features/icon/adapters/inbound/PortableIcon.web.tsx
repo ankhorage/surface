@@ -17,7 +17,7 @@ import ioniconsGlyphs from '@react-native-vector-icons/ionicons/glyphmaps/Ionico
 import materialDesignFont from '@react-native-vector-icons/material-design-icons/fonts/MaterialDesignIcons.ttf';
 import materialDesignGlyphs from '@react-native-vector-icons/material-design-icons/glyphmaps/MaterialDesignIcons.json';
 import React from 'react';
-import { Image, Text, type TextStyle } from 'react-native';
+import { Image, type StyleProp, Text, type TextStyle, View, type ViewStyle } from 'react-native';
 
 import type { FontIconSource, SvgIconSource } from '../../../../types/icon';
 
@@ -46,7 +46,7 @@ type WebPortableIconProps =
       })
   | (SvgIconSource &
       PortableIconPresentationProps & {
-        readonly style?: React.ComponentProps<typeof Image>['style'];
+        readonly style?: StyleProp<ViewStyle>;
       });
 
 /*** Renders Surface icons on web without React Native native modules or SVG codegen. */
@@ -101,24 +101,18 @@ function WebFontIcon(
 function WebSvgIcon(
   props: SvgIconSource &
     PortableIconPresentationProps & {
-      readonly style?: React.ComponentProps<typeof Image>['style'];
+      readonly style?: StyleProp<ViewStyle>;
     },
 ) {
   const source = typeof props.source === 'string' ? { uri: props.source } : props.source;
   return (
-    <Image
-      accessibilityElementsHidden
-      source={source}
-      style={[
-        props.style,
-        {
-          height: props.size,
-          tintColor: props.color,
-          width: props.size,
-        },
-      ]}
-      testID={props.testID}
-    />
+    <View style={[props.style, { height: props.size, width: props.size }]} testID={props.testID}>
+      <Image
+        accessibilityElementsHidden
+        source={source}
+        style={{ height: props.size, tintColor: props.color, width: props.size }}
+      />
+    </View>
   );
 }
 

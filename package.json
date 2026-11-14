@@ -76,6 +76,13 @@
       "import": "./dist/features/popover/browser.js",
       "default": "./dist/features/popover/browser.js"
     },
+    "./authoring-controls": {
+      "react-native": "./src/features/authoring/public.ts",
+      "browser": "./src/features/authoring/browser.ts",
+      "types": "./dist/features/authoring/public.d.ts",
+      "import": "./dist/features/authoring/public.js",
+      "default": "./dist/features/authoring/public.js"
+    },
     "./color": {
       "bun": "./src/constants/surfaceColor.ts",
       "react-native": "./src/constants/surfaceColor.ts",
@@ -113,8 +120,10 @@
     "format": "ankhorage-prettier --write .",
     "format:check": "ankhorage-prettier --check .",
     "prepack": "bun run build",
-    "test": "bun test src",
+    "test": "bun test src ./test/browser/authoringControls.ts",
+    "test:browser-authoring-controls": "bun run build && bun test ./test/browser/authoringControls.ts",
     "test:browser": "bun run build && node --check dist/features/popover/adapters/inbound/browser/BrowserPopover.js && bun test ./test/browser/browserPopover.ts",
+    "test:packed-consumer": "bun test ./test/packed-consumer",
     "typecheck": "bun x tsc --noEmit -p tsconfig.json",
     "version-packages": "ankhorage-changeset version"
   },
