@@ -1,0 +1,164 @@
+import React from 'react';
+import { ActivityIndicator, View as ReactNativeView, type ViewStyle } from 'react-native';
+
+import {
+  resolveButtonColors,
+  resolveControlSize,
+  resolveIconSize,
+} from '../../../../internal/resolvers';
+import type { ButtonProps } from '../../../../types/button';
+import type { IconProps } from '../../../../types/icon';
+import type { InteractionState } from '../../../../types/pressable';
+import type { SurfaceTheme } from '../../../../types/theme';
+import { View } from '../../../layout/public';
+import { Pressable } from '../../../pressable/public';
+import { useTheme } from '../../../theme/runtime';
+import { Text } from '../../../typography/public';
+
+/*** Renders shared Button behavior with the platform-owned icon adapter. */
+export function ButtonPresentation({ Icon, ...props }: ButtonPresentationProps) {
+  const {
+    children,
+    variant = 'solid',
+    color = 'primary',
+    size = 'm',
+    disabled = false,
+    loading = false,
+    leadingIcon,
+    trailingIcon,
+    fullWidth = false,
+    onPress,
+    testID,
+    ...pressableProps
+  } = props;
+  const { theme } = useTheme();
+  const controlSize = resolveControlSize(theme, size);
+
+  return (
+    <Pressable
+      {...pressableProps}
+      disabled={disabled || loading}
+      onPress={onPress}
+      style={resolvePressableStyle(fullWidth)}
+      testID={testID}
+    >
+      {(state) => (
+        <ButtonContent
+          Icon={Icon}
+          color={color}
+          controlSize={controlSize}
+          fullWidth={fullWidth}
+          leadingIcon={leadingIcon}
+          loading={loading}
+          size={size}
+          state={state}
+          theme={theme}
+          trailingIcon={trailingIcon}
+          variant={variant}
+        >
+          {children}
+        </ButtonContent>
+      )}
+    </Pressable>
+  );
+}
+
+/*** Renders Button content after interaction colors have been resolved. */
+function ButtonContent({
+  Icon,
+  children,
+  color,
+  controlSize,
+  fullWidth,
+  leadingIcon,
+  loading,
+  size,
+  state,
+  theme,
+  trailingIcon,
+  variant,
+}: ButtonContentProps) {
+  const colors = resolveButtonColors(theme, { variant, color, state });
+  const iconSize = resolveIconSize(theme, size);
+
+  return (
+    <View
+      px={controlSize.paddingHorizontal}
+      py={controlSize.paddingVertical}
+      radius={controlSize.borderRadius}
+      style={resolveButtonContentStyle(controlSize, colors, fullWidth, variant)}
+    >
+      {loading ? (
+        <ActivityIndicator color={colors.contentColor} size="small" />
+      ) : (
+        <>
+          {leadingIcon ? (
+            <ReactNativeView style={resolveAccessoryStyle(theme.spacing.s, 'leading')}>
+              <Icon {...leadingIcon} color={colors.contentColor} size={iconSize} />
+            </ReactNativeView>
+          ) : null}
+          <Text
+            style={{ color: colors.contentColor }}
+            variant={controlSize.textVariant}
+            weight="semiBold"
+          >
+            {children}
+          </Text>
+          {trailingIcon ? (
+            <ReactNativeView style={resolveAccessoryStyle(theme.spacing.s, 'trailing')}>
+              <Icon {...trailingIcon} color={colors.contentColor} size={iconSize} />
+            </ReactNativeView>
+          ) : null}
+        </>
+      )}
+    </View>
+  );
+}
+
+/*** Resolves the outer Pressable layout style. */
+function resolvePressableStyle(fullWidth: boolean): ViewStyle {
+  return { alignSelf: fullWidth ? 'stretch' : 'flex-start' };
+}
+
+/*** Resolves the themed Button content container style. */
+function resolveButtonContentStyle(
+  controlSize: ReturnType<typeof resolveControlSize>,
+  colors: ReturnType<typeof resolveButtonColors>,
+  fullWidth: boolean,
+  variant: NonNullable<ButtonProps['variant']>,
+): ViewStyle {
+  return {
+    alignItems: 'center',
+    backgroundColor: colors.backgroundColor,
+    borderColor: colors.borderColor,
+    borderWidth: variant === 'solid' ? 0 : 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    minHeight: controlSize.minHeight,
+    opacity: colors.opacity,
+    width: fullWidth ? '100%' : undefined,
+  };
+}
+
+/*** Resolves spacing around a leading or trailing Button icon. */
+function resolveAccessoryStyle(spacing: number, position: 'leading' | 'trailing'): ViewStyle {
+  return position === 'leading' ? { marginRight: spacing } : { marginLeft: spacing };
+}
+
+interface ButtonPresentationProps extends ButtonProps {
+  Icon: React.ComponentType<IconProps>;
+}
+interface ButtonContentProps {
+  Icon: React.ComponentType<IconProps>;
+  children: ButtonProps['children'];
+  color: NonNullable<ButtonProps['color']>;
+  controlSize: ReturnType<typeof resolveControlSize>;
+  fullWidth: boolean;
+  leadingIcon: ButtonProps['leadingIcon'];
+  loading: boolean;
+  size: NonNullable<ButtonProps['size']>;
+  state: InteractionState;
+  theme: SurfaceTheme;
+  trailingIcon: ButtonProps['trailingIcon'];
+  variant: NonNullable<ButtonProps['variant']>;
+}
