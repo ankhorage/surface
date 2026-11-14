@@ -6,6 +6,14 @@ import type { SelectionSemantics, SurfaceColorDiagnostics } from './features/the
 import { createTheme } from './features/theme/public';
 
 const indexSource = readFileSync(new URL('./index.ts', import.meta.url), 'utf8');
+const authoringControlsSource = readFileSync(
+  new URL('./features/authoring/public.ts', import.meta.url),
+  'utf8',
+);
+const browserAuthoringControlsSource = readFileSync(
+  new URL('./features/authoring/browser.ts', import.meta.url),
+  'utf8',
+);
 const packageJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 ) as {
@@ -90,6 +98,17 @@ describe('feature-owned root barrel contract', () => {
     expect(indexSource).not.toMatch(/export\s*\{[^}]*\bTextarea\b/u);
     expect(indexSource).not.toMatch(/export\s*\{[^}]*\bHelperText\b/u);
     expect(indexSource).not.toMatch(/export\s*\{[^}]*\bLabel\b/u);
+  });
+});
+
+describe('authoring controls facade contract', () => {
+  it('keeps field and pressable on their canonical feature facades for native and browser consumers', () => {
+    for (const source of [authoringControlsSource, browserAuthoringControlsSource]) {
+      expect(source).toContain("export type { FieldProps } from '../form/field/public';");
+      expect(source).toContain("export { Field } from '../form/field/public';");
+      expect(source).toContain("export type { PressableProps } from '../pressable/public';");
+      expect(source).toContain("export { Pressable } from '../pressable/public';");
+    }
   });
 });
 

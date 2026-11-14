@@ -103,6 +103,8 @@ import { createRoot } from 'react-dom/client';
 import {
   Button,
   Card,
+  Field,
+  Pressable,
   Text,
   TextInput,
   ThemeProvider,
@@ -113,7 +115,9 @@ createRoot(document.querySelector('#root')!).render(
   <ThemeProvider>
     <View>
       <Card><Text>Screen authoring</Text></Card>
+      <Field disabled label="Name"><TextInput value="Home" onChangeText={() => undefined} /></Field>
       <TextInput value="Home" onChangeText={() => undefined} />
+      <Pressable disabled onPress={() => undefined}><Text>Disabled selection</Text></Pressable>
       <Button onPress={() => undefined}>Create screen</Button>
     </View>
   </ThemeProvider>,
