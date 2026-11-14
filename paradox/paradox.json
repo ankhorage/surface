@@ -2,8 +2,10 @@
   "packageName": "@ankhorage/surface",
   "packageId": "@ankhorage/surface",
   "description": "Cross-platform UI foundation for React Native and React Native Web. Provides theming, layout primitives, and core building blocks for modern apps.",
-  "collaborators": null,
-  "donation": null,
+  "collaborators": true,
+  "donation": {
+    "account": "ankhorage"
+  },
   "badges": [
     {
       "id": "license",
@@ -14,7 +16,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.5.4",
+      "value": "v9.5.5",
       "color": "cb3837"
     },
     {

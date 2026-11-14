@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.5
+
+### Patch Changes
+
+- db59e4d: Update dependencies: `@ankhorage/contracts`.
+
 ## 9.5.4
 
 ### Patch Changes
