@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.9
+
+### Patch Changes
+
+- 6e3750a: Export Field and Pressable from the browser-safe authoring-controls entrypoint.
+
 ## 9.5.8
 
 ### Patch Changes
