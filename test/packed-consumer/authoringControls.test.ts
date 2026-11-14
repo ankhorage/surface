@@ -5,7 +5,7 @@ import { join } from 'node:path';
 
 const packageRoot = new URL('../..', import.meta.url).pathname;
 
-test('packed authoring-controls consumer typechecks and bundles only the browser Surface graph', async () => {
+test('packed authoring-controls consumer typechecks, bundles, and mounts the browser Surface graph', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'surface-authoring-controls-consumer-'));
   const tarballDirectory = join(directory, 'tarball');
   const consumerDirectory = join(directory, 'consumer');
@@ -17,6 +17,7 @@ test('packed authoring-controls consumer typechecks and bundles only the browser
     await runBun(consumerDirectory, ['install']);
     await runBun(consumerDirectory, ['run', 'typecheck']);
     await runBun(consumerDirectory, ['run', 'bundle']);
+    await runBun(consumerDirectory, ['run', 'runtime']);
 
     const graph = JSON.parse(
       await readFile(join(consumerDirectory, 'dist', 'metafile.json'), 'utf8'),
@@ -56,6 +57,7 @@ async function writeConsumer(directory: string, tarballPath: string): Promise<vo
         private: true,
         scripts: {
           bundle: 'bun build.ts',
+          runtime: 'bun runtime.build.ts && bun dist/runtime/runtime.js',
           typecheck: 'tsc --noEmit',
         },
         dependencies: {
@@ -65,6 +67,9 @@ async function writeConsumer(directory: string, tarballPath: string): Promise<vo
           '@react-native-vector-icons/fontawesome6': '13.1.5',
           '@react-native-vector-icons/ionicons': '13.1.5',
           '@react-native-vector-icons/material-design-icons': '13.1.5',
+          '@types/react': '19.3.0',
+          '@types/react-dom': '19.3.0',
+          'happy-dom': '21.0.1',
           react: '19.3.0',
           'react-dom': '19.3.0',
           'react-native': '0.87.1',
@@ -147,6 +152,121 @@ await Bun.write('dist/metafile.json', JSON.stringify(result.metafile));
 `,
   );
   await writeFile(
+    join(directory, 'runtime.build.ts'),
+    `import { join } from 'node:path';
+
+const result = await Bun.build({
+  entrypoints: ['runtime.ts'],
+  format: 'esm',
+  outdir: 'dist/runtime',
+  plugins: [{
+    name: 'react-native-web',
+    setup(builder) {
+      builder.onResolve({ filter: /^react-native$/u }, () => ({
+        path: join(process.cwd(), 'node_modules/react-native-web/dist/cjs/index.js'),
+      }));
+    },
+  }],
+  splitting: true,
+  target: 'bun',
+});
+
+if (!result.success) throw new Error(result.logs.map((log) => log.message).join('\\n'));
+`,
+  );
+  await writeFile(
+    join(directory, 'runtime.ts'),
+    `import { Window } from 'happy-dom';
+
+const window = new Window({ url: 'http://localhost' });
+const runtime = globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT?: boolean };
+
+Object.assign(runtime, {
+  Element: window.Element,
+  Event: window.Event,
+  HTMLElement: window.HTMLElement,
+  MouseEvent: window.MouseEvent,
+  MutationObserver: window.MutationObserver,
+  Node: window.Node,
+  ShadowRoot: window.ShadowRoot,
+  document: window.document,
+  getComputedStyle: window.getComputedStyle.bind(window),
+  window,
+});
+runtime.IS_REACT_ACT_ENVIRONMENT = true;
+
+await import('./runtimeComponent');
+`,
+  );
+  await writeFile(
+    join(directory, 'runtimeComponent.tsx'),
+    `import { strict as assert } from 'node:assert';
+import React, { act } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Field, Pressable, Text, ThemeProvider, View } from '@ankhorage/surface/authoring-controls';
+
+const rootElement = document.createElement('div');
+document.body.append(rootElement);
+const root = createRoot(rootElement);
+let disabledPresses = 0;
+let enabledPresses = 0;
+
+await act(async () => {
+  root.render(
+    <ThemeProvider>
+      <View>
+        <Field label="Enabled field" testID="enabled-field"><Text>Enabled content</Text></Field>
+        <Field disabled label="Disabled field" testID="disabled-field"><Text>Disabled content</Text></Field>
+        <Pressable disabled onPress={() => { disabledPresses += 1; }} testID="disabled-pressable">
+          <Text>Disabled pressable</Text>
+        </Pressable>
+        <Pressable onPress={() => { enabledPresses += 1; }} testID="enabled-pressable">
+          <Text>Enabled pressable</Text>
+        </Pressable>
+      </View>
+    </ThemeProvider>,
+  );
+});
+
+assert.match(rootElement.textContent ?? '', /Disabled field/);
+assert.match(rootElement.textContent ?? '', /Disabled content/);
+
+const disabledField = document.querySelector<HTMLElement>('[data-testid="disabled-field"]');
+const enabledField = document.querySelector<HTMLElement>('[data-testid="enabled-field"]');
+assert.ok(disabledField, 'disabled Field should render its public testID');
+assert.ok(enabledField, 'enabled Field should render its public testID');
+
+const findTextElement = (container: HTMLElement, text: string) =>
+  Array.from(container.querySelectorAll<HTMLElement>('*')).find(
+    (element) => element.children.length === 0 && element.textContent === text,
+  );
+const disabledLabel = findTextElement(disabledField, 'Disabled field');
+const enabledLabel = findTextElement(enabledField, 'Enabled field');
+assert.ok(disabledLabel, 'disabled Field should render its label');
+assert.ok(enabledLabel, 'enabled Field should render its label');
+assert.notEqual(
+  disabledLabel.style.color,
+  enabledLabel.style.color,
+  'disabled Field labels should use the muted presentation',
+);
+
+const disabledPressable = document.querySelector<HTMLElement>('[data-testid="disabled-pressable"]');
+const enabledPressable = document.querySelector<HTMLElement>('[data-testid="enabled-pressable"]');
+assert.ok(disabledPressable, 'disabled Pressable should render');
+assert.ok(enabledPressable, 'enabled Pressable should render');
+
+await act(async () => {
+  disabledPressable.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+  enabledPressable.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+});
+
+assert.equal(disabledPresses, 0, 'disabled Pressable must not invoke onPress');
+assert.equal(enabledPresses, 1, 'enabled Pressable must invoke onPress');
+
+await act(async () => root.unmount());
+`,
+  );
+  await writeFile(
     join(directory, 'tsconfig.json'),
     JSON.stringify(
       {
@@ -159,7 +279,7 @@ await Bun.write('dist/metafile.json', JSON.stringify(result.metafile));
           strict: true,
           target: 'ES2022',
         },
-        include: ['src.tsx'],
+        include: ['src.tsx', 'runtime.ts', 'runtimeComponent.tsx'],
       },
       null,
       2,
