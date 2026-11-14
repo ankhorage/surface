@@ -23,6 +23,7 @@ test('packed authoring-controls consumer typechecks and bundles only the browser
     ) as { inputs: Record<string, unknown> };
     const graphSource = Object.keys(graph.inputs).join('\n');
     expect(graphSource).not.toContain('features/app-bar');
+    expect(graphSource).not.toContain('react-native-gesture-handler');
     expect(graphSource).not.toContain('react-native-safe-area-context');
     expect(graphSource).not.toContain('codegenNativeComponent');
   } finally {
@@ -80,6 +81,8 @@ async function writeConsumer(directory: string, tarballPath: string): Promise<vo
     `import type {
   ButtonProps,
   CardProps,
+  FieldProps,
+  PressableProps,
   TextInputProps,
   TextProps,
   ThemeProviderProps,
@@ -88,15 +91,28 @@ async function writeConsumer(directory: string, tarballPath: string): Promise<vo
 import {
   Button,
   Card,
+  Field,
+  Pressable,
   Text,
   TextInput,
   ThemeProvider,
   View,
 } from '@ankhorage/surface/authoring-controls';
 
-const props: [ButtonProps, CardProps, TextInputProps, TextProps, ThemeProviderProps, ViewProps] = [
+const props: [
+  ButtonProps,
+  CardProps,
+  FieldProps,
+  PressableProps,
+  TextInputProps,
+  TextProps,
+  ThemeProviderProps,
+  ViewProps,
+] = [
   { children: 'Save' },
   { children: 'Panel' },
+  { label: 'Title', disabled: true },
+  { children: 'Select', disabled: true },
   {},
   { children: 'Authoring' },
   { children: null },
@@ -104,7 +120,7 @@ const props: [ButtonProps, CardProps, TextInputProps, TextProps, ThemeProviderPr
 ];
 
 void props;
-void [Button, Card, Text, TextInput, ThemeProvider, View];
+void [Button, Card, Field, Pressable, Text, TextInput, ThemeProvider, View];
 `,
   );
   await writeFile(
