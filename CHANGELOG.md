@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.1
+
+### Patch Changes
+
+- 497e780: Emit the browser Popover entrypoint as standard JavaScript so browser bundlers can parse it.
+
 ## 9.5.0
 
 ### Minor Changes
