@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.10
+
+### Patch Changes
+
+- 3342bae: Update dependencies: `@ankhorage/color-theory`.
+
 ## 9.5.9
 
 ### Patch Changes
