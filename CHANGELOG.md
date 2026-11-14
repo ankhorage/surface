@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.7
+
+### Patch Changes
+
+- e7aad67: Add canonical repository metadata for runtime discovery and validation.
+
 ## 9.5.6
 
 ### Patch Changes
