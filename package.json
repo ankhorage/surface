@@ -114,7 +114,7 @@
     "format:check": "ankhorage-prettier --check .",
     "prepack": "bun run build",
     "test": "bun test src",
-    "test:browser": "bun test ./test/browser/browserPopover.ts",
+    "test:browser": "bun run build && node --check dist/features/popover/adapters/inbound/browser/BrowserPopover.js && bun test ./test/browser/browserPopover.ts",
     "typecheck": "bun x tsc --noEmit -p tsconfig.json",
     "version-packages": "ankhorage-changeset version"
   },
