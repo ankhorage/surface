@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "kind": "library",
+  "title": "Ankhorage Surface",
+  "summary": "Provides the stable React Native and React Native Web UI foundation used to compose Ankhorage interfaces.",
+  "purpose": "Offer reusable, theme-aware UI primitives and higher-level controls behind a consistent cross-platform public API.",
+  "domain": "cross-platform user interface foundation",
+  "responsibilities": [
+    "Publish reusable layout, typography, feedback, form, navigation, overlay, image, icon, and surface components.",
+    "Define theme, semantic color, responsive layout, and interaction-policy primitives for React Native and React Native Web.",
+    "Provide explicit platform adapters where browser or native behavior differs."
+  ],
+  "boundaries": [
+    "Does not own application manifests, business workflows, data fetching, or runtime capability execution.",
+    "Does not provide product-specific screens or application navigation policy.",
+    "Does not select host-level providers, deployment targets, or external service integrations."
+  ],
+  "audience": [
+    "React Native and React Native Web application authors composing Ankhorage interfaces.",
+    "Package maintainers building controls and visual foundations on stable Surface primitives."
+  ],
+  "useCases": [
+    "Compose a responsive screen from themed layout, typography, form, and feedback components.",
+    "Provide a semantic theme to controls rendered on native and web hosts.",
+    "Use browser and native overlay, popover, toast, and interaction primitives through one public package API."
+  ],
+  "architecture": {
+    "role": "Reusable UI and design-system library with explicit React Native and React Native Web platform boundaries.",
+    "invariants": [
+      "Components expose stable public props and derive visual behavior from shared semantic theme primitives.",
+      "Application workflow, data access, and capability execution remain outside the UI foundation.",
+      "Platform-specific behavior remains behind explicit adapters while public component contracts stay cross-platform."
+    ]
+  },
+  "constraints": {
+    "limitations": [
+      "Consumers must supply the declared React, React Native, and platform peer dependencies required by the components they use.",
+      "Optional icon and native interaction capabilities depend on the corresponding declared peer packages and host configuration."
+    ]
+  }
+}
