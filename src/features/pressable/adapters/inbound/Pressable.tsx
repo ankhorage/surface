@@ -44,7 +44,9 @@ export function Pressable({
       aria-checked={accessibilityState?.checked}
       disabled={disabled}
       onBlur={() => setFocused(false)}
-      onFocus={() => (isWeb ? setFocused(true) : undefined)}
+      onFocus={() => {
+        if (isWeb) setFocused(true);
+      }}
       onHoverIn={isWeb ? () => setHovered(true) : undefined}
       onHoverOut={isWeb ? () => setHovered(false) : undefined}
       style={(pressableState) => {

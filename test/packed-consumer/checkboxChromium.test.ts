@@ -49,7 +49,9 @@ async function createPackedConsumerFixture(): Promise<PackedConsumerFixture> {
         const url = new URL(request.url);
         return url.pathname === '/fixture.js'
           ? new Response(Bun.file(join(consumerDirectory, 'dist', 'client.js')))
-          : new Response(createDocument(markup, url.searchParams));
+          : new Response(createDocument(markup, url.searchParams), {
+              headers: { 'content-type': 'text/html; charset=utf-8' },
+            });
       },
       port: 0,
     });
