@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.13
+
+### Patch Changes
+
+- 48e17a5: Emit Node ESM-compatible declaration imports for strict NodeNext consumers.
+
 ## 9.5.12
 
 ### Patch Changes
