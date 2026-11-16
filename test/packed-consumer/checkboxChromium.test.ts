@@ -129,12 +129,27 @@ async function assertGuardedCheckboxes(page: Page) {
 
 /*** Reads a locator attribute through Playwright before asserting the browser-visible value. */
 async function expectAttribute(locator: Locator, name: string, value: string) {
-  expect(await locator.getAttribute(name)).toBe(value);
+  await expectBrowserValue(() => locator.getAttribute(name), value);
 }
 
 /*** Reads a locator's rendered text through Playwright before asserting its value. */
 async function expectText(locator: Locator, value: string) {
-  expect(await locator.textContent()).toBe(value);
+  await expectBrowserValue(() => locator.textContent(), value);
+}
+
+/*** Retries a browser-visible value while React commits the expected controlled update. */
+async function expectBrowserValue(
+  readValue: () => Promise<string | null>,
+  value: string,
+  attempts = 250,
+): Promise<void> {
+  const actualValue = await readValue();
+  if (actualValue === value || attempts === 0) {
+    expect(actualValue).toBe(value);
+    return;
+  }
+  await Bun.sleep(20);
+  return expectBrowserValue(readValue, value, attempts - 1);
 }
 
 /*** Reads Chromium's accessibility tree so DOM attributes alone cannot satisfy this acceptance. */
