@@ -44,7 +44,7 @@ async function writeConsumer(directory: string, tarballPath: string): Promise<vo
     join(directory, 'package.json'),
     `${JSON.stringify(
       {
-        dependencies: { '@ankhorage/surface': tarballPath, typescript: '6.0.3' },
+        dependencies: { '@ankhorage/surface': tarballPath, typescript: '~6.0.3' },
         name: 'surface-theme-consumer',
         private: true,
         type: 'module',
@@ -74,7 +74,7 @@ async function writeConsumer(directory: string, tarballPath: string): Promise<vo
           module: 'NodeNext',
           moduleResolution: 'NodeNext',
           noEmit: true,
-          skipLibCheck: true,
+          skipLibCheck: false,
           strict: true,
           target: 'ES2022',
         },
