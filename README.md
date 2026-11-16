@@ -3,9 +3,11 @@
 
 # @ankhorage/surface
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v9.5.10](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![paradox: warnings](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v9.5.11](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![paradox: warnings](././paradox/badges/docs.svg)
 
-Cross-platform UI foundation for React Native and React Native Web. Provides theming, layout primitives, and core building blocks for modern apps.
+Provides the stable React Native and React Native Web UI foundation used to compose Ankhorage interfaces.
+
+Offer reusable, theme-aware UI primitives and higher-level controls behind a consistent cross-platform public API.
 
 ## Documentation
 

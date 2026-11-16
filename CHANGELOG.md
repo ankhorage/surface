@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.11
+
+### Patch Changes
+
+- aa11e02: Fix Node ESM resolution for the theme public entrypoint and its reachable implementation graph.
+
 ## 9.5.10
 
 ### Patch Changes
