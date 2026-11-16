@@ -73,8 +73,8 @@ async function assertServerRenderedCheckboxes(url: string, browser: Browser) {
     for (const mode of ['light', 'dark'] as const) {
       await page.goto(`${url}?mode=${mode}`);
       const checkbox = page.getByRole('checkbox', { name: 'Packed checkbox' });
-      await expect(checkbox).toHaveAttribute('aria-checked', 'false');
-      await expect(page.locator('body')).toHaveAttribute('data-mode', mode);
+      await expectAttribute(checkbox, 'aria-checked', 'false');
+      await expectAttribute(page.locator('body'), 'data-mode', mode);
     }
   } finally {
     await page.close();
@@ -85,7 +85,7 @@ async function assertServerRenderedCheckboxes(url: string, browser: Browser) {
 async function assertHydratedCheckboxes(page: Page, url: string, mode: 'light' | 'dark') {
   await page.goto(`${url}?mode=${mode}`);
   const checkbox = page.getByRole('checkbox', { name: 'Packed checkbox' });
-  await expect(checkbox).toHaveAttribute('aria-checked', 'false');
+  await expectAttribute(checkbox, 'aria-checked', 'false');
   await assertAccessibilityChecked(page, false);
 
   await checkbox.click();
@@ -108,9 +108,9 @@ async function assertCheckedState(
   callCount: number,
   values: string,
 ) {
-  await expect(checkbox).toHaveAttribute('aria-checked', String(checked));
-  await expect(page.getByTestId('call-count')).toHaveText(String(callCount));
-  await expect(page.getByTestId('call-values')).toHaveText(values);
+  await expectAttribute(checkbox, 'aria-checked', String(checked));
+  await expectText(page.getByTestId('call-count'), String(callCount));
+  await expectText(page.getByTestId('call-values'), values);
   await assertAccessibilityChecked(page, checked);
 }
 
@@ -120,9 +120,19 @@ async function assertGuardedCheckboxes(page: Page) {
     const checkbox = page.getByRole('checkbox', { name });
     await checkbox.click({ force: true });
     await checkbox.press('Space');
-    await expect(checkbox).toHaveAttribute('aria-checked', 'false');
+    await expectAttribute(checkbox, 'aria-checked', 'false');
   }
-  await expect(page.getByTestId('guarded-call-count')).toHaveText('0');
+  await expectText(page.getByTestId('guarded-call-count'), '0');
+}
+
+/*** Reads a locator attribute through Playwright before asserting the browser-visible value. */
+async function expectAttribute(locator: Locator, name: string, value: string) {
+  expect(await locator.getAttribute(name)).toBe(value);
+}
+
+/*** Reads a locator's rendered text through Playwright before asserting its value. */
+async function expectText(locator: Locator, value: string) {
+  expect(await locator.textContent()).toBe(value);
 }
 
 /*** Reads Chromium's accessibility tree so DOM attributes alone cannot satisfy this acceptance. */
