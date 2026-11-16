@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import type { AccordionItemProps } from '../../../../types/accordion';
-import { AccordionContext } from './AccordionContext';
-import { AccordionItemContext } from './AccordionItemContext';
+import type { AccordionItemProps } from '../../../../types/accordion.js';
+import { AccordionContext } from './AccordionContext.js';
+import { AccordionItemContext } from './AccordionItemContext.js';
 
 /*** Provides one accordion item's value, state, and trigger/content identifiers. */
 export function AccordionItem({

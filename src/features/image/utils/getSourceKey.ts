@@ -1,6 +1,6 @@
 import type { ImageSourcePropType, ImageURISource } from 'react-native';
 
-import type { SurfaceImageSource } from '../../../types/image';
+import type { SurfaceImageSource } from '../../../types/image.js';
 
 /*** Derives a stable runtime key for one Surface image source. */
 export function getSourceKey(source: SurfaceImageSource | null | undefined): string | null {

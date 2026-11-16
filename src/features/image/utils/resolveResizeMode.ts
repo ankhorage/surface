@@ -1,6 +1,6 @@
 import type { ImageResizeMode } from 'react-native';
 
-import type { ImageProps } from '../../../types/image';
+import type { ImageProps } from '../../../types/image.js';
 
 /*** Resolves the canonical resize mode, preferring the Surface fit alias. */
 export function resolveResizeMode(

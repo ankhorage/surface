@@ -1,6 +1,6 @@
 import type { ImageSourcePropType } from 'react-native';
 
-import type { SurfaceImageSource } from '../../../types/image';
+import type { SurfaceImageSource } from '../../../types/image.js';
 
 /*** Normalizes a Surface image source into React Native's source shape. */
 export function normalizeSource(

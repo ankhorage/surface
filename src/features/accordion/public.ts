@@ -6,8 +6,8 @@ export type {
   AccordionProps,
   AccordionSingleProps,
   AccordionTriggerProps,
-} from '../../types/accordion';
-export { Accordion } from './adapters/inbound/Accordion';
-export { AccordionContent } from './adapters/inbound/AccordionContent';
-export { AccordionItem } from './adapters/inbound/AccordionItem';
-export { AccordionTrigger } from './adapters/inbound/AccordionTrigger';
+} from '../../types/accordion.js';
+export { Accordion } from './adapters/inbound/Accordion.js';
+export { AccordionContent } from './adapters/inbound/AccordionContent.js';
+export { AccordionItem } from './adapters/inbound/AccordionItem.js';
+export { AccordionTrigger } from './adapters/inbound/AccordionTrigger.js';

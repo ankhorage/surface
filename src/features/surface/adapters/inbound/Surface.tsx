@@ -1,9 +1,9 @@
 import React from 'react';
 import type { ViewStyle } from 'react-native';
 
-import type { SurfaceProps, SurfaceVariant } from '../../../../types/surface';
-import { View } from '../../../layout/public';
-import { useTheme } from '../../../theme/runtime';
+import type { SurfaceProps, SurfaceVariant } from '../../../../types/surface.js';
+import { View } from '../../../layout/public.js';
+import { useTheme } from '../../../theme/runtime.js';
 
 /*** Renders a themed content surface with semantic elevation and border variants. */
 export function Surface({ variant = 'default', radius = 'm', style, ...props }: SurfaceProps) {

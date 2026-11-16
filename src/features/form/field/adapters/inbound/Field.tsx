@@ -4,10 +4,10 @@ import {
   type ResolvedFieldPresentation,
   resolveFieldPresentation,
   resolveFieldState,
-} from '../../../../../internal/resolvers';
-import type { FieldProps } from '../../../../../types/field';
-import { View } from '../../../../layout/public';
-import { Text } from '../../../../typography/public';
+} from '../../../../../internal/resolvers/index.js';
+import type { FieldProps } from '../../../../../types/field.js';
+import { View } from '../../../../layout/public.js';
+import { Text } from '../../../../typography/public.js';
 
 /*** Composes a control with its label and helper or error message. */
 export function Field({

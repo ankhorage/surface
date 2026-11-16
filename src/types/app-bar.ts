@@ -1,7 +1,7 @@
 import type React from 'react';
 import type { StyleProp, ViewStyle } from 'react-native';
 
-import type { ViewProps } from './layout';
+import type { ViewProps } from './layout.js';
 
 export interface AppBarProps extends Omit<ViewProps, 'children'> {
   leading?: React.ReactNode;

@@ -1,9 +1,9 @@
-import type { ButtonVariant } from '../../types/button';
-import type { InteractionState } from '../../types/pressable';
-import type { SurfaceColor } from '../../types/surfaceColor';
-import type { SurfaceTheme } from '../../types/theme';
-import type { FieldState } from './resolveFieldState';
-import { resolveSurfaceColor } from './resolveSurfaceColor';
+import type { ButtonVariant } from '../../types/button.js';
+import type { InteractionState } from '../../types/pressable.js';
+import type { SurfaceColor } from '../../types/surfaceColor.js';
+import type { SurfaceTheme } from '../../types/theme.js';
+import type { FieldState } from './resolveFieldState.js';
+import { resolveSurfaceColor } from './resolveSurfaceColor.js';
 
 export interface ResolvedInteractiveColors {
   backgroundColor: string;

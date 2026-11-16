@@ -1,6 +1,6 @@
-import { resolveToken } from '../features/theme/utils/resolveToken';
-import type { SpaceValue } from '../types/layout';
-import type { SurfaceTheme } from '../types/theme';
+import { resolveToken } from '../features/theme/utils/resolveToken.js';
+import type { SpaceValue } from '../types/layout.js';
+import type { SurfaceTheme } from '../types/theme.js';
 
 /*** Resolves a numeric spacing value or a Surface spacing token. */
 export function resolveSpacing(

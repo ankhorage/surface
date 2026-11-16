@@ -6,8 +6,8 @@ import {
   type View,
 } from 'react-native';
 
-import type { PopoverPlacement } from '../../../../types/popover';
-import { resolvePopoverPosition } from '../../utils/resolvePopoverPosition';
+import type { PopoverPlacement } from '../../../../types/popover.js';
+import { resolvePopoverPosition } from '../../utils/resolvePopoverPosition.js';
 
 /*** Measures the anchor and resolves the current viewport-safe popover position. */
 export function usePopoverLayout({ anchorRef, offset, open, placement }: UsePopoverLayoutInput) {

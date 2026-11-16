@@ -1,15 +1,15 @@
 import React from 'react';
 import { Image as ReactNativeImage } from 'react-native';
 
-import type { ImageProps } from '../../../../types/image';
-import { useTheme } from '../../../theme/runtime';
-import { getSourceKey } from '../../utils/getSourceKey';
-import { normalizeSource } from '../../utils/normalizeSource';
-import { resolveAccessibilityLabel } from '../../utils/resolveAccessibilityLabel';
-import { resolveAlt } from '../../utils/resolveAlt';
-import { resolveImageStyle } from '../../utils/resolveImageStyle';
-import { resolveRenderedSource } from '../../utils/resolveRenderedSource';
-import { resolveResizeMode } from '../../utils/resolveResizeMode';
+import type { ImageProps } from '../../../../types/image.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { getSourceKey } from '../../utils/getSourceKey.js';
+import { normalizeSource } from '../../utils/normalizeSource.js';
+import { resolveAccessibilityLabel } from '../../utils/resolveAccessibilityLabel.js';
+import { resolveAlt } from '../../utils/resolveAlt.js';
+import { resolveImageStyle } from '../../utils/resolveImageStyle.js';
+import { resolveRenderedSource } from '../../utils/resolveRenderedSource.js';
+import { resolveResizeMode } from '../../utils/resolveResizeMode.js';
 
 /*** Renders a token-aware accessible image with optional fallback source. */
 export function Image({

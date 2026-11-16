@@ -19,7 +19,7 @@ import materialDesignGlyphs from '@react-native-vector-icons/material-design-ico
 import React from 'react';
 import { Image, type StyleProp, Text, type TextStyle, View, type ViewStyle } from 'react-native';
 
-import type { FontIconSource, SvgIconSource } from '../../../../types/icon';
+import type { FontIconSource, SvgIconSource } from '../../../../types/icon.js';
 
 type GlyphMap = ReadonlyMap<string, number>;
 

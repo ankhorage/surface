@@ -1,5 +1,5 @@
-import { BREAKPOINT_ORDER } from './breakpoints';
-import type { Breakpoint, Responsive } from './types';
+import { BREAKPOINT_ORDER } from './breakpoints.js';
+import type { Breakpoint, Responsive } from './types.js';
 
 function isResponsiveRecord<T>(value: Responsive<T>): value is Partial<Record<Breakpoint, T>> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);

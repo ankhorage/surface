@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, type ViewStyle } from 'react-native';
 
-import { Portal } from '../../../../internal/overlay/Portal';
-import { resolveOverlayAnimation } from '../../../../internal/resolvers';
-import type { ToastProviderProps } from '../../../../types/toast';
-import { View } from '../../../layout/public';
-import { ToastContext } from '../../composition/ToastContext';
-import { useToastRuntime } from '../../composition/useToastRuntime';
-import { Toast } from './Toast';
+import { Portal } from '../../../../internal/overlay/Portal.js';
+import { resolveOverlayAnimation } from '../../../../internal/resolvers/index.js';
+import type { ToastProviderProps } from '../../../../types/toast.js';
+import { View } from '../../../layout/public.js';
+import { ToastContext } from '../../composition/ToastContext.js';
+import { useToastRuntime } from '../../composition/useToastRuntime.js';
+import { Toast } from './Toast.js';
 
 /*** Provides the toast runtime context and renders its shared portal host. */
 export function ToastProvider({ children, defaultDuration = 4000 }: ToastProviderProps) {

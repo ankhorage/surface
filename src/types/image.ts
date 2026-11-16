@@ -6,7 +6,7 @@ import type {
   StyleProp,
 } from 'react-native';
 
-import type { SurfaceTheme } from './theme';
+import type { SurfaceTheme } from './theme.js';
 
 export type SurfaceImageSource = string | ImageSourcePropType;
 export type ImageFit = ImageResizeMode;

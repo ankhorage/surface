@@ -1,2 +1,2 @@
-export type { SurfaceProps, SurfaceVariant } from '../../types/surface';
-export { Surface } from './adapters/inbound/Surface';
+export type { SurfaceProps, SurfaceVariant } from '../../types/surface.js';
+export { Surface } from './adapters/inbound/Surface.js';

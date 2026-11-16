@@ -1,7 +1,7 @@
 import type React from 'react';
 
-import type { InteractionPolicy } from './interactionPolicy';
-import type { SurfaceStatusColor } from './surfaceColor';
+import type { InteractionPolicy } from './interactionPolicy.js';
+import type { SurfaceStatusColor } from './surfaceColor.js';
 
 export type ToastStatus = 'default' | SurfaceStatusColor;
 

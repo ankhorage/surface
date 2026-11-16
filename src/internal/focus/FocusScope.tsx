@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { useFocusManager } from './useFocusManager';
+import { useFocusManager } from './useFocusManager.js';
 
 export interface FocusScopeProps {
   active: boolean;

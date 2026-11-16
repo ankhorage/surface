@@ -1,2 +1,2 @@
-export type { RadioProps } from '../../../types/radio';
-export { Radio } from './adapters/inbound/Radio';
+export type { RadioProps } from '../../../types/radio.js';
+export { Radio } from './adapters/inbound/Radio.js';

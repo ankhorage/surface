@@ -1,7 +1,7 @@
 import type React from 'react';
 
-import type { InteractionPolicy } from './interactionPolicy';
-import type { ViewStyleProps } from './layout';
+import type { InteractionPolicy } from './interactionPolicy.js';
+import type { ViewStyleProps } from './layout.js';
 
 export type TabsVariant = 'line' | 'attached';
 

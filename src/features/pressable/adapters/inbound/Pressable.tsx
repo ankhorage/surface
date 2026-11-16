@@ -5,11 +5,14 @@ import {
   type PressableStateCallbackType,
 } from 'react-native';
 
-import { useResponsiveRuntime } from '../../../../core/responsive';
-import { resolveFocusRingStyles, resolveInteractiveState } from '../../../../internal/resolvers';
-import type { InteractionState, PressableProps } from '../../../../types/pressable';
-import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
-import { useTheme } from '../../../theme/runtime';
+import { useResponsiveRuntime } from '../../../../core/responsive/index.js';
+import {
+  resolveFocusRingStyles,
+  resolveInteractiveState,
+} from '../../../../internal/resolvers/index.js';
+import type { InteractionState, PressableProps } from '../../../../types/pressable.js';
+import { resolveViewStyles } from '../../../../utils/resolveViewStyles.js';
+import { useTheme } from '../../../theme/runtime.js';
 
 /*** Renders the token-aware Surface adapter for React Native Pressable. */
 export function Pressable({

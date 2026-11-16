@@ -1,4 +1,4 @@
-import type { ImageProps } from '../../../types/image';
+import type { ImageProps } from '../../../types/image.js';
 
 /*** Resolves the accessible image label from explicit label or alt text. */
 export function resolveAccessibilityLabel(

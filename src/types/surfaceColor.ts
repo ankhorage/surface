@@ -3,7 +3,7 @@ import type {
   SURFACE_EMPHASES,
   SURFACE_PALETTE_COLORS,
   SURFACE_STATUS_COLORS,
-} from '../constants/surfaceColor';
+} from '../constants/surfaceColor.js';
 
 export type SurfacePaletteColor = (typeof SURFACE_PALETTE_COLORS)[number];
 export type SurfaceStatusColor = (typeof SURFACE_STATUS_COLORS)[number];

@@ -1,4 +1,4 @@
-import type { ImageProps } from '../../../types/image';
+import type { ImageProps } from '../../../types/image.js';
 
 /*** Resolves web alt text from alt or the accessible label. */
 export function resolveAlt(

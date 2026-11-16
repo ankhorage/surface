@@ -1,14 +1,14 @@
 import React from 'react';
 import { Pressable, StyleSheet, View as ReactNativeView, type ViewStyle } from 'react-native';
 
-import { FocusScope } from '../../../../internal/focus/FocusScope';
-import { Portal } from '../../../../internal/overlay/Portal';
-import { resolvePointerEvents } from '../../../../internal/resolvePointerEvents';
-import { resolveOverlayAnimation } from '../../../../internal/resolvers';
-import type { ModalProps } from '../../../../types/modal';
-import { View } from '../../../layout/public';
-import { Surface } from '../../../surface/public';
-import { useTheme } from '../../../theme/runtime';
+import { FocusScope } from '../../../../internal/focus/FocusScope.js';
+import { Portal } from '../../../../internal/overlay/Portal.js';
+import { resolvePointerEvents } from '../../../../internal/resolvePointerEvents.js';
+import { resolveOverlayAnimation } from '../../../../internal/resolvers/index.js';
+import type { ModalProps } from '../../../../types/modal.js';
+import { View } from '../../../layout/public.js';
+import { Surface } from '../../../surface/public.js';
+import { useTheme } from '../../../theme/runtime.js';
 
 const boxNonePointerEvents = resolvePointerEvents('box-none');
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import type { TabsProps } from '../../../../types/tabs';
-import { View } from '../../../layout/public';
-import { TabsContext } from '../../composition/TabsContext';
-import { useTabsController } from '../../composition/useTabsController';
+import type { TabsProps } from '../../../../types/tabs.js';
+import { View } from '../../../layout/public.js';
+import { TabsContext } from '../../composition/TabsContext.js';
+import { useTabsController } from '../../composition/useTabsController.js';
 
 /*** Provides accessible tab selection and forwards View layout to the tab container. */
 export function Tabs({

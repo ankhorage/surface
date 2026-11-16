@@ -6,8 +6,8 @@ import type {
   ViewStyle,
 } from 'react-native';
 
-import type { Responsive } from '../core/responsive';
-import type { SurfaceTheme } from './theme';
+import type { Responsive } from '../core/responsive/index.js';
+import type { SurfaceTheme } from './theme.js';
 
 type SpaceToken = keyof SurfaceTheme['spacing'];
 type RadiusToken = keyof SurfaceTheme['radii'];

@@ -1,11 +1,11 @@
 import React from 'react';
 import type { ViewStyle } from 'react-native';
 
-import { resolveButtonColors, resolveControlSize } from '../../../../internal/resolvers';
-import type { BadgeProps } from '../../../../types/badge';
-import { View } from '../../../layout/public';
-import { useTheme } from '../../../theme/runtime';
-import { Text } from '../../../typography/public';
+import { resolveButtonColors, resolveControlSize } from '../../../../internal/resolvers/index.js';
+import type { BadgeProps } from '../../../../types/badge.js';
+import { View } from '../../../layout/public.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { Text } from '../../../typography/public.js';
 
 /*** Renders compact semantic status or metadata content. */
 export function Badge({

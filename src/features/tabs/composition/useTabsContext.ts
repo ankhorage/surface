@@ -1,7 +1,7 @@
 import React from 'react';
 
-import type { TabsContextValue } from '../../../types/tabs';
-import { TabsContext } from './TabsContext';
+import type { TabsContextValue } from '../../../types/tabs.js';
+import { TabsContext } from './TabsContext.js';
 
 /*** Returns the active Tabs feature context. */
 export function useTabsContext(): TabsContextValue {

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import type { TabPanelProps } from '../../../../types/tabs';
-import { View } from '../../../layout/public';
-import { useTheme } from '../../../theme/runtime';
-import { useTabsContext } from '../../composition/useTabsContext';
+import type { TabPanelProps } from '../../../../types/tabs.js';
+import { View } from '../../../layout/public.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { useTabsContext } from '../../composition/useTabsContext.js';
 
 const TAB_PANEL_ROLE = 'tabpanel' as React.ComponentProps<typeof View>['accessibilityRole'];
 

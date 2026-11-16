@@ -5,15 +5,15 @@ import {
   resolveButtonColors,
   resolveControlSize,
   resolveIconSize,
-} from '../../../../internal/resolvers';
-import type { ButtonProps } from '../../../../types/button';
-import type { IconProps } from '../../../../types/icon';
-import type { InteractionState } from '../../../../types/pressable';
-import type { SurfaceTheme } from '../../../../types/theme';
-import { View } from '../../../layout/public';
-import { Pressable } from '../../../pressable/public';
-import { useTheme } from '../../../theme/runtime';
-import { Text } from '../../../typography/public';
+} from '../../../../internal/resolvers/index.js';
+import type { ButtonProps } from '../../../../types/button.js';
+import type { IconProps } from '../../../../types/icon.js';
+import type { InteractionState } from '../../../../types/pressable.js';
+import type { SurfaceTheme } from '../../../../types/theme.js';
+import { View } from '../../../layout/public.js';
+import { Pressable } from '../../../pressable/public.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { Text } from '../../../typography/public.js';
 
 /*** Renders shared Button behavior with the platform-owned icon adapter. */
 export function ButtonPresentation({ Icon, ...props }: ButtonPresentationProps) {

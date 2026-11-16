@@ -5,14 +5,14 @@ import {
   resolveIndicatorSize,
   resolveSelectionControlColors,
   resolveSelectionControlNextChecked,
-} from '../../../../../internal/resolvers';
-import { useControllableState } from '../../../../../internal/useControllableState';
-import type { InteractionState } from '../../../../../types/pressable';
-import type { SwitchProps } from '../../../../../types/switch';
-import { View } from '../../../../layout/public';
-import { Pressable } from '../../../../pressable/public';
-import { useTheme } from '../../../../theme/runtime';
-import { Text } from '../../../../typography/public';
+} from '../../../../../internal/resolvers/index.js';
+import { useControllableState } from '../../../../../internal/useControllableState.js';
+import type { InteractionState } from '../../../../../types/pressable.js';
+import type { SwitchProps } from '../../../../../types/switch.js';
+import { View } from '../../../../layout/public.js';
+import { Pressable } from '../../../../pressable/public.js';
+import { useTheme } from '../../../../theme/runtime.js';
+import { Text } from '../../../../typography/public.js';
 
 /*** Renders a controlled or uncontrolled accessible switch. */
 export function Switch({

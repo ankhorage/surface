@@ -1,16 +1,16 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 
-import { FocusScope } from '../../../../internal/focus/FocusScope';
-import { useFocusManager } from '../../../../internal/focus/useFocusManager';
-import type { PopoverMenuAction, PopoverMenuProps } from '../../../../types/popoverMenu';
-import { View } from '../../../layout/public';
-import { Popover } from '../../../popover/public';
-import { Surface } from '../../../surface/public';
-import { useTheme } from '../../../theme/runtime';
-import { Text } from '../../../typography/public';
-import { usePopoverMenuController } from '../../composition/usePopoverMenuController';
-import { resolveNextMenuIndex } from '../../utils/resolveNextMenuIndex';
+import { FocusScope } from '../../../../internal/focus/FocusScope.js';
+import { useFocusManager } from '../../../../internal/focus/useFocusManager.js';
+import type { PopoverMenuAction, PopoverMenuProps } from '../../../../types/popoverMenu.js';
+import { View } from '../../../layout/public.js';
+import { Popover } from '../../../popover/public.js';
+import { Surface } from '../../../surface/public.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { Text } from '../../../typography/public.js';
+import { usePopoverMenuController } from '../../composition/usePopoverMenuController.js';
+import { resolveNextMenuIndex } from '../../utils/resolveNextMenuIndex.js';
 
 /*** Presents an anchored action menu using the shared Popover capability. */
 export function PopoverMenu({

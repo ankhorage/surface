@@ -1,7 +1,7 @@
 import React from 'react';
 
-import type { DividerProps } from '../../../../types/layout';
-import { View } from './View';
+import type { DividerProps } from '../../../../types/layout.js';
+import { View } from './View.js';
 
 /*** Renders a horizontal or vertical separator using layout tokens. */
 export function Divider({

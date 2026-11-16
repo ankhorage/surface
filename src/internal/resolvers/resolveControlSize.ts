@@ -1,5 +1,5 @@
-import type { ControlSize } from '../../types/control';
-import type { SurfaceTheme } from '../../types/theme';
+import type { ControlSize } from '../../types/control.js';
+import type { SurfaceTheme } from '../../types/theme.js';
 
 export interface ResolvedControlSize {
   minHeight: number;

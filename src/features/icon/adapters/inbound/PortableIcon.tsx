@@ -15,8 +15,8 @@ import {
 } from 'react-native';
 import { SvgUri } from 'react-native-svg';
 
-import type { FontIconSource, IconSource, SvgIconSource } from '../../../../types/icon';
-import type { SurfaceImageSource } from '../../../../types/image';
+import type { FontIconSource, IconSource, SvgIconSource } from '../../../../types/icon.js';
+import type { SurfaceImageSource } from '../../../../types/image.js';
 
 /*** Renders a resolved portable icon using the configured font or SVG runtime. */
 export function PortableIcon(props: PortableIconProps) {

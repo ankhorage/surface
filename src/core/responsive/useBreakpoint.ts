@@ -1,6 +1,6 @@
-import { getBreakpointFromWidth } from './getBreakpointFromWidth';
-import type { Breakpoint } from './types';
-import { useResponsiveWidth } from './useResponsiveWidth';
+import { getBreakpointFromWidth } from './getBreakpointFromWidth.js';
+import type { Breakpoint } from './types.js';
+import { useResponsiveWidth } from './useResponsiveWidth.js';
 
 /*** Returns the hydration-stable responsive breakpoint without requiring a provider. */
 export function useBreakpoint(): Breakpoint {

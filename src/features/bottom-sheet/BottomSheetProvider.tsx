@@ -7,8 +7,8 @@ import {
 } from '@gorhom/bottom-sheet';
 import React from 'react';
 
-import type { BottomSheetController, BottomSheetPresentOptions } from '../../types/bottomSheet';
-import { BottomSheetContext } from './BottomSheetContext';
+import type { BottomSheetController, BottomSheetPresentOptions } from '../../types/bottomSheet.js';
+import { BottomSheetContext } from './BottomSheetContext.js';
 
 /*** Installs the shared bottom-sheet modal host and controller for descendant consumers. */
 export function BottomSheetProvider({ children }: { children: React.ReactNode }) {

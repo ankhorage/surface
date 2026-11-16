@@ -6,9 +6,9 @@ import type {
   AccordionMultipleProps,
   AccordionProps,
   AccordionSingleProps,
-} from '../../../../types/accordion';
-import { resolveAccordionToggle } from '../../utils/resolveAccordionToggle';
-import { AccordionContext } from './AccordionContext';
+} from '../../../../types/accordion.js';
+import { resolveAccordionToggle } from '../../utils/resolveAccordionToggle.js';
+import { AccordionContext } from './AccordionContext.js';
 
 /*** Coordinates controlled or uncontrolled accordion expansion state. */
 export function Accordion(props: AccordionProps) {

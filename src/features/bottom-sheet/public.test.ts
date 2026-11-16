@@ -15,7 +15,7 @@ test('bottom-sheet boundary owns portable platform adapters and direct content m
     'BottomSheetView',
     'BottomSheetVirtualizedList',
   ]) {
-    expect(publicSource).toContain(`from './${name}'`);
+    expect(publicSource).toContain(`from './${name}.js'`);
   }
 
   expect(publicSource).not.toContain('@gorhom/bottom-sheet');

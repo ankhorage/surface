@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Pressable } from 'react-native';
 
-import { useTabsContext } from './useTabsContext';
+import { useTabsContext } from './useTabsContext.js';
 
 /*** Registers one focusable tab with the owning Tabs context. */
 export function useTabRegistration({

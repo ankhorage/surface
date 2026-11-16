@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
-import type { FontProviderProps, FontRuntime } from '../../../../types/font';
-import { FontRuntimeContext } from './FontRuntimeContext';
+import type { FontProviderProps, FontRuntime } from '../../../../types/font.js';
+import { FontRuntimeContext } from './FontRuntimeContext.js';
 
 /*** Provide loaded-font state and the active font id to Surface theme composition. */
 export function FontProvider({

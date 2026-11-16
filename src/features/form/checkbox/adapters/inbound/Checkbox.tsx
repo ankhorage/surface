@@ -4,16 +4,16 @@ import type { ViewStyle } from 'react-native';
 import {
   resolveSelectionControlInteractionState,
   resolveSelectionControlNextChecked,
-} from '../../../../../internal/resolvers';
-import { useControllableState } from '../../../../../internal/useControllableState';
-import type { CheckboxProps } from '../../../../../types/checkbox';
-import type { InteractionState } from '../../../../../types/pressable';
-import type { SurfaceTheme } from '../../../../../types/theme';
-import { View } from '../../../../layout/public';
-import type { PressableProps } from '../../../../pressable/public';
-import { Pressable } from '../../../../pressable/public';
-import { useTheme } from '../../../../theme/runtime';
-import { Text } from '../../../../typography/public';
+} from '../../../../../internal/resolvers/index.js';
+import { useControllableState } from '../../../../../internal/useControllableState.js';
+import type { CheckboxProps } from '../../../../../types/checkbox.js';
+import type { InteractionState } from '../../../../../types/pressable.js';
+import type { SurfaceTheme } from '../../../../../types/theme.js';
+import { View } from '../../../../layout/public.js';
+import type { PressableProps } from '../../../../pressable/public.js';
+import { Pressable } from '../../../../pressable/public.js';
+import { useTheme } from '../../../../theme/runtime.js';
+import { Text } from '../../../../typography/public.js';
 
 /*** Renders a controlled or uncontrolled accessible checkbox. */
 export function Checkbox({

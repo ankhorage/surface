@@ -1,8 +1,8 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 
-import { useControllableState } from '../../../../../internal/useControllableState';
-import type { PopoverProps } from '../../../../../types/popover';
+import { useControllableState } from '../../../../../internal/useControllableState.js';
+import type { PopoverProps } from '../../../../../types/popover.js';
 
 /*** Renders the browser-only Popover without loading React Native implementation modules. */
 export function BrowserPopover(props: PopoverProps) {

@@ -5,12 +5,12 @@ import {
   resolveButtonColors,
   resolveControlSize,
   resolveIconSize,
-} from '../../../../internal/resolvers';
-import type { IconButtonProps } from '../../../../types/button';
-import { Icon } from '../../../icon/public';
-import { View } from '../../../layout/public';
-import { Pressable } from '../../../pressable/public';
-import { useTheme } from '../../../theme/runtime';
+} from '../../../../internal/resolvers/index.js';
+import type { IconButtonProps } from '../../../../types/button.js';
+import { Icon } from '../../../icon/public.js';
+import { View } from '../../../layout/public.js';
+import { Pressable } from '../../../pressable/public.js';
+import { useTheme } from '../../../theme/runtime.js';
 
 /*** Renders a compact accessible icon-only action control. */
 export function IconButton({

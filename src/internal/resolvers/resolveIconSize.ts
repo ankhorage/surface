@@ -1,6 +1,6 @@
-import type { ControlSize } from '../../types/control';
-import type { SurfaceTheme } from '../../types/theme';
-import { resolveControlSize } from './resolveControlSize';
+import type { ControlSize } from '../../types/control.js';
+import type { SurfaceTheme } from '../../types/theme.js';
+import { resolveControlSize } from './resolveControlSize.js';
 
 export function resolveIconSize(theme: SurfaceTheme, size: ControlSize = 'm'): number {
   return resolveControlSize(theme, size).iconSize;

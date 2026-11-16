@@ -1,4 +1,4 @@
-import type { AccordionMode } from '../../../types/accordion';
+import type { AccordionMode } from '../../../types/accordion.js';
 
 /*** Resolves the next immutable set of open accordion item values. */
 export function resolveAccordionToggle({

@@ -2,11 +2,11 @@ export type {
   BottomSheetContentMode,
   BottomSheetController,
   BottomSheetPresentOptions,
-} from '../../types/bottomSheet';
-export { BottomSheetFlatList } from './BottomSheetFlatList';
-export { BottomSheetProvider } from './BottomSheetProvider';
-export { BottomSheetScrollView } from './BottomSheetScrollView';
-export { BottomSheetSectionList } from './BottomSheetSectionList';
-export { BottomSheetView } from './BottomSheetView';
-export { BottomSheetVirtualizedList } from './BottomSheetVirtualizedList';
-export { useBottomSheet } from './useBottomSheet';
+} from '../../types/bottomSheet.js';
+export { BottomSheetFlatList } from './BottomSheetFlatList.js';
+export { BottomSheetProvider } from './BottomSheetProvider.js';
+export { BottomSheetScrollView } from './BottomSheetScrollView.js';
+export { BottomSheetSectionList } from './BottomSheetSectionList.js';
+export { BottomSheetView } from './BottomSheetView.js';
+export { BottomSheetVirtualizedList } from './BottomSheetVirtualizedList.js';
+export { useBottomSheet } from './useBottomSheet.js';

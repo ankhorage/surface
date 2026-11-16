@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, type ViewStyle } from 'react-native';
 
-import type { AccordionContentProps } from '../../../../types/accordion';
-import { AccordionItemContext } from './AccordionItemContext';
+import type { AccordionContentProps } from '../../../../types/accordion.js';
+import { AccordionItemContext } from './AccordionItemContext.js';
 
 /*** Renders an accordion item's content when expanded or force-mounted. */
 export function AccordionContent({

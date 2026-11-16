@@ -1,7 +1,7 @@
 import type { TextStyle } from 'react-native';
 
-import type { FontWeight, SurfaceTheme } from '../../types/theme';
-import type { TextVariant, TextWeight } from '../../types/typography';
+import type { FontWeight, SurfaceTheme } from '../../types/theme.js';
+import type { TextVariant, TextWeight } from '../../types/typography.js';
 
 interface VariantStyle {
   fontSize: number;

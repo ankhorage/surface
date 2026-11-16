@@ -1,7 +1,7 @@
 import type React from 'react';
 
-import type { InteractionPolicy } from './interactionPolicy';
-import type { PopoverAnchorRenderProps } from './popover';
+import type { InteractionPolicy } from './interactionPolicy.js';
+import type { PopoverAnchorRenderProps } from './popover.js';
 
 export type PopoverMenuActionIntent = 'default' | 'danger';
 

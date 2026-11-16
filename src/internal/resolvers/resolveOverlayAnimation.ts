@@ -1,4 +1,4 @@
-import type { OverlayLayer } from './resolveOverlayZIndex';
+import type { OverlayLayer } from './resolveOverlayZIndex.js';
 
 export interface OverlayAnimationValues {
   enterDuration: number;

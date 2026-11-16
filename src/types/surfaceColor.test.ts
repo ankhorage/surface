@@ -12,7 +12,7 @@ describe('surface color type ownership', () => {
     const indexSource = readFileSync(new URL('../index.ts', import.meta.url), 'utf8');
     expect(SURFACE_COLORS).toContain(color);
     expect(SURFACE_EMPHASES).toContain(emphasis);
-    expect(indexSource).toContain("from './constants/surfaceColor';");
-    expect(indexSource).toContain("from './types/surfaceColor';");
+    expect(indexSource).toContain("from './constants/surfaceColor.js';");
+    expect(indexSource).toContain("from './types/surfaceColor.js';");
   });
 });

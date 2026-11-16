@@ -1,7 +1,7 @@
 import { use } from 'react';
 
-import type { ToastController } from '../../../../types/toast';
-import { ToastContext } from '../../composition/ToastContext';
+import type { ToastController } from '../../../../types/toast.js';
+import { ToastContext } from '../../composition/ToastContext.js';
 
 /*** Returns the toast controller installed by ToastProvider. */
 export function useToast(): ToastController {

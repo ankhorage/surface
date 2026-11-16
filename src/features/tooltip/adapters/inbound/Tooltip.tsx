@@ -1,12 +1,12 @@
 import React from 'react';
 import { Platform, Pressable, View } from 'react-native';
 
-import type { TooltipProps } from '../../../../types/tooltip';
-import { Popover } from '../../../popover/public';
-import { Surface } from '../../../surface/public';
-import { useTheme } from '../../../theme/runtime';
-import { Text } from '../../../typography/public';
-import { useTooltipVisibility } from '../../composition/useTooltipVisibility';
+import type { TooltipProps } from '../../../../types/tooltip.js';
+import { Popover } from '../../../popover/public.js';
+import { Surface } from '../../../surface/public.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { Text } from '../../../typography/public.js';
+import { useTooltipVisibility } from '../../composition/useTooltipVisibility.js';
 
 /*** Presents delayed hover/focus help through the shared Popover foundation. */
 export function Tooltip({
