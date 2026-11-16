@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.12
+
+### Patch Changes
+
+- da53413: Resolve Metro platform exports from the published JavaScript artifacts.
+
 ## 9.5.11
 
 ### Patch Changes
