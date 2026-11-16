@@ -34,8 +34,8 @@ const capabilitiesExport = {
 
 const authoringControlsExport = {
   './authoring-controls': {
-    'react-native': './src/features/authoring/public.ts',
-    browser: './src/features/authoring/browser.ts',
+    'react-native': './dist/features/authoring/public.js',
+    browser: './dist/features/authoring/browser.js',
     default: './dist/features/authoring/public.js',
     import: './dist/features/authoring/public.js',
     types: './dist/features/authoring/public.d.ts',
@@ -153,15 +153,15 @@ describe('public package metadata contract', () => {
     expect(packageJson.files).toEqual(['dist', 'src', 'README.md', 'CHANGELOG.md', 'LICENSE']);
     expect(packageJson.exports).toEqual({
       '.': {
-        'react-native': './src/index.ts',
-        browser: './src/index.ts',
+        'react-native': './dist/index.js',
+        browser: './dist/index.js',
         default: './dist/index.js',
         import: './dist/index.js',
         types: './dist/index.d.ts',
       },
       './bottom-sheet': {
-        'react-native': './src/features/bottom-sheet/public.ts',
-        browser: './src/features/bottom-sheet/public.ts',
+        'react-native': './dist/features/bottom-sheet/public.js',
+        browser: './dist/features/bottom-sheet/public.js',
         default: './dist/features/bottom-sheet/public.js',
         import: './dist/features/bottom-sheet/public.js',
         types: './dist/features/bottom-sheet/public.d.ts',
@@ -173,18 +173,18 @@ describe('public package metadata contract', () => {
       },
       ...authoringControlsExport,
       './color': {
-        bun: './src/constants/surfaceColor.ts',
-        'react-native': './src/constants/surfaceColor.ts',
-        browser: './src/constants/surfaceColor.ts',
+        bun: './dist/constants/surfaceColor.js',
+        'react-native': './dist/constants/surfaceColor.js',
+        browser: './dist/constants/surfaceColor.js',
         default: './dist/constants/surfaceColor.js',
         import: './dist/constants/surfaceColor.js',
         types: './dist/constants/surfaceColor.d.ts',
       },
       ...capabilitiesExport,
       './theme': {
-        bun: './src/features/theme/public.ts',
-        'react-native': './src/features/theme/public.ts',
-        browser: './src/features/theme/public.ts',
+        bun: './dist/features/theme/public.js',
+        'react-native': './dist/features/theme/public.js',
+        browser: './dist/features/theme/public.js',
         default: './dist/features/theme/public.js',
         import: './dist/features/theme/public.js',
         types: './dist/features/theme/public.d.ts',

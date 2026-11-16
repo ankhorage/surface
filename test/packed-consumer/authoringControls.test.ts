@@ -34,7 +34,11 @@ test('packed authoring-controls consumer typechecks, bundles, and mounts the bro
 
 /*** Packs the current checkout so the consumer cannot reach source files directly. */
 async function packSurface(destination: string): Promise<void> {
-  await runBun(packageRoot, ['pm', 'pack', '--destination', destination], destination);
+  await runBun(
+    packageRoot,
+    ['pm', 'pack', '--ignore-scripts', '--quiet', '--destination', destination],
+    destination,
+  );
 }
 
 /*** Resolves the single package tarball created by Bun pack. */

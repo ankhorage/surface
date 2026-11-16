@@ -25,7 +25,15 @@ test('packed theme imports through Node ESM, NodeNext, and Bun', async () => {
 
 /*** Pack the checkout so every consumer proof resolves the published package shape. */
 async function packSurface(destination: string): Promise<void> {
-  await run(packageRoot, ['bun', 'pm', 'pack', '--destination', destination]);
+  await run(packageRoot, [
+    'bun',
+    'pm',
+    'pack',
+    '--ignore-scripts',
+    '--quiet',
+    '--destination',
+    destination,
+  ]);
 }
 
 /*** Resolve the one packed package artifact produced for the isolated consumer. */

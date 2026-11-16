@@ -58,15 +58,15 @@
   ],
   "exports": {
     ".": {
-      "react-native": "./src/index.ts",
-      "browser": "./src/index.ts",
+      "react-native": "./dist/index.js",
+      "browser": "./dist/index.js",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
     "./bottom-sheet": {
-      "react-native": "./src/features/bottom-sheet/public.ts",
-      "browser": "./src/features/bottom-sheet/public.ts",
+      "react-native": "./dist/features/bottom-sheet/public.js",
+      "browser": "./dist/features/bottom-sheet/public.js",
       "types": "./dist/features/bottom-sheet/public.d.ts",
       "import": "./dist/features/bottom-sheet/public.js",
       "default": "./dist/features/bottom-sheet/public.js"
@@ -77,16 +77,16 @@
       "default": "./dist/features/popover/browser.js"
     },
     "./authoring-controls": {
-      "react-native": "./src/features/authoring/public.ts",
-      "browser": "./src/features/authoring/browser.ts",
+      "react-native": "./dist/features/authoring/public.js",
+      "browser": "./dist/features/authoring/browser.js",
       "types": "./dist/features/authoring/public.d.ts",
       "import": "./dist/features/authoring/public.js",
       "default": "./dist/features/authoring/public.js"
     },
     "./color": {
-      "bun": "./src/constants/surfaceColor.ts",
-      "react-native": "./src/constants/surfaceColor.ts",
-      "browser": "./src/constants/surfaceColor.ts",
+      "bun": "./dist/constants/surfaceColor.js",
+      "react-native": "./dist/constants/surfaceColor.js",
+      "browser": "./dist/constants/surfaceColor.js",
       "types": "./dist/constants/surfaceColor.d.ts",
       "import": "./dist/constants/surfaceColor.js",
       "default": "./dist/constants/surfaceColor.js"
@@ -97,9 +97,9 @@
       "default": "./dist/capabilities/index.js"
     },
     "./theme": {
-      "bun": "./src/features/theme/public.ts",
-      "react-native": "./src/features/theme/public.ts",
-      "browser": "./src/features/theme/public.ts",
+      "bun": "./dist/features/theme/public.js",
+      "react-native": "./dist/features/theme/public.js",
+      "browser": "./dist/features/theme/public.js",
       "types": "./dist/features/theme/public.d.ts",
       "import": "./dist/features/theme/public.js",
       "default": "./dist/features/theme/public.js"
@@ -123,7 +123,7 @@
     "test": "bun test src ./test/browser/authoringControls.ts",
     "test:browser-authoring-controls": "bun run build && bun test ./test/browser/authoringControls.ts",
     "test:browser": "bun run build && node --check dist/features/popover/adapters/inbound/browser/BrowserPopover.js && bun test ./test/browser/browserPopover.ts",
-    "test:packed-consumer": "bun test ./test/packed-consumer",
+    "test:packed-consumer": "bun run build && bun test ./test/packed-consumer",
     "typecheck": "bun x tsc --noEmit -p tsconfig.json",
     "version-packages": "ankhorage-changeset version"
   },
