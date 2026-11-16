@@ -19,10 +19,10 @@ import type {
   SurfaceSemantics,
   SurfaceTheme,
   ThemeSemantics,
-} from '../../../types/theme';
-import { SURFACE_COLOR_POLICY } from '../constants';
-import { createSurfaceColorDiagnosticCollector } from './createSurfaceColorDiagnosticCollector';
-import { resolveInverseSurface } from './resolveInverseSurface';
+} from '../../../types/theme.js';
+import { SURFACE_COLOR_POLICY } from '../constants.js';
+import { createSurfaceColorDiagnosticCollector } from './createSurfaceColorDiagnosticCollector.js';
+import { resolveInverseSurface } from './resolveInverseSurface.js';
 
 type Collector = ReturnType<typeof createSurfaceColorDiagnosticCollector>;
 

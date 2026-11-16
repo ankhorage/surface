@@ -1,6 +1,6 @@
 import type { ThemeTypographyHeadingOverrides } from '@ankhorage/contracts';
 
-import type { ThemeTokens } from '../../../types/theme';
+import type { ThemeTokens } from '../../../types/theme.js';
 
 type HeadingTokens = ThemeTokens['typography']['headings'];
 type HeadingToken = HeadingTokens[1];

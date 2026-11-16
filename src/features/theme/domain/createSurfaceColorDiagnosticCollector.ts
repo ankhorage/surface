@@ -14,7 +14,7 @@ import {
 import type {
   SurfaceColorSelectionDiagnostic,
   SurfaceContrastDiagnostic,
-} from '../../../types/theme';
+} from '../../../types/theme.js';
 
 /** Collect deterministic Color Theory evidence while Surface resolves semantic colors. */
 export function createSurfaceColorDiagnosticCollector() {

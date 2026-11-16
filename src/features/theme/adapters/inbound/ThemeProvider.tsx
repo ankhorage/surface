@@ -2,12 +2,12 @@ import type { ThemeConfig } from '@ankhorage/contracts';
 import { deepMerge } from '@ankhorage/utility/object';
 import { useMemo, useState } from 'react';
 
-import { ResponsiveProvider } from '../../../../core/responsive/ResponsiveProvider';
-import { OverlayProvider } from '../../../../internal/overlay/OverlayProvider';
-import type { ThemeProviderProps, ThemeRuntime } from '../../../../types/theme';
-import { useFontRuntime } from '../../../font/adapters/inbound/useFontRuntime';
-import { createTheme } from '../../application/use-cases/createTheme';
-import { ThemeRuntimeContext } from './ThemeRuntimeContext';
+import { ResponsiveProvider } from '../../../../core/responsive/ResponsiveProvider.js';
+import { OverlayProvider } from '../../../../internal/overlay/OverlayProvider.js';
+import type { ThemeProviderProps, ThemeRuntime } from '../../../../types/theme.js';
+import { useFontRuntime } from '../../../font/adapters/inbound/useFontRuntime.js';
+import { createTheme } from '../../application/use-cases/createTheme.js';
+import { ThemeRuntimeContext } from './ThemeRuntimeContext.js';
 
 /*** Install the app-level Surface theme together with global responsive and overlay runtime. */
 export function ThemeProvider({

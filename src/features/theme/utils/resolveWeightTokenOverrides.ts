@@ -1,4 +1,4 @@
-import type { FontWeight } from '../../../types/theme';
+import type { FontWeight } from '../../../types/theme.js';
 
 const WEIGHT_TOKEN_KEYS = new Set<string>([
   'thin',

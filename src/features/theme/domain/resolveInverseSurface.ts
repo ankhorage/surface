@@ -4,9 +4,9 @@ import type {
   SurfaceContrastDiagnostic,
   SurfaceSemantics,
   SurfaceTheme,
-} from '../../../types/theme';
-import { SURFACE_COLOR_POLICY } from '../constants';
-import type { createSurfaceColorDiagnosticCollector } from './createSurfaceColorDiagnosticCollector';
+} from '../../../types/theme.js';
+import { SURFACE_COLOR_POLICY } from '../constants.js';
+import type { createSurfaceColorDiagnosticCollector } from './createSurfaceColorDiagnosticCollector.js';
 
 type Collector = ReturnType<typeof createSurfaceColorDiagnosticCollector>;
 

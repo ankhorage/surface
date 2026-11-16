@@ -13,8 +13,8 @@ import type {
   NeutralSemantics,
   SurfaceContrastDiagnostic,
   SurfaceSemantics,
-} from '../../../types/theme';
-import { SURFACE_COLOR_POLICY } from '../constants';
+} from '../../../types/theme.js';
+import { SURFACE_COLOR_POLICY } from '../constants.js';
 
 type ResolvedSemanticColors = Record<SemanticColorToken, HexColor>;
 
