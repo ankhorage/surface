@@ -17,7 +17,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.5.14",
+      "value": "v9.5.15",
       "color": "cb3837"
     },
     {
@@ -779,6 +779,12 @@
       "exports": [
         "Checkbox"
       ]
+    },
+    {
+      "path": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
     },
     {
       "path": "src/features/form/checkbox/public.ts",
@@ -34734,6 +34740,39 @@
       }
     },
     {
+      "name": "ControlledCheckbox",
+      "description": "Exercises the public checkbox boundary through RN Web's SSR and hydrated DOM adapters.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "line": 19,
+        "column": 1
+      }
+    },
+    {
+      "name": "installBrowserGlobals",
+      "description": "Installs the browser globals required by React DOM hydration.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "line": 76,
+        "column": 1
+      }
+    },
+    {
+      "name": "removeBrowserGlobals",
+      "description": "Removes the browser globals installed for isolated React DOM hydration.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "line": 89,
+        "column": 1
+      }
+    },
+    {
       "name": "Field",
       "description": "Composes a control with its label and helper or error message.",
       "see": [],
@@ -35818,7 +35857,62 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "line": 71,
+        "line": 69,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveCheckboxSpaceKeyHandler",
+      "description": "Provides the ARIA checkbox Space-key behavior absent from React Native Web Pressable.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 80,
+        "column": 1
+      }
+    },
+    {
+      "name": "onKeyDown",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 87,
+        "column": 9
+      }
+    },
+    {
+      "name": "resolvePressableChildren",
+      "description": "Resolves static or stateful content from the native Pressable interaction state.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 96,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveFocusHandler",
+      "description": "Resolves a web-only focus handler while preserving native focus behavior.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 109,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolvePressableStyle",
+      "description": "Resolves token-aware styles from the native Pressable interaction state.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
+        "line": 119,
         "column": 1
       }
     },
@@ -35829,7 +35923,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "line": 82,
+        "line": 135,
         "column": 1
       }
     },
@@ -43940,15 +44034,39 @@
         "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {
+        "fromSymbol": "Pressable",
+        "toSymbol": "resolvePressableStyle",
+        "callExpression": "resolvePressableStyle",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
         "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
         "toSymbol": "setFocused",
         "callExpression": "setFocused",
         "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {
+        "fromSymbol": "Pressable",
+        "toSymbol": "resolveFocusHandler",
+        "callExpression": "resolveFocusHandler",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
         "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
         "toSymbol": "setHovered",
         "callExpression": "setHovered",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toSymbol": "resolveCheckboxSpaceKeyHandler",
+        "callExpression": "resolveCheckboxSpaceKeyHandler",
+        "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
+      },
+      {
+        "fromSymbol": "Pressable",
+        "toSymbol": "resolvePressableChildren",
+        "callExpression": "resolvePressableChildren",
         "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {
@@ -43959,14 +44077,14 @@
       },
       {
         "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "toSymbol": "resolveFocusRingStyles",
-        "callExpression": "resolveFocusRingStyles",
+        "toSymbol": "children",
+        "callExpression": "children",
         "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {
         "fromSymbol": "src/features/pressable/adapters/inbound/Pressable.tsx",
-        "toSymbol": "children",
-        "callExpression": "children",
+        "toSymbol": "resolveFocusRingStyles",
+        "callExpression": "resolveFocusRingStyles",
         "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {
@@ -44538,6 +44656,66 @@
         "toSymbol": "resolveCheckboxIndicatorStyle",
         "callExpression": "resolveCheckboxIndicatorStyle",
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
+      },
+      {
+        "fromSymbol": "ControlledCheckbox",
+        "toSymbol": "useState",
+        "callExpression": "useState",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "renderToString",
+        "callExpression": "renderToString",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "installBrowserGlobals",
+        "callExpression": "installBrowserGlobals",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "hydrateRoot",
+        "callExpression": "hydrateRoot",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "act",
+        "callExpression": "act",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "getAttribute",
+        "callExpression": "checkbox?.getAttribute",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "dispatchEvent",
+        "callExpression": "checkbox?.dispatchEvent",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "removeBrowserGlobals",
+        "callExpression": "removeBrowserGlobals",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
       },
       {
         "fromSymbol": "Field",
@@ -48715,7 +48893,7 @@
       {
         "fromComponent": "Pressable",
         "toComponent": "ReactNativePressable",
-        "jsxElement": "<ReactNativePressable\n      {...pressHandlers}\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole={accessibilityRole}\n      accessibilityState={{ ...accessibilityState, disabled }}\n      disabled={disabled}\n      onBlur={() => setFocused(false)}\n      onFocus={() => {\n        if (isWeb) setFocused(true);\n      }}\n      onHoverIn={isWeb ? () => setHovered(true) : undefined}\n      onHoverOut={isWeb ? () => setHovered(false) : undefined}\n      style={(pressableState) => {\n        const state = resolveInteractionState(pressableState, hovered, focused, disabled);\n        return [\n          resolvedViewStyles,\n          resolveFocusRingStyles(theme.semantics.border.focus, state.focused, isWeb),\n          style,\n        ];\n      }}\n      testID={testID}\n    >",
+        "jsxElement": "<ReactNativePressable\n      {...pressHandlers}\n      accessibilityLabel={accessibilityLabel}\n      accessibilityRole={accessibilityRole}\n      accessibilityState={{ ...accessibilityState, disabled }}\n      aria-checked={accessibilityState?.checked}\n      disabled={disabled}\n      onBlur={() => setFocused(false)}\n      onFocus={resolveFocusHandler(isWeb, setFocused)}\n      onHoverIn={isWeb ? () => setHovered(true) : undefined}\n      onHoverOut={isWeb ? () => setHovered(false) : undefined}\n      onKeyDown={resolveCheckboxSpaceKeyHandler(accessibilityRole, isWeb, pressHandlers.onPress)}\n      style={pressableStyle}\n      testID={testID}\n    >",
         "sourcePath": "src/features/pressable/adapters/inbound/Pressable.tsx"
       },
       {

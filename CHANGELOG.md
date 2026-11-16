@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.15
+
+### Patch Changes
+
+- 59bb7ad: Fix React Native Web checkbox checked state in the browser accessibility tree.
+
 ## 9.5.14
 
 ### Patch Changes
