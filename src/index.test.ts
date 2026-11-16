@@ -210,14 +210,12 @@ describe('native peer compatibility contract', () => {
     expect(packageJson.peerDependencies['@react-native-vector-icons/fontawesome']).toBe(
       '^13.1.4 || 14.0.0',
     );
-    for (const packageName of [
-      '@react-native-vector-icons/fontawesome5',
-      '@react-native-vector-icons/fontawesome6',
-      '@react-native-vector-icons/ionicons',
-      '@react-native-vector-icons/material-design-icons',
-    ]) {
-      expect(packageJson.peerDependencies[packageName]).toBe('^13.1.3 || 14.0.0');
-    }
+    expect(packageJson.peerDependencies).toMatchObject({
+      '@react-native-vector-icons/fontawesome5': '^13.1.3 || 14.0.0',
+      '@react-native-vector-icons/fontawesome6': '^13.1.3 || 14.0.0',
+      '@react-native-vector-icons/ionicons': '^13.1.3 || 14.0.0',
+      '@react-native-vector-icons/material-design-icons': '^13.1.3 || 14.0.0',
+    });
     expect(packageJson.devDependencies.react).toBe('19.3.0');
     expect(packageJson.devDependencies['react-native']).toBe('0.87.1');
     expect(packageJson.devDependencies['react-native-safe-area-context']).toBe('~5.10.1');

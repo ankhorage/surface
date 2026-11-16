@@ -49,10 +49,10 @@ for (const vectorIconVersion of supportedVectorIconVersions) {
 
       await assertPackedExportMap(consumerDirectory);
       await assertInstalledVectorIconVersions(consumerDirectory, vectorIconVersion);
+      await runBun(consumerDirectory, ['x', 'expo-doctor@1.17.14']);
       await run(consumerDirectory, ['npm', 'install', '--package-lock-only', '--ignore-scripts']);
       await run(consumerDirectory, ['npm', 'ci', '--ignore-scripts']);
       await run(consumerDirectory, ['npm', 'ls', '--all']);
-      await runBun(consumerDirectory, ['x', 'expo-doctor@1.17.14']);
       await runBun(consumerDirectory, ['x', 'expo', 'export', '--platform', 'web']);
       await runBun(consumerDirectory, [
         'x',
@@ -115,6 +115,7 @@ async function writeConsumer(
     join(directory, 'app.json'),
     `${JSON.stringify({ expo: { name: 'Surface Metro acceptance', slug: 'surface-metro-acceptance' } })}\n`,
   );
+  await writeFile(join(directory, '.gitignore'), '.expo/\n');
   await writeFile(
     join(directory, 'App.tsx'),
     `import { ThemeProvider, View } from '@ankhorage/surface';
@@ -146,7 +147,10 @@ async function assertInstalledVectorIconVersions(
 ): Promise<void> {
   for (const packageName of vectorIconPackageNames) {
     const packageJson = JSON.parse(
-      await readFile(join(directory, 'node_modules', ...packageName.split('/'), 'package.json'), 'utf8'),
+      await readFile(
+        join(directory, 'node_modules', ...packageName.split('/'), 'package.json'),
+        'utf8',
+      ),
     ) as { version: string };
     expect(packageJson.version).toBe(expectedVersion);
   }
@@ -191,12 +195,17 @@ async function runBun(
   arguments_: string[],
   temporaryDirectory = join(directory, '.tmp'),
 ): Promise<void> {
-  await mkdir(temporaryDirectory, { recursive: true });
+  const cacheDirectory = join(directory, '.cache');
+  const homeDirectory = join(directory, '.home');
+  const expoDirectory = join(homeDirectory, '.expo');
+  await prepareProcessPaths(temporaryDirectory, cacheDirectory, expoDirectory);
   const childProcess = Bun.spawn(['bun', ...arguments_], {
     cwd: directory,
     env: {
       ...process.env,
-      BUN_INSTALL_CACHE_DIR: join(directory, '.cache'),
+      BUN_INSTALL_CACHE_DIR: cacheDirectory,
+      EXPO_HOME: expoDirectory,
+      HOME: homeDirectory,
       TMPDIR: temporaryDirectory,
     },
     stderr: 'pipe',
@@ -212,12 +221,15 @@ async function runBun(
 
 /*** Run a non-Bun package graph diagnostic in the isolated consumer. */
 async function run(directory: string, arguments_: string[]): Promise<void> {
+  const cacheDirectory = join(directory, '.npm-cache');
+  const temporaryDirectory = join(directory, '.tmp');
+  await prepareProcessPaths(temporaryDirectory, cacheDirectory, join(directory, '.expo'));
   const childProcess = Bun.spawn(arguments_, {
     cwd: directory,
     env: {
       ...process.env,
-      npm_config_cache: join(directory, '.npm-cache'),
-      TMPDIR: join(directory, '.tmp'),
+      npm_config_cache: cacheDirectory,
+      TMPDIR: temporaryDirectory,
     },
     stderr: 'pipe',
     stdout: 'pipe',
@@ -228,4 +240,17 @@ async function run(directory: string, arguments_: string[]): Promise<void> {
     childProcess.exited,
   ]);
   if (exitCode !== 0) throw new Error(`${arguments_.join(' ')} failed:\n${stdout}${stderr}`);
+}
+
+/*** Create per-consumer temporary and cache paths before any package process starts. */
+async function prepareProcessPaths(
+  temporaryDirectory: string,
+  cacheDirectory: string,
+  expoDirectory: string,
+): Promise<void> {
+  await Promise.all([
+    mkdir(temporaryDirectory, { recursive: true }),
+    mkdir(cacheDirectory, { recursive: true }),
+    mkdir(expoDirectory, { recursive: true }),
+  ]);
 }
