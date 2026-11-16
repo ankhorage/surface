@@ -42,6 +42,7 @@ export function Pressable({
       accessibilityLabel={accessibilityLabel}
       accessibilityRole={accessibilityRole}
       accessibilityState={{ ...accessibilityState, disabled }}
+      aria-checked={accessibilityState?.checked}
       disabled={disabled}
       onBlur={() => setFocused(false)}
       onFocus={() => {
