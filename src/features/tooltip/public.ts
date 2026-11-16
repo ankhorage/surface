@@ -1,2 +1,2 @@
-export type { TooltipProps } from '../../types/tooltip';
-export { Tooltip } from './adapters/inbound/Tooltip';
+export type { TooltipProps } from '../../types/tooltip.js';
+export { Tooltip } from './adapters/inbound/Tooltip.js';

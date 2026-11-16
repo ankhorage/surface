@@ -1,4 +1,4 @@
-import type { IconProvider } from '../../types/icon';
+import type { IconProvider } from '../../types/icon.js';
 
 export const SUPPORTED_ICON_PROVIDERS = [
   'Ionicons',

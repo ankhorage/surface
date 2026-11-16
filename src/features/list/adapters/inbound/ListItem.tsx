@@ -1,11 +1,11 @@
 import React from 'react';
 
-import type { ListItemProps } from '../../../../types/list';
-import type { SurfaceTheme } from '../../../../types/theme';
-import { View } from '../../../layout/public';
-import { Pressable } from '../../../pressable/public';
-import { useTheme } from '../../../theme/runtime';
-import { Text } from '../../../typography/public';
+import type { ListItemProps } from '../../../../types/list.js';
+import type { SurfaceTheme } from '../../../../types/theme.js';
+import { View } from '../../../layout/public.js';
+import { Pressable } from '../../../pressable/public.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { Text } from '../../../typography/public.js';
 
 /*** Renders a static or interactive list item with shared row geometry and interaction states. */
 export function ListItem(props: ListItemProps) {

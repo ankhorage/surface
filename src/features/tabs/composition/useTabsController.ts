@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { useControllableState } from '../../../internal/useControllableState';
-import type { TabRegistration, TabsContextValue, TabsProps } from '../../../types/tabs';
-import { resolveTabElementId } from '../utils/resolveTabElementId';
+import { useControllableState } from '../../../internal/useControllableState.js';
+import type { TabRegistration, TabsContextValue, TabsProps } from '../../../types/tabs.js';
+import { resolveTabElementId } from '../utils/resolveTabElementId.js';
 
 /*** Owns controlled state, registration, focus state, and ids for one Tabs instance. */
 export function useTabsController({

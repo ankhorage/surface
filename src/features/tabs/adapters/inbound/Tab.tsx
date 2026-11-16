@@ -1,12 +1,12 @@
 import React from 'react';
 import { Pressable, type ViewStyle } from 'react-native';
 
-import type { TabProps } from '../../../../types/tabs';
-import { View } from '../../../layout/public';
-import { useTheme } from '../../../theme/runtime';
-import { Text } from '../../../typography/public';
-import { useTabRegistration } from '../../composition/useTabRegistration';
-import { useTabsContext } from '../../composition/useTabsContext';
+import type { TabProps } from '../../../../types/tabs.js';
+import { View } from '../../../layout/public.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { Text } from '../../../typography/public.js';
+import { useTabRegistration } from '../../composition/useTabRegistration.js';
+import { useTabsContext } from '../../composition/useTabsContext.js';
 
 /*** Renders one accessible selectable tab inside a Tabs context. */
 export function Tab({

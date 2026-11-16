@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { useFocusManager } from '../../../../internal/focus/useFocusManager';
-import type { TabListProps, TabNavigationKey } from '../../../../types/tabs';
-import { View } from '../../../layout/public';
-import { useTabsContext } from '../../composition/useTabsContext';
-import { resolveNextTabValue } from '../../utils/resolveNextTabValue';
-import { wrapTabListChildren } from '../../utils/wrapTabListChildren';
+import { useFocusManager } from '../../../../internal/focus/useFocusManager.js';
+import type { TabListProps, TabNavigationKey } from '../../../../types/tabs.js';
+import { View } from '../../../layout/public.js';
+import { useTabsContext } from '../../composition/useTabsContext.js';
+import { resolveNextTabValue } from '../../utils/resolveNextTabValue.js';
+import { wrapTabListChildren } from '../../utils/wrapTabListChildren.js';
 
 const navigationKeys: readonly string[] = [
   'ArrowLeft',

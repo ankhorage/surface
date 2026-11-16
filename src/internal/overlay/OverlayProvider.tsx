@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, type ViewStyle } from 'react-native';
 
-import { resolvePointerEvents } from '../resolvePointerEvents';
+import { resolvePointerEvents } from '../resolvePointerEvents.js';
 import {
   createOverlayEntry,
   type OverlayDescriptor,
@@ -9,7 +9,7 @@ import {
   OverlayStackActionsContext,
   OverlayStackContext,
   sortOverlayEntries,
-} from './useOverlayStack';
+} from './useOverlayStack.js';
 
 const boxNonePointerEvents = resolvePointerEvents('box-none');
 const styles = StyleSheet.create({

@@ -8,9 +8,9 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import type { BottomSheetController, BottomSheetPresentOptions } from '../../types/bottomSheet';
-import { Surface } from '../surface/public';
-import { BottomSheetContext } from './BottomSheetContext';
+import type { BottomSheetController, BottomSheetPresentOptions } from '../../types/bottomSheet.js';
+import { Surface } from '../surface/public.js';
+import { BottomSheetContext } from './BottomSheetContext.js';
 
 /*** Installs the shared bottom-sheet controller with a React Native Web modal host. */
 export function BottomSheetProvider({ children }: { children: React.ReactNode }) {

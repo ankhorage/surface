@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text as ReactNativeText } from 'react-native';
 
-import { resolveTextColor, resolveTextStyles } from '../../../../internal/resolvers';
-import type { TextProps } from '../../../../types/typography';
-import { useTheme } from '../../../theme/runtime';
+import { resolveTextColor, resolveTextStyles } from '../../../../internal/resolvers/index.js';
+import type { TextProps } from '../../../../types/typography.js';
+import { useTheme } from '../../../theme/runtime.js';
 
 /*** Renders body text using Surface semantic typography. */
 export function Text({

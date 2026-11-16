@@ -1,7 +1,7 @@
 import React from 'react';
 import { KeyboardAvoidingView as ReactNativeKeyboardAvoidingView } from 'react-native';
 
-import type { KeyboardAvoidingViewProps } from '../../../../types/keyboard-avoiding-view';
+import type { KeyboardAvoidingViewProps } from '../../../../types/keyboard-avoiding-view.js';
 
 /*** Preserves React Native keyboard avoidance behind the stable Surface feature boundary. */
 export function KeyboardAvoidingView(props: KeyboardAvoidingViewProps) {

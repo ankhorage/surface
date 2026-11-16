@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View } from '../../layout/public';
+import { View } from '../../layout/public.js';
 
 /*** Wrap direct tab-list children with equal flex only when fill distribution is enabled. */
 export function wrapTabListChildren(children: React.ReactNode, fill: boolean): React.ReactNode {

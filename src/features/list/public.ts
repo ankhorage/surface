@@ -1,3 +1,3 @@
-export type { ListItemProps, ListProps } from '../../types/list';
-export { List } from './adapters/inbound/List';
-export { ListItem } from './adapters/inbound/ListItem';
+export type { ListItemProps, ListProps } from '../../types/list.js';
+export { List } from './adapters/inbound/List.js';
+export { ListItem } from './adapters/inbound/ListItem.js';

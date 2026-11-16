@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import type { FontRuntime } from '../../../../types/font';
+import type { FontRuntime } from '../../../../types/font.js';
 
 const fallbackRuntime: FontRuntime = {
   fontsLoaded: true,

@@ -5,6 +5,6 @@ export type {
   IconSource,
   IconVariant,
   SvgIconSource,
-} from '../../types/icon';
-export { Icon } from './adapters/inbound/Icon';
-export { SUPPORTED_ICON_PROVIDERS } from './constants';
+} from '../../types/icon.js';
+export { Icon } from './adapters/inbound/Icon.js';
+export { SUPPORTED_ICON_PROVIDERS } from './constants.js';

@@ -10,7 +10,7 @@ const indexSource = readFileSync(new URL('../index.ts', import.meta.url), 'utf8'
 describe('InteractionPolicy ownership', () => {
   it('exports the policy types from the public root', () => {
     expect(indexSource).toContain(
-      "export type { InteractionPolicy, InteractionPolicyProps } from './types/interactionPolicy';",
+      "export type { InteractionPolicy, InteractionPolicyProps } from './types/interactionPolicy.js';",
     );
   });
 

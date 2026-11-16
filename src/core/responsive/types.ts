@@ -1,4 +1,4 @@
-import type { BREAKPOINTS } from './breakpoints';
+import type { BREAKPOINTS } from './breakpoints.js';
 
 export type Breakpoint = keyof typeof BREAKPOINTS;
 

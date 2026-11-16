@@ -1,5 +1,5 @@
-import type { SurfaceColor, SurfaceEmphasis } from '../../types/surfaceColor';
-import type { FieldState } from './resolveFieldState';
+import type { SurfaceColor, SurfaceEmphasis } from '../../types/surfaceColor.js';
+import type { FieldState } from './resolveFieldState.js';
 
 export interface ResolvedFieldPresentation {
   helperColor?: Extract<SurfaceColor, 'error'>;

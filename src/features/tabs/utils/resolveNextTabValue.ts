@@ -1,4 +1,4 @@
-import type { TabNavigationKey, TabRegistration } from '../../../types/tabs';
+import type { TabNavigationKey, TabRegistration } from '../../../types/tabs.js';
 
 /*** Resolves the next enabled tab for keyboard focus navigation. */
 export function resolveNextTabValue(

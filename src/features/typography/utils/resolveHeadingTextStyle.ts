@@ -1,10 +1,10 @@
 import type { TextStyle } from 'react-native';
 
-import { resolveTextColor } from '../../../internal/resolvers/resolveTextColor';
-import { resolveTextStyles } from '../../../internal/resolvers/resolveTextStyles';
-import type { SurfaceColor, SurfaceEmphasis } from '../../../types/surfaceColor';
-import type { SurfaceTheme } from '../../../types/theme';
-import type { HeadingLevel, HeadingProps } from '../../../types/typography';
+import { resolveTextColor } from '../../../internal/resolvers/resolveTextColor.js';
+import { resolveTextStyles } from '../../../internal/resolvers/resolveTextStyles.js';
+import type { SurfaceColor, SurfaceEmphasis } from '../../../types/surfaceColor.js';
+import type { SurfaceTheme } from '../../../types/theme.js';
+import type { HeadingLevel, HeadingProps } from '../../../types/typography.js';
 
 /*** Resolves theme-driven typography styles for one heading level. */
 export function resolveHeadingTextStyle(

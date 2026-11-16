@@ -4,17 +4,17 @@ import type { ViewStyle } from 'react-native';
 import {
   resolveSelectionControlInteractionState,
   resolveSelectionControlNextChecked,
-} from '../../../../../internal/resolvers';
-import { useControllableState } from '../../../../../internal/useControllableState';
-import type { InteractionState } from '../../../../../types/pressable';
-import type { RadioProps } from '../../../../../types/radio';
-import type { SurfaceTheme } from '../../../../../types/theme';
-import { View } from '../../../../layout/public';
-import type { PressableProps } from '../../../../pressable/public';
-import { Pressable } from '../../../../pressable/public';
-import { useTheme } from '../../../../theme/runtime';
-import { Text } from '../../../../typography/public';
-import { isRadioTextContent } from '../../utils/isRadioTextContent';
+} from '../../../../../internal/resolvers/index.js';
+import { useControllableState } from '../../../../../internal/useControllableState.js';
+import type { InteractionState } from '../../../../../types/pressable.js';
+import type { RadioProps } from '../../../../../types/radio.js';
+import type { SurfaceTheme } from '../../../../../types/theme.js';
+import { View } from '../../../../layout/public.js';
+import type { PressableProps } from '../../../../pressable/public.js';
+import { Pressable } from '../../../../pressable/public.js';
+import { useTheme } from '../../../../theme/runtime.js';
+import { Text } from '../../../../typography/public.js';
+import { isRadioTextContent } from '../../utils/isRadioTextContent.js';
 
 /*** Renders one accessible radio control with text or structured label content. */
 export function Radio({

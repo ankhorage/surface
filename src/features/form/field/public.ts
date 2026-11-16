@@ -1,2 +1,2 @@
-export type { FieldProps } from '../../../types/field';
-export { Field } from './adapters/inbound/Field';
+export type { FieldProps } from '../../../types/field.js';
+export { Field } from './adapters/inbound/Field.js';

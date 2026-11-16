@@ -1,7 +1,7 @@
 import React from 'react';
 
-import type { BottomSheetController } from '../../types/bottomSheet';
-import { BottomSheetContext } from './BottomSheetContext';
+import type { BottomSheetController } from '../../types/bottomSheet.js';
+import { BottomSheetContext } from './BottomSheetContext.js';
 
 /*** Returns the shared bottom-sheet controller installed by BottomSheetProvider. */
 export function useBottomSheet(): BottomSheetController {

@@ -1,4 +1,4 @@
-import type { ControlSize } from '../../types/control';
+import type { ControlSize } from '../../types/control.js';
 
 export interface ResolvedIndicatorSize {
   checkbox: number;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { ToastController, ToastOptions } from '../../../types/toast';
+import type { ToastController, ToastOptions } from '../../../types/toast.js';
 
 /*** Owns the toast queue, dismissal timers, and imperative controller state. */
 export function useToastRuntime(defaultDuration: number) {

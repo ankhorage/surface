@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text as ReactNativeText } from 'react-native';
 
-import type { HeadingProps } from '../../../../types/typography';
-import { useTheme } from '../../../theme/runtime';
-import { resolveHeadingTextStyle } from '../../utils/resolveHeadingTextStyle';
+import type { HeadingProps } from '../../../../types/typography.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { resolveHeadingTextStyle } from '../../utils/resolveHeadingTextStyle.js';
 
 /*** Renders a semantic heading using Surface typography tokens. */
 export function Heading({

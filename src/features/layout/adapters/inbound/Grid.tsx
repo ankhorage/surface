@@ -1,11 +1,11 @@
 import React from 'react';
 import { View as ReactNativeView, type ViewStyle } from 'react-native';
 
-import { resolveResponsive, useResponsiveRuntime } from '../../../../core/responsive';
-import type { GridProps } from '../../../../types/layout';
-import { resolveSpacing } from '../../../../utils/resolveSpacing';
-import { useTheme } from '../../../theme/runtime';
-import { View } from './View';
+import { resolveResponsive, useResponsiveRuntime } from '../../../../core/responsive/index.js';
+import type { GridProps } from '../../../../types/layout.js';
+import { resolveSpacing } from '../../../../utils/resolveSpacing.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { View } from './View.js';
 
 /*** Lays out children in a responsive wrapping grid. */
 export function Grid({

@@ -1,6 +1,6 @@
-import type { SurfaceColor, SurfaceEmphasis } from '../../types/surfaceColor';
-import type { SurfaceTheme } from '../../types/theme';
-import { resolveSurfaceColor } from './resolveSurfaceColor';
+import type { SurfaceColor, SurfaceEmphasis } from '../../types/surfaceColor.js';
+import type { SurfaceTheme } from '../../types/theme.js';
+import { resolveSurfaceColor } from './resolveSurfaceColor.js';
 
 export function resolveTextColor(
   theme: SurfaceTheme,

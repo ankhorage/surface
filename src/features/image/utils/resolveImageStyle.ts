@@ -1,8 +1,8 @@
 import type { ImageStyle } from 'react-native';
 
-import type { ImageProps } from '../../../types/image';
-import type { SurfaceTheme } from '../../../types/theme';
-import { resolveToken } from '../../theme/utils/resolveToken';
+import type { ImageProps } from '../../../types/image.js';
+import type { SurfaceTheme } from '../../../types/theme.js';
+import { resolveToken } from '../../theme/utils/resolveToken.js';
 
 /*** Resolves token-aware dimensions and radius for a Surface image. */
 export function resolveImageStyle(

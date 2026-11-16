@@ -1,10 +1,10 @@
-import { SURFACE_COLORS } from '../../../../constants/surfaceColor';
-import { resolveTextColor } from '../../../../internal/resolvers/resolveTextColor';
-import type { IconProps } from '../../../../types/icon';
-import type { SurfaceColor } from '../../../../types/surfaceColor';
-import { useTheme } from '../../../theme/runtime';
-import { resolveToken } from '../../../theme/utils/resolveToken';
-import { PortableIcon } from './PortableIcon.web';
+import { SURFACE_COLORS } from '../../../../constants/surfaceColor.js';
+import { resolveTextColor } from '../../../../internal/resolvers/resolveTextColor.js';
+import type { IconProps } from '../../../../types/icon.js';
+import type { SurfaceColor } from '../../../../types/surfaceColor.js';
+import { useTheme } from '../../../theme/runtime.js';
+import { resolveToken } from '../../../theme/utils/resolveToken.js';
+import { PortableIcon } from './PortableIcon.web.js';
 
 /*** Renders browser icons through the existing browser-safe portable adapter. */
 export function Icon(props: IconProps) {

@@ -1,4 +1,4 @@
-import type { InteractionState } from '../../types/pressable';
+import type { InteractionState } from '../../types/pressable.js';
 
 export function resolveInteractiveState(input: Partial<InteractionState>): InteractionState {
   return {

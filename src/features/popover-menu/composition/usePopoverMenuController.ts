@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { PopoverMenuAction } from '../../../types/popoverMenu';
+import type { PopoverMenuAction } from '../../../types/popoverMenu.js';
 
 interface PopoverMenuControllerOptions {
   actions: readonly PopoverMenuAction[];

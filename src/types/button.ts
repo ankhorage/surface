@@ -1,9 +1,9 @@
 import type React from 'react';
 
-import type { ControlSize } from './control';
-import type { IconSource } from './icon';
-import type { PressableProps } from './pressable';
-import type { SurfaceColor } from './surfaceColor';
+import type { ControlSize } from './control.js';
+import type { IconSource } from './icon.js';
+import type { PressableProps } from './pressable.js';
+import type { SurfaceColor } from './surfaceColor.js';
 
 export type ButtonIconSpec = IconSource;
 export type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'soft';

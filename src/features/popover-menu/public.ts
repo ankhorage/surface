@@ -2,5 +2,5 @@ export type {
   PopoverMenuAction,
   PopoverMenuActionIntent,
   PopoverMenuProps,
-} from '../../types/popoverMenu';
-export { PopoverMenu } from './adapters/inbound/PopoverMenu';
+} from '../../types/popoverMenu.js';
+export { PopoverMenu } from './adapters/inbound/PopoverMenu.js';

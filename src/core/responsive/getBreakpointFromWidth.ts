@@ -1,5 +1,5 @@
-import { BREAKPOINT_ORDER, BREAKPOINTS } from './breakpoints';
-import type { Breakpoint } from './types';
+import { BREAKPOINT_ORDER, BREAKPOINTS } from './breakpoints.js';
+import type { Breakpoint } from './types.js';
 
 export function getBreakpointFromWidth(width: number): Breakpoint {
   let active: Breakpoint = 'base';

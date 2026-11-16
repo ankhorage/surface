@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable, View } from 'react-native';
 
-import type { AccordionTriggerProps } from '../../../../types/accordion';
-import { AccordionItemContext } from './AccordionItemContext';
+import type { AccordionTriggerProps } from '../../../../types/accordion.js';
+import { AccordionItemContext } from './AccordionItemContext.js';
 
 /*** Renders the accessible button that toggles its owning accordion item. */
 export function AccordionTrigger({

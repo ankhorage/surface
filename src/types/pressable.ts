@@ -1,8 +1,8 @@
 import type React from 'react';
 import type { AccessibilityRole, AccessibilityState, GestureResponderEvent } from 'react-native';
 
-import type { InteractionPolicyProps } from './interactionPolicy';
-import type { ViewProps } from './layout';
+import type { InteractionPolicyProps } from './interactionPolicy.js';
+import type { ViewProps } from './layout.js';
 
 export interface InteractionState {
   pressed: boolean;

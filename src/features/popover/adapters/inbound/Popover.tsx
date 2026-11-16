@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { useControllableState } from '../../../../internal/useControllableState';
-import type { PopoverProps } from '../../../../types/popover';
-import { PopoverOverlay } from './PopoverOverlay';
+import { useControllableState } from '../../../../internal/useControllableState.js';
+import type { PopoverProps } from '../../../../types/popover.js';
+import { PopoverOverlay } from './PopoverOverlay.js';
 
 /*** Renders anchored overlay content through the shared Surface overlay stack. */
 export function Popover(props: PopoverProps) {

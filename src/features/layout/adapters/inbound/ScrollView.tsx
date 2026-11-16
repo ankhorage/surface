@@ -5,10 +5,10 @@ import {
   type ScrollViewProps as ReactNativeScrollViewProps,
 } from 'react-native';
 
-import { useResponsiveRuntime } from '../../../../core/responsive';
-import type { ScrollViewProps } from '../../../../types/layout';
-import { resolveViewStyles } from '../../../../utils/resolveViewStyles';
-import { useTheme } from '../../../theme/runtime';
+import { useResponsiveRuntime } from '../../../../core/responsive/index.js';
+import type { ScrollViewProps } from '../../../../types/layout.js';
+import { resolveViewStyles } from '../../../../utils/resolveViewStyles.js';
+import { useTheme } from '../../../theme/runtime.js';
 
 /*** Renders the token-aware responsive Surface adapter for React Native ScrollView. */
 export function ScrollView(props: ScrollViewProps) {

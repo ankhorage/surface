@@ -1,4 +1,4 @@
-import type { PopoverPlacement } from '../../../types/popover';
+import type { PopoverPlacement } from '../../../types/popover.js';
 
 /*** Resolves a viewport-clamped anchored position for popover content. */
 export function resolvePopoverPosition({

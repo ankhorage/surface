@@ -1,10 +1,10 @@
-import type { ControlSize } from '../../types/control';
-import type { InteractionState } from '../../types/pressable';
-import type { SurfaceColor } from '../../types/surfaceColor';
-import type { SurfaceTheme } from '../../types/theme';
-import { resolveFieldState } from './resolveFieldState';
-import { resolveIndicatorSize } from './resolveIndicatorSize';
-import { resolveSelectionControlColors } from './resolveSelectionControlColors';
+import type { ControlSize } from '../../types/control.js';
+import type { InteractionState } from '../../types/pressable.js';
+import type { SurfaceColor } from '../../types/surfaceColor.js';
+import type { SurfaceTheme } from '../../types/theme.js';
+import { resolveFieldState } from './resolveFieldState.js';
+import { resolveIndicatorSize } from './resolveIndicatorSize.js';
+import { resolveSelectionControlColors } from './resolveSelectionControlColors.js';
 
 interface ResolveSelectionControlInteractionStateInput {
   checked: boolean;

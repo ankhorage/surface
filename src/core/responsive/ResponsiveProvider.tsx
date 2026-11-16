@@ -1,8 +1,8 @@
 import React, { createContext, use, useMemo } from 'react';
 
-import { getBreakpointFromWidth } from './getBreakpointFromWidth';
-import type { ResponsiveRuntime } from './types';
-import { useResponsiveWidth } from './useResponsiveWidth';
+import { getBreakpointFromWidth } from './getBreakpointFromWidth.js';
+import type { ResponsiveRuntime } from './types.js';
+import { useResponsiveWidth } from './useResponsiveWidth.js';
 
 const ResponsiveContext = createContext<ResponsiveRuntime | null>(null);
 

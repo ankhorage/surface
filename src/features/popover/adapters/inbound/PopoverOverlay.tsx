@@ -1,9 +1,9 @@
 import React from 'react';
 import { Pressable, StyleSheet, View, type ViewStyle } from 'react-native';
 
-import { Portal } from '../../../../internal/overlay/Portal';
-import type { PopoverPlacement } from '../../../../types/popover';
-import { usePopoverLayout } from './usePopoverLayout';
+import { Portal } from '../../../../internal/overlay/Portal.js';
+import type { PopoverPlacement } from '../../../../types/popover.js';
+import { usePopoverLayout } from './usePopoverLayout.js';
 
 /*** Renders and positions one mounted popover overlay for an open anchor. */
 export function PopoverOverlay({

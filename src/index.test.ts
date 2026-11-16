@@ -43,36 +43,36 @@ const authoringControlsExport = {
 };
 
 const expectedFeatureRootExports = [
-  "export { AppBar } from './features/app-bar/public';",
-  "export { Badge } from './features/badge/public';",
-  "export { Button, IconButton } from './features/button/public';",
-  "export { Card } from './features/card/public';",
-  "export { Checkbox } from './features/form/checkbox/public';",
-  "export { Field } from './features/form/field/public';",
-  "export { Radio } from './features/form/radio/public';",
-  "export { Switch } from './features/form/switch/public';",
-  "export { TextInput } from './features/form/text-input/public';",
-  "export { Icon, SUPPORTED_ICON_PROVIDERS } from './features/icon/public';",
-  "export { Image } from './features/image/public';",
-  "export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public';",
-  "export { Divider, Grid, ScrollView, View } from './features/layout/public';",
-  "export { List, ListItem } from './features/list/public';",
-  "export { Modal } from './features/modal/public';",
-  "export { PopoverMenu } from './features/popover-menu/public';",
-  "export { Popover } from './features/popover/public';",
-  "export { Pressable } from './features/pressable/public';",
-  "export { Surface } from './features/surface/public';",
-  "export { Tab, TabList, TabPanel, Tabs } from './features/tabs/public';",
-  "export { Tooltip } from './features/tooltip/public';",
-  "export { Toast, ToastProvider, useToast } from './features/toast/public';",
-  "export { Heading, Text } from './features/typography/public';",
+  "export { AppBar } from './features/app-bar/public.js';",
+  "export { Badge } from './features/badge/public.js';",
+  "export { Button, IconButton } from './features/button/public.js';",
+  "export { Card } from './features/card/public.js';",
+  "export { Checkbox } from './features/form/checkbox/public.js';",
+  "export { Field } from './features/form/field/public.js';",
+  "export { Radio } from './features/form/radio/public.js';",
+  "export { Switch } from './features/form/switch/public.js';",
+  "export { TextInput } from './features/form/text-input/public.js';",
+  "export { Icon, SUPPORTED_ICON_PROVIDERS } from './features/icon/public.js';",
+  "export { Image } from './features/image/public.js';",
+  "export { KeyboardAvoidingView } from './features/keyboard-avoiding-view/public.js';",
+  "export { Divider, Grid, ScrollView, View } from './features/layout/public.js';",
+  "export { List, ListItem } from './features/list/public.js';",
+  "export { Modal } from './features/modal/public.js';",
+  "export { PopoverMenu } from './features/popover-menu/public.js';",
+  "export { Popover } from './features/popover/public.js';",
+  "export { Pressable } from './features/pressable/public.js';",
+  "export { Surface } from './features/surface/public.js';",
+  "export { Tab, TabList, TabPanel, Tabs } from './features/tabs/public.js';",
+  "export { Tooltip } from './features/tooltip/public.js';",
+  "export { Toast, ToastProvider, useToast } from './features/toast/public.js';",
+  "export { Heading, Text } from './features/typography/public.js';",
 ] as const;
 
 const expectedCrossCuttingRootExports = [
-  "export type { InteractionPolicy, InteractionPolicyProps } from './types/interactionPolicy';",
-  "export * from './core/responsive';",
-  "export { FontProvider } from './features/font/public';",
-  "export { ThemeProvider, ThemeScope, useTheme } from './features/theme/runtime';",
+  "export type { InteractionPolicy, InteractionPolicyProps } from './types/interactionPolicy.js';",
+  "export * from './core/responsive/index.js';",
+  "export { FontProvider } from './features/font/public.js';",
+  "export { ThemeProvider, ThemeScope, useTheme } from './features/theme/runtime.js';",
 ] as const;
 
 describe('feature-owned root barrel contract', () => {
@@ -104,10 +104,10 @@ describe('feature-owned root barrel contract', () => {
 describe('authoring controls facade contract', () => {
   it('keeps field and pressable on their canonical feature facades for native and browser consumers', () => {
     for (const source of [authoringControlsSource, browserAuthoringControlsSource]) {
-      expect(source).toContain("export type { FieldProps } from '../form/field/public';");
-      expect(source).toContain("export { Field } from '../form/field/public';");
-      expect(source).toContain("export type { PressableProps } from '../pressable/public';");
-      expect(source).toContain("export { Pressable } from '../pressable/public';");
+      expect(source).toContain("export type { FieldProps } from '../form/field/public.js';");
+      expect(source).toContain("export { Field } from '../form/field/public.js';");
+      expect(source).toContain("export type { PressableProps } from '../pressable/public.js';");
+      expect(source).toContain("export { Pressable } from '../pressable/public.js';");
     }
   });
 });
