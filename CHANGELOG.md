@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.14
+
+### Patch Changes
+
+- 5dd5aea: Declare tested Vector Icons 14.0.0 compatibility alongside the supported 13.x peer lines.
+
 ## 9.5.13
 
 ### Patch Changes
