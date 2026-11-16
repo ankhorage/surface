@@ -1,9 +1,9 @@
 import type { ThemeConfig } from '@ankhorage/contracts';
 
-import type { FontWeight, SurfaceTheme } from '../../../../types/theme';
-import { generatePalette } from '../../domain/generatePalette';
-import { projectInvertedTheme } from '../../domain/projectInvertedTheme';
-import { resolveGlobalTokens } from '../../utils/resolveGlobalTokens';
+import type { FontWeight, SurfaceTheme } from '../../../../types/theme.js';
+import { generatePalette } from '../../domain/generatePalette.js';
+import { projectInvertedTheme } from '../../domain/projectInvertedTheme.js';
+import { resolveGlobalTokens } from '../../utils/resolveGlobalTokens.js';
 
 const DEFAULT_CONFIG: ThemeConfig = {
   id: 'default',

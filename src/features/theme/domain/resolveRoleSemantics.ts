@@ -1,7 +1,7 @@
 import type { ColorSwatch, HexColor } from '@ankhorage/color-theory';
 
-import type { RoleSemantics } from '../../../types/theme';
-import { SURFACE_COLOR_POLICY } from '../constants';
+import type { RoleSemantics } from '../../../types/theme.js';
+import { SURFACE_COLOR_POLICY } from '../constants.js';
 
 interface ResolveRoleSemanticsInput {
   base?: HexColor;

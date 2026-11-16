@@ -16,10 +16,10 @@ import type {
   RoleSemantics,
   SurfaceColorDiagnostics,
   ThemeSemantics,
-} from '../../../types/theme';
-import { createSurfaceColorDiagnosticCollector } from './createSurfaceColorDiagnosticCollector';
-import { createSurfaceSemanticPolicy } from './createSurfaceSemanticPolicy';
-import { resolveRoleSemantics } from './resolveRoleSemantics';
+} from '../../../types/theme.js';
+import { createSurfaceColorDiagnosticCollector } from './createSurfaceColorDiagnosticCollector.js';
+import { createSurfaceSemanticPolicy } from './createSurfaceSemanticPolicy.js';
+import { resolveRoleSemantics } from './resolveRoleSemantics.js';
 
 type ResolvedSemanticColors = Record<SemanticColorToken, HexColor>;
 

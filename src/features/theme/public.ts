@@ -14,5 +14,5 @@ export type {
   ThemeMode,
   ThemeSemantics,
   ThemeTokens,
-} from '../../types/theme';
-export { createTheme } from './application/use-cases/createTheme';
+} from '../../types/theme.js';
+export { createTheme } from './application/use-cases/createTheme.js';

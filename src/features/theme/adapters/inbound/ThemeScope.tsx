@@ -1,11 +1,11 @@
 import { deepMerge } from '@ankhorage/utility/object';
 import { useMemo } from 'react';
 
-import type { ThemeRuntime, ThemeScopeProps } from '../../../../types/theme';
-import { useFontRuntime } from '../../../font/adapters/inbound/useFontRuntime';
-import { createTheme } from '../../application/use-cases/createTheme';
-import { ThemeRuntimeContext } from './ThemeRuntimeContext';
-import { useTheme } from './useTheme';
+import type { ThemeRuntime, ThemeScopeProps } from '../../../../types/theme.js';
+import { useFontRuntime } from '../../../font/adapters/inbound/useFontRuntime.js';
+import { createTheme } from '../../application/use-cases/createTheme.js';
+import { ThemeRuntimeContext } from './ThemeRuntimeContext.js';
+import { useTheme } from './useTheme.js';
 
 /*** Apply nested theme, mode, or inherited surface-polarity overrides without remounting providers. */
 export function ThemeScope({ children, themeConfig, mode, inverted }: ThemeScopeProps) {

@@ -7,9 +7,9 @@ import {
 } from '@ankhorage/color-theory';
 import type { ThemeConfig } from '@ankhorage/contracts';
 
-import type { SurfaceColorDiagnostics, ThemeSemantics, ThemeTokens } from '../../../types/theme';
-import { resolveSemanticColors } from './resolveSemanticColors';
-import { resolveSurfaceSemanticModel } from './resolveSurfaceSemanticModel';
+import type { SurfaceColorDiagnostics, ThemeSemantics, ThemeTokens } from '../../../types/theme.js';
+import { resolveSemanticColors } from './resolveSemanticColors.js';
+import { resolveSurfaceSemanticModel } from './resolveSurfaceSemanticModel.js';
 
 export function generatePalette(
   config: ThemeConfig,

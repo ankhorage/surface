@@ -1,4 +1,4 @@
-import type { FontWeight, ThemeTokens } from '../../types/theme';
+import type { FontWeight, ThemeTokens } from '../../types/theme.js';
 
 const EMPTY_FONT_MAP: Record<FontWeight, string | undefined> = {
   '100': undefined,

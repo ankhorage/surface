@@ -1,10 +1,10 @@
 import type { ThemeGlobalTokenOverrides } from '@ankhorage/contracts';
 
-import type { ThemeTokens } from '../../../types/theme';
-import { DEFAULT_TOKENS } from '../constants';
-import { resolveHeadingTokenOverrides } from './resolveHeadingTokenOverrides';
-import { resolveNumericTokenOverrides } from './resolveNumericTokenOverrides';
-import { resolveWeightTokenOverrides } from './resolveWeightTokenOverrides';
+import type { ThemeTokens } from '../../../types/theme.js';
+import { DEFAULT_TOKENS } from '../constants.js';
+import { resolveHeadingTokenOverrides } from './resolveHeadingTokenOverrides.js';
+import { resolveNumericTokenOverrides } from './resolveNumericTokenOverrides.js';
+import { resolveWeightTokenOverrides } from './resolveWeightTokenOverrides.js';
 
 type GlobalThemeTokens = Omit<
   ThemeTokens,
