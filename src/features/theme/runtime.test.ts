@@ -9,5 +9,6 @@ describe('theme runtime ownership', () => {
     expect(root).toContain('ThemeProvider, ThemeScope, useTheme');
     expect(root).not.toContain('ThemeContext');
     expect(runtime).not.toContain('ThemeRuntimeContext');
+    expect(runtime).toContain('./adapters/inbound/ThemeProvider.js');
   });
 });
