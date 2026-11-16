@@ -35,7 +35,6 @@ export function Pressable({
   const isWeb = Platform.OS === 'web';
   const resolvedViewStyles = resolveViewStyles(theme, breakpoint, props);
   const pressHandlers = resolvePressHandlers(interactionPolicy, onPress, onLongPress);
-
   return (
     <ReactNativePressable
       {...pressHandlers}
@@ -45,9 +44,7 @@ export function Pressable({
       aria-checked={accessibilityState?.checked}
       disabled={disabled}
       onBlur={() => setFocused(false)}
-      onFocus={() => {
-        if (isWeb) setFocused(true);
-      }}
+      onFocus={() => (isWeb ? setFocused(true) : undefined)}
       onHoverIn={isWeb ? () => setHovered(true) : undefined}
       onHoverOut={isWeb ? () => setHovered(false) : undefined}
       style={(pressableState) => {
