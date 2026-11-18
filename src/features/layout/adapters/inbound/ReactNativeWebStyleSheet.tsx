@@ -6,12 +6,16 @@ type ReactNativeWebStyleSheet = Readonly<{
   textContent: string;
 }>;
 
-/*** Renders React Native Web's public stylesheet for a server-rendered Surface document. */
+/*** Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content. */
 export function ReactNativeWebStyleSheet() {
   const sheet = getReactNativeWebStyleSheet();
   if (sheet === null) return null;
 
-  return <style dangerouslySetInnerHTML={{ __html: sheet.textContent }} id={sheet.id} />;
+  return (
+    <style id={sheet.id} precedence="react-native-web">
+      {sheet.textContent}
+    </style>
+  );
 }
 
 /*** Reads the browser-only public stylesheet without changing native rendering. */

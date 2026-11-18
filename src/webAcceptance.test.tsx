@@ -19,7 +19,8 @@ await mock.module('react-native', () => ReactNativeWeb);
 
 const scrollContentStyle = { padding: 4 };
 
-const { Grid, ReactNativeWebStyleSheet, ScrollView, View } = await import('./features/layout/public');
+const { Grid, ReactNativeWebStyleSheet, ScrollView, View } =
+  await import('./features/layout/public');
 const { KeyboardAvoidingView } = await import('./features/keyboard-avoiding-view/public');
 const { Show, useBreakpoint } = await import('./core/responsive');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
@@ -53,6 +54,17 @@ function ResponsiveAcceptanceTree() {
 
 function BreakpointProbe() {
   return <ReactNativeWeb.Text testID="breakpoint-probe">{useBreakpoint()}</ReactNativeWeb.Text>;
+}
+
+function SsrLayoutTree() {
+  return (
+    <>
+      <ThemeProvider>
+        <View align="center" flex={1} justify="center" testID="ssr-layout" />
+      </ThemeProvider>
+      <ReactNativeWebStyleSheet />
+    </>
+  );
 }
 
 test('RN Web 0.21 preserves SSR responsive structure during desktop hydration', async () => {
@@ -100,19 +112,43 @@ test('RN Web 0.21 preserves SSR responsive structure during desktop hydration', 
   }
 });
 
-test('RN Web emits the public stylesheet before a Surface View server render', () => {
-  const markup = renderToString(
-    <>
-      <ReactNativeWebStyleSheet />
-      <ThemeProvider>
-        <View align="center" flex={1} justify="center" testID="ssr-layout" />
-      </ThemeProvider>
-    </>,
-  );
+test('RN Web preserves its server stylesheet through Surface View hydration', async () => {
+  const markup = renderToString(<SsrLayoutTree />);
+  const stylesheet = (
+    ReactNativeWeb as unknown as typeof ReactNativeWeb & {
+      StyleSheet: { getSheet: () => { id: string; textContent: string } };
+    }
+  ).StyleSheet.getSheet();
 
-  expect(markup).toContain('id="react-native-stylesheet"');
-  expect(markup).toContain('display:flex');
+  expect(markup).toContain(`id="${stylesheet.id}"`);
+  expect(markup).toContain(stylesheet.textContent);
   expect(markup).toContain('data-testid="ssr-layout"');
+  expect(stylesheet.textContent).toContain('.css-view-g5y9jx');
+
+  const container = browserWindow.document.createElement('div');
+  container.innerHTML = markup;
+  browserWindow.document.body.append(container);
+  const hydrationErrors: string[] = [];
+  const originalError = console.error;
+  console.error = (...values: unknown[]) => {
+    hydrationErrors.push(values.map(String).join(' '));
+  };
+
+  try {
+    const { hydrateRoot } = await import('react-dom/client');
+    const root = hydrateRoot(container as unknown as Element, <SsrLayoutTree />);
+    await act(async () => Promise.resolve());
+
+    const stylesheets = container.querySelectorAll(`style#${stylesheet.id}`);
+    expect(stylesheets).toHaveLength(1);
+    expect(stylesheets[0]?.textContent).toBe(stylesheet.textContent);
+    expect(hydrationErrors).toEqual([]);
+
+    act(() => root.unmount());
+  } finally {
+    console.error = originalError;
+    container.remove();
+  }
 });
 
 test('RN Web 0.21 keeps the server responsive structure at a narrow viewport', async () => {
