@@ -62,7 +62,7 @@ export type {
   ScrollViewProps,
   ViewProps,
 } from './features/layout/public.js';
-export { Divider, Grid, ScrollView, View } from './features/layout/public.js';
+export { Divider, Grid, ReactNativeWebStyleSheet, ScrollView, View } from './features/layout/public.js';
 export type { ListItemProps, ListProps } from './features/list/public.js';
 export { List, ListItem } from './features/list/public.js';
 export type { ModalProps } from './features/modal/public.js';

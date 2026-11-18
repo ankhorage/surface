@@ -19,7 +19,7 @@ await mock.module('react-native', () => ReactNativeWeb);
 
 const scrollContentStyle = { padding: 4 };
 
-const { Grid, ScrollView, View } = await import('./features/layout/public');
+const { Grid, ReactNativeWebStyleSheet, ScrollView, View } = await import('./features/layout/public');
 const { KeyboardAvoidingView } = await import('./features/keyboard-avoiding-view/public');
 const { Show, useBreakpoint } = await import('./core/responsive');
 const { OverlayProvider } = await import('./internal/overlay/OverlayProvider');
@@ -98,6 +98,21 @@ test('RN Web 0.21 preserves SSR responsive structure during desktop hydration', 
     console.error = originalError;
     container.remove();
   }
+});
+
+test('RN Web emits the public stylesheet before a Surface View server render', () => {
+  const markup = renderToString(
+    <>
+      <ReactNativeWebStyleSheet />
+      <ThemeProvider>
+        <View align="center" flex={1} justify="center" testID="ssr-layout" />
+      </ThemeProvider>
+    </>,
+  );
+
+  expect(markup).toContain('id="react-native-stylesheet"');
+  expect(markup).toContain('display:flex');
+  expect(markup).toContain('data-testid="ssr-layout"');
 });
 
 test('RN Web 0.21 keeps the server responsive structure at a narrow viewport', async () => {
