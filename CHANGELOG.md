@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.16
+
+### Patch Changes
+
+- d821fea: Support the independently validated Expo 58 React Native peer tuple.
+
 ## 9.5.15
 
 ### Patch Changes

@@ -1935,7 +1935,7 @@ Export paths: `src/index.ts`
 
 ## TabPanel
 
-Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:11:1`
+Source: `src/features/tabs/adapters/inbound/TabPanel.tsx:12:1`
 
 Renders the active content panel with the supplied View layout and tab accessibility linkage.
 
