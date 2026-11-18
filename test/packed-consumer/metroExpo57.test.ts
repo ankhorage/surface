@@ -31,6 +31,23 @@ const expo57Dependencies = (vectorIconVersion: (typeof supportedVectorIconVersio
   'react-native-worklets': '0.10.1',
 });
 
+const expo58Dependencies = (vectorIconVersion: (typeof supportedVectorIconVersions)[number]) => ({
+  '@expo/metro-runtime': '~58.0.17',
+  ...Object.fromEntries(
+    vectorIconPackageNames.map((packageName) => [packageName, vectorIconVersion]),
+  ),
+  expo: '58.0.26',
+  react: '19.3.0',
+  'react-dom': '19.3.0',
+  'react-native': '0.88.1',
+  'react-native-gesture-handler': '~3.3.0',
+  'react-native-reanimated': '4.7.1',
+  'react-native-safe-area-context': '~5.11.1',
+  'react-native-svg': '15.16.0',
+  'react-native-web': '~0.21.4',
+  'react-native-worklets': '0.13.0',
+});
+
 for (const vectorIconVersion of supportedVectorIconVersions) {
   test(`packed Surface exports through Expo 57 Metro with Vector Icons ${vectorIconVersion}`, async () => {
     const directory = await mkdtemp(join(tmpdir(), 'surface-metro-expo-57-'));
@@ -42,7 +59,46 @@ for (const vectorIconVersion of supportedVectorIconVersions) {
       await writeConsumer(
         consumerDirectory,
         await resolveTarballPath(tarballDirectory),
-        vectorIconVersion,
+        expo57Dependencies(vectorIconVersion),
+      );
+      await runBun(consumerDirectory, ['install']);
+      await runBun(consumerDirectory, ['install', '--frozen-lockfile']);
+
+      await assertPackedExportMap(consumerDirectory);
+      await assertInstalledVectorIconVersions(consumerDirectory, vectorIconVersion);
+      await runBun(consumerDirectory, ['x', 'expo-doctor@1.17.14']);
+      await run(consumerDirectory, ['npm', 'install', '--package-lock-only', '--ignore-scripts']);
+      await run(consumerDirectory, ['npm', 'ci', '--ignore-scripts']);
+      await run(consumerDirectory, ['npm', 'ls', '--all']);
+      await runBun(consumerDirectory, ['x', 'expo', 'export', '--platform', 'web']);
+      await runBun(consumerDirectory, [
+        'x',
+        'expo',
+        'prebuild',
+        '--platform',
+        'all',
+        '--no-install',
+        '--non-interactive',
+      ]);
+    } finally {
+      await rm(directory, { force: true, recursive: true });
+    }
+  }, 300_000);
+}
+
+for (const vectorIconVersion of supportedVectorIconVersions) {
+  test(`packed Surface exports through Expo 58 Metro with Vector Icons ${vectorIconVersion}`, async () => {
+    const directory = await mkdtemp(join(tmpdir(), 'surface-metro-expo-58-'));
+    const tarballDirectory = join(directory, 'tarball');
+    const consumerDirectory = join(directory, 'consumer');
+
+    try {
+      await packSurface(tarballDirectory);
+      await writeConsumer(
+        consumerDirectory,
+        await resolveTarballPath(tarballDirectory),
+        expo58Dependencies(vectorIconVersion),
+        'surface-metro-expo-58-consumer',
       );
       await runBun(consumerDirectory, ['install']);
       await runBun(consumerDirectory, ['install', '--frozen-lockfile']);
@@ -87,11 +143,12 @@ async function resolveTarballPath(directory: string): Promise<string> {
   return join(directory, tarballs[0]);
 }
 
-/*** Write a minimal Expo 57 consumer that imports the browser and React Native public surfaces. */
+/*** Write a minimal Expo consumer that imports the browser and React Native public surfaces. */
 async function writeConsumer(
   directory: string,
   tarballPath: string,
-  vectorIconVersion: (typeof supportedVectorIconVersions)[number],
+  dependencies: Record<string, string>,
+  name = 'surface-metro-expo-57-consumer',
 ): Promise<void> {
   await mkdir(directory, { recursive: true });
   await writeFile(
@@ -99,11 +156,11 @@ async function writeConsumer(
     `${JSON.stringify(
       {
         dependencies: {
-          ...expo57Dependencies(vectorIconVersion),
+          ...dependencies,
           '@ankhorage/surface': `file:${tarballPath}`,
         },
         main: 'expo/AppEntry',
-        name: 'surface-metro-expo-57-consumer',
+        name,
         private: true,
         version: '0.0.0',
       },
@@ -118,22 +175,47 @@ async function writeConsumer(
   await writeFile(join(directory, '.gitignore'), '.expo/\n');
   await writeFile(
     join(directory, 'App.tsx'),
-    `import { ThemeProvider, View } from '@ankhorage/surface';
+    `import {
+  AppBar,
+  Icon,
+  Modal,
+  Pressable,
+  ScrollView,
+  Tab,
+  TabList,
+  TabPanel,
+  Tabs,
+  Text,
+  ThemeProvider,
+  View,
+} from '@ankhorage/surface';
 import { Button } from '@ankhorage/surface/authoring-controls';
 import { BottomSheetView } from '@ankhorage/surface/bottom-sheet';
 import { SURFACE_COLORS } from '@ankhorage/surface/color';
 import { createTheme } from '@ankhorage/surface/theme';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const theme = createTheme();
 void BottomSheetView;
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <View accessibilityLabel={theme.config.id} testID={SURFACE_COLORS.join('-')}>
-        <Button>Surface Metro acceptance</Button>
-      </View>
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <AppBar>Surface native acceptance</AppBar>
+        <ScrollView accessibilityLabel={theme.config.id} testID={SURFACE_COLORS.join('-')}>
+          <Pressable onPress={() => undefined}><Text>Pressable</Text></Pressable>
+          <Tabs defaultValue="first">
+            <TabList><Tab value="first">First</Tab><Tab value="second">Second</Tab></TabList>
+            <TabPanel value="first"><Text>First panel</Text></TabPanel>
+            <TabPanel value="second"><Text>Second panel</Text></TabPanel>
+          </Tabs>
+          <Icon source={{ uri: 'https://example.com/surface.svg' }} testID="svg-icon" />
+          <Modal visible={false}><View /></Modal>
+          <View><Button>Surface Metro acceptance</Button></View>
+        </ScrollView>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 `,
