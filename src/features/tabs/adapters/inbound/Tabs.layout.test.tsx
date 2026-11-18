@@ -44,3 +44,9 @@ test('forwards bounded layout to the active panel around a scrolling child', () 
   expect(browserWindow.document.body.textContent).not.toContain('Hidden rules');
   browserWindow.close();
 });
+
+test('keeps the tabpanel role at the browser boundary', async () => {
+  const source = await Bun.file(new URL('./TabPanel.tsx', import.meta.url)).text();
+
+  expect(source).toContain("Platform.OS === 'web' ? TAB_PANEL_ROLE : undefined");
+});

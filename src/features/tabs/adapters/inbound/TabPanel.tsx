@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 
 import type { TabPanelProps } from '../../../../types/tabs.js';
 import { View } from '../../../layout/public.js';
@@ -18,7 +19,7 @@ export function TabPanel({ value, children, testID, style, ...layoutProps }: Tab
     <View
       {...layoutProps}
       accessibilityLabelledBy={getTabId(value)}
-      accessibilityRole={TAB_PANEL_ROLE}
+      accessibilityRole={Platform.OS === 'web' ? TAB_PANEL_ROLE : undefined}
       nativeID={getPanelId(value)}
       style={[
         style,
