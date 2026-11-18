@@ -195,15 +195,15 @@ describe('public package metadata contract', () => {
 });
 
 describe('native peer compatibility contract', () => {
-  it('preserves the independently tested Expo 57 and current native peer tuples', () => {
+  it('preserves the independently tested Expo 57 and Expo 58 native peer tuples', () => {
     expect(packageJson.peerDependencies.react).toBe('19.2.3 || 19.3.0');
     expect(packageJson.peerDependencies['react-dom']).toBe('19.2.3 || 19.3.0');
-    expect(packageJson.peerDependencies['react-native']).toBe('0.86.x || 0.87.x');
+    expect(packageJson.peerDependencies['react-native']).toBe('0.86.x || 0.87.x || 0.88.x');
     expect(packageJson.peerDependencies['react-native-web']).toBe('~0.21.0');
     expect(packageJson.peerDependencies['react-native-safe-area-context']).toBe(
-      '~5.7.0 || ~5.10.0',
+      '~5.7.0 || ~5.10.0 || ~5.11.0',
     );
-    expect(packageJson.peerDependencies['react-native-svg']).toBe('15.15.4 || 15.15.5');
+    expect(packageJson.peerDependencies['react-native-svg']).toBe('15.15.4 || 15.15.5 || 15.16.0');
     expect(packageJson.peerDependencies['react-native-gesture-handler']).toBe('~2.32.0 || ~3.3.0');
     expect(packageJson.peerDependencies['react-native-reanimated']).toBe('4.5.1 || 4.7.0 || 4.7');
     expect(packageJson.peerDependencies['react-native-worklets']).toBe('0.10.1 || 0.13.0');
@@ -217,9 +217,9 @@ describe('native peer compatibility contract', () => {
       '@react-native-vector-icons/material-design-icons': '^13.1.3 || 14.0.0',
     });
     expect(packageJson.devDependencies.react).toBe('19.3.0');
-    expect(packageJson.devDependencies['react-native']).toBe('0.87.1');
-    expect(packageJson.devDependencies['react-native-safe-area-context']).toBe('~5.10.1');
-    expect(packageJson.devDependencies['react-native-svg']).toBe('15.15.5');
+    expect(packageJson.devDependencies['react-native']).toBe('0.88.1');
+    expect(packageJson.devDependencies['react-native-safe-area-context']).toBe('~5.11.1');
+    expect(packageJson.devDependencies['react-native-svg']).toBe('15.16.0');
   });
 });
 
