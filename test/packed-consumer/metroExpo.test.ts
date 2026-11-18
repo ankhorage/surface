@@ -66,6 +66,7 @@ for (const vectorIconVersion of supportedVectorIconVersions) {
 
       await assertPackedExportMap(consumerDirectory);
       await assertInstalledVectorIconVersions(consumerDirectory, vectorIconVersion);
+      await runBun(consumerDirectory, ['x', 'expo', 'install', '--check']);
       await runBun(consumerDirectory, ['x', 'expo-doctor@1.17.14']);
       await run(consumerDirectory, ['npm', 'install', '--package-lock-only', '--ignore-scripts']);
       await run(consumerDirectory, ['npm', 'ci', '--ignore-scripts']);
@@ -105,6 +106,7 @@ for (const vectorIconVersion of supportedVectorIconVersions) {
 
       await assertPackedExportMap(consumerDirectory);
       await assertInstalledVectorIconVersions(consumerDirectory, vectorIconVersion);
+      await runBun(consumerDirectory, ['x', 'expo', 'install', '--check']);
       await runBun(consumerDirectory, ['x', 'expo-doctor@1.17.14']);
       await run(consumerDirectory, ['npm', 'install', '--package-lock-only', '--ignore-scripts']);
       await run(consumerDirectory, ['npm', 'ci', '--ignore-scripts']);
