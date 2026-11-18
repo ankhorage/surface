@@ -260,7 +260,7 @@ async function assertPackedExportMap(directory: string): Promise<void> {
     'react-native': './dist/features/authoring/public.js',
   });
   expect(packageJson.exports['./bottom-sheet']).toMatchObject({
-    browser: './dist/features/bottom-sheet/public.js',
+    browser: './dist/features/bottom-sheet/browser.js',
     'react-native': './dist/features/bottom-sheet/public.js',
   });
   expect(packageJson.exports['./color']).toMatchObject({
