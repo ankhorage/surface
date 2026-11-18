@@ -161,10 +161,10 @@ describe('public package metadata contract', () => {
       },
       './bottom-sheet': {
         'react-native': './dist/features/bottom-sheet/public.js',
-        browser: './dist/features/bottom-sheet/public.js',
-        default: './dist/features/bottom-sheet/public.js',
-        import: './dist/features/bottom-sheet/public.js',
-        types: './dist/features/bottom-sheet/public.d.ts',
+        browser: './dist/features/bottom-sheet/browser.js',
+        default: './dist/features/bottom-sheet/browser.js',
+        import: './dist/features/bottom-sheet/browser.js',
+        types: './dist/features/bottom-sheet/browser.d.ts',
       },
       './browser': {
         default: './dist/features/popover/browser.js',

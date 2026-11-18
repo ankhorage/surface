@@ -4,6 +4,7 @@ export default createKnipConfig({
   entry: [
     'src/index.ts',
     'src/features/bottom-sheet/public.ts',
+    'src/features/bottom-sheet/browser.ts',
     'src/features/popover/browser.ts',
     'src/features/authoring/public.ts',
     'src/features/authoring/browser.ts',
