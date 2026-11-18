@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.17
+
+### Patch Changes
+
+- 4431050: Route bottom-sheet browser and Node SSR exports through React Native Web adapters.
+
 ## 9.5.16
 
 ### Patch Changes

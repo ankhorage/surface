@@ -17,7 +17,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.5.16",
+      "value": "v9.5.17",
       "color": "cb3837"
     },
     {
@@ -578,6 +578,23 @@
       "dependencies": [],
       "exports": [
         "BottomSheetVirtualizedList"
+      ]
+    },
+    {
+      "path": "src/features/bottom-sheet/browser.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "BottomSheetContentMode",
+        "BottomSheetController",
+        "BottomSheetFlatList",
+        "BottomSheetPresentOptions",
+        "BottomSheetProvider",
+        "BottomSheetScrollView",
+        "BottomSheetSectionList",
+        "BottomSheetView",
+        "BottomSheetVirtualizedList",
+        "useBottomSheet"
       ]
     },
     {
@@ -38420,6 +38437,46 @@
         "fromPath": "src/features/bottom-sheet/BottomSheetProvider.web.tsx",
         "toPath": "src/features/bottom-sheet/BottomSheetContext.ts",
         "sourcePath": "src/features/bottom-sheet/BottomSheetProvider.web.tsx"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/types/bottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetFlatList.web.tsx",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetProvider.web.tsx",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetScrollView.web.tsx",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetSectionList.web.tsx",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetView.web.tsx",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/features/bottom-sheet/BottomSheetVirtualizedList.web.tsx",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
+      },
+      {
+        "fromPath": "src/features/bottom-sheet/browser.ts",
+        "toPath": "src/features/bottom-sheet/useBottomSheet.ts",
+        "sourcePath": "src/features/bottom-sheet/browser.ts"
       },
       {
         "fromPath": "src/features/bottom-sheet/public.ts",
