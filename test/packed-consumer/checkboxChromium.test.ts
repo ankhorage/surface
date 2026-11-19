@@ -32,6 +32,44 @@ test('packed Surface checkbox synchronizes controlled state with Chromium access
   }
 }, 300_000);
 
+test('packed Surface preserves the RN Web server stylesheet through hydration and rerenders', async () => {
+  const fixture = await createPackedConsumerFixture();
+  const browser = await chromium.launch();
+
+  try {
+    for (const mode of ['light', 'dark'] as const) {
+      const serverContext = await browser.newContext({
+        colorScheme: mode,
+        javaScriptEnabled: false,
+      });
+      try {
+        const serverPage = await serverContext.newPage();
+        await serverPage.goto(`${fixture.url}?mode=${mode}`);
+        const serverStylesheets = await readReactNativeWebStyleSheets(serverPage);
+        expect(serverStylesheets).toHaveLength(1);
+        expect(serverStylesheets[0]?.rules.join('\n')).toContain('.css-view-g5y9jx');
+        const serverLayout = await readLayoutStyles(serverPage);
+        await serverPage.close();
+
+        const page = await browser.newPage({ colorScheme: mode });
+        await assertReactNativeWebStyleSheet(
+          page,
+          fixture.url,
+          mode,
+          serverStylesheets,
+          serverLayout,
+        );
+        await page.close();
+      } finally {
+        await serverContext.close();
+      }
+    }
+  } finally {
+    await browser.close();
+    await fixture.close();
+  }
+}, 300_000);
+
 /*** Creates a temporary consumer which can resolve Surface only from its packed public artifact. */
 async function createPackedConsumerFixture(): Promise<PackedConsumerFixture> {
   const directory = await mkdtemp(join(tmpdir(), 'surface-checkbox-consumer-'));
@@ -100,6 +138,78 @@ async function assertHydratedCheckboxes(page: Page, url: string, mode: 'light' |
   await page.getByRole('button', { name: 'Force unchecked' }).click();
   await assertCheckedState(page, checkbox, false, 3, 'true,false,true');
   await assertGuardedCheckboxes(page);
+}
+
+/*** Verifies that RN Web adopts the server stylesheet without duplicate cascade sources. */
+async function assertReactNativeWebStyleSheet(
+  page: Page,
+  url: string,
+  mode: 'light' | 'dark',
+  serverStylesheets: Awaited<ReturnType<typeof readReactNativeWebStyleSheets>>,
+  serverLayout: Awaited<ReturnType<typeof readLayoutStyles>>,
+) {
+  await page.goto(`${url}?mode=${mode}`);
+
+  await expectBrowserValue(() => page.locator('body').getAttribute('data-hydrated'), 'true');
+  const hydratedStylesheets = await readReactNativeWebStyleSheets(page);
+  expect(hydratedStylesheets).toHaveLength(1);
+  expect(hydratedStylesheets[0]?.parent).toBe(serverStylesheets[0]?.parent);
+  expect(hydratedStylesheets[0]?.previousSiblingId).toBe(serverStylesheets[0]?.previousSiblingId);
+  assertAdditionalRulesDuplicateServerRules(serverStylesheets, hydratedStylesheets);
+  expect(await readLayoutStyles(page)).toEqual(serverLayout);
+
+  for (const expectedCount of [1, 2, 3]) {
+    await page.getByRole('button', { name: 'Rerender layout' }).click();
+    await expectText(page.getByTestId('layout-render-count'), String(expectedCount));
+    expect(await readReactNativeWebStyleSheets(page)).toEqual(hydratedStylesheets);
+  }
+
+  expect(await readLayoutStyles(page)).toEqual(serverLayout);
+}
+
+/*** Captures every stylesheet using RN Web's public identifier, CSSOM rules, and cascade position. */
+async function readReactNativeWebStyleSheets(page: Page) {
+  return page.evaluate(() =>
+    Array.from(document.querySelectorAll('style#react-native-stylesheet')).map((element) => ({
+      parent: element.parentElement?.tagName,
+      previousSiblingId: element.previousElementSibling?.id ?? null,
+      rules: Array.from(element.sheet?.cssRules ?? []).map((rule) => rule.cssText),
+    })),
+  );
+}
+
+/*** Confirms RN Web runtime additions repeat a server rule instead of introducing a new cascade. */
+function assertAdditionalRulesDuplicateServerRules(
+  serverStylesheets: Awaited<ReturnType<typeof readReactNativeWebStyleSheets>>,
+  hydratedStylesheets: Awaited<ReturnType<typeof readReactNativeWebStyleSheets>>,
+) {
+  const serverRules = serverStylesheets.flatMap((stylesheet) => stylesheet.rules);
+  const remainingServerRules = new Map<string, number>();
+  for (const rule of serverRules) {
+    remainingServerRules.set(rule, (remainingServerRules.get(rule) ?? 0) + 1);
+  }
+  const additionalRules = hydratedStylesheets
+    .flatMap((stylesheet) => stylesheet.rules)
+    .filter((rule) => {
+      const count = remainingServerRules.get(rule) ?? 0;
+      if (count === 0) return true;
+      remainingServerRules.set(rule, count - 1);
+      return false;
+    });
+
+  expect(additionalRules.every((rule) => serverRules.includes(rule))).toBe(true);
+}
+
+/*** Reads the browser-computed SSR layout contract before and after client hydration. */
+async function readLayoutStyles(page: Page) {
+  return page.getByTestId('ssr-layout').evaluate((element) => {
+    const style = getComputedStyle(element);
+    return {
+      alignItems: style.alignItems,
+      display: style.display,
+      justifyContent: style.justifyContent,
+    };
+  });
 }
 
 /*** Verifies the DOM state, controlled callback values, and Chromium accessibility state together. */
@@ -229,13 +339,15 @@ async function writeConsumer(directory: string, tarballPath: string) {
   );
 }
 
-const checkboxFixtureSource = `import React, { useState } from 'react';
-import { Checkbox, ThemeProvider } from '@ankhorage/surface';
+const checkboxFixtureSource = `import React, { useEffect, useState } from 'react';
+import { Checkbox, ReactNativeWebStyleSheet, ThemeProvider, View } from '@ankhorage/surface';
 
 export function CheckboxFixture({ mode }: { mode: 'light' | 'dark' }) {
   const [checked, setChecked] = useState(false);
   const [values, setValues] = useState<boolean[]>([]);
   const [guardedCallCount, setGuardedCallCount] = useState(0);
+  const [layoutRenderCount, setLayoutRenderCount] = useState(0);
+  useEffect(() => { document.body.dataset.hydrated = 'true'; }, []);
   const onCheckedChange = (value: boolean) => { setValues((previous) => [...previous, value]); setChecked(value); };
   return <ThemeProvider initialMode={mode}>
     <Checkbox accessibilityLabel="Packed checkbox" checked={checked} onCheckedChange={onCheckedChange} testID="checkbox">Packed checkbox</Checkbox>
@@ -245,6 +357,10 @@ export function CheckboxFixture({ mode }: { mode: 'light' | 'dark' }) {
     <Checkbox accessibilityLabel="Disabled checkbox" checked={false} disabled onCheckedChange={() => setGuardedCallCount((count) => count + 1)}>Disabled checkbox</Checkbox>
     <Checkbox accessibilityLabel="Read-only checkbox" checked={false} readOnly onCheckedChange={() => setGuardedCallCount((count) => count + 1)}>Read-only checkbox</Checkbox>
     <output data-testid="guarded-call-count">{guardedCallCount}</output>
+    <View align="center" flex={1} justify="center" testID="ssr-layout">Surface layout</View>
+    <button onClick={() => setLayoutRenderCount((count) => count + 1)}>Rerender layout</button>
+    <output data-testid="layout-render-count">{layoutRenderCount}</output>
+    <ReactNativeWebStyleSheet />
   </ThemeProvider>;
 }
 `;
