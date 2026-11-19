@@ -10967,6 +10967,35 @@
     "structuredRows": []
   },
   {
+    "name": "ReactNativeWebStyleSheet",
+    "title": null,
+    "description": "Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "function",
+    "modulePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+    "sourceLocation": {
+      "filePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+      "line": 10,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [
+      {
+        "label": "() => React.JSX.Element | null",
+        "parameters": [],
+        "returnType": "React.JSX.Element | null",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
     "name": "resolveResponsive",
     "title": null,
     "description": null,

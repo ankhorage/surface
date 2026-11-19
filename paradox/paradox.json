@@ -17,7 +17,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.5.18",
+      "value": "v9.5.19",
       "color": "cb3837"
     },
     {
@@ -1188,6 +1188,14 @@
       ]
     },
     {
+      "path": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "ReactNativeWebStyleSheet"
+      ]
+    },
+    {
       "path": "src/features/layout/adapters/inbound/ScrollView.test.tsx",
       "isEntrypoint": false,
       "dependencies": [],
@@ -1229,6 +1237,7 @@
         "DividerProps",
         "Grid",
         "GridProps",
+        "ReactNativeWebStyleSheet",
         "ScrollView",
         "ScrollViewProps",
         "View",
@@ -2278,6 +2287,7 @@
         "PressableProps",
         "Radio",
         "RadioProps",
+        "ReactNativeWebStyleSheet",
         "resolveResponsive",
         "Responsive",
         "ResponsiveProvider",
@@ -14215,6 +14225,35 @@
           "description": null
         }
       ],
+      "structuredRows": []
+    },
+    {
+      "name": "ReactNativeWebStyleSheet",
+      "title": null,
+      "description": "Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "function",
+      "modulePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+        "line": 10,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [
+        {
+          "label": "() => React.JSX.Element | null",
+          "parameters": [],
+          "returnType": "React.JSX.Element | null",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
       "structuredRows": []
     },
     {
@@ -29524,6 +29563,23 @@
       ]
     },
     {
+      "name": "ReactNativeWebStyleSheet",
+      "description": "Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "modulePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+        "line": 10,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "props": []
+    },
+    {
       "name": "ResponsiveProvider",
       "description": null,
       "isReadme": false,
@@ -35406,6 +35462,28 @@
       }
     },
     {
+      "name": "ReactNativeWebStyleSheet",
+      "description": "Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+        "line": 10,
+        "column": 1
+      }
+    },
+    {
+      "name": "getReactNativeWebStyleSheet",
+      "description": "Reads the browser-only public stylesheet without changing native rendering.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+        "line": 22,
+        "column": 1
+      }
+    },
+    {
       "name": "renderScrollView",
       "description": "Renders Surface ScrollView under the production theme boundary and captures native props.",
       "see": [],
@@ -37260,7 +37338,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/webAcceptance.test.tsx",
-        "line": 28,
+        "line": 29,
         "column": 1
       }
     },
@@ -37271,7 +37349,18 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/webAcceptance.test.tsx",
-        "line": 54,
+        "line": 55,
+        "column": 1
+      }
+    },
+    {
+      "name": "SsrLayoutTree",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/webAcceptance.test.tsx",
+        "line": 59,
         "column": 1
       }
     },
@@ -37282,7 +37371,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/webAcceptance.test.tsx",
-        "line": 134,
+        "line": 185,
         "column": 1
       }
     }
@@ -37502,6 +37591,14 @@
       "sourcePath": "src/features/form/radio/adapters/inbound/Radio.tsx",
       "symbolName": "Radio",
       "description": "Renders one accessible radio control with text or structured label content.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "ReactNativeWebStyleSheet",
+      "sourcePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
+      "symbolName": "ReactNativeWebStyleSheet",
+      "description": "Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content.",
       "isReadme": false
     },
     {
@@ -38621,6 +38718,11 @@
       {
         "fromPath": "src/features/layout/public.ts",
         "toPath": "src/features/layout/adapters/inbound/Grid.tsx",
+        "sourcePath": "src/features/layout/public.ts"
+      },
+      {
+        "fromPath": "src/features/layout/public.ts",
+        "toPath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx",
         "sourcePath": "src/features/layout/public.ts"
       },
       {
@@ -41052,6 +41154,12 @@
         "fromSymbol": "src/webAcceptance.test.tsx",
         "toSymbol": "hydrateRoot",
         "callExpression": "hydrateRoot",
+        "sourcePath": "src/webAcceptance.test.tsx"
+      },
+      {
+        "fromSymbol": "src/webAcceptance.test.tsx",
+        "toSymbol": "getSheet",
+        "callExpression": "(\n    ReactNativeWeb as unknown as typeof ReactNativeWeb & {\n      StyleSheet: { getSheet: () => { id: string; textContent: string } };\n    }\n  ).StyleSheet.getSheet",
         "sourcePath": "src/webAcceptance.test.tsx"
       },
       {
@@ -43801,6 +43909,18 @@
         "toSymbol": "resolveGridItemStyle",
         "callExpression": "resolveGridItemStyle",
         "sourcePath": "src/features/layout/adapters/inbound/Grid.tsx"
+      },
+      {
+        "fromSymbol": "ReactNativeWebStyleSheet",
+        "toSymbol": "getReactNativeWebStyleSheet",
+        "callExpression": "getReactNativeWebStyleSheet",
+        "sourcePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx"
+      },
+      {
+        "fromSymbol": "getReactNativeWebStyleSheet",
+        "toSymbol": "getSheet",
+        "callExpression": "getSheet",
+        "sourcePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx"
       },
       {
         "fromSymbol": "renderScrollView",
@@ -46708,6 +46828,11 @@
         "fromSymbol": "Grid",
         "toType": "React",
         "sourcePath": "src/features/layout/adapters/inbound/Grid.tsx"
+      },
+      {
+        "fromSymbol": "ReactNativeWebStyleSheet",
+        "toType": "React",
+        "sourcePath": "src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx"
       },
       {
         "fromSymbol": "ScrollView",

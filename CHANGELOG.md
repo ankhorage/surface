@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.19
+
+### Patch Changes
+
+- aa01ac8: Add the public `ReactNativeWebStyleSheet` document integration for React Native Web server rendering so View layout styles are present before hydration.
+
 ## 9.5.18
 
 ### Patch Changes

@@ -2396,6 +2396,19 @@ Source: `src/types/radio.ts:7:1`
 | wrap | property | `Responsive<"wrap" \| "nowrap"> \| undefined` | no |  |
 | zIndex | property | `Responsive<number> \| undefined` | no |  |
 
+## ReactNativeWebStyleSheet
+
+Kind: `function`
+Module: `src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx`
+Source: `src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx:10:1`
+
+Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content.
+
+### Signatures
+
+- `() => React.JSX.Element | null`
+  - returns: `React.JSX.Element | null`
+
 ## resolveResponsive
 
 Kind: `function`

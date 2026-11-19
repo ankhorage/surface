@@ -1497,6 +1497,14 @@ Export paths: `src/index.ts`
 | wrap | `Responsive<'nowrap' \| 'wrap'> \| undefined` | no | — |  |
 | zIndex | `Responsive<number> \| undefined` | no | — |  |
 
+## ReactNativeWebStyleSheet
+
+Source: `src/features/layout/adapters/inbound/ReactNativeWebStyleSheet.tsx:10:1`
+
+Snapshots and hoists React Native Web's stylesheet after the server-rendered Surface content.
+
+Export paths: `src/index.ts`
+
 ## ResponsiveProvider
 
 Source: `src/core/responsive/ResponsiveProvider.tsx:9:1`

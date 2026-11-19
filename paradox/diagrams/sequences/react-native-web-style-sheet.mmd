@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_getReactNativeWebStyleSheet as getReactNativeWebStyleSheet
+  participant participant_getSheet as getSheet
+  participant participant_ReactNativeWebStyleSheet as ReactNativeWebStyleSheet
+  participant_ReactNativeWebStyleSheet->>participant_getReactNativeWebStyleSheet: getReactNativeWebStyleSheet()
+  participant_getReactNativeWebStyleSheet->>participant_getSheet: getSheet()
+  participant_getSheet-->>participant_getReactNativeWebStyleSheet: return
+  participant_getReactNativeWebStyleSheet-->>participant_ReactNativeWebStyleSheet: return
