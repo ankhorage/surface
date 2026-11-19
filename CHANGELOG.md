@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.5.20
+
+### Patch Changes
+
+- f3421df: Preserve View flex layout in server-rendered React Native Web output before hydration.
+
 ## 9.5.19
 
 ### Patch Changes
