@@ -32,6 +32,7 @@ describe('resolveViewStyles spacing and responsive layout', () => {
       wrap: 'wrap',
     });
     expect(styles.alignItems).toBe('center');
+    expect(styles.display).toBe('flex');
     expect(styles.gap).toBe(8);
     expect(styles.justifyContent).toBe('space-between');
     expect(styles.flexWrap).toBe('wrap');
