@@ -86,6 +86,7 @@ function resolveLayoutStyles(
   props: ViewStyleProps,
 ): ViewStyle {
   return {
+    display: 'flex',
     flex: resolveResponsive(props.flex, breakpoint),
     flexGrow: resolveResponsive(props.flexGrow, breakpoint),
     flexShrink: resolveResponsive(props.flexShrink, breakpoint),
