@@ -22,6 +22,12 @@ test('packed authoring controls bundle through Vite and React Native Web without
     await writeConsumerFiles(consumerDirectory, tarballPath);
     await run(['bun', 'install', '--ignore-scripts'], consumerDirectory, directory);
     await run(['bunx', '--bun', 'vite@8.3.8', 'build'], consumerDirectory, directory);
+    await run(
+      ['bunx', '--bun', 'vite@8.3.8', 'build', '--ssr', 'src/ssr.tsx', '--outDir', 'ssr'],
+      consumerDirectory,
+      directory,
+    );
+    await run(['node', 'ssr/ssr.js'], consumerDirectory, directory);
 
     const manifest = JSON.parse(
       await readFile(join(consumerDirectory, 'dist', '.vite', 'manifest.json'), 'utf8'),
@@ -34,7 +40,7 @@ test('packed authoring controls bundle through Vite and React Native Web without
   } finally {
     await rm(directory, { force: true, recursive: true });
   }
-}, 60_000);
+}, 120_000);
 
 /*** Executes one isolated consumer command and reports its output on failure. */
 async function run(args: string[], cwd = process.cwd(), cacheDirectory?: string): Promise<string> {
@@ -93,6 +99,7 @@ export default defineConfig({
     alias: { 'react-native': fileURLToPath(new URL('./node_modules/react-native-web', import.meta.url)) },
     conditions: ['browser'],
   },
+  ssr: { noExternal: ['@ankhorage/surface'] },
 });
 `,
   );
@@ -108,20 +115,46 @@ import {
   Text,
   TextInput,
   ThemeProvider,
+  ThemeScope,
   View,
+  Popover,
+  Surface,
+  Switch,
 } from '@ankhorage/surface/authoring-controls';
 
 createRoot(document.querySelector('#root')!).render(
   <ThemeProvider>
-    <View>
-      <Card><Text>Screen authoring</Text></Card>
-      <Field disabled label="Name"><TextInput value="Home" onChangeText={() => undefined} /></Field>
-      <TextInput value="Home" onChangeText={() => undefined} />
-      <Pressable disabled onPress={() => undefined}><Text>Disabled selection</Text></Pressable>
-      <Button onPress={() => undefined}>Create screen</Button>
-    </View>
+    <ThemeScope>
+      <Surface>
+        <View>
+          <Card><Text>Screen authoring</Text></Card>
+          <Field disabled label="Name"><TextInput value="Home" onChangeText={() => undefined} /></Field>
+          <TextInput value="Home" onChangeText={() => undefined} />
+          <Pressable disabled onPress={() => undefined}><Text>Disabled selection</Text></Pressable>
+          <Switch defaultChecked>Published</Switch>
+          <Popover anchor={({ toggle }) => <Button onPress={toggle}>Choose layout</Button>}><Text>Grid</Text></Popover>
+          <Button onPress={() => undefined}>Create screen</Button>
+        </View>
+      </Surface>
+    </ThemeScope>
   </ThemeProvider>,
 );
+`,
+  );
+  await writeFile(
+    join(directory, 'src', 'ssr.tsx'),
+    `import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { Popover, Surface, Switch, Text, ThemeProvider, ThemeScope, View } from '@ankhorage/surface/authoring-controls';
+
+const markup = renderToString(
+  <ThemeProvider>
+    <ThemeScope>
+      <Surface><View><Switch defaultChecked>Published</Switch><Popover anchor={({ toggle }) => <button onClick={toggle}>Choose</button>}><Text>Grid</Text></Popover></View></Surface>
+    </ThemeScope>
+  </ThemeProvider>,
+);
+if (!markup.includes('Published') || !markup.includes('Choose')) throw new Error('Authoring controls failed browser SSR.');
 `,
   );
 }

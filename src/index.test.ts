@@ -108,12 +108,17 @@ describe('feature-owned root barrel contract', () => {
 });
 
 describe('authoring controls facade contract', () => {
-  it('keeps field and pressable on their canonical feature facades for native and browser consumers', () => {
+  it('keeps the authoring selection closure on canonical feature facades for native and browser consumers', () => {
     for (const source of [authoringControlsSource, browserAuthoringControlsSource]) {
       expect(source).toContain("export type { FieldProps } from '../form/field/public.js';");
       expect(source).toContain("export { Field } from '../form/field/public.js';");
+      expect(source).toContain("export { Popover } from '../popover/");
+      expect(source).toContain("export { Switch } from '../form/switch/public.js';");
       expect(source).toContain("export type { PressableProps } from '../pressable/public.js';");
       expect(source).toContain("export { Pressable } from '../pressable/public.js';");
+      expect(source).toContain("export { Surface } from '../surface/public.js';");
+      expect(source).toContain("export { ResponsiveProvider } from '../../core/responsive/index.js';");
+      expect(source).toContain("export { ThemeProvider, ThemeScope, useTheme } from '../theme/runtime.js';");
     }
   });
 });

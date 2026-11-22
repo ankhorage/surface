@@ -91,20 +91,28 @@ async function writeConsumer(directory: string, tarballPath: string): Promise<vo
   ButtonProps,
   CardProps,
   FieldProps,
+  PopoverProps,
   PressableProps,
+  SurfaceProps,
+  SwitchProps,
   TextInputProps,
   TextProps,
   ThemeProviderProps,
+  ThemeScopeProps,
   ViewProps,
 } from '@ankhorage/surface/authoring-controls';
 import {
   Button,
   Card,
   Field,
+  Popover,
   Pressable,
+  Surface,
+  Switch,
   Text,
   TextInput,
   ThemeProvider,
+  ThemeScope,
   View,
 } from '@ankhorage/surface/authoring-controls';
 
@@ -112,24 +120,32 @@ const props: [
   ButtonProps,
   CardProps,
   FieldProps,
+  PopoverProps,
   PressableProps,
+  SurfaceProps,
+  SwitchProps,
   TextInputProps,
   TextProps,
   ThemeProviderProps,
+  ThemeScopeProps,
   ViewProps,
 ] = [
   { children: 'Save' },
   { children: 'Panel' },
   { label: 'Title', disabled: true },
+  { anchor: () => null },
   { children: 'Select', disabled: true },
+  {},
+  {},
   {},
   { children: 'Authoring' },
   { children: null },
   {},
+  {},
 ];
 
 void props;
-void [Button, Card, Field, Pressable, Text, TextInput, ThemeProvider, View];
+void [Button, Card, Field, Popover, Pressable, Surface, Switch, Text, TextInput, ThemeProvider, ThemeScope, View];
 `,
   );
   await writeFile(
@@ -207,7 +223,7 @@ await import('./runtimeComponent');
     `import { strict as assert } from 'node:assert';
 import React, { act } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Field, Pressable, Text, ThemeProvider, View } from '@ankhorage/surface/authoring-controls';
+import { Field, Popover, Pressable, Surface, Switch, Text, ThemeProvider, ThemeScope, View } from '@ankhorage/surface/authoring-controls';
 
 const rootElement = document.createElement('div');
 document.body.append(rootElement);
@@ -218,16 +234,22 @@ let enabledPresses = 0;
 await act(async () => {
   root.render(
     <ThemeProvider>
-      <View>
-        <Field label="Enabled field" testID="enabled-field"><Text>Enabled content</Text></Field>
-        <Field disabled label="Disabled field" testID="disabled-field"><Text>Disabled content</Text></Field>
-        <Pressable disabled onPress={() => { disabledPresses += 1; }} testID="disabled-pressable">
-          <Text>Disabled pressable</Text>
-        </Pressable>
-        <Pressable onPress={() => { enabledPresses += 1; }} testID="enabled-pressable">
-          <Text>Enabled pressable</Text>
-        </Pressable>
-      </View>
+      <ThemeScope>
+        <Surface>
+          <View>
+            <Field label="Enabled field" testID="enabled-field"><Text>Enabled content</Text></Field>
+            <Field disabled label="Disabled field" testID="disabled-field"><Text>Disabled content</Text></Field>
+            <Switch defaultChecked>Published</Switch>
+            <Popover anchor={({ toggle }) => <button onClick={toggle}>Choose</button>}><Text>Grid</Text></Popover>
+            <Pressable disabled onPress={() => { disabledPresses += 1; }} testID="disabled-pressable">
+              <Text>Disabled pressable</Text>
+            </Pressable>
+            <Pressable onPress={() => { enabledPresses += 1; }} testID="enabled-pressable">
+              <Text>Enabled pressable</Text>
+            </Pressable>
+          </View>
+        </Surface>
+      </ThemeScope>
     </ThemeProvider>,
   );
 });
