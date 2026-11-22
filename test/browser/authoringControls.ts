@@ -27,7 +27,7 @@ test('packed authoring controls bundle through Vite and React Native Web without
       consumerDirectory,
       directory,
     );
-    await run(['node', 'ssr/ssr.js'], consumerDirectory, directory);
+    await run(['node', 'ssr/ssr.mjs'], consumerDirectory, directory);
 
     const manifest = JSON.parse(
       await readFile(join(consumerDirectory, 'dist', '.vite', 'manifest.json'), 'utf8'),

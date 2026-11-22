@@ -117,8 +117,12 @@ describe('authoring controls facade contract', () => {
       expect(source).toContain("export type { PressableProps } from '../pressable/public.js';");
       expect(source).toContain("export { Pressable } from '../pressable/public.js';");
       expect(source).toContain("export { Surface } from '../surface/public.js';");
-      expect(source).toContain("export { ResponsiveProvider } from '../../core/responsive/index.js';");
-      expect(source).toContain("export { ThemeProvider, ThemeScope, useTheme } from '../theme/runtime.js';");
+      expect(source).toContain(
+        "export { ResponsiveProvider } from '../../core/responsive/index.js';",
+      );
+      expect(source).toContain(
+        "export { ThemeProvider, ThemeScope, useTheme } from '../theme/runtime.js';",
+      );
     }
   });
 });
