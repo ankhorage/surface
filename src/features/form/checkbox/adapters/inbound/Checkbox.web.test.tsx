@@ -3,8 +3,11 @@ import { Window } from 'happy-dom';
 import React, { act, useState } from 'react';
 import { hydrateRoot } from 'react-dom/client';
 import { renderToString } from 'react-dom/server';
-import * as ReactNativeWeb from 'react-native-web';
 
+const browserWindow = new Window({ url: 'https://surface.test/' });
+installBrowserGlobals(browserWindow);
+
+const ReactNativeWeb = await import('react-native-web');
 await mock.module('react-native', () => ReactNativeWeb);
 
 const { Checkbox } = await import('./Checkbox');
@@ -38,8 +41,6 @@ test('RN Web exposes the controlled checkbox state through aria-checked before a
   expect(markup).toContain('role="checkbox"');
   expect(markup).toContain('aria-checked="false"');
 
-  const browserWindow = new Window({ url: 'https://surface.test/' });
-  installBrowserGlobals(browserWindow);
   const container = browserWindow.document.createElement('div');
   container.innerHTML = markup;
   browserWindow.document.body.append(container);
@@ -79,6 +80,7 @@ function installBrowserGlobals(browserWindow: Window) {
     KeyboardEvent: browserWindow.KeyboardEvent,
     MouseEvent: browserWindow.MouseEvent,
     Node: browserWindow.Node,
+    ShadowRoot: browserWindow.ShadowRoot,
     document: browserWindow.document,
     navigator: browserWindow.navigator,
     window: browserWindow,
@@ -92,6 +94,7 @@ function removeBrowserGlobals() {
     'KeyboardEvent',
     'MouseEvent',
     'Node',
+    'ShadowRoot',
     'document',
     'navigator',
     'window',

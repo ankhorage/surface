@@ -110,7 +110,11 @@ function WebSvgIcon(
       <Image
         accessibilityElementsHidden
         source={source}
-        style={{ height: props.size, tintColor: props.color, width: props.size }}
+        style={{
+          height: props.size,
+          ...(props.colorMode === 'intrinsic' ? {} : { tintColor: props.color }),
+          width: props.size,
+        }}
       />
     </View>
   );
