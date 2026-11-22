@@ -4,6 +4,7 @@ export type {
   IconProvider,
   IconSource,
   IconVariant,
+  SvgIconColorMode,
   SvgIconSource,
 } from '../../types/icon.js';
 export { Icon } from './adapters/inbound/Icon.js';
