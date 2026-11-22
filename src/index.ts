@@ -24,7 +24,12 @@ export type { AppBarProps } from './features/app-bar/public.js';
 export { AppBar } from './features/app-bar/public.js';
 export type { BadgeProps } from './features/badge/public.js';
 export { Badge } from './features/badge/public.js';
-export type { ButtonIconSpec, ButtonProps, IconButtonProps } from './features/button/public.js';
+export type {
+  ButtonIconSpec,
+  ButtonLabelWeight,
+  ButtonProps,
+  IconButtonProps,
+} from './features/button/public.js';
 export { Button, IconButton } from './features/button/public.js';
 export type { CardProps } from './features/card/public.js';
 export { Card } from './features/card/public.js';

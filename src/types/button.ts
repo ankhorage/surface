@@ -4,8 +4,10 @@ import type { ControlSize } from './control.js';
 import type { IconSource } from './icon.js';
 import type { PressableProps } from './pressable.js';
 import type { SurfaceColor } from './surfaceColor.js';
+import type { TextWeight } from './typography.js';
 
 export type ButtonIconSpec = IconSource;
+export type ButtonLabelWeight = Extract<TextWeight, 'semiBold' | 'bold'>;
 export type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'soft';
 
 export interface ButtonProps extends Omit<
@@ -16,6 +18,7 @@ export interface ButtonProps extends Omit<
   variant?: ButtonVariant;
   color?: SurfaceColor;
   size?: ControlSize;
+  labelWeight?: ButtonLabelWeight;
   loading?: boolean;
   leadingIcon?: ButtonIconSpec;
   trailingIcon?: ButtonIconSpec;

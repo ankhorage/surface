@@ -22,6 +22,7 @@ export function ButtonPresentation({ Icon, ...props }: ButtonPresentationProps) 
     variant = 'solid',
     color = 'primary',
     size = 'm',
+    labelWeight = 'semiBold',
     disabled = false,
     loading = false,
     leadingIcon,
@@ -49,6 +50,7 @@ export function ButtonPresentation({ Icon, ...props }: ButtonPresentationProps) 
           controlSize={controlSize}
           fullWidth={fullWidth}
           leadingIcon={leadingIcon}
+          labelWeight={labelWeight}
           loading={loading}
           size={size}
           state={state}
@@ -71,6 +73,7 @@ function ButtonContent({
   controlSize,
   fullWidth,
   leadingIcon,
+  labelWeight,
   loading,
   size,
   state,
@@ -100,7 +103,7 @@ function ButtonContent({
           <Text
             style={{ color: colors.contentColor }}
             variant={controlSize.textVariant}
-            weight="semiBold"
+            weight={labelWeight}
           >
             {children}
           </Text>
@@ -155,6 +158,7 @@ interface ButtonContentProps {
   controlSize: ReturnType<typeof resolveControlSize>;
   fullWidth: boolean;
   leadingIcon: ButtonProps['leadingIcon'];
+  labelWeight: NonNullable<ButtonProps['labelWeight']>;
   loading: boolean;
   size: NonNullable<ButtonProps['size']>;
   state: InteractionState;
