@@ -81,7 +81,7 @@ function renderSvgIcon(props: SvgPortableIconProps) {
   if (uri) {
     return (
       <SvgUri
-        color={props.color}
+        {...svgColorProps(props)}
         height={props.size}
         style={props.style}
         testID={props.testID}
@@ -94,9 +94,19 @@ function renderSvgIcon(props: SvgPortableIconProps) {
   const imageSource = typeof props.source === 'string' ? { uri: props.source } : props.source;
   return (
     <View style={[{ height: props.size, width: props.size }, props.style]} testID={props.testID}>
-      <Image source={imageSource} style={styles.bundledSvgImage} tintColor={props.color} />
+      <Image source={imageSource} style={styles.bundledSvgImage} {...svgTintProps(props)} />
     </View>
   );
+}
+
+/*** Uses the resolved theme color only when the SVG source requests tinting. */
+function svgColorProps(props: SvgPortableIconProps): { color?: string } {
+  return props.colorMode === 'intrinsic' ? {} : { color: props.color };
+}
+
+/*** Avoids React Native Image tinting when an SVG owns its own colors. */
+function svgTintProps(props: SvgPortableIconProps): { tintColor?: string } {
+  return props.colorMode === 'intrinsic' ? {} : { tintColor: props.color };
 }
 
 /*** Rejects unsupported icon configuration at runtime. */

@@ -46,6 +46,7 @@ export type {
   IconProvider,
   IconSource,
   IconVariant,
+  SvgIconColorMode,
   SvgIconSource,
 } from './features/icon/public.js';
 export { Icon, SUPPORTED_ICON_PROVIDERS } from './features/icon/public.js';

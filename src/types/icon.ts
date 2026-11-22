@@ -21,6 +21,8 @@ export type IconProvider =
 
 export type IconVariant = 'regular' | 'solid' | 'brand';
 
+export type SvgIconColorMode = 'tint' | 'intrinsic';
+
 export type FontIconSource =
   | { name: IoniconsIconName; provider?: 'Ionicons'; variant?: never }
   | { name: FontAwesomeIconName; provider: 'FontAwesome'; variant?: never }
@@ -34,6 +36,7 @@ export type FontIconSource =
 
 export interface SvgIconSource {
   source: SurfaceImageSource;
+  colorMode?: SvgIconColorMode;
   name?: never;
   provider?: never;
   variant?: never;

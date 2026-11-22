@@ -5,6 +5,8 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import * as ReactNativeWeb from 'react-native-web';
 
+import type { IconProps, SvgIconColorMode } from '../../../../types/icon.js';
+
 const WebImageWithoutResolveAssetSource = ({
   source,
   testID,
@@ -12,12 +14,12 @@ const WebImageWithoutResolveAssetSource = ({
 }: {
   source?: unknown;
   testID?: string;
-  tintColor?: unknown;
+  tintColor?: string;
 }) =>
   React.createElement('span', {
     'data-image-source': String(source),
     'data-testid': testID,
-    'data-tint-color': String(tintColor),
+    ...(tintColor === undefined ? {} : { 'data-tint-color': String(tintColor) }),
   });
 
 await mock.module('react-native', () => ({
@@ -27,7 +29,7 @@ await mock.module('react-native', () => ({
 await mock.module('react-native-svg', () => ({
   SvgUri: ({ color, height, uri, width }: Record<string, unknown>) =>
     React.createElement('svg', {
-      'data-color': color,
+      ...(color === undefined ? {} : { 'data-color': color }),
       'data-uri': uri,
       height,
       width,
@@ -92,6 +94,19 @@ describe('portable icon rendering', () => {
   });
 });
 
+test('preserves intrinsic colors for an SVG URI without passing a tint color', () => {
+  const markup = renderToStaticMarkup(
+    <Icon
+      color="#123456"
+      colorMode="intrinsic"
+      size={18}
+      source="https://example.com/icons/completed.svg"
+    />,
+  );
+  expect(markup).toContain('data-uri="https://example.com/icons/completed.svg"');
+  expect(markup).not.toContain('data-color=');
+});
+
 test('semantic icon roles follow polarity while raw colors remain unchanged', () => {
   for (const mode of ['light', 'dark'] as const) {
     const normal = createTheme(undefined, mode);
@@ -131,6 +146,30 @@ describe('portable icon web assets', () => {
     expect(markup).toContain('data-testid="bundled-svg"');
     expect(markup).toContain('data-tint-color="#123456"');
   });
+
+  test('preserves intrinsic colors for a bundled SVG asset without Image tinting', () => {
+    const markup = renderToStaticMarkup(
+      <Icon color="#123456" colorMode="intrinsic" size={18} source={42} testID="bundled-svg" />,
+    );
+    expect(markup).toContain('data-image-source="42"');
+    expect(markup).not.toContain('data-tint-color=');
+  });
+});
+
+test('icon types limit intrinsic color mode to SVG sources', () => {
+  const colorMode: SvgIconColorMode = 'intrinsic';
+  const svgIcon = {
+    colorMode,
+    source: 42,
+  } satisfies IconProps;
+  expect(svgIcon.colorMode).toBe('intrinsic');
+
+  type FontIconProps = Extract<IconProps, { name: string }>;
+  type FontIconAllowsSvgColorMode = { colorMode: SvgIconColorMode } extends FontIconProps
+    ? true
+    : false;
+  const fontIconAllowsSvgColorMode: FontIconAllowsSvgColorMode = false;
+  expect(fontIconAllowsSvgColorMode).toBeFalse();
 });
 
 describe('portable icon contract', () => {
