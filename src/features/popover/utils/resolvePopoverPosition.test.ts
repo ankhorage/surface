@@ -13,7 +13,7 @@ describe('resolvePopoverPosition', () => {
         viewport: { height: 800, width: 1200 },
         viewportPadding: 8,
       }),
-    ).toEqual({ left: 100, top: 128 });
+    ).toEqual({ left: 100, maxHeight: 784, top: 128 });
   });
 
   it('clamps content to the available viewport', () => {
@@ -26,6 +26,32 @@ describe('resolvePopoverPosition', () => {
         viewport: { height: 800, width: 1200 },
         viewportPadding: 8,
       }),
-    ).toEqual({ left: 760, top: 552 });
+    ).toEqual({ left: 760, maxHeight: 784, top: 452 });
+  });
+
+  it('flips below an anchor when the preferred top side cannot fit', () => {
+    expect(
+      resolvePopoverPosition({
+        anchor: { height: 40, width: 80, x: 100, y: 40 },
+        contentSize: { height: 240, width: 300 },
+        offset: 8,
+        placement: 'top-start',
+        viewport: { height: 800, width: 1200 },
+        viewportPadding: 8,
+      }),
+    ).toEqual({ left: 100, maxHeight: 784, top: 88 });
+  });
+
+  it('limits tall content to the padded viewport height', () => {
+    expect(
+      resolvePopoverPosition({
+        anchor: { height: 40, width: 80, x: 100, y: 300 },
+        contentSize: { height: 1200, width: 300 },
+        offset: 8,
+        placement: 'bottom-start',
+        viewport: { height: 800, width: 1200 },
+        viewportPadding: 8,
+      }),
+    ).toEqual({ left: 100, maxHeight: 784, top: 8 });
   });
 });
