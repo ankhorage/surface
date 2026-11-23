@@ -18,7 +18,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.6.2",
+      "value": "v9.6.3",
       "color": "cb3837"
     },
     {
@@ -1422,6 +1422,7 @@
       "path": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/popover/utils/resolvePopoverPosition.ts",
         "src/internal/useControllableState.ts",
         "src/types/popover.ts"
       ],
@@ -35948,7 +35949,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 8,
+        "line": 11,
         "column": 1
       }
     },
@@ -35959,7 +35960,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 43,
+        "line": 46,
         "column": 1
       }
     },
@@ -35970,7 +35971,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 52,
+        "line": 55,
         "column": 11
       }
     },
@@ -35981,7 +35982,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 58,
+        "line": 61,
         "column": 11
       }
     },
@@ -35992,29 +35993,29 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 71,
+        "line": 74,
         "column": 1
       }
     },
     {
-      "name": "useBrowserPopoverAnchorRect",
+      "name": "useBrowserPopoverLayout",
       "description": "Tracks the anchor in viewport coordinates while the browser overlay is visible.",
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 91,
+        "line": 94,
         "column": 1
       }
     },
     {
-      "name": "updateAnchorRect",
+      "name": "updateLayout",
       "description": null,
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 100,
+        "line": 104,
         "column": 11
       }
     },
@@ -36025,7 +36026,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "line": 113,
+        "line": 136,
         "column": 1
       }
     },
@@ -36074,13 +36075,24 @@
       }
     },
     {
+      "name": "resolveVerticalPlacement",
+      "description": "Selects the preferred vertical side when it fits, otherwise the side with more usable space.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/popover/utils/resolvePopoverPosition.ts",
+        "line": 43,
+        "column": 1
+      }
+    },
+    {
       "name": "clamp",
       "description": "Clamps one numeric position into the available viewport range.",
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/popover/utils/resolvePopoverPosition.ts",
-        "line": 38,
+        "line": 57,
         "column": 1
       }
     },
@@ -41209,6 +41221,11 @@
         "fromPath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
         "toPath": "src/types/popover.ts",
         "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromPath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
+        "toPath": "src/features/popover/utils/resolvePopoverPosition.ts",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
       }
     ],
     "calls": [
@@ -42783,6 +42800,12 @@
         "toSymbol": "resolvePopoverPosition",
         "callExpression": "resolvePopoverPosition",
         "sourcePath": "src/features/popover/utils/resolvePopoverPosition.test.ts"
+      },
+      {
+        "fromSymbol": "resolvePopoverPosition",
+        "toSymbol": "resolveVerticalPlacement",
+        "callExpression": "resolveVerticalPlacement",
+        "sourcePath": "src/features/popover/utils/resolvePopoverPosition.ts"
       },
       {
         "fromSymbol": "resolvePopoverPosition",
@@ -45408,8 +45431,8 @@
       },
       {
         "fromSymbol": "BrowserPopover",
-        "toSymbol": "useBrowserPopoverAnchorRect",
-        "callExpression": "useBrowserPopoverAnchorRect",
+        "toSymbol": "useBrowserPopoverLayout",
+        "callExpression": "useBrowserPopoverLayout",
         "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
       },
       {
@@ -45449,15 +45472,21 @@
         "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
       },
       {
-        "fromSymbol": "updateAnchorRect",
-        "toSymbol": "setAnchorRect",
-        "callExpression": "setAnchorRect",
+        "fromSymbol": "updateLayout",
+        "toSymbol": "setLayout",
+        "callExpression": "setLayout",
         "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
       },
       {
         "fromSymbol": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx",
-        "toSymbol": "updateAnchorRect",
-        "callExpression": "updateAnchorRect",
+        "toSymbol": "updateLayout",
+        "callExpression": "updateLayout",
+        "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
+      },
+      {
+        "fromSymbol": "contentStyle",
+        "toSymbol": "resolvePopoverPosition",
+        "callExpression": "resolvePopoverPosition",
         "sourcePath": "src/features/popover/adapters/inbound/browser/BrowserPopover.tsx"
       }
     ],

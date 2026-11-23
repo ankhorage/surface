@@ -455,7 +455,7 @@
   </li><li>
     <button class="nav-button" type="button" data-target="src/features/popover/utils/resolvePopoverPosition.ts">
       src/features/popover/utils/resolvePopoverPosition.ts
-      <small>2 functions</small>
+      <small>3 functions</small>
     </button>
   </li><li>
     <button class="nav-button" type="button" data-target="src/features/pressable/adapters/inbound/Pressable.tsx">
@@ -1426,10 +1426,10 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx</code></p>
     <p><strong>Exports:</strong> <span class="empty">None</span></p>
-  </article><article class="item" data-search="src/features/popover/adapters/inbound/browser/BrowserPopover.tsx src/internal/useControllableState.ts src/types/popover.ts BrowserPopover">
+  </article><article class="item" data-search="src/features/popover/adapters/inbound/browser/BrowserPopover.tsx src/features/popover/utils/resolvePopoverPosition.ts src/internal/useControllableState.ts src/types/popover.ts BrowserPopover">
     <h3>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/internal/useControllableState.ts</code>, <code>src/types/popover.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/features/popover/utils/resolvePopoverPosition.ts</code>, <code>src/internal/useControllableState.ts</code>, <code>src/types/popover.ts</code></p>
     <p><strong>Exports:</strong> <code>BrowserPopover</code></p>
   </article><article class="item" data-search="src/features/popover/adapters/inbound/Popover.tsx src/features/popover/adapters/inbound/PopoverOverlay.tsx src/internal/useControllableState.ts src/types/popover.ts Popover">
     <h3>src/features/popover/adapters/inbound/Popover.tsx</h3>
@@ -28494,6 +28494,7 @@
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
@@ -29531,6 +29532,7 @@
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx[&quot;src/features/popover/adapters/inbound/browser/BrowserPopover.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx[&quot;src/features/popover/adapters/inbound/Popover.tsx&quot;]
@@ -30605,6 +30607,7 @@
   module_src_features_popover_menu_composition_usePopoverMenuController_ts --&gt; module_src_types_popoverMenu_ts
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts --&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_features_popover_adapters_inbound_PopoverOverlay_tsx
@@ -31368,6 +31371,7 @@
   module_src_features_popover_menu_composition_usePopoverMenuController_ts --&gt; module_src_types_popoverMenu_ts
   module_src_features_popover_menu_utils_resolveNextMenuIndex_test_ts --&gt; module_src_features_popover_menu_utils_resolveNextMenuIndex_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_test_tsx --&gt; module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx
+  module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_features_popover_utils_resolvePopoverPosition_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_internal_useControllableState_ts
   module_src_features_popover_adapters_inbound_browser_BrowserPopover_tsx --&gt; module_src_types_popover_ts
   module_src_features_popover_adapters_inbound_Popover_tsx --&gt; module_src_features_popover_adapters_inbound_PopoverOverlay_tsx
@@ -34992,35 +34996,35 @@
       <h2>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx</h2>
       <article class="item" data-search="BrowserPopover src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Renders the browser-only Popover without loading React Native implementation modules.">
     <h3>BrowserPopover</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:8:1</code></p>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:11:1</code></p>
     <p>Renders the browser-only Popover without loading React Native implementation modules.</p>
 </article><article class="item" data-search="useBrowserPopoverDismissal src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Closes the open browser overlay for a true outside pointer press or Escape.">
     <h3>useBrowserPopoverDismissal</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:43:1</code></p>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:46:1</code></p>
     <p>Closes the open browser overlay for a true outside pointer press or Escape.</p>
 </article><article class="item" data-search="closeOnPointerDown src/features/popover/adapters/inbound/browser/BrowserPopover.tsx ">
     <h3>closeOnPointerDown</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:52:11</code></p>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:55:11</code></p>
     <p class="empty">No description available.</p>
 </article><article class="item" data-search="closeOnEscape src/features/popover/adapters/inbound/browser/BrowserPopover.tsx ">
     <h3>closeOnEscape</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:58:11</code></p>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:61:11</code></p>
     <p class="empty">No description available.</p>
 </article><article class="item" data-search="renderBrowserPopoverContent src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Create portal content only after the browser anchor has viewport coordinates.">
     <h3>renderBrowserPopoverContent</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:71:1</code></p>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:74:1</code></p>
     <p>Create portal content only after the browser anchor has viewport coordinates.</p>
-</article><article class="item" data-search="useBrowserPopoverAnchorRect src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Tracks the anchor in viewport coordinates while the browser overlay is visible.">
-    <h3>useBrowserPopoverAnchorRect</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:91:1</code></p>
+</article><article class="item" data-search="useBrowserPopoverLayout src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Tracks the anchor in viewport coordinates while the browser overlay is visible.">
+    <h3>useBrowserPopoverLayout</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:94:1</code></p>
     <p>Tracks the anchor in viewport coordinates while the browser overlay is visible.</p>
-</article><article class="item" data-search="updateAnchorRect src/features/popover/adapters/inbound/browser/BrowserPopover.tsx ">
-    <h3>updateAnchorRect</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:100:11</code></p>
+</article><article class="item" data-search="updateLayout src/features/popover/adapters/inbound/browser/BrowserPopover.tsx ">
+    <h3>updateLayout</h3>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:104:11</code></p>
     <p class="empty">No description available.</p>
 </article><article class="item" data-search="contentStyle src/features/popover/adapters/inbound/browser/BrowserPopover.tsx Position browser content in the document overlay using the shared Popover placement contract.">
     <h3>contentStyle</h3>
-    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:113:1</code></p>
+    <p class="muted"><code>src/features/popover/adapters/inbound/browser/BrowserPopover.tsx:136:1</code></p>
     <p>Position browser content in the document overlay using the shared Popover placement contract.</p>
 </article>
     </section>
@@ -35058,9 +35062,13 @@
     <h3>resolvePopoverPosition</h3>
     <p class="muted"><code>src/features/popover/utils/resolvePopoverPosition.ts:4:1</code></p>
     <p>Resolves a viewport-clamped anchored position for popover content.</p>
+</article><article class="item" data-search="resolveVerticalPlacement src/features/popover/utils/resolvePopoverPosition.ts Selects the preferred vertical side when it fits, otherwise the side with more usable space.">
+    <h3>resolveVerticalPlacement</h3>
+    <p class="muted"><code>src/features/popover/utils/resolvePopoverPosition.ts:43:1</code></p>
+    <p>Selects the preferred vertical side when it fits, otherwise the side with more usable space.</p>
 </article><article class="item" data-search="clamp src/features/popover/utils/resolvePopoverPosition.ts Clamps one numeric position into the available viewport range.">
     <h3>clamp</h3>
-    <p class="muted"><code>src/features/popover/utils/resolvePopoverPosition.ts:38:1</code></p>
+    <p class="muted"><code>src/features/popover/utils/resolvePopoverPosition.ts:57:1</code></p>
     <p>Clamps one numeric position into the available viewport range.</p>
 </article>
     </section>

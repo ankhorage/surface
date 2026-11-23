@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.6.3
+
+### Patch Changes
+
+- 60df409: Fit browser Popover content within the viewport by flipping, shifting, clamping, and constraining tall overlays.
+
 ## 9.6.2
 
 ### Patch Changes
