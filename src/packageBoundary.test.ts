@@ -30,3 +30,14 @@ test('emits a compiled web facade without source-path declaration leaks', async 
   expect(webDeclaration).not.toContain('/src/');
   expect(webRuntime).not.toContain('/src/');
 });
+
+test('publishes only the compiled web facade in the web distribution', async () => {
+  const webDistributionFiles = await Array.fromAsync(new Bun.Glob('web-dist/**/*').scan('.'));
+
+  expect([...webDistributionFiles].sort()).toEqual([
+    'web-dist/web.d.ts',
+    'web-dist/web.d.ts.map',
+    'web-dist/web.js',
+    'web-dist/web.js.map',
+  ]);
+});

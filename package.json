@@ -116,7 +116,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rm -rf dist web-dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo web.tsbuildinfo && bun x tsc -p tsconfig.build.json && bun x tsc -p tsconfig.build.json --outDir web-dist --tsBuildInfoFile web.tsbuildinfo",
+    "build": "rm -rf dist web-dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo && bun x tsc -p tsconfig.build.json && mkdir web-dist && cp dist/web.js dist/web.js.map dist/web.d.ts dist/web.d.ts.map web-dist/",
     "changeset": "ankhorage-changeset",
     "changeset:status": "ankhorage-changeset status --since=origin/main",
     "docs": "paradox && ankhorage-prettier --write README.md paradox",
