@@ -99,7 +99,7 @@ export default defineConfig({
     alias: { 'react-native': fileURLToPath(new URL('./node_modules/react-native-web', import.meta.url)) },
     conditions: ['browser'],
   },
-  ssr: { noExternal: ['@ankhorage/surface', 'react-native-web'] },
+  ssr: { noExternal: ['@ankhorage/surface', 'inline-style-prefixer', 'react-native-web'] },
 });
 `,
   );

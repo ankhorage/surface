@@ -140,7 +140,7 @@ const props: [
   {},
   { children: 'Authoring' },
   { children: null },
-  {},
+  { children: null },
   {},
 ];
 
