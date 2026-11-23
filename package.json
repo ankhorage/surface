@@ -51,6 +51,7 @@
   },
   "files": [
     "dist",
+    "web-dist",
     "src",
     "README.md",
     "CHANGELOG.md",
@@ -63,6 +64,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./web": {
+      "types": "./web-dist/web.d.ts",
+      "import": "./web-dist/web.js",
+      "default": "./web-dist/web.js"
     },
     "./bottom-sheet": {
       "react-native": "./dist/features/bottom-sheet/public.js",
@@ -110,7 +116,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rm -rf dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo && bun x tsc -p tsconfig.build.json",
+    "build": "rm -rf dist web-dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo web.tsbuildinfo && bun x tsc -p tsconfig.build.json && bun x tsc -p tsconfig.build.json --outDir web-dist --tsBuildInfoFile web.tsbuildinfo",
     "changeset": "ankhorage-changeset",
     "changeset:status": "ankhorage-changeset status --since=origin/main",
     "docs": "paradox && ankhorage-prettier --write README.md paradox",

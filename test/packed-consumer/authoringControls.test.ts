@@ -23,6 +23,8 @@ test('packed authoring-controls consumer typechecks, bundles, and mounts the bro
       await readFile(join(consumerDirectory, 'dist', 'metafile.json'), 'utf8'),
     ) as { inputs: Record<string, unknown> };
     const graphSource = Object.keys(graph.inputs).join('\n');
+    expect(graphSource).toContain('web-dist/web.js');
+    expect(graphSource).not.toContain('@ankhorage/surface/src/');
     expect(graphSource).not.toContain('features/app-bar');
     expect(graphSource).not.toContain('react-native-gesture-handler');
     expect(graphSource).not.toContain('react-native-safe-area-context');
@@ -115,6 +117,8 @@ import {
   ThemeScope,
   View,
 } from '@ankhorage/surface/authoring-controls';
+import type { TextProps as WebTextProps, ViewProps as WebViewProps } from '@ankhorage/surface/web';
+import { Text as WebText, View as WebView } from '@ankhorage/surface/web';
 
 const props: [
   ButtonProps,
@@ -144,8 +148,12 @@ const props: [
   {},
 ];
 
+const webProps: [WebTextProps, WebViewProps] = [{ children: 'Web' }, { children: null }];
+
 void props;
+void webProps;
 void [Button, Card, Field, Popover, Pressable, Surface, Switch, Text, TextInput, ThemeProvider, ThemeScope, View];
+export const webFoundation = [WebText, WebView];
 `,
   );
   await writeFile(

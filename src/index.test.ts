@@ -32,6 +32,16 @@ const capabilitiesExport = {
   },
 };
 
+const packageFiles = ['dist', 'web-dist', 'src', 'README.md', 'CHANGELOG.md', 'LICENSE'];
+
+const webExport = {
+  './web': {
+    default: './web-dist/web.js',
+    import: './web-dist/web.js',
+    types: './web-dist/web.d.ts',
+  },
+};
+
 const authoringControlsExport = {
   './authoring-controls': {
     'react-native': './dist/features/authoring/public.js',
@@ -165,7 +175,7 @@ describe('remaining root barrel contract', () => {
 
 describe('public package metadata contract', () => {
   it('keeps package metadata aligned with deliberate public entrypoints', () => {
-    expect(packageJson.files).toEqual(['dist', 'src', 'README.md', 'CHANGELOG.md', 'LICENSE']);
+    expect(packageJson.files).toEqual(packageFiles);
     expect(packageJson.exports).toEqual({
       '.': {
         'react-native': './dist/index.js',
@@ -174,6 +184,7 @@ describe('public package metadata contract', () => {
         import: './dist/index.js',
         types: './dist/index.d.ts',
       },
+      ...webExport,
       './bottom-sheet': {
         'react-native': './dist/features/bottom-sheet/public.js',
         browser: './dist/features/bottom-sheet/browser.js',
