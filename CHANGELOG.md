@@ -1,5 +1,19 @@
 # @ankhorage/surface
 
+## 9.6.0
+
+### Minor Changes
+
+- 9665583: Add Button labelWeight support for semiBold and bold labels.
+- d750b9e: Add an intrinsic SVG color mode for multicolor icons.
+
+### Patch Changes
+
+- 979c462: Expose canonical Popover, Switch, Surface, responsive, and theme runtime controls through the browser-safe authoring facade.
+- 07bcb2a: Update dependencies: `@ankhorage/contracts`.
+- 1b56ca8: Update dependencies: `@ankhorage/color-theory`, `@ankhorage/contracts`.
+- 5d19cbd: Update dependencies: `@ankhorage/contracts`.
+
 ## 9.5.20
 
 ### Patch Changes

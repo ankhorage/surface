@@ -18,7 +18,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.5.20",
+      "value": "v9.6.0",
       "color": "cb3837"
     },
     {
@@ -54,8 +54,8 @@
     {
       "id": "tests",
       "label": "tests",
-      "value": "checked",
-      "color": "0a7f3f"
+      "value": "configured",
+      "color": "6f42c1"
     },
     {
       "id": "docs",
@@ -406,8 +406,18 @@
         "CardProps",
         "Field",
         "FieldProps",
+        "Popover",
+        "PopoverAnchorRenderProps",
+        "PopoverPlacement",
+        "PopoverProps",
         "Pressable",
         "PressableProps",
+        "ResponsiveProvider",
+        "Surface",
+        "SurfaceProps",
+        "SurfaceVariant",
+        "Switch",
+        "SwitchProps",
         "Text",
         "TextInput",
         "TextInputProps",
@@ -415,6 +425,8 @@
         "ThemeProvider",
         "ThemeProviderProps",
         "ThemeRuntime",
+        "ThemeScope",
+        "ThemeScopeProps",
         "useTheme",
         "View",
         "ViewProps"
@@ -431,8 +443,18 @@
         "CardProps",
         "Field",
         "FieldProps",
+        "Popover",
+        "PopoverAnchorRenderProps",
+        "PopoverPlacement",
+        "PopoverProps",
         "Pressable",
         "PressableProps",
+        "ResponsiveProvider",
+        "Surface",
+        "SurfaceProps",
+        "SurfaceVariant",
+        "Switch",
+        "SwitchProps",
         "Text",
         "TextInput",
         "TextInputProps",
@@ -440,6 +462,8 @@
         "ThemeProvider",
         "ThemeProviderProps",
         "ThemeRuntime",
+        "ThemeScope",
+        "ThemeScopeProps",
         "useTheme",
         "View",
         "ViewProps"
@@ -659,6 +683,12 @@
       ]
     },
     {
+      "path": "src/features/button/adapters/inbound/Button.web.test.tsx",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    },
+    {
       "path": "src/features/button/adapters/inbound/Button.web.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -710,6 +740,7 @@
       "exports": [
         "Button",
         "ButtonIconSpec",
+        "ButtonLabelWeight",
         "ButtonProps",
         "IconButton",
         "IconButtonProps"
@@ -974,7 +1005,9 @@
     {
       "path": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": [
+        "src/types/icon.ts"
+      ],
       "exports": []
     },
     {
@@ -1028,6 +1061,7 @@
         "IconSource",
         "IconVariant",
         "SUPPORTED_ICON_PROVIDERS",
+        "SvgIconColorMode",
         "SvgIconSource"
       ]
     },
@@ -2232,6 +2266,7 @@
         "BREAKPOINTS",
         "Button",
         "ButtonIconSpec",
+        "ButtonLabelWeight",
         "ButtonProps",
         "Card",
         "CardProps",
@@ -2317,6 +2352,7 @@
         "SurfaceStatusColor",
         "SurfaceTheme",
         "SurfaceVariant",
+        "SvgIconColorMode",
         "SvgIconSource",
         "Switch",
         "SwitchProps",
@@ -2880,10 +2916,12 @@
         "src/types/control.ts",
         "src/types/icon.ts",
         "src/types/pressable.ts",
-        "src/types/surfaceColor.ts"
+        "src/types/surfaceColor.ts",
+        "src/types/typography.ts"
       ],
       "exports": [
         "ButtonIconSpec",
+        "ButtonLabelWeight",
         "ButtonProps",
         "ButtonVariant",
         "IconButtonProps"
@@ -2949,6 +2987,7 @@
         "IconProvider",
         "IconSource",
         "IconVariant",
+        "SvgIconColorMode",
         "SvgIconSource"
       ]
     },
@@ -8585,7 +8624,29 @@
       "modulePath": "src/types/button.ts",
       "sourceLocation": {
         "filePath": "src/types/button.ts",
-        "line": 8,
+        "line": 9,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "ButtonLabelWeight",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/button.ts",
+      "sourceLocation": {
+        "filePath": "src/types/button.ts",
+        "line": 10,
         "column": 1
       },
       "exportPaths": [
@@ -8607,13 +8668,14 @@
       "modulePath": "src/types/button.ts",
       "sourceLocation": {
         "filePath": "src/types/button.ts",
-        "line": 11,
+        "line": 13,
         "column": 1
       },
       "exportPaths": [
         "src/index.ts"
       ],
       "relatedSymbols": [
+        "ButtonLabelWeight",
         "IconSource",
         "InteractionPolicy",
         "Responsive"
@@ -8785,6 +8847,13 @@
           "name": "justify",
           "kind": "property",
           "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "labelWeight",
+          "kind": "property",
+          "type": "ButtonLabelWeight | undefined",
           "required": false,
           "description": null
         },
@@ -10694,7 +10763,7 @@
       "modulePath": "src/types/icon.ts",
       "sourceLocation": {
         "filePath": "src/types/icon.ts",
-        "line": 24,
+        "line": 26,
         "column": 1
       },
       "exportPaths": [
@@ -11593,7 +11662,7 @@
       "modulePath": "src/types/button.ts",
       "sourceLocation": {
         "filePath": "src/types/button.ts",
-        "line": 25,
+        "line": 28,
         "column": 1
       },
       "exportPaths": [
@@ -12033,7 +12102,7 @@
       "modulePath": "src/types/icon.ts",
       "sourceLocation": {
         "filePath": "src/types/icon.ts",
-        "line": 50,
+        "line": 53,
         "column": 1
       },
       "exportPaths": [
@@ -12077,7 +12146,7 @@
       "modulePath": "src/types/icon.ts",
       "sourceLocation": {
         "filePath": "src/types/icon.ts",
-        "line": 42,
+        "line": 45,
         "column": 1
       },
       "exportPaths": [
@@ -15105,7 +15174,7 @@
         {
           "name": "indicatorStyle",
           "kind": "property",
-          "type": "\"default\" | \"black\" | \"white\" | undefined",
+          "type": "\"black\" | \"default\" | \"white\" | undefined",
           "required": false,
           "description": null
         },
@@ -17314,6 +17383,28 @@
       "structuredRows": []
     },
     {
+      "name": "SvgIconColorMode",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/icon.ts",
+      "sourceLocation": {
+        "filePath": "src/types/icon.ts",
+        "line": 24,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
       "name": "SvgIconSource",
       "title": null,
       "description": null,
@@ -17324,17 +17415,25 @@
       "modulePath": "src/types/icon.ts",
       "sourceLocation": {
         "filePath": "src/types/icon.ts",
-        "line": 35,
+        "line": 37,
         "column": 1
       },
       "exportPaths": [
         "src/index.ts"
       ],
       "relatedSymbols": [
-        "SurfaceImageSource"
+        "SurfaceImageSource",
+        "SvgIconColorMode"
       ],
       "signatures": [],
       "members": [
+        {
+          "name": "colorMode",
+          "kind": "property",
+          "type": "SvgIconColorMode | undefined",
+          "required": false,
+          "description": null
+        },
         {
           "name": "name",
           "kind": "property",
@@ -19442,7 +19541,7 @@
         {
           "name": "keyboardAppearance",
           "kind": "property",
-          "type": "\"default\" | \"light\" | \"dark\" | undefined",
+          "type": "\"light\" | \"default\" | \"dark\" | undefined",
           "required": false,
           "description": null
         },
@@ -25389,6 +25488,12 @@
         {
           "name": "justify",
           "type": "Responsive<\n    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'\n  > | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "labelWeight",
+          "type": "ButtonLabelWeight | undefined",
           "required": false,
           "description": null
         },
@@ -34616,6 +34721,17 @@
       }
     },
     {
+      "name": "renderButton",
+      "description": "Renders a public Button against the browser adapter to inspect its resolved typography.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/button/adapters/inbound/Button.web.test.tsx",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
       "name": "Button",
       "description": "Renders Button through the browser-safe Icon platform adapter.",
       "see": [],
@@ -34644,7 +34760,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
-        "line": 67,
+        "line": 69,
         "column": 1
       }
     },
@@ -34655,7 +34771,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
-        "line": 119,
+        "line": 122,
         "column": 1
       }
     },
@@ -34666,7 +34782,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
-        "line": 124,
+        "line": 127,
         "column": 1
       }
     },
@@ -34677,7 +34793,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/button/adapters/inbound/ButtonPresentation.tsx",
-        "line": 144,
+        "line": 147,
         "column": 1
       }
     },
@@ -34820,7 +34936,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
-        "line": 19,
+        "line": 22,
         "column": 1
       }
     },
@@ -34831,7 +34947,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
-        "line": 76,
+        "line": 77,
         "column": 1
       }
     },
@@ -34842,7 +34958,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
-        "line": 89,
+        "line": 91,
         "column": 1
       }
     },
@@ -35095,7 +35211,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
-        "line": 8,
+        "line": 10,
         "column": 7
       }
     },
@@ -35106,7 +35222,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
-        "line": 99,
+        "line": 114,
         "column": 11
       }
     },
@@ -35155,13 +35271,35 @@
       }
     },
     {
+      "name": "svgColorProps",
+      "description": "Uses the resolved theme color only when the SVG source requests tinting.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
+        "line": 103,
+        "column": 1
+      }
+    },
+    {
+      "name": "svgTintProps",
+      "description": "Avoids React Native Image tinting when an SVG owns its own colors.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
+        "line": 108,
+        "column": 1
+      }
+    },
+    {
       "name": "assertNever",
       "description": "Rejects unsupported icon configuration at runtime.",
       "see": [],
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
-        "line": 103,
+        "line": 113,
         "column": 1
       }
     },
@@ -35172,7 +35310,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
-        "line": 108,
+        "line": 118,
         "column": 1
       }
     },
@@ -35183,7 +35321,18 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
-        "line": 127,
+        "line": 137,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderWebPortableIcons",
+      "description": "Renders the web adapter in a child process to keep RN Web module initialization isolated.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.test.ts",
+        "line": 27,
         "column": 1
       }
     },
@@ -35227,7 +35376,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 120,
+        "line": 124,
         "column": 1
       }
     },
@@ -35238,7 +35387,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 144,
+        "line": 148,
         "column": 1
       }
     },
@@ -35249,7 +35398,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 176,
+        "line": 180,
         "column": 1
       }
     },
@@ -35260,7 +35409,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 208,
+        "line": 212,
         "column": 1
       }
     },
@@ -35271,7 +35420,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 222,
+        "line": 226,
         "column": 1
       }
     },
@@ -35282,7 +35431,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
-        "line": 227,
+        "line": 231,
         "column": 1
       }
     },
@@ -38022,6 +38171,11 @@
         "sourcePath": "src/types/button.ts"
       },
       {
+        "fromPath": "src/types/button.ts",
+        "toPath": "src/types/typography.ts",
+        "sourcePath": "src/types/button.ts"
+      },
+      {
         "fromPath": "src/types/card.ts",
         "toPath": "src/types/surface.ts",
         "sourcePath": "src/types/card.ts"
@@ -38413,6 +38567,11 @@
       },
       {
         "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/core/responsive/index.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
         "toPath": "src/features/button/adapters/inbound/Button.web.tsx",
         "sourcePath": "src/features/authoring/browser.ts"
       },
@@ -38433,6 +38592,11 @@
       },
       {
         "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/form/switch/public.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
         "toPath": "src/features/form/text-input/public.ts",
         "sourcePath": "src/features/authoring/browser.ts"
       },
@@ -38443,7 +38607,17 @@
       },
       {
         "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/popover/browser.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
         "toPath": "src/features/pressable/public.ts",
+        "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/browser.ts",
+        "toPath": "src/features/surface/public.ts",
         "sourcePath": "src/features/authoring/browser.ts"
       },
       {
@@ -38455,6 +38629,11 @@
         "fromPath": "src/features/authoring/browser.ts",
         "toPath": "src/features/typography/public.ts",
         "sourcePath": "src/features/authoring/browser.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/core/responsive/index.ts",
+        "sourcePath": "src/features/authoring/public.ts"
       },
       {
         "fromPath": "src/features/authoring/public.ts",
@@ -38473,6 +38652,11 @@
       },
       {
         "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/form/switch/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
         "toPath": "src/features/form/text-input/public.ts",
         "sourcePath": "src/features/authoring/public.ts"
       },
@@ -38483,7 +38667,17 @@
       },
       {
         "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/popover/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
         "toPath": "src/features/pressable/public.ts",
+        "sourcePath": "src/features/authoring/public.ts"
+      },
+      {
+        "fromPath": "src/features/authoring/public.ts",
+        "toPath": "src/features/surface/public.ts",
         "sourcePath": "src/features/authoring/public.ts"
       },
       {
@@ -40075,6 +40269,11 @@
         "fromPath": "src/features/icon/adapters/inbound/Icon.web.tsx",
         "toPath": "src/features/icon/adapters/inbound/PortableIcon.web.tsx",
         "sourcePath": "src/features/icon/adapters/inbound/Icon.web.tsx"
+      },
+      {
+        "fromPath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx",
+        "toPath": "src/types/icon.ts",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.test.tsx"
       },
       {
         "fromPath": "src/features/icon/adapters/inbound/PortableIcon.tsx",
@@ -43468,6 +43667,30 @@
         "sourcePath": "src/features/badge/adapters/inbound/Badge.tsx"
       },
       {
+        "fromSymbol": "renderButton",
+        "toSymbol": "renderToStaticMarkup",
+        "callExpression": "renderToStaticMarkup",
+        "sourcePath": "src/features/button/adapters/inbound/Button.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/button/adapters/inbound/Button.web.test.tsx",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/button/adapters/inbound/Button.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/button/adapters/inbound/Button.web.test.tsx",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/button/adapters/inbound/Button.web.test.tsx"
+      },
+      {
+        "fromSymbol": "src/features/button/adapters/inbound/Button.web.test.tsx",
+        "toSymbol": "renderButton",
+        "callExpression": "renderButton",
+        "sourcePath": "src/features/button/adapters/inbound/Button.web.test.tsx"
+      },
+      {
         "fromSymbol": "ButtonPresentation",
         "toSymbol": "useTheme",
         "callExpression": "useTheme",
@@ -43756,6 +43979,18 @@
         "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.tsx"
       },
       {
+        "fromSymbol": "renderSvgIcon",
+        "toSymbol": "svgColorProps",
+        "callExpression": "svgColorProps",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.tsx"
+      },
+      {
+        "fromSymbol": "renderSvgIcon",
+        "toSymbol": "svgTintProps",
+        "callExpression": "svgTintProps",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.tsx"
+      },
+      {
         "fromSymbol": "renderFontAwesome5",
         "toSymbol": "assertNever",
         "callExpression": "assertNever",
@@ -43775,6 +44010,18 @@
       },
       {
         "fromSymbol": "src/features/icon/adapters/inbound/PortableIcon.web.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.web.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/icon/adapters/inbound/PortableIcon.web.test.ts",
+        "toSymbol": "renderWebPortableIcons",
+        "callExpression": "renderWebPortableIcons",
+        "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.web.test.ts"
+      },
+      {
+        "fromSymbol": "renderWebPortableIcons",
         "toSymbol": "expect",
         "callExpression": "expect",
         "sourcePath": "src/features/icon/adapters/inbound/PortableIcon.web.test.ts"
@@ -44836,6 +45083,12 @@
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.tsx"
       },
       {
+        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
+        "toSymbol": "installBrowserGlobals",
+        "callExpression": "installBrowserGlobals",
+        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
+      },
+      {
         "fromSymbol": "ControlledCheckbox",
         "toSymbol": "useState",
         "callExpression": "useState",
@@ -44857,12 +45110,6 @@
         "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
         "toSymbol": "expect",
         "callExpression": "expect",
-        "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
-      },
-      {
-        "fromSymbol": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx",
-        "toSymbol": "installBrowserGlobals",
-        "callExpression": "installBrowserGlobals",
         "sourcePath": "src/features/form/checkbox/adapters/inbound/Checkbox.web.test.tsx"
       },
       {
@@ -45867,6 +46114,11 @@
       },
       {
         "fromSymbol": "ButtonProps",
+        "toType": "ButtonLabelWeight",
+        "sourcePath": "src/types/button.ts"
+      },
+      {
+        "fromSymbol": "ButtonProps",
         "toType": "ButtonVariant",
         "sourcePath": "src/types/button.ts"
       },
@@ -46458,6 +46710,11 @@
       {
         "fromSymbol": "SvgIconSource",
         "toType": "SurfaceImageSource",
+        "sourcePath": "src/types/icon.ts"
+      },
+      {
+        "fromSymbol": "SvgIconSource",
+        "toType": "SvgIconColorMode",
         "sourcePath": "src/types/icon.ts"
       },
       {

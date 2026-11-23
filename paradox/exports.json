@@ -5323,7 +5323,29 @@
     "modulePath": "src/types/button.ts",
     "sourceLocation": {
       "filePath": "src/types/button.ts",
-      "line": 8,
+      "line": 9,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "ButtonLabelWeight",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/button.ts",
+    "sourceLocation": {
+      "filePath": "src/types/button.ts",
+      "line": 10,
       "column": 1
     },
     "exportPaths": [
@@ -5345,13 +5367,14 @@
     "modulePath": "src/types/button.ts",
     "sourceLocation": {
       "filePath": "src/types/button.ts",
-      "line": 11,
+      "line": 13,
       "column": 1
     },
     "exportPaths": [
       "src/index.ts"
     ],
     "relatedSymbols": [
+      "ButtonLabelWeight",
       "IconSource",
       "InteractionPolicy",
       "Responsive"
@@ -5523,6 +5546,13 @@
         "name": "justify",
         "kind": "property",
         "type": "Responsive<\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"> | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "labelWeight",
+        "kind": "property",
+        "type": "ButtonLabelWeight | undefined",
         "required": false,
         "description": null
       },
@@ -7432,7 +7462,7 @@
     "modulePath": "src/types/icon.ts",
     "sourceLocation": {
       "filePath": "src/types/icon.ts",
-      "line": 24,
+      "line": 26,
       "column": 1
     },
     "exportPaths": [
@@ -8331,7 +8361,7 @@
     "modulePath": "src/types/button.ts",
     "sourceLocation": {
       "filePath": "src/types/button.ts",
-      "line": 25,
+      "line": 28,
       "column": 1
     },
     "exportPaths": [
@@ -8771,7 +8801,7 @@
     "modulePath": "src/types/icon.ts",
     "sourceLocation": {
       "filePath": "src/types/icon.ts",
-      "line": 50,
+      "line": 53,
       "column": 1
     },
     "exportPaths": [
@@ -8815,7 +8845,7 @@
     "modulePath": "src/types/icon.ts",
     "sourceLocation": {
       "filePath": "src/types/icon.ts",
-      "line": 42,
+      "line": 45,
       "column": 1
     },
     "exportPaths": [
@@ -11843,7 +11873,7 @@
       {
         "name": "indicatorStyle",
         "kind": "property",
-        "type": "\"default\" | \"black\" | \"white\" | undefined",
+        "type": "\"black\" | \"default\" | \"white\" | undefined",
         "required": false,
         "description": null
       },
@@ -14052,6 +14082,28 @@
     "structuredRows": []
   },
   {
+    "name": "SvgIconColorMode",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/icon.ts",
+    "sourceLocation": {
+      "filePath": "src/types/icon.ts",
+      "line": 24,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
     "name": "SvgIconSource",
     "title": null,
     "description": null,
@@ -14062,17 +14114,25 @@
     "modulePath": "src/types/icon.ts",
     "sourceLocation": {
       "filePath": "src/types/icon.ts",
-      "line": 35,
+      "line": 37,
       "column": 1
     },
     "exportPaths": [
       "src/index.ts"
     ],
     "relatedSymbols": [
-      "SurfaceImageSource"
+      "SurfaceImageSource",
+      "SvgIconColorMode"
     ],
     "signatures": [],
     "members": [
+      {
+        "name": "colorMode",
+        "kind": "property",
+        "type": "SvgIconColorMode | undefined",
+        "required": false,
+        "description": null
+      },
       {
         "name": "name",
         "kind": "property",
@@ -16180,7 +16240,7 @@
       {
         "name": "keyboardAppearance",
         "kind": "property",
-        "type": "\"default\" | \"light\" | \"dark\" | undefined",
+        "type": "\"light\" | \"default\" | \"dark\" | undefined",
         "required": false,
         "description": null
       },

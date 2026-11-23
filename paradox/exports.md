@@ -969,13 +969,19 @@ Renders the primary Surface action control with semantic visual states.
 
 Kind: `unknown`
 Module: `src/types/button.ts`
-Source: `src/types/button.ts:8:1`
+Source: `src/types/button.ts:9:1`
+
+## ButtonLabelWeight
+
+Kind: `unknown`
+Module: `src/types/button.ts`
+Source: `src/types/button.ts:10:1`
 
 ## ButtonProps
 
 Kind: `type`
 Module: `src/types/button.ts`
-Source: `src/types/button.ts:11:1`
+Source: `src/types/button.ts:13:1`
 
 ### Members
 
@@ -1005,6 +1011,7 @@ Source: `src/types/button.ts:11:1`
 | height | property | `Responsive<string \| number> \| undefined` | no |  |
 | interactionPolicy | property | `InteractionPolicy \| undefined` | no |  |
 | justify | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no |  |
+| labelWeight | property | `ButtonLabelWeight \| undefined` | no |  |
 | leadingIcon | property | `IconSource \| undefined` | no |  |
 | left | property | `Responsive<number> \| undefined` | no |  |
 | loading | property | `boolean \| undefined` | no |  |
@@ -1433,7 +1440,7 @@ Source: `src/types/field.ts:3:1`
 
 Kind: `unknown`
 Module: `src/types/icon.ts`
-Source: `src/types/icon.ts:24:1`
+Source: `src/types/icon.ts:26:1`
 
 ## FontProvider
 
@@ -1714,7 +1721,7 @@ Renders a compact accessible icon-only action control.
 
 Kind: `type`
 Module: `src/types/button.ts`
-Source: `src/types/button.ts:25:1`
+Source: `src/types/button.ts:28:1`
 
 ### Members
 
@@ -1784,7 +1791,7 @@ Source: `src/types/button.ts:25:1`
 
 Kind: `unknown`
 Module: `src/types/icon.ts`
-Source: `src/types/icon.ts:50:1`
+Source: `src/types/icon.ts:53:1`
 
 ## IconProvider
 
@@ -1796,7 +1803,7 @@ Source: `src/types/icon.ts:19:1`
 
 Kind: `unknown`
 Module: `src/types/icon.ts`
-Source: `src/types/icon.ts:42:1`
+Source: `src/types/icon.ts:45:1`
 
 ## IconVariant
 
@@ -2577,7 +2584,7 @@ Source: `src/types/layout.ts:97:1`
 | horizontal | property | `boolean \| undefined` | no |  |
 | id | property | `string \| undefined` | no |  |
 | importantForAccessibility | property | `"auto" \| "yes" \| "no" \| "no-hide-descendants" \| undefined` | no |  |
-| indicatorStyle | property | `"default" \| "black" \| "white" \| undefined` | no |  |
+| indicatorStyle | property | `"black" \| "default" \| "white" \| undefined` | no |  |
 | innerViewRef | property | `React.Ref<import("../../../src/private/webapis/dom/nodes/ReactNativeElement").default> \| undefined` | no |  |
 | invertStickyHeaders | property | `boolean \| undefined` | no |  |
 | justify | property | `Responsive<"flex-start" \| "center" \| "flex-end" \| "space-between" \| "space-around" \| "space-evenly"> \| undefined` | no |  |
@@ -3002,16 +3009,23 @@ Kind: `unknown`
 Module: `src/types/surface.ts`
 Source: `src/types/surface.ts:3:1`
 
+## SvgIconColorMode
+
+Kind: `unknown`
+Module: `src/types/icon.ts`
+Source: `src/types/icon.ts:24:1`
+
 ## SvgIconSource
 
 Kind: `type`
 Module: `src/types/icon.ts`
-Source: `src/types/icon.ts:35:1`
+Source: `src/types/icon.ts:37:1`
 
 ### Members
 
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
+| colorMode | property | `SvgIconColorMode \| undefined` | no |  |
 | name | property | `undefined` | no |  |
 | provider | property | `undefined` | no |  |
 | source | property | `SurfaceImageSource` | yes |  |
@@ -3500,7 +3514,7 @@ Source: `src/types/text-input.ts:11:1`
 | inputMode | property | `InputModeOptions \| undefined` | no |  |
 | interactionPolicy | property | `InteractionPolicy \| undefined` | no |  |
 | invalid | property | `boolean \| undefined` | no |  |
-| keyboardAppearance | property | `"default" \| "light" \| "dark" \| undefined` | no |  |
+| keyboardAppearance | property | `"light" \| "default" \| "dark" \| undefined` | no |  |
 | keyboardType | property | `KeyboardTypeOptions \| undefined` | no |  |
 | leadingAccessory | property | `React.ReactNode` | no |  |
 | lineBreakModeIOS | property | `"wordWrapping" \| "char" \| "clip" \| "head" \| "middle" \| "tail" \| undefined` | no |  |

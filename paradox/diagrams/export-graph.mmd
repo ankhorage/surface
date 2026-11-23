@@ -50,6 +50,7 @@ graph LR
   module_src_features_bottom_sheet_useBottomSheet_ts["src/features/bottom-sheet/useBottomSheet.ts"]
   module_src_features_bottom_sheet_webAdapters_test_tsx["src/features/bottom-sheet/webAdapters.test.tsx"]
   module_src_features_button_adapters_inbound_Button_tsx["src/features/button/adapters/inbound/Button.tsx"]
+  module_src_features_button_adapters_inbound_Button_web_test_tsx["src/features/button/adapters/inbound/Button.web.test.tsx"]
   module_src_features_button_adapters_inbound_Button_web_tsx["src/features/button/adapters/inbound/Button.web.tsx"]
   module_src_features_button_adapters_inbound_ButtonPresentation_tsx["src/features/button/adapters/inbound/ButtonPresentation.tsx"]
   module_src_features_button_adapters_inbound_IconButton_tsx["src/features/button/adapters/inbound/IconButton.tsx"]
@@ -327,8 +328,11 @@ graph LR
   export_Button -.-> export_ButtonProps
   export_ButtonIconSpec["ButtonIconSpec"]
   module_src_types_button_ts --> export_ButtonIconSpec
+  export_ButtonLabelWeight["ButtonLabelWeight"]
+  module_src_types_button_ts --> export_ButtonLabelWeight
   export_ButtonProps["ButtonProps"]
   module_src_types_button_ts --> export_ButtonProps
+  export_ButtonProps -.-> export_ButtonLabelWeight
   export_ButtonProps -.-> export_IconSource
   export_ButtonProps -.-> export_InteractionPolicy
   export_ButtonProps -.-> export_Responsive
@@ -557,9 +561,12 @@ graph LR
   export_SurfaceTheme -.-> export_ThemeSemantics
   export_SurfaceVariant["SurfaceVariant"]
   module_src_types_surface_ts --> export_SurfaceVariant
+  export_SvgIconColorMode["SvgIconColorMode"]
+  module_src_types_icon_ts --> export_SvgIconColorMode
   export_SvgIconSource["SvgIconSource"]
   module_src_types_icon_ts --> export_SvgIconSource
   export_SvgIconSource -.-> export_SurfaceImageSource
+  export_SvgIconSource -.-> export_SvgIconColorMode
   export_Switch["Switch"]
   module_src_features_form_switch_adapters_inbound_Switch_tsx --> export_Switch
   export_Switch -.-> export_SwitchProps

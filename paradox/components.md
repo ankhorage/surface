@@ -649,6 +649,7 @@ Export paths: `src/index.ts`
 | justify | `Responsive<
     'flex-start' \| 'center' \| 'flex-end' \| 'space-between' \| 'space-around' \| 'space-evenly'
   > \| undefined` | no | — |  |
+| labelWeight | `ButtonLabelWeight \| undefined` | no | — |  |
 | leadingIcon | `ButtonIconSpec \| undefined` | no | — |  |
 | left | `Responsive<number> \| undefined` | no | — |  |
 | loading | `boolean \| undefined` | no | — |  |
