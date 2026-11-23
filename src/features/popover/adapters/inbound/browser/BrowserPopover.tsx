@@ -3,6 +3,9 @@ import { createPortal } from 'react-dom';
 
 import { useControllableState } from '../../../../../internal/useControllableState.js';
 import type { PopoverProps } from '../../../../../types/popover.js';
+import { resolvePopoverPosition } from '../../../utils/resolvePopoverPosition.js';
+
+const VIEWPORT_PADDING = 8;
 
 /*** Renders the browser-only Popover without loading React Native implementation modules. */
 export function BrowserPopover(props: PopoverProps) {
@@ -21,8 +24,8 @@ export function BrowserPopover(props: PopoverProps) {
     if (!passive) setOpen(!open);
   }, [open, passive, setOpen]);
   useBrowserPopoverDismissal(anchorRef, close, contentElement, open, props.closeOnOutsidePress);
-  const anchorRect = useBrowserPopoverAnchorRect(anchorRef, open);
-  const content = renderBrowserPopoverContent(props, anchorRect, setContentElement, open);
+  const layout = useBrowserPopoverLayout(anchorRef, contentElement, open);
+  const content = renderBrowserPopoverContent(props, layout, setContentElement, open);
   return (
     <>
       <div
@@ -70,17 +73,17 @@ function useBrowserPopoverDismissal(
 /*** Create portal content only after the browser anchor has viewport coordinates. */
 function renderBrowserPopoverContent(
   props: PopoverProps,
-  anchorRect: DOMRect | null,
+  layout: BrowserPopoverLayout | null,
   setContentElement: React.Dispatch<React.SetStateAction<HTMLDivElement | null>>,
   open: boolean,
 ): React.ReactNode {
-  if (!open || anchorRect === null) return null;
+  if (!open) return null;
   return (
     <div
       ref={setContentElement}
       data-testid={props.testID ? `${props.testID}-content` : undefined}
       role="dialog"
-      style={contentStyle(props, anchorRect)}
+      style={contentStyle(props, layout)}
     >
       {props.children}
     </div>
@@ -88,40 +91,74 @@ function renderBrowserPopoverContent(
 }
 
 /*** Tracks the anchor in viewport coordinates while the browser overlay is visible. */
-function useBrowserPopoverAnchorRect(
+function useBrowserPopoverLayout(
   anchorRef: React.RefObject<HTMLDivElement | null>,
+  contentElement: HTMLDivElement | null,
   open: boolean,
-): DOMRect | null {
-  const [anchorRect, setAnchorRect] = React.useState<DOMRect | null>(null);
+): BrowserPopoverLayout | null {
+  const [layout, setLayout] = React.useState<BrowserPopoverLayout | null>(null);
   React.useLayoutEffect(() => {
     if (!open) return;
     const anchor = anchorRef.current;
     if (anchor === null) return;
-    const updateAnchorRect = () => setAnchorRect(anchor.getBoundingClientRect());
-    updateAnchorRect();
-    window.addEventListener('resize', updateAnchorRect);
-    window.addEventListener('scroll', updateAnchorRect, true);
-    return () => {
-      window.removeEventListener('resize', updateAnchorRect);
-      window.removeEventListener('scroll', updateAnchorRect, true);
+    const updateLayout = () => {
+      const anchorRect = anchor.getBoundingClientRect();
+      const contentRect = contentElement?.getBoundingClientRect();
+      if (contentRect === undefined) return;
+      setLayout({
+        anchor: {
+          height: anchorRect.height,
+          width: anchorRect.width,
+          x: anchorRect.x,
+          y: anchorRect.y,
+        },
+        contentSize: { height: contentRect.height, width: contentRect.width },
+        viewport: { height: window.innerHeight, width: window.innerWidth },
+      });
     };
-  }, [anchorRef, open]);
-  return anchorRect;
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
+    window.addEventListener('scroll', updateLayout, true);
+    const observer =
+      typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(updateLayout);
+    observer?.observe(anchor);
+    if (contentElement) observer?.observe(contentElement);
+    return () => {
+      window.removeEventListener('resize', updateLayout);
+      window.removeEventListener('scroll', updateLayout, true);
+      observer?.disconnect();
+    };
+  }, [anchorRef, contentElement, open]);
+  return layout;
 }
 
 /*** Position browser content in the document overlay using the shared Popover placement contract. */
-function contentStyle(props: PopoverProps, anchorRect: DOMRect): React.CSSProperties {
-  const offset = props.offset ?? 8;
-  const placement = props.placement ?? 'bottom-start';
-  const verticalPosition = placement.startsWith('top')
-    ? { bottom: window.innerHeight - anchorRect.top + offset }
-    : { top: anchorRect.bottom + offset };
-  const horizontalPosition = placement.endsWith('end')
-    ? { left: anchorRect.right, transform: 'translateX(-100%)' }
-    : placement.endsWith('start')
-      ? { left: anchorRect.left }
-      : { left: anchorRect.left + anchorRect.width / 2, transform: 'translateX(-50%)' };
-  return { ...baseContentStyle, ...verticalPosition, ...horizontalPosition };
+function contentStyle(
+  props: PopoverProps,
+  layout: BrowserPopoverLayout | null,
+): React.CSSProperties {
+  if (layout === null)
+    return {
+      ...baseContentStyle,
+      left: VIEWPORT_PADDING,
+      top: VIEWPORT_PADDING,
+      visibility: 'hidden',
+    };
+  const position = resolvePopoverPosition({
+    anchor: layout.anchor,
+    contentSize: layout.contentSize,
+    offset: props.offset ?? 8,
+    placement: props.placement ?? 'bottom-start',
+    viewport: layout.viewport,
+    viewportPadding: VIEWPORT_PADDING,
+  });
+  return { ...baseContentStyle, ...position, overflowY: 'auto' };
+}
+
+interface BrowserPopoverLayout {
+  anchor: { height: number; width: number; x: number; y: number };
+  contentSize: { height: number; width: number };
+  viewport: { height: number; width: number };
 }
 
 const anchorStyle: React.CSSProperties = { display: 'inline-block' };

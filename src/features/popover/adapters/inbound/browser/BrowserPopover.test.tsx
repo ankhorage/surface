@@ -19,9 +19,9 @@ test('BrowserPopover opens, uses browser placement, and closes on outside press'
     ) as HTMLElement | null;
     expect(content?.textContent).toBe('Content');
     expect(content?.style.position).toBe('fixed');
-    expect(Number.parseInt(content?.style.bottom ?? '', 10)).toBeGreaterThan(0);
-    expect(content?.style.left).toBe('0px');
-    expect(content?.style.transform).toBe('translateX(-100%)');
+    expect(Number.parseInt(content?.style.left ?? '', 10)).toBeGreaterThanOrEqual(8);
+    expect(Number.parseInt(content?.style.top ?? '', 10)).toBeGreaterThanOrEqual(8);
+    expect(content?.style.overflowY).toBe('auto');
 
     await act(async () => {
       browserWindow.document.body.dispatchEvent(
