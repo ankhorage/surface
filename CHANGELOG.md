@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.7.2
+
+### Patch Changes
+
+- 6dae018: Expose the browser-safe public Surface API from `@ankhorage/surface/web`.
+
 ## 9.7.1
 
 ### Patch Changes
