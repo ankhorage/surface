@@ -18,7 +18,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.7.0",
+      "value": "v9.7.1",
       "color": "cb3837"
     },
     {
@@ -2845,6 +2845,20 @@
         "src/features/theme/application/use-cases/createTheme.ts",
         "src/features/theme/constants.ts",
         "src/internal/resolvers/resolveInteractiveColors.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/metadata/repository.json",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    },
+    {
+      "path": "src/metadata/repository.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/metadata/repository.json"
       ],
       "exports": []
     },
@@ -38162,6 +38176,11 @@
         "sourcePath": "src/internal/resolvePointerEvents.test.ts"
       },
       {
+        "fromPath": "src/metadata/repository.test.ts",
+        "toPath": "src/metadata/repository.json",
+        "sourcePath": "src/metadata/repository.test.ts"
+      },
+      {
         "fromPath": "src/types/accordion.ts",
         "toPath": "src/types/interactionPolicy.ts",
         "sourcePath": "src/types/accordion.ts"
@@ -41516,6 +41535,18 @@
         "toSymbol": "onChange",
         "callExpression": "onChange",
         "sourcePath": "src/internal/useControllableState.ts"
+      },
+      {
+        "fromSymbol": "src/metadata/repository.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/metadata/repository.test.ts"
+      },
+      {
+        "fromSymbol": "src/metadata/repository.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/metadata/repository.test.ts"
       },
       {
         "fromSymbol": "src/types/interactionPolicy.test.ts",

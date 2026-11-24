@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.7.1
+
+### Patch Changes
+
+- e29a5b4: Restore the declared native and web build targets validated by the published Doctor rules.
+
 ## 9.7.0
 
 ### Minor Changes

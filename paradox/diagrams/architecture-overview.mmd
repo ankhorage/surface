@@ -899,6 +899,11 @@ graph TD
   module_src_invertedThemeAcceptance_test_ts --> module_src_features_theme_application_use_cases_createTheme_ts
   module_src_invertedThemeAcceptance_test_ts --> module_src_features_theme_constants_ts
   module_src_invertedThemeAcceptance_test_ts --> module_src_internal_resolvers_resolveInteractiveColors_ts
+  module_src_metadata_repository_json["src/metadata/repository.json"]
+  package__ankhorage_surface -.-> module_src_metadata_repository_json
+  module_src_metadata_repository_test_ts["src/metadata/repository.test.ts"]
+  package__ankhorage_surface -.-> module_src_metadata_repository_test_ts
+  module_src_metadata_repository_test_ts --> module_src_metadata_repository_json
   module_src_packageBoundary_test_ts["src/packageBoundary.test.ts"]
   package__ankhorage_surface -.-> module_src_packageBoundary_test_ts
   module_src_structureOwnership_test_ts["src/structureOwnership.test.ts"]
