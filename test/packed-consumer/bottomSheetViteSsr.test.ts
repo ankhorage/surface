@@ -147,6 +147,7 @@ async function assertHydration(directory: string, markup: string): Promise<void>
           { headers: { 'content-type': 'text/html; charset=utf-8' } },
         );
       }
+      if (pathname === '/favicon.ico') return new Response(null, { status: 204 });
       return new Response(Bun.file(join(directory, 'dist', 'client', pathname)));
     },
     port: 0,
