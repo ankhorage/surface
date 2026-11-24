@@ -4,8 +4,7 @@ import { dirname, resolve } from 'node:path';
 const require = createRequire(import.meta.url);
 const reactNativeWebEntrypoint = require.resolve('react-native-web');
 
-const result = await Bun.build({
-  entrypoints: ['src/web.ts'],
+const sharedOptions = {
   external: [
     'react',
     'react-dom',
@@ -14,7 +13,6 @@ const result = await Bun.build({
     'react/jsx-runtime',
   ],
   format: 'esm',
-  outdir: 'web-dist',
   plugins: [
     {
       name: 'surface-web-platform',
@@ -35,8 +33,18 @@ const result = await Bun.build({
       },
     },
   ],
-  sourcemap: 'external',
-  target: 'browser',
-});
+  sourcemap: 'external' as const,
+  target: 'browser' as const,
+};
 
-if (!result.success) process.exit(1);
+const results = [
+  await Bun.build({ ...sharedOptions, entrypoints: ['src/web.ts'], outdir: 'web-dist' }),
+  await Bun.build({
+    ...sharedOptions,
+    entrypoints: ['src/features/bottom-sheet/browser.ts'],
+    naming: 'bottom-sheet.js',
+    outdir: 'web-dist',
+  }),
+];
+
+if (results.some((result) => !result.success)) process.exit(1);

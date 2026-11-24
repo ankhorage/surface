@@ -72,10 +72,10 @@
     },
     "./bottom-sheet": {
       "react-native": "./dist/features/bottom-sheet/public.js",
-      "browser": "./dist/features/bottom-sheet/browser.js",
-      "types": "./dist/features/bottom-sheet/browser.d.ts",
-      "import": "./dist/features/bottom-sheet/browser.js",
-      "default": "./dist/features/bottom-sheet/browser.js"
+      "browser": "./web-dist/bottom-sheet.js",
+      "types": "./web-dist/bottom-sheet.d.ts",
+      "import": "./web-dist/bottom-sheet.js",
+      "default": "./web-dist/bottom-sheet.js"
     },
     "./browser": {
       "types": "./dist/features/popover/browser.d.ts",
@@ -116,7 +116,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rm -rf dist web-dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo && bun x tsc -p tsconfig.build.json && mkdir web-dist && cp dist/web.d.ts dist/web.d.ts.map web-dist/ && sed -i \"s|'./index.js'|'../dist/index.js'|\" web-dist/web.d.ts && bun scripts/build-web-entrypoint.ts",
+    "build": "rm -rf dist web-dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo && bun x tsc -p tsconfig.build.json && mkdir web-dist && cp dist/web.d.ts dist/web.d.ts.map dist/features/bottom-sheet/browser.d.ts dist/features/bottom-sheet/browser.d.ts.map web-dist/ && mv web-dist/browser.d.ts web-dist/bottom-sheet.d.ts && mv web-dist/browser.d.ts.map web-dist/bottom-sheet.d.ts.map && sed -i \"s|'./index.js'|'../dist/index.js'|\" web-dist/web.d.ts && bun scripts/build-web-entrypoint.ts",
     "changeset": "ankhorage-changeset",
     "changeset:status": "ankhorage-changeset status --since=origin/main",
     "docs": "paradox && ankhorage-prettier --write README.md paradox",
