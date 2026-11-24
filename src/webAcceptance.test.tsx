@@ -1,9 +1,13 @@
 import { expect, mock, test } from 'bun:test';
-import { Window } from 'happy-dom';
+import type { Window } from 'happy-dom';
 import React, { act } from 'react';
 import { renderToString } from 'react-dom/server';
 
-const browserWindow = new Window({ url: 'https://surface.test/' });
+const browserWindow = (
+  globalThis as typeof globalThis & {
+    __surfaceReactNativeWebWindow: Window;
+  }
+).__surfaceReactNativeWebWindow;
 Object.assign(globalThis, {
   IS_REACT_ACT_ENVIRONMENT: true,
   Node: browserWindow.Node,
