@@ -47,3 +47,10 @@ test('publishes only the compiled web facade in the web distribution', async () 
   expect(webDistributionFiles).toContain('web-dist/web.js.map');
   expect(webDistributionFiles.every((file) => file.startsWith('web-dist/'))).toBe(true);
 });
+
+test('resolves the browser bottom-sheet subpath without React Native runtime syntax', async () => {
+  const bottomSheet = await import('@ankhorage/surface/bottom-sheet');
+
+  expect(bottomSheet.BottomSheetProvider).toBeDefined();
+  expect(bottomSheet.BottomSheetView).toBeDefined();
+});

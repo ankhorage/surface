@@ -187,10 +187,10 @@ describe('public package metadata contract', () => {
       ...webExport,
       './bottom-sheet': {
         'react-native': './dist/features/bottom-sheet/public.js',
-        browser: './dist/features/bottom-sheet/browser.js',
-        default: './dist/features/bottom-sheet/browser.js',
-        import: './dist/features/bottom-sheet/browser.js',
-        types: './dist/features/bottom-sheet/browser.d.ts',
+        browser: './web-dist/bottom-sheet.js',
+        default: './web-dist/bottom-sheet.js',
+        import: './web-dist/bottom-sheet.js',
+        types: './web-dist/bottom-sheet.d.ts',
       },
       './browser': {
         default: './dist/features/popover/browser.js',
