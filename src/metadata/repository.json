@@ -32,6 +32,36 @@
       "Platform-specific behavior remains behind explicit adapters while public component contracts stay cross-platform."
     ]
   },
+  "build": {
+    "targets": {
+      "native": {
+        "language": "typescript",
+        "framework": "react-native",
+        "platforms": ["ios", "android", "web"],
+        "entry": ".",
+        "outDir": "dist",
+        "sources": {
+          "entries": ["src/index.ts"]
+        },
+        "builder": {
+          "script": "build"
+        }
+      },
+      "web": {
+        "language": "typescript",
+        "framework": "react",
+        "platforms": ["web"],
+        "entry": "./web",
+        "outDir": "web-dist",
+        "sources": {
+          "entries": ["src/web.ts"]
+        },
+        "builder": {
+          "script": "build"
+        }
+      }
+    }
+  },
   "constraints": {
     "limitations": [
       "Consumers must supply the declared React, React Native, and platform peer dependencies required by the components they use.",
