@@ -1031,5 +1031,10 @@ graph TD
   module_src_utils_resolveViewStyles_ts --> module_src_types_layout_ts
   module_src_utils_resolveViewStyles_ts --> module_src_types_theme_ts
   module_src_utils_resolveViewStyles_ts --> module_src_utils_resolveSpacing_ts
+  module_src_web_test_ts["src/web.test.ts"]
+  package__ankhorage_surface -.-> module_src_web_test_ts
+  module_src_web_test_ts --> module_src_web_ts
+  module_src_web_ts["src/web.ts"]
+  package__ankhorage_surface -.-> module_src_web_ts
   module_src_webAcceptance_test_tsx["src/webAcceptance.test.tsx"]
   package__ankhorage_surface -.-> module_src_webAcceptance_test_tsx

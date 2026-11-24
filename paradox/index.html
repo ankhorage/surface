@@ -814,7 +814,7 @@
       <div class="summary">
         <div><strong>148</strong><span class="muted">public exports</span></div>
         <div><strong>43</strong><span class="muted">components</span></div>
-        <div><strong>272</strong><span class="muted">modules</span></div>
+        <div><strong>274</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -2201,6 +2201,16 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/core/responsive/resolve.ts</code>, <code>src/core/responsive/types.ts</code>, <code>src/features/theme/utils/resolveToken.ts</code>, <code>src/types/layout.ts</code>, <code>src/types/theme.ts</code>, <code>src/utils/resolveSpacing.ts</code></p>
     <p><strong>Exports:</strong> <code>resolveViewStyles</code></p>
+  </article><article class="item" data-search="src/web.test.ts src/web.ts">
+    <h3>src/web.test.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/web.ts</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="src/web.ts Text TextProps View ViewProps">
+    <h3>src/web.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>Text</code>, <code>TextProps</code>, <code>View</code>, <code>ViewProps</code></p>
   </article><article class="item" data-search="src/webAcceptance.test.tsx">
     <h3>src/webAcceptance.test.tsx</h3>
     <p class="muted">Referenced module</p>
@@ -29080,6 +29090,11 @@
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_layout_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_theme_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_utils_resolveSpacing_ts
+  module_src_web_test_ts[&quot;src/web.test.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_web_test_ts
+  module_src_web_test_ts --&gt; module_src_web_ts
+  module_src_web_ts[&quot;src/web.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_web_ts
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_webAcceptance_test_tsx
 </div>
@@ -30118,6 +30133,11 @@
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_layout_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_theme_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_utils_resolveSpacing_ts
+  module_src_web_test_ts[&quot;src/web.test.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_web_test_ts
+  module_src_web_test_ts --&gt; module_src_web_ts
+  module_src_web_ts[&quot;src/web.ts&quot;]
+  package__ankhorage_surface -.-&gt; module_src_web_ts
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
   package__ankhorage_surface -.-&gt; module_src_webAcceptance_test_tsx
 </pre>
@@ -30397,6 +30417,8 @@
   module_src_utils_resolveSpacing_ts[&quot;src/utils/resolveSpacing.ts&quot;]
   module_src_utils_resolveViewStyles_test_ts[&quot;src/utils/resolveViewStyles.test.ts&quot;]
   module_src_utils_resolveViewStyles_ts[&quot;src/utils/resolveViewStyles.ts&quot;]
+  module_src_web_test_ts[&quot;src/web.test.ts&quot;]
+  module_src_web_ts[&quot;src/web.ts&quot;]
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
   module_src_capabilities_index_test_ts --&gt; module_src_capabilities_index_ts
   module_src_constants_surfaceColor_public_test_ts --&gt; module_src_constants_surfaceColor_ts
@@ -30886,6 +30908,7 @@
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_layout_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_theme_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_utils_resolveSpacing_ts
+  module_src_web_test_ts --&gt; module_src_web_ts
 </div>
     <details>
       <summary>View Mermaid source</summary>
@@ -31161,6 +31184,8 @@
   module_src_utils_resolveSpacing_ts[&quot;src/utils/resolveSpacing.ts&quot;]
   module_src_utils_resolveViewStyles_test_ts[&quot;src/utils/resolveViewStyles.test.ts&quot;]
   module_src_utils_resolveViewStyles_ts[&quot;src/utils/resolveViewStyles.ts&quot;]
+  module_src_web_test_ts[&quot;src/web.test.ts&quot;]
+  module_src_web_ts[&quot;src/web.ts&quot;]
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
   module_src_capabilities_index_test_ts --&gt; module_src_capabilities_index_ts
   module_src_constants_surfaceColor_public_test_ts --&gt; module_src_constants_surfaceColor_ts
@@ -31650,6 +31675,7 @@
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_layout_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_types_theme_ts
   module_src_utils_resolveViewStyles_ts --&gt; module_src_utils_resolveSpacing_ts
+  module_src_web_test_ts --&gt; module_src_web_ts
 </pre>
     </details>
   </article><article class="item" data-search="Export graph diagrams/export-graph.mmd">
@@ -31927,6 +31953,8 @@
   module_src_utils_resolveSpacing_ts[&quot;src/utils/resolveSpacing.ts&quot;]
   module_src_utils_resolveViewStyles_test_ts[&quot;src/utils/resolveViewStyles.test.ts&quot;]
   module_src_utils_resolveViewStyles_ts[&quot;src/utils/resolveViewStyles.ts&quot;]
+  module_src_web_test_ts[&quot;src/web.test.ts&quot;]
+  module_src_web_ts[&quot;src/web.ts&quot;]
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
   export_Accordion[&quot;Accordion&quot;]
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; export_Accordion
@@ -32619,6 +32647,8 @@
   module_src_utils_resolveSpacing_ts[&quot;src/utils/resolveSpacing.ts&quot;]
   module_src_utils_resolveViewStyles_test_ts[&quot;src/utils/resolveViewStyles.test.ts&quot;]
   module_src_utils_resolveViewStyles_ts[&quot;src/utils/resolveViewStyles.ts&quot;]
+  module_src_web_test_ts[&quot;src/web.test.ts&quot;]
+  module_src_web_ts[&quot;src/web.ts&quot;]
   module_src_webAcceptance_test_tsx[&quot;src/webAcceptance.test.tsx&quot;]
   export_Accordion[&quot;Accordion&quot;]
   module_src_features_accordion_adapters_inbound_Accordion_tsx --&gt; export_Accordion
@@ -35925,19 +35955,19 @@
       <h2>src/webAcceptance.test.tsx</h2>
       <article class="item" data-search="ResponsiveAcceptanceTree src/webAcceptance.test.tsx ">
     <h3>ResponsiveAcceptanceTree</h3>
-    <p class="muted"><code>src/webAcceptance.test.tsx:29:1</code></p>
+    <p class="muted"><code>src/webAcceptance.test.tsx:33:1</code></p>
     <p class="empty">No description available.</p>
 </article><article class="item" data-search="BreakpointProbe src/webAcceptance.test.tsx ">
     <h3>BreakpointProbe</h3>
-    <p class="muted"><code>src/webAcceptance.test.tsx:55:1</code></p>
+    <p class="muted"><code>src/webAcceptance.test.tsx:59:1</code></p>
     <p class="empty">No description available.</p>
 </article><article class="item" data-search="SsrLayoutTree src/webAcceptance.test.tsx ">
     <h3>SsrLayoutTree</h3>
-    <p class="muted"><code>src/webAcceptance.test.tsx:59:1</code></p>
+    <p class="muted"><code>src/webAcceptance.test.tsx:63:1</code></p>
     <p class="empty">No description available.</p>
 </article><article class="item" data-search="setViewportWidth src/webAcceptance.test.tsx ">
     <h3>setViewportWidth</h3>
-    <p class="muted"><code>src/webAcceptance.test.tsx:185:1</code></p>
+    <p class="muted"><code>src/webAcceptance.test.tsx:189:1</code></p>
     <p class="empty">No description available.</p>
 </article>
     </section>

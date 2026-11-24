@@ -1,5 +1,15 @@
 # @ankhorage/surface
 
+## 9.7.0
+
+### Minor Changes
+
+- 0cb65da: Publish the browser-safe `@ankhorage/surface/web` foundation entrypoint.
+
+### Patch Changes
+
+- 4e8e23a: Update dependencies: `@ankhorage/contracts`.
+
 ## 9.6.3
 
 ### Patch Changes
