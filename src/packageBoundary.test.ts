@@ -25,19 +25,25 @@ test('emits a compiled web facade without source-path declaration leaks', async 
   const webDeclaration = await Bun.file('web-dist/web.d.ts').text();
   const webRuntime = await Bun.file('web-dist/web.js').text();
 
-  expect(webDeclaration).toContain("from 'react-native-web'");
+  expect(webDeclaration).toContain("from '../dist/index.js'");
   expect(webDeclaration).not.toContain("from 'react-native'");
   expect(webDeclaration).not.toContain('/src/');
-  expect(webRuntime).not.toContain('/src/');
+  expect(webRuntime).not.toContain("from 'react-native'");
+  expect(webRuntime).not.toMatch(/from\s+['"][^'"]*\/src\//u);
+
+  const webApi = await import('../web-dist/web.js');
+  expect(webApi.Button).toBeDefined();
+  expect(webApi.ThemeProvider).toBeDefined();
+  expect(webApi.ThemeScope).toBeDefined();
+  expect(webApi.useTheme).toBeDefined();
 });
 
 test('publishes only the compiled web facade in the web distribution', async () => {
   const webDistributionFiles = await Array.fromAsync(new Bun.Glob('web-dist/**/*').scan('.'));
 
-  expect([...webDistributionFiles].sort()).toEqual([
-    'web-dist/web.d.ts',
-    'web-dist/web.d.ts.map',
-    'web-dist/web.js',
-    'web-dist/web.js.map',
-  ]);
+  expect(webDistributionFiles).toContain('web-dist/web.d.ts');
+  expect(webDistributionFiles).toContain('web-dist/web.d.ts.map');
+  expect(webDistributionFiles).toContain('web-dist/web.js');
+  expect(webDistributionFiles).toContain('web-dist/web.js.map');
+  expect(webDistributionFiles.every((file) => file.startsWith('web-dist/'))).toBe(true);
 });

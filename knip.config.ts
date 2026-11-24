@@ -3,6 +3,7 @@ import { createKnipConfig } from '@ankhorage/devtools/knip';
 export default createKnipConfig({
   entry: [
     'src/index.ts',
+    'src/web.ts',
     'src/features/bottom-sheet/public.ts',
     'src/features/bottom-sheet/browser.ts',
     'src/features/popover/browser.ts',
@@ -19,5 +20,6 @@ export default createKnipConfig({
     'examples/docs/DocsExamples.tsx',
     'paradox.config.ts',
     'prettier.local.config.js',
+    'src/features/app-bar/adapters/inbound/SafeAreaInsetsContext.web.ts',
   ],
 });

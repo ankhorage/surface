@@ -1,13 +1,9 @@
+import { readFileSync } from 'node:fs';
+
 import { expect, test } from 'bun:test';
 
-import type { TextProps, ViewProps } from './web.js';
+test('routes the dedicated web facade through the public Surface API', () => {
+  const webFacade = readFileSync(new URL('./web.ts', import.meta.url), 'utf8');
 
-const { Text, View } = await import('./web.js');
-
-test('exposes the browser-safe foundation through the dedicated web facade', () => {
-  const props: [TextProps, ViewProps] = [{ children: 'Surface web' }, { children: null }];
-
-  expect(props).toHaveLength(2);
-  expect(View).toBeDefined();
-  expect(Text).toBeDefined();
+  expect(webFacade).toContain("export * from './index.js';");
 });
