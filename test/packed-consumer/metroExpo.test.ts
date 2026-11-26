@@ -19,7 +19,7 @@ const expo57Dependencies = (vectorIconVersion: (typeof supportedVectorIconVersio
   ...Object.fromEntries(
     vectorIconPackageNames.map((packageName) => [packageName, vectorIconVersion]),
   ),
-  expo: '57.0.33',
+  expo: '~57.0.34',
   react: '19.2.3',
   'react-dom': '19.2.3',
   'react-native': '0.86.3',
