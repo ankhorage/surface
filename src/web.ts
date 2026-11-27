@@ -6,8 +6,12 @@ export type {
   BottomSheetPresentOptions,
 } from './features/bottom-sheet/browser.js';
 export {
+  BottomSheetFlatList,
   BottomSheetProvider,
+  BottomSheetScrollView,
+  BottomSheetSectionList,
   BottomSheetView,
+  BottomSheetVirtualizedList,
   useBottomSheet,
 } from './features/bottom-sheet/browser.js';
 export * from './index.js';

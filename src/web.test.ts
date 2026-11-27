@@ -15,7 +15,15 @@ test('routes the dedicated web facade through the public Surface API', () => {
 
 test('exports the canonical SSR-safe bottom-sheet boundary through the web facade', async () => {
   const webApi = (await import('../web-dist/web.js')) as typeof WebApi;
-  const { BottomSheetProvider, BottomSheetView, useBottomSheet } = webApi;
+  const {
+    BottomSheetFlatList,
+    BottomSheetProvider,
+    BottomSheetScrollView,
+    BottomSheetSectionList,
+    BottomSheetView,
+    BottomSheetVirtualizedList,
+    useBottomSheet,
+  } = webApi;
   const contentMode: BottomSheetContentMode = 'direct';
   const options: BottomSheetPresentOptions = { content: 'Sheet', snapPoints: ['50%'] };
   const markup = renderToString(
@@ -29,5 +37,9 @@ test('exports the canonical SSR-safe bottom-sheet boundary through the web facad
   expect(contentMode).toBe('direct');
   expect(options.snapPoints).toEqual(['50%']);
   expect(markup).toContain('data-testid="sheet-content"');
+  expect(BottomSheetFlatList).toBeDefined();
+  expect(BottomSheetScrollView).toBeDefined();
+  expect(BottomSheetSectionList).toBeDefined();
+  expect(BottomSheetVirtualizedList).toBeDefined();
   expect(useBottomSheet).toBeDefined();
 });
