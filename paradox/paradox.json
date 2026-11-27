@@ -18,7 +18,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.8.0",
+      "value": "v9.8.1",
       "color": "cb3837"
     },
     {
@@ -41516,6 +41516,30 @@
         "fromSymbol": "src/packageBoundary.test.ts",
         "toSymbol": "expect",
         "callExpression": "expect",
+        "sourcePath": "src/packageBoundary.test.ts"
+      },
+      {
+        "fromSymbol": "src/packageBoundary.test.ts",
+        "toSymbol": "readFile",
+        "callExpression": "readFile",
+        "sourcePath": "src/packageBoundary.test.ts"
+      },
+      {
+        "fromSymbol": "src/packageBoundary.test.ts",
+        "toSymbol": "access",
+        "callExpression": "access",
+        "sourcePath": "src/packageBoundary.test.ts"
+      },
+      {
+        "fromSymbol": "src/packageBoundary.test.ts",
+        "toSymbol": "resolve",
+        "callExpression": "resolve",
+        "sourcePath": "src/packageBoundary.test.ts"
+      },
+      {
+        "fromSymbol": "src/packageBoundary.test.ts",
+        "toSymbol": "dirname",
+        "callExpression": "dirname",
         "sourcePath": "src/packageBoundary.test.ts"
       },
       {

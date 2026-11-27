@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.8.1
+
+### Patch Changes
+
+- 6866747: Fix published browser declaration specifiers for the web and bottom-sheet entrypoints.
+
 ## 9.8.0
 
 ### Minor Changes
