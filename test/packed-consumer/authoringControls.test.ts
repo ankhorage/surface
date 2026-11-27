@@ -117,8 +117,17 @@ import {
   ThemeScope,
   View,
 } from '@ankhorage/surface/authoring-controls';
-import type { TextProps as WebTextProps, ViewProps as WebViewProps } from '@ankhorage/surface/web';
-import { Text as WebText, View as WebView } from '@ankhorage/surface/web';
+import type {
+  BottomSheetController,
+  TextProps as WebTextProps,
+  ViewProps as WebViewProps,
+} from '@ankhorage/surface/web';
+import {
+  BottomSheetProvider,
+  BottomSheetView,
+  Text as WebText,
+  View as WebView,
+} from '@ankhorage/surface/web';
 
 const props: [
   ButtonProps,
@@ -149,11 +158,13 @@ const props: [
 ];
 
 const webProps: [WebTextProps, WebViewProps] = [{ children: 'Web' }, { children: null }];
+const bottomSheetController: BottomSheetController | undefined = undefined;
 
 void props;
 void webProps;
+void bottomSheetController;
 void [Button, Card, Field, Popover, Pressable, Surface, Switch, Text, TextInput, ThemeProvider, ThemeScope, View];
-export const webFoundation = [WebText, WebView];
+export const webFoundation = [BottomSheetProvider, BottomSheetView, WebText, WebView];
 `,
   );
   await writeFile(
