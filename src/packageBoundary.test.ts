@@ -1,3 +1,6 @@
+import { access, readFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+
 import { expect, test } from 'bun:test';
 
 const extensionlessRelativeDeclarationSpecifier =
@@ -36,6 +39,23 @@ test('emits a compiled web facade without source-path declaration leaks', async 
   expect(webApi.ThemeProvider).toBeDefined();
   expect(webApi.ThemeScope).toBeDefined();
   expect(webApi.useTheme).toBeDefined();
+});
+
+test('emits web declarations whose relative JavaScript specifiers resolve inside the package', async () => {
+  const declarations = ['web-dist/web.d.ts', 'web-dist/bottom-sheet.d.ts'];
+  const specifierPattern = /from\s+['"](\.{1,2}\/[^'"]+\.js)['"]/gu;
+
+  for (const declaration of declarations) {
+    const source = await readFile(declaration, 'utf8');
+    const specifiers = Array.from(source.matchAll(specifierPattern)).flatMap((match) =>
+      match[1] === undefined ? [] : [match[1]],
+    );
+
+    expect(specifiers.length, declaration).toBeGreaterThan(0);
+    await Promise.all(
+      specifiers.map((specifier) => access(resolve(dirname(declaration), specifier))),
+    );
+  }
 });
 
 test('publishes only the compiled web facade in the web distribution', async () => {
