@@ -1,5 +1,20 @@
 # @ankhorage/surface
 
+## 9.8.0
+
+### Minor Changes
+
+- f85818a: Expose the browser-safe bottom-sheet contract from the published web entrypoint.
+
+### Patch Changes
+
+- 4606596: Bundle the browser-safe bottom-sheet public entrypoint for ESM and SSR consumers.
+- 68ef665: Keep packed browser consumer fixtures aligned with the browser-safe bottom-sheet export.
+- 7972f09: Update dependencies: `@react-native-vector-icons/fontawesome5`, `@react-native-vector-icons/fontawesome6`, `@react-native-vector-icons/fontawesome`, `@react-native-vector-icons/ionicons`, `@react-native-vector-icons/material-design-icons`, `@types/node`, `@types/react`, `happy-dom`, `playwright-core`, `react-dom`, `react-native-gesture-handler`, `react-native-reanimated`, `react-native-svg`, `react-native-worklets`, `react`.
+- c0ed8fa: Update dependencies: `@ankhorage/utility`.
+- 4cac747: Update dependencies: `@ankhorage/contracts`.
+- da5e9e0: Keep the public package metadata contract aligned with the browser-safe bottom-sheet artifact.
+
 ## 9.7.2
 
 ### Patch Changes

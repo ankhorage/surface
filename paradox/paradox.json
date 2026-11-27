@@ -18,7 +18,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.7.2",
+      "value": "v9.8.0",
       "color": "cb3837"
     },
     {
@@ -3318,7 +3318,9 @@
     {
       "path": "src/web.test.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": [
+        "src/web.ts"
+      ],
       "exports": []
     },
     {
@@ -3343,6 +3345,11 @@
         "Badge",
         "BadgeProps",
         "BorderSemantics",
+        "BottomSheetContentMode",
+        "BottomSheetController",
+        "BottomSheetPresentOptions",
+        "BottomSheetProvider",
+        "BottomSheetView",
         "Breakpoint",
         "BREAKPOINT_ORDER",
         "BREAKPOINTS",
@@ -3468,6 +3475,7 @@
         "ToastStatus",
         "Tooltip",
         "TooltipProps",
+        "useBottomSheet",
         "useBreakpoint",
         "useResponsiveRuntime",
         "useTheme",
@@ -38301,6 +38309,16 @@
         "sourcePath": "src/invertedThemeAcceptance.test.ts"
       },
       {
+        "fromPath": "src/web.test.ts",
+        "toPath": "src/web.ts",
+        "sourcePath": "src/web.test.ts"
+      },
+      {
+        "fromPath": "src/web.ts",
+        "toPath": "src/features/bottom-sheet/browser.ts",
+        "sourcePath": "src/web.ts"
+      },
+      {
         "fromPath": "src/web.ts",
         "toPath": "src/index.ts",
         "sourcePath": "src/web.ts"
@@ -41540,6 +41558,12 @@
         "fromSymbol": "src/web.test.ts",
         "toSymbol": "expect",
         "callExpression": "expect",
+        "sourcePath": "src/web.test.ts"
+      },
+      {
+        "fromSymbol": "src/web.test.ts",
+        "toSymbol": "renderToString",
+        "callExpression": "renderToString",
         "sourcePath": "src/web.test.ts"
       },
       {
