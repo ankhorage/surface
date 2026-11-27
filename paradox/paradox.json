@@ -18,7 +18,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v9.8.1",
+      "value": "v9.8.2",
       "color": "cb3837"
     },
     {
@@ -3347,9 +3347,13 @@
         "BorderSemantics",
         "BottomSheetContentMode",
         "BottomSheetController",
+        "BottomSheetFlatList",
         "BottomSheetPresentOptions",
         "BottomSheetProvider",
+        "BottomSheetScrollView",
+        "BottomSheetSectionList",
         "BottomSheetView",
+        "BottomSheetVirtualizedList",
         "Breakpoint",
         "BREAKPOINT_ORDER",
         "BREAKPOINTS",

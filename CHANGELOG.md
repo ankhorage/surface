@@ -1,5 +1,11 @@
 # @ankhorage/surface
 
+## 9.8.2
+
+### Patch Changes
+
+- 97424bc: Expose the browser-safe Bottom Sheet list primitives through the public web entrypoint.
+
 ## 9.8.1
 
 ### Patch Changes
