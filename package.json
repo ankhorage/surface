@@ -43,6 +43,11 @@
     "react-native-web": "~0.21.0",
     "react-native-worklets": "0.10.1 || 0.13.0 || 0.14"
   },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@ankhorage/color-theory": "^0.3.4",
     "@ankhorage/contracts": "^26.19.0",
