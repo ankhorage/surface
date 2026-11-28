@@ -8,14 +8,19 @@ export interface OverlayEntry {
   node: React.ReactNode;
   order: number;
   zIndex: number;
+  parentId?: string;
+  onDismiss?: () => void;
 }
 
 export interface OverlayDescriptor {
   layer: OverlayLayer;
   node: React.ReactNode;
+  parentId?: string;
+  onDismiss?: () => void;
 }
 
 export interface OverlayStackActions {
+  dismissTopmost: () => void;
   setOverlay: (id: string, overlay: OverlayDescriptor) => void;
   removeOverlay: (id: string) => void;
 }
@@ -62,5 +67,7 @@ export function createOverlayEntry(
     node: descriptor.node,
     order,
     zIndex: resolveOverlayZIndex(descriptor.layer, 0),
+    ...(descriptor.parentId === undefined ? {} : { parentId: descriptor.parentId }),
+    ...(descriptor.onDismiss === undefined ? {} : { onDismiss: descriptor.onDismiss }),
   };
 }

@@ -18,6 +18,10 @@ interface OverlayStackRuntimeResult {
 export function useOverlayStackRuntime(): OverlayStackRuntimeResult {
   const orderRef = React.useRef(0);
   const [overlays, setOverlays] = React.useState<OverlayEntry[]>([]);
+  const overlaysRef = React.useRef<OverlayEntry[]>([]);
+  React.useEffect(() => {
+    overlaysRef.current = overlays;
+  }, [overlays]);
 
   const setOverlay = React.useCallback((id: string, descriptor: OverlayDescriptor) => {
     setOverlays((current) => {
@@ -34,10 +38,18 @@ export function useOverlayStackRuntime(): OverlayStackRuntimeResult {
     setOverlays((current) => current.filter((entry) => entry.id !== id));
   }, []);
 
-  const actions = React.useMemo(() => ({ removeOverlay, setOverlay }), [removeOverlay, setOverlay]);
+  const dismissTopmost = React.useCallback(() => {
+    const topmost = overlaysRef.current.at(-1);
+    topmost?.onDismiss?.();
+  }, []);
+
+  const actions = React.useMemo(
+    () => ({ dismissTopmost, removeOverlay, setOverlay }),
+    [dismissTopmost, removeOverlay, setOverlay],
+  );
   const value = React.useMemo(
-    () => ({ overlays, removeOverlay, setOverlay }),
-    [overlays, removeOverlay, setOverlay],
+    () => ({ dismissTopmost, overlays, removeOverlay, setOverlay }),
+    [dismissTopmost, overlays, removeOverlay, setOverlay],
   );
 
   return { actions, value };

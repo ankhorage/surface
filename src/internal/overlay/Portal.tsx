@@ -9,9 +9,10 @@ export interface PortalProps {
   children?: React.ReactNode;
   layer?: OverlayLayer;
   visible?: boolean;
+  onDismiss?: () => void;
 }
 
-export function Portal({ children, layer = 'modal', visible = true }: PortalProps) {
+export function Portal({ children, layer = 'modal', onDismiss, visible = true }: PortalProps) {
   const overlayActions = useOverlayStackActions();
   const idRef = React.useRef(`surface-portal-${portalCounter++}`);
 
@@ -39,8 +40,9 @@ export function Portal({ children, layer = 'modal', visible = true }: PortalProp
     overlayActions.setOverlay(idRef.current, {
       layer,
       node: children,
+      onDismiss,
     });
-  }, [children, layer, overlayActions, visible]);
+  }, [children, layer, onDismiss, overlayActions, visible]);
 
   if (!overlayActions) {
     return visible ? <>{children}</> : null;
